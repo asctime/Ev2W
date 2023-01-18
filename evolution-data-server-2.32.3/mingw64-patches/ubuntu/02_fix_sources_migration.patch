@@ -1,0 +1,79 @@
+commit 132709ba897951b7cf080d68cf98262de4c81e5d
+Author: Milan Crha <mcrha@redhat.com>
+Date:   Wed Nov 24 13:38:09 2010 +0100
+
+    Bug #632962 - Duplicate "On this computer" sources after update
+
+diff --git a/libedataserver/e-source-group.c b/libedataserver/e-source-group.c
+index 1f70d5e..a0cfe3e 100644
+--- a/libedataserver/e-source-group.c
++++ b/libedataserver/e-source-group.c
+@@ -246,8 +246,10 @@ e_source_group_new (const gchar *name,
+ 	return new;
+ }
+ 
+-ESourceGroup *
+-e_source_group_new_from_xml (const gchar *xml)
++static ESourceGroup *source_group_new_from_xmldoc (xmlDocPtr doc, gboolean can_migrate);
++
++static ESourceGroup *
++source_group_new_from_xml (const gchar *xml, gboolean can_migrate)
+ {
+ 	xmlDocPtr doc;
+ 	ESourceGroup *group;
+@@ -256,14 +258,20 @@ e_source_group_new_from_xml (const gchar *xml)
+ 	if (doc == NULL)
+ 		return NULL;
+ 
+-	group = e_source_group_new_from_xmldoc (doc);
++	group = source_group_new_from_xmldoc (doc, can_migrate);
+ 	xmlFreeDoc (doc);
+ 
+ 	return group;
+ }
+ 
+ ESourceGroup *
+-e_source_group_new_from_xmldoc (xmlDocPtr doc)
++e_source_group_new_from_xml (const gchar *xml)
++{
++	return source_group_new_from_xml (xml, TRUE);
++}
++
++static ESourceGroup *
++source_group_new_from_xmldoc (xmlDocPtr doc, gboolean can_migrate)
+ {
+ 	xmlNodePtr root, p;
+ 	xmlChar *uid;
+@@ -300,7 +308,7 @@ e_source_group_new_from_xmldoc (xmlDocPtr doc)
+ 	 *     directory, but that caused all kinds of portability
+ 	 *     issues so now we just use "local:" and leave the
+ 	 *     absolute file system path implicit. */
+-	if (g_str_has_prefix (GC base_uri, "file:"))
++	if (can_migrate && g_str_has_prefix (GC base_uri, "file:"))
+ 		e_source_group_set_base_uri (new, "local:");
+ 	else
+ 		e_source_group_set_base_uri (new, GC base_uri);
+@@ -339,6 +347,12 @@ e_source_group_new_from_xmldoc (xmlDocPtr doc)
+ 	return new;
+ }
+ 
++ESourceGroup *
++e_source_group_new_from_xmldoc (xmlDocPtr doc)
++{
++	return source_group_new_from_xmldoc (doc, TRUE);
++}
++
+ gboolean
+ e_source_group_update_from_xml (ESourceGroup *group,
+ 				const gchar *xml,
+@@ -896,8 +910,8 @@ e_source_group_xmlstr_equal (const gchar *a, const gchar *b)
+ 	ESourceGroup *grpa, *grpb;
+ 	gboolean retval;
+ 
+-	grpa = e_source_group_new_from_xml (a);
+-	grpb = e_source_group_new_from_xml (b);
++	grpa = source_group_new_from_xml (a, FALSE);
++	grpb = source_group_new_from_xml (b, FALSE);
+ 
+ 	retval = e_source_group_equal (grpa, grpb);
+ 

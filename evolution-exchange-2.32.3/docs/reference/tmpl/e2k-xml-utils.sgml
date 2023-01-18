@@ -1,0 +1,89 @@
+<!-- ##### SECTION Title ##### -->
+e2k-xml-utils
+
+<!-- ##### SECTION Short_Description ##### -->
+XML utility functions
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION e2k_parse_xml ##### -->
+<para>
+
+</para>
+
+@buf: 
+@len: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_parse_html ##### -->
+<para>
+
+</para>
+
+@buf: 
+@len: 
+@Returns: 
+
+
+<!-- ##### MACRO E2K_IS_NODE ##### -->
+<para>
+
+</para>
+
+@node: 
+@nspace: 
+@nname: 
+
+
+<!-- ##### MACRO E2K_XML_HEADER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION e2k_g_string_append_xml_escaped ##### -->
+<para>
+
+</para>
+
+@string: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_xml_find ##### -->
+<para>
+
+</para>
+
+@node: 
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_xml_find_in ##### -->
+<para>
+
+</para>
+
+@node: 
+@top: 
+@name: 
+@Returns: 
+
+

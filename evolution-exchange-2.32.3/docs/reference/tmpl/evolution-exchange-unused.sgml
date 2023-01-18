@@ -1,0 +1,41 @@
+<!-- ##### SECTION ./tmpl/e2k-encoding-utils.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e2k-encoding-utils.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e2k-encoding-utils.sgml:Short_Description ##### -->
+Data-encoding utility functions
+
+
+<!-- ##### SECTION ./tmpl/e2k-encoding-utils.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e2k-encoding-utils.sgml:Title ##### -->
+e2k-encoding-utils
+
+
+<!-- ##### FUNCTION e2k_base64_decode ##### -->
+<para>
+
+</para>
+
+@string: 
+@Returns: 
+
+<!-- ##### FUNCTION e2k_base64_encode ##### -->
+<para>
+
+</para>
+
+@data: 
+@len: 
+@Returns: 
+

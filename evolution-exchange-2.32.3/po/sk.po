@@ -1,0 +1,1586 @@
+# Slovak translations for evolution-exchange package.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the evolution-exchange package.
+# Marcel Telka <marcel@telka.sk>, 2005.
+#
+# $Id$
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-25 20:49+0200\n"
+"PO-Revision-Date: 2005-08-25 21:41+0200\n"
+"Last-Translator: Marcel Telka <marcel@telka.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1857
+#: ../addressbook/e-book-backend-gal.c:1499 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Vyhľadávanie..."
+
+#: ../addressbook/e-book-backend-gal.c:267
+msgid "Reconnecting to LDAP server..."
+msgstr ""
+
+#: ../addressbook/e-book-backend-gal.c:1363
+msgid "Receiving LDAP search results..."
+msgstr ""
+
+#: ../addressbook/e-book-backend-gal.c:1522
+msgid "Error performing search"
+msgstr ""
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1748
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1766
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr ""
+
+#: ../camel/camel-exchange-folder.c:223
+msgid "Can only expunge in Deleted Items folder"
+msgstr ""
+
+#: ../camel/camel-exchange-folder.c:247
+msgid "No Subject"
+msgstr "Bez predmetu"
+
+#: ../camel/camel-exchange-folder.c:374
+msgid "This message is not available in offline mode."
+msgstr "Táto správa nie je dostupná v režime bez pripojenia."
+
+#: ../camel/camel-exchange-folder.c:609
+msgid "Moving messages"
+msgstr "Presúvanie správ"
+
+#: ../camel/camel-exchange-folder.c:610
+msgid "Copying messages"
+msgstr "Kopírovanie správ"
+
+#: ../camel/camel-exchange-folder.c:981
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Nepodario sa vytvoriť adresár %s: %s"
+
+#: ../camel/camel-exchange-folder.c:991
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "Nepodarilo sa načítať súhrn pre %s"
+
+#: ../camel/camel-exchange-folder.c:999
+#, c-format
+msgid "Could not create cache for %s"
+msgstr ""
+
+#: ../camel/camel-exchange-folder.c:1009
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "Nepodarilo sa vytvoriť žurnál pre %s"
+
+#: ../camel/camel-exchange-folder.c:1054
+msgid "Scanning for changed messages"
+msgstr ""
+
+#: ../camel/camel-exchange-folder.c:1080
+msgid "Fetching summary information for new messages"
+msgstr "Získavanie súhrnných informácií pre nové správy"
+
+#: ../camel/camel-exchange-journal.c:339
+msgid "No folder name found\n"
+msgstr ""
+
+#: ../camel/camel-exchange-journal.c:372 ../mail/mail-stub-exchange.c:2524
+#: ../mail/mail-stub-exchange.c:2567 ../mail/mail-stub-exchange.c:2602
+#: ../mail/mail-stub-exchange.c:2629 ../mail/mail-stub-exchange.c:2676
+#: ../mail/mail-stub-exchange.c:2698
+msgid "Folder doesn't exist"
+msgstr "Priečinok neexistuje"
+
+#: ../camel/camel-exchange-journal.c:436
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr ""
+
+#: ../camel/camel-exchange-journal.c:452
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Nie je možné pripojiť správu v režime bez pripojenia: %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:44
+msgid "Windows User_name:"
+msgstr ""
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:49
+msgid "Global Address List / Active Directory"
+msgstr ""
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:53
+msgid "Global Catalog server name:"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:55
+#, c-format
+msgid "Limit number of GAL responses: %s"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:58
+msgid "Options"
+msgstr "Voľby"
+
+#: ../camel/camel-exchange-provider.c:60
+#, c-format
+msgid "Password Expiry Warning period: %s"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "Automatically synchronize account locally"
+msgstr ""
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:65
+msgid "Apply filters to new messages in Inbox on this server"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:67
+msgid "Check new messages for Junk contents"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Only check for Junk messages in the Inbox folder"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:79
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:81
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr ""
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:97
+msgid "Secure Password"
+msgstr ""
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:100
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:108
+msgid "Plaintext Password"
+msgstr ""
+
+#: ../camel/camel-exchange-provider.c:110
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+
+#: ../camel/camel-exchange-store.c:303
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange server %s"
+
+#: ../camel/camel-exchange-store.c:306
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr ""
+
+#: ../camel/camel-exchange-store.c:347 ../storage/exchange-account.c:869
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%sZadajte heslo pre %s"
+
+#: ../camel/camel-exchange-store.c:376
+msgid "Evolution Exchange backend process"
+msgstr ""
+
+#: ../camel/camel-exchange-store.c:430
+#, c-format
+msgid "No such folder %s"
+msgstr "Taký priečinok neexistuje %s"
+
+#: ../camel/camel-exchange-store.c:499
+msgid "Cannot subscribe folder in offline mode."
+msgstr ""
+
+#: ../camel/camel-exchange-store.c:516
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr ""
+
+#: ../camel/camel-exchange-store.c:621
+msgid "Cannot get folder info in offline mode."
+msgstr ""
+
+#: ../camel/camel-exchange-store.c:692
+msgid "Cannot create folder in offline mode."
+msgstr "Nie je možné vytvoriť priečinok v režime bez pripojenia"
+
+#: ../camel/camel-exchange-store.c:719
+msgid "Cannot delete folder in offline mode."
+msgstr "Nie je možné odstrániť priečinok v režime bez pripojenia."
+
+#: ../camel/camel-exchange-store.c:735
+msgid "Cannot rename folder in offline mode."
+msgstr "Nie je možné premenovať priečinok v režime bez pripojenia."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr ""
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Nie je možné odoslať správu: jeden alebo viac neplatných príjemcov"
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr ""
+
+#: ../camel/camel-stub.c:134
+#, c-format
+msgid "Could not create socket: %s"
+msgstr ""
+
+#: ../camel/camel-stub.c:149
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "Nie je možné pripojenie k %s: %s"
+
+#: ../camel/camel-stub.c:179
+#, c-format
+msgid "Path too long: %s"
+msgstr "Cesta je príliš dlhá: %s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr ""
+
+#: ../camel/camel-stub.c:457
+#, c-format
+msgid "Lost connection to %s"
+msgstr "Stratené spojenie s %s"
+
+#: ../camel/camel-stub.c:461
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "Chyba pri komunikácii s %s: %s"
+
+#: ../lib/e2k-autoconfig.c:1471 ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1480 ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1490 ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1498 ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1511 ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1520
+#, c-format
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:\n"
+"%s"
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1536 ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1545 ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1567
+#, c-format
+msgid "Enter password for %s"
+msgstr "Zadajte heslo pre %s"
+
+#: ../lib/e2k-autoconfig.c:1568 ../storage/exchange-account.c:874
+msgid "Enter password"
+msgstr "Zadajte heslo"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+#: ../lib/e2k-security-descriptor.c:847
+msgid "Owner"
+msgstr "Vlastník"
+
+#: ../lib/e2k-security-descriptor.c:857
+msgid "Publishing Editor"
+msgstr ""
+
+#: ../lib/e2k-security-descriptor.c:865
+msgid "Editor"
+msgstr ""
+
+#: ../lib/e2k-security-descriptor.c:872
+msgid "Publishing Author"
+msgstr ""
+
+#: ../lib/e2k-security-descriptor.c:878
+msgid "Author"
+msgstr "Autor"
+
+#: ../lib/e2k-security-descriptor.c:883
+msgid "Non-editing Author"
+msgstr ""
+
+#: ../lib/e2k-security-descriptor.c:887
+msgid "Reviewer"
+msgstr ""
+
+#: ../lib/e2k-security-descriptor.c:889
+msgid "Contributor"
+msgstr "Prispievateľ"
+
+#: ../lib/e2k-security-descriptor.c:891
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Nič"
+
+#: ../lib/e2k-security-descriptor.c:906
+#: ../storage/exchange-delegates-user.c:144
+msgid "Custom"
+msgstr "Vlastné"
+
+#: ../lib/e2k-user-dialog.c:144
+msgid "Select User"
+msgstr "Vybrať používateľa"
+
+#: ../lib/e2k-user-dialog.c:182
+msgid "Addressbook..."
+msgstr "Adresár..."
+
+#: ../mail/mail-stub-exchange.c:257
+msgid "No such folder"
+msgstr "Taký priečinok neexistuje"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:280 ../mail/mail-stub-exchange.c:1375
+#: ../mail/mail-stub-exchange.c:2501 ../mail/mail-stub-exchange.c:2540
+#: ../mail/mail-stub-exchange.c:2606 ../mail/mail-stub-exchange.c:2650
+#: ../mail/mail-stub-exchange.c:2714 ../shell/e-storage.c:573
+#: ../storage/xc-commands.c:319
+msgid "Permission denied"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:578 ../mail/mail-stub-exchange.c:600
+msgid "Could not open folder: Permission denied"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:584 ../mail/mail-stub-exchange.c:705
+msgid "Could not open folder"
+msgstr "Nie je možné otvoriť priečinok"
+
+#: ../mail/mail-stub-exchange.c:744
+msgid "No such folder."
+msgstr "Taký priečinok neexistuje."
+
+#: ../mail/mail-stub-exchange.c:753
+msgid "Could not create folder."
+msgstr "Nie je možné vytvoriť priečinok."
+
+#: ../mail/mail-stub-exchange.c:831
+msgid "Could not open Deleted Items folder"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:1160 ../mail/mail-stub-exchange.c:1201
+msgid "Could not get new messages"
+msgstr "Nie je možné získať nové správy"
+
+#: ../mail/mail-stub-exchange.c:1371
+msgid "Could not empty Deleted Items folder"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:1448
+msgid "Could not append message; mailbox is over quota"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:1449
+msgid "Could not append message"
+msgstr "Nie je možné pridať správu"
+
+#: ../mail/mail-stub-exchange.c:1991
+msgid "No such message"
+msgstr "Taká správa neexistuje"
+
+#: ../mail/mail-stub-exchange.c:2044
+msgid "Message has been deleted"
+msgstr "Správa bola odstránená"
+
+#: ../mail/mail-stub-exchange.c:2046
+msgid "Error retrieving message"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:2088
+msgid "Mailbox does not support full-text searching"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:2186
+msgid "Unable to move/copy messages"
+msgstr "Nie je možné presunúť/kopírovať správy"
+
+#: ../mail/mail-stub-exchange.c:2416
+msgid "No mail submission URI for this mailbox"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:2452
+msgid "Server won't accept mail via Exchange transport"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:2454
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr "Váš účet nemá právo použiť <%s>\n"
+"ako adresu odosielateľa (From)."
+
+#: ../mail/mail-stub-exchange.c:2466
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:2470
+msgid "Could not send message"
+msgstr "Nie je možné odoslať správu"
+
+#: ../mail/mail-stub-exchange.c:2493 ../mail/mail-stub-exchange.c:2545
+#: ../mail/mail-stub-exchange.c:2610 ../mail/mail-stub-exchange.c:2655
+#: ../mail/mail-stub-exchange.c:2719 ../shell/e-storage.c:557
+#: ../storage/xc-commands.c:323
+msgid "Generic error"
+msgstr "Všeobecná chyba"
+
+#: ../mail/mail-stub-exchange.c:2497 ../storage/xc-commands.c:313
+msgid "Folder already exists"
+msgstr "Priečinok už existuje"
+
+#: ../shell/e-folder-creation-dialog.c:138
+#, c-format
+msgid ""
+"Cannot create the specified folder:\n"
+"%s"
+msgstr ""
+"Nie je možné vytvoriť zadaný priečinok:\n"
+"%s"
+
+#: ../shell/e-folder-creation-dialog.c:179
+#, c-format
+msgid "The specified folder name is not valid: %s"
+msgstr "Zadaný názov priečinka nie je platný: %s"
+
+#: ../shell/e-folder-creation-dialog.c:310
+msgid "Create New Folder"
+msgstr "Vytvoriť nový priečinok"
+
+#: ../shell/e-folder-creation-dialog.glade.h:1
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../shell/e-folder-creation-dialog.glade.h:2
+msgid "Folder _name:"
+msgstr "_Názov priečinka:"
+
+#: ../shell/e-folder-creation-dialog.glade.h:3
+msgid "Folder _type:"
+msgstr "_Typ priečinka:"
+
+#: ../shell/e-folder-creation-dialog.glade.h:4
+msgid "Specify where to create the folder:"
+msgstr "Zadajte, kde vytvoriť priečinok:"
+
+#: ../shell/e-folder-dnd-bridge.c:52
+#, c-format
+msgid ""
+"Cannot transfer folder:\n"
+"%s"
+msgstr ""
+"Nie je možné preniesť priečinok:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:62
+#, c-format
+msgid ""
+"Cannot delete folder:\n"
+"%s"
+msgstr ""
+"Nie je možné odstrániť priečinok:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:115
+#, c-format
+msgid "Really delete folder \"%s\"?"
+msgstr "Naozaj odstrániť priečinok \"%s\"?"
+
+#: ../shell/e-folder-misc-dialogs.c:129
+#, c-format
+msgid "Delete \"%s\""
+msgstr "Odstrániť \"%s\""
+
+#: ../shell/e-folder-misc-dialogs.c:154
+#, c-format
+msgid ""
+"Cannot rename folder:\n"
+"%s"
+msgstr ""
+"Nie je možné premenovať priečinok:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:188
+#, c-format
+msgid "Rename the \"%s\" folder to:"
+msgstr "Premenovať priečinok \"%s\" na:"
+
+#: ../shell/e-folder-misc-dialogs.c:191
+msgid "Rename Folder"
+msgstr "Premenovať priečinok"
+
+#: ../shell/e-folder-misc-dialogs.c:205
+#, c-format
+msgid "A folder named \"%s\" already exists. Please use a different name."
+msgstr "Priečinok s názvom \"%s\" už existuje. Prosím, použite iný názov."
+
+#. It would be nice to insensitivize the OK button appropriately
+#. instead of doing this, but unfortunately we can't do this for the
+#. Bonobo control.
+#: ../shell/e-folder-misc-dialogs.c:451
+msgid "Please select a user."
+msgstr ""
+
+#: ../shell/e-folder-misc-dialogs.c:553
+msgid "Opening Folder"
+msgstr "Otváranie priečinka"
+
+#: ../shell/e-folder-misc-dialogs.c:559
+#, c-format
+msgid "Opening Folder \"%s\""
+msgstr "Otváranie priečinka \"%s\""
+
+#: ../shell/e-folder-misc-dialogs.c:564
+#, c-format
+msgid "in \"%s\" ..."
+msgstr "v \"%s\" ..."
+
+#: ../shell/e-folder-misc-dialogs.c:631
+#, c-format
+msgid "Could not open other user's folder: %s."
+msgstr ""
+
+#: ../shell/e-folder-misc-dialogs.c:681
+msgid "Cannot find the specified other user's folder."
+msgstr ""
+
+#: ../shell/e-folder-misc-dialogs.c:713
+#, c-format
+msgid ""
+"Cannot unsubscribe from folder:\n"
+"%s"
+msgstr ""
+"Nie je možné odhlásenie z priečinka:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:766
+#, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "Naozaj sa odhlásiť z priečinka \"%s\"?"
+
+#: ../shell/e-folder-misc-dialogs.c:780
+#, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "Odhlásiť z \"%s\""
+
+#: ../shell/e-foreign-folder-dialog.glade.h:1
+msgid "Open Other User's Folder"
+msgstr "Otvoriť iný priečinok používateľa"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:2
+msgid "_Account:"
+msgstr "Úč_et:"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:3
+msgid "_Folder Name:"
+msgstr "Názov _priečinka:"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:4
+msgid "_User:"
+msgstr "_Používateľ:"
+
+#: ../shell/e-storage-set-view.etspec.h:1
+msgid "Checkbox"
+msgstr ""
+
+#: ../shell/e-storage-set-view.etspec.h:2
+msgid "Folder"
+msgstr "Priečinok"
+
+#: ../shell/e-storage.c:555
+msgid "No error"
+msgstr "Bez chyby"
+
+#: ../shell/e-storage.c:559
+msgid "A folder with the same name already exists"
+msgstr "Priečinok s rovnakým názvom už existuje"
+
+#: ../shell/e-storage.c:561
+msgid "The specified folder type is not valid"
+msgstr "Zadaný typ priečinka nie je platný"
+
+#: ../shell/e-storage.c:563
+msgid "I/O error"
+msgstr "V/V chyba"
+
+#: ../shell/e-storage.c:565
+msgid "Not enough space to create the folder"
+msgstr "Nie je dostatok miesta na vytvorenie priečinka"
+
+#: ../shell/e-storage.c:567
+msgid "The folder is not empty"
+msgstr "Priečinok nie je prázdny"
+
+#: ../shell/e-storage.c:569
+msgid "The specified folder was not found"
+msgstr "Zadaný priečinok nebol nájdený"
+
+#: ../shell/e-storage.c:571
+msgid "Function not implemented in this storage"
+msgstr ""
+
+#: ../shell/e-storage.c:575
+msgid "Operation not supported"
+msgstr "Operácia nie je podporovaná"
+
+#: ../shell/e-storage.c:577
+msgid "The specified type is not supported in this storage"
+msgstr ""
+
+#: ../shell/e-storage.c:579
+msgid "The specified folder cannot be modified or removed"
+msgstr "Zadaný priečinok nieje možné upraviť alebo odstrániť"
+
+#: ../shell/e-storage.c:581
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr ""
+
+#: ../shell/e-storage.c:583
+msgid "Cannot create a folder with that name"
+msgstr "Nie je možné vytvoriť priečinok s takým názvom"
+
+#: ../shell/e-storage.c:585
+msgid "This operation cannot be performed in off-line mode"
+msgstr "Táto operácia nemôže byť vykonaná v režime bez pripojenia"
+
+#: ../shell/e-storage.c:587 ../storage/exchange-account.c:1473
+msgid "Unknown error"
+msgstr "Neznáma chyba"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "*Control*F5"
+msgstr "*Ctrl*F5"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Addressbook Exchange backend"
+msgstr ""
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Evolution Calendar Exchange backend"
+msgstr ""
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:4
+msgid "Evolution Exchange Component"
+msgstr ""
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:5
+msgid "Exchange"
+msgstr "Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:6
+msgid "Ximian Connector for Exchange"
+msgstr ""
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:7
+msgid "_Exchange"
+msgstr "_Exchange"
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#: ../storage/exchange-account.c:584
+#, c-format
+msgid "%s's Folders"
+msgstr ""
+
+#. email id is not proper, we return instead of trying nt_domain
+#: ../storage/exchange-account.c:1069
+msgid "Cannot change password due to configuration problems"
+msgstr "Nie je možné zmeniť heslo kvôli problémom v konfigurácii"
+
+#: ../storage/exchange-account.c:1092
+msgid ""
+"Server rejected password because it is too weak.\n"
+"Try again with a different password."
+msgstr ""
+
+#: ../storage/exchange-account.c:1097
+msgid "Could not change password"
+msgstr "Nie je možné zmeniť heslo"
+
+#: ../storage/exchange-account.c:1190
+msgid "Personal Folders"
+msgstr "Osobné priečinky"
+
+#: ../storage/exchange-account.c:1205
+msgid "Favorite Public Folders"
+msgstr "Obľubené verejné priečinky"
+
+#. i18n: Outlookism
+#: ../storage/exchange-account.c:1222
+msgid "All Public Folders"
+msgstr "Všetky verejné priečinky"
+
+#. i18n: Outlookism
+#: ../storage/exchange-account.c:1236
+msgid "Global Address List"
+msgstr ""
+
+#: ../storage/exchange-account.c:1326
+msgid "Exchange Account is offline. Cannot display folders\n"
+msgstr ""
+
+#: ../storage/exchange-account.c:1384
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+
+#: ../storage/exchange-account.c:1389
+msgid ""
+"Could not authenticate to server.\n"
+"\n"
+"This probably means that your server requires you\n"
+"to specify the Windows domain name as part of your\n"
+"username (eg, \"DOMAIN\\user\").\n"
+"\n"
+"Or you might have just typed your password wrong.\n"
+"\n"
+msgstr ""
+
+#: ../storage/exchange-account.c:1431
+#, c-format
+msgid "Mailbox for %s is not on this server."
+msgstr "Poštový priečinok pre %s nie je na tomto serveri."
+
+#: ../storage/exchange-account.c:1436
+#, c-format
+msgid ""
+"The server '%s' is running Exchange 5.5 and is\n"
+"therefore not compatible with Ximian Connector"
+msgstr ""
+
+#: ../storage/exchange-account.c:1443
+#, c-format
+msgid ""
+"Could not find Exchange Web Storage System at %s.\n"
+"If OWA is running on a different path, you must specify that in the\n"
+"account configuration dialog."
+msgstr ""
+
+#: ../storage/exchange-account.c:1451
+#, c-format
+msgid "No mailbox for user %s on %s.\n"
+msgstr ""
+
+#: ../storage/exchange-account.c:1457 ../storage/exchange-account.c:1463
+#: ../storage/exchange-account.c:1471
+#, c-format
+msgid "Could not connect to server %s: %s"
+msgstr "Nie je možné pripojiť sa na server %s: %s"
+
+#: ../storage/exchange-account.c:1459
+msgid "Could not resolve hostname"
+msgstr ""
+
+#: ../storage/exchange-account.c:1465
+msgid "Network error"
+msgstr "Chyba siete"
+
+#: ../storage/exchange-account.c:1529
+#, c-format
+msgid ""
+"You have exceeded your quota of %d %s for storing mails on this server. Your "
+"current usage is : %.0f %s."
+msgstr ""
+
+#: ../storage/exchange-account.c:1532
+msgid "You will not be able to either send or receive mails now\n"
+msgstr ""
+
+#: ../storage/exchange-account.c:1535
+msgid ""
+"You will not be able to send mails till you clear up some space by deleting "
+"some mails.\n"
+msgstr ""
+
+#: ../storage/exchange-account.c:1538
+msgid "Try to clear up some space by deleting some mails.\n"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Konfigurácia zlyhala"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Hotovo"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "Adresa elektronickej pošty:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "Celé meno:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "GC server:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "Heslo:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "Zapamätať toto heslo"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "Meno používateľa"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Vitajte"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr ""
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Zmeniť heslo"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Potvrdiť heslo:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "Aktuálne heslo:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "Nové heslo:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+
+#: ../storage/exchange-delegates-user.c:191
+#: ../storage/exchange-permissions-dialog.c:179
+#, c-format
+msgid "Permissions for %s"
+msgstr "Práva pre %s"
+
+#: ../storage/exchange-delegates.c:221
+msgid ""
+"No Global Catalog server configured for this account.\n"
+"Unable to edit delegates."
+msgstr ""
+
+#: ../storage/exchange-delegates.c:260
+msgid ""
+"Could not read folder permissions.\n"
+"Unable to edit delegates."
+msgstr ""
+
+#: ../storage/exchange-delegates.c:267
+msgid ""
+"Could not determine folder permissions for delegates.\n"
+"Unable to edit delegates."
+msgstr ""
+
+#: ../storage/exchange-delegates.c:419
+msgid "Delegate To:"
+msgstr "Delegovať na:"
+
+#: ../storage/exchange-delegates.c:419
+msgid "Delegate To"
+msgstr "Delegovať na"
+
+#: ../storage/exchange-delegates.c:435
+#, c-format
+msgid "Could not make %s a delegate"
+msgstr ""
+
+#: ../storage/exchange-delegates.c:445
+msgid "You cannot make yourself your own delegate"
+msgstr ""
+
+#: ../storage/exchange-delegates.c:454
+#, c-format
+msgid "%s is already a delegate"
+msgstr ""
+
+#: ../storage/exchange-delegates.c:563
+#, c-format
+msgid "Remove the delegate %s?"
+msgstr "Odstrániť delegovanie %s?"
+
+#: ../storage/exchange-delegates.c:680
+msgid "Could not access Active Directory"
+msgstr ""
+
+#: ../storage/exchange-delegates.c:695
+msgid "Could not find self in Active Directory"
+msgstr ""
+
+#: ../storage/exchange-delegates.c:708
+#, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr ""
+
+#: ../storage/exchange-delegates.c:720
+#, c-format
+msgid "Could not remove delegate %s"
+msgstr "Nie je možné odstrániť delegovanie %s"
+
+#: ../storage/exchange-delegates.c:780
+msgid "Could not update list of delegates."
+msgstr "Nie je možné aktualizovať zoznam delegovaní."
+
+#: ../storage/exchange-delegates.c:798
+#, c-format
+msgid "Could not add delegate %s"
+msgstr "Nie je možné pridať delegovanie %s"
+
+#: ../storage/exchange-delegates.c:814
+#, c-format
+msgid ""
+"Failed to update delegates:\n"
+"%s"
+msgstr ""
+"Aktualizácia delegovaní zlyhala:\n"
+"%s"
+
+#: ../storage/exchange-delegates.c:938
+#: ../storage/exchange-permissions-dialog.c:706
+msgid "Name"
+msgstr "Názov"
+
+#: ../storage/exchange-delegates.c:967
+msgid "Error reading delegates list."
+msgstr "Chyba pri načítavaní zoznamu delegovaní."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Autor (čítať, vatvárať)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "K_alendár:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "Ko_ntakty:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Delegovať práva"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Delegovania"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr ""
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "Práva pre"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr ""
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr ""
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_Upraviť"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_Doručená pošta:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "Ú_lohy:"
+
+#: ../storage/exchange-folder-size.c:322
+msgid "Folder Name"
+msgstr "Názov priečinka"
+
+#: ../storage/exchange-folder-size.c:326
+msgid "Folder Size"
+msgstr "Veľkosť priečinka"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr ""
+
+#: ../storage/exchange-hierarchy-foreign.c:250
+msgid "Calendar"
+msgstr "Kalendár"
+
+#: ../storage/exchange-hierarchy-foreign.c:251
+msgid "Contacts"
+msgstr "Kontakty"
+
+#: ../storage/exchange-hierarchy-foreign.c:252
+msgid "Deleted Items"
+msgstr "Odstránené položky"
+
+#: ../storage/exchange-hierarchy-foreign.c:253
+msgid "Drafts"
+msgstr "Koncepty"
+
+#: ../storage/exchange-hierarchy-foreign.c:254
+msgid "Inbox"
+msgstr "Doručená pošta"
+
+#: ../storage/exchange-hierarchy-foreign.c:255
+msgid "Journal"
+msgstr "Žurnál"
+
+#: ../storage/exchange-hierarchy-foreign.c:256
+msgid "Notes"
+msgstr "Poznámky"
+
+#: ../storage/exchange-hierarchy-foreign.c:257
+msgid "Outbox"
+msgstr "Pošta na odoslanie"
+
+#: ../storage/exchange-hierarchy-foreign.c:258
+msgid "Sent Items"
+msgstr "Odoslané položky"
+
+#: ../storage/exchange-hierarchy-foreign.c:259
+msgid "Tasks"
+msgstr "Úlohy"
+
+#: ../storage/exchange-migrate.c:57
+msgid "Migrating Exchange Folders..."
+msgstr ""
+
+#: ../storage/exchange-migrate.c:65
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+
+#: ../storage/exchange-migrate.c:98
+#, c-format
+msgid ""
+"Warning: Evolution Could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+
+#: ../storage/exchange-migrate.c:129
+#, c-format
+msgid "Migrating `%s':"
+msgstr ""
+
+#: ../storage/exchange-oof.c:199 ../storage/exchange-oof.c:406
+msgid "Could not update out-of-office state"
+msgstr ""
+
+#: ../storage/exchange-oof.c:424
+msgid "Could not read out-of-office state"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Stav:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr ""
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Áno, zmeniť stav"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr ""
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "Vášmu heslu vyprší platnosť o 7 dní..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Zmeniť heslo"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_tlačidlo"
+
+#: ../storage/exchange-permissions-dialog.c:222
+msgid "Could not read folder permissions"
+msgstr "Nie je možnéprečitať práva priečinka"
+
+#: ../storage/exchange-permissions-dialog.c:264
+msgid "Could not update folder permissions."
+msgstr "Nie je možné aktualizovať práva pričinka."
+
+#: ../storage/exchange-permissions-dialog.c:293
+#, c-format
+msgid "Could not update folder permissions. %s"
+msgstr "Nie je možné aktualizovať práva priečinka. %s"
+
+#: ../storage/exchange-permissions-dialog.c:295
+msgid "(Permission denied.)"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.c:396
+msgid ""
+"Unable to add user to access control list:\n"
+"No Global Catalog server is configured for this account."
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.c:402
+msgid "Add User:"
+msgstr "Pridať používateľa:"
+
+#: ../storage/exchange-permissions-dialog.c:402
+msgid "Add User"
+msgstr "Pridať používateľa"
+
+#: ../storage/exchange-permissions-dialog.c:421
+#, c-format
+msgid "No such user %s"
+msgstr "Používateľ %s neexistuje"
+
+#: ../storage/exchange-permissions-dialog.c:425
+#, c-format
+msgid "%s cannot be added to an access control list"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.c:430
+#, c-format
+msgid "Unknown error looking up %s"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.c:447
+#, c-format
+msgid "%s is already in the list"
+msgstr "%s je už na zozname"
+
+#: ../storage/exchange-permissions-dialog.c:710
+msgid "Role"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>Práva</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Nie je možné odstrániť"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Nie je možné upraviť"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Vytvoriť položky"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Vytvoriť podpriečinky"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Odstrániť vlastné položky"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Upraviť vlastné položky"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Vlastník priečinka"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr ""
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "Pripájanie..."
+
+#: ../storage/main.c:165
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr ""
+
+#: ../storage/xc-backend-view.c:299
+msgid "Account Name"
+msgstr "Názov účtu"
+
+#: ../storage/xc-commands.c:316
+msgid "Folder does not exist"
+msgstr "Priečinok neexistuje"
+
+#: ../storage/xc-commands.c:343
+#, c-format
+msgid "Could not add favorite: %s"
+msgstr "Nie je možné pridať obľúbené: %s"
+
+#: ../storage/xc-commands.c:359
+#, c-format
+msgid "Could not remove favorite: %s"
+msgstr "Nie je možné odstrániť obľúbené: %s"
+
+#.
+#. FIXME: See 62440
+#. E_POPUP_ITEM (N_("_Move Folder..."),
+#. G_CALLBACK (do_move_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#. E_POPUP_ITEM (N_("_Copy Folder..."),
+#. G_CALLBACK (do_copy_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#.
+#: ../storage/xc-commands.c:385
+msgid "_Rename Folder..."
+msgstr "_Premenovať priečinok..."
+
+#: ../storage/xc-commands.c:391
+msgid "_New Folder..."
+msgstr "_Nový priečinok..."
+
+#: ../storage/xc-commands.c:394
+msgid "_Delete Folder"
+msgstr "_Odstrániť priečinok"
+
+#: ../storage/xc-commands.c:399
+msgid "_Add Other User's Folder..."
+msgstr "_Pridať iný priečinok používateľa..."
+
+#: ../storage/xc-commands.c:402
+msgid "_Remove Other User's Folder"
+msgstr "_Odstrániť iný priečinok používateľa"
+
+#: ../storage/xc-commands.c:408
+msgid "Add to _Favorites"
+msgstr "Pridať k _obľubeným"
+
+#: ../storage/xc-commands.c:412
+msgid "Remove from Fa_vorites"
+msgstr "Odstrániť z o_bľúbených"
+
+#.
+#. E_POPUP_ITEM (N_("_Permissions..."),
+#. G_CALLBACK (do_permissions),
+#. XC_FOLDER_COMMAND_MASK_PERMISSIONS),
+#.
+#: ../storage/xc-commands.c:423
+msgid "_Show Folder Sizes"
+msgstr "_Zobraziť veľkosti priečinkov"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "_Veľkosť priečinka"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Získať veľkosť osobných priečinkov"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Zmeniť heslo pre Exchange..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "Asistent _delegovania"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr ""

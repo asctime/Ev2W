@@ -1,0 +1,154 @@
+/*
+ * e-shell-window.h
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with the program; if not, see <http://www.gnu.org/licenses/>
+ *
+ *
+ * Copyright (C) 1999-2008 Novell, Inc. (www.novell.com)
+ *
+ */
+
+#ifndef E_SHELL_WINDOW_H
+#define E_SHELL_WINDOW_H
+
+#include <shell/e-shell.h>
+#include <misc/e-focus-tracker.h>
+
+/* Standard GObject macros */
+#define E_TYPE_SHELL_WINDOW \
+	(e_shell_window_get_type ())
+#define E_SHELL_WINDOW(obj) \
+	(G_TYPE_CHECK_INSTANCE_CAST \
+	((obj), E_TYPE_SHELL_WINDOW, EShellWindow))
+#define E_SHELL_WINDOW_CLASS(cls) \
+	(G_TYPE_CHECK_CLASS_CAST \
+	((cls), E_TYPE_SHELL_WINDOW, EShellWindowClass))
+#define E_IS_SHELL_WINDOW(obj) \
+	(G_TYPE_CHECK_INSTANCE_TYPE \
+	((obj), E_TYPE_SHELL_WINDOW))
+#define E_IS_SHELL_WINDOW_CLASS(cls) \
+	(G_TYPE_CHECK_CLASS_TYPE \
+	((obj), E_TYPE_SHELL_WINDOW))
+#define E_SHELL_WINDOW_GET_CLASS(obj) \
+	(G_TYPE_INSTANCE_GET_CLASS \
+	((obj), E_TYPE_SHELL_WINDOW, EShellWindowClass))
+
+G_BEGIN_DECLS
+
+/* Avoid including <e-shell-view.h>, because it includes us! */
+struct _EShellView;
+
+typedef struct _EShellWindow EShellWindow;
+typedef struct _EShellWindowClass EShellWindowClass;
+typedef struct _EShellWindowPrivate EShellWindowPrivate;
+
+/**
+ * EShellWindow:
+ *
+ * Contains only private data that should be read and manipulated using the
+ * functions below.
+ **/
+struct _EShellWindow {
+	GtkWindow parent;
+	EShellWindowPrivate *priv;
+};
+
+struct _EShellWindowClass {
+	GtkWindowClass parent_class;
+
+	/* Signals */
+	void		(*shell_view_created)	(EShellWindow *shell_window,
+						 struct _EShellView *shell_view);
+
+	/* These are all protected methods.  Not for public use. */
+	GtkWidget *	(*construct_menubar)	(EShellWindow *shell_window);
+	GtkWidget *	(*construct_toolbar)	(EShellWindow *shell_window);
+	GtkWidget *	(*construct_sidebar)	(EShellWindow *shell_window);
+	GtkWidget *	(*construct_content)	(EShellWindow *shell_window);
+	GtkWidget *	(*construct_taskbar)	(EShellWindow *shell_window);
+	struct _EShellView *
+			(*create_shell_view)	(EShellWindow *shell_window,
+						 const gchar *view_name);
+};
+
+GType		e_shell_window_get_type		(void);
+GtkWidget *	e_shell_window_new		(EShell *shell,
+						 gboolean safe_mode,
+						 const gchar *geometry);
+EShell *	e_shell_window_get_shell	(EShellWindow *shell_window);
+struct _EShellView *
+		e_shell_window_get_shell_view	(EShellWindow *shell_window,
+						 const gchar *view_name);
+struct _EShellView *
+		e_shell_window_peek_shell_view	(EShellWindow *shell_window,
+						 const gchar *view_name);
+GtkAction *	e_shell_window_get_shell_view_action
+						(EShellWindow *shell_window,
+						 const gchar *view_name);
+EFocusTracker *	e_shell_window_get_focus_tracker
+						(EShellWindow *shell_window);
+GtkUIManager *	e_shell_window_get_ui_manager	(EShellWindow *shell_window);
+GtkAction *	e_shell_window_get_action	(EShellWindow *shell_window,
+						 const gchar *action_name);
+GtkActionGroup *e_shell_window_get_action_group	(EShellWindow *shell_window,
+						 const gchar *group_name);
+GtkWidget *	e_shell_window_get_managed_widget
+						(EShellWindow *shell_window,
+						 const gchar *widget_path);
+const gchar *	e_shell_window_get_active_view	(EShellWindow *shell_window);
+void		e_shell_window_set_active_view	(EShellWindow *shell_window,
+						 const gchar *view_name);
+gboolean	e_shell_window_get_safe_mode	(EShellWindow *shell_window);
+void		e_shell_window_set_safe_mode	(EShellWindow *shell_window,
+						 gboolean safe_mode);
+void		e_shell_window_add_action_group (EShellWindow *shell_window,
+						 const gchar *group_name);
+gboolean	e_shell_window_get_sidebar_visible
+						(EShellWindow *shell_window);
+void		e_shell_window_set_sidebar_visible
+						(EShellWindow *shell_window,
+						 gboolean sidebar_visible);
+gboolean	e_shell_window_get_switcher_visible
+						(EShellWindow *shell_window);
+void		e_shell_window_set_switcher_visible
+						(EShellWindow *shell_window,
+						 gboolean switcher_visible);
+gboolean	e_shell_window_get_taskbar_visible
+						(EShellWindow *shell_window);
+void		e_shell_window_set_taskbar_visible
+						(EShellWindow *shell_window,
+						 gboolean taskbar_visible);
+gboolean	e_shell_window_get_toolbar_visible
+						(EShellWindow *shell_window);
+void		e_shell_window_set_toolbar_visible
+						(EShellWindow *shell_window,
+						 gboolean toolbar_visible);
+
+/* These should be called from the shell backend's window_created() handler. */
+
+void		e_shell_window_register_new_item_actions
+						(EShellWindow *shell_window,
+						 const gchar *backend_name,
+						 GtkActionEntry *entries,
+						 guint n_entries);
+void		e_shell_window_register_new_source_actions
+						(EShellWindow *shell_window,
+						 const gchar *backend_name,
+						 GtkActionEntry *entries,
+						 guint n_entries);
+GtkWidget *	e_shell_window_get_menu_bar_box (EShellWindow *shell_window);
+
+G_END_DECLS
+
+#endif /* E_SHELL_WINDOW_H */

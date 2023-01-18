@@ -1,0 +1,15 @@
+prefix=/MSYS2/mingw64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=/MSYS2/mingw64/share
+
+privincludedir=${includedir}/evolution-data-server-2.32
+
+Name: libedataserver
+Description: Utility library for Evolution Data Server
+Version: 2.32.3
+Requires: gio-2.0 libxml-2.0 gconf-2.0 libsoup-2.4
+Libs: -L${libdir} -ledataserver-1.2
+Cflags: -I${privincludedir}

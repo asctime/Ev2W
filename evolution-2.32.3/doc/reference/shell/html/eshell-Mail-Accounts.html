@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mail Accounts</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="ch02.html" title="Basic Utility Functions">
+<link rel="next" href="eshell-User-Alert-Handling.html" title="User Alert Handling">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-User-Alert-Handling.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Mail-Accounts.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Mail-Accounts.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Mail Accounts">
+<a name="eshell-Mail-Accounts"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Mail-Accounts.top_of_page"></a>Mail Accounts</span></h2>
+<p>Mail Accounts</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Mail-Accounts.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;e-util/e-account-utils.h&gt;
+
+<a href="/usr/share/gtk-doc/html/libedataserver/EAccountList.html"><span class="returnvalue">EAccountList</span></a> *      <a class="link" href="eshell-Mail-Accounts.html#e-get-account-list" title="e_get_account_list ()">e_get_account_list</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="returnvalue">EAccount</span></a> *          <a class="link" href="eshell-Mail-Accounts.html#e-get-default-account" title="e_get_default_account ()">e_get_default_account</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Mail-Accounts.html#e-set-default-account" title="e_set_default_account ()">e_set_default_account</a>               (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> *account</code></em>);
+<a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="returnvalue">EAccount</span></a> *          <a class="link" href="eshell-Mail-Accounts.html#e-get-account-by-name" title="e_get_account_by_name ()">e_get_account_by_name</a>               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="returnvalue">EAccount</span></a> *          <a class="link" href="eshell-Mail-Accounts.html#e-get-account-by-uid" title="e_get_account_by_uid ()">e_get_account_by_uid</a>                (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uid</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Mail-Accounts.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Mail-Accounts.details"></a><h2>Details</h2>
+<div class="refsect2" title="e_get_account_list ()">
+<a name="e-get-account-list"></a><h3>e_get_account_list ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/libedataserver/EAccountList.html"><span class="returnvalue">EAccountList</span></a> *      e_get_account_list                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns the global <a href="/usr/share/gtk-doc/html/libedataserver/EAccountList.html"><span class="type">EAccountList</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the global <a href="/usr/share/gtk-doc/html/libedataserver/EAccountList.html"><span class="type">EAccountList</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_get_default_account ()">
+<a name="e-get-default-account"></a><h3>e_get_default_account ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="returnvalue">EAccount</span></a> *          e_get_default_account               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns the <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> marked as the default mail account.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the default <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_set_default_account ()">
+<a name="e-set-default-account"></a><h3>e_set_default_account ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_set_default_account               (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> *account</code></em>);</pre>
+<p>
+Marks <em class="parameter"><code>account</code></em> as the default mail account.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>account</code></em> :</span></p></td>
+<td>an <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_get_account_by_name ()">
+<a name="e-get-account-by-name"></a><h3>e_get_account_by_name ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="returnvalue">EAccount</span></a> *          e_get_account_by_name               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Returns the <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> with the given name, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such
+account exists.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>a mail account name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> having the given account name, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_get_account_by_uid ()">
+<a name="e-get-account-by-uid"></a><h3>e_get_account_by_uid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="returnvalue">EAccount</span></a> *          e_get_account_by_uid                (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uid</code></em>);</pre>
+<p>
+Returns the <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> with the given unique ID, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such
+account exists.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uid</code></em> :</span></p></td>
+<td>a mail account UID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an <a href="/usr/share/gtk-doc/html/libedataserver/EAccount.html"><span class="type">EAccount</span></a> having the given unique ID, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

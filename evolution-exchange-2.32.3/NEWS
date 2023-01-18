@@ -1,0 +1,1899 @@
+Evolution Exchange 2.32.3 2011-04-21
+------------------------------------
+
+Freeze the minimum evo/eds requirement at 2.32.2.
+
+There may be more Evolution/Evolution-Data-Server 2.32 releases to come,
+and we don't want to have to re-release Evolution-Exchange just to bump
+the version requirement each time.
+
+
+Evolution Exchange 2.32.2 2011-02-07
+------------------------------------
+
+Bug Fixes:
+	Bug 625570 - Do not free ExchangeFolder on error (Milan Crha)
+	Bug 634573 - Crash when importing ics file (Milan Crha)
+	Bug 638241 - Renaming folder always fails (Milan Crha)
+	Bug 639123 - Incorrect unref of ExchangeAccount in
+	             EBookBackendExchange (Milan Crha)
+
+
+Evolution Exchange 2.32.1 2010-11-15
+-------------------------------------
+
+Bug Fixes:
+	Bug #632669 - Crash when path for attachments doesn't exist (Milan Crha)
+	Bug #631034 - Message cache keeps zero-sized mails on cancel (Milan Crha)
+	Bug #629603 - Allow calendar refresh on demand (Milan Crha)
+
+Miscellaneous Fixes:
+	Can read out of bounds in exchange_folder_get_message_sync (Milan Crha)
+
+Translations:
+	Gil Forcada (ca)
+
+Evolution Exchange 2.31.92 2010-09-13
+-------------------------------------
+
+Bug Fixes:
+	Bug 629393 - git.mk breaks parallel builds (Matthew Barnes)
+	Bug #629118 - Translation not working in "Add Account" dialog (Milan Crha)
+	Bug #624146 - Runtime warnings while connecting (Milan Crha)
+
+Miscellaneous Fixes:
+	Use --disable-gtk3 in DISTCHECK_CONFIGURE_FLAGS. (Matthew Barnes)
+	Properly report failure in CamelExchangeFolder::sync (Milan Crha)
+
+Translations:
+	Changwoo Ryu (ko)
+	Luca Ferretti (it)
+	Petr Kovar (cs)
+	Antonio Fernandes C. Neto (pt)
+	Duarte Loreto (pt)
+	Bruce Cowan (en_GB)
+	drtv (ta)
+	Michael Kotsarinis (el)
+	Dirgita (id)
+
+Evolution Exchange 2.31.91 2010-08-29
+-------------------------------------
+
+Translations:
+	Ask H. Larsen (da)
+	Ivar Smolin (et)
+	Gabor Kelemen (hu)
+	Daniel Nylander (sv)
+
+Evolution Exchange 2.31.90 2010-08-16
+-------------------------------------
+
+Bug Fixes:
+	Bug 626090 - Only set -fno-strict-aliasing for GCC (Matthew Barnes)
+
+Miscellaneous Fixes:
+	Baseversion 3.0 -> 2.32 as in evolution and evolution-data-server (Fridrich Štrba)
+
+Translations:
+	Claude Paroz (fr)
+	Kjartan Maraas (nn)
+
+Evolution Exchange 2.31.6 2010-08-02
+------------------------------------
+
+Other Changes:
+	* Adapt to removal of deprecated ECalBackend::set_default_timezone
+	  (Milan Crha)
+	* Adapt to libedata-book and libedata-cal API changes. (Matthew Barnes)
+	* Use the new base directory functions in E-D-S. (Matthew Barnes)
+	* Prefer gio-2.0 when requiring GLib libraries. (Matthew Barnes)
+
+Translations:
+	Mario Blättermann (de)
+	Fran Diéguez (gl)
+	Yaron Shahrabani (he)
+	Kjartan Maraas (nb)
+	Matej Urbančič (sl)
+	Eleanor Chen (zh_CN)
+	Aron Xu (zh_CN)
+	Chao-Hsiung Liao (zh_HK)
+
+Evolution Exchange 2.31.5 2010-07-12
+------------------------------------
+
+Bug Fixes:
+	Bug 623204 - Be able to report detailed errors from backends
+	             (Milan Crha)
+
+Other Changes:
+	* Migrate from CamelException to GError. (Matthew Barnes)
+
+Translations:
+	Jorge González (es)
+	Kjartan Maraas (nb)
+	Matej Urbancic (sl)
+
+Evolution Exchange 2.31.4 2010-06-29
+------------------------------------
+
+Bug Fixes:
+	Bug #621167 - NULL tzid passed in internal_get_timezone (Milan Crha)
+	Bug #620815 - Memory leaks with Evolution (Milan Crha)
+
+Miscellaneous Fixes:
+	Adapt to gtk3 changes (Chenthill Palanisamy, Matthew Barnes)
+	One day off in addressbook's populate_date function (Charles Bovy)
+	Add missing LDAP_LIBS to addressbook (Milan Crha)
+
+Translations:
+	Yaron Shahrbani (he)
+	Yaron Shahrabani (he)
+	Kjartan Maraas (nn)
+
+Evolution Exchange 2.31.3 2010-06-07
+------------------------------------
+Bug Fixes:
+	Bug #478840 - Exchange folder size report needs a total (Milan Crha)
+
+Miscellaneous Fixes:
+	Adapt to Camel API changes. (Matthew Barnes)
+
+Translations:
+	Jorge Gonz¿¿lez (es)
+	Fran Di¿¿guez (gl)
+	Ivar Smolin (et)
+
+Evolution Exchange 2.31.2 2010-05-24
+------------------------------------
+
+Bug Fixes:
+	Bug #337479 - Evolution forgets password on any error (Milan Crha)
+	Bug #617510 - Displays source of a message sent by RoadSync 5
+	              (Milan Crha)
+	Bug #617989 - Folder -> Subscription doesn't show sub folders
+	              (Milan Crha)
+
+Translations:
+	Thomas Thurman (en@shaw)
+	Jorge GonzÃ¡lez (es)
+
+Evolution Exchange 2.29.92 2010-03-08
+-------------------------------------
+
+Bug Fixes:
+	Bug #616913 - Unnecessary check producing false critical warnings (Milan Crha)
+	Bug #617248 - Crash after folder list fetch (Milan Crha)
+	Bug #403903 - Appointments don't display in Windows Mobile 5 (Peter)
+	Bug #545505 - Properly free unused message infos periodically (Milan Crha)
+	Bug #615714 â Miscellaneous string fixes (Philip Withnall)
+	Bug #608766 - Replace pthread with GLib's GThread (Milan Crha)
+	Bug #611188 - Doesn't support plural forms properly (needs ngettext) (Milan Crha)
+	Bug #458615 - Not possible to translate "Delegate Permissions" properly (Suman Manjunath)
+	Bug #417413 - "Sensitivity" needs translator-comment (Milan Crha)
+	Bug #613409 - Missing rpath for calendar and address book plugins (Josselin Mouette)
+
+Miscellaneous Fixes:
+	Adapt to Camel API changes. (Matthew Barnes)
+	[win32] Pass the correct pointer to ber_flatten (Fridrich Å trba)
+	Add LDAP build flags to the EPlugin. (Matthew Barnes)
+	Adapt to Camel API changes. (Matthew Barnes)
+	Bump gtk+ version requirement to 2.20.0 (Milan Crha)
+	Fix GSEAL compliance issues. (Matthew Barnes)
+	Add GSEAL_ENABLE to AS_COMPILER_FLAGS. (Matthew Barnes)
+	Adapt to ESexp header changes. (Matthew Barnes)
+	Only #include Camel's top-level header. (Matthew Barnes)
+
+Translations:
+	Mario BlÃ¤ttermann (de)
+	Valencian translation  (ca)
+	Francisco DiÃ©guez (gl)
+	Jorge GonzÃ¡lez (es)
+	Bruno Brouard (fr)
+	Philip Withnall (en_GB)
+	Wadim Dziedzic (pl)
+	Fran DiÃ©guez (gl)
+	Kjartan Maraas (nn)
+	Maxim V. Dziumanenko (uk)
+	Jordi Serratosa (ca)
+
+Evolution Exchange 2.29.92 2010-03-08
+-------------------------------------
+
+Bug Fixes:
+	#601787 - Double free in destroy_oof_data (Milan Crha)
+	#602800 - Missing menu entries (mailer part) (Milan Crha)
+
+Other Changes:
+	Add also authentication section to account wizard (Milan Crha)
+	Work around recent GTK+ deprecations. (Matthew Barnes)
+
+Translations:
+	Alexander Shopov (bg)
+	Mario BlÃ¤ttermann (de)
+	Claude Paroz (fr)
+	Bruce Cowan (en_GB)
+	Jorge GonzÃ¡lez (es)
+	Inaki Larranaga Murgoitio (eu)
+	Fran DiÃ©guez (gl)
+	Kjartan Maraas (nb)
+	Gilfran Ribeiro (pt_BR)
+	Leonid Kanter (ru)
+	vasudeven (ta)
+	Chao-Hsiung Liao (zh_HK)
+
+Evolution Exchange 2.29.91 2010-02-22
+-------------------------------------
+
+Bug Fixes:
+	#608257 - Minor string fixes. (Bruce Cowan)
+	#610426 - Unsubscribing other user's folder throws an error (Milan Crha)
+	#597509 - Subscribe to other user's mailbox doesn't work (Milan Crha)
+	#602800 - Missing menu entries (Milan Crha)
+	#597507 - Permission dialog doesn't pop up. (Bharath Acharya)
+
+Translations:
+	Krasimir Chonov (bg)
+	Petr Kovar (cs)
+	Lucian Adrian Grijincu (ro)
+	Mario BlÃ¤ttermann (de)
+	Fran DiÃ©guez (gl)
+	Kjartan Maraas (nb)
+
+Evolution Exchange 2.29.90 2010-02-08
+-------------------------------------
+
+Bug Fixes:
+	(None)
+
+Other Changes:
+	Disable strict aliasing optimization. (Matthew Barnes)
+
+Translations:
+	Jamil Ahmed (bn)
+
+Evolution Exchange 2.29.6 2010-01-25
+------------------------------------
+
+Translations:
+	Chao-Hsiung Liao (zh_HK) (zh_TW)
+	Kjartan Maraas (nb)
+	Daniel Nylander (sv)
+
+Evolution Exchange 2.29.5 2010-01-11
+------------------------------------
+
+Bug Fixes:
+	#600521 - Remove trailing spaces from particular account fields
+	          (Milan Crha)
+	#604143 - cache support should be optional just like in 2.28 (Wang Xin)
+	#605111 - evolution-exchange requires evolution-mail, evolution-shell
+	          (Wang Xin)
+
+Translations:
+	Jiri Eischmann (cs)
+	Kjartan Maraas (nb)
+	Aron Xu (zh_CN)
+
+Evolution Exchange 2.29.4 2009-12-21
+------------------------------------
+
+Bug Fixes:
+	
+Calendar:
+	#604255 - e-calendar-factory crashed on start up
+	#603437 - Fix for valgrind report on e-calendar-factory (Milan Crha)
+	#603567 -  e-calendar-factory crashes if i try to create any appointment (Chenthill Palanisamy)
+	#602945 - Avoid code duplication with timezone fetching from backends (Milan Crha)
+Misc:
+	#604544 - Try Exchange fallback authentication only once (Milan Crha)
+	#600397 - Delete option enabled for undeletable ESource (Milan Crha)
+	#600778 - Harmonize --enable-e2k-debug help string with the option (Milan Crha)
+	#591938 - Update translator's comments (Milan Crha)
+	#603457 - evolution-exchange for e_error -> e_alert changes in evolution (Jonathon Jongsma)
+
+Translations:
+	Lucian Adrian Grijincu (ro)
+	Kjartan Maraas (nb)
+
+Evolution Exchange 2.29.3 2009-11-30
+------------------------------------
+
+Misc:
+	Fix a parsing issue with GETTEXT_PACKAGE. (Matthew Barnes)
+
+Translations:
+	Claude Paroz (fr)
+
+
+Evolution Exchange 2.29.2 2009-11-16
+------------------------------------
+
+Bug Fixes:
+	Bug 601218 - Accepted meeting doesn't show attachments in calendar
+	view (Milan Crha)
+	Bug 599654 - evolution crashes : move from offline to online state
+	(Milan Crha)
+
+Translations:
+	Thomas Thurman (en@shaw)
+	Jorge GonzÃ¡lez (es)
+	Matej UrbanÄiÄ (sl)
+	drtvasudevan (ta)
+
+
+Evolution Exchange 2.29.1 2009-10-26
+------------------------------------
+
+Bug Fixes:
+	Bug #260407 - 'endswith' address book search doesn't work (Milan Crha)
+        Bug #260407 - Return the appropriate value for queries having 'NOT' 
+	(Shakti Sen)
+	Bug #436619 - "Unable to book" dialog when adding "Resources" 
+	(Milan Crha)
+	Bug #521956 - Groups from Global Address List are incomplete 
+	(Milan Crha)
+	Bug #597123 - Composer's Send Options doesn't work (Milan Crha)
+	Bug #594471 - Shouldn't call e_error_new/run with NULL 'parent' 
+	(Milan Crha)
+	Bug #597932 - Split out Kerberos 5 check into an macro (H. Habighorst)
+	Bug #597932 - Split out Kerberos 5 check into an macro (H. Habighorst)
+	Bug #591953 - Rewrite of build system (H. Habighorst)
+	Bug #597400 - Folder flags get lost (Milan Crha)
+	Bug #456240 - Move exchange plugin to exchange package (Milan Crha)
+	Bug #590251 - Let it compile and run with eds/evo master (Milan Crha)
+	Bug #596157 - Use "Message-ID" instead of "Message-Id" (Matthew Barnes)
+	Bug #590251 - Fails to build against eds-dbus (Matthew Barnes)
+	Bug #592875 - Use mnemonics in account wizard (Milan Crha)
+	Bug #592568 - Remove libglade dependency (Milan Crha)
+	Bug #580904 - Kill libgnome(ui) dependency (Milan Crha)
+	Bug #599651 - authentication fails durig exchange account configuration (Chenthill Palanisamy)
+
+Other Fixes:
+	Move server code over from evolution-data-server. (Matthew Barnes) 
+	Fix distcheck errors. (Matthew Barnes)
+        Coding style and whitespace cleanup. (Matthew Barnes)
+	Fix wrong include and double include. (H. Habighorst)
+	Various build system improvements. (H. Habighorst)  
+        Mark string for a translation. (Milan Crha)
+        Fixes the addressbook loading failures (Bharath Acharya) 
+
+Translations:
+	Matej UrbanÄiÄ (sl)
+	drtvasudevan (ta)
+	Yaron Shahrabani (he)
+	Andre Klapper (cs)
+	Gabor Kelemen (hu)  
+	Rajesh Ranjan (mai)
+	Rodrigo L. M. Flores (pt_BR)
+
+Evolution Exchange 2.27.90 2009-08-10
+-------------------------------------
+
+Misc Fixes:
+	Enforce including only top-level GLib and GTK+ headers. (Matthew Barnes)
+
+Evolution Exchange 2.27.5 2009-07-27
+------------------------------------
+
+Bug Fixes:
+	Bug #522277 - Crash in Evolution: sending, recelving, dele...
+
+Other Fixes:
+	Remove unneeded includes. Fixes part of bug #580904. (Andre Klapper)
+
+Translations:
+	Leonardo Ferreira Fontenelle (pt_BR)
+
+Evolution Exchange 2.27.4 2009-07-13
+------------------------------------
+
+Bug Fixes:
+	
+Misc:
+	#586206 - build failed on Solaris. (Jedy Wang)
+	#586809 â Enable "silent rules" automake 1.11 option (Matthew Barnes)
+
+Other Fixes:
+
+Misc:
+	Use G_BEGIN_DECLS / G_END_DECLS macros. (Matthew Barnes)
+	Remove INSTALL from source control. (Matthew Barnes)
+	Use AM_CPPFLAGS instead of INCLUDE in all Makefile.am. (Matthew Barnes)
+	Remove EConfigListener usage. (Matthew Barnes)
+
+Evolution Exchange 2.27.3 2009-06-15
+------------------------------------
+
+Bug Fixes:
+	#581908: Missing mails in exchange (Milan Crha)
+	#581424: Folder > Subscription broken (Bharath Acharya)
+
+Other Fixes:
+	code cleanup. (Matthew barnes)
+
+Evolution Exchange 2.27.2 2009-05-25
+------------------------------------
+
+Updated Translations:
+
+	Ivar Smolin (et)
+
+Evolution Exchange 2.27.1 2009-05-04
+-------------------------------------
+
+Bug Fixes:
+	#563954 - Define its own compare function for UIDs
+	#577105 - Prevent using NULL in libical functions
+	#553932 - Do not notify about readonly mode when not asked
+	#464053 (bnc) - GAL Delta fetching support added
+
+Updated translations:
+	Djihed Afifi (ar)
+	Shankar Prasad (or)
+	Shankar Prasad (kn)
+	Manoj Kumar Giri (or)
+
+
+Evolution Exchange 2.25.92 2009-03-02
+-------------------------------------
+
+New in 2.26.0
+	Bug fixes & performance improvements.
+
+Evolution Exchange 2.25.92 2009-03-02
+-------------------------------------
+
+Updated Translations:
+Â»Â·Â·Â·Â·Â·Â·Â·Chao-Hsiung Liao (zh)
+Â»Â·Â·Â·Â·Â·Â·Â·Clytie Siddall (vi)
+Â»Â·Â·Â·Â·Â·Â·Â·Jani Monoses (ro)
+Â»Â·Â·Â·Â·Â·Â·Â·Praveen Arimbrathodiyil (ml)
+Â»Â·Â·Â·Â·Â·Â·Â·Takeshi AIHANA (ja)
+
+Bug Fixes:
+Â»Â·Â·Â·Â·Â·Â·Â·#432885 : Rescan foreign hierarchy  to get list of shared calendars before giving up opening of the foreign calendar (Milan Crha)
+Â»Â·Â·Â·Â·Â·Â·Â·#545455 : Check for the correct href of the message before accessing it (Milan Crha)
+
+Evolution Exchange 2.25.90 2009-02-02
+-------------------------------------
+
+Updated Translations:
+	Andre Klapper (de)
+	Changwoo Ryu (ko)
+	Gabor Kelemen (hu)
+
+
+Evolution Exchange 2.25.5 2009-01-19
+-------------------------------------
+
+Bug Fixes:
+	#360813 : RFC 2445 - CREATED/DTSTAMP/LAST-MODIFIED always in UTC. (Milan Crha)
+	#566279 : Introduces a new API in Camel needed for implementing EPlugin of Bug #565091  (Philip Van Hoof)
+
+Other contributions:
+	Remove #include <camel/camel-i18n.h>  (Matthew Barnes)
+
+Evolution Exchange 2.25.4 2009-01-05
+-------------------------------------
+
+Bug Fixes:
+	#441712: (Novell Bugzilla) Exchange fix for GAL issue. Unloacking the mutex (Ashish Shrivastava)
+
+Other Contributions:
+	Miscellaneous compiler warning cleanups (Matthew Barnes)
+
+Evolution Exchange 2.25.2 2008-12-01
+-------------------------------------
+
+New in 2.25.2
+       Regression fixed which would now enable a speedy start-up (Milan Crha)
+
+Bug Fixes:
+       #540346: Do not try to fetch contacts when not connected (Milan Crha)
+       #558883: Revert related parts from bug #336074, which caused slow start up (Milan Crha)
+
+Evolution Exchange 2.25.1 2008-11-03
+-------------------------------------
+
+Bug Fixes:
+	#552261: Don't expose sqlite3 header outside. (Srinivasa Ragavan)
+
+Updated Translations:
+	Maxim Dziumanenko (uk)
+	Nick Agianniotis (el)
+	Kenneth Nielsen (da)
+
+Evolution Exchange 2.24.0 2008-09-22
+-------------------------------------
+
+Bug Fixes:
+	#546972: Added SYNC_COUNT to sync up counts on the operations needed (Bharath Acharya)
+	#552013: Just update the count when adding messages. Also fixes the deadlock reported (Bharath Acharya)
+
+Updated Translations:
+	Kenneth Nielsen (da)
+	Igor Nestorovi (sr, sr@latin)
+	Tirumurthi Vasudevan (ta)
+	Sweta Kothari (gu)
+	Chao-Hsiung Liao (zh_HK, zh_TW)
+	Djihed Afifi (ar)
+	Runa Bhattacharjee (bn_IN)
+	Jiri Eischmann (cs)
+	Sandeep Shedmake (mr)
+	Tino Meinen (nl)
+	Ilkka Tuohela (fi)
+	Gabor Kelemen (hu)
+	Baris Cicek (tr)
+	Gintautas Miliauskas (lt)
+	Alexander Shopov (bg)
+	Luca Ferretti (it)
+	Shankar Prasad (kn)
+
+Evolution Exchange 2.23.92 2008-08-08
+-------------------------------------
+
+Bug Fixes:
+	#550160: Be able to search for "Name contains" like queries (Milan Crha)
+
+Updated Translations:
+	Philip Withnall (en_GB)
+	David Planella (ca)
+	Changwoo Ryu (ko)
+	Andre Klapper (de)
+	Laurent Dhima (sq)
+
+Evolution Exchange 2.23.91 2008-08-01
+-------------------------------------
+
+Updated Translations:
+	Andre Klapper (de)
+	Kjartan Maraas (nb)
+	Ilkka Tuohela (fi)
+	Daniel Nylander (sv)
+	Leonardo Ferreira Fontenelle (pt_BR)
+	Robert-AndrÃ© Mauchin (fr)
+	Inaki Larranaga Murgoitio (eu)
+	Ignacio Casal Quinteiro (gl)
+	Theppitak Karoonboonyanan (th)
+
+Evolution Exchange 2.23.90 2008-08-18
+------------------------------------
+
+Bug fixes:
+	#329505: Recognize Distribution lists stored on the server and work with them as with Contact lists (Milan Crha)
+	#489236: Evolution Inbox not displaying messages which have already been opened in another application using exchange (Milan Crha)
+	#545877: Migrate Camel from EDList to CamelDList (Matthew Barnes)
+	#546257: Use proper ref/unref functions on EBookBackendExchange object (Milan Crha)
+	#546397: Fetch uids correctly (Milan Crha)
+	#546933: Do not lookup for NULL (Milan Crha)
+	#546934: Track contact changes correctly (Patrick Ohly)
+	#547308: Distinguish between GAL offline and unsupported authentication method used (Milan Crha)
+
+Updated Translations:
+	Kjartan Maraas (nb)
+	Ivar Smolin (et)
+	Runa Bhattacharjee (bn_IN)
+	Laurent Dhima (sq)
+	Ilkka Tuohela (fi)
+	Djavan Fagundes (pt_BR)
+	Duarte Loreto (pt)
+	Arangel Angov (mk)
+	Djihed Afifi (ar)
+
+Evolution Exchange 2.23.6 2008-08-04
+------------------------------------
+
+Bug fixes:
+	#208394: (Novell Bugzilla) Use rid along with uid while searching for recurring instances (Chenthill Palanisamy)
+	#500389: Option to set different authentication type for GAL and OWA (Milan Crha)
+	#544031: Compiler warnings cleanup (Milan Crha)
+	#544513: Do not unref NULL object (Milan Crha)
+
+Other Contributions:
+	DB Summary fixes (Bharath Acharya)
+
+Updated Translations:
+	Jorge Gonzalez (es)
+	Djihed Afifi (ar)
+	Leonardo Ferreira Fontenelle (pt_BR)
+	Claude Paroz (fr)
+
+Evolution Exchange 2.23.5 2008-07-21
+------------------------------------
+
+New in 2.23.5
+	Camel DB Summary support. (Srinivasa Ragavan)
+
+Bug fixes:
+	#528902: Better time zone handling (Patrick Ohly)
+
+Other Contributors:
+	Rewrite the evolution-data-server version check and set it to require 2.23.5 (Matthew Barnes)
+
+Updated Translations:
+	Yannig Marchegay (oc)
+	Daniel Nylander (sv)
+
+Evolution Exchange 2.23.4 2008-06-16
+------------------------------------
+
+Bug fixes:
+	#402752: Prevent crash when got a component without set UID (Milan Crha)
+	#532844: If it's a bad case we can just goto the error handling code instead of trying to process the response (Paul Smith)
+	#536376: Check libebackend when running ./configure (Wang Xin)
+	#536638: Allow evolution-exchange to build with G_DISABLE_SINGLE_INCLUDES and GTK_DISABLE_SINGLE_INCLUDES defined. (Matthew Barnes)
+	
+Updated Translations:
+	Djihed Afifi (ar)
+	Inaki Larranaga Murgoitio (eu)
+	Ivar Smolin (et)
+
+Evolution Exchange 2.23.3 2008-06-02
+------------------------------------
+
+New in 2.23.2:
+	Final outstanding Win32 portability changes (Tor Lillqvist)
+
+Bug fixes:
+	#366250: Don't compile/package semi-free RFCs and other IETF documents that are easily accessible on the web (Ãystein GisnÃ¥s)
+	#523023: Another leak fix (Matthew Barnes)
+	#533422: server_DATA should not be packed in dist tarballs (Johnny Jacob)
+
+Updated Translations:
+	Ignacio Casal Quinteiro (gl)
+	Philip Withnall (en_GB)
+	Clytie Siddall (vi)
+	Djihed Afifi (ar)
+	Jorge Gonzalez (es)
+	Kjartan Maraas (nb)
+
+Evolution Exchange 2.23.2 2008-05-12
+------------------------------------
+
+New in 2.23.2:
+	Enable building on Windows (Tor Lillqvist)
+
+Bug fixes:
+	#358706: (Novell Bugzilla)  Fix evolution hang (Bharath Acharya)
+
+Other Contributors:
+	Fix include path for e-data-server-module.h, now in libebackend  (Johan Euphrosine)
+
+Updated Translations:
+	Yair Hershkovitz (he)
+
+Evolution Exchange 2.23.1 2008-04-21
+------------------------------------
+
+Bug fixes:
+	#268259: (Novell Bugzilla) Don't require restart of Evolution to create appointment on switching from offline to online mode. (Suman Manjunath)
+	#303067: Fix a random crash looking up addresses in new email (Milan Crha)
+	#520676: Sent item and Deleted item folder should have special icons (Bharath Acharya)
+	#526740: Drop dependency on gnome-vfs, use new gio instead. (Milan Crha)
+
+Updated Translations:
+	Philip Withnall (en_GB)
+	Krishna Babu K (te)
+	Ivar Smolin (et)
+
+Evolution Exchange 2.21.93 2008-03-10
+-------------------------------------
+
+Bug fixes:
+	#432885: Rescan the hierarchy (Veerapuram Varadhan)
+	#518569: Properly format name and address with "<>" characters (Milan Crha)
+
+Updated Translations:
+	Laurent Dhima (sq)
+	Maxim Dziumanenko (uk)
+	Ankit Patel (gu)
+	Sandeep Shedmake (mr)
+	Takeshi AIHANA (ja)
+	Gabor Kelemen (hu)
+	Runa Bhattacharjee (bn_IN)
+	Philip Withnall (en_GB)
+	Gintautas Miliauskas (lt)
+	Jorge Gonzalez (es)
+	David Planella (ca)
+	Tino Meinen (nl)
+	Kenneth Nielsen (da)
+
+Evolution Exchange 2.21.92 2008-02-25
+-------------------------------------
+
+Bug fixes:
+	#432885: Fix to subscribe to other user's folders (Bharath)
+	#514836: Fix importing contact lists into a attendee lists for a meeting (Milan Crha)
+	#515744: Free our message info members properly (Milan Crha)
+	#516248: Hierarchy wont be available if we are offline (Srinivasa Ragavan)
+	#516250: Allow it to reauth if we are connecting after a offline (Srinivasa Ragavan)
+	#516252: Determine that we are in offline if we cant get info from the server (Srinivasa Ragavan)
+	#516408: Free memory returned by libical (Chenthill)
+
+Updated Translations:
+	Claude Paroz (fr)
+	Ilkka Tuohela (fi)
+	Changwoo Ryu (ko)
+	Wadim Dziedzic (pl)
+	Robert-AndrÃ© Mauchin, StÃ©phane Raimbault (fr)
+	Ivar Smolin (et)
+	Ignacio Casal Quinteiro (gl)
+	Pawan Chitrakar (ne)
+	Jiri Eischmann (cs)
+	Luca Ferretti (it)
+
+Evolution Exchange 2.21.91 2008-02-11
+-------------------------------------
+
+Bug fixes:
+	#420503 - Crash while filtering (Milan Crha)
+	#436628 - Fix alarms for Exchange calendar
+	#501295 - Crash while caching in addressbook.
+
+Other Contributors:
+	Patch for crash in process_flags (Srinivasa Ragavan and Bharath Acharya)
+	Fix two junk folder (Sankar P)
+	
+Updated Translations:
+	Arangel Angov (mk)
+	Yair Hershkovitz (he)
+	Theppitak Karoonboonyanan (th)
+	Duarte Loreto (pt)
+	Chao-Hsiung Liao (zh_HK)
+	Chao-Hsiung Liao (zh_TW)
+	Amitakhya Phukan (as)
+	Djihed Afifi (ar)
+
+
+Evolution Exchange 2.21.90 2008-01-28
+-------------------------------------
+
+Other Contributors:
+	libsoup updates (Dan Winship)
+
+Updated Translations:
+	Kjartan Maraas (nb)
+	Andre Klapper (de)
+	Inaki Larranaga Murgoitio (eu)
+	Clytie Siddall (vi)
+	Washington Lins (pt_BR)
+	Yannig Marchegay (oc)
+	Wadim Dziedzic (pl)
+	Daniel Nylander (sv)
+	Djihed Afifi (ar)
+	Jorge Gonzalez (es)
+
+Evolution Exchange 2.21.5 2008-01-14
+------------------------------------
+
+Bug Fixes:
+	#404002: Set the default priority of tasks as 'Normal' for Outlook/OWA compatibility. (Suman Manjunath)
+	#501567: If unsupported queries, don't crash (Srinivasa Ragavan)
+	#503356: String change: "Ximian Connector" -> "Evolution Connector for Microsoft Exchange" (Martin Meyer)
+
+Updated Translations:
+	Andre Klapper (de)
+	Inaki Larranaga Murgoitio (eu)
+	Clytie Siddall (vi)
+	Washington Lins (pt_BR)
+	Kjartan Maraas (nb)
+	Yannig Marchegay (oc)
+	Wadim Dziedzic (pl)
+	Daniel Nylander (sv)
+	Djihed Afifi (ar)
+	Jorge Gonzalez (es)
+
+Evolution Exchange 2.21.4 2007-12-17
+------------------------------------
+
+Bug Fixes:
+	#336074: Check for mail only in active folders (Milan Crha)
+
+Updated Translations:
+	Kjartan Maraas (nb)
+	Jorge Gonzalez (es)Rodrigo Marques Flores (pt_BR)
+
+Evolution Exchange 2.21.3 2007-12-03
+------------------------------------
+
+Bug Fixes:
+	#444503: Check and store the folder filter and junk filter flags before performing the check for folder summary being available (Bharath Acharya)
+
+Other Contributors:
+	Removing redundancy in code, demangle meeting related messages in subscribed inboxes (Suman Manjunath)
+
+Updated Translations:
+	Yannig Marchegay (oc)
+	Matej UrbanÄi (sl)
+	Ignacio Casal Quinteiro (gl)
+	Changwoo Ryu (ko)
+
+Evolution Exchange 2.21.2 2007-11-12
+------------------------------------
+
+Bug Fixes:
+	#478680: Remove dead files from source control (Matthew Barnes)
+
+Updated Translations:
+	Ignacio Casal Quinteiro (gl)
+
+Evolution Exchange 2.21.1 2007-10-29
+------------------------------------
+
+Bug Fixes:
+	#474000: Use GLib's Base64 API instead of Camel's (Matthew Barnes)
+
+Other Contributors:
+	Documentation updates (Matthew Barnes)
+
+Updated Translations:
+	Djihed Afifi (ar)
+	Matej UrbanÄi (sl)
+	Alexander Shopov (bg)
+	Ignacio Casal Quinteiro (gl)
+	David Planella (ca)
+	GNOME PL Team (pl)
+	Danishka Navin (si)
+
+Evolution Exchange 2.12.0 2007-09-17
+------------------------------------
+
+Bug Fixes:
+	#295558: (Novell Bugzilla) Fixed a crash with exchange storage when switching to calendar (Chenthill Palanisamy)
+	#295622: (Novell Bugzilla) Fixed a crash with exchange storage during contact auto completion (Srinivasa Ragavan)
+	#295646: (Novell Bugzilla) Newly created address book required a restart before use (Srinivasa Ragavan)
+	#308057: (Novell Bugzilla) Use prepend instead of append (Srinivasa Ragavan)
+
+Updated Translations:
+	Gil Forcada (ca)
+	Takeshi AIHANA (ja)
+	Nickolay V. Shmyrev (ru)
+	Mugurel Tudor (ro)
+	Laurent Dhima (sq)
+	Gabor Kelemen (hu)
+	Jamil Ahmed (bn)
+	Igor Nestorovi (sr)
+	Maxim Dziumanenko (uk)
+	Kenneth Nielsen (da)
+	Jovan Naumovski (mk)
+
+Evolution Exchange 2.11.92 2007-09-03
+--------------------------------------
+
+Bug Fixes:
+	#301263: If the folder is not found, check if its present in the
+	 foriegn hierarchy/directories (Chenthill Palanisamy)
+	#467591, #464404: Fixed crash when adding / modifying contacts
+	 (Srinivasa Ragavan)
+
+Updated Translations:
+	Duarte Loreto (pt)
+	StÃ©phane Raimbault (fr)
+
+Evolution Exchange 2.11.91 2007-08-27
+--------------------------------------
+
+Bug Fixes:
+	#332979: Fixes a GAL Synchronization issue wile doing autocompletion (Srinivasa Ragavan)
+	#455858: Make __PRETTY_FUNCTION__ macro portable (Damien Carbery)
+	#466502:Fixes the problem of "Check in all folders" displayed twice (Sankar P)
+	#466987: Fix compilation errors caused by glibc's new "open" macro (Matthew Barnes)
+
+Updated Translations:
+	Washington Lins (pt_BR)
+	Ivar Smolin (et)
+	Adam Weinberger (en_CA)
+
+Evolution Exchange 2.11.90 2007-08-13
+--------------------------------------
+
+Bug Fixes:
+
+	#347930 - Fix for camel stub exchange crash (Milan Crha)
+	#464639 - Crash while editing contacts from Exchange Contacts (Srini)
+	#464989 - Crash while editing GAL contacts from composer right click menu (Srini)
+
+Updated Translations:
+	Ilkka Tuohela (fi)
+	Priit Laes (et)
+	Runa Bhattacharjee (bn_IN)
+
+Evolution Exchange 2.11.6.1 2007-07-31
+--------------------------------------
+Changes:
+	Identify mails from a delegate and set appropriate headers that
+	Evolution can use (Veerapuram Varadhan)
+
+Evolution Exchange 2.11.6 2007-07-30
+------------------------------------
+
+Bug fixes:
+	#380534: Collect all the required package versions in one place
+	 and explicitly require GTK+ 2.10 or higher (Matthew Barnes)
+
+Updated Translations:
+	Inaki Larranaga Murgoitio (eu)
+	Andre Klapper (de)
+	Theppitak Karoonboonyanan (th)
+	Daniel Nylander (sv)
+	Ilkka Tuohela (fi)
+	Tirumurthi Vasudevan (ta)
+	Ankit Patel (gu)
+	Jorge Gonzalez (es)
+
+Evolution Exchange 2.11.5 2007-07-09
+------------------------------------
+
+Bug fixes:
+	#442186, #341214, #421091: Folder loading optimizations from few minutes 
+	to few miliseconds. (Veerapuram Varadhan)
+
+Updated Translations:
+	Ankit Patel (gu)
+	Nguyá»n ThÃ¡i Ngá»c Duy (vi)
+	Pema Geyleg (dz)
+	Clytie Siddall (vi)
+	Kjartan Maraas (nb)
+
+Evolution Exchange 2.11.4 2007-06-18
+------------------------------------
+
+Bug fixes:
+	#444101: Fix new compiler warnings since 2.11.2 (Matthew Barnes)
+	#385354: Fix build break on Solaris (Wang Xin)
+
+Updated Translations:
+	Pema Geyleg (dz)
+
+Evolution Exchange 2.11.3 2007-06-04
+------------------------------------
+
+New in 2.11.3:
+	Adds support for GAL Caching and summary (Srinivasa Ragavan)
+	Exchange loading optimizations (Veerapuram Varadhan)
+	
+Bug fixes:
+	#406155: Add locks to access changed message arrays (Varadhan)
+	#424419: Fixed a misspelling (Elizabeth Greene)
+	#439579: Fixed a deprecated function call ( Matthew Barnes)
+
+Updated Translations:
+	Priit Laes (et)
+	Theppitak Karoonboonyanan (th)
+	Jorge Gonzalez (es)
+	Daniel Nylander (sv)
+	Hendrik Richter (de)
+
+Evolution Exchange 2.11.2 2007-05-14
+------------------------------------
+
+Bug fixes:
+	#433967: Add a CLEANFILES rule to remove a schema file (Matthew
+	 Barnes)
+	#418852: Use GLib's i18n support instead of Camel's (Matthew
+	 Barnes)
+
+Updated Translations:
+	Jorge Gonzalez (es)
+
+
+Evolution Exchange 2.11.1 2007-04-23
+------------------------------------
+
+Bug fixes:
+	#405916: Fix all compiler warnings (Matthew Barnes)
+	#405495: Don't mix declarations and code (Matthew Barnes)
+	#363283: Fix the bug-report address in AC_INIT (Gilles Dartiguelongue)
+	#414216: Fix a #include typo (LoÃ¯c Minier)
+	
+Other contributions:
+	Use GLib marshallers wherever possible (Matthew Barnes) 
+
+Updated Translations:
+	Funda Wang (zh_CN)
+	Laurent Dhima (sq)
+
+Evolution Exchange 2.10.0 2007-03-12
+------------------------------------
+Updated Translations:
+	Gintautas Miliauskas (lt)
+	Kjartan Maraas (nb)
+	Ankit Patel (gu)
+	Chao-Hsiung Liao (zh_HK, zh_TW)
+	Maxim Dziumanenko (uk)
+	Jovan Naumovski (mk)
+	Vincent van Adrighem (nl)
+	Leonid Kanter (ru)
+	Mugurel Tudor (ro)
+	Djihed Afifi (ar)
+	Igor NestoroviÄ (sr, sr@Latn)
+
+Bug fixes: 384303, cleanups and other fixes
+
+Contributors:
+	Kjartan Maraas, Veerapuram Varadhan, Srinivasa Raghavan
+	
+Evolution Exchange 2.9.92 2007-02-26
+------------------------------------
+Updated Translations:
+	Changwoo Ryu (ko)
+	Gabor Kelemen (hu)
+	Alexander Shopov (bg)
+	Peter Bach (da)
+	Artur Flinta (pl)
+	Kjartan Maraas (nb)
+	Hendrik Brandt (de)
+	Ilkka Tuohela (fi)
+
+Contributors:
+	Kjartan Maraas, Varadhan, Nathan Owens, Harish
+
+Evolution Exchange 2.9.91 2007-02-12
+------------------------------------
+
+Updated Translations:
+	Xavier Conde Rueda (ca)
+	Duarte Loreto (pt)
+	Djihed Afifi (ar)
+	StÃ©phane Raimbault (fr)
+	Raphael Higino (pt_BR)
+	Daniel Nylander (sv)
+	Priit Laes (et) 
+
+Evolution Exchange 2.9.6 2007-01-22
+-----------------------------------
+Updated Translations:
+Kjartan Maraas (nb), Clytie Siddall (vi), Hendrik Richter (de),
+Daniel Nylander (sv)
+
+Contributors:
+Veerapuram Varadhan, Devashish Sharma
+
+Evolution Exchange 2.9.5 2007-01-08
+-----------------------------------
+Updated Translations:
+Francisco Javier F. Serrador (es), Djihed Afifi (ar), Theppitak
+Karoonboonyanan (th), Kjartan Maraas (nb), David Lodge (en_GB), 
+Clytie Siddall (vi)
+
+Bug Fixes - 357660, 346728, 268412 - Second/final round of optimization
+
+Contributors:
+Veerapuram Varadhan and Matthew Barnes
+
+Evolution Exchange 2.9.4 2006-12-18
+-----------------------------------
+Updated Translations:
+Ilkka Tuohela (fi), Djihed Afifi (ar)
+
+Bug Fixes - 346728, 268412 and downstream patches.
+
+Contributors:
+Veerapuram Varadhan and Sankar P
+
+Evolution Exchange 2.9.3 2006-12-04
+-----------------------------------
+Updated Translations:
+
+Daniel Nylander (sv), Ivar Smolin (et), Vladimer Sichinava (ka), Rahul
+Bhalerao (mr), David Lodge (en_GB), Djihed Afifi (ar), Ãsmund
+SkjÃ¦veland (nn), Baris Cicek (tr), Woodman Tuen (zh), Kostas Papadimas
+(el), Jovan Naumovski (mk), Gabor Kelemen (hu), Duarte Loreto (pt),
+Gintautas Miliauskas (lt), Robert-AndrÃ© Mauchin (fr), Subhransu Behera
+(or), Ani Peter (ml), Funda Wang (zh_CN), Raivis Dejus (lv), Josep
+Puigdemont i CasamajÃ³ (ca), Alexander Shopov (bg)
+
+Downstream patches - GAL caching and other bug fixes
+
+Contributors: 
+Srinivasa Ragavan, Veerapuram Varadhan, Chenthill Palanisamy,
+Sankarasivasubramanian, Sushma Rai
+
+
+Evolution Exchange 2.8.1 2006-10-02
+------------------------------------
+Updated Translations:
+
+Vladimer Sichinava (ka), Ivar Smolin (et),
+Rahul Bhalerao (mr), David Lodge (en_GB),
+Djihed Afifi (ar), Baris Cicek (tr),
+Woodman Tuen (zh_HK), Ãsmund SkjÃ¦veland (nn),
+
+
+Evolution Exchange 2.8.0   2006-09-04
+-------------------------------------
+
+Updated Translations:
+
+Abel Cheung, Funda Wang (zh),
+Kostas Papadimas (el),
+Jovan Naumovski (mk),
+Gabor Kelemen (hu),
+Duarte Loreto (pt)
+Gintautas Miliauskas (lt)
+Christophe Merlet (fr),
+Priit Laes (et),
+Raivis Dejus (lv)
+Josep Puigdemont i CasamajÃ³ (ca)
+
+Added Translations:
+
+Subhransu Behera (or),
+Ani Peter (ml),
+
+Evolution Exchange 2.7.92  2006-08-21
+--------------------------------------
+
+Updated Translations: 
+
+Alexander Shopov (bg), Satoru SATOH (ja), Artur Flinta (pl), 
+Leonid Kanter (ru),  Daniel Nylander (sv), Gabor Kelemen (hu), 
+Hendrik Richter (de), Sanlig Badral (mn), Ilkka Tuohela (fi), 
+Clytie Siddall (vi), Matic Å½gur (sl), Changwoo Ryu (ko), 
+Tino Meinen (nl), Ivar Smolin (et), Runa Bhattacharjee (bn_IN),
+Maxim Dziumanenko (uk), Guntupalli Karunakar (dz), Kjartan Maraas (nb),
+Theppitak Karoonboonyanan (th), Ankit Patel (gu), Jovan Naumovski (mk) 
+
+
+Evolution Exchange 2.7.91  2006-08-07
+--------------------------------------
+
+Updated Translations: 
+
+Francisco Javier F. Serrador (es), Inaki Larranaga (eu), 
+Jovan Naumovski (mk)
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	 #344196 - Fixes massive CPU Usage (Varadhan)
+	 #274321 - Display proper error message on socket error (Sushama)
+	 #170058 - Check icalcomponent before removing alarms  (Chenthill)
+
+Evolution Exchange 2.7.90  2006-07-24
+--------------------------------------
+
+	
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#344651 - crash when importing meeting invitation with attachements 
+	into Exchange calendar (Chenthill)
+
+	#332304 - Evolution does not display most of the information of 
+	contact created in outlook (Vnadana)
+
+	#313081 - Evolution Contact List shows deleted Exchange contact folder
+	(Sushma)
+
+	#347870 - Cannot compile with eds in CVS head (20060718) (Sushma)
+
+Evolution Exchange 2.7.3  2006-07-10
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#336453 - Add SunLDAP library support - a variant of Netscape LDAP
+	(simon.zheng)
+
+Other Fixes:
+
+	- Fix for a crash while fetching mails, see
+	https://bugzilla.novell.com/show_bug.cgi?id=179566 (Jeffrey Stedfast)
+
+	-  Up intltool requirement to 0.35 (Kjartan Maraas)
+
+Evolution Exchange 2.7.3  2006-06-12
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#341803 - ximian-connector-setup should better be renamed to 
+	exchange-connector-setup
+
+Other Fixes:
+
+	- Fix for a crash while fetching mails, see
+	https://bugzilla.novell.com/show_bug.cgi?id=179566 (Jeffrey Stedfast)
+
+	-  Append -DLDAP_DEPRECATED to LDAP_CFLAGS and do not overwrite 
+	the value (Harish)
+
+Evolution Exchange 2.7.2  2006-05-15
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#325957 - Needs to #define LDAP_DEPRECATED when compiling against 
+	openldap 2.3.x (Sushma)
+
+	#322897 - Evolution hanged when disabled 'Exchange account' 
+	(Jeffrey Stedfast).
+
+	#268412 - public mail folder subfolders not displayed on favourites 
+	(Sushma)
+
+	#339277 - 'Public Folder' is displayed under favourites when check box
+	beside it is checked (Sushma)
+
+	#330265 - Exchange contacts not overwting the addresses (vandana)
+
+	#334035 - There is a bad url in the ximian-connector-setup-2.4 program
+	(Sushma)
+
+	#339827 - evolution-exchange-storage crashes on startup (Chenthill)
+
+	#339561 - Modify all instances does not modify as expected (Chenthill)
+
+	#341229 - Modify date of a appointment/meeting does not delete event 
+	in old date (Chenthill)
+
+Other Fixes:
+
+	- Adding a NULL check to prevent a crash, see bug #335629 
+	(Patrick Ohly)
+
+Evolution Exchange 2.7.1  2006-04-24
+--------------------------------------
+
+Updated Translations:
+
+	- cy (Rhys Jones)
+	- dz (Tommi Vainikainen)
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#334391 - random connector crash while attaching a file to an 
+	appointment and clicking on "save" (Sushma)
+
+	#334925 - Shouldn't create an empty doc directory (Jeremy Messenger)
+
+	#306116 - Evolution-exchange HEAD: typos in the .po file (Sushma)
+
+	#334900 - importing complex meeting invitations into Exchange 
+	calendar crashes (Chenthill)
+
+	#330674 - Updated cancel meeting request exchange storage crashed 
+	(Chenthill)
+
+	#334727 - Evolution randomly does not display appointment (Chentill)
+
+	#330494 - Meeting accepted does not show attachments (Chentill)
+
+Other Fixes:
+
+	- Removed obsolete entry for no_NO and the translation (Kjartan Maraas)
+
+Evolution Exchange 2.6.0  2006-03-13
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#271567 - messages with horizontal tab character in subject header
+        stay in outbox (Sankar)
+
+	#272749 - Email invitations accepted into exchange calendar are not 
+	saved (Chenthill)
+
+	#273057 - Meetings gets deleted after updates for Recurrence accepted
+	(Chentill)
+
+	#332129 - Modify OWA to http instead of https for ssl configured server,
+	connector crashes during authentication (Sushma)
+
+	#317432 - POTFILES list non-shipped files (Sebastien Bacher)
+
+	#333603 - while deleting tasks exchange storage crashes (Chenthill)
+
+	#323990 - Evolution locks up trying to accept a calendar event (sushma)
+
+Other fixes:
+
+	- Calendar modifications and deletions related fixes (Chenthill)
+
+	- Memory leak fixes. See #329251 (Sushma)
+
+Evolution Exchange 2.5.92  2006-02-13
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#331980 - Connector crashes on account changed signal (Sushma)
+
+Other Fixes:
+
+	- Memory leak fixes. See #329251 (Sushma)  
+
+	- UI locking issue while loading the huge calendars and not showing 
+	some calendar items in Evolution which is seen in outlook (Chenthill)
+
+Evolution Exchange 2.5.91  2006-02-13
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#328507 - evolution-exchange-storage crashes with 
+	e_folder_exchange_search_start: assertion 
+	`E_IS_FOLDER_EXCHANGE (folder)' failed. (Sushma)
+
+	#330221 - Evolution crashes when birthday/anniversary field values are
+	set to NONE (Sushma)
+
+	#330224 - Exchange contacts fail to save mailing addresses (Sushma)
+
+	#330640 - Exchange storage crashes after modifying a single instance 
+	of recurring meeting.
+
+	#330504 â Mnemonic missing for most of the fields in 'Receiving Options'
+
+	#311017 - Unable to delete mails in online mode with evolution started 
+	in offline mode. (Arun Prakash)
+
+	#330663 - Exchange connector crashed when accepted updates for 
+	recurring meeting (Chenthill)
+
+Other Fixes:
+
+	Notify read only status to the client in set_mode (Chenthill)
+
+	Fixed lots of memory leaks, See #329251. (Sushma)
+
+Evolution Exchange 2.5.9.0  2006-01-30
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#327312 - Search contact in GAL in offline, connector does not return 
+	failed search (Sushma).
+
+	#327306 - Evolution hanged in offline after serching for contacts in 
+	exchange personal addressbook (Sushma).
+
+	#327318 - User should not be able to save contacts when evolution 
+	switches to offline (Sushma).
+
+Other Fixes:
+
+	Corrected Evolution offline handling with NetWork Manager support.
+	See #327343 (Sushma)
+
+Evolution Exchange 2.5.5.1  2006-01-18
+--------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#327305 - Cannot access exchange calendars (Sushma & Chenthill)
+
+	#323115 - --force-shutdown does not shutdown e-d-s, exchange part
+	(Sushma)
+
+Other Fixes
+
+	Add evolution-plugin to the EXCHANGE_STORAGE dependency list as it 
+	uses functions from libeutil, which is in evolution-plugin's .pc file.
+	(Tor Lillqvist)
+
+Evolution Exchange 2.5.5  2006-01-16
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#325717 - Exchange calendar does not switch to offline (Sushma)
+
+	#325726 - Infinite loop in calendar on switch folder selection
+	in offline mode (Sushma)
+
+	#273546 - 'Expunge' on junk deletes mail's in junk (Sushma)
+
+	#323115 - --force-shutdown does not shutdown e-d-s, exchange part
+	(Sushma)
+
+Other Fixes
+
+	- Handling the instances with no master object and checking for the
+	RIDs and master component of the object. Fixes two crashes and also
+	fixes the problem of recurring exception events not appearing
+	(Chenthill).
+
+	- Using proper e-account-list.h and e-account.h files (Simon Zheng).
+
+	- Using e_util_mkdir_hier() and e_util_strstrcase() instead of make_dir
+	and e_strstrcasea() respectively (Simon Zheng).
+
+Evolution Exchange 2.5.4  2006-01-02
+------------------------------------
+
+Updated Translations:
+
+	- Added "ca" "da" "mk" "ru" "vi" "zh_HK" (Abel Cheung) 
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#315105 - select exchange calendar for offline support gets unchecked 
+		  (Sushma)
+	#315605 - "Could not authenticate to server" error message after 
+		  switching from offline to online (Sushma)
+	#315333	- Incorrect password message for right password (Sushma)
+
+Other Fixes
+
+	- Changed from createControls for new shell apis (Simon Zheng)
+
+Evolution Exchange 2.5.3  2005-12-12
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#235580 - Evo not handling Outlook recurring mtg. changes well (Sarfraaz)
+	#316315 - Evolution exchange storage crashes on ECalendar sync (Varadhan)
+	
+Other Fixes
+	
+	- Removed exchange out-of-office handling form here, which is
+	implemented in libexchange-storage (Sushma)
+	- WIN32 support fixes. (Tor Lillqvist)
+	- Remove duplicate code, which also exists in e-d-s/servers/exchange 
+	and unused files. (Tor Lillqvist)
+	- Returning proper error code if calendar authentication fails (sushma)
+	- In set_mode() returning if failed to get the folder, and setting the
+	mode at the end. (sushma)
+	- using e-uid.h from libedataserver and not from e-util (Irene)
+
+
+Evolution Exchange 2.5.2  2005-11-14
+------------------------------------
+
+Updated Translations : (Since July 2005)
+
+  - ku (Erdal Ronahi)
+  - cs (Miloslav Trmac)
+  - es (Francisco Javier F. Serrador)
+
+Evolution Exchange 2.5.1  2005-10-24
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#274262 - Switch from offline to online, click on 'clear' in contacts, throws error message (Shakti)
+	#247015 - Evolution not freeing resources time for deleted meetings (Arunprakash)
+	#314573 - Evolution exchange storage crashes after subscribing to other's Inbox and restart evolution (Arunprakash)
+	#315342 - Not able to see existing mails after configuring exchange account (Arunprakash)
+	#241499 - Cryptic Error message when a saving contact without permission (Shakti)
+	#272987 - Error message is wrong for 'Expunge' operation in offline (Arunprakash)
+	#314019 - Exchange connector crashed on creating appointment in subscribed calendar (Sarfraaz)
+	#239641 - Filter rules flag new messages as "read" when moving from IMAP inbox to exch subfolder (Arunprakash)
+	#314746 - Syncing passwords across components fails for Exchange (Sarfraaz)	#302378 - One typo in .po file (Sarfraaz)
+	#312848 - Delete option should be disabled for default Tasks list under exchange account (Sarfraaz)
+
+Updated Translations : (Since July 2005)
+  - bg (Alexander Shopov)
+  - ca (Xavier Conde Rueda)
+  - cs (Miloslav Trmac)
+  - da (Martin Willemoes Hansen)
+  - de (Hendrik Richter & Frank Arnold)
+  - el (Kostas Papadimas & Nikos Charonitakis)
+  - en_CA (Adam Weinberger)
+  - es (Francisco Javier F. Serrador)
+  - et (Priit Laes)
+  - fa (Alireza Kheirkhahan & Meelad Zakaria)
+  - fi (Ilkka Tuohela)
+  - fr (Christophe Merlet)
+  - gl (Ignacio Casal Quinteiro)
+  - gu (Ankit Patel)
+  - hu (Gabor Kelemen)
+  - ja (Satoru SATOH)
+  - lt (Å½ygimantas BeruÄka)
+  - nb (Kjartan Maraas & Terance Sola)
+  - nl (Vincent van Adrighem)
+  - no (Kjartan Maraas & Terance Sola)
+  - pl (Artur Flinta)
+  - pt (Duarte Loreto)
+  - pt_BR (Raphael Higino)
+  - ro (Dan Damian)
+  - ru (Nickolay V. Shmyrev)
+  - sk (Marcel Telka)
+  - sq (Laurent Dhima)
+  - sr (Danilo Å egan)
+  - sr@Latn (Danilo Å egan)
+  - sv (Christian Rose)
+  - th (Udomsak Chundang & Theppitak Karoonboonyanan)
+  - tr (Baris Cicek)
+  - uk (Maxim Dziumanenko)
+  - vi (Clytie Siddall)
+  - zh_CN (Funda Wang)
+  - zh_TW (Chao-Hsiung Liao)
+
+Evolution Exchange 2.3.8  2005-08-22
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#257802 - Evolution not displaying instant messaging field for exhcange (Shakti)
+	#221030 - Categories aren't stored with addressbook entries. (Shakti)
+	#310449 - Start & Due dates are reduced by one day after restarting evolution (Arun)
+	#273272 - Unwanted error messages in offline (Praveen)
+	#310478 - In 'Exchange connector' if meeting is declined should not create appointment in participants calendar (Arun)
+	#310445 - Cannot delete non recurring appointments and meetings in exchange calendar (Arun)
+	#272882 - username does not get generated while configuring mail id (Praveen)
+	#312668 - Unable to go back to Online mode after clicking offline button... (NotZed)
+	#313076 - Creating Task with start & due dates crashes evolution-exchange-storage (Sarfraaz)
+	#273470 - Select all + copy from personal to exchange doesnt work (Praveen)
+	#313637 - Evolution being in online mode even if we go offline, for exchange (Arun)
+	#272751 - Unable to delete item in public folder despite permissions (Arun)
+	#310726 - 'Copy/Move Folder to' operations are not working (Arun)
+	#310437 - Folder deletions do not work (Arun)
+	#313797 - Exchange storage crashes if we start evolution in offline mode (Arun)
+	#313071 - Create two folders one after the other immediately, second folder becomes child of first (Arun)
+	#309420 - Enter password popsup twice (Sarfraaz)
+
+Evolution Exchange 2.3.7  2005-08-08
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#273975 - Connector locks up trying to sync calendar to pilot (Sarfraaz)
+	#310711 - Not able to delete a folder which has a child folder (Arun)
+	#311866 - Mail folders didn't get updated after creation or deletion (Arun)
+	#310718 - Move an important mail from Inbox to some user created folder - It becomes unimportant (Arun)
+	#311152 - Error while subscribing Public Folders (Sarfraaz)
+	#310726 - 'Copy/Move Folder to' operations are not working (Arun)
+	#309439 - Not able to rename a user created mail folder (Arun)
+
+
+Evolution Exchange 2.3.6  2005-07-25
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#310439 - Drag and drop a task from system default server task list to Personal Tasks list - 'Evolution-exchange-storage' crashes (Sarfraaz)
+	#310757 - UI:Send Options button should be removed from 'New Meeting' popup (Sarfraaz)
+	#273916 - Delete few mails, switch to offline, mail is not deleted (Arun)
+	#272986 - while switching from Offline to online doesnt synch changes in mail (Arun)
+	#311015 - Moving mails does not work in online mode with evolution started in offline mode (Arun)
+	#311020 - Deleting mail in offline, evolution deletes them in the server (Arun)
+	Fixed the delete calendar/addressbook/tasklist bug (Sarfraaz)
+
+Updated Translations : (Since June 2005)
+  - cs (Miloslav Trmac)
+  - da (Martin Willemoes Hansen)
+  - de (Hendrik Richter)
+  - en_CA (Adam Weinberger)
+  - es (Francisco Javier F. Serrador)
+  - fi (Ilkka Tuohela)
+  - gl (Ignacio Casal Quinteiro)
+  - gu (Ankit Patel)
+  - nb (Kjartan Maraas)
+  - nb (Terance Edward Sola)
+  - no (Kjartan Maraas)
+  - no (Terance Edward Sola)
+  - nl (Vincent van Adrighem)
+  - sr (Danilo Å egan)
+  - sr@Latn (Danilo Å egan)
+  - vi (Clytie Siddall)
+  - zh_CN (Funda Wang)
+  - zh_TW (Abel Cheung)
+
+Evolution Exchange 2.3.5  2005-07-11
+------------------------------------
+
+	* The Exchange button has been removed. Now users should be able to 
+	  seamlessly get the full functionality of evolution-exchange through 
+	  the Mail/Contacts/Calendar/Tasks components of evolution.
+
+	  One major change being that most of the Exchange Account wide 
+	  operations have been now moved to the Evolution Account Editor
+	  window under the "Exchange Settings" tab for an Exchange Account.
+
+Evolution Exchange 2.3.4  2005-07-01
+------------------------------------
+
+	* The Exchange server communication code moved to evolution-data-server
+		* The server communication code [ lib/xntlm and most of 
+		storage ] has now been moved to evolution-data-server under 
+		servers/exchange. This will enable developers to now write 
+		plugins in evolution that can communicate with the Exchange 
+		servers.
+	* Favorite folder handling is now made as part of Folder Subscriptions
+	  To mark a public folder as your favorite you now need to subscribe it.
+
+Evolution Exchange 2.3.3  2005-06-06
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.gnome.org/show_bug.cgi)
+
+	#273846 - Calender attachment:cannot open 'Openoffice' file (Vivek)
+	#273878 - List of problems in 'Attachment' in 'Tasks' (Vivek)
+	#274066 - Deactivating connector pops up false information message (Sushma)
+	#272514 - Don't include URL in translateable evolution-exchange message (Sushma)
+	#270363 - Quota, warning message is not very clear (Sushma)
+	#255756 - GAL lookups based on aliases fail to find entries (Sushma)
+	#305398 - GAL lookup crashes exchange connector (Sarfraaz)
+
+Updated Translations :
+  - el (Kostas Papadimas)
+  - en_CA (Adam Weinberger)
+  - cs (Miloslav Trmac)
+  - vi (Clytie Siddall)
+  - bg (Rostislav Raykov)
+
+Evolution Exchange 2.3.1  2005-04-26
+------------------------------------
+
+We have a new name for our packages, evolution-exchange !!!
+
+Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):
+
+	#74029 - Connector 2.2.1: crash every time on start up (Sushma)
+	#74050 - Exchange storage always crashes for invalid OWA (Sushma)
+	#73494 - Show folder size: Raname/create a folder not reflected (Sushma)
+	#72100 - Show folder size is empty for 'Favourite folders' (Sushma)
+	#74227 - Deleting the recurrence appointment does not update the tag calendar (Chenthill)
+	#74218 - Connector hangs while creating meeting in 'Calendar' in 'List view' (Vivek)
+	#73237 - Junk and Filter settings missing from Receiving Options tab (Sushma)
+	#73202 - connector crashes,restart evolution after changes in 'Receving options' (Sushma)
+	#72834 - Changes to 'Automatically synchronize account locally' check box is not saved (Sushma)
+	#73017 - Remember password does not work (Sushma)
+	#72836 - Error message 'Errror scanning exchange folders' is displayed always (Sushma)
+	#72881 - Asks for password twice for any changes in Account editor (Sushma)
+	#72168 - Error message not clear while creating 'Calender' in offline (Sivaiah)
+	#72951 - Delete operation for calender has to be deactivated in offline (Sivaiah)
+	#73218 - Focus selection when adding other user's folder (Sushma)
+	#72389 - Quota warning message is issued even after contents of all exchange folder contents are deleted (Sushma)
+	#72044 - Exchange storage hangs while importing contacts to 'Contact' (Sivaiah)
+	#73470 - Select all + copy from personal to exchange doesnt work (Sivaiah)
+	#73030 - Connector hangs while edit and save contact from mail (Sivaiah)
+	#73025 - Connector hanged while searching 'Email begins' with (Sivaiah)
+	#72041 - Exchange storage crashed while creating tasks (Sushma)
+	#73059 - Exchange connector hangs when 'Cancel' of meeting is accepted (Sivaiah)
+	#72889 - In offline mode, Exchange connector hangs when user trys to label a mail (Jeffrey)
+	#72943 - Connector hangs while deleting mail in offline (Jeffrey)
+	#73505 - Connector hangs, right click on occurence 'make this occurence movable' (Sivaiah)
+	#67740 - Exchange storage crashed while updating meeting request to 'Tentativly Accept' (Sivaiah)
+	#72801 - Connector doesn't fall back to nt_domain => Can't logon (Sushma)
+	#73712 - Create contact, switch to offline, disappears (Sivaiah)
+	#73673 - Mailer is broken (Sarfraaz)
+	#73498 - Offline: Mail folder properties not saved (Jeffrey)
+	#72986 - while switching from Offline to online doesnt synch changes in mail (Jeffrey)
+	Fixed the handling of subscribe to folders (Sushma)
+	Fixed the handling of attachments in calendars and tasks (Sarfraaz)
+
+Exchange Connector 2.2.0  2005-02-28
+------------------------------------
+
+Changes to Evolution Exchange between 2.0.x and 2.2.0
+
+	* Many major features added
+
+		* Password expiry warnings. You can now get prior notifications
+		  of their passwords getting expired.
+		* Display folder sizes. You can now get the size of each folder
+		  on the server which can help you reduce the appropriate
+		  folder contents when you are nearing your quota usage limit.
+		* Offline handling. You can now access your mails, contacts,
+		  calendar and tasks items in offline mode. Contacts, Calendar
+		  and Tasks are only read-only in this release, while Mail
+		  messages can be created and will get sent once you get back
+		  into online mode.
+		* Integrating ximian-connector-setup with account setup. You
+		  can now create your exchange account by giving the OWA url
+		  from the Edit->Preferences dialog, same as it was in
+		  ximian-connector-setup.
+		* Support for calendar attachments. You can now attach your
+		  meeting agenda and other files to your meeting requests. You
+		  can also attach documents to your appointments.
+		* Calendar tracking options. You can set options on your
+		  meeting requests to get notifications when the meeting
+		  request has been delivered or read.
+		* 64 bit support. Evolution Exchange can now also be used on a
+		  64 bit machine.
+		* Plenty of 2.0.x bug fixes.
+
+	* Connector is now localized to Albanian, Arabic, Bangla, Bulgarian,
+	  Catalan, Chinese Trad, Czech, Danish, Dutch, British English,
+	  Canadian English, French, German, Greek, Finnish, Gujarati, Hungarian,
+	  Italian, Japanese, Korean, Lithuanian, Polish, Portuguese, Punjabi,
+	  Serbian, Spanish, Tamil, Turkish, and Ukranian.
+	  (Translations have also been begun for several other languages.)
+
+
+
+Exchange Connector 2.1.6  2005-02-28
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):
+
+	#71555 - Label setting is not being saved across sessions (Sushma)
+	#72093 - Uncheck password expiry check box, still user receives password expiry message (Sushma)
+	#72091 - 'Change password' in password expiry does not throw error when password is not changed (Sushma)
+	#71878 - Global Catalog server not detected on account setup (Sushma)
+	#71800 - Account setup should test for BPROPFIND not enabled & display warning message (Sushma)
+	#71995 - xcs integ:Modification to OWA URL is not handled properly (Sushma)
+	#70283 - All-day calendar events incorrectly show as busy (Sarfraaz)
+	#72482 - Exchange connector hangs for one particular meeting req (Sarfraaz)
+	#72099 - Click on Action ->Folder Size, throws error (Sarfraaz)
+	#72170 - In offline mode, Search operation on GAL, returns 'Unable to perform search' (Sushma)
+	#72946 - Exchange connector crahsed while creating contact in offline (Sivaiah)
+	#72945 - Evolution crashed while creating contact in offline (Sivaiah)
+	#72104 - Delete folder contents 'Show folder size' doesnt display new size (Sarfraaz)
+	#73017 - Remember password does not work (Sushma)
+	#71519 - Switch to 'Offline', cannot open any mail in inbox, exchange hangs (Sarfraaz)
+	#72709 - OOF handling from account editor is not working (Sushma)
+	#73079 - Exchange crashes while moving from offline to online (Sarfraaz)
+
+Updated Translations :
+   - ar (Arafat Medini)
+   - bg (Alexander Shopov)
+   - ca (Jordi Mallach)
+   - cs (Miloslav Trmac)
+   - da (Martin Willemoes Hansen)
+   - de (Frank Arnold)
+   - el (Kostas Papadimas)
+   - en_CA (Adam Weinberger)
+   - en_GB (David Lodge)
+   - es (Francisco Javier F. Serrador)
+   - fi (Ilkka Tuohela)
+   - fr (Christophe Merlet)
+   - gu (Ankit Patel)
+   - hu (Laszlo Dvornik)
+   - ko (Changwoo Ryu)
+   - lt (ygimantas BeruÄka)
+   - nb (Kjartan Maraas)
+   - nl (Vincent van Adrighem)
+   - no (Kjartan Maraas)
+   - pl (Artur Flinta)
+   - pt (Duarte Loreto)
+   - ru (Leonid Kanter)
+   - sq (Laurent Dhima)
+   - sv (Christian Rose)
+   - uk (Maxim Dziumanenko)
+
+Exchange Connector 2.1.5  2005-02-07
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):
+
+	#70730 - connector hangs on kerberos authentication attempts (Sarfraaz)
+	#71432 - Don't see schedule in new meeting request dialog (Sushma)
+	#68330 - Exchange now crashes on start. (Sarfraaz)
+	#71547 - GAL lookups do not return data (Sushma)
+	Fixed a few l10n and i18n bugs.
+
+Updated Translations :
+  - lt (ygimantas BeruÄka)
+  - pt (Duarte Loreto)
+  - en_CA (Adam Weinberger)
+  - es (Francisco Javier F. Serrador)
+  - cs (Miloslav Trmac)
+  - nl (Vincent van Adrighem)
+  - pt_BR (Raphael Higino)
+  - sq (Laurent Dhima)
+  - nb (Kjartan Maraas)
+  - no (Kjartan Maraas)
+  - el (Kostas Papadimas)
+  - ko (Changwoo Ryu)
+  - de (Frank Arnold)
+
+Exchange Connector 2.1.4  2005-01-24
+------------------------------------
+
+	* Fixes for 64 bit support (Michael Zucchi)
+	* Bug fixes for account setup (Sushma)
+	* Bug fixes for attachments (Sarfraaz)
+	* Camel journalling fixes (Sarfraaz)
+
+Updated Translations: (Since 2.0 release)
+  - it (Marco Ciampa)
+  - en_CA (Adam Weinberger)
+  - cs (Miloslav Trmac)
+  - es (Francisco Javier F. Serrador)
+  - nl (Vincent van Adrighem)
+  - en_GB (David Lodge)
+  - pt_BR (Raphael Higino)
+  - sq (Laurent Dhima)
+  - ca (Jordi Mallach)
+  - bg (Alexander Shopov)
+  - de (Frank Arnold)
+  - zh_CN (Funda Wang)
+  - pt (Duarte Loreto)
+
+Exchange Connector 2.1.3  2005-01-10
+------------------------------------
+
+New Features :
+
+	* Integrating ximian-connector-setup with account setup (Sushma)
+	* Support for calendar attachments (Sarfraaz)
+	* Mail tracking options (Sarfraaz)
+
+Exchange Connector 2.1.2  2004-12-20
+------------------------------------
+
+New Features :
+	
+	* Offline changes (Sarfraaz)
+	* Fixed memory leaks (Sushma and Sarfraaz)
+
+Exchange Connector 2.1.1  2004-11-26
+------------------------------------
+
+New Features :
+
+	* Password expiry warnings. (Sushma)
+	* Display folder sizes. (Sarfraaz)
+	* Camel messageinfo changes (NotZed)
+
+
+Exchange Connector 2.1.0  2004-11-01
+------------------------------------
+
+Other bugs
+
+    - work with EDS loadable modules
+
+Updated translations:
+  - da (Martin Willemoes Hansen)
+  - ko (Changwoo Ryu)
+
+Exchange Connector 2.0.2  2004-10-11
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):
+
+   #65685 - Could not send message (Dan)
+   #67510 - direct booking doesn't work (Sarfraaz)
+   Initialize codeset for textdomain. (Frederic)
+
+Exchange Connector 2.0.1, 2004-09-24
+------------------------------------
+
+Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):
+
+   #65850 - Evolution Exchange storage crash while adding public folders to 'Favourite' folder (Sushma)
+   #64188 - Changing Exchange profile name screws up (partial fix) (Sushma)
+   #41647 - Can perform empty GAL queries in Select contacts from addressbook (Sushma)
+
+Updated translations:
+  - fr (Craig Jeffares)
+  - zh_TW (Craig Jeffares)
+  - it (Craig Jeffares)
+  - sv (Christian Rose)
+
+Exchange Connector 2.0.0, 2004-09-13
+------------------------------------
+
+Changes to Ximian Connector between 1.4.x and 2.0:
+
+	* Major UI change to reflect changes in Evolution 2.0:
+
+		* Mail, addressbook, calendar, and task folders are
+                  now viewed in separate components.
+
+		* If you have Connector installed, there is a fifth
+                  component available named "Exchange" which you can
+                  use to do Exchange-specific operations, such as
+                  editing folder permissions or changing your
+                  Out-of-Office status.
+
+		* Other users' folders that you have subscribed to
+                  will show up in the corresponding components. (Eg,
+                  another user's Calendar will show up in the Calendar
+                  component.)
+
+		* Public folders that you have added to your "Favorite
+                  Public Folders" hierarchy will also show up in the
+                  corresponding components. (You can add folders to
+                  the favorites hierarchy from either Outlook or
+                  Connector.)
+
+	* You can now change your Exchange/Windows password from
+          Evolution, using the "Change Exchange Password" command in
+          the Exchange component. Also, if your site uses password
+          expiration, Connector will recognize when your password has
+          expired, and allow you to change it.
+
+	* Connector is now localized to Albanian, Arabic, Bangla,
+          Czech, Danish, Dutch, British English, Canadian English,
+          German, Greek, Finnish, Gujarati, Hungarian, Japanese,
+          Korean, Polish, Portuguese, Punjabi, Serbian, Spanish,
+          Tamil, Turkish, and Ukranian. (Translations have also been
+          begun for several other languages.)
+
+	* Various bugs fixed

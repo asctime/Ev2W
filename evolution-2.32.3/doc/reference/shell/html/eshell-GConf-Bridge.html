@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GConf Bridge</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Reading-and-Writing-XML.html" title="Reading and Writing XML">
+<link rel="next" href="ch03.html" title="Extending Evolution">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Reading-and-Writing-XML.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="ch03.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-GConf-Bridge.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-GConf-Bridge.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="GConf Bridge">
+<a name="eshell-GConf-Bridge"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-GConf-Bridge.top_of_page"></a>GConf Bridge</span></h2>
+<p>GConf Bridge</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-GConf-Bridge.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge">GConfBridge</a>;
+<span class="returnvalue">void</span>                <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-install-default-error-handler" title="gconf_bridge_install_default_error_handler ()">gconf_bridge_install_default_error_handler</a>
+                                                        (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="returnvalue">GConfBridge</span></a> *       <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-get" title="gconf_bridge_get ()">gconf_bridge_get</a>                    (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">GConfClient</span> *       <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-get-client" title="gconf_bridge_get_client ()">gconf_bridge_get_client</a>             (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-property-full" title="gconf_bridge_bind_property_full ()">gconf_bridge_bind_property_full</a>     (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *prop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> delayed_sync</code></em>);
+#define             <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-property" title="gconf_bridge_bind_property()">gconf_bridge_bind_property</a>          (bridge,
+                                                         key,
+                                                         object,
+                                                         prop)
+#define             <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-property-delayed" title="gconf_bridge_bind_property_delayed()">gconf_bridge_bind_property_delayed</a>  (bridge,
+                                                         key,
+                                                         object,
+                                                         prop)
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-window" title="gconf_bridge_bind_window ()">gconf_bridge_bind_window</a>            (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key_prefix</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *window</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> bind_size</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> bind_pos</code></em>);
+#define             <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-window-size" title="gconf_bridge_bind_window_size()">gconf_bridge_bind_window_size</a>       (bridge,
+                                                         key_prefix,
+                                                         window)
+#define             <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-window-pos" title="gconf_bridge_bind_window_pos()">gconf_bridge_bind_window_pos</a>        (bridge,
+                                                         key_prefix,
+                                                         window)
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-string-list-store" title="gconf_bridge_bind_string_list_store ()">gconf_bridge_bind_string_list_store</a> (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkListStore.html"><span class="type">GtkListStore</span></a> *list_store</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-unbind" title="gconf_bridge_unbind ()">gconf_bridge_unbind</a>                 (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> binding_id</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-GConf-Bridge.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-GConf-Bridge.details"></a><h2>Details</h2>
+<div class="refsect2" title="GConfBridge">
+<a name="GConfBridge"></a><h3>GConfBridge</h3>
+<pre class="programlisting">typedef struct _GConfBridge GConfBridge;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_install_default_error_handler ()">
+<a name="gconf-bridge-install-default-error-handler"></a><h3>gconf_bridge_install_default_error_handler ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                gconf_bridge_install_default_error_handler
+                                                        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Sets up the default error handler. Any unhandled GConf errors will
+automatically be handled by presenting the user an error dialog.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_get ()">
+<a name="gconf-bridge-get"></a><h3>gconf_bridge_get ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="returnvalue">GConfBridge</span></a> *       gconf_bridge_get                    (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns the <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>. This is a singleton object.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_get_client ()">
+<a name="gconf-bridge-get-client"></a><h3>gconf_bridge_get_client ()</h3>
+<pre class="programlisting"><span class="returnvalue">GConfClient</span> *       gconf_bridge_get_client             (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>);</pre>
+<p>
+Returns the <span class="type">GConfClient</span> used by <em class="parameter"><code>bridge</code></em>. This is the same <span class="type">GConfClient</span>
+as returned by <a href="/usr/share/gtk-doc/html/gconf/gconf-gconf-client.html#gconf-client-get-default"><code class="function">gconf_client_get_default()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <span class="type">GConfClient</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_property_full ()">
+<a name="gconf-bridge-bind-property-full"></a><h3>gconf_bridge_bind_property_full ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               gconf_bridge_bind_property_full     (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *prop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> delayed_sync</code></em>);</pre>
+<p>
+Binds <em class="parameter"><code>key</code></em> to <em class="parameter"><code>prop</code></em>, causing them to have the same value at all times.
+</p>
+<p>
+The types of <em class="parameter"><code>key</code></em> and <em class="parameter"><code>prop</code></em> should be compatible. Floats and doubles, and
+ints, uints, longs, unlongs, int64s, uint64s, chars, uchars and enums
+can be matched up. Booleans and strings can only be matched to their
+respective types.
+</p>
+<p>
+On calling this function the current value of <em class="parameter"><code>key</code></em> will be set to <em class="parameter"><code>prop</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>A GConf key to be bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td>The property of <em class="parameter"><code>object</code></em> to be bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>delayed_sync</code></em> :</span></p></td>
+<td>TRUE if there should be a delay between property changes
+and syncs to GConf. Set to TRUE when binding to a rapidly-changing
+property, for example the "value" property on a <a href="http://library.gnome.org/devel/gtk/GtkAdjustment.html"><span class="type">GtkAdjustment</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The ID of the new binding.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_property()">
+<a name="gconf-bridge-bind-property"></a><h3>gconf_bridge_bind_property()</h3>
+<pre class="programlisting">#define             gconf_bridge_bind_property(bridge, key, object, prop)</pre>
+<p>
+Binds <em class="parameter"><code>key</code></em> to <em class="parameter"><code>prop</code></em> without delays, causing them to have the same value at all times. See
+<a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-property-full" title="gconf_bridge_bind_property_full ()"><span class="type">gconf_bridge_bind_property_full</span></a> for more details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>A GConf key to be bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td>The property of <em class="parameter"><code>object</code></em> to be bound
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_property_delayed()">
+<a name="gconf-bridge-bind-property-delayed"></a><h3>gconf_bridge_bind_property_delayed()</h3>
+<pre class="programlisting">#define             gconf_bridge_bind_property_delayed(bridge, key, object, prop)</pre>
+<p>
+Binds <em class="parameter"><code>key</code></em> to <em class="parameter"><code>prop</code></em> with a delay, causing them to have the same value at all
+times. See <a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-property-full" title="gconf_bridge_bind_property_full ()"><span class="type">gconf_bridge_bind_property_full</span></a> for more details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>A GConf key to be bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td>The property of <em class="parameter"><code>object</code></em> to be bound
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_window ()">
+<a name="gconf-bridge-bind-window"></a><h3>gconf_bridge_bind_window ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               gconf_bridge_bind_window            (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key_prefix</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *window</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> bind_size</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> bind_pos</code></em>);</pre>
+<p>
+On calling this function <em class="parameter"><code>window</code></em> will be resized to the values
+specified by "<em class="parameter"><code>key_prefix</code></em>_width" and "<em class="parameter"><code>key_prefix</code></em>_height"
+and maximixed if "<em class="parameter"><code>key_prefix</code></em>_maximized is TRUE if
+<em class="parameter"><code>bind_size</code></em> is TRUE, and moved to the values specified by
+"<em class="parameter"><code>key_prefix</code></em>_x" and "<em class="parameter"><code>key_prefix</code></em>_y" if <em class="parameter"><code>bind_pos</code></em> is TRUE.
+The respective GConf values will be updated when the window is resized
+and/or moved.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_prefix</code></em> :</span></p></td>
+<td>The prefix of the GConf keys
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bind_size</code></em> :</span></p></td>
+<td>TRUE to bind the size of <em class="parameter"><code>window</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bind_pos</code></em> :</span></p></td>
+<td>TRUE to bind the position of <em class="parameter"><code>window</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The ID of the new binding.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_window_size()">
+<a name="gconf-bridge-bind-window-size"></a><h3>gconf_bridge_bind_window_size()</h3>
+<pre class="programlisting">#define             gconf_bridge_bind_window_size(bridge, key_prefix, window)</pre>
+<p>
+On calling this function <em class="parameter"><code>window</code></em> will be resized to the values specified by
+"<em class="parameter"><code>key_prefix</code></em>_width" and "<em class="parameter"><code>key_prefix</code></em>_height".  The respective
+GConf values will be updated when the window is resized. See
+<a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-window" title="gconf_bridge_bind_window ()"><span class="type">gconf_bridge_bind_window</span></a> for more details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_prefix</code></em> :</span></p></td>
+<td>The prefix of the GConf keys
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_window_pos()">
+<a name="gconf-bridge-bind-window-pos"></a><h3>gconf_bridge_bind_window_pos()</h3>
+<pre class="programlisting">#define             gconf_bridge_bind_window_pos(bridge, key_prefix, window)</pre>
+<p>
+On calling this function <em class="parameter"><code>window</code></em> will be moved to the values specified by
+"<em class="parameter"><code>key_prefix</code></em>_x" and "<em class="parameter"><code>key_prefix</code></em>_y". The respective GConf
+values will be updated when the window is moved. See
+<a class="link" href="eshell-GConf-Bridge.html#gconf-bridge-bind-window" title="gconf_bridge_bind_window ()"><span class="type">gconf_bridge_bind_window</span></a> for more details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_prefix</code></em> :</span></p></td>
+<td>The prefix of the GConf keys
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_bind_string_list_store ()">
+<a name="gconf-bridge-bind-string-list-store"></a><h3>gconf_bridge_bind_string_list_store ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               gconf_bridge_bind_string_list_store (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkListStore.html"><span class="type">GtkListStore</span></a> *list_store</code></em>);</pre>
+<p>
+On calling this function single string column <a href="http://library.gnome.org/devel/gtk/GtkListStore.html"><span class="type">GtkListStore</span></a> <em class="parameter"><code>list_store</code></em>
+will be kept synchronized with the GConf string list value pointed to by
+<em class="parameter"><code>key</code></em>. On calling this function <em class="parameter"><code>list_store</code></em> will be populated with the
+strings specified by the value of <em class="parameter"><code>key</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>A GConf key to be bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list_store</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkListStore.html"><span class="type">GtkListStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The ID of the new binding.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_bridge_unbind ()">
+<a name="gconf-bridge-unbind"></a><h3>gconf_bridge_unbind ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                gconf_bridge_unbind                 (<em class="parameter"><code><a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a> *bridge</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> binding_id</code></em>);</pre>
+<p>
+Removes the binding with ID <em class="parameter"><code>binding_id</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bridge</code></em> :</span></p></td>
+<td>A <a class="link" href="eshell-GConf-Bridge.html#GConfBridge" title="GConfBridge"><span class="type">GConfBridge</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>binding_id</code></em> :</span></p></td>
+<td>The ID of the binding to be removed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

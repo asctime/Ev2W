@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Categories</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-GObject-Property-Bindings.html" title="GObject Property Bindings">
+<link rel="next" href="eshell-Date-and-Time-Formatting.html" title="Date and Time Formatting">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-GObject-Property-Bindings.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Date-and-Time-Formatting.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Categories.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Categories.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Categories">
+<a name="eshell-Categories"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Categories.top_of_page"></a>Categories</span></h2>
+<p>Categories</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Categories.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Categories.html#e-categories-config-get-icon-for" title="e_categories_config_get_icon_for ()">e_categories_config_get_icon_for</a>    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"><span class="type">GdkPixbuf</span></a> **pixbuf</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Categories.html#e-categories-config-open-dialog-for-entry" title="e_categories_config_open_dialog_for_entry ()">e_categories_config_open_dialog_for_entry</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkEntry.html"><span class="type">GtkEntry</span></a> *entry</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Categories.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Categories.details"></a><h2>Details</h2>
+<div class="refsect2" title="e_categories_config_get_icon_for ()">
+<a name="e-categories-config-get-icon-for"></a><h3>e_categories_config_get_icon_for ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_categories_config_get_icon_for    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"><span class="type">GdkPixbuf</span></a> **pixbuf</code></em>);</pre>
+<p>
+Returns the icon configured for the given category.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>category</code></em> :</span></p></td>
+<td>Category for which to get the icon.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pixbuf</code></em> :</span></p></td>
+<td>A pointer to where the pixbuf will be returned.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the icon configured for the given category
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_categories_config_open_dialog_for_entry ()">
+<a name="e-categories-config-open-dialog-for-entry"></a><h3>e_categories_config_open_dialog_for_entry ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_categories_config_open_dialog_for_entry
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkEntry.html"><span class="type">GtkEntry</span></a> *entry</code></em>);</pre>
+<p>
+This is a self-contained function that lets you open a popup dialog for
+the user to select a list of categories.
+</p>
+<p>
+The <em class="parameter"><code>entry</code></em> parameter is used, at initialization time, as the list of
+initial categories that are selected in the categories selection dialog.
+Then, when the user commits its changes, the list of selected categories
+is put back on the entry widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkEntry.html"><span class="type">GtkEntry</span></a> on which to get/set the categories list
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

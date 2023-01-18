@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CamelService</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Camel Reference Manual">
+<link rel="up" href="Services.html" title="Services">
+<link rel="prev" href="camel-camel-provider.html" title="camel-provider">
+<link rel="next" href="CamelStore.html" title="CamelStore">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="camel-camel-provider.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="Services.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Camel Reference Manual</th>
+<td><a accesskey="n" href="CamelStore.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#CamelService.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#CamelService.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#CamelService.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="CamelService">
+<a name="CamelService"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="CamelService.top_of_page"></a>CamelService</span></h2>
+<p>CamelService</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="CamelService.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="CamelService.html#CamelService-struct" title="CamelService">CamelService</a>;
+#define             <a class="link" href="CamelService.html#CAMEL-SERVICE-ERROR:CAPS" title="CAMEL_SERVICE_ERROR">CAMEL_SERVICE_ERROR</a>
+enum                <a class="link" href="CamelService.html#CamelServiceError" title="enum CamelServiceError">CamelServiceError</a>;
+enum                <a class="link" href="CamelService.html#CamelServiceConnectionStatus" title="enum CamelServiceConnectionStatus">CamelServiceConnectionStatus</a>;
+                    <a class="link" href="CamelService.html#CamelServiceAuthType" title="CamelServiceAuthType">CamelServiceAuthType</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelService.html#camel-service-construct" title="camel_service_construct ()">camel_service_construct</a>             (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><span class="type">struct _CamelSession</span> *session</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-provider.html#CamelProvider" title="CamelProvider"><span class="type">CamelProvider</span></a> *provider</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-url.html#CamelURL" title="CamelURL"><span class="type">CamelURL</span></a> *url</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelService.html#camel-service-connect" title="camel_service_connect ()">camel_service_connect</a>               (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelService.html#camel-service-disconnect" title="camel_service_disconnect ()">camel_service_disconnect</a>            (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> clean</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelService.html#camel-service-cancel-connect" title="camel_service_cancel_connect ()">camel_service_cancel_connect</a>        (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="CamelService.html#camel-service-get-url" title="camel_service_get_url ()">camel_service_get_url</a>               (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="CamelService.html#camel-service-get-name" title="camel_service_get_name ()">camel_service_get_name</a>              (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> brief</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="CamelService.html#camel-service-get-path" title="camel_service_get_path ()">camel_service_get_path</a>              (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);
+struct <a class="link" href="CamelSession.html" title="CamelSession"><span class="returnvalue">_CamelSession</span></a> * <a class="link" href="CamelService.html#camel-service-get-session" title="camel_service_get_session ()">camel_service_get_session</a>        (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);
+<a class="link" href="camel-camel-provider.html#CamelProvider" title="CamelProvider"><span class="returnvalue">CamelProvider</span></a> *     <a class="link" href="CamelService.html#camel-service-get-provider" title="camel_service_get_provider ()">camel_service_get_provider</a>          (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="CamelService.html#camel-service-query-auth-types" title="camel_service_query_auth_types ()">camel_service_query_auth_types</a>      (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+enum                <a class="link" href="CamelService.html#CamelServiceLock" title="enum CamelServiceLock">CamelServiceLock</a>;
+<span class="returnvalue">void</span>                <a class="link" href="CamelService.html#camel-service-lock" title="camel_service_lock ()">camel_service_lock</a>                  (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelService.html#CamelServiceLock" title="enum CamelServiceLock"><span class="type">CamelServiceLock</span></a> lock</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelService.html#camel-service-unlock" title="camel_service_unlock ()">camel_service_unlock</a>                (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelService.html#CamelServiceLock" title="enum CamelServiceLock"><span class="type">CamelServiceLock</span></a> lock</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="CamelService.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="CamelObject.html" title="CamelObject">CamelObject</a>
+         +----CamelService
+               +----<a class="link" href="CamelStore.html" title="CamelStore">CamelStore</a>
+               +----<a class="link" href="CamelTransport.html" title="CamelTransport">CamelTransport</a>
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="CamelService.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="CamelService.details"></a><h2>Details</h2>
+<div class="refsect2" title="CamelService">
+<a name="CamelService-struct"></a><h3>CamelService</h3>
+<pre class="programlisting">typedef struct _CamelService CamelService;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_SERVICE_ERROR">
+<a name="CAMEL-SERVICE-ERROR:CAPS"></a><h3>CAMEL_SERVICE_ERROR</h3>
+<pre class="programlisting">#define             CAMEL_SERVICE_ERROR</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="enum CamelServiceError">
+<a name="CamelServiceError"></a><h3>enum CamelServiceError</h3>
+<pre class="programlisting">typedef enum {
+	CAMEL_SERVICE_ERROR_INVALID,
+	CAMEL_SERVICE_ERROR_URL_INVALID,
+	CAMEL_SERVICE_ERROR_UNAVAILABLE,
+	CAMEL_SERVICE_ERROR_CANT_AUTHENTICATE,
+	CAMEL_SERVICE_ERROR_NOT_CONNECTED
+} CamelServiceError;
+</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="enum CamelServiceConnectionStatus">
+<a name="CamelServiceConnectionStatus"></a><h3>enum CamelServiceConnectionStatus</h3>
+<pre class="programlisting">typedef enum {
+	CAMEL_SERVICE_DISCONNECTED,
+	CAMEL_SERVICE_CONNECTING,
+	CAMEL_SERVICE_CONNECTED,
+	CAMEL_SERVICE_DISCONNECTING
+} CamelServiceConnectionStatus;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CamelServiceAuthType">
+<a name="CamelServiceAuthType"></a><h3>CamelServiceAuthType</h3>
+<pre class="programlisting">typedef struct {
+	const gchar *name;               /* user-friendly name */
+	const gchar *description;
+	const gchar *authproto;
+
+	gboolean need_password;   /* needs a password to authenticate */
+} CamelServiceAuthType;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_construct ()">
+<a name="camel-service-construct"></a><h3>camel_service_construct ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_service_construct             (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><span class="type">struct _CamelSession</span> *session</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-provider.html#CamelProvider" title="CamelProvider"><span class="type">CamelProvider</span></a> *provider</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-url.html#CamelURL" title="CamelURL"><span class="type">CamelURL</span></a> *url</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Constructs a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> initialized with the given parameters.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>the <a class="link" href="CamelSession.html" title="CamelSession"><span class="type">CamelSession</span></a> for <em class="parameter"><code>service</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>provider</code></em> :</span></p></td>
+<td>the <a class="link" href="camel-camel-provider.html#CamelProvider" title="CamelProvider"><span class="type">CamelProvider</span></a> associated with <em class="parameter"><code>service</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>url</code></em> :</span></p></td>
+<td>the default URL for the service (may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_connect ()">
+<a name="camel-service-connect"></a><h3>camel_service_connect ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_service_connect               (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Connect to the service using the parameters it was initialized
+with.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the connection is made or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_disconnect ()">
+<a name="camel-service-disconnect"></a><h3>camel_service_disconnect ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_service_disconnect            (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> clean</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Disconnect from the service. If <em class="parameter"><code>clean</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, it should not
+try to do any synchronizing or other cleanup of the connection.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clean</code></em> :</span></p></td>
+<td>whether or not to try to disconnect cleanly
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the disconnect was successful or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_cancel_connect ()">
+<a name="camel-service-cancel-connect"></a><h3>camel_service_cancel_connect ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_service_cancel_connect        (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);</pre>
+<p>
+If <em class="parameter"><code>service</code></em> is currently attempting to connect to or disconnect
+from a server, this causes it to stop and fail. Otherwise it is a
+no-op.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_get_url ()">
+<a name="camel-service-get-url"></a><h3>camel_service_get_url ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             camel_service_get_url               (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);</pre>
+<p>
+Gets the URL representing <em class="parameter"><code>service</code></em>. The returned URL must be
+freed when it is no longer needed. For security reasons, this
+routine does not return the password.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the URL representing <em class="parameter"><code>service</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_get_name ()">
+<a name="camel-service-get-name"></a><h3>camel_service_get_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             camel_service_get_name              (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> brief</code></em>);</pre>
+<p>
+This gets the name of the service in a "friendly" (suitable for
+humans) form. If <em class="parameter"><code>brief</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, this should be a brief description
+such as for use in the folder tree. If <em class="parameter"><code>brief</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, it should
+be a more complete and mostly unambiguous description.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brief</code></em> :</span></p></td>
+<td>whether or not to use a briefer form
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a description of the service which the caller must free
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_get_path ()">
+<a name="camel-service-get-path"></a><h3>camel_service_get_path ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             camel_service_get_path              (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);</pre>
+<p>
+This gets a valid UNIX relative path describing <em class="parameter"><code>service</code></em>, which
+is guaranteed to be different from the path returned for any
+different service. This path MUST start with the name of the
+provider, followed by a "/", but after that, it is up to the
+provider.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the path, which the caller must free
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_get_session ()">
+<a name="camel-service-get-session"></a><h3>camel_service_get_session ()</h3>
+<pre class="programlisting">struct <a class="link" href="CamelSession.html" title="CamelSession"><span class="returnvalue">_CamelSession</span></a> * camel_service_get_session        (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);</pre>
+<p>
+Gets the <a class="link" href="CamelSession.html" title="CamelSession"><span class="type">CamelSession</span></a> associated with the service.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the session
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_get_provider ()">
+<a name="camel-service-get-provider"></a><h3>camel_service_get_provider ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-provider.html#CamelProvider" title="CamelProvider"><span class="returnvalue">CamelProvider</span></a> *     camel_service_get_provider          (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>);</pre>
+<p>
+Gets the <a class="link" href="camel-camel-provider.html#CamelProvider" title="CamelProvider"><span class="type">CamelProvider</span></a> associated with the service.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the provider
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_query_auth_types ()">
+<a name="camel-service-query-auth-types"></a><h3>camel_service_query_auth_types ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             camel_service_query_auth_types      (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+This is used by the mail source wizard to get the list of
+authentication types supported by the protocol, and information
+about them.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a list of <a class="link" href="CamelService.html#CamelServiceAuthType" title="CamelServiceAuthType"><span class="type">CamelServiceAuthType</span></a> records. The caller
+must free the list with <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#g-list-free"><span class="type">g_list_free</span></a> when it is done with it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum CamelServiceLock">
+<a name="CamelServiceLock"></a><h3>enum CamelServiceLock</h3>
+<pre class="programlisting">typedef enum {
+	CAMEL_SERVICE_REC_CONNECT_LOCK,
+	CAMEL_SERVICE_CONNECT_OP_LOCK
+} CamelServiceLock;
+</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_lock ()">
+<a name="camel-service-lock"></a><h3>camel_service_lock ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_service_lock                  (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelService.html#CamelServiceLock" title="enum CamelServiceLock"><span class="type">CamelServiceLock</span></a> lock</code></em>);</pre>
+<p>
+Locks <span class="type">service</span>'s <span class="type">lock</span>. Unlock it with <a class="link" href="CamelService.html#camel-service-unlock" title="camel_service_unlock ()"><code class="function">camel_service_unlock()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
+<td>lock type to lock
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_service_unlock ()">
+<a name="camel-service-unlock"></a><h3>camel_service_unlock ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_service_unlock                (<em class="parameter"><code><a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a> *service</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelService.html#CamelServiceLock" title="enum CamelServiceLock"><span class="type">CamelServiceLock</span></a> lock</code></em>);</pre>
+<p>
+Unlocks <span class="type">service</span>'s <span class="type">lock</span>, previously locked with <a class="link" href="CamelService.html#camel-service-lock" title="camel_service_lock ()"><code class="function">camel_service_lock()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelService.html" title="CamelService"><span class="type">CamelService</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
+<td>lock type to unlock
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

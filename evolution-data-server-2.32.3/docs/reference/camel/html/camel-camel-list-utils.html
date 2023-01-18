@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>camel-list-utils</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Camel Reference Manual">
+<link rel="up" href="Utilities.html" title="Utilities">
+<link rel="prev" href="camel-camel-junk-plugin.html" title="camel-junk-plugin">
+<link rel="next" href="camel-camel-lock.html" title="camel-lock">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="camel-camel-junk-plugin.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="Utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Camel Reference Manual</th>
+<td><a accesskey="n" href="camel-camel-lock.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#camel-camel-list-utils.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#camel-camel-list-utils.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="camel-list-utils">
+<a name="camel-camel-list-utils"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="camel-camel-list-utils.top_of_page"></a>camel-list-utils</span></h2>
+<p>camel-list-utils</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="camel-camel-list-utils.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList">CamelDList</a>;
+                    <a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode">CamelDListNode</a>;
+#define             <a class="link" href="camel-camel-list-utils.html#CAMEL-DLIST-INITIALISER:CAPS" title="CAMEL_DLIST_INITIALISER()">CAMEL_DLIST_INITIALISER</a>             (l)
+<span class="returnvalue">void</span>                <a class="link" href="camel-camel-list-utils.html#camel-dlist-init" title="camel_dlist_init ()">camel_dlist_init</a>                    (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *v</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-dlist-addhead" title="camel_dlist_addhead ()">camel_dlist_addhead</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="type">CamelDListNode</span></a> *n</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-dlist-addtail" title="camel_dlist_addtail ()">camel_dlist_addtail</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="type">CamelDListNode</span></a> *n</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-dlist-remove" title="camel_dlist_remove ()">camel_dlist_remove</a>                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="type">CamelDListNode</span></a> *n</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-dlist-remhead" title="camel_dlist_remhead ()">camel_dlist_remhead</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-dlist-remtail" title="camel_dlist_remtail ()">camel_dlist_remtail</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="camel-camel-list-utils.html#camel-dlist-empty" title="camel_dlist_empty ()">camel_dlist_empty</a>                   (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="camel-camel-list-utils.html#camel-dlist-length" title="camel_dlist_length ()">camel_dlist_length</a>                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);
+                    <a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode">CamelSListNode</a>;
+                    <a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList">CamelSList</a>;
+#define             <a class="link" href="camel-camel-list-utils.html#CAMEL-SLIST-INITIALISER:CAPS" title="CAMEL_SLIST_INITIALISER()">CAMEL_SLIST_INITIALISER</a>             (l)
+<span class="returnvalue">void</span>                <a class="link" href="camel-camel-list-utils.html#camel-slist-init" title="camel_slist_init ()">camel_slist_init</a>                    (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-slist-addhead" title="camel_slist_addhead ()">camel_slist_addhead</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="type">CamelSListNode</span></a> *n</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-slist-addtail" title="camel_slist_addtail ()">camel_slist_addtail</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="type">CamelSListNode</span></a> *n</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-slist-remove" title="camel_slist_remove ()">camel_slist_remove</a>                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="type">CamelSListNode</span></a> *n</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-slist-remhead" title="camel_slist_remhead ()">camel_slist_remhead</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);
+<a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    <a class="link" href="camel-camel-list-utils.html#camel-slist-remtail" title="camel_slist_remtail ()">camel_slist_remtail</a>                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="camel-camel-list-utils.html#camel-slist-empty" title="camel_slist_empty ()">camel_slist_empty</a>                   (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="camel-camel-list-utils.html#camel-slist-length" title="camel_slist_length ()">camel_slist_length</a>                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="camel-camel-list-utils.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="camel-camel-list-utils.details"></a><h2>Details</h2>
+<div class="refsect2" title="CamelDList">
+<a name="CamelDList"></a><h3>CamelDList</h3>
+<pre class="programlisting">typedef struct {
+	struct _CamelDListNode *head;
+	struct _CamelDListNode *tail;
+	struct _CamelDListNode *tailpred;
+} CamelDList;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CamelDListNode">
+<a name="CamelDListNode"></a><h3>CamelDListNode</h3>
+<pre class="programlisting">typedef struct {
+	struct _CamelDListNode *next;
+	struct _CamelDListNode *prev;
+} CamelDListNode;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_DLIST_INITIALISER()">
+<a name="CAMEL-DLIST-INITIALISER:CAPS"></a><h3>CAMEL_DLIST_INITIALISER()</h3>
+<pre class="programlisting">#define CAMEL_DLIST_INITIALISER(l) { (CamelDListNode *)&amp;l.tail, NULL, (CamelDListNode *)&amp;l.head }
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_init ()">
+<a name="camel-dlist-init"></a><h3>camel_dlist_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_dlist_init                    (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *v</code></em>);</pre>
+<p>
+Initialise a double-linked list header.  All list headers must be
+initialised before use.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_addhead ()">
+<a name="camel-dlist-addhead"></a><h3>camel_dlist_addhead ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    camel_dlist_addhead                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="type">CamelDListNode</span></a> *n</code></em>);</pre>
+<p>
+Add the list node <em class="parameter"><code>n</code></em> to the head (start) of the list <em class="parameter"><code>l</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>An initialised list header.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>A node, the next and prev pointers will be overwritten.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>n</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_addtail ()">
+<a name="camel-dlist-addtail"></a><h3>camel_dlist_addtail ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    camel_dlist_addtail                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="type">CamelDListNode</span></a> *n</code></em>);</pre>
+<p>
+Add the list onde <em class="parameter"><code>n</code></em> to the tail (end) of the list <em class="parameter"><code>l</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>An intialised list header.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>A node, the next and prev pointers will be overwritten.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>n</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_remove ()">
+<a name="camel-dlist-remove"></a><h3>camel_dlist_remove ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    camel_dlist_remove                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="type">CamelDListNode</span></a> *n</code></em>);</pre>
+<p>
+Remove <em class="parameter"><code>n</code></em> from the list it's in.  <em class="parameter"><code>n</code></em> must belong to a list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>A node which is part of a list.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>n</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_remhead ()">
+<a name="camel-dlist-remhead"></a><h3>camel_dlist_remhead ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    camel_dlist_remhead                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);</pre>
+<p>
+Remove the head node (start) of the list.
+</p>
+<p>
+xReturn value: The previously first-node in the list, or NULLif <em class="parameter"><code>l</code></em>
+is an empty list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>An initialised list, maybe containing items.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_remtail ()">
+<a name="camel-dlist-remtail"></a><h3>camel_dlist_remtail ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelDListNode" title="CamelDListNode"><span class="returnvalue">CamelDListNode</span></a> *    camel_dlist_remtail                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);</pre>
+<p>
+Remove the last node in the list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>An initialised list, maybe containing items.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The previously last-node in the list, or NULL if <em class="parameter"><code>l</code></em>
+is an empty list.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_empty ()">
+<a name="camel-dlist-empty"></a><h3>camel_dlist_empty ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                camel_dlist_empty                   (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);</pre>
+<p>
+Returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>l</code></em> is an empty list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>An initialised list header.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>l</code></em> is an empty list, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_dlist_length ()">
+<a name="camel-dlist-length"></a><h3>camel_dlist_length ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                camel_dlist_length                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelDList" title="CamelDList"><span class="type">CamelDList</span></a> *l</code></em>);</pre>
+<p>
+Returns the number of nodes in the list <em class="parameter"><code>l</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>An initialised list header.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The number of nodes.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="CamelSListNode">
+<a name="CamelSListNode"></a><h3>CamelSListNode</h3>
+<pre class="programlisting">typedef struct {
+	struct _CamelSListNode *next;
+} CamelSListNode;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CamelSList">
+<a name="CamelSList"></a><h3>CamelSList</h3>
+<pre class="programlisting">typedef struct {
+	struct _CamelSListNode *head;
+} CamelSList;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_SLIST_INITIALISER()">
+<a name="CAMEL-SLIST-INITIALISER:CAPS"></a><h3>CAMEL_SLIST_INITIALISER()</h3>
+<pre class="programlisting">#define CAMEL_SLIST_INITIALISER(l) { 0 }
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_init ()">
+<a name="camel-slist-init"></a><h3>camel_slist_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_slist_init                    (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_addhead ()">
+<a name="camel-slist-addhead"></a><h3>camel_slist_addhead ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    camel_slist_addhead                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="type">CamelSListNode</span></a> *n</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_addtail ()">
+<a name="camel-slist-addtail"></a><h3>camel_slist_addtail ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    camel_slist_addtail                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="type">CamelSListNode</span></a> *n</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_remove ()">
+<a name="camel-slist-remove"></a><h3>camel_slist_remove ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    camel_slist_remove                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="type">CamelSListNode</span></a> *n</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_remhead ()">
+<a name="camel-slist-remhead"></a><h3>camel_slist_remhead ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    camel_slist_remhead                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_remtail ()">
+<a name="camel-slist-remtail"></a><h3>camel_slist_remtail ()</h3>
+<pre class="programlisting"><a class="link" href="camel-camel-list-utils.html#CamelSListNode" title="CamelSListNode"><span class="returnvalue">CamelSListNode</span></a> *    camel_slist_remtail                 (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_empty ()">
+<a name="camel-slist-empty"></a><h3>camel_slist_empty ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                camel_slist_empty                   (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_slist_length ()">
+<a name="camel-slist-length"></a><h3>camel_slist_length ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                camel_slist_length                  (<em class="parameter"><code><a class="link" href="camel-camel-list-utils.html#CamelSList" title="CamelSList"><span class="type">CamelSList</span></a> *l</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

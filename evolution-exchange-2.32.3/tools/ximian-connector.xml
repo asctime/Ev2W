@@ -1,0 +1,34 @@
+<Root>
+    <menu>
+	<submenu name="Actions">
+	    <placeholder name="ComponentActionsPlaceholder">
+		<menuitem name="ExchangePassword" verb=""
+			  _label="_Change Exchange Password..."
+			  _tip="Change your Exchange server password"/>
+
+		<separator f="" name="connector1"/>
+
+		<menuitem name="ExchangeSubscribeUser" verb=""
+			  _label="Subscribe to _Other User's Folder..."
+			  _tip="Subscribe to a folder belonging to some other user on the server"/>
+		<menuitem name="ExchangeUnsubscribeUser" verb=""
+			  _label="_Unsubscribe from Other User's Folder"
+			  _tip="Unsubscribe from a folder added with &quot;Subscribe to Other User's Folder&quot;"/>
+		<menuitem name="ExchangeFolderSize" verb=""
+			  _label="Folder _Size"
+			  _tip="Get the size of personal folders"/>
+	    </placeholder>
+	</submenu>
+	<submenu name="Tools">
+	    <placeholder name="ComponentPlaceholder">
+		<menuitem name="ExchangeOOF" verb=""
+			  _label="_Out of Office Assistant"
+			  _tip="View or change your Out-of-Office status and autoreply message"/>
+		<menuitem name="ExchangeDelegation" verb=""
+			  _label="_Delegation Assistant"
+			  _tip="View or change your Exchange calendar delegation settings"/>
+		<separator f="" name="connector3"/>
+	    </placeholder>
+	</submenu>
+    </menu>
+</Root>

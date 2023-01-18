@@ -1,0 +1,1692 @@
+# Persian translation of evolution-exchange.
+# This file is distributed under the same license as the evolution-exchange package.
+# Copyright (C) 2005 Sharif FarsiWeb, Inc.
+# Alireza Kheirkhahan <kheirkhahan@gmail.com> 2005.
+# Meelad Zakaria <meelad@farsiweb.info>, 2005.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-data-server HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-18 06:04+0000\n"
+"PO-Revision-Date: 2005-09-10 19:53+0430\n"
+"Last-Translator: Meelad Zakaria <meelad@farsiweb.info>\n"
+"Language-Team: Persian <farsi@lists.sharif.edu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1846
+#: ../addressbook/e-book-backend-gal.c:1499 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "در حال جست و جو"
+
+#: ../addressbook/e-book-backend-gal.c:267
+msgid "Reconnecting to LDAP server..."
+msgstr "در حال اتصال مجدد به کارگزار LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1363
+msgid "Receiving LDAP search results..."
+msgstr "در حال دریافت نتایج جستجوی LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1522
+msgid "Error performing search"
+msgstr "خطا در انجام جست و جو"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1732
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1751
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "منبع «%s» در بازه‌ی زمانی انتخاب شده مشغول است."
+
+#: ../camel/camel-exchange-folder.c:223
+msgid "Can only expunge in Deleted Items folder"
+msgstr ""
+
+#: ../camel/camel-exchange-folder.c:247
+msgid "No Subject"
+msgstr "بدون موضوع"
+
+#: ../camel/camel-exchange-folder.c:374
+msgid "This message is not available in offline mode."
+msgstr "این پیغام در حالت منفصل قابل دسترسی نیست."
+
+#: ../camel/camel-exchange-folder.c:609
+msgid "Moving messages"
+msgstr "در حال جابه‌جایی پیغام‌ها"
+
+#: ../camel/camel-exchange-folder.c:610
+msgid "Copying messages"
+msgstr "در حال نسخه‌برداری از پیغام‌ها"
+
+#: ../camel/camel-exchange-folder.c:940
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "ایجاد شاخه‌ی %s ممکن نبود: %s"
+
+#: ../camel/camel-exchange-folder.c:950
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "بار کردن خلاصه‌ی %s ممکن نبود"
+
+#: ../camel/camel-exchange-folder.c:958
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "ایجاد پرونده‌ی حافظه‌ی نهان برای «%s» ممکن نبود"
+
+#: ../camel/camel-exchange-folder.c:968
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "ایجاد یادداشت روزانه برای %s ممکن نبود"
+
+
+#: ../camel/camel-exchange-folder.c:1013
+msgid "Scanning for changed messages"
+msgstr "پویش به دنبال پیغام‌های تغییر‌ یافته"
+
+#: ../camel/camel-exchange-folder.c:1039
+msgid "Fetching summary information for new messages"
+msgstr "در حال آوردن اطلاعات خلاصه‌ی پیغام‌های جدید"
+
+#: ../camel/camel-exchange-journal.c:339
+msgid "No folder name found\n"
+msgstr "هیچ نام پوشه‌ای پیدا نشد\n"
+
+#: ../camel/camel-exchange-journal.c:372 ../mail/mail-stub-exchange.c:2447
+#: ../mail/mail-stub-exchange.c:2490 ../mail/mail-stub-exchange.c:2525
+#: ../mail/mail-stub-exchange.c:2552 ../mail/mail-stub-exchange.c:2599
+#: ../mail/mail-stub-exchange.c:2621
+msgid "Folder doesn't exist"
+msgstr "پوشه وجود ندارد"
+
+#: ../camel/camel-exchange-journal.c:436
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "نمی‌توان پیغام را در حالت منفصل الحاق کرد: حافظه‌ی نهان موجود نیست"
+
+#: ../camel/camel-exchange-journal.c:452
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "نمی‌توان در حالت منفصل پیغام را الحاق کرد: %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:44
+msgid "Windows User_name:"
+msgstr "_نام کاربر ویندوز:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:49
+msgid "Global Address List / Active Directory"
+msgstr "فهرست سراسری نشانی‌ها / شاخه‌ی فعال"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:53
+msgid "Global Catalog server name:"
+msgstr "نام کارگزار کاتالوگ سراسری:"
+
+#: ../camel/camel-exchange-provider.c:55
+#, c-format
+msgid "Limit number of GAL responses: %s"
+msgstr "محدودیت تعداد پاسخ‌های GAL: %s"
+
+#: ../camel/camel-exchange-provider.c:58
+msgid "Options"
+msgstr "گزینه‌ها"
+
+#: ../camel/camel-exchange-provider.c:60
+#, c-format
+msgid "Password Expiry Warning period: %s"
+msgstr "مدت هشدار انقضای گذرواژه: %s"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "Automatically synchronize account locally"
+msgstr "همگام‌سازی محلی حساب به طور خودکار"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:65
+msgid "Apply filters to new messages in Inbox on this server"
+msgstr "اِعمال صافی‌ها بر پیغام‌های جدید در صندوق نامه‌های دریافتی این کارگزار"
+
+#: ../camel/camel-exchange-provider.c:67
+msgid "Check new messages for Junk contents"
+msgstr "بررسی پیغام‌های جدید به دنبال محتویات آشغال"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Only check for Junk messages in the Inbox folder"
+msgstr "بررسی به دنبال پیغام‌های آشغال فقط در پوشه‌ی نامه‌های دریافتی"
+
+#: ../camel/camel-exchange-provider.c:76
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:78
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "برای اداره کردن نامه (و داده‌های دیگر) روی کارگزارهای Microsoft Exchange"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:94
+msgid "Secure Password"
+msgstr "گذرواژه‌ی امن"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:97
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"این گزینه با استفاده از تأیید هویت گذرواژه‌ی امن (NTLM) به کارگزار Exchange متصل خواهد شد."
+
+#: ../camel/camel-exchange-provider.c:105
+msgid "Plaintext Password"
+msgstr "گذرواژه‌ی متن ساده"
+
+#: ../camel/camel-exchange-provider.c:107
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"این گزینه با استفاده از تأیید هویت گذرواژه‌ی متن ساده‌ی استاندارد به کارگزار Exchange متصل خواهد شد."
+
+#: ../camel/camel-exchange-store.c:281
+#, c-format
+msgid "Exchange server %s"
+msgstr "کارگزار Exchange %s"
+
+#: ../camel/camel-exchange-store.c:284
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "حساب Exchange برای %s روی %s"
+
+#: ../camel/camel-exchange-store.c:334
+msgid "Evolution Exchange backend process"
+msgstr "فراروند پسانه‌ی Evolution Exchange"
+
+#: ../camel/camel-exchange-store.c:382
+#, c-format
+msgid "No such folder %s"
+msgstr "پوشه‌ی %s وجود ندارد"
+
+#: ../camel/camel-exchange-store.c:451
+msgid "Cannot subscribe folder in offline mode."
+msgstr "نمی‌توان در حالت منفصل آبونه‌ی پوشه شد."
+
+#: ../camel/camel-exchange-store.c:468
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "نمی‌توان در حالت منفصل آبونه‌ی پوشه را قطع کرد."
+
+#: ../camel/camel-exchange-store.c:573
+msgid "Cannot get folder info in offline mode."
+msgstr "نمی‌توان در حالت منفصل اطلاعات پوشه را گرفت."
+
+#: ../camel/camel-exchange-store.c:644
+msgid "Cannot create folder in offline mode."
+msgstr "نمی‌توان در حالت منفصل پوشه‌ ایجاد کرد."
+
+#: ../camel/camel-exchange-store.c:671
+msgid "Cannot delete folder in offline mode."
+msgstr "نمی‌توان در حالت منفصل پوشه را حذف کرد."
+
+#: ../camel/camel-exchange-store.c:687
+msgid "Cannot rename folder in offline mode."
+msgstr "نمی‌توان در حالت منفصل نام پوشه را تغییر داد."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "ترابری Exchange فقط می‌تواند با مبدأ نامه‌ی Exchange استفاده شود"
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "ارسال پیغام ممکن نیست: دست کم یکی از گیرنده‌ها معتبر نیست"
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr "نشانی فرستنده در پیغام پیدا نشد"
+
+#: ../camel/camel-stub.c:134
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "ایجاد سوکت ممکن نبود: %s"
+
+#: ../camel/camel-stub.c:149
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "اتصال به  %s ممکن نبود: %s"
+
+#: ../camel/camel-stub.c:179
+#, c-format
+msgid "Path too long: %s"
+msgstr "مسیر خیلی طولانی است: %s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr ""
+
+#: ../camel/camel-stub.c:457
+#, c-format
+msgid "Lost connection to %s"
+msgstr "اتصال به  %s از دست رفت"
+
+#: ../camel/camel-stub.c:461
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "خطا در برقراری ارتباط با %s: %s"
+
+#: ../lib/e2k-autoconfig.c:1471 ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"برقراری اتصال با کارگزارExchange ممکن نبود.\n"
+"مطمئن شوید نشانی اینترنتی درست است ( بجای «$2%s»‏، «$1%s» را امتحان کنید؟) و دوباره امتحان کنید."
+
+#: ../lib/e2k-autoconfig.c:1480 ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"مکان‌یابی کارگزار Exchange ممکن نبود.\n"
+"مطمئن شوید نام کارگزار را درست وارد کردید و دوباره امتحان کنید."
+
+#: ../lib/e2k-autoconfig.c:1490 ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"تأیید هویت با کارگزار Exchange ممکن نبود.\n"
+"مطمئن شوید نام کاربر و گذرواژه صحیح هستند و دوباره امتحان کنید."
+
+#: ../lib/e2k-autoconfig.c:1498 ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"تأیید هویت با کارگزار Exchange ممکن نبود.\n"
+"مطمئن شوید نام کاربر و گذرواژه صحیح هستند و دوباره امتحان کنید.\n"
+"\n"
+"شاید نیاز باشد نام دامنه‌ی ویندوز را به عنوان قسمتی از نام کاربر وارد کنید "
+"(مثلاً، «MY-DOMAIN\\%s» )."
+
+#: ../lib/e2k-autoconfig.c:1511 ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"پیدا کردن داده‌ی OWA در نشانی اینترنتی نشان داده‌شده ممکن نبود.\n"
+"مطمئن شوید نشانی اینترنتی درست است و دوباره امتحان کنید."
+
+#: ../lib/e2k-autoconfig.c:1520
+#, c-format
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:\n"
+"%s"
+msgstr ""
+
+#: ../lib/e2k-autoconfig.c:1536 ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"نشانی اینترنتی کارگزار Exchange که شما قید کردید برای یک کارگزار Exchange 5.5 است. متصل‌کننده‌ی "
+"زیمین فقط Microsoft Exchange 2000 و 2003 را پشتیبانی می‌کند."
+
+#: ../lib/e2k-autoconfig.c:1545 ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"به دلیل رخ دادن یک خطای نامعلوم پیکربندی حساب  ممکن نبود. "
+"نشانی اینترنتی، نام کاربر، و گذرواژه را بررسی کنید، دوباره امتحان کنید."
+
+#: ../lib/e2k-autoconfig.c:1567
+#, c-format
+msgid "Enter password for %s"
+msgstr "کلمه‌ی عبور %s را وارد کنید"
+
+#: ../lib/e2k-autoconfig.c:1568 ../storage/exchange-account.c:874
+msgid "Enter password"
+msgstr "گذرواژه را وارد کنید"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+#: ../lib/e2k-security-descriptor.c:847
+msgid "Owner"
+msgstr "مالک"
+
+#: ../lib/e2k-security-descriptor.c:857
+msgid "Publishing Editor"
+msgstr "ناشر ویرایشگر"
+
+#: ../lib/e2k-security-descriptor.c:865
+msgid "Editor"
+msgstr "ویرایشگر"
+
+#: ../lib/e2k-security-descriptor.c:872
+msgid "Publishing Author"
+msgstr "ناشر مؤلف"
+
+#: ../lib/e2k-security-descriptor.c:878
+msgid "Author"
+msgstr "مؤلف"
+
+#: ../lib/e2k-security-descriptor.c:883
+msgid "Non-editing Author"
+msgstr "مؤلف"
+
+#: ../lib/e2k-security-descriptor.c:887
+msgid "Reviewer"
+msgstr "منتقد"
+
+#: ../lib/e2k-security-descriptor.c:889
+msgid "Contributor"
+msgstr "مقاله‌نويس"
+
+#: ../lib/e2k-security-descriptor.c:891
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "هیچ کدام"
+
+#: ../lib/e2k-security-descriptor.c:906
+#: ../storage/exchange-delegates-user.c:144
+msgid "Custom"
+msgstr "سفارشی"
+
+#: ../lib/e2k-user-dialog.c:144
+msgid "Select User"
+msgstr "انتخاب کاربر"
+
+#: ../lib/e2k-user-dialog.c:182
+msgid "Addressbook..."
+msgstr "دفترچه‌ی نشانی..."
+
+#: ../mail/mail-stub-exchange.c:255
+msgid "No such folder"
+msgstr "چنین پوشه‌ی وجود ندارد"
+
+#: ../mail/mail-stub-exchange.c:272 ../mail/mail-stub-exchange.c:2424
+#: ../mail/mail-stub-exchange.c:2463 ../mail/mail-stub-exchange.c:2529
+#: ../mail/mail-stub-exchange.c:2573 ../mail/mail-stub-exchange.c:2637
+#: ../shell/e-storage.c:573 ../storage/xc-commands.c:319
+msgid "Permission denied"
+msgstr "اجازه داده نشد"
+
+#: ../mail/mail-stub-exchange.c:571
+msgid "No such folder."
+msgstr "چنین پوشه‌ی وجود ندارد."
+
+#: ../mail/mail-stub-exchange.c:580
+msgid "Could not create folder."
+msgstr "ایجاد پوشه ممکن نبود."
+
+#: ../mail/mail-stub-exchange.c:628 ../mail/mail-stub-exchange.c:646
+#: ../mail/mail-stub-exchange.c:2731 ../mail/mail-stub-exchange.c:2749
+msgid "Could not open folder: Permission denied"
+msgstr "باز کردن پوشه ممکن نبود: اجازه داده نشد"
+
+#: ../mail/mail-stub-exchange.c:632 ../mail/mail-stub-exchange.c:745
+#: ../mail/mail-stub-exchange.c:2735
+msgid "Could not open folder"
+msgstr "باز کردن پوشه ممکن نبود"
+
+#: ../mail/mail-stub-exchange.c:800
+msgid "Could not open Deleted Items folder"
+msgstr "باز کردن پوشه‌ی موارد حذف شده ممکن نبود"
+
+#: ../mail/mail-stub-exchange.c:1129 ../mail/mail-stub-exchange.c:1170
+msgid "Could not get new messages"
+msgstr "گرفتن پیغام‌های جدید ممکن نبود"
+
+#: ../mail/mail-stub-exchange.c:1335
+msgid "Could not empty Deleted Items folder"
+msgstr "خالی کردن پوشه‌ی موارد حذف شده ممکن نبود"
+
+#: ../mail/mail-stub-exchange.c:1407
+msgid "Could not append message; mailbox is over quota"
+msgstr "الحاق پیغام ممکن نبود، سهمیه‌ی جعبه‌ی نامه تمام شده است"
+
+#: ../mail/mail-stub-exchange.c:1408
+msgid "Could not append message"
+msgstr "الحاق پیغام ممکن نبود"
+
+#: ../mail/mail-stub-exchange.c:1918
+msgid "No such message"
+msgstr "چنین پیغامی وجود ندارد"
+
+#: ../mail/mail-stub-exchange.c:1971
+msgid "Message has been deleted"
+msgstr "این پیغام حذف شده است."
+
+#: ../mail/mail-stub-exchange.c:1973
+msgid "Error retrieving message"
+msgstr "بروز خطا در هنگام بازیابی پیغام"
+
+#: ../mail/mail-stub-exchange.c:2015
+msgid "Mailbox does not support full-text searching"
+msgstr "جعبه‌ی نامه جستجوی کامل متن را پشتیبانی نمی‌کند"
+
+#: ../mail/mail-stub-exchange.c:2113
+msgid "Unable to move/copy messages"
+msgstr "جابه‌جایی/نسخه‌برداری پیغام امکان پذیر نیست"
+
+#: ../mail/mail-stub-exchange.c:2339
+msgid "No mail submission URI for this mailbox"
+msgstr ""
+
+#: ../mail/mail-stub-exchange.c:2375
+msgid "Server won't accept mail via Exchange transport"
+msgstr "کارگزار از طریق ترابری Exchange نامه نمی‌پذیرد"
+
+#: ../mail/mail-stub-exchange.c:2377
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"حساب شما اجازه‌ی استفاده از <%s> را به عنوان\n"
+"نشانی فرستنده ندارد."
+
+#: ../mail/mail-stub-exchange.c:2389
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"ارسال پیغام ممکن نبود.\n"
+"احتمالاً معنی‌اش این است که سهمیه‌ی حساب شما تمام شده است."
+
+#: ../mail/mail-stub-exchange.c:2393
+msgid "Could not send message"
+msgstr "ارسال پیغام ممکن نبود"
+
+#: ../mail/mail-stub-exchange.c:2416 ../mail/mail-stub-exchange.c:2468
+#: ../mail/mail-stub-exchange.c:2533 ../mail/mail-stub-exchange.c:2578
+#: ../mail/mail-stub-exchange.c:2642 ../shell/e-storage.c:557
+#: ../storage/xc-commands.c:323
+msgid "Generic error"
+msgstr "خطای عام"
+
+#: ../mail/mail-stub-exchange.c:2420 ../storage/xc-commands.c:313
+msgid "Folder already exists"
+msgstr "پوشه از قبل وجود دارد"
+
+#: ../shell/e-folder-creation-dialog.c:138
+#, c-format
+msgid ""
+"Cannot create the specified folder:\n"
+"%s"
+msgstr ""
+"نمی‌توان پوشه‌ی مشخص شده را ایجاد کرد:\n"
+"%s"
+
+#: ../shell/e-folder-creation-dialog.c:179
+#, c-format
+msgid "The specified folder name is not valid: %s"
+msgstr "نام پوشه‌ی مشخص‌شده معتبر نیست: %s"
+
+#: ../shell/e-folder-creation-dialog.c:310
+msgid "Create New Folder"
+msgstr "ایجاد پوشه‌ی جدید"
+
+#: ../shell/e-folder-creation-dialog.glade.h:1
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../shell/e-folder-creation-dialog.glade.h:2
+msgid "Folder _name:"
+msgstr "_نام پوشه:"
+
+#: ../shell/e-folder-creation-dialog.glade.h:3
+msgid "Folder _type:"
+msgstr "نو_ع پوشه:"
+
+#: ../shell/e-folder-creation-dialog.glade.h:4
+msgid "Specify where to create the folder:"
+msgstr "مشخص کنید پوشه کجا ایجاد شود:"
+
+#: ../shell/e-folder-dnd-bridge.c:52
+#, c-format
+msgid ""
+"Cannot transfer folder:\n"
+"%s"
+msgstr ""
+"نمی‌توان پوشه را انتقال داد:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:62
+#, c-format
+msgid ""
+"Cannot delete folder:\n"
+"%s"
+msgstr ""
+"نمی‌توان پوشه‌ را حذف کرد:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:115
+#, c-format
+msgid "Really delete folder \"%s\"?"
+msgstr "واقعاً پوشه‌ی «%s» حذف شود؟"
+
+#: ../shell/e-folder-misc-dialogs.c:129
+#, c-format
+msgid "Delete \"%s\""
+msgstr "حذف «%s»"
+
+#: ../shell/e-folder-misc-dialogs.c:154
+#, c-format
+msgid ""
+"Cannot rename folder:\n"
+"%s"
+msgstr ""
+"نمی‌توان نام پوشه را تغییر داد:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:188
+#, c-format
+msgid "Rename the \"%s\" folder to:"
+msgstr "تغییر نام پوشه‌ی «%s» به:"
+
+#: ../shell/e-folder-misc-dialogs.c:191
+msgid "Rename Folder"
+msgstr "تغییرنام پوشه"
+
+#: ../shell/e-folder-misc-dialogs.c:205
+#, c-format
+msgid "A folder named \"%s\" already exists. Please use a different name."
+msgstr "پوشه‌ای به نام«%s» از قبل وجود دارد. لطفاً از یک نام دیگر استفاده کنید."
+
+#. It would be nice to insensitivize the OK button appropriately
+#. instead of doing this, but unfortunately we can't do this for the
+#. Bonobo control.
+#: ../shell/e-folder-misc-dialogs.c:451
+msgid "Please select a user."
+msgstr "لطفاً یک کاربر انتخاب کنید."
+
+#: ../shell/e-folder-misc-dialogs.c:553
+msgid "Opening Folder"
+msgstr "در حال باز کردن پوشه‌"
+
+#: ../shell/e-folder-misc-dialogs.c:559
+#, c-format
+msgid "Opening Folder \"%s\""
+msgstr "در حال باز کردن پوشه‌ی «%s»"
+
+#: ../shell/e-folder-misc-dialogs.c:564
+#, c-format
+msgid "in \"%s\" ..."
+msgstr "در «%s» ..."
+
+#: ../shell/e-folder-misc-dialogs.c:631
+#, c-format
+msgid "Could not open other user's folder: %s."
+msgstr "نمی‌توان پوشه‌ی کاربران دیگر را باز کرد: %s."
+
+#: ../shell/e-folder-misc-dialogs.c:681
+msgid "Cannot find the specified other user's folder."
+msgstr "نمی‌توان پوشه‌ی مشخص‌شده‌ی کاربر دیگر را پیدا کرد."
+
+#: ../shell/e-folder-misc-dialogs.c:713
+#, c-format
+msgid ""
+"Cannot unsubscribe from folder:\n"
+"%s"
+msgstr ""
+"نمی‌توان آبونهی پوشه را قطع کرد:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:766
+#, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "واقعاً آبونه‌ی پوشه‌ی «%s» قطع شود؟"
+
+#: ../shell/e-folder-misc-dialogs.c:780
+#, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "قطع آبونه از «%s»"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:1
+msgid "Open Other User's Folder"
+msgstr "باز کردن پوشه‌ی کاربر دیگر"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:2
+msgid "_Account:"
+msgstr "_حساب:"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:3
+msgid "_Folder Name:"
+msgstr "نام _پوشه"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:4
+msgid "_User:"
+msgstr "_کاربر:"
+
+#: ../shell/e-storage-set-view.etspec.h:1
+msgid "Checkbox"
+msgstr "جعبه‌ی نشان‌زنی"
+
+#: ../shell/e-storage-set-view.etspec.h:2
+msgid "Folder"
+msgstr "پوشه"
+
+#: ../shell/e-storage.c:555
+msgid "No error"
+msgstr "بدون خطا"
+
+#: ../shell/e-storage.c:559
+msgid "A folder with the same name already exists"
+msgstr "پوشه‌ای با همین نام از قبل موجود است"
+
+#: ../shell/e-storage.c:561
+msgid "The specified folder type is not valid"
+msgstr "نوع پوشه‌ی مشخص‌شده نامعتبر است"
+
+#: ../shell/e-storage.c:563
+msgid "I/O error"
+msgstr "خطای ورودی/خروجی"
+
+#: ../shell/e-storage.c:565
+msgid "Not enough space to create the folder"
+msgstr "فضای کافی برای ایجاد پوشه وجود ندارد"
+
+#: ../shell/e-storage.c:567
+msgid "The folder is not empty"
+msgstr "پوشه خالی نیست"
+
+#: ../shell/e-storage.c:569
+msgid "The specified folder was not found"
+msgstr "پوشه‌ی مشخص‌شده پیدا نشد"
+
+#: ../shell/e-storage.c:571
+msgid "Function not implemented in this storage"
+msgstr "تابع در این حافظه پیاده‌سازی نشده‌است"
+
+#: ../shell/e-storage.c:575
+msgid "Operation not supported"
+msgstr "عملیات پشتیبانی نمی‌شود"
+
+#: ../shell/e-storage.c:577
+msgid "The specified type is not supported in this storage"
+msgstr "نوع مشخص‌شده، در این حافظه پشتیبانی نمی‌شود"
+
+#: ../shell/e-storage.c:579
+msgid "The specified folder cannot be modified or removed"
+msgstr "نمی‌توان پوشه‌ی مشخص‌شده را تغییر داد یا حذف کرد"
+
+#: ../shell/e-storage.c:581
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr "نمی‌توان یک پوشه را بچه‌ای از یکی از فرزندانش قرار داد"
+
+#: ../shell/e-storage.c:583
+msgid "Cannot create a folder with that name"
+msgstr "نمی‌توان پوشه‌ای با این نام ایجاد کرد"
+
+#: ../shell/e-storage.c:585
+msgid "This operation cannot be performed in off-line mode"
+msgstr "این عملیات را نمی‌توان در حالت منفصل انجام داد"
+
+#: ../shell/e-storage.c:587 ../storage/exchange-account.c:1473
+msgid "Unknown error"
+msgstr "خطای ناشناخته"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+#, fuzzy
+msgid "*Control*F5"
+msgstr "*کنترل*F5"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Addressbook Exchange backend"
+msgstr "پسانه‌ی دفترچه‌ی نشانی Evolution Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Evolution Calendar Exchange backend"
+msgstr "پسانه‌ی تقویم Evolution Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:4
+msgid "Evolution Exchange Component"
+msgstr "مؤلفه‌ی Evolution Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:5
+msgid "Exchange"
+msgstr "Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:6
+msgid "Ximian Connector for Exchange"
+msgstr "متصل‌کننده‌ی زیمین برای Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:7
+msgid "_Exchange"
+msgstr "_Exchange"
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#: ../storage/exchange-account.c:584
+#, c-format
+msgid "%s's Folders"
+msgstr "پوشه‌های %s"
+
+#: ../storage/exchange-account.c:869
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%s کلمه‌ی عبور برای %s را وارد کنید"
+
+#. email id is not proper, we return instead of trying nt_domain
+#: ../storage/exchange-account.c:1069
+msgid "Cannot change password due to configuration problems"
+msgstr "به دلیل مشکلات پیکربندی نمی‌توان گذرواژه را تغییر داد"
+
+#: ../storage/exchange-account.c:1092
+msgid ""
+"Server rejected password because it is too weak.\n"
+"Try again with a different password."
+msgstr ""
+"کارگزار گذرواژه را رد کرد زیرا خیلی ضعیف است. \n"
+"دوباره با یک گذرواژه‌ی متفاوت امتحان کنید."
+
+#: ../storage/exchange-account.c:1097
+msgid "Could not change password"
+msgstr "نمی‌توان گذرواژه را تغییر داد."
+
+#: ../storage/exchange-account.c:1190
+msgid "Personal Folders"
+msgstr "پوشه‌های شخصی"
+
+#: ../storage/exchange-account.c:1205
+msgid "Favorite Public Folders"
+msgstr "پوشه‌های عمومی محبوب"
+
+#. i18n: Outlookism
+#: ../storage/exchange-account.c:1222
+msgid "All Public Folders"
+msgstr "همه‌ی پوشه‌های عمومی"
+
+#. i18n: Outlookism
+#: ../storage/exchange-account.c:1236
+msgid "Global Address List"
+msgstr "فهرست سراسری نشانی‌ها"
+
+#: ../storage/exchange-account.c:1326
+msgid "Exchange Account is offline. Cannot display folders\n"
+msgstr "حساب Exchange منفصل است. نمی‌توان پوشه‌های را نمایش داد\n"
+
+#: ../storage/exchange-account.c:1384
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"تأیید هویت با کارگزار ممکن نبود. (گذرواژه‌ی نادرست؟)\n"
+"\n"
+
+#: ../storage/exchange-account.c:1389
+msgid ""
+"Could not authenticate to server.\n"
+"\n"
+"This probably means that your server requires you\n"
+"to specify the Windows domain name as part of your\n"
+"username (eg, \"DOMAIN\\user\").\n"
+"\n"
+"Or you might have just typed your password wrong.\n"
+"\n"
+msgstr ""
+"تأیید هویت با کارگزار ممکن نبود.\n"
+"\n"
+"احتمالاً معنی‌اش این است که کارگزار شما از شما می‌خواهد\n"
+"که نام دامنه‌ی ویندوز را به عنوان قسمتی از نام کاربر خود\n"
+"قرار دهید(مثلاً، «DOMAIN\\user»).‏\n"
+"\n"
+"یا فقط این که شما گذرواژه را اشتباه وارد کردید.\n"
+"\n"
+
+#: ../storage/exchange-account.c:1431
+#, c-format
+msgid "Mailbox for %s is not on this server."
+msgstr "جعبه‌ی نامه‌ی %s در این کارگزار نیست."
+
+#: ../storage/exchange-account.c:1436
+#, c-format
+msgid ""
+"The server '%s' is running Exchange 5.5 and is\n"
+"therefore not compatible with Ximian Connector"
+msgstr ""
+"کارگزار «%s» در حال اجرای Exchange 5.5 است\n"
+"و بنابراین با متصل‌کننده‌ی زیمین سازگار نیست"
+
+#: ../storage/exchange-account.c:1443
+#, c-format
+msgid ""
+"Could not find Exchange Web Storage System at %s.\n"
+"If OWA is running on a different path, you must specify that in the\n"
+"account configuration dialog."
+msgstr ""
+"پیدا کردن سیستم حافظه‌ی وبی روی %s ممکن نبود.\n"
+"اگر OWA روی مسیر دیگری اجرا می‌شود، شما باید مسیر\n"
+"را در محاوره‌ی پیکربندی حساب مشخص کنید."
+
+#: ../storage/exchange-account.c:1451
+#, c-format
+msgid "No mailbox for user %s on %s.\n"
+msgstr "جعبه‌ی نامه‌ای برای کاربر %s روی %s وجود ندارد.\n"
+
+#: ../storage/exchange-account.c:1457 ../storage/exchange-account.c:1463
+#: ../storage/exchange-account.c:1471
+#, c-format
+msgid "Could not connect to server %s: %s"
+msgstr "اتصال به کارگزار  %s ممکن نبود: %s"
+
+#: ../storage/exchange-account.c:1459
+msgid "Could not resolve hostname"
+msgstr ""
+
+#: ../storage/exchange-account.c:1465
+msgid "Network error"
+msgstr "خطای شبکه"
+
+#: ../storage/exchange-account.c:1529
+#, c-format
+msgid ""
+"You have exceeded your quota of %d %s for storing mails on this server. Your "
+"current usage is : %.0f %s."
+msgstr ""
+"شما از سهمیه‌ی %Id %s خود برای ذخیره‌ی نامه‌ها روی این کارگزار فراتر رفته‌اید."
+"مصرف کنونی شما %I.0f %s است."
+
+#: ../storage/exchange-account.c:1532
+msgid "You will not be able to either send or receive mails now\n"
+msgstr "در حال حاضر امکان فرستادن یا دریافت نامه برای شما برقرار نخواهد بود\n"
+
+#: ../storage/exchange-account.c:1535
+msgid ""
+"You will not be able to send mails till you clear up some space by deleting "
+"some mails.\n"
+msgstr ""
+"شما تا هنگامی که با حذف تعدادی نامه، کمی فضای خالی ایجاد نکنید قادر به ارسال نامه"
+"نخواهید بود.\n"
+
+#: ../storage/exchange-account.c:1538
+msgid "Try to clear up some space by deleting some mails.\n"
+msgstr "سعی کنید با حذف چند نامه کمی فضای خالی ایجاد کنید.\n"
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"متصل‌کننده‌ی زیمین نیاز به دست‌یابی به برخی قابلیت‌های کارگزار Exchange دارد "
+"که به نظر می‌رسد از کار انداخته شده‌ یا بازداشته شده‌اند (این کار معمولاً غیرعمدی است.) "
+"لازم است مدیر سیستم Exchange این قابلیت‌ها را به کار بیاندازد یا شما "
+"بتوانید از متصل‌کننده‌ی زیمین استفاده کنید.\n"
+"\n"
+"برای دسترسی به اطلاعاتی باید که در اختیار مدیر سیستم Exchange قرار دهید، "
+"لطفاً پیوند زیر را دنبال کنید:"
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"تأیید هویت با کارگزار کاتالوگ سراسری ممگن نبود. شاید لازم است به عقب برگردید و "
+"نام دامنه‌ی ویندوز را به عنوان قسمتی از نام کاربر قرار دهید (مثلاً، «MY-DOMAIN\\%s»)."
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"برقراری اتصال به کارگزار مشخص‌شده ممکن نبود.\n"
+"لطفاً نام کاگزار را بررسی کنید و دوباره امتحان کنید."
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "ناشناخته"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"خطای سیستم پیکربندی.\n"
+"نمی‌توان حساب جدید ایجاد کرد."
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr "شما فقط می‌توانید یک حساب تنها را پیکربندی کنید"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "پیکربندی شکست خورد"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "انجام شد"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "نشانی پست الکترونیکی:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "پیکربندی Exchange"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "نام کامل:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "کارگزار GC:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "قرار دادن این حساب به عنوان حساب پیش‌فرض من"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "نشانی اینترنتی OWA:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "گذرواژه:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "به خاطر سپردن این گذرواژه"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "نام کاربر:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "خوش‌آمد"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"به متصل‌کننده‌ی زیمین برای Microsoft Exchange خوش‌آمدید."
+"چند پرده‌ی بعدی به شما کمک می‌کند Evolution را پیکربندی کنید\n"
+"تا به حساب Exchange خود متصل شوید.\n"
+"\n"
+"برای ادامه لطفاً روی دکمه‌ی «جلو» کلیک کنید."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "پیکربندی متصل‌کننده‌ی زیمین"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"متصل‌کننده‌ی زیمین می‌تواند از اطلاعات موجود در حساب  دسترسی وبی آوت‌لوک (OWA) اسفاده کند.\n"
+"\n"
+"لطفاً نشانی پایگاه OWA (نشانی اینترنتی)، نام کاربر، و گذرواژه را وارد کنید، سپس "
+"روی «جلو» کلید کنید.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"متصل‌کننده‌ی زیمین نتوانست نسخه‌ی بدل کاتالوگ سراسری را برای پایگاه شما پیدا کند. "
+"لطفاً نام کارگزار کاتالوگ سراسری خود را وارد کنید. شاید لازم باشد مقدار صحیح را از "
+"مدیر سیستم خود بپرسید.\n"
+
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+"متصل‌کننده‌ی زیمین در هنگام پیکربندی حساب Exchange شما با مشکل مواجه شد.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"حالا حساب متصل‌کننده‌ی شما آماده‌ی استفاده است. روی دکمه‌ی «اِعمال» کلیک کنید "
+"تا تنظیمات شما\n"
+"ذخیره شود."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"اطلاعات حساب شما مطابق زیر است. لطفاً خطاها را اصلاح کنید، "
+"بعد روی «جلو» کلیک کنید.\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"گذرواژه‌ی فعلی با گذرواژه‌ی موجود برای حساب شما مطابقت ندارد. "
+"لطفاً گذر‌واژه‌ی درست را وارد کنید"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "دو گذرواژه مطابقت ندارند. لطفاً گذرواژه‌ها را دوباره وارد کنید."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "تغییر گذرواژه"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "تصدیق گذرواژه:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "گذرواژه‌ی فعلی:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "گذرواژه‌ی جدید:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "گذرواژه‌ی فعلی شما منقضی شده است. لطفاً همین حالا گذرواژه‌ی خود را تعییر دهید."
+
+#: ../storage/exchange-delegates-user.c:191
+#: ../storage/exchange-permissions-dialog.c:179
+#, c-format
+msgid "Permissions for %s"
+msgstr "اجازه برای %s"
+
+#: ../storage/exchange-delegates.c:221
+msgid ""
+"No Global Catalog server configured for this account.\n"
+"Unable to edit delegates."
+msgstr ""
+"هیچ کارگزار کاتالوگ سراسری برای این حساب پیکربندی نشده‌است.\n"
+"نمی‌توان نماینده‌ها را ویرایش کرد."
+
+#: ../storage/exchange-delegates.c:260
+msgid ""
+"Could not read folder permissions.\n"
+"Unable to edit delegates."
+msgstr ""
+"خواندن اجازه‌های پوشه ممکن نبود.\n"
+"نمی‌توان نماینده‌ها را ویرایش کرد."
+
+#: ../storage/exchange-delegates.c:267
+msgid ""
+"Could not determine folder permissions for delegates.\n"
+"Unable to edit delegates."
+msgstr ""
+"مشخص کردن اجازه‌ها برای نماینده‌ها ممکن نبود.\n"
+"نمی‌توان نماینده‌ها را ویرایش کرد."
+
+#: ../storage/exchange-delegates.c:419
+msgid "Delegate To:"
+msgstr "واگذاری به:"
+
+#: ../storage/exchange-delegates.c:419
+msgid "Delegate To"
+msgstr "واگذاری به"
+
+#: ../storage/exchange-delegates.c:435
+#, c-format
+msgid "Could not make %s a delegate"
+msgstr "قرار دادن %s به عنوان یک نماینده ممکن نبود"
+
+#: ../storage/exchange-delegates.c:445
+msgid "You cannot make yourself your own delegate"
+msgstr "شما نمی‌توانید خودتان را نماینده‌ی خودتان قرار دهید"
+
+#: ../storage/exchange-delegates.c:454
+#, c-format
+msgid "%s is already a delegate"
+msgstr "هم‌اکنون هم %s یک نماینده است"
+
+#: ../storage/exchange-delegates.c:563
+#, c-format
+msgid "Remove the delegate %s?"
+msgstr "حذف نماینده «%s»؟"
+
+#: ../storage/exchange-delegates.c:680
+msgid "Could not access Active Directory"
+msgstr "دست‌یابی به Active Directory ممکن نبود"
+
+#: ../storage/exchange-delegates.c:695
+#, fuzzy
+msgid "Could not find self in Active Directory"
+msgstr "ایجاد شاخه‌ی %s ممکن نیست: %s"
+
+#: ../storage/exchange-delegates.c:708
+#, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr "پیدا کردن نماینده «%s» در Active Directory ممکن نبود"
+
+#: ../storage/exchange-delegates.c:720
+#, c-format
+msgid "Could not remove delegate %s"
+msgstr "حذف نماینده «%s» ممکن نبود"
+
+#: ../storage/exchange-delegates.c:780
+msgid "Could not update list of delegates."
+msgstr "به‌هنگام‌سازی فهرست نماینده‌ها ممکن نبود."
+
+#: ../storage/exchange-delegates.c:798
+#, c-format
+msgid "Could not add delegate %s"
+msgstr "اضافه کردن نماینده «%s» ممکن نبود"
+
+#: ../storage/exchange-delegates.c:814
+#, fuzzy, c-format
+msgid ""
+"Failed to update delegates:\n"
+"%s"
+msgstr ""
+"به‌هنگام‌سازی فهرست نماینده‌ها شکست خورد:\n"
+"%s"
+
+#: ../storage/exchange-delegates.c:938
+#: ../storage/exchange-permissions-dialog.c:706
+msgid "Name"
+msgstr "نام"
+
+#: ../storage/exchange-delegates.c:967
+msgid "Error reading delegates list."
+msgstr "خطا در هنگام خواندن فهرست نماینده‌ها."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "مؤلف (خواندن، ایجاد)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "_تقویم:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "آ_شنا‌ها: "
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "اجازه‌های نماینده"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "نماینده‌ها"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "ویرایش‌گر (خواندن، ایجاد، ویرایش)"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "اجازه‌ها برای"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "منتقد (فقط خواندن)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_نماینده بتواند موردهای خصوصی را ببیند"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_ویرایش"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_دریافتی:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_تکلیف‌ها"
+
+#: ../storage/exchange-folder-size.c:322
+msgid "Folder Name"
+msgstr "نام پوشه"
+
+#: ../storage/exchange-folder-size.c:326
+msgid "Folder Size"
+msgstr "اندازه‌ی پوشه"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "‌درخت پوشه‌ی Exchange"
+
+#: ../storage/exchange-hierarchy-foreign.c:250
+msgid "Calendar"
+msgstr "تقویم"
+
+#: ../storage/exchange-hierarchy-foreign.c:251
+msgid "Contacts"
+msgstr "آشنا‌ها"
+
+#: ../storage/exchange-hierarchy-foreign.c:252
+msgid "Deleted Items"
+msgstr "موارد حذف‌شده"
+
+#: ../storage/exchange-hierarchy-foreign.c:253
+msgid "Drafts"
+msgstr "پیش‌نویس‌ها"
+
+#: ../storage/exchange-hierarchy-foreign.c:254
+msgid "Inbox"
+msgstr "دریافتی"
+
+#: ../storage/exchange-hierarchy-foreign.c:255
+msgid "Journal"
+msgstr "یادداشت روزانه"
+
+#: ../storage/exchange-hierarchy-foreign.c:256
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#: ../storage/exchange-hierarchy-foreign.c:257
+msgid "Outbox"
+msgstr "ارسالی"
+
+#: ../storage/exchange-hierarchy-foreign.c:258
+msgid "Sent Items"
+msgstr "موارد فرستاده‌شده"
+
+#: ../storage/exchange-hierarchy-foreign.c:259
+msgid "Tasks"
+msgstr "تکلیف‌ها"
+
+#: ../storage/exchange-migrate.c:57
+msgid "Migrating Exchange Folders..."
+msgstr "در حال کوچ دادن پوشه‌ی Exchange..."
+
+#: ../storage/exchange-migrate.c:65
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"مکان و سلسله مراتب پوشه‌ی حساب‌های Evolution exchange از Evolution %d.%d.%d به بعد عوض شده "
+"است.\n"
+"\n"
+"لطفاً در مدتی که Evolution پوشه‌هایتان را کوچ می‌دهد صبور باشید..."
+
+#: ../storage/exchange-migrate.c:98
+#, c-format
+msgid ""
+"Warning: Evolution Could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"هشدار: Evolution نمی‌تواند تمام داده‌های حساب Exchange از نسخه‌ی "
+"%d.%d.%d کوچ دهد.\n"
+"داده‌های حذف نمی‌شوند، اما به این نسخه‌ی Evolution قابل مشاهده نیستند"
+
+#: ../storage/exchange-migrate.c:129
+#, c-format
+msgid "Migrating `%s':"
+msgstr "در حال کوچ دادن «%s»:"
+
+#: ../storage/exchange-oof.c:199 ../storage/exchange-oof.c:406
+msgid "Could not update out-of-office state"
+msgstr "به‌هنگام‌سازی وضعیت خارج از دفتر ممکن نبود"
+
+#: ../storage/exchange-oof.c:424
+msgid "Could not read out-of-office state"
+msgstr "خواندن وضعیت خارج از دفتر ممکن نبود"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>هم‌اکنون وضعیت شما «خارج از دفتر» است.</b>\n"
+"\n"
+"آیا می‌خواهید آن را به «در دفتر» تغییر دهید؟"
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>پیغام خارج از دفتر:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>وضعیت:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>پیغامی که در زیر مشخص شده است به طور خودکار به تک تک کسانی که هنگامی "
+"که شما در دفتر نیستید\n"
+"به شما پیغام می‌زنند، ارسال خواهد شد.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "من در حال حاضر در دفتر هستم"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "من در حال حاضر خارج از دفتر هستم"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "نه، وضعیت تغییر نکند"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "دستیار خروج از دفتر"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "بله، وضعیت تغییر کند"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "هشدار انقضای گذرواژه..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "گذر‌واژه‌ی شما در ۷ روز منقضی خواهد شد..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_تغییر گذرواژه"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "_دکمه‌ی تأیید"
+
+#: ../storage/exchange-permissions-dialog.c:222
+msgid "Could not read folder permissions"
+msgstr "خواندن اجازه‌های پوشه ممکن نیست"
+
+#: ../storage/exchange-permissions-dialog.c:264
+msgid "Could not update folder permissions."
+msgstr "به‌هنگام‌سازی اجاره‌های پوشه ممکن نیست."
+
+#: ../storage/exchange-permissions-dialog.c:293
+#, c-format
+msgid "Could not update folder permissions. %s"
+msgstr "به‌هنگام‌سازی اجازه‌های پوشه ممکن نیست. %s"
+
+#: ../storage/exchange-permissions-dialog.c:295
+msgid "(Permission denied.)"
+msgstr "(اجازه داده نشد.)"
+
+#: ../storage/exchange-permissions-dialog.c:396
+msgid ""
+"Unable to add user to access control list:\n"
+"No Global Catalog server is configured for this account."
+msgstr ""
+"نمی‌توان کاربر را به فهرست کنترل دست‌یابی اضافه کرد:\n"
+"هیچ پایگاه کاتالوگ سراسری برای این حساب پیکربندی نشده‌است."
+
+#: ../storage/exchange-permissions-dialog.c:402
+msgid "Add User:"
+msgstr "اضافه کردن کاربر:"
+
+#: ../storage/exchange-permissions-dialog.c:402
+msgid "Add User"
+msgstr "اضافه کردن کاربر"
+
+#: ../storage/exchange-permissions-dialog.c:421
+#, c-format
+msgid "No such user %s"
+msgstr "کاربر %s وجود ندارد"
+
+#: ../storage/exchange-permissions-dialog.c:425
+#, c-format
+msgid "%s cannot be added to an access control list"
+msgstr "نمی‌توان %s را به یک فهرست کنترل دست‌یابی اضافه کرد"
+
+#: ../storage/exchange-permissions-dialog.c:430
+#, c-format
+msgid "Unknown error looking up %s"
+msgstr "خطای ناشناخته در هنگام مراجعه به %s"
+
+#: ../storage/exchange-permissions-dialog.c:447
+#, c-format
+msgid "%s is already in the list"
+msgstr "هم‌اکنون هم %s در فهرست وجود دارد"
+
+#: ../storage/exchange-permissions-dialog.c:710
+msgid "Role"
+msgstr "نقش"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>اجازه‌ها</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "حذف نمی‌شود"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "ویرایش نمی‌شود"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "ایجاد مورد"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "ایجاد زیرپوشه"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+#, fuzzy
+msgid "Folder contact"
+msgstr "%Id آشنا"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "مالک پوشه"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "پوشه مرئی"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr ""
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "نقش: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "در حال اتصال..."
+
+#: ../storage/main.c:166
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "متصل‌کننده‌ی زیمین برای Microsoft Exchange"
+
+#: ../storage/xc-backend-view.c:299
+msgid "Account Name"
+msgstr "نام حساب"
+
+#: ../storage/xc-commands.c:316
+msgid "Folder does not exist"
+msgstr "پوشه وجود ندارد"
+
+#: ../storage/xc-commands.c:343
+#, c-format
+msgid "Could not add favorite: %s"
+msgstr "اضافه کردن محبوب‌ ممکن نبود: %s"
+
+#: ../storage/xc-commands.c:359
+#, c-format
+msgid "Could not remove favorite: %s"
+msgstr "حذف محبوب ممکن نبود: %s"
+
+#.
+#. FIXME: See 62440
+#. E_POPUP_ITEM (N_("_Move Folder..."),
+#. G_CALLBACK (do_move_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#. E_POPUP_ITEM (N_("_Copy Folder..."),
+#. G_CALLBACK (do_copy_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#.
+#: ../storage/xc-commands.c:385
+msgid "_Rename Folder..."
+msgstr "_تغییرنام پوشه..."
+
+#: ../storage/xc-commands.c:391
+msgid "_New Folder..."
+msgstr "پوشه‌ی _جدید..."
+
+#: ../storage/xc-commands.c:394
+msgid "_Delete Folder"
+msgstr "_حذف پوشه"
+
+#: ../storage/xc-commands.c:399
+msgid "_Add Other User's Folder..."
+msgstr "_اضافه کردن پوشه برای کاربر دیگر..."
+
+#: ../storage/xc-commands.c:402
+msgid "_Remove Other User's Folder"
+msgstr "_حذف پوشه‌ی کاربر دیگر:"
+
+#: ../storage/xc-commands.c:408
+msgid "Add to _Favorites"
+msgstr "اضافه کردن به _محبوب‌ها"
+
+#: ../storage/xc-commands.c:412
+msgid "Remove from Fa_vorites"
+msgstr "حذف کردن از م_حبوب‌ها"
+
+#.
+#. E_POPUP_ITEM (N_("_Permissions..."),
+#. G_CALLBACK (do_permissions),
+#. XC_FOLDER_COMMAND_MASK_PERMISSIONS),
+#.
+#: ../storage/xc-commands.c:423
+msgid "_Show Folder Sizes"
+msgstr "_نشان دادن اندازه‌ی پوشه‌ها"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "گذرواژه‌ی کارگزار Exchange خود را تغییر دهید"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "_اندازه‌ی پوشه"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "گرفتن اندازه‌ی پوشه‌های شخصی"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "آبونه شدن پوشه‌ی کاربران دیگر..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "آبونه شدن پوشه‌هایی که متعلق به کاربران دیگر روی این کارگزار است"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"قطع آبونه‌ی پوشه‌هایی که به‌وسیله‌ی «آبونه شدن پوشه‌ی کاربران دیگر» اضافه شده‌اند"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "مشاهده یا تغییر تنظیمات نمایندگی تقویم Exchange خودتان"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_تغییر گذرواژه‌ی Exchange..."
+
+#: ../storage/ximian-connector.xml.h:10
+#, fuzzy
+msgid "_Delegation Assistant"
+msgstr "دستیار حساب Evolution"
+
+#: ../storage/ximian-connector.xml.h:11
+#, fuzzy
+msgid "_Out of Office Assistant"
+msgstr "دستیار خروج از دفتر"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_قطع آبونه‌ی پوشه‌ی کاربر دیگر"
+
+
+

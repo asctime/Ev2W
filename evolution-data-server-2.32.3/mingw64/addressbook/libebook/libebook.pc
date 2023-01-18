@@ -1,0 +1,15 @@
+prefix=/MSYS2/mingw64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=/MSYS2/mingw64/share
+
+privincludedir=${includedir}/evolution-data-server-2.32
+
+Name: libebook
+Description: Client library for evolution address books
+Version: 2.32.3
+Requires: camel-1.2 libedataserver-1.2 gio-2.0
+Libs: -L${libdir} -lebook-1.2
+Cflags: -I${privincludedir}

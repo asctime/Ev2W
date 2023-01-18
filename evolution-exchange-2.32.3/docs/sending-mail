@@ -1,0 +1,118 @@
+WebDAV mail sending
+-------------------
+Sending mail through WebDAV is done through the "mail submission URI",
+which can be found by PROPFINDing urn:schemas:httpmail:sendmsg on the
+root folder of the store. (It seems to always be
+"/exchange/$USER/##DavMailSubmissionURI##".) This is a magic URI which
+can be used as the target of a PUT, POST, PROPPATCH, MOVE, or COPY,
+but which doesn't otherwise exist.
+
+There are (at least) four different ways to send mail using the mail
+submission URI:
+
+	1. PUT or POST data with Content-Type: message/rfc822. The
+           biggest problem with this approach is that there is no
+	   way to Bcc recipients. (Either you include the Bcc header,
+           in which case it is visible in the sent message, or you
+           don't include it, and there's no way to specify the
+           recipients.)
+
+	2. PUT or POST data with Content-Type: message/rfc821 (note
+	   821, not 822), which starts with the sender and recipient
+	   parts of an SMTP conversation, followed by a blank line
+	   and then the body. (This is the method we currently use.)
+	   Eg:
+
+	       PUT /exchange/danw/##DavMailSubmissionURI## HTTP/1.0
+	       Saveinsent: f
+	       Content-Type: message/rfc821
+
+	       MAIL FROM:<danw@xcs.ximian.com>
+	       RCPT TO:<danw@ximian.com>
+
+	       From: Dan Winship <danw@xcs.ximian.com>
+	       To: Dan Winship <danw@ximian.com>
+	       Subject: test
+
+	       test
+
+	3. PROPPATCH the submission URI with enough properties to
+           define a message
+
+	4. Create a message somewhere else using some combination of
+           PUT and PROPPATCH, and then MOVE or COPY it to the
+           submission URI. (This could be used if we ever need to set
+           properties on an outgoing message that don't correspond to
+           any RFC822 header. Eg, voting buttons.)
+
+By default, messages sent via the mail submission URI are
+automatically copied to the Sent Items folder. We pass "Saveinsent: f"
+as shown above to prevent that behavior, since Evolution will save the
+message in the configured Sent folder itself. (And also, because when
+using the message/rfc821 method, the message would be saved to Sent
+Items with Content-Type: message/rfc821, and the body would include
+the SMTP information.) The other special header defined for the mail
+submission URI is "Savedestination", which specifies an alternate Sent
+folder to use.
+
+The response status will generally be one of:
+
+	200 OK - success
+
+	403 Forbidden - You tried to send mail using a From address
+	that you don't have permission to use. (This happens even if
+	there is a Resent-From header, meaning it is apparently not
+	possible to redirect a message via Exchange.)
+
+	404 Not Found - This happens (instead of 401 Unauthorized) if
+	you try to send a message on an unauthenticated connection.
+
+
+Non-WebDAV mail sending
+-----------------------
+SMTP to an Exchange works just like it does anywhere else. (Exchange
+supports two mystery SMTP extensions: X-LINK2STATE and XEXCH50, but I
+haven't been able to find any documentation on what either of them is
+for, so we can't do anything special via Exchange SMTP.) SMTP is
+enabled by default in Exchange 2000.
+
+There is also one other potential way of sending email, which is to
+use OWA. I don't remember the exact details of how it works, but it
+involves adding the message to the Drafts folder and then executing a
+particular OWA command against it.
+
+
+Handling non-SMTP email addresses
+---------------------------------
+Exchange has a standard way of encapsulating non-SMTP addresses into
+SMTP form. (From MS KB article Q323351):
+
+    If your Exchange Server computer handles a particular non-SMTP address
+    type (for example, FAX), you can use a specific encapsulation scheme
+    to encapsulate the address in SMTP format.
+
+	* IMC encapsulation prefix: IMCEA
+	* Exchange address type (in this example, FAX)
+	* Hyphen (-)
+	* Actual address
+	* At sign (@)
+	* Exchange routing domain
+
+    In addition to encapsulating a non-SMTP address, you may also have to
+    plus-encode certain characters that are not valid for SMTP. The
+    following are the rules for plus-encoding the address:
+    
+	* Alphanumeric characters, the equal sign (=), and the hyphen (-)
+	  are not encoded.
+	* A slash mark (/) is replaced by an underscore (_).
+	* Anything else is replaced by a plus sign (+) and the two
+	  hexadecimal digits of its ASCII value.
+
+    NOTE: You only have to encode the Exchange address type and the actual
+    address. The other items that are listed in the "Format of
+    Encapsulated Address" are made up of valid characters.
+
+Thus, "EX:/O=Ximian XCS/OU=XCS/cn=Recipients/cn=eleanor" becomes
+<IMCEAEX-_O=Ximian+20XCS_OU=XCS_cn=Recipients_cn=eleanor@xcs.ximian.com>
+(though this is a dumb example, since accounts have simpler SMTP
+addresses already).

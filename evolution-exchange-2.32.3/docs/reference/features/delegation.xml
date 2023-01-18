@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-delegation"> 
+<refmeta>
+<refentrytitle>Delegation</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+Delegation is a hodgepodge of several different bits of functionality.
+The big picture idea is "someone else deals with your mail or
+calendar, or you deal with theirs".
+</para>
+
+<para>
+When you make someone a delegate in
+<application>Outlook</application>, the dialog lets you do a bunch of
+things:
+</para>
+
+<itemizedlist>
+    <listitem><para>
+	You can edit their permissions on all of your folders in
+	one easy place.
+    </para></listitem>
+    <listitem><para>
+	If you give them "Editor" permission on your Calendar,
+	you can cause them to also get copies of your meeting
+	requests.
+    </para></listitem>
+    <listitem><para>
+	If you make at least one person get copies of your
+	meeting requests, you can make yourself not get them any
+	more.
+    </para></listitem>
+    <listitem><para>
+	You can make it possible (on a per-delegate basis) for
+	your delegates to be able to see "Private" appointments,
+	contacts, and tasks in your folders. (Normally other
+	people can't see your Private items regardless of what
+	permissions you give them.)
+    </para></listitem>
+    <listitem><para>
+	Your delegate automatically becomes able to send mail from
+	your address. <application>Outlook</application> doesn't
+	actually allow you to enable/disable this functionality
+	independently of calling someone a delegate, although it's
+	possible to do so.
+    </para></listitem>
+</itemizedlist>
+
+<para>
+Different pieces of this information are stored in different places:
+</para>
+
+<orderedlist>
+    <listitem><para>
+	Permissions information is stored in the <link
+	linkend="ximian-connector-permissions">security
+	descriptors</link> of the relevant folders.
+	<application>Outlook</application> always adds the user to
+	each of the delegatable folders (Inbox, Calendar, Contacts,
+	Journal, Notes, and Tasks) even if they only have "None"
+	permission there. The user is also added to the security
+	descriptor of the "Freebusy Data" folder in the <link
+	linkend="ximian-connector-non-ipm">non-IPM subtree</link>,
+	with None or Reviewer permission if they have None or Reviewer
+	on Calendar, and Editor permission if they have Author or
+	Editor on Calendar.
+    </para></listitem>
+    <listitem><para>
+	Who-can-send-mail-as-who data is kept in <application>Active
+	Directory</application>. Your delegates are stored in the
+	multivalued <literal>publicDelegates</literal> property on
+	your AD entry. When you modify that property, AD automatically
+	maintains back links in other entries'
+	<literal>publicDelegatesBL</literal> properties. (Thus, by
+	checking your own <literal>publicDelegatesBL</literal>
+	property, you can find out who you are a delegate for.)
+    </para></listitem>
+    <listitem>
+	<para>
+	    Three multivalued MAPI properties on
+	    <uri>NON_IPM_SUBTREE/Freebusy%20Data/LocalFreebusy.EML</uri>
+	    also track your delegates:
+	</para>
+	<variablelist>
+	    <varlistentry>
+		<term><literal>PR_DELEGATES_DISPLAY_NAMES</literal></term>
+		<listitem><para>display names of delegates</para></listitem>
+	    </varlistentry>
+	    <varlistentry>
+		<term><literal>PR_DELEGATES_ENTRYIDS</literal></term>
+		<listitem><para>ENTRYIDS of delegates</para></listitem>
+	    </varlistentry>
+	    <varlistentry>
+		<term><literal>PR_DELEGATES_SEE_PRIVATE</literal></term>
+		<listitem><para>boolean "can see private items" values
+		</para></listitem>
+	    </varlistentry>
+	</variablelist>
+    </listitem>
+    <listitem><para>
+	Meeting request forwarding is controlled by a <link
+	linkend="ximian-connector-rules">server-side rule</link> in
+	Inbox with a <literal>PR_RULE_MSG_PROVIDER</literal> of
+	"<literal>Schedule+ EMS Interface</literal>"
+    </para></listitem>
+</orderedlist>
+
+</refentry>

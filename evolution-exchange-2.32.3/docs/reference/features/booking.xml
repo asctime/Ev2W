@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connnector-booking">
+<refmeta>
+<refentrytitle>Direct Booking of Resource Calendars</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+"Direct booking" is the ability to directly add appointments to the
+calendar of an Exchange "user" that represents a resource. ("Resource"
+almost always means a conference room, but in theory could also be a
+video projector, white board, or anything else reservable.)
+</para>
+
+<para>
+Connector's implementation of this functionality is designed to be
+basically identical to <application>Outlook</application>'s.
+</para>
+
+<refsect2>
+<title>Creating a Resource</title>
+
+<para>
+Any Exchange account can be a resource. Nothing special needs to be
+done in Exchange or Active Directory. There are three properties,
+stored on the account's <link linkend="freebusy">personal free/busy
+message</link> that control whether or not
+<application>Outlook</application> and
+<application>Evolution</application> treat it as a resource:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>PR_PROCESS_MEETING_REQUESTS</literal></term>
+	<listitem><para>
+	If <literal>TRUE</literal>, then the account is a resource.
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_DECLINE_RECURRING_MEETING_REQUESTS</literal></term>
+	<listitem><para>
+	If <literal>TRUE</literal>, the resource cannot be booked for
+	recurring events.
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_DECLINE_CONFLICTING_MEETING_REQUESTS</literal></term>
+	<listitem><para>
+	If <literal>TRUE</literal>, the resource cannot be double-booked.
+	</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+Connector doesn't currently provide any way to set these properties on
+a mailbox. (<application>Outlook</application> does.)
+</para>
+
+<para>
+Of course, to be able to act as a resource, the account's Calendar
+must be writable by other users. (And the properties on the free/busy
+message must be readable as well. If you use the Delegates dialog in
+either <application>Outlook</application> or
+<application>Evolution</application>, it will make sure the free/busy
+message is readable to any user who can read the Calendar.)
+</para>
+
+</refsect2>
+
+
+<refsect2>
+<title>Booking a Resource</title>
+
+<para>
+<application>Outlook</application>'s convention is that direct booking
+happens when all of the following are true:
+</para>
+
+<orderedlist>
+    <listitem><para>
+    An <application>Exchange</application> user is added to the
+    meeting with an attendee type of <literal>RESOURCE</literal>.
+    </para></listitem>
+
+    <listitem><para>
+    That user has the <literal>PR_PROCESS_MEETING_REQUESTS</literal>
+    property set.
+    </para></listitem>
+
+    <listitem><para>
+    The user creating the meeting has permission to create the
+    appointment in the resource user's Calendar.
+    </para></listitem>
+</orderedlist>
+
+<para>
+If any of these criteria are not met, then it
+<emphasis>silently</emphasis> falls back to normal mail-based
+scheduling. (Among other things, this allows you to set up a resource
+such that some users can book it directly, but if anyone else tries
+to, it will just send a meeting request to that account, which can
+then be accepted or rejected manually by a secretary.)
+</para>
+
+<para>
+If all the criteria are met, but the meeting must be rejected because
+of the settings of the
+<literal>PR_DECLINE_RECURRING_MEETING_REQUESTS</literal> or
+<literal>PR_DECLINE_CONFLICTING_MEETING_REQUESTS</literal> properties,
+then <application>Outlook</application> will pop up an error dialog
+explaining the problem, and refuse to save/send the meeting request.
+</para>
+
+<para>
+If the resource can be booked, then <application>Outlook</application>
+will update the meeting request to show that the resource has accepted
+it, save that meeting request in the resource's calendar, and then
+send that meeting request to all of the remaining users (but NOT the
+resource) by mail.
+</para>
+
+</refsect2>
+
+<refsect2>
+<title>Cancelation</title>
+
+<para>
+If you cancel a meeting that has a booked resource,
+<application>Outlook</application> <emphasis>does not</emphasis>
+remove the event from the resource's calendar. Instead, it prepends
+"Cancelled: " to the event's summary and changes its
+<literal>TRANSP</literal> property to <literal>TRANSPARENT</literal>
+so that it no longer shows up as busy. This leaves the original event
+in the calendar, for record-keeping purposes, but allows a new event
+to use the resource instead.
+</para>
+
+</refsect2>
+
+</refentry>

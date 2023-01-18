@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>E2kAutoconfig</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch03.html" title="libexchange public API reference">
+<link rel="prev" href="ch03.html" title="libexchange public API reference">
+<link rel="next" href="E2kContext.html" title="E2kContext">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch03.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="E2kContext.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#evolution-exchange-E2kAutoconfig.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#evolution-exchange-E2kAutoconfig.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="E2kAutoconfig">
+<a name="evolution-exchange-E2kAutoconfig"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="evolution-exchange-E2kAutoconfig.top_of_page"></a>E2kAutoconfig</span></h2>
+<p>E2kAutoconfig — Account autoconfiguration</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="evolution-exchange-E2kAutoconfig.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig">E2kAutoconfig</a>;
+enum                <a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kExchangeVersion" title="enum E2kExchangeVersion">E2kExchangeVersion</a>;
+enum                <a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigAuthPref" title="enum E2kAutoconfigAuthPref">E2kAutoconfigAuthPref</a>;
+enum                <a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult">E2kAutoconfigResult</a>;
+<a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="returnvalue">E2kAutoconfig</span></a> *     <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-new" title="e2k_autoconfig_new ()">e2k_autoconfig_new</a>                  (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *owa_uri</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *username</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigAuthPref" title="enum E2kAutoconfigAuthPref"><span class="type">E2kAutoconfigAuthPref</span></a> auth_pref</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-free" title="e2k_autoconfig_free ()">e2k_autoconfig_free</a>                 (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-owa-uri" title="e2k_autoconfig_set_owa_uri ()">e2k_autoconfig_set_owa_uri</a>          (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *owa_uri</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-gc-server" title="e2k_autoconfig_set_gc_server ()">e2k_autoconfig_set_gc_server</a>        (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *gc_server</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> gal_limit</code></em>,
+                                                         <em class="parameter"><code><span class="type">E2kAutoconfigGalAuthPref</span> gal_auth</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-username" title="e2k_autoconfig_set_username ()">e2k_autoconfig_set_username</a>         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *username</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-password" title="e2k_autoconfig_set_password ()">e2k_autoconfig_set_password</a>         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>);
+<a class="link" href="E2kContext.html" title="E2kContext"><span class="returnvalue">E2kContext</span></a> *        <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-get-context" title="e2k_autoconfig_get_context ()">e2k_autoconfig_get_context</a>          (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult"><span class="type">E2kAutoconfigResult</span></a> *result</code></em>);
+<a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult"><span class="returnvalue">E2kAutoconfigResult</span></a>  <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-check-exchange" title="e2k_autoconfig_check_exchange ()">e2k_autoconfig_check_exchange</a>      (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>);
+<a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="returnvalue">E2kGlobalCatalog</span></a> *  <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-get-global-catalog" title="e2k_autoconfig_get_global_catalog ()">e2k_autoconfig_get_global_catalog</a>   (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>);
+<a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult"><span class="returnvalue">E2kAutoconfigResult</span></a>  <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-check-global-catalog" title="e2k_autoconfig_check_global_catalog ()">e2k_autoconfig_check_global_catalog</a>
+                                                        (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-lookup-option" title="e2k_autoconfig_lookup_option ()">e2k_autoconfig_lookup_option</a>        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *option</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="evolution-exchange-E2kAutoconfig.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><code class="literal">E2kAutoconfig</code></a> object handles trying to automatically configure a
+user’s account without requiring the user to have to know arcane
+details about the organization of the company’s Exchange servers.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="evolution-exchange-E2kAutoconfig.details"></a><h2>Details</h2>
+<div class="refsect2" title="E2kAutoconfig">
+<a name="E2kAutoconfig"></a><h3>E2kAutoconfig</h3>
+<pre class="programlisting">typedef struct {
+	/* Input data. (gc_server is optional) */
+	gchar *owa_uri, *gc_server;
+	gchar *username, *password;
+	gint gal_limit;
+	E2kAutoconfigGalAuthPref gal_auth;
+
+	/* Output data */
+	E2kExchangeVersion version;
+	gchar *display_name, *email;
+	gchar *account_uri, *exchange_server;
+	gchar *timezone;
+
+	/* Private-ish members */
+	gchar *nt_domain, *w2k_domain;
+	gchar *home_uri, *exchange_dn;
+	gchar *pf_server;
+	E2kAutoconfigAuthPref auth_pref;
+	gboolean require_ntlm, use_ntlm;
+	gboolean saw_basic, saw_ntlm;
+	gboolean nt_domain_defaulted, gc_server_autodetected;
+} E2kAutoconfig;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kExchangeVersion">
+<a name="E2kExchangeVersion"></a><h3>enum E2kExchangeVersion</h3>
+<pre class="programlisting">typedef enum {
+	E2K_EXCHANGE_UNKNOWN,
+	E2K_EXCHANGE_2000,
+	E2K_EXCHANGE_2003,
+
+	E2K_EXCHANGE_FUTURE
+} E2kExchangeVersion;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kAutoconfigAuthPref">
+<a name="E2kAutoconfigAuthPref"></a><h3>enum E2kAutoconfigAuthPref</h3>
+<pre class="programlisting">typedef enum {
+	E2K_AUTOCONFIG_USE_BASIC,
+	E2K_AUTOCONFIG_USE_NTLM,
+	E2K_AUTOCONFIG_USE_EITHER
+} E2kAutoconfigAuthPref;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kAutoconfigResult">
+<a name="E2kAutoconfigResult"></a><h3>enum E2kAutoconfigResult</h3>
+<pre class="programlisting">typedef enum {
+	E2K_AUTOCONFIG_OK,
+	E2K_AUTOCONFIG_REDIRECT,
+	E2K_AUTOCONFIG_TRY_SSL,
+	E2K_AUTOCONFIG_AUTH_ERROR,
+	E2K_AUTOCONFIG_AUTH_ERROR_TRY_DOMAIN,
+	E2K_AUTOCONFIG_AUTH_ERROR_TRY_BASIC,
+	E2K_AUTOCONFIG_AUTH_ERROR_TRY_NTLM,
+	E2K_AUTOCONFIG_EXCHANGE_5_5,
+	E2K_AUTOCONFIG_NOT_EXCHANGE,
+	E2K_AUTOCONFIG_NO_OWA,
+	E2K_AUTOCONFIG_NO_MAILBOX,
+	E2K_AUTOCONFIG_CANT_BPROPFIND,
+	E2K_AUTOCONFIG_CANT_RESOLVE,
+	E2K_AUTOCONFIG_CANT_CONNECT,
+	E2K_AUTOCONFIG_CANCELLED,
+	E2K_AUTOCONFIG_FAILED
+} E2kAutoconfigResult;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_new ()">
+<a name="e2k-autoconfig-new"></a><h3>e2k_autoconfig_new ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="returnvalue">E2kAutoconfig</span></a> *     e2k_autoconfig_new                  (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *owa_uri</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *username</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigAuthPref" title="enum E2kAutoconfigAuthPref"><span class="type">E2kAutoconfigAuthPref</span></a> auth_pref</code></em>);</pre>
+<p>
+Creates an autoconfig context, based on information stored in the
+config file or provided as arguments.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>owa_uri</code></em> :</span></p></td>
+<td>the OWA URI, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to (try to) use a default
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>username</code></em> :</span></p></td>
+<td>the username (or DOMAIN\username), or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to use a default
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>password</code></em> :</span></p></td>
+<td>the password, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not yet known
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>auth_pref</code></em> :</span></p></td>
+<td>information about what auth type to use
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an autoconfig context
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_free ()">
+<a name="e2k-autoconfig-free"></a><h3>e2k_autoconfig_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_autoconfig_free                 (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>);</pre>
+<p>
+Frees <em class="parameter"><code>ac</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>an autoconfig context
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_set_owa_uri ()">
+<a name="e2k-autoconfig-set-owa-uri"></a><h3>e2k_autoconfig_set_owa_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_autoconfig_set_owa_uri          (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *owa_uri</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>ac</code></em>'s <span class="type">owa_uri</span> field to <em class="parameter"><code>owa_uri</code></em> (or the default if <em class="parameter"><code>owa_uri</code></em> is
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>), and resets any fields whose values had been set based on
+the old value of <span class="type">owa_uri</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>an autoconfig context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>owa_uri</code></em> :</span></p></td>
+<td>the new OWA URI, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_set_gc_server ()">
+<a name="e2k-autoconfig-set-gc-server"></a><h3>e2k_autoconfig_set_gc_server ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_autoconfig_set_gc_server        (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *gc_server</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> gal_limit</code></em>,
+                                                         <em class="parameter"><code><span class="type">E2kAutoconfigGalAuthPref</span> gal_auth</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>ac</code></em>'s <span class="type">gc_server</span> field to <em class="parameter"><code>gc_server</code></em> (or the default if
+<em class="parameter"><code>gc_server</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) and the <span class="type">gal_limit</span> field to <em class="parameter"><code>gal_limit</code></em>, and
+resets any fields whose values had been set based on the old value
+of <span class="type">gc_server</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>an autoconfig context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc_server</code></em> :</span></p></td>
+<td>the new GC server, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gal_limit</code></em> :</span></p></td>
+<td>GAL search size limit, or -1 for no limit
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gal_auth</code></em> :</span></p></td>
+<td>Preferred authentication method for gal
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_set_username ()">
+<a name="e2k-autoconfig-set-username"></a><h3>e2k_autoconfig_set_username ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_autoconfig_set_username         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *username</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>ac</code></em>'s <span class="type">username</span> field to <em class="parameter"><code>username</code></em> (or the default if
+<em class="parameter"><code>username</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>), and resets any fields whose values had been
+set based on the old value of <span class="type">username</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>an autoconfig context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>username</code></em> :</span></p></td>
+<td>the new username (or DOMAIN\username), or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_set_password ()">
+<a name="e2k-autoconfig-set-password"></a><h3>e2k_autoconfig_set_password ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_autoconfig_set_password         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>);</pre>
+<p>
+Sets or clears <em class="parameter"><code>ac</code></em>'s <span class="type">password</span> field.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>an autoconfig context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>password</code></em> :</span></p></td>
+<td>the new password, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to clear
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_get_context ()">
+<a name="e2k-autoconfig-get-context"></a><h3>e2k_autoconfig_get_context ()</h3>
+<pre class="programlisting"><a class="link" href="E2kContext.html" title="E2kContext"><span class="returnvalue">E2kContext</span></a> *        e2k_autoconfig_get_context          (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult"><span class="type">E2kAutoconfigResult</span></a> *result</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_check_exchange ()">
+<a name="e2k-autoconfig-check-exchange"></a><h3>e2k_autoconfig_check_exchange ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult"><span class="returnvalue">E2kAutoconfigResult</span></a>  e2k_autoconfig_check_exchange      (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_get_global_catalog ()">
+<a name="e2k-autoconfig-get-global-catalog"></a><h3>e2k_autoconfig_get_global_catalog ()</h3>
+<pre class="programlisting"><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="returnvalue">E2kGlobalCatalog</span></a> *  e2k_autoconfig_get_global_catalog   (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>);</pre>
+<p>
+Tries to connect to the global catalog associated with <em class="parameter"><code>ac</code></em>
+(trying to figure it out from the domain name if the server
+name is not yet known).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>an autoconfig context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a>, for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the global catalog, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the GC server name
+wasn't provided and couldn't be autodetected.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_check_global_catalog ()">
+<a name="e2k-autoconfig-check-global-catalog"></a><h3>e2k_autoconfig_check_global_catalog ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult" title="enum E2kAutoconfigResult"><span class="returnvalue">E2kAutoconfigResult</span></a>  e2k_autoconfig_check_global_catalog
+                                                        (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a> *ac</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ac</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_autoconfig_lookup_option ()">
+<a name="e2k-autoconfig-lookup-option"></a><h3>e2k_autoconfig_lookup_option ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e2k_autoconfig_lookup_option        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *option</code></em>);</pre>
+<p>
+Looks up an autoconfiguration hint in the config file (if present)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>option</code></em> :</span></p></td>
+<td>option name to look up
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the string value of the option, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it is unset.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="evolution-exchange-E2kAutoconfig.see-also"></a><h2>See Also</h2>
+<p>
+<a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a>, <a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a>
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

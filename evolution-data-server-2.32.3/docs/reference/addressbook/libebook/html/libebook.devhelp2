@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Evolution-Data-Server Manual: Address Book Client (libebook)" link="index.html" author="" name="libebook" version="2" language="c">
+  <chapters>
+    <sub name="Evolution-Data-Server Manual: Address Book Client (libebook)" link="ch01.html">
+      <sub name="EBook" link="EBook.html"/>
+      <sub name="e-book-query" link="libebook-e-book-query.html"/>
+      <sub name="e-book-types" link="libebook-e-book-types.html"/>
+      <sub name="EBookView" link="EBookView.html"/>
+      <sub name="EVCard" link="EVCard.html"/>
+      <sub name="EContact" link="EContact.html"/>
+      <sub name="EDestination" link="EDestination.html"/>
+      <sub name="e-address-western" link="libebook-EAddressWestern.html"/>
+      <sub name="e-name-western" link="libebook-ENameWestern.html"/>
+    </sub>
+    <sub name="Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated symbols" link="api-index-deprecated.html"/>
+    <sub name="Index of new symbols in 2.32" link="api-index-2.32.html"/>
+    <sub name="Index of new symbols in 2.30" link="api-index-2.30.html"/>
+    <sub name="Index of new symbols in 2.28" link="api-index-2.28.html"/>
+    <sub name="Index of new symbols in 2.26" link="api-index-2.26.html"/>
+    <sub name="Index of new symbols in 2.24" link="api-index-2.24.html"/>
+    <sub name="Index of new symbols in 2.22" link="api-index-2.22.html"/>
+    <sub name="Index of new symbols in 1.12" link="api-index-1.12.html"/>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="EBook" link="EBook.html#EBook-struct"/>
+    <keyword type="function" name="e_book_new ()" link="EBook.html#e-book-new"/>
+    <keyword type="function" name="e_book_new_default_addressbook ()" link="EBook.html#e-book-new-default-addressbook"/>
+    <keyword type="function" name="e_book_new_from_uri ()" link="EBook.html#e-book-new-from-uri"/>
+    <keyword type="function" name="e_book_new_system_addressbook ()" link="EBook.html#e-book-new-system-addressbook"/>
+    <keyword type="function" name="e_book_set_default_addressbook ()" link="EBook.html#e-book-set-default-addressbook"/>
+    <keyword type="function" name="e_book_set_default_source ()" link="EBook.html#e-book-set-default-source"/>
+    <keyword type="function" name="e_book_remove ()" link="EBook.html#e-book-remove"/>
+    <keyword type="function" name="e_book_open ()" link="EBook.html#e-book-open"/>
+    <keyword type="function" name="e_book_get_supported_fields ()" link="EBook.html#e-book-get-supported-fields"/>
+    <keyword type="function" name="e_book_get_supported_auth_methods ()" link="EBook.html#e-book-get-supported-auth-methods"/>
+    <keyword type="function" name="e_book_get_required_fields ()" link="EBook.html#e-book-get-required-fields"/>
+    <keyword type="function" name="e_book_get_source ()" link="EBook.html#e-book-get-source"/>
+    <keyword type="function" name="e_book_is_online ()" link="EBook.html#e-book-is-online"/>
+    <keyword type="function" name="e_book_is_opened ()" link="EBook.html#e-book-is-opened"/>
+    <keyword type="function" name="e_book_authenticate_user ()" link="EBook.html#e-book-authenticate-user"/>
+    <keyword type="function" name="e_book_get_contact ()" link="EBook.html#e-book-get-contact"/>
+    <keyword type="function" name="e_book_remove_contact ()" link="EBook.html#e-book-remove-contact"/>
+    <keyword type="function" name="e_book_remove_contacts ()" link="EBook.html#e-book-remove-contacts"/>
+    <keyword type="function" name="e_book_add_contact ()" link="EBook.html#e-book-add-contact"/>
+    <keyword type="function" name="e_book_commit_contact ()" link="EBook.html#e-book-commit-contact"/>
+    <keyword type="function" name="e_book_get_book_view ()" link="EBook.html#e-book-get-book-view"/>
+    <keyword type="function" name="e_book_get_contacts ()" link="EBook.html#e-book-get-contacts"/>
+    <keyword type="function" name="e_book_get_changes ()" link="EBook.html#e-book-get-changes"/>
+    <keyword type="function" name="e_book_free_change_list ()" link="EBook.html#e-book-free-change-list"/>
+    <keyword type="function" name="e_book_get_uri ()" link="EBook.html#e-book-get-uri"/>
+    <keyword type="function" name="e_book_get_static_capabilities ()" link="EBook.html#e-book-get-static-capabilities"/>
+    <keyword type="function" name="e_book_check_static_capability ()" link="EBook.html#e-book-check-static-capability"/>
+    <keyword type="function" name="e_book_is_writable ()" link="EBook.html#e-book-is-writable"/>
+    <keyword type="function" name="e_book_cancel ()" link="EBook.html#e-book-cancel"/>
+    <keyword type="function" name="e_book_cancel_async_op ()" link="EBook.html#e-book-cancel-async-op" since="2.24"/>
+    <keyword type="function" name="e_book_get_self ()" link="EBook.html#e-book-get-self"/>
+    <keyword type="function" name="e_book_set_self ()" link="EBook.html#e-book-set-self"/>
+    <keyword type="function" name="e_book_is_self ()" link="EBook.html#e-book-is-self"/>
+    <keyword type="function" name="e_book_get_addressbooks ()" link="EBook.html#e-book-get-addressbooks"/>
+    <keyword type="macro" name="e_return_error_if_fail()" link="EBook.html#e-return-error-if-fail" since="2.30"/>
+    <keyword type="macro" name="e_return_async_error_if_fail()" link="EBook.html#e-return-async-error-if-fail" since="2.32"/>
+    <keyword type="macro" name="e_return_ex_async_error_val_if_fail()" link="EBook.html#e-return-ex-async-error-val-if-fail" since="2.32"/>
+    <keyword type="function" name="EBookAsyncCallback ()" link="EBook.html#EBookAsyncCallback" since="2.32"/>
+    <keyword type="function" name="EBookOpenProgressCallback ()" link="EBook.html#EBookOpenProgressCallback" since="2.32"/>
+    <keyword type="function" name="EBookIdAsyncCallback ()" link="EBook.html#EBookIdAsyncCallback" since="2.32"/>
+    <keyword type="function" name="EBookContactAsyncCallback ()" link="EBook.html#EBookContactAsyncCallback" since="2.32"/>
+    <keyword type="function" name="EBookListAsyncCallback ()" link="EBook.html#EBookListAsyncCallback" since="2.32"/>
+    <keyword type="function" name="EBookBookViewAsyncCallback ()" link="EBook.html#EBookBookViewAsyncCallback" since="2.32"/>
+    <keyword type="function" name="EBookEListAsyncCallback ()" link="EBook.html#EBookEListAsyncCallback" since="2.32"/>
+    <keyword type="function" name="EBookCallback ()" link="EBook.html#EBookCallback" deprecated=""/>
+    <keyword type="function" name="EBookIdCallback ()" link="EBook.html#EBookIdCallback" deprecated=""/>
+    <keyword type="function" name="EBookEListCallback ()" link="EBook.html#EBookEListCallback" deprecated=""/>
+    <keyword type="function" name="EBookListCallback ()" link="EBook.html#EBookListCallback" deprecated=""/>
+    <keyword type="function" name="EBookContactCallback ()" link="EBook.html#EBookContactCallback" deprecated=""/>
+    <keyword type="function" name="EBookBookViewCallback ()" link="EBook.html#EBookBookViewCallback" deprecated=""/>
+    <keyword type="function" name="e_book_open_async ()" link="EBook.html#e-book-open-async" since="2.32"/>
+    <keyword type="function" name="e_book_remove_async ()" link="EBook.html#e-book-remove-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_supported_fields_async ()" link="EBook.html#e-book-get-supported-fields-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_supported_auth_methods_async ()" link="EBook.html#e-book-get-supported-auth-methods-async" since="2.32"/>
+    <keyword type="function" name="e_book_authenticate_user_async ()" link="EBook.html#e-book-authenticate-user-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_contact_async ()" link="EBook.html#e-book-get-contact-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_contacts_async ()" link="EBook.html#e-book-get-contacts-async" since="2.32"/>
+    <keyword type="function" name="e_book_remove_contact_async ()" link="EBook.html#e-book-remove-contact-async" since="2.32"/>
+    <keyword type="function" name="e_book_remove_contact_by_id_async ()" link="EBook.html#e-book-remove-contact-by-id-async" since="2.32"/>
+    <keyword type="function" name="e_book_remove_contacts_async ()" link="EBook.html#e-book-remove-contacts-async" since="2.32"/>
+    <keyword type="function" name="e_book_add_contact_async ()" link="EBook.html#e-book-add-contact-async" since="2.32"/>
+    <keyword type="function" name="e_book_commit_contact_async ()" link="EBook.html#e-book-commit-contact-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_book_view_async ()" link="EBook.html#e-book-get-book-view-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_changes_async ()" link="EBook.html#e-book-get-changes-async" since="2.32"/>
+    <keyword type="function" name="e_book_get_required_fields_async ()" link="EBook.html#e-book-get-required-fields-async" since="2.32"/>
+    <keyword type="function" name="e_book_async_open ()" link="EBook.html#e-book-async-open" deprecated="3.0: Use e_book_open_async() instead."/>
+    <keyword type="function" name="e_book_async_remove ()" link="EBook.html#e-book-async-remove" deprecated="3.0: Use e_book_remove_async() instead."/>
+    <keyword type="function" name="e_book_async_get_supported_fields ()" link="EBook.html#e-book-async-get-supported-fields" deprecated="3.0: Use e_book_get_supported_fields_async() instead."/>
+    <keyword type="function" name="e_book_async_get_supported_auth_methods ()" link="EBook.html#e-book-async-get-supported-auth-methods" deprecated="3.0: Use e_book_get_supported_auth_methods_async() instead."/>
+    <keyword type="function" name="e_book_async_authenticate_user ()" link="EBook.html#e-book-async-authenticate-user" deprecated="3.0: Use e_book_authenticate_user_async() instead."/>
+    <keyword type="function" name="e_book_async_get_contact ()" link="EBook.html#e-book-async-get-contact" deprecated="3.0: Use e_book_get_contact_async() instead."/>
+    <keyword type="function" name="e_book_async_get_contacts ()" link="EBook.html#e-book-async-get-contacts" deprecated="3.0: Use e_book_get_contacts_async() instead."/>
+    <keyword type="function" name="e_book_async_remove_contact ()" link="EBook.html#e-book-async-remove-contact" deprecated="3.0: Use e_book_remove_contact_async() instead."/>
+    <keyword type="function" name="e_book_async_remove_contact_by_id ()" link="EBook.html#e-book-async-remove-contact-by-id" deprecated="3.0: Use e_book_remove_contact_by_id_async() instead."/>
+    <keyword type="function" name="e_book_async_remove_contacts ()" link="EBook.html#e-book-async-remove-contacts" deprecated="3.0: Use e_book_remove_contacts_async() instead."/>
+    <keyword type="function" name="e_book_async_add_contact ()" link="EBook.html#e-book-async-add-contact" deprecated="3.0: Use e_book_add_contact_async() instead."/>
+    <keyword type="function" name="e_book_async_commit_contact ()" link="EBook.html#e-book-async-commit-contact" deprecated="3.0: Use e_book_commit_contact_async() instead."/>
+    <keyword type="function" name="e_book_async_get_book_view ()" link="EBook.html#e-book-async-get-book-view" deprecated="3.0: Use e_book_get_book_view_async() instead."/>
+    <keyword type="function" name="e_book_async_get_changes ()" link="EBook.html#e-book-async-get-changes" deprecated="3.0: Use e_book_get_changes_async() instead."/>
+    <keyword type="function" name="e_book_async_get_required_fields ()" link="EBook.html#e-book-async-get-required-fields" deprecated="3.0: Use e_book_get_required_fields_async() instead."/>
+    <keyword type="signal" name="The &quot;auth-required&quot; signal" link="EBook.html#EBook-auth-required"/>
+    <keyword type="signal" name="The &quot;backend-died&quot; signal" link="EBook.html#EBook-backend-died"/>
+    <keyword type="signal" name="The &quot;connection-status&quot; signal" link="EBook.html#EBook-connection-status"/>
+    <keyword type="signal" name="The &quot;writable-status&quot; signal" link="EBook.html#EBook-writable-status"/>
+    <keyword type="typedef" name="EBookQuery" link="libebook-e-book-query.html#EBookQuery"/>
+    <keyword type="enum" name="enum EBookQueryTest" link="libebook-e-book-query.html#EBookQueryTest"/>
+    <keyword type="function" name="e_book_query_from_string ()" link="libebook-e-book-query.html#e-book-query-from-string"/>
+    <keyword type="function" name="e_book_query_to_string ()" link="libebook-e-book-query.html#e-book-query-to-string"/>
+    <keyword type="function" name="e_book_query_ref ()" link="libebook-e-book-query.html#e-book-query-ref"/>
+    <keyword type="function" name="e_book_query_unref ()" link="libebook-e-book-query.html#e-book-query-unref"/>
+    <keyword type="function" name="e_book_query_and ()" link="libebook-e-book-query.html#e-book-query-and"/>
+    <keyword type="function" name="e_book_query_andv ()" link="libebook-e-book-query.html#e-book-query-andv"/>
+    <keyword type="function" name="e_book_query_or ()" link="libebook-e-book-query.html#e-book-query-or"/>
+    <keyword type="function" name="e_book_query_orv ()" link="libebook-e-book-query.html#e-book-query-orv"/>
+    <keyword type="function" name="e_book_query_not ()" link="libebook-e-book-query.html#e-book-query-not"/>
+    <keyword type="function" name="e_book_query_field_exists ()" link="libebook-e-book-query.html#e-book-query-field-exists"/>
+    <keyword type="function" name="e_book_query_vcard_field_exists ()" link="libebook-e-book-query.html#e-book-query-vcard-field-exists"/>
+    <keyword type="function" name="e_book_query_field_test ()" link="libebook-e-book-query.html#e-book-query-field-test"/>
+    <keyword type="function" name="e_book_query_vcard_field_test ()" link="libebook-e-book-query.html#e-book-query-vcard-field-test" since="2.22"/>
+    <keyword type="function" name="e_book_query_any_field_contains ()" link="libebook-e-book-query.html#e-book-query-any-field-contains"/>
+    <keyword type="function" name="e_book_query_copy ()" link="libebook-e-book-query.html#e-book-query-copy"/>
+    <keyword type="macro" name="E_BOOK_ERROR" link="libebook-e-book-types.html#E-BOOK-ERROR:CAPS"/>
+    <keyword type="function" name="e_book_error_quark ()" link="libebook-e-book-types.html#e-book-error-quark"/>
+    <keyword type="enum" name="enum EBookStatus" link="libebook-e-book-types.html#EBookStatus"/>
+    <keyword type="macro" name="E_BOOK_ERROR_CORBA_EXCEPTION" link="libebook-e-book-types.html#E-BOOK-ERROR-CORBA-EXCEPTION:CAPS" deprecated=""/>
+    <keyword type="enum" name="enum EBookViewStatus" link="libebook-e-book-types.html#EBookViewStatus"/>
+    <keyword type="enum" name="enum EBookChangeType" link="libebook-e-book-types.html#EBookChangeType"/>
+    <keyword type="struct" name="EBookChange" link="libebook-e-book-types.html#EBookChange"/>
+    <keyword type="struct" name="EBookView" link="EBookView.html#EBookView-struct"/>
+    <keyword type="function" name="e_book_view_start ()" link="EBookView.html#e-book-view-start"/>
+    <keyword type="function" name="e_book_view_stop ()" link="EBookView.html#e-book-view-stop"/>
+    <keyword type="function" name="e_book_view_get_book ()" link="EBookView.html#e-book-view-get-book" since="2.22"/>
+    <keyword type="signal" name="The &quot;contacts-added&quot; signal" link="EBookView.html#EBookView-contacts-added"/>
+    <keyword type="signal" name="The &quot;contacts-changed&quot; signal" link="EBookView.html#EBookView-contacts-changed"/>
+    <keyword type="signal" name="The &quot;contacts-removed&quot; signal" link="EBookView.html#EBookView-contacts-removed"/>
+    <keyword type="signal" name="The &quot;sequence-complete&quot; signal" link="EBookView.html#EBookView-sequence-complete"/>
+    <keyword type="signal" name="The &quot;status-message&quot; signal" link="EBookView.html#EBookView-status-message"/>
+    <keyword type="signal" name="The &quot;view-complete&quot; signal" link="EBookView.html#EBookView-view-complete"/>
+    <keyword type="struct" name="EVCard" link="EVCard.html#EVCard-struct"/>
+    <keyword type="enum" name="enum EVCardFormat" link="EVCard.html#EVCardFormat"/>
+    <keyword type="struct" name="EVCardAttribute" link="EVCard.html#EVCardAttribute"/>
+    <keyword type="struct" name="EVCardAttributeParam" link="EVCard.html#EVCardAttributeParam"/>
+    <keyword type="function" name="e_vcard_new ()" link="EVCard.html#e-vcard-new"/>
+    <keyword type="function" name="e_vcard_new_from_string ()" link="EVCard.html#e-vcard-new-from-string"/>
+    <keyword type="function" name="e_vcard_to_string ()" link="EVCard.html#e-vcard-to-string"/>
+    <keyword type="function" name="e_vcard_dump_structure ()" link="EVCard.html#e-vcard-dump-structure"/>
+    <keyword type="function" name="e_vcard_attribute_new ()" link="EVCard.html#e-vcard-attribute-new"/>
+    <keyword type="function" name="e_vcard_attribute_free ()" link="EVCard.html#e-vcard-attribute-free"/>
+    <keyword type="function" name="e_vcard_attribute_copy ()" link="EVCard.html#e-vcard-attribute-copy"/>
+    <keyword type="function" name="e_vcard_remove_attributes ()" link="EVCard.html#e-vcard-remove-attributes"/>
+    <keyword type="function" name="e_vcard_remove_attribute ()" link="EVCard.html#e-vcard-remove-attribute"/>
+    <keyword type="function" name="e_vcard_append_attribute ()" link="EVCard.html#e-vcard-append-attribute" since="2.32"/>
+    <keyword type="function" name="e_vcard_append_attribute_with_value ()" link="EVCard.html#e-vcard-append-attribute-with-value" since="2.32"/>
+    <keyword type="function" name="e_vcard_append_attribute_with_values ()" link="EVCard.html#e-vcard-append-attribute-with-values" since="2.32"/>
+    <keyword type="function" name="e_vcard_add_attribute ()" link="EVCard.html#e-vcard-add-attribute"/>
+    <keyword type="function" name="e_vcard_add_attribute_with_value ()" link="EVCard.html#e-vcard-add-attribute-with-value"/>
+    <keyword type="function" name="e_vcard_add_attribute_with_values ()" link="EVCard.html#e-vcard-add-attribute-with-values"/>
+    <keyword type="function" name="e_vcard_attribute_add_value ()" link="EVCard.html#e-vcard-attribute-add-value"/>
+    <keyword type="function" name="e_vcard_attribute_add_value_decoded ()" link="EVCard.html#e-vcard-attribute-add-value-decoded"/>
+    <keyword type="function" name="e_vcard_attribute_add_values ()" link="EVCard.html#e-vcard-attribute-add-values"/>
+    <keyword type="function" name="e_vcard_attribute_remove_values ()" link="EVCard.html#e-vcard-attribute-remove-values"/>
+    <keyword type="function" name="e_vcard_attribute_remove_value ()" link="EVCard.html#e-vcard-attribute-remove-value"/>
+    <keyword type="function" name="e_vcard_attribute_remove_params ()" link="EVCard.html#e-vcard-attribute-remove-params"/>
+    <keyword type="function" name="e_vcard_attribute_remove_param ()" link="EVCard.html#e-vcard-attribute-remove-param" since="1.12"/>
+    <keyword type="function" name="e_vcard_attribute_remove_param_value ()" link="EVCard.html#e-vcard-attribute-remove-param-value"/>
+    <keyword type="function" name="e_vcard_attribute_param_new ()" link="EVCard.html#e-vcard-attribute-param-new"/>
+    <keyword type="function" name="e_vcard_attribute_param_free ()" link="EVCard.html#e-vcard-attribute-param-free"/>
+    <keyword type="function" name="e_vcard_attribute_param_copy ()" link="EVCard.html#e-vcard-attribute-param-copy"/>
+    <keyword type="function" name="e_vcard_attribute_add_param ()" link="EVCard.html#e-vcard-attribute-add-param"/>
+    <keyword type="function" name="e_vcard_attribute_add_param_with_value ()" link="EVCard.html#e-vcard-attribute-add-param-with-value"/>
+    <keyword type="function" name="e_vcard_attribute_add_param_with_values ()" link="EVCard.html#e-vcard-attribute-add-param-with-values"/>
+    <keyword type="function" name="e_vcard_attribute_param_add_value ()" link="EVCard.html#e-vcard-attribute-param-add-value"/>
+    <keyword type="function" name="e_vcard_attribute_param_add_values ()" link="EVCard.html#e-vcard-attribute-param-add-values"/>
+    <keyword type="function" name="e_vcard_attribute_param_remove_values ()" link="EVCard.html#e-vcard-attribute-param-remove-values"/>
+    <keyword type="function" name="e_vcard_attribute_param_get_name ()" link="EVCard.html#e-vcard-attribute-param-get-name"/>
+    <keyword type="function" name="e_vcard_attribute_param_get_values ()" link="EVCard.html#e-vcard-attribute-param-get-values"/>
+    <keyword type="function" name="e_vcard_get_attribute ()" link="EVCard.html#e-vcard-get-attribute"/>
+    <keyword type="function" name="e_vcard_get_attributes ()" link="EVCard.html#e-vcard-get-attributes"/>
+    <keyword type="function" name="e_vcard_attribute_get_group ()" link="EVCard.html#e-vcard-attribute-get-group"/>
+    <keyword type="function" name="e_vcard_attribute_get_name ()" link="EVCard.html#e-vcard-attribute-get-name"/>
+    <keyword type="function" name="e_vcard_attribute_get_values ()" link="EVCard.html#e-vcard-attribute-get-values"/>
+    <keyword type="function" name="e_vcard_attribute_get_values_decoded ()" link="EVCard.html#e-vcard-attribute-get-values-decoded"/>
+    <keyword type="function" name="e_vcard_attribute_get_params ()" link="EVCard.html#e-vcard-attribute-get-params"/>
+    <keyword type="function" name="e_vcard_attribute_get_param ()" link="EVCard.html#e-vcard-attribute-get-param"/>
+    <keyword type="function" name="e_vcard_attribute_get_value ()" link="EVCard.html#e-vcard-attribute-get-value"/>
+    <keyword type="function" name="e_vcard_attribute_get_value_decoded ()" link="EVCard.html#e-vcard-attribute-get-value-decoded"/>
+    <keyword type="function" name="e_vcard_attribute_has_type ()" link="EVCard.html#e-vcard-attribute-has-type"/>
+    <keyword type="function" name="e_vcard_attribute_is_single_valued ()" link="EVCard.html#e-vcard-attribute-is-single-valued"/>
+    <keyword type="function" name="e_vcard_escape_string ()" link="EVCard.html#e-vcard-escape-string"/>
+    <keyword type="function" name="e_vcard_unescape_string ()" link="EVCard.html#e-vcard-unescape-string"/>
+    <keyword type="macro" name="EVC_ADR" link="EVCard.html#EVC-ADR:CAPS"/>
+    <keyword type="macro" name="EVC_BDAY" link="EVCard.html#EVC-BDAY:CAPS"/>
+    <keyword type="macro" name="EVC_CALURI" link="EVCard.html#EVC-CALURI:CAPS"/>
+    <keyword type="macro" name="EVC_CATEGORIES" link="EVCard.html#EVC-CATEGORIES:CAPS"/>
+    <keyword type="macro" name="EVC_EMAIL" link="EVCard.html#EVC-EMAIL:CAPS"/>
+    <keyword type="macro" name="EVC_ENCODING" link="EVCard.html#EVC-ENCODING:CAPS"/>
+    <keyword type="macro" name="EVC_FBURL" link="EVCard.html#EVC-FBURL:CAPS"/>
+    <keyword type="macro" name="EVC_FN" link="EVCard.html#EVC-FN:CAPS"/>
+    <keyword type="macro" name="EVC_GEO" link="EVCard.html#EVC-GEO:CAPS" since="1.12"/>
+    <keyword type="macro" name="EVC_ICSCALENDAR" link="EVCard.html#EVC-ICSCALENDAR:CAPS"/>
+    <keyword type="macro" name="EVC_KEY" link="EVCard.html#EVC-KEY:CAPS"/>
+    <keyword type="macro" name="EVC_LABEL" link="EVCard.html#EVC-LABEL:CAPS"/>
+    <keyword type="macro" name="EVC_LOGO" link="EVCard.html#EVC-LOGO:CAPS"/>
+    <keyword type="macro" name="EVC_MAILER" link="EVCard.html#EVC-MAILER:CAPS"/>
+    <keyword type="macro" name="EVC_NICKNAME" link="EVCard.html#EVC-NICKNAME:CAPS"/>
+    <keyword type="macro" name="EVC_N" link="EVCard.html#EVC-N:CAPS"/>
+    <keyword type="macro" name="EVC_NOTE" link="EVCard.html#EVC-NOTE:CAPS"/>
+    <keyword type="macro" name="EVC_ORG" link="EVCard.html#EVC-ORG:CAPS"/>
+    <keyword type="macro" name="EVC_PHOTO" link="EVCard.html#EVC-PHOTO:CAPS"/>
+    <keyword type="macro" name="EVC_PRODID" link="EVCard.html#EVC-PRODID:CAPS"/>
+    <keyword type="macro" name="EVC_QUOTEDPRINTABLE" link="EVCard.html#EVC-QUOTEDPRINTABLE:CAPS"/>
+    <keyword type="macro" name="EVC_REV" link="EVCard.html#EVC-REV:CAPS"/>
+    <keyword type="macro" name="EVC_ROLE" link="EVCard.html#EVC-ROLE:CAPS"/>
+    <keyword type="macro" name="EVC_TEL" link="EVCard.html#EVC-TEL:CAPS"/>
+    <keyword type="macro" name="EVC_TITLE" link="EVCard.html#EVC-TITLE:CAPS"/>
+    <keyword type="macro" name="EVC_TYPE" link="EVCard.html#EVC-TYPE:CAPS"/>
+    <keyword type="macro" name="EVC_UID" link="EVCard.html#EVC-UID:CAPS"/>
+    <keyword type="macro" name="EVC_URL" link="EVCard.html#EVC-URL:CAPS"/>
+    <keyword type="macro" name="EVC_VALUE" link="EVCard.html#EVC-VALUE:CAPS"/>
+    <keyword type="macro" name="EVC_VERSION" link="EVCard.html#EVC-VERSION:CAPS"/>
+    <keyword type="macro" name="EVC_X_AIM" link="EVCard.html#EVC-X-AIM:CAPS"/>
+    <keyword type="macro" name="EVC_X_ANNIVERSARY" link="EVCard.html#EVC-X-ANNIVERSARY:CAPS"/>
+    <keyword type="macro" name="EVC_X_ASSISTANT" link="EVCard.html#EVC-X-ASSISTANT:CAPS"/>
+    <keyword type="macro" name="EVC_X_BIRTHDAY" link="EVCard.html#EVC-X-BIRTHDAY:CAPS"/>
+    <keyword type="macro" name="EVC_X_BLOG_URL" link="EVCard.html#EVC-X-BLOG-URL:CAPS"/>
+    <keyword type="macro" name="EVC_X_FILE_AS" link="EVCard.html#EVC-X-FILE-AS:CAPS"/>
+    <keyword type="macro" name="EVC_X_GADUGADU" link="EVCard.html#EVC-X-GADUGADU:CAPS"/>
+    <keyword type="macro" name="EVC_X_ICQ" link="EVCard.html#EVC-X-ICQ:CAPS"/>
+    <keyword type="macro" name="EVC_X_JABBER" link="EVCard.html#EVC-X-JABBER:CAPS"/>
+    <keyword type="macro" name="EVC_X_LIST_SHOW_ADDRESSES" link="EVCard.html#EVC-X-LIST-SHOW-ADDRESSES:CAPS"/>
+    <keyword type="macro" name="EVC_X_LIST" link="EVCard.html#EVC-X-LIST:CAPS"/>
+    <keyword type="macro" name="EVC_X_MANAGER" link="EVCard.html#EVC-X-MANAGER:CAPS"/>
+    <keyword type="macro" name="EVC_X_MSN" link="EVCard.html#EVC-X-MSN:CAPS"/>
+    <keyword type="macro" name="EVC_X_SKYPE" link="EVCard.html#EVC-X-SKYPE:CAPS" since="2.26"/>
+    <keyword type="macro" name="EVC_X_WANTS_HTML" link="EVCard.html#EVC-X-WANTS-HTML:CAPS"/>
+    <keyword type="macro" name="EVC_X_YAHOO" link="EVCard.html#EVC-X-YAHOO:CAPS"/>
+    <keyword type="macro" name="EVC_X_BOOK_URI" link="EVCard.html#EVC-X-BOOK-URI:CAPS"/>
+    <keyword type="macro" name="EVC_X_CALLBACK" link="EVCard.html#EVC-X-CALLBACK:CAPS"/>
+    <keyword type="macro" name="EVC_X_COMPANY" link="EVCard.html#EVC-X-COMPANY:CAPS"/>
+    <keyword type="macro" name="EVC_X_DEST_CONTACT_UID" link="EVCard.html#EVC-X-DEST-CONTACT-UID:CAPS"/>
+    <keyword type="macro" name="EVC_X_DEST_EMAIL" link="EVCard.html#EVC-X-DEST-EMAIL:CAPS" deprecated=""/>
+    <keyword type="macro" name="EVC_X_DEST_EMAIL_NUM" link="EVCard.html#EVC-X-DEST-EMAIL-NUM:CAPS"/>
+    <keyword type="macro" name="EVC_X_DEST_HTML_MAIL" link="EVCard.html#EVC-X-DEST-HTML-MAIL:CAPS"/>
+    <keyword type="macro" name="EVC_X_DEST_NAME" link="EVCard.html#EVC-X-DEST-NAME:CAPS" deprecated=""/>
+    <keyword type="macro" name="EVC_X_DEST_SOURCE_UID" link="EVCard.html#EVC-X-DEST-SOURCE-UID:CAPS"/>
+    <keyword type="macro" name="EVC_X_GROUPWISE" link="EVCard.html#EVC-X-GROUPWISE:CAPS"/>
+    <keyword type="macro" name="EVC_X_RADIO" link="EVCard.html#EVC-X-RADIO:CAPS"/>
+    <keyword type="macro" name="EVC_X_SIP" link="EVCard.html#EVC-X-SIP:CAPS" since="2.26"/>
+    <keyword type="macro" name="EVC_X_SPOUSE" link="EVCard.html#EVC-X-SPOUSE:CAPS"/>
+    <keyword type="macro" name="EVC_X_TELEX" link="EVCard.html#EVC-X-TELEX:CAPS"/>
+    <keyword type="macro" name="EVC_X_TTYTDD" link="EVCard.html#EVC-X-TTYTDD:CAPS"/>
+    <keyword type="macro" name="EVC_X_VIDEO_URL" link="EVCard.html#EVC-X-VIDEO-URL:CAPS"/>
+    <keyword type="struct" name="EContact" link="EContact.html#EContact-struct"/>
+    <keyword type="enum" name="enum EContactField" link="EContact.html#EContactField"/>
+    <keyword type="struct" name="EContactName" link="EContact.html#EContactName"/>
+    <keyword type="struct" name="EContactGeo" link="EContact.html#EContactGeo" since="1.12"/>
+    <keyword type="struct" name="EContactPhoto" link="EContact.html#EContactPhoto"/>
+    <keyword type="struct" name="EContactAddress" link="EContact.html#EContactAddress"/>
+    <keyword type="struct" name="EContactDate" link="EContact.html#EContactDate"/>
+    <keyword type="struct" name="EContactCert" link="EContact.html#EContactCert"/>
+    <keyword type="function" name="e_contact_new ()" link="EContact.html#e-contact-new"/>
+    <keyword type="function" name="e_contact_new_from_vcard ()" link="EContact.html#e-contact-new-from-vcard"/>
+    <keyword type="function" name="e_contact_duplicate ()" link="EContact.html#e-contact-duplicate"/>
+    <keyword type="function" name="e_contact_get ()" link="EContact.html#e-contact-get"/>
+    <keyword type="function" name="e_contact_get_const ()" link="EContact.html#e-contact-get-const"/>
+    <keyword type="function" name="e_contact_set ()" link="EContact.html#e-contact-set"/>
+    <keyword type="function" name="e_contact_date_new ()" link="EContact.html#e-contact-date-new"/>
+    <keyword type="function" name="e_contact_date_from_string ()" link="EContact.html#e-contact-date-from-string"/>
+    <keyword type="function" name="e_contact_date_to_string ()" link="EContact.html#e-contact-date-to-string"/>
+    <keyword type="function" name="e_contact_date_equal ()" link="EContact.html#e-contact-date-equal"/>
+    <keyword type="function" name="e_contact_name_new ()" link="EContact.html#e-contact-name-new"/>
+    <keyword type="function" name="e_contact_name_to_string ()" link="EContact.html#e-contact-name-to-string"/>
+    <keyword type="function" name="e_contact_name_from_string ()" link="EContact.html#e-contact-name-from-string"/>
+    <keyword type="function" name="e_contact_name_copy ()" link="EContact.html#e-contact-name-copy"/>
+    <keyword type="function" name="e_contact_date_free ()" link="EContact.html#e-contact-date-free"/>
+    <keyword type="function" name="e_contact_name_free ()" link="EContact.html#e-contact-name-free"/>
+    <keyword type="function" name="e_contact_photo_free ()" link="EContact.html#e-contact-photo-free"/>
+    <keyword type="function" name="e_contact_geo_free ()" link="EContact.html#e-contact-geo-free" since="1.12"/>
+    <keyword type="function" name="e_contact_address_free ()" link="EContact.html#e-contact-address-free"/>
+    <keyword type="function" name="e_contact_field_name ()" link="EContact.html#e-contact-field-name"/>
+    <keyword type="function" name="e_contact_pretty_name ()" link="EContact.html#e-contact-pretty-name"/>
+    <keyword type="function" name="e_contact_field_id ()" link="EContact.html#e-contact-field-id"/>
+    <keyword type="function" name="e_contact_field_id_from_vcard ()" link="EContact.html#e-contact-field-id-from-vcard" since="2.26"/>
+    <keyword type="function" name="e_contact_cert_free ()" link="EContact.html#e-contact-cert-free"/>
+    <keyword type="function" name="e_contact_get_attributes ()" link="EContact.html#e-contact-get-attributes"/>
+    <keyword type="function" name="e_contact_set_attributes ()" link="EContact.html#e-contact-set-attributes"/>
+    <keyword type="function" name="e_contact_vcard_attribute ()" link="EContact.html#e-contact-vcard-attribute"/>
+    <keyword type="property" name="The &quot;Rev&quot; property" link="EContact.html#EContact--Rev"/>
+    <keyword type="property" name="The &quot;address&quot; property" link="EContact.html#EContact--address"/>
+    <keyword type="property" name="The &quot;address-home&quot; property" link="EContact.html#EContact--address-home"/>
+    <keyword type="property" name="The &quot;address-label-home&quot; property" link="EContact.html#EContact--address-label-home"/>
+    <keyword type="property" name="The &quot;address-label-other&quot; property" link="EContact.html#EContact--address-label-other"/>
+    <keyword type="property" name="The &quot;address-label-work&quot; property" link="EContact.html#EContact--address-label-work"/>
+    <keyword type="property" name="The &quot;address-other&quot; property" link="EContact.html#EContact--address-other"/>
+    <keyword type="property" name="The &quot;address-work&quot; property" link="EContact.html#EContact--address-work"/>
+    <keyword type="property" name="The &quot;anniversary&quot; property" link="EContact.html#EContact--anniversary"/>
+    <keyword type="property" name="The &quot;assistant&quot; property" link="EContact.html#EContact--assistant"/>
+    <keyword type="property" name="The &quot;assistant-phone&quot; property" link="EContact.html#EContact--assistant-phone"/>
+    <keyword type="property" name="The &quot;birth-date&quot; property" link="EContact.html#EContact--birth-date"/>
+    <keyword type="property" name="The &quot;blog-url&quot; property" link="EContact.html#EContact--blog-url"/>
+    <keyword type="property" name="The &quot;book-uri&quot; property" link="EContact.html#EContact--book-uri"/>
+    <keyword type="property" name="The &quot;business-fax&quot; property" link="EContact.html#EContact--business-fax"/>
+    <keyword type="property" name="The &quot;business-phone&quot; property" link="EContact.html#EContact--business-phone"/>
+    <keyword type="property" name="The &quot;business-phone-2&quot; property" link="EContact.html#EContact--business-phone-2"/>
+    <keyword type="property" name="The &quot;callback-phone&quot; property" link="EContact.html#EContact--callback-phone"/>
+    <keyword type="property" name="The &quot;caluri&quot; property" link="EContact.html#EContact--caluri"/>
+    <keyword type="property" name="The &quot;car-phone&quot; property" link="EContact.html#EContact--car-phone"/>
+    <keyword type="property" name="The &quot;categories&quot; property" link="EContact.html#EContact--categories"/>
+    <keyword type="property" name="The &quot;category-list&quot; property" link="EContact.html#EContact--category-list"/>
+    <keyword type="property" name="The &quot;company-phone&quot; property" link="EContact.html#EContact--company-phone"/>
+    <keyword type="property" name="The &quot;email&quot; property" link="EContact.html#EContact--email"/>
+    <keyword type="property" name="The &quot;email-1&quot; property" link="EContact.html#EContact--email-1"/>
+    <keyword type="property" name="The &quot;email-2&quot; property" link="EContact.html#EContact--email-2"/>
+    <keyword type="property" name="The &quot;email-3&quot; property" link="EContact.html#EContact--email-3"/>
+    <keyword type="property" name="The &quot;email-4&quot; property" link="EContact.html#EContact--email-4"/>
+    <keyword type="property" name="The &quot;family-name&quot; property" link="EContact.html#EContact--family-name"/>
+    <keyword type="property" name="The &quot;fburl&quot; property" link="EContact.html#EContact--fburl"/>
+    <keyword type="property" name="The &quot;file-as&quot; property" link="EContact.html#EContact--file-as"/>
+    <keyword type="property" name="The &quot;full-name&quot; property" link="EContact.html#EContact--full-name"/>
+    <keyword type="property" name="The &quot;geo&quot; property" link="EContact.html#EContact--geo"/>
+    <keyword type="property" name="The &quot;given-name&quot; property" link="EContact.html#EContact--given-name"/>
+    <keyword type="property" name="The &quot;home-fax&quot; property" link="EContact.html#EContact--home-fax"/>
+    <keyword type="property" name="The &quot;home-phone&quot; property" link="EContact.html#EContact--home-phone"/>
+    <keyword type="property" name="The &quot;home-phone-2&quot; property" link="EContact.html#EContact--home-phone-2"/>
+    <keyword type="property" name="The &quot;homepage-url&quot; property" link="EContact.html#EContact--homepage-url"/>
+    <keyword type="property" name="The &quot;icscalendar&quot; property" link="EContact.html#EContact--icscalendar"/>
+    <keyword type="property" name="The &quot;id&quot; property" link="EContact.html#EContact--id"/>
+    <keyword type="property" name="The &quot;im-aim&quot; property" link="EContact.html#EContact--im-aim"/>
+    <keyword type="property" name="The &quot;im-aim-home-1&quot; property" link="EContact.html#EContact--im-aim-home-1"/>
+    <keyword type="property" name="The &quot;im-aim-home-2&quot; property" link="EContact.html#EContact--im-aim-home-2"/>
+    <keyword type="property" name="The &quot;im-aim-home-3&quot; property" link="EContact.html#EContact--im-aim-home-3"/>
+    <keyword type="property" name="The &quot;im-aim-work-1&quot; property" link="EContact.html#EContact--im-aim-work-1"/>
+    <keyword type="property" name="The &quot;im-aim-work-2&quot; property" link="EContact.html#EContact--im-aim-work-2"/>
+    <keyword type="property" name="The &quot;im-aim-work-3&quot; property" link="EContact.html#EContact--im-aim-work-3"/>
+    <keyword type="property" name="The &quot;im-gadugadu&quot; property" link="EContact.html#EContact--im-gadugadu"/>
+    <keyword type="property" name="The &quot;im-gadugadu-home-1&quot; property" link="EContact.html#EContact--im-gadugadu-home-1"/>
+    <keyword type="property" name="The &quot;im-gadugadu-home-2&quot; property" link="EContact.html#EContact--im-gadugadu-home-2"/>
+    <keyword type="property" name="The &quot;im-gadugadu-home-3&quot; property" link="EContact.html#EContact--im-gadugadu-home-3"/>
+    <keyword type="property" name="The &quot;im-gadugadu-work-1&quot; property" link="EContact.html#EContact--im-gadugadu-work-1"/>
+    <keyword type="property" name="The &quot;im-gadugadu-work-2&quot; property" link="EContact.html#EContact--im-gadugadu-work-2"/>
+    <keyword type="property" name="The &quot;im-gadugadu-work-3&quot; property" link="EContact.html#EContact--im-gadugadu-work-3"/>
+    <keyword type="property" name="The &quot;im-groupwise&quot; property" link="EContact.html#EContact--im-groupwise"/>
+    <keyword type="property" name="The &quot;im-groupwise-home-1&quot; property" link="EContact.html#EContact--im-groupwise-home-1"/>
+    <keyword type="property" name="The &quot;im-groupwise-home-2&quot; property" link="EContact.html#EContact--im-groupwise-home-2"/>
+    <keyword type="property" name="The &quot;im-groupwise-home-3&quot; property" link="EContact.html#EContact--im-groupwise-home-3"/>
+    <keyword type="property" name="The &quot;im-groupwise-work-1&quot; property" link="EContact.html#EContact--im-groupwise-work-1"/>
+    <keyword type="property" name="The &quot;im-groupwise-work-2&quot; property" link="EContact.html#EContact--im-groupwise-work-2"/>
+    <keyword type="property" name="The &quot;im-groupwise-work-3&quot; property" link="EContact.html#EContact--im-groupwise-work-3"/>
+    <keyword type="property" name="The &quot;im-icq&quot; property" link="EContact.html#EContact--im-icq"/>
+    <keyword type="property" name="The &quot;im-icq-home-1&quot; property" link="EContact.html#EContact--im-icq-home-1"/>
+    <keyword type="property" name="The &quot;im-icq-home-2&quot; property" link="EContact.html#EContact--im-icq-home-2"/>
+    <keyword type="property" name="The &quot;im-icq-home-3&quot; property" link="EContact.html#EContact--im-icq-home-3"/>
+    <keyword type="property" name="The &quot;im-icq-work-1&quot; property" link="EContact.html#EContact--im-icq-work-1"/>
+    <keyword type="property" name="The &quot;im-icq-work-2&quot; property" link="EContact.html#EContact--im-icq-work-2"/>
+    <keyword type="property" name="The &quot;im-icq-work-3&quot; property" link="EContact.html#EContact--im-icq-work-3"/>
+    <keyword type="property" name="The &quot;im-jabber&quot; property" link="EContact.html#EContact--im-jabber"/>
+    <keyword type="property" name="The &quot;im-jabber-home-1&quot; property" link="EContact.html#EContact--im-jabber-home-1"/>
+    <keyword type="property" name="The &quot;im-jabber-home-2&quot; property" link="EContact.html#EContact--im-jabber-home-2"/>
+    <keyword type="property" name="The &quot;im-jabber-home-3&quot; property" link="EContact.html#EContact--im-jabber-home-3"/>
+    <keyword type="property" name="The &quot;im-jabber-work-1&quot; property" link="EContact.html#EContact--im-jabber-work-1"/>
+    <keyword type="property" name="The &quot;im-jabber-work-2&quot; property" link="EContact.html#EContact--im-jabber-work-2"/>
+    <keyword type="property" name="The &quot;im-jabber-work-3&quot; property" link="EContact.html#EContact--im-jabber-work-3"/>
+    <keyword type="property" name="The &quot;im-msn&quot; property" link="EContact.html#EContact--im-msn"/>
+    <keyword type="property" name="The &quot;im-msn-home-1&quot; property" link="EContact.html#EContact--im-msn-home-1"/>
+    <keyword type="property" name="The &quot;im-msn-home-2&quot; property" link="EContact.html#EContact--im-msn-home-2"/>
+    <keyword type="property" name="The &quot;im-msn-home-3&quot; property" link="EContact.html#EContact--im-msn-home-3"/>
+    <keyword type="property" name="The &quot;im-msn-work-1&quot; property" link="EContact.html#EContact--im-msn-work-1"/>
+    <keyword type="property" name="The &quot;im-msn-work-2&quot; property" link="EContact.html#EContact--im-msn-work-2"/>
+    <keyword type="property" name="The &quot;im-msn-work-3&quot; property" link="EContact.html#EContact--im-msn-work-3"/>
+    <keyword type="property" name="The &quot;im-skype&quot; property" link="EContact.html#EContact--im-skype"/>
+    <keyword type="property" name="The &quot;im-skype-home-1&quot; property" link="EContact.html#EContact--im-skype-home-1"/>
+    <keyword type="property" name="The &quot;im-skype-home-2&quot; property" link="EContact.html#EContact--im-skype-home-2"/>
+    <keyword type="property" name="The &quot;im-skype-home-3&quot; property" link="EContact.html#EContact--im-skype-home-3"/>
+    <keyword type="property" name="The &quot;im-skype-work-1&quot; property" link="EContact.html#EContact--im-skype-work-1"/>
+    <keyword type="property" name="The &quot;im-skype-work-2&quot; property" link="EContact.html#EContact--im-skype-work-2"/>
+    <keyword type="property" name="The &quot;im-skype-work-3&quot; property" link="EContact.html#EContact--im-skype-work-3"/>
+    <keyword type="property" name="The &quot;im-yahoo&quot; property" link="EContact.html#EContact--im-yahoo"/>
+    <keyword type="property" name="The &quot;im-yahoo-home-1&quot; property" link="EContact.html#EContact--im-yahoo-home-1"/>
+    <keyword type="property" name="The &quot;im-yahoo-home-2&quot; property" link="EContact.html#EContact--im-yahoo-home-2"/>
+    <keyword type="property" name="The &quot;im-yahoo-home-3&quot; property" link="EContact.html#EContact--im-yahoo-home-3"/>
+    <keyword type="property" name="The &quot;im-yahoo-work-1&quot; property" link="EContact.html#EContact--im-yahoo-work-1"/>
+    <keyword type="property" name="The &quot;im-yahoo-work-2&quot; property" link="EContact.html#EContact--im-yahoo-work-2"/>
+    <keyword type="property" name="The &quot;im-yahoo-work-3&quot; property" link="EContact.html#EContact--im-yahoo-work-3"/>
+    <keyword type="property" name="The &quot;isdn-phone&quot; property" link="EContact.html#EContact--isdn-phone"/>
+    <keyword type="property" name="The &quot;list&quot; property" link="EContact.html#EContact--list"/>
+    <keyword type="property" name="The &quot;list-show-addresses&quot; property" link="EContact.html#EContact--list-show-addresses"/>
+    <keyword type="property" name="The &quot;logo&quot; property" link="EContact.html#EContact--logo"/>
+    <keyword type="property" name="The &quot;mailer&quot; property" link="EContact.html#EContact--mailer"/>
+    <keyword type="property" name="The &quot;manager&quot; property" link="EContact.html#EContact--manager"/>
+    <keyword type="property" name="The &quot;mobile-phone&quot; property" link="EContact.html#EContact--mobile-phone"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="EContact.html#EContact--name"/>
+    <keyword type="property" name="The &quot;name-or-org&quot; property" link="EContact.html#EContact--name-or-org"/>
+    <keyword type="property" name="The &quot;nickname&quot; property" link="EContact.html#EContact--nickname"/>
+    <keyword type="property" name="The &quot;note&quot; property" link="EContact.html#EContact--note"/>
+    <keyword type="property" name="The &quot;office&quot; property" link="EContact.html#EContact--office"/>
+    <keyword type="property" name="The &quot;org&quot; property" link="EContact.html#EContact--org"/>
+    <keyword type="property" name="The &quot;org-unit&quot; property" link="EContact.html#EContact--org-unit"/>
+    <keyword type="property" name="The &quot;other-fax&quot; property" link="EContact.html#EContact--other-fax"/>
+    <keyword type="property" name="The &quot;other-phone&quot; property" link="EContact.html#EContact--other-phone"/>
+    <keyword type="property" name="The &quot;pager&quot; property" link="EContact.html#EContact--pager"/>
+    <keyword type="property" name="The &quot;phone&quot; property" link="EContact.html#EContact--phone"/>
+    <keyword type="property" name="The &quot;photo&quot; property" link="EContact.html#EContact--photo"/>
+    <keyword type="property" name="The &quot;primary-phone&quot; property" link="EContact.html#EContact--primary-phone"/>
+    <keyword type="property" name="The &quot;radio&quot; property" link="EContact.html#EContact--radio"/>
+    <keyword type="property" name="The &quot;role&quot; property" link="EContact.html#EContact--role"/>
+    <keyword type="property" name="The &quot;sip&quot; property" link="EContact.html#EContact--sip"/>
+    <keyword type="property" name="The &quot;spouse&quot; property" link="EContact.html#EContact--spouse"/>
+    <keyword type="property" name="The &quot;telex&quot; property" link="EContact.html#EContact--telex"/>
+    <keyword type="property" name="The &quot;title&quot; property" link="EContact.html#EContact--title"/>
+    <keyword type="property" name="The &quot;tty&quot; property" link="EContact.html#EContact--tty"/>
+    <keyword type="property" name="The &quot;video-url&quot; property" link="EContact.html#EContact--video-url"/>
+    <keyword type="property" name="The &quot;wants-html&quot; property" link="EContact.html#EContact--wants-html"/>
+    <keyword type="property" name="The &quot;x509Cert&quot; property" link="EContact.html#EContact--x509Cert"/>
+    <keyword type="struct" name="EDestination" link="EDestination.html#EDestination-struct"/>
+    <keyword type="function" name="e_destination_copy ()" link="EDestination.html#e-destination-copy"/>
+    <keyword type="function" name="e_destination_empty ()" link="EDestination.html#e-destination-empty"/>
+    <keyword type="function" name="e_destination_equal ()" link="EDestination.html#e-destination-equal"/>
+    <keyword type="function" name="e_destination_export ()" link="EDestination.html#e-destination-export"/>
+    <keyword type="function" name="e_destination_export_to_vcard_attribute ()" link="EDestination.html#e-destination-export-to-vcard-attribute"/>
+    <keyword type="function" name="e_destination_exportv ()" link="EDestination.html#e-destination-exportv"/>
+    <keyword type="function" name="e_destination_freev ()" link="EDestination.html#e-destination-freev"/>
+    <keyword type="function" name="e_destination_get_address ()" link="EDestination.html#e-destination-get-address"/>
+    <keyword type="function" name="e_destination_get_contact ()" link="EDestination.html#e-destination-get-contact"/>
+    <keyword type="function" name="e_destination_get_contact_uid ()" link="EDestination.html#e-destination-get-contact-uid"/>
+    <keyword type="function" name="e_destination_get_email ()" link="EDestination.html#e-destination-get-email"/>
+    <keyword type="function" name="e_destination_get_email_num ()" link="EDestination.html#e-destination-get-email-num"/>
+    <keyword type="function" name="e_destination_get_html_mail_pref ()" link="EDestination.html#e-destination-get-html-mail-pref"/>
+    <keyword type="function" name="e_destination_get_name ()" link="EDestination.html#e-destination-get-name"/>
+    <keyword type="function" name="e_destination_get_source_uid ()" link="EDestination.html#e-destination-get-source-uid"/>
+    <keyword type="function" name="e_destination_get_textrep ()" link="EDestination.html#e-destination-get-textrep"/>
+    <keyword type="function" name="e_destination_get_textrepv ()" link="EDestination.html#e-destination-get-textrepv"/>
+    <keyword type="function" name="e_destination_import ()" link="EDestination.html#e-destination-import"/>
+    <keyword type="function" name="e_destination_importv ()" link="EDestination.html#e-destination-importv"/>
+    <keyword type="function" name="e_destination_is_auto_recipient ()" link="EDestination.html#e-destination-is-auto-recipient"/>
+    <keyword type="function" name="e_destination_is_evolution_list ()" link="EDestination.html#e-destination-is-evolution-list"/>
+    <keyword type="function" name="e_destination_is_ignored ()" link="EDestination.html#e-destination-is-ignored"/>
+    <keyword type="function" name="e_destination_list_get_dests ()" link="EDestination.html#e-destination-list-get-dests"/>
+    <keyword type="function" name="e_destination_list_show_addresses ()" link="EDestination.html#e-destination-list-show-addresses"/>
+    <keyword type="function" name="e_destination_new ()" link="EDestination.html#e-destination-new"/>
+    <keyword type="function" name="e_destination_set_auto_recipient ()" link="EDestination.html#e-destination-set-auto-recipient"/>
+    <keyword type="function" name="e_destination_set_book ()" link="EDestination.html#e-destination-set-book"/>
+    <keyword type="function" name="e_destination_set_contact ()" link="EDestination.html#e-destination-set-contact"/>
+    <keyword type="function" name="e_destination_set_contact_uid ()" link="EDestination.html#e-destination-set-contact-uid"/>
+    <keyword type="function" name="e_destination_set_email ()" link="EDestination.html#e-destination-set-email"/>
+    <keyword type="function" name="e_destination_set_html_mail_pref ()" link="EDestination.html#e-destination-set-html-mail-pref"/>
+    <keyword type="function" name="e_destination_set_ignored ()" link="EDestination.html#e-destination-set-ignored"/>
+    <keyword type="function" name="e_destination_set_name ()" link="EDestination.html#e-destination-set-name"/>
+    <keyword type="function" name="e_destination_set_raw ()" link="EDestination.html#e-destination-set-raw"/>
+    <keyword type="signal" name="The &quot;changed&quot; signal" link="EDestination.html#EDestination-changed"/>
+    <keyword type="struct" name="EAddressWestern" link="libebook-EAddressWestern.html#EAddressWestern"/>
+    <keyword type="function" name="e_address_western_parse ()" link="libebook-EAddressWestern.html#e-address-western-parse"/>
+    <keyword type="function" name="e_address_western_free ()" link="libebook-EAddressWestern.html#e-address-western-free"/>
+    <keyword type="struct" name="ENameWestern" link="libebook-ENameWestern.html#ENameWestern"/>
+    <keyword type="function" name="e_name_western_parse ()" link="libebook-ENameWestern.html#e-name-western-parse"/>
+    <keyword type="function" name="e_name_western_free ()" link="libebook-ENameWestern.html#e-name-western-free"/>
+  </functions>
+</book>

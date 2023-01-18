@@ -1,0 +1,316 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/evolution/mail/attachment_reminder_clues</key>
+      <applyto>/apps/evolution/mail/attachment_reminder_clues</applyto>
+      <owner>evolution-mail</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+
+      <!-- The following are the keywords used by the plugin to understand
+      whether the user wanted to send a attachment. The list can have any
+      number of strings.-->
+
+      <default>[attachment,attaching,attached,enclosed]</default>
+      <locale name="C">
+         <short>List of clues for the attachment reminder plugin to look for
+	       in a message body</short>
+         <long>
+	       List of clues for the attachment reminder plugin to look for
+	       in a message body
+         </long>
+      </locale>
+
+      <locale name="af">
+         <short>Lys van wenke vir die aanhegselherinnering-inprop om voor te soek in &apos;n boodskaplyf</short>
+         <long>Lys van wenke vir die aanhegselherinnering-inprop om voor te soek in &apos;n boodskaplyf</long>
+      </locale>
+
+      <locale name="ar">
+         <short>قائمة الدلالات التي سيبحث عنها ملحق منبّه المرفقات في جسم الرسالة</short>
+         <long>قائمة الدلالات التي سيبحث عنها ملحق منبّه المرفقات في جسم الرسالة</long>
+      </locale>
+
+      <locale name="as">
+         <short>তালিকা উল্লেখিত সময় অবধি সংযুক্ত বস্তু উল্লেখিত সময় অবধি বাৰ্তা</short>
+         <long>তালিকা উল্লেখিত সময় অবধি সংযুক্ত বস্তু উল্লেখিত সময় অবধি বাৰ্তা</long>
+      </locale>
+
+      <locale name="be@latin">
+         <short>Śpis klučavych słovaŭ dla plugina nahadvańnia ab dałučanym, kab šukać u źmieście lista</short>
+         <long>Śpis klučavych słovaŭ dla plugina nahadvańnia ab dałučanym, kab šukać u źmieście lista</long>
+      </locale>
+
+      <locale name="bg">
+         <short>Списък с подсказки на приставката за напомняне за прикрепени файлове. Тялото на писмото се претърсва за тях</short>
+         <long>Списък с подсказки на приставката за напомняне за прикрепени файлове. Тялото на писмото се претърсва за тях</long>
+      </locale>
+
+      <locale name="bn">
+         <short>সংযুক্ত বস্তুর স্মরণলিপি সম্বন্ধীয় প্লাগ-ইন দ্বারা বার্তার মূল অংশে অনুসন্ধানের জন্য ব্যবহারযোগ্য সূত্র</short>
+         <long>সংযুক্ত বস্তুর স্মরণলিপি সম্বন্ধীয় প্লাগ-ইন দ্বারা বার্তার মূল অংশে অনুসন্ধানের জন্য ব্যবহারযোগ্য সূত্র</long>
+      </locale>
+
+      <locale name="bn_IN">
+         <short>সংযুক্ত বস্তুর তাগাদা সম্বন্ধীয় প্লাগ-ইন দ্বারা বার্তার মূল অংশে অনুসন্ধানের জন্য ব্যবহারযোগ্য সূত্র</short>
+         <long>সংযুক্ত বস্তুর তাগাদা সম্বন্ধীয় প্লাগ-ইন দ্বারা বার্তার মূল অংশে অনুসন্ধানের জন্য ব্যবহারযোগ্য সূত্র</long>
+      </locale>
+
+      <locale name="ca">
+         <short>Llista de pistes que el connector de recordatori d&apos;adjuncions cercarà en el cos del missatge</short>
+         <long>Llista de pistes que el connector de recordatori d&apos;adjuncions cercarà en el cos del missatge</long>
+      </locale>
+
+      <locale name="ca@valencia">
+         <short>Llista de pistes que el connector de recordatori d&apos;adjuncions cercarà en el cos del missatge</short>
+         <long>Llista de pistes que el connector de recordatori d&apos;adjuncions cercarà en el cos del missatge</long>
+      </locale>
+
+      <locale name="cs">
+         <short>Seznam vodítek pro zásuvný modul připomínající přílohu, které má hledat v těle zprávy</short>
+         <long>Seznam vodítek pro zásuvný modul připomínající přílohu, které má hledat v těle zprávy</long>
+      </locale>
+
+      <locale name="da">
+         <short>Liste af spor som udvidelsesmodulet til påmindelse om bilag skal kigge efter i brevkroppen</short>
+         <long>Liste af spor som udvidelsesmodulet til påmindelse om bilag skal kigge efter i brevkroppen</long>
+      </locale>
+
+      <locale name="de">
+         <short>Liste der Begriffe, nach denen die Anlagenerinnerung im Text der Nachricht sucht</short>
+         <long>Liste der Begriffe, nach denen die Anlagenerinnerung im Text der Nachricht sucht</long>
+      </locale>
+
+      <locale name="dz">
+         <short>འཕྲིན་དོན་ མ་གཟུགས་གཅིག་ནང་བལྟ་ནིའི་དོན་ལུ་ མཉམ་སྦྲགས་ དྲན་བསྐུལ་ པ་ལག་ཨིན་ ཟུར་བརྡའི་ཐོ་བཀོད་</short>
+         <long>འཕྲིན་དོན་ མ་གཟུགས་གཅིག་ནང་བལྟ་ནིའི་དོན་ལུ་ མཉམ་སྦྲགས་ དྲན་བསྐུལ་ པ་ལག་ཨིན་ ཟུར་བརྡའི་ཐོ་བཀོད་</long>
+      </locale>
+
+      <locale name="el">
+         <short>Λίστα από στοιχεία για αναζήτηση στο σώμα κειμένου, από την πρόσθετη λειτουργία υπενθύμισης συνημμένου αρχείου</short>
+         <long>Λίστα από στοιχεία για αναζήτηση στο σώμα κειμένου, από την πρόσθετη λειτουργία υπενθύμισης συνημμένου αρχείου</long>
+      </locale>
+
+      <locale name="en@shaw">
+         <short>𐑤𐑦𐑕𐑑 𐑝 𐑒𐑤𐑵𐑟 𐑓𐑹 𐑞 𐑩𐑑𐑨𐑗𐑥𐑩𐑯𐑑 𐑮𐑦𐑥𐑲𐑯𐑛𐑼 𐑐𐑤𐑳𐑜𐑦𐑯 𐑑 𐑤𐑫𐑒 𐑓𐑹 𐑦𐑯 𐑩 𐑥𐑧𐑕𐑦𐑡 𐑚𐑪𐑛𐑦</short>
+         <long>𐑤𐑦𐑕𐑑 𐑝 𐑒𐑤𐑵𐑟 𐑓𐑹 𐑞 𐑩𐑑𐑨𐑗𐑥𐑩𐑯𐑑 𐑮𐑦𐑥𐑲𐑯𐑛𐑼 𐑐𐑤𐑳𐑜𐑦𐑯 𐑑 𐑤𐑫𐑒 𐑓𐑹 𐑦𐑯 𐑩 𐑥𐑧𐑕𐑦𐑡 𐑚𐑪𐑛𐑦</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>List of clues for the attachment reminder plugin to look for in a message body</short>
+         <long>List of clues for the attachment reminder plugin to look for in a message body</long>
+      </locale>
+
+      <locale name="es">
+         <short>Lista de indicios para que el complemento de recuerdo de adjuntos busque en el cuerpo de un mensaje</short>
+         <long>Lista de indicios para que el complemento de recuerdo de adjuntos busque en el cuerpo de un mensaje</long>
+      </locale>
+
+      <locale name="et">
+         <short>Fraaside kirjeldamine, mille esinemisel näidatakse manuse puudumise kohta meeldetuletust</short>
+         <long>Fraaside kirjeldamine, mille esinemisel näidatakse manuse puudumise kohta meeldetuletust</long>
+      </locale>
+
+      <locale name="eu">
+         <short>Aztarnen zerrenda eranskinen ohartarazlearen pluginak mezuaren gorputzean begiratzeko</short>
+         <long>Aztarnen zerrenda eranskinen ohartarazlearen pluginak mezuaren gorputzean begiratzeko</long>
+      </locale>
+
+      <locale name="fi">
+         <short>Luettelo vihjeistä, joita liitemuistuttaja etsii viestin rungosta</short>
+         <long>Luettelo vihjeistä, joita liitemuistuttaja etsii viestin rungosta</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Liste d&apos;indices que le greffon d&apos;oubli des pièces jointes doit rechercher dans le corps d&apos;un message</short>
+         <long>Liste d&apos;indices que le greffon d&apos;oubli des pièces jointes doit rechercher dans le corps d&apos;un message</long>
+      </locale>
+
+      <locale name="gl">
+         <short>Lista de pistas do engadido de aviso de anexos para buscar no corpo dunha mensaxe</short>
+         <long>Lista de pistas do engadido de aviso de anexos para buscar no corpo dunha mensaxe</long>
+      </locale>
+
+      <locale name="gu">
+         <short>જોડાણ યાદ અપાવનાર પ્લગઈનને સંદેશા ભાગમાં જોવા માટેના ઈશારાઓની યાદી</short>
+         <long>જોડાણ યાદ અપાવનાર પ્લગઈનને સંદેશા ભાગમાં જોવા માટેના ઈશારાઓની યાદી</long>
+      </locale>
+
+      <locale name="he">
+         <short>List of clues for the attachment reminder plugin to look for in a message body</short>
+         <long>List of clues for the attachment reminder plugin to look for in a message body</long>
+      </locale>
+
+      <locale name="hi">
+         <short>किसी संदेश शरीर में देखने के लिए संलग्नक अनुस्मारक प्लगइन के लिए संकेत सूची</short>
+         <long>किसी संदेश शरीर में देखने के लिए संलग्नक अनुस्मारक प्लगइन के लिए संकेत सूची</long>
+      </locale>
+
+      <locale name="hu">
+         <short>A mellékletemlékeztető bővítmény által az üzenettörzsben keresendő nyomok listája</short>
+         <long>A mellékletemlékeztető bővítmény által az üzenettörzsben keresendő nyomok listája</long>
+      </locale>
+
+      <locale name="id">
+         <short>Daftar petunjuk bagi plugin pengingat lampiran untuk dicari di tubuh pesan</short>
+         <long>Daftar petunjuk bagi plugin pengingat lampiran untuk dicari di tubuh pesan</long>
+      </locale>
+
+      <locale name="it">
+         <short>Elenco delle prove per il plugin promemoria allegati da cercare nel corpo di un messaggio</short>
+         <long>Elenco delle prove per il plugin promemoria allegati da cercare nel corpo di un messaggio</long>
+      </locale>
+
+      <locale name="ja">
+         <short>添付し忘れ防止プラグインでメッセージの本文から検索する一連のキーワード</short>
+         <long>添付し忘れ防止プラグインでメッセージの本文から検索する一連のキーワード</long>
+      </locale>
+
+      <locale name="kn">
+         <short>ಒಂದು ಸಂದೇಶದ ಮುಖ್ಯಭಾಗದಲ್ಲಿ ಹುಡುಕಲು ಲಗತ್ತು ಜ್ಞಾಪನಾ ಪ್ಲಗ್ಇನ್‌ಗೆ ನೀಡಬೇಕಿರುವ ಸುಳಿವುಗಳ ಪಟ್ಟಿ</short>
+         <long>ಒಂದು ಸಂದೇಶದ ಮುಖ್ಯಭಾಗದಲ್ಲಿ ಹುಡುಕಲು ಲಗತ್ತು ಜ್ಞಾಪನಾ ಪ್ಲಗ್ಇನ್‌ಗೆ ನೀಡಬೇಕಿರುವ ಸುಳಿವುಗಳ ಪಟ್ಟಿ</long>
+      </locale>
+
+      <locale name="ko">
+         <short>첨부 알림 플러그인이 메시지 본문에서 찾아볼 근거 목록</short>
+         <long>첨부 알림 플러그인이 메시지 본문에서 찾아볼 근거 목록</long>
+      </locale>
+
+      <locale name="lt">
+         <short>Sąrašas užuominų, kurių laiško tekste ieško „priminimo apie priedus“ įskiepis.</short>
+         <long>Sąrašas užuominų, kurių laiško tekste ieško „priminimo apie priedus“ įskiepis.</long>
+      </locale>
+
+      <locale name="lv">
+         <short>Saraksts ar norādēm, kuras pielikuma atgādinātāja spraudnim meklēt vēstules ķermenī</short>
+         <long>Saraksts ar norādēm, kuras pielikuma atgādinātāja spraudnim meklēt vēstules ķermenī</long>
+      </locale>
+
+      <locale name="mk">
+         <short>Листа на траги за приклучокот потсетник за приврзоци кој што го пребарува телото на пораката</short>
+         <long>Листа на траги за приклучокот потсетник за приврзоци кој што го пребарува телото на пораката</long>
+      </locale>
+
+      <locale name="mr">
+         <short>संदेश भागातील जोडणी स्मरण प्लगईन करीता सुगावा यादी पहा</short>
+         <long>संदेश भागातील जोडणी स्मरण प्लगईन करीता सुगावा यादी पहा</long>
+      </locale>
+
+      <locale name="nb">
+         <short>Liste med hint om ting å se etter i meldingskroppen for tillegg for vedleggspåminnelse</short>
+         <long>Liste med hint om ting å se etter i meldingskroppen for tillegg for vedleggspåminnelse</long>
+      </locale>
+
+      <locale name="ne">
+         <short>सन्देशको मुख्य भागमा हेरनलाई संलग्न रिमाइन्डर प्लगइनका लागि संकेतहरूको सूची</short>
+         <long>सन्देशको मुख्य भागमा हेरनलाई संलग्न रिमाइन्डर प्लगइनका लागि संकेतहरूको सूची</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Lijst met trefwoorden waarmee de bijlageherinneringsplugin de tekstinhoud van het bericht controleert</short>
+         <long>Lijst met trefwoorden waarmee de bijlageherinneringsplugin de tekstinhoud van het bericht controleert</long>
+      </locale>
+
+      <locale name="or">
+         <short>ସନ୍ଦେଶ ବିଷୟବସ୍ତୁ ଦେଖିବାକୁ ସଂଲଗ୍ନ ସ୍ମାରକ ପ୍ଲଗଇନ ପାଇଁ ସୂଚନା ତାଲିକା</short>
+         <long>ସନ୍ଦେଶ ବିଷୟବସ୍ତୁ ଦେଖିବାକୁ ସଂଲଗ୍ନ ସ୍ମାରକ ପ୍ଲଗଇନ ପାଇଁ ସୂଚନା ତାଲିକା</long>
+      </locale>
+
+      <locale name="pa">
+         <short>ਅਟੈਚਮੈਂਟ ਰੀਮਾਈਡਰ ਪਲੱਗਇਨ ਵਲੋਂ ਸੁਨੇਹਾ ਮੁੱਖ ਭਾਗ ਵਿੱਚ ਖੋਜ ਲਈ ਸੂਹਾਂ ਦੀ ਲਿਸਟ</short>
+         <long>ਅਟੈਚਮੈਂਟ ਰੀਮਾਈਡਰ ਪਲੱਗਇਨ ਵਲੋਂ ਸੁਨੇਹਾ ਮੁੱਖ ਭਾਗ ਵਿੱਚ ਖੋਜ ਲਈ ਸੂਹਾਂ ਦੀ ਲਿਸਟ</long>
+      </locale>
+
+      <locale name="pl">
+         <short>Lista słów-kluczy dla wtyczki przypominania o załączniku do wyszukiwania w wiadomości</short>
+         <long>Lista słów-kluczy dla wtyczki przypominania o załączniku do wyszukiwania w wiadomości</long>
+      </locale>
+
+      <locale name="pt">
+         <short>Lista de pistas para o plugin de lembrete de anexos procurar no corpo da mensagem</short>
+         <long>Lista de pistas para o plugin de lembrete de anexos procurar no corpo da mensagem</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Lista de indícios para o plug-in de lembrete de anexo procurar no corpo da mensagem</short>
+         <long>Lista de indícios para o plug-in de lembrete de anexo procurar no corpo da mensagem</long>
+      </locale>
+
+      <locale name="ro">
+         <short>Lista cu indicii pe care să le caute în conținutul mesajului modulul atenționare atașament</short>
+         <long>Lista cu indicii pe care să le caute în conținutul mesajului modulul atenționare atașament</long>
+      </locale>
+
+      <locale name="ru">
+         <short>Список ключей для модуля уведомления о забытых вложениях для поиска в теле письма</short>
+         <long>Список ключей для модуля уведомления о забытых вложениях для поиска в теле письма</long>
+      </locale>
+
+      <locale name="sl">
+         <short>Seznam namigov, ki naj jih vstavek opomnik prilog išče v telesu sporočila</short>
+         <long>Seznam namigov, ki naj jih vstavek opomnik prilog išče v telesu sporočila</long>
+      </locale>
+
+      <locale name="sr">
+         <short>Списак предмета за којима ће прикључак за подсећање укључивања прилога трагати у телу поруке</short>
+         <long>Списак предмета за којима ће прикључак за подсећање укључивања прилога трагати у телу поруке</long>
+      </locale>
+
+      <locale name="sr@latin">
+         <short>Spisak predmeta za kojima će priključak za podsećanje uključivanja priloga tragati u telu poruke</short>
+         <long>Spisak predmeta za kojima će priključak za podsećanje uključivanja priloga tragati u telu poruke</long>
+      </locale>
+
+      <locale name="sv">
+         <short>Lista över ledtrådar för bilagepåminnaren att leta efter i en meddelandetext</short>
+         <long>Lista över ledtrådar för bilagepåminnaren att leta efter i en meddelandetext</long>
+      </locale>
+
+      <locale name="ta">
+         <short>இணைப்பு நினைவுறுத்தி சொருகிக்கு செய்தியின் உடலில் தேட சாடைகளின் பட்டியல்</short>
+         <long>இணைப்பு நினைவுறுத்தி சொருகிக்கு செய்தியின் உடலில் தேட சாடைகளின் பட்டியல்</long>
+      </locale>
+
+      <locale name="te">
+         <short>ఆనుభందంను గుర్తుచేయు ప్లగ్ఇన్ సందేశం బాడీ నందు చూడుటకు అనవాళ్ళ జాబితా</short>
+         <long>ఆనుభందంను గుర్తుచేయు ప్లగ్ఇన్ సందేశం బాడీ నందు చూడుటకు అనవాళ్ళ జాబితా</long>
+      </locale>
+
+      <locale name="th">
+         <short>รายการเบาะแสที่ปลั๊กอินเตือนการแนบแฟ้มจะค้นหาในเนื้อความ</short>
+         <long>รายการเบาะแสที่ปลั๊กอินเตือนการแนบแฟ้มจะค้นหาในเนื้อความ</long>
+      </locale>
+
+      <locale name="tr">
+         <short>İleti metninde aramak için ek hatırlatıcı eklentisi ipucu listesi</short>
+         <long>İleti metninde aramak için ek hatırlatıcı eklentisi ipucu listesi</long>
+      </locale>
+
+      <locale name="uk">
+         <short>Список ключів для модуля сповіщення про забуті вкладення для пошуку у тілі листа</short>
+         <long>Список ключів для модуля сповіщення про забуті вкладення для пошуку у тілі листа</long>
+      </locale>
+
+      <locale name="vi">
+         <short>Danh sách các đầu mối cho phần bổ sung nhắc nhở đồ đính kèm lần trong thân thư</short>
+         <long>Danh sách các đầu mối cho phần bổ sung nhắc nhở đồ đính kèm lần trong thân thư</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>信息主体中的用于附件提醒插件的线索列表</short>
+         <long>信息主体中的用于附件提醒插件的线索列表</long>
+      </locale>
+
+      <locale name="zh_HK">
+         <short>讓附件提醒外掛程式用來搜尋郵件內文的關鍵字清單</short>
+         <long>讓附件提醒外掛程式用來搜尋郵件內文的關鍵字清單</long>
+      </locale>
+
+      <locale name="zh_TW">
+         <short>讓附件提醒外掛程式用來搜尋郵件內文的關鍵字清單</short>
+         <long>讓附件提醒外掛程式用來搜尋郵件內文的關鍵字清單</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>
+

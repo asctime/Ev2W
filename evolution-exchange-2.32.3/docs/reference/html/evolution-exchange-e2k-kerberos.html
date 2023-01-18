@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>e2k-kerberos</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch03.html" title="libexchange public API reference">
+<link rel="prev" href="evolution-exchange-e2k-http-utils.html" title="e2k-http-utils">
+<link rel="next" href="evolution-exchange-e2k-utils.html" title="e2k-utils">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="evolution-exchange-e2k-http-utils.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="evolution-exchange-e2k-utils.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#evolution-exchange-e2k-kerberos.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#evolution-exchange-e2k-kerberos.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="e2k-kerberos">
+<a name="evolution-exchange-e2k-kerberos"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="evolution-exchange-e2k-kerberos.top_of_page"></a>e2k-kerberos</span></h2>
+<p>e2k-kerberos — Kerberos utilities</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="evolution-exchange-e2k-kerberos.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">enum                <a class="link" href="evolution-exchange-e2k-kerberos.html#E2kKerberosResult" title="enum E2kKerberosResult">E2kKerberosResult</a>;
+<a class="link" href="evolution-exchange-e2k-kerberos.html#E2kKerberosResult" title="enum E2kKerberosResult"><span class="returnvalue">E2kKerberosResult</span></a>   <a class="link" href="evolution-exchange-e2k-kerberos.html#e2k-kerberos-change-password" title="e2k_kerberos_change_password ()">e2k_kerberos_change_password</a>        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_password</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_password</code></em>);
+<a class="link" href="evolution-exchange-e2k-kerberos.html#E2kKerberosResult" title="enum E2kKerberosResult"><span class="returnvalue">E2kKerberosResult</span></a>   <a class="link" href="evolution-exchange-e2k-kerberos.html#e2k-kerberos-check-password" title="e2k_kerberos_check_password ()">e2k_kerberos_check_password</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="evolution-exchange-e2k-kerberos.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="evolution-exchange-e2k-kerberos.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum E2kKerberosResult">
+<a name="E2kKerberosResult"></a><h3>enum E2kKerberosResult</h3>
+<pre class="programlisting">typedef enum {
+	E2K_KERBEROS_OK,
+	E2K_KERBEROS_USER_UNKNOWN,
+	E2K_KERBEROS_PASSWORD_INCORRECT,
+	E2K_KERBEROS_PASSWORD_EXPIRED,
+	E2K_KERBEROS_PASSWORD_TOO_WEAK,
+
+	E2K_KERBEROS_KDC_UNREACHABLE,
+	E2K_KERBEROS_TIME_SKEW,
+
+	E2K_KERBEROS_FAILED
+} E2kKerberosResult;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_kerberos_change_password ()">
+<a name="e2k-kerberos-change-password"></a><h3>e2k_kerberos_change_password ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-kerberos.html#E2kKerberosResult" title="enum E2kKerberosResult"><span class="returnvalue">E2kKerberosResult</span></a>   e2k_kerberos_change_password        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_password</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_password</code></em>);</pre>
+<p>
+Changes the password for the given user
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td>username
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>Windows (2000) domain name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_password</code></em> :</span></p></td>
+<td>currrent password
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_password</code></em> :</span></p></td>
+<td>password to be changed to
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an <a class="link" href="evolution-exchange-e2k-kerberos.html#E2kKerberosResult" title="enum E2kKerberosResult"><span class="type">E2kKerberosResult</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_kerberos_check_password ()">
+<a name="e2k-kerberos-check-password"></a><h3>e2k_kerberos_check_password ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-kerberos.html#E2kKerberosResult" title="enum E2kKerberosResult"><span class="returnvalue">E2kKerberosResult</span></a>   e2k_kerberos_check_password         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>);</pre>
+<p>
+Checks if the password is valid, invalid, or expired
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td>username
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>Windows (2000) domain name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>password</code></em> :</span></p></td>
+<td>current password
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">E2K_KERBEROS_OK</code>, <code class="literal">E2K_KERBEROS_USER_UNKNOWN</code>,
+<code class="literal">E2K_KERBEROS_PASSWORD_INCORRECT</code>, <code class="literal">E2K_KERBEROS_PASSWORD_EXPIRED</code>,
+or <code class="literal">E2K_KERBEROS_FAILED</code> (for unknown errors)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

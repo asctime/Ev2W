@@ -1,0 +1,78 @@
+commit 15c7d8948cd0f628097976b7c054c79a6627841c
+Author: Diego Escalante Urrelo <descalante@igalia.com>
+Date:   Mon Nov 22 20:02:16 2010 -0500
+
+    Bug 635572 - Various linking failures
+    
+    On Debian sid, using binutils-gold, a couple missing links are discovered.
+
+diff --git a/addressbook/libedata-book/Makefile.am b/addressbook/libedata-book/Makefile.am
+index 12db8f8..997c727 100644
+--- a/addressbook/libedata-book/Makefile.am
++++ b/addressbook/libedata-book/Makefile.am
+@@ -82,6 +82,7 @@ e_addressbook_factory_SOURCES = \
+ 
+ e_addressbook_factory_LDADD =					\
+ 	libedata-book-1.2.la					\
++	$(EVOLUTION_ADDRESSBOOK_LIBS)				\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
+ 	$(top_builddir)/libebackend/libebackend-1.2.la
+ 
+diff --git a/calendar/libedata-cal/Makefile.am b/calendar/libedata-cal/Makefile.am
+index 82dd911..cb9ad96 100644
+--- a/calendar/libedata-cal/Makefile.am
++++ b/calendar/libedata-cal/Makefile.am
+@@ -111,6 +111,7 @@ e_calendar_factory_CPPFLAGS = \
+ 	$(EVOLUTION_CALENDAR_CFLAGS)
+ 
+ e_calendar_factory_LDADD =						\
++	$(top_builddir)/calendar/libecal/libecal-1.2.la			\
+ 	$(top_builddir)/calendar/libegdbus/libegdbus-cal.la		\
+ 	libedata-cal-1.2.la						\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la 		\
+@@ -128,9 +129,10 @@ test_e_sexp_CPPFLAGS = \
+ 	-DTESTER=1
+ 
+ test_e_sexp_LDADD = \
+-	libedata-cal-1.2.la 							\
+-	$(top_builddir)/calendar/libecal/libecal-1.2.la 			\
+-	$(top_builddir)/libedataserver/libedataserver-1.2.la			\
++	libedata-cal-1.2.la					\
++	$(top_builddir)/calendar/libecal/libecal-1.2.la 	\
++	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
++	$(EVOLUTION_CALENDAR_LIBS)				\
+ 	$(E_DATA_SERVER_LIBS)
+ 
+ test_intervaltree_SOURCES = test-intervaltree.c e-cal-backend-intervaltree.c
+diff --git a/camel/providers/imapx/Makefile.am b/camel/providers/imapx/Makefile.am
+index 1e7a0a3..a8ae7be 100644
+--- a/camel/providers/imapx/Makefile.am
++++ b/camel/providers/imapx/Makefile.am
+@@ -54,6 +54,7 @@ test_imapx_CPPFLAGS = \
+ 	-DG_LOG_DOMAIN=\"camel-imapx\"
+ test_imapx_SOURCES = test-imapx.c
+ test_imapx_LDADD =							\
++	$(CAMEL_LIBS)							\
+ 	$(top_builddir)/camel/libcamel-1.2.la				\
+ 	$(top_builddir)/camel/libcamel-provider-1.2.la
+ 
+diff --git a/libedataserverui/Makefile.am b/libedataserverui/Makefile.am
+index 0337fae..f746165 100644
+--- a/libedataserverui/Makefile.am
++++ b/libedataserverui/Makefile.am
+@@ -98,11 +98,15 @@ TEST_EDATASERVERUI_CPPFLAGS= \
+ if ENABLE_GTK3
+ TEST_EDATASERVERUI_LDFLAGS = \
+ 	libedataserverui-3.0.la 				\
++	$(top_builddir)/camel/libcamel-1.2.la			\
++	$(top_builddir)/addressbook/libebook/libebook-1.2.la	\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
+ 	$(E_DATA_SERVER_UI_LIBS)
+ else
+ TEST_EDATASERVERUI_LDFLAGS = \
+ 	libedataserverui-1.2.la 				\
++	$(top_builddir)/camel/libcamel-1.2.la			\
++	$(top_builddir)/addressbook/libebook/libebook-1.2.la	\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
+ 	$(E_DATA_SERVER_UI_LIBS)
+ endif

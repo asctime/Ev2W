@@ -1,0 +1,1007 @@
+# translation of kn.po to Kannada
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kn\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=evolution-exchange&amp;component=general\n"
+"POT-Creation-Date: 2008-11-20 10:22+0000\n"
+"PO-Revision-Date: 2009-03-25 14:00+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "GAL ಕ್ಯಾಶೆಯನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸುವ ಕಾಲಾವಧಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ."
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr "ಈ ಕೀಲಿಯು GAL ಕ್ಯಾಶೆಯು ಪುನಶ್ಚೇತರಿಕೆಯ ನಡುವಿನ ಕಾಲಾವಧಿಯನ್ನು ದಿನಗಳಲ್ಲಿ ಸೂಚಿಸುತ್ತದೆ. GAL ಆಪ್‌ಡೇಟ್‌ ಆಗದೆ ಎಂದೆಂದಿಗೂ ಈಗಿರುವ ಕ್ಯಾಶೆಯನ್ನು ಬಳಸಲು ಈ ಮೌಲ್ಯವನ್ನು ಸೊನ್ನೆಗೆ ಬದಲಾಯಿಸಿ. ಆಪ್‌ಲೈನಿನಲ್ಲಿ GAL ಕ್ಯಾಶಿಂಗ್ ಆಗುವಿಕೆಯನ್ನು ಶಕ್ತಗೊಳಿಸಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಇದು ಕೆಲಸಮಾಡುತ್ತದೆ."
+
+#: ../addressbook/e-book-backend-exchange.c:2285
+#: ../addressbook/e-book-backend-gal.c:1865 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "ಹುಡುಕಲಾಗುತ್ತಿದೆ..."
+
+#: ../addressbook/e-book-backend-gal.c:306
+#: ../addressbook/e-book-backend-gal.c:327
+msgid "Reconnecting to LDAP server..."
+msgstr "LDAP ಪರಿಚಾರಕಕ್ಕೆ ಮರಳಿ ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ..."
+
+#: ../addressbook/e-book-backend-gal.c:1624
+msgid "Receiving LDAP search results..."
+msgstr "LDAP ಹುಡುಕು ಫಲಿತಾಂಶಗಳನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ..."
+
+#: ../addressbook/e-book-backend-gal.c:1896
+msgid "Error performing search"
+msgstr "ಹುಡುಕನ್ನು ನಿರ್ವಹಿಸುವಾಗ ದೋಷ"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2090
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"'%s' ಸಂಪನ್ಮೂಲವನ್ನು ಪುನರಾವರ್ತಿತಗೊಳ್ಳುವ ಮೀಟಿಂಗುಗಳಿಗೆ ನಿಯೋಜಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+"ಪ್ರತಿಯೊಂದು ಮೀಟಿಂಗುಗಳನ್ನೂ ನೀವು ಪ್ರತ್ಯೇಕವಾಗಿ ಕಾದಿರಿಸಬೇಕು."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2108
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "ಆಯ್ಕೆಯ ಕಾಲಾವಧಿಯ ಸಮಯದಲ್ಲಿ '%s' ಸಂಪನ್ಮೂಲವು ಕಾರ್ಯನಿರತವಾಗಿದೆ."
+
+#: ../calendar/e-cal-backend-exchange.c:424
+msgid "Authentication failed"
+msgstr "ದೃಢೀಕರಣವು ವಿಫಲಗೊಂಡಿದೆ"
+
+#: ../calendar/e-cal-backend-exchange.c:466
+msgid "Could not find the calendar"
+msgstr "ಕ್ಯಾಲೆಂಡರ್ ಕಂಡುಬಂದಿಲ್ಲ"
+
+#: ../camel/camel-exchange-folder.c:201
+msgid "You cannot expunge in offline mode."
+msgstr "ಆಫ್‌ಲೈನಿನ ಸ್ಥಿತಿಯಲ್ಲಿ ನೀವು ಅಳಿಸುವಂತಿಲ್ಲ."
+
+#: ../camel/camel-exchange-folder.c:232
+msgid "No Subject"
+msgstr "ಯಾವುದೆ ವಿಷಯವಿಲ್ಲ"
+
+#: ../camel/camel-exchange-folder.c:387
+msgid "This message is not available in offline mode."
+msgstr "ಈ ಸಂದೇಶವು ಆಫ್‌ಲೈನ್ ವಿಧಾನದಲ್ಲಿ ಲಭ್ಯವಿರುವುದಿಲ್ಲ."
+
+#: ../camel/camel-exchange-folder.c:614
+msgid "Moving messages"
+msgstr "ಸಂದೇಶಗಳನ್ನು ಸ್ಥಳಾಂತರಿಸಲಾಗುತ್ತಿದೆ"
+
+#: ../camel/camel-exchange-folder.c:615
+msgid "Copying messages"
+msgstr "ಸಂದೇಶಗಳನ್ನು ಕಾಪಿ ಮಾಡಲಾಗುತ್ತಿದೆ"
+
+#: ../camel/camel-exchange-folder.c:993
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "%s ಕೋಶವನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s"
+
+#: ../camel/camel-exchange-folder.c:1003
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%s ಗಾಗಿ ಸಾರಂಶವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../camel/camel-exchange-folder.c:1011
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "%sಗಾಗಿ ಕ್ಯಾಶೆಯನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../camel/camel-exchange-folder.c:1021
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s ಗಾಗಿ ಜರ್ನಲನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../camel/camel-exchange-folder.c:1072
+msgid "Scanning for changed messages"
+msgstr "ಬದಲಾಯಿಸಲಾದ ಸಂದೇಶಗಳಿಗಾಗಿ ಶೋಧಿಸಲಾಗುತ್ತಿದೆ"
+
+#: ../camel/camel-exchange-folder.c:1105
+msgid "Fetching summary information for new messages"
+msgstr "ಹೊಸ ಸಂದೇಶಗಳಿಗಾಗಿ ಸಾರಾಂಶ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ"
+
+#: ../camel/camel-exchange-journal.c:342
+msgid "No folder name found\n"
+msgstr "ಯಾವುದೆ ಕಡತಕೋಶದ ಹೆಸರು ಕಂಡುಬಂದಿಲ್ಲ\n"
+
+#: ../camel/camel-exchange-journal.c:375 ../mail/mail-stub-exchange.c:3071
+#: ../mail/mail-stub-exchange.c:3121 ../mail/mail-stub-exchange.c:3251
+#: ../mail/mail-stub-exchange.c:3278 ../mail/mail-stub-exchange.c:3331
+#: ../mail/mail-stub-exchange.c:3353
+msgid "Folder doesn't exist"
+msgstr "ಕಡತಕೋಶವು ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ"
+
+#: ../camel/camel-exchange-journal.c:439
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "ಸಂದೇಶವನ್ನು ಆಫ್‌ಲೈನ್ ವಿಧಾನದಲ್ಲಿ ಸೇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ: ಕ್ಯಾಶೆ ಲಭ್ಯವಿಲ್ಲ"
+
+#: ../camel/camel-exchange-journal.c:455
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "ಸಂದೇಶವನ್ನು ಆಫ್‌ಲೈನ್ ವಿಧಾನದಲ್ಲಿ ಸೇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ: %s"
+
+#: ../camel/camel-exchange-provider.c:55
+msgid "Secure or Plaintext Password"
+msgstr "ಸುರಕ್ಷಿತ ಅಥವ ಸರಳಪಠ್ಯ ಗುಪ್ತಪದ"
+
+#: ../camel/camel-exchange-provider.c:56
+#: ../camel/camel-exchange-provider.c:141
+msgid "Plaintext Password"
+msgstr "ಸರಳಪಠ್ಯ ಗುಪ್ತಪದ"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:57
+#: ../camel/camel-exchange-provider.c:130
+msgid "Secure Password"
+msgstr "ಸುರಕ್ಷಿತ ಗುಪ್ತಪದ"
+
+#: ../camel/camel-exchange-provider.c:63
+msgid "Checking for New Mail"
+msgstr "ಹೊಸ ಮೈಲ್‌ಗಾಗಿ ಹುಡುಕಲಾಗುತ್ತಿದೆ"
+
+#: ../camel/camel-exchange-provider.c:65
+msgid "C_heck for new messages in all folders"
+msgstr "ಎಲ್ಲಾ ಕಡತಕೋಶಗಳಲ್ಲಿ ಹೊಸ ಸಂದೇಶಗಳಿಗಾಗಿ ಹುಡುಕು(_h)"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:73
+msgid "Windows User_name:"
+msgstr "ವಿಂಡೋಸ್ ಬಳಕೆದಾರ ಹೆಸರು (_n):"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:78
+msgid "Global Address List / Active Directory"
+msgstr "ಗ್ಲೋಬಲ್ ಅಡ್ರಸ್ ಲಿಸ್ಟ್‍/ ಆಕ್ಟಿವ್ ಡಿರೆಕ್ಟರಿ"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:82
+msgid "_Global Catalog server name:"
+msgstr "_Global Catalog ನ ಪರಿಚಾರಕದ ಹೆಸರು:"
+
+#: ../camel/camel-exchange-provider.c:84
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "GA_L ಪ್ರತ್ಯುತ್ತರಗಳ ಸಂಖ್ಯೆಯ ಮಿತಿ: %s"
+
+#: ../camel/camel-exchange-provider.c:86
+msgid "Authentication _Type:"
+msgstr "ದೃಢೀಕರಣದ ಬಗೆ(_T):"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "ಡೌನ್‌ಲೋಡ್‌ ಮಿತಿಯನ್ನು ತಲುಪುವ ವರೆಗೆ GAL ನ ವೀಕ್ಷಣೆಯನ್ನು ಅನುಮತಿಸು (_b)"
+
+#: ../camel/camel-exchange-provider.c:91
+msgid "Options"
+msgstr "ಆದ್ಯತೆಗಳು"
+
+#: ../camel/camel-exchange-provider.c:93
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "ಗುಪ್ತಪದ ವಾಯಿದೆ ತೀರಿಕೆ ಎಚ್ಚರಿಕೆಯ ಕಾಲಾವಧಿ(_P): %s"
+
+#: ../camel/camel-exchange-provider.c:95
+msgid "Automatically synchroni_ze account locally"
+msgstr "ಸ್ಥಳೀಯವಾಗಿ ಖಾತೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮೇಳೈಸು(_z)"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:98
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "ಈ ಪರಿಚಾರಕದಲ್ಲಿನ ಇನ್‌ಬಾಕ್ಸಿನಲ್ಲಿನ ಹೊಸ ಸಂದೇಶಗಳಿಗೆ ಫಿಲ್ಟರನ್ನು ಅನ್ವಯಿಸು(_A)"
+
+#: ../camel/camel-exchange-provider.c:100
+msgid "Check new messages for _Junk contents"
+msgstr "ರದ್ದಿ ವಿಷಯಗಳನ್ನು ಹೊಂದಿರುವ ಹೊಸ ಸಂದೇಶಗಳನ್ನು ಪರಿಶೀಲಿಸು(_J)"
+
+#: ../camel/camel-exchange-provider.c:102
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "ಕೇವಲ ಇನ್‌ಬಾಕ್ಸಿನ ಫೋಲ್ಡರಿನಲ್ಲಿ ಮಾತ್ರವೆ ರದ್ದಿ ಸಂದೇಶಕ್ಕಾಗಿ ನೋಡು (_e)"
+
+#: ../camel/camel-exchange-provider.c:112
+msgid "Microsoft Exchange"
+msgstr "ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌"
+
+#: ../camel/camel-exchange-provider.c:114
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "ಮೈಕ್ರೋಸಾಫ್ಟ್‌ ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕಗಳಲ್ಲಿ ಮೈಲನ್ನು (ಹಾಗು ಇತರೆ ಮಾಹಿತಿಯನ್ನು) ನಿಭಾಯಿಸಲು"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:133
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"ಈ ಆಯ್ಕೆಯು ಸುರಕ್ಷಿತ ಗುಪ್ತಪದ (NTLM)  ದೃಢೀಕರಣವನ್ನು ಬಳಸಿಕೊಳಡು ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಪರಿಚಾರಕದೊಂದಿಗೆ "
+"ಸಂಪರ್ಕಕಲ್ಪಿಸುತ್ತದೆ."
+
+#: ../camel/camel-exchange-provider.c:143
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"ಈ ಆಯ್ಕೆಯು ಸಾಮಾನ್ಯವಾದ ಸರಳಪಠ್ಯ ಗುಪ್ತಪದ ದೃಢೀಕರಣವನ್ನು ಬಳಸಿಕೊಳಡು ಎಕ್ಸ್‌ಚೇಂಜ್‌ "
+"ಪರಿಚಾರಕದೊಂದಿಗೆ ಸಂಪರ್ಕಕಲ್ಪಿಸುತ್ತದೆ."
+
+#: ../camel/camel-exchange-store.c:314
+#, c-format
+msgid "Exchange server %s"
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕ %s"
+
+#: ../camel/camel-exchange-store.c:317
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "%s ಗಾಗಿನ (%s ನಲ್ಲಿ) ಎಕ್ಸ್‌ಚೇಂಜ್ ಖಾತೆ"
+
+#: ../camel/camel-exchange-store.c:399
+msgid "Evolution Exchange backend process"
+msgstr "Evolution ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಬ್ಯಾಕೆಂಡ್‌ ಪ್ರಕ್ರಿಯೆ"
+
+#: ../camel/camel-exchange-store.c:442
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"ಪರಿಚಾರಕಕ್ಕಾಗಿ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. (ಗುಪ್ತಪದವು ಸರಿಯಾಗಿಲ್ಲವೆ?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:495
+#, c-format
+msgid "No such folder %s"
+msgstr "%s ನಂತಹ ಯಾವುದೆ ಕಡತಕೋಶಗಳಿಲ್ಲ"
+
+#: ../camel/camel-exchange-store.c:572
+msgid "Cannot subscribe folder in offline mode."
+msgstr "ಆಫ್‌ಲೈನಿನ ಸ್ಥಿತಿಯಲ್ಲಿ ಫೋಲ್ಡರಿನ ಚಂದಾದಾರನಾಗಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#: ../camel/camel-exchange-store.c:589
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "ಆಫ್‌ಲೈನಿನ ಸ್ಥಿತಿಯಲ್ಲಿ ಫೋಲ್ಡರಿನ ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#: ../camel/camel-exchange-store.c:727
+msgid "Cannot get folder info in offline mode."
+msgstr "ಆಫ್‌ಲೈನ್ ಕ್ರಮದಲ್ಲಿ ಕಡತಕೋಶದ ಮಾಹಿತಿಯನ್ನು ಪಡೆದುಕೊಳ್ಳಲಾಗಲಿಲ್ಲ."
+
+#: ../camel/camel-exchange-store.c:800
+msgid "Cannot create folder in offline mode."
+msgstr "ಆಫ್‌ಲೈನ್ ಕ್ರಮದಲ್ಲಿ ಕಡತಕೋಶವನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
+
+#: ../camel/camel-exchange-store.c:827
+msgid "Cannot delete folder in offline mode."
+msgstr "ಆಫ್‌ಲೈನ್ ಕ್ರಮದಲ್ಲಿ ಕಡತಕೋಶವನ್ನು ಅಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
+
+#: ../camel/camel-exchange-store.c:851
+msgid "Cannot rename folder in offline mode."
+msgstr "ಆಫ್‌ಲೈನ್ ಕ್ರಮದಲ್ಲಿ ಕಡತಕೋಶದ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
+
+#: ../camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್‌ ವರ್ಗಾವಣೆಯನ್ನು ಕೇವಲ ಎಕ್ಸ್‌ಚೇಂಜ್ ಮೈಲ್ ಪರಿಚಾರಕದೊಂದಿಗೆ ಮಾತ್ರ ಬಳಸಬಹುದಾಗಿದೆ"
+
+#: ../camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಿಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. ಒಂದು ಅಥವ ಹೆಚ್ಚಿನ ಸ್ವೀಕರಿಸುವವರ ವಿಳಾಸವು ಅಮಾನ್ಯವಾಗಿದೆ"
+
+#: ../camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "ಸಂದೇಶದಲ್ಲಿ 'ಯಿಂದ' ವಿಳಾಸವು ಕಂಡುಬಂದಿಲ್ಲ"
+
+#: ../camel/camel-stub.c:165 ../camel/camel-stub.c:229
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "ಸಾಕೆಟನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %s"
+
+#: ../camel/camel-stub.c:183
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "%s ಗೆ ಸಂಪರ್ಕ ಜೋಡಿಸು ಸಾಧ್ಯವಾಗಿಲ್ಲ: ದಯವಿಟ್ಟು ಇವಲ್ಯೂಶನ್ ಅನ್ನು ಮರಳಿ ಆರಂಭಿಸಿ"
+
+#: ../camel/camel-stub.c:188 ../camel/camel-stub.c:247
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "%s ಕ್ಕೆ ಸಂಪರ್ಕ ಜೋಡಿಸಲಾಗಲಿಲ್ಲ: %s"
+
+#: ../camel/camel-stub.c:212
+#, c-format
+msgid "Count not read file '%s': %s"
+msgstr "ಕಡತ '%s' ಅನ್ನು ಓದಲಾಗಲಿಲ್ಲ: %s"
+
+#: ../camel/camel-stub.c:220
+#, c-format
+msgid "Wrong size file '%s'"
+msgstr "ಕಡತ '%s' ದ ಸರಿಯಲ್ಲದ ಗಾತ್ರ"
+
+#: ../camel/camel-stub.c:283
+#, c-format
+msgid "Path too long: %s"
+msgstr "ಮಾರ್ಗವು ಬಹಳ ಉದ್ದವಾಗಿದೆ: %s"
+
+#: ../camel/camel-stub.c:318
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "ಸ್ಥಿತಿಯ ಎಳೆಯನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s"
+
+#: ../camel/camel-stub.c:572
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s ನೊಂದಿಗಿನ ಸಂಪರ್ಕವು ಕಡಿದುಹೋಗಿದೆ"
+
+#: ../camel/camel-stub.c:576
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "%s ನೊಂದಿಗೆ ಸಂಪರ್ಕಿಸುವಲ್ಲಿ ದೋಷ ಉಂಟಾಗಿದೆ: %s"
+
+#: ../mail/mail-stub-exchange.c:269 ../mail/mail-stub-exchange.c:965
+msgid "No such folder"
+msgstr "ಅಂತಹ ಯಾವುದೆ ಕಡತಕೋಶವಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:292 ../mail/mail-stub-exchange.c:3048
+#: ../mail/mail-stub-exchange.c:3088 ../mail/mail-stub-exchange.c:3255
+#: ../mail/mail-stub-exchange.c:3305 ../mail/mail-stub-exchange.c:3368
+msgid "Permission denied"
+msgstr "ಅನುಮತಿಯು ನಿರಾಕರಿಸಲ್ಪಟ್ಟಿದೆ"
+
+#: ../mail/mail-stub-exchange.c:787 ../mail/mail-stub-exchange.c:879
+msgid "Could not open folder"
+msgstr "ಕಡತಕೋಶವನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:873 ../mail/mail-stub-exchange.c:895
+msgid "Could not open folder: Permission denied"
+msgstr "ಕಡತಕೋಶವನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ"
+
+#: ../mail/mail-stub-exchange.c:974
+msgid "Could not create folder."
+msgstr "ಕಡತಕೋಶವನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#: ../mail/mail-stub-exchange.c:1062
+msgid "Could not open Deleted Items folder"
+msgstr "ಅಳಿಸಲಾದ ಅಂಶಗಳ ಫೋಲ್ಡರನ್ನು ತೆರೆಯಲಾಗಲಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:1393 ../mail/mail-stub-exchange.c:1434
+msgid "Could not get new messages"
+msgstr "ಹೊಸ ಸಂದೇಶಗಳನ್ನು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:1637
+msgid "Could not empty Deleted Items folder"
+msgstr "ಅಳಿಸಲಾದ ಅಂಶಗಳ ಫೋಲ್ಡರನ್ನು ಖಾಲಿ ಮಾಡಲಾಗಲಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:1639
+msgid "Permission denied. Could not delete certain messages."
+msgstr "ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ. ನಿಶ್ಚಿತ ಸಂದೇಶಗಳನ್ನು ಅಳಿಸಲಾಗಿಲ್ಲ."
+
+#: ../mail/mail-stub-exchange.c:1712
+msgid "Could not append message; mailbox is over quota"
+msgstr "ಸಂದೇಶವನ್ನು ಸೇರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ;ಅಂಚೆಪೆಟ್ಟಿಗೆಯು ತುಂಬಿಹೋಗಿದೆ"
+
+#: ../mail/mail-stub-exchange.c:1713
+msgid "Could not append message"
+msgstr "ಸಂದೇಶವನ್ನು ಸೇರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:2475
+msgid "No such message"
+msgstr "ಅಂತಹ ಯಾವುದೆ ಸಂದೇಶವಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:2556
+msgid "Message has been deleted"
+msgstr "ಸಂದೇಶವನ್ನು ಅಳಿಸಲಾಗಿದೆ"
+
+#: ../mail/mail-stub-exchange.c:2558
+msgid "Error retrieving message"
+msgstr "ಸಂದೇಶವನ್ನು ಮರಳಿ ಪಡೆಯುವಲ್ಲಿ ದೋಷ ಉಂಟಾಗಿದೆ"
+
+#: ../mail/mail-stub-exchange.c:2601
+msgid "Mailbox does not support full-text searching"
+msgstr "ಅಂಚೆಪೆಟ್ಟಿಗೆಯು ಸಂಪೂರ್ಣ-ಪಠ್ಯ ಹುಡುಕುವಿಕೆಯನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:2699
+msgid "Unable to move/copy messages"
+msgstr "ಸಂದೇಶಗಳನ್ನು ಸ್ಥಳಾಂತರಿಸಲು/ಕಾಪಿ ಮಾಡಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:2965
+msgid "No mail submission URI for this mailbox"
+msgstr "ಈ ಅಂಚೆಪೆಟ್ಟಿಗೆಗೆ ಯಾವುದೆ ಮೈಲ್ ಸಲ್ಲಿಕೆ URI ಇಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:2999
+msgid "Server won't accept mail via Exchange transport"
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್ ವರ್ಗಾವಣೆಯ ಮೂಲಕ ಕಳುಹಿಸಲಾದ ಮೈಲನ್ನು ಪರಿಚಾರಕವು ಸ್ವೀಕರಿಸುವುದಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:3001
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"ನಿಮ್ಮ ಖಾತೆಯು <%s> ಅನ್ನು ಒಂದು ಫಾರ್ಮ್ ವಿಳಾಸವಾಗಿ ಬಳಸಲು\n"
+"ಅನುಮತಿಯನ್ನು ಹೊಂದಿಲ್ಲ."
+
+#: ../mail/mail-stub-exchange.c:3013
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+"ಅಂದರೆ ಇದರರ್ಥ ನಿಮ್ಮ ಖಾತೆಯು ಅದಕ್ಕೆ ಒದಗಿಸಲಾದ ಸ್ಥಳವನ್ನು ಮೀರಿದೆ ಎಂದಾಗಿರಬಹುದು."
+
+#: ../mail/mail-stub-exchange.c:3017
+msgid "Could not send message"
+msgstr "ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: ../mail/mail-stub-exchange.c:3040 ../mail/mail-stub-exchange.c:3093
+#: ../mail/mail-stub-exchange.c:3259 ../mail/mail-stub-exchange.c:3310
+#: ../mail/mail-stub-exchange.c:3374
+msgid "Generic error"
+msgstr "ಸಾಮಾನ್ಯ ದೋಷ"
+
+#: ../mail/mail-stub-exchange.c:3044
+msgid "Folder already exists"
+msgstr "ಕಡತಕೋಶವು ಈಗಾಗಲೆ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Evolution ವಿಳಾಸಪುಸ್ತಕ ಎಕ್ಸ್‌ಚೇಂಜ್ ಬ್ಯಾಕೆಂಡ್"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Evolution ಕ್ಯಾಲೆಂಡರ್ ಎಕ್ಸ್‌ಚೇಂಜ್ ಬ್ಯಾಕೆಂಡ್"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+#: ../storage/main.c:219
+msgid "Evolution Connector for Microsoft Exchange"
+msgstr "ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರ್"
+
+#: ../storage/exchange-autoconfig-wizard.c:227
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕಕ್ಕೆ ಸಂಪರ್ಕಸಾಧಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+"URL ಯು ಸರಿಯಾಗಿದೆ (\"%s\" ಅನ್ನು ಪ್ರಯತ್ನಿಸಿ, \"%s\" ಬದಲಿಗೆ?) ಎಂದು ಪರಿಶೀಲಿಸಿ ಹಾಗು ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕವನ್ನು ಪತ್ತೆ ಮಾಡಲಾಗಲಿಲ್ಲ.\n"
+"ಪರಿಚಾರಕದ ಹೆಸರನ್ನು ಸರಿಯಾಗಿ ಬರೆಯಲಾಗಿದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: ../storage/exchange-autoconfig-wizard.c:244
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕವನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+"ಬಳಕೆದಾರ ಹೆಸರು ಹಾಗು ಗುಪ್ತಪದವು ಸರಿಯಾಗಿವೆಯೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಂಡು ನಂತರ ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: ../storage/exchange-autoconfig-wizard.c:251
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕವನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+"ಬಳಕೆದಾರ ಹೆಸರು ಹಾಗು ಗುಪ್ತಪದವು ಸರಿಯಾಗಿವೆಯೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಂಡು ನಂತರ ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ.\n"
+"\n"
+"ಬಳಕೆದಾರ ಹೆಸರಿನ ಒಂದು ಭಾಗವಾಗಿ ನೀವು ವಿಂಡೋಸ್ ಡೊಮೈನ್‌ ಹೆಸರನ್ನು ಸೂಚಿಸಬೇಕಾಗಬಹುದು "
+"(ಉದಾ, \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:263
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"ಸೂಚಿಸಲಾದ URL ನಲ್ಲಿ ಯಾವುದೆ OWA ದತ್ತಾಂಶ ಕಂಡುಬಂದಿಲ್ಲ.\n"
+"URL ಸರಿ ಇದೆಯೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಂಡು ನಂತರ ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ಸಿಸಿ."
+
+#: ../storage/exchange-autoconfig-wizard.c:270
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರಿಗಾಗಿ ಕೆಲವು ನಿರ್ದಿಷ್ಟ ಕಾರ್ಯಭಾರಗಳಿಗೆ ನಿಲುಕಣೆಯ ಅಗತ್ಯವಿದೆ ಆದರೆ ಅವುಗಳು ಪ್ರಸಕ್ತ ಅಶಕ್ತಗೊಂಡಿರುವಂತೆ ಅಥವ ನಿರ್ಬಂಧಿಸಿರುವಂತೆ ಕಾಣಿಸುತ್ತಿದೆ.  (ಇದು ಹೆಚ್ಚಿನ ಸಮಯದಲ್ಲಿ ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿರುತ್ತದೆ.)  Evolution ಕನೆಕ್ಟರನ್ನು ನೀವು ಬಳಸಲು ನಿಮ್ಮ ಎಕ್ಸ್‌ಚೇಂಜ್ ವ್ಯವಸ್ಥಾಪಕರು ಈ ಕಾರ್ಯಭಾರವನ್ನು ಶಕ್ತಗೊಳಿಸಬೇಕಾಗುತ್ತದೆ.\n"
+"\n"
+"ನಿಮ್ಮ ಎಕ್ಸ್‌ಚೇಂಜ್ ವ್ಯವಸ್ಥಾಪಕರಿಗೆ ಮಾಹಿತಿಯನ್ನು ನೀಡಲು ದಯವಿಟ್ಟು ಈ ಕೆಳಗಿನ ಕೊಂಡಿಯನ್ನು ಅನುಸರಿಸಿ:"
+
+#: ../storage/exchange-autoconfig-wizard.c:292
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"ನೀವು ಒದಗಿಸಿದ ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಪರಿಚಾರಕ URL ಒಂದು ಎಕ್ಸ್‌ಚೇಂಜ್ 5.5 ಪರಿಚಾರಕದ್ದಾಗಿದೆ. "
+"ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರ್ ಕೇವಲ ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ 2000 "
+"ಹಾಗು 2003 ಅನ್ನು ಮಾತ್ರವೆ ಬೆಂಬಲಿಸುತ್ತದೆ."
+
+#: ../storage/exchange-autoconfig-wizard.c:306
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್ ಖಾತೆಯನ್ನು ಸಂರಚಿಸಲಾಗಲಿಲ್ಲ ಏಕೆಂದರೆ ಒಂದು ಗೊತ್ತಿರದ ದೋಷವು ಕಂಡುಬಂದಿದೆ. URL, ಬಳಕೆದಾರ ಹೆಸರು ಹಾಗು ಗುಪ್ತಪದವನ್ನು ನಮೂದಿಸಿ ಹಾಗು ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: ../storage/exchange-autoconfig-wizard.c:350
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr "Global Catalog ಪರಿಚಾರಕವನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. ನೀವು ಹಿಂದಕ್ಕೆ ಹೋಗಿ ಬಳಕೆದಾರ ಹೆಸರಿನ ಒಂದು ಭಾಗವಾಗಿ ನೀವು ವಿಂಡೋಸ್ ಡೊಮೈನ್‌ ಹೆಸರನ್ನು ಸೂಚಿಸಬೇಕಾಗಬಹುದು (ಉದಾ, \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:357
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"ಸೂಚಿಸಲಾದ ಪರಿಚಾರಕಕ್ಕೆ ಸಂಪರ್ಕ ಕಲ್ಪಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. \n"
+"ದಯವಿಟ್ಟು ಪರಿಚಾರಕದ ಹೆಸರನ್ನು ಪರಿಶೀಲಿಸಿ ನಂತರ ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#: ../storage/exchange-autoconfig-wizard.c:394
+#: ../storage/exchange-autoconfig-wizard.c:398
+msgid "Unknown"
+msgstr "ಅಜ್ಞಾತ"
+
+#: ../storage/exchange-autoconfig-wizard.c:463
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"ಸಂರಚನಾ ವ್ಯವಸ್ಥೆಯ ದೋಷ.\n"
+"ಹೊಸ ಖಾತೆಯನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#: ../storage/exchange-autoconfig-wizard.c:477
+msgid "You may only configure a single Exchange account"
+msgstr "ನೀವು ಕೇವಲ ಒಂದು ಎಕ್ಸ್‌ಚೇಂಜ್ ಖಾತೆಯನ್ನು ಮಾತ್ರವೆ ಸಂರಚಿಸಬಹುದು"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "ಸಂರಚನೆಯು ವಿಫಲಗೊಂಡಿದೆ"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "ಆಯಿತು"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "ಇಮೈಲ್ ವಿಳಾಸ:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಸಂರಚನೆಗಾಗಿನ Evolution ಕನೆಕ್ಟರ್"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರ್ ಈಗಿರುವ Outlook Web Access (OWA) ಖಾತೆಯಿಂದ ಮಾಹಿತಿಯನ್ನು ಬಳಸಿಕೊಳ್ಳಬಲ್ಲದು.\n"
+"\n"
+"ನಿಮ್ಮ OWA ತಾಣದ ವಿಳಾಸವನ್ನು (URL), ಬಳಕೆದಾರಹೆಸರನ್ನು, ಹಾಗು ಗುಪ್ತಪದವನ್ನು ನಮೂದಿಸಿ ನಂತರ, "
+"\"ಮುಂದಕ್ಕೆ\" ಅನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value.\n"
+msgstr ""
+"ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರಿಗೆ ನಿಮ್ಮ ತಾಣಕ್ಕಾಗಿನ ಗ್ಲೋಬಲ್ ಕೆಟಲಾಗ್‌ನ ತದ್ರೂಪು ದೊರೆತಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಗ್ಲೋಬಲ್ ಕೆಟಲಾಗ್ ಪರಿಚಾರಕವನ್ನು ನಮೂದಿಸಿ. "
+"ಸರಿಯಾದ ಮೌಲ್ಯಕ್ಕಾಗಿ ಬೇಕಿದ್ದರೆ ನಿಮ್ಮ ಗಣಕ ವ್ಯವಸ್ಥಾಪಕರನ್ನು ಕೇಳಬಹುದು.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account.\n"
+msgstr "ನಿಮ್ಮ ಎಕ್ಸ್‌ಚೇಂಜ್ ಖಾತೆಯನ್ನು ಸಂರಚಿಸುವಾಗ ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರಿಗೆ ಒಂದು ತೊಂದರೆ ಎದುರಾಗಿದೆ.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid "Exchange Configuration"
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಸಂರಚನೆ"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:15
+msgid "Full Name:"
+msgstr "ಪೂರ್ಣ ಹೆಸರು:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:16
+msgid "GC Server:"
+msgstr "GC ಪರಿಚಾರಕ:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:17
+msgid "Make this my default account"
+msgstr "ಇದನ್ನು ನನ್ನ ಪೂರ್ವನಿಯೋಜಿತ ಖಾತೆಯನ್ನಾಗಿ ಮಾಡು"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:18
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Password:"
+msgstr "ಗುಪ್ತಪದ:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid "Remember this password"
+msgstr "ಈ ಗುಪ್ತಪದವನ್ನು ನೆನಪಿಟ್ಟುಕೊ"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:21
+msgid "Username:"
+msgstr "ಬಳಕೆದಾರಹೆಸರು:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:22
+msgid "Welcome"
+msgstr "ಸುಸ್ವಾಗತ"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:23
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"ಮೈಕ್ರೋಸಾಫ್ಟ್‍ ಎಕ್ಸ್‌ಚೇಂಜ್‌ಗಾಗಿನ Evolution ಕನೆಕ್ಟರಿಗೆ ಸುಸ್ವಾಗತ.\n"
+"ಮುಂದಿನ ಕೆಲವು ತೆರೆಗಳಲ್ಲಿ ನಿಮ್ಮ ಎಕ್ಸ್‌ಚೇಂಜ್ ಖಾತೆಯನ್ನು ಜೋಡಿಸಲು Evolution ಅನ್ನು ಹೇಗೆ ಸಂರಚಿಸಬೇಕು ಎಂದು\n"
+"ನಿಮಗೆ ಸಹಾಯ ನೀಡಲಾಗುತ್ತದೆ.\n"
+"\n"
+"ಮುಂದುವರೆಯಲು \"ಮುಂದಕ್ಕೆ\" ಗುಂಡಿಯನ್ನು ಒತ್ತಿ."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr "ನಿಮ್ಮ ಕನೆಕ್ಟರ್ ಖಾತೆಯು ಈಗ ಬಳಕೆಗೆ ಸಿದ್ಧವಾಗಿದೆ. ನಿಮ್ಮ ಸಿದ್ಧತೆಗಳನ್ನು ಉಳಿಸಲು \n \"ಅನ್ವಯಿಸು\" ಅನ್ನು ಒತ್ತಿ."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr "ನಿಮ್ಮ ಖಾತೆಯ ಮಾಹಿತಿಯು ಹೀಗಿದೆ. ದಯವಿಟ್ಟು ಏನಾದರೂ ತಪ್ಪುಗಳಿದ್ದಲ್ಲಿ ಸರಿಪಡಿಸಿ ನಂತರ \"ಮುಂದಕ್ಕೆ\" ಅನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ.\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:125
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"ಈಗಿನ ಗುಪ್ತಪದವು ನಿಮ್ಮ ಸದ್ಯದ ಖಾತೆಯ ಗುಪ್ತಪದಕ್ಕೆ ತಾಳೆಯಾಗುವುದಿಲ್ಲ. ದಯವಿಟ್ಟು ಸರಿಯಾದ "
+"ಗುಪ್ತಪದವನ್ನು ನಮೂದಿಸಿ"
+
+#: ../storage/exchange-change-password.c:132
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "ಎರಡೂ ಗುಪ್ತಪದಗಳು ಒಂದಕ್ಕೊಂದು ತಾಳೆಯಾಗುತ್ತಿಲ್ಲ. ದಯವಿಟ್ಟು ಗುಪ್ತಪದಗಳನ್ನು ಪುನಃ ನಮೂದಿಸಿ."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಿ"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "ಗುಪ್ತಪದವನ್ನು ಖಚಿತಪಡಿಸಿ:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "ಈಗಿರುವ ಗುಪ್ತಪದ:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "ಹೊಸ ಗುಪ್ತಪದ:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"ನಿಮ್ಮ ಈಗಿನ ಗುಪ್ತಪದದ ವಾಯಿದೆಯು ತೀರಿ ಹೋಗಿದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಗುಪ್ತಪದವನ್ನು ಈಗಲೆ "
+"ಬದಲಾಯಿಸಿ."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "ಕತೃ (ಓದಲು, ರಚಿಸಲು)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "ಕ್ಯಾಲೆಂಡರ್(_a):"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "ಸಂಪರ್ಕವಿಳಾಸಗಳು(_n):"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "ಅನುಮತಿಗಳನ್ನು ಡೆಲಿಗೇಟ್‌ ಮಾಡು"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "ಡೆಲಿಗೇಟ್‌ಗಳು"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "ಸಂಪಾದಕ (ಓದಲು, ರಚಿಸಲು, ಸಂಪಾದಿಸಲು)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "ಯಾವುದೂ ಇಲ್ಲ"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "ಇದಕ್ಕಾಗಿನ ಅನುಮತಿಗಳು"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "ಅವಲೋಕಿಸುವವ (ಓದಲು-ಮಾತ್ರ)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"ಈ ಬಳಕೆದಾರರಿಗೆ ನೀವು ನೀಡಿದ ಅನುಮತಿಗಳಿಂದ ಅವರು ನಿಮ್ಮ ಪರವಾಗಿ ಮೈಲ್‌ಗಳನ್ನು \n"
+"ಕಳುಹಿಸಬಲ್ಲರು ಹಾಗು ನಿಮ್ಮ ಫೋಲ್ಡರನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳಬಲ್ಲರು."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "ಡೆಲಿಗೇಟ್ ಖಾಸಗಿ ಅಂಶಗಳನ್ನು ನೋಡಬಹುದಾಗಿದೆ(_D)"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "ಸಂಸ್ಕರಿಸು(_E)"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "ಇನ್‍ಬಾಕ್ಸ್‍(_I):"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "ಕಾರ್ಯಗಳು(_T):"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಫೋಲ್ಡರ್ ಟ್ರೀ"
+
+#: ../storage/exchange-migrate.c:60
+msgid "Migrating Exchange Folders..."
+msgstr "ಎಕ್ಸ್‌ಚೇಂಜ್ ಫೋಲ್ಡರುಗಳನ್ನು ವರ್ಗಾಯಿಸಲಾಗಿದೆ..."
+
+#: ../storage/exchange-migrate.c:68
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Evolution ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಖಾತೆಯ ಕಡತಕೋಶಗಳು ಇರುವ ಸ್ಥಳ ಹಾಗು ಅನುಕ್ರಮವು Evolution %d.%d.%d ನ ನಂತರದಿಂದ ಬದಲಾಯಿಸಲಾಗಿದೆ.\n"
+"\n"
+"Evolution ನಿಮ್ಮ ಕಡತಕೋಶವನ್ನು ವರ್ಗಾಯಿಸುವವರೆಗೂ ಕಾಯಿರಿ..."
+
+#: ../storage/exchange-migrate.c:101
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"ಎಚ್ಚರಿಕೆ: ಆವೃತ್ತಿ %d.%d.%d ಇಂದ ಖಾತೆಯ ಎಲ್ಲಾ ಮಾಹಿತಿಯನ್ನು Evolution ಇಂದ ವರ್ಗಾಯಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. \n"
+"ಮಾಹಿತಿಗಳನ್ನು ಅಳಿಸಿ ಹಾಕಲಾಗುವುದಿಲ್ಲ, ಬದಲಿಗೆ Evolution ನ ಈ ಆವೃತ್ತಿಯಲ್ಲಿ ಕಾಣಿಸುವುದಿಲ್ಲ"
+
+#: ../storage/exchange-migrate.c:132
+#, c-format
+msgid "Migrating `%s':"
+msgstr "`%s' ಅನ್ನು ಸ್ಥಳಾಂತರಿಸಲಾಗುತ್ತಿದೆ:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>ಪ್ರಸಕ್ತ, ನಿಮ್ಮ ಸ್ಥಿತಿಯು \"ಕಛೇರಿಯಿಂದ ಹೊರಗೆ\" ಆಗಿದೆ. </b>\n"
+"\n"
+"ನೀವು ನಿಮ್ಮ ಸ್ಥಿತಿಯನ್ನು \"ಕಛೇರಿಯ ಒಳಗೆ\" ಗೆ ಬದಲಾಯಿಸಲು ಬಯಸುತ್ತೀರೆ? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>ಕಛೇರಿ ಹೊರಗಿನ ಸಂದೇಶ:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>ಸ್ಥಿತಿ:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>ನೀವು ಕಛೇರಿಯಿಂದ ಹೊರಗಿದ್ದಾಗ ನಿಮಗೆ ಮೈಲ್ ಕಳುಹಿಸುವ ಪ್ರತಿಯೊಬ್ಬ ವ್ಯಕ್ತಿಗೂ "
+"ತಾನಾಗಿಯೆ \n"
+"ಕೆಳಗೆ ಸೂಚಿಸಲಾದ ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತದೆ.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "ನಾನು ಈಗ ಕಛೇರಿಯಲ್ಲಿ ಇದ್ದೇನೆ"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "ನಾನು ಈಗ ಕಛೇರಿಯಿಂದ ಹೊರಗೆ ಇದ್ದೇನೆ"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "ಬೇಡ, ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಬೇಡ"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "ಕಛೇರಿಯ ಹೊರಗಿನ ಸಹಾಯಕ"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "ಸರಿ, ಸ್ತಿತಿಯನ್ನು ಬದಲಾಯಿಸು"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "ಗುಪ್ತಪದದ ವಾಯಿದೆ ತೀರುವ ಎಚ್ಚರಿಕೆ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "ನಿಮ್ಮ ಗುಪ್ತಪದದ ವಾಯಿದೆಯು ೭ ದಿನಗಳಲ್ಲಿ ಮುಗಿದು ಹೋಗುತ್ತದೆ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸು(_C)"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ಸರಿಗುಂಡಿ(_b)"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>ಅನುಮತಿಗಳು</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "ಅಳಿಸಲಾಗುವುದಿಲ್ಲ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "ಸಂಪಾದಿಸಲಾಗುವುದಿಲ್ಲ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "ಅಂಶಗಳನ್ನು ರಚಿಸಿ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "ಉಪಫೋಲ್ಡರ್ ರಚಿಸಿ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "ಯಾವುದೆ ಅಂಶಗಳನ್ನು ಅಳಿಸು"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "ಸ್ವಂತ ಅಂಶಗಳನ್ನು ಅಳಿಸು"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "ಯಾವುದೆ ಅಂಶಗಳನ್ನು ಸಂಪಾದಿಸು"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "ಸ್ವಂತ ಅಂಶಗಳನ್ನು ಸಂಪಾದಿಸು"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "ಫೋಲ್ಡರ್ ಸಂಪರ್ಕ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "ಫೋಲ್ಡರ್ ಮಾಲಿಕ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "ಫೋಲ್ಡರ್ ಗೋಚರಿಸುತ್ತಿದೆ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "ಓದಲಾದ ಅಂಶಗಳು"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "ಪಾತ್ರ: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "ಸಂಪರ್ಕ ಹೊಂದಲಾಗುತ್ತಿದೆ..."
+
+#: ../storage/ximian-connector-setup.c:75
+msgid "Evolution Connector for Microsoft Exchange Setup Tool"
+msgstr "ಮೈಕ್ರೋಸಾಫ್ಟ್ ಎಕ್ಸ್‌ಚೇಂಜ್‌ ಸಿದ್ಧತಾ ಉಪಕರಣಕ್ಕಾಗಿನ Evolution ಕನೆಕ್ಟರ್"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "ನಿಮ್ಮ ಎಕ್ಸ್‌ಚೇಂಜ್ ಪರಿಚಾರಕ ಗುಪ್ತಪದ"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "ಫೋಲ್ಡರ್ ಗಾತ್ರ(_S)"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "ವೈಯಕ್ತಿಕ ಫೋಲ್ಡರುಗಳ ಗಾತ್ರವನ್ನು ಪಡೆದುಕೊ"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "ಬೇರೆ ಬಳಕೆದಾರರ ಫೋಲ್ಡರಿಗೆ ಚಂದಾದಾರನಾಗಿಸು(_O)..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "ಪರಿಚಾರಕದಲ್ಲಿನ ಬೇರೆ ಬಳಕೆದಾರನಿಗೆ ಸಂಬಂಧಿಸಿದ ಫೋಲ್ಡರಿಗೆ ಚಂದಾದಾರರಾಗಿ"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid "Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "\"ಬೇರೆ ಬಳಕೆದಾರರ ಫೋಲ್ಡರಿಗೆ ಚಂದಾದಾರನಾಗಿಸು\" ಎಂದು ಸೇರಿಸಲಾದ ಒಂದು ಫೋಲ್ಡರಿನ ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದು ಮಾಡು"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "ನಿಮ್ಮ ಎಕ್ಸ್‌ಚೇಂಜ್ ಕ್ಯಾಲೆಂಡರಿನ ಡೆಲಿಗೇಶನ್ ಪರಿಚಾರಕದ ಸಿದ್ಧತೆಗಳನ್ನು ನೋಡಿ ಅಥವ ಬದಲಾಯಿಸಿ"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "ಆಫೀಸಿನಿಂದ ಹೊರಕ್ಕೆ ಹಾಗು ಸ್ವಯಂ ಪ್ರತ್ಯುತ್ತರ ಸಂದೇಶವನ್ನು ನೋಡು ಅಥವ ಬದಲಾಯಿಸಿ"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "ಎಕ್ಚ್‌ಚೇಂಜ್‌ ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸು(_C)..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "ಡೆಲಿಗೇಶನ್ ಸಹಾಯಕ(_D)"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "ಆಫೀಸ್‌ನ ಹೊರಗಿನ ಸಹಾಯಕ(_O)"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "ಬೇರೆ ಬಳಕೆದಾರರ ಫೋಲ್ಡರಿನಿಂದ ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸು(_U)"
+

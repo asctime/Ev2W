@@ -1,0 +1,18 @@
+diff --git a/configure b/configure
+index d8251ac..7406bc3 100755
+--- a/configure
++++ b/configure
+@@ -4341,12 +4341,7 @@ fi
+ 
+ 
+ 
+-  list="-DG_DISABLE_DEPRECATED
+-	-DPANGO_DISABLE_DEPRECATED
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED
+-	-DGTK_DISABLE_DEPRECATED
+-	-DEDS_DISABLE_DEPRECATED
+-	-DG_DISABLE_SINGLE_INCLUDES
++  list="-DG_DISABLE_SINGLE_INCLUDES
+ 	-DGTK_DISABLE_SINGLE_INCLUDES
+ 	-Wall -Wextra
+ 	-Wno-missing-field-initializers

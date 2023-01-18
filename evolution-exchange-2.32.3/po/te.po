@@ -1,0 +1,1012 @@
+# translation of te.po to Telugu
+# Telugu translation of evolution-exchange
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the evolution-exchange package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: te\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=evolution-exchange&amp;component=general\n"
+"POT-Creation-Date: 2008-11-20 10:22+0000\n"
+"PO-Revision-Date: 2009-03-05 16:37+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "GAL క్యాచీ ను రీఫ్రెష్ చేయుటకు సమయ విరామాన్ని తెలుపుతుంది."
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr ""
+"GAL క్యాచి రీఫ్రెష్ మద్య విరామం యొక్క రోజులను ఈ కీ తెలుపుతుంది. మీరు GAL ను నవీకరించాలని అనుకోకపోతే "
+"మరియు ప్రస్తుత క్యాచీని ఎప్పటికి ఉపయోగించాలని అనుకుంటే, ఈవిలువను సున్నాకు అమర్చండి. మీరు GAL కొరకు "
+"ఆఫ్‌లైన్ క్యాచింగ్ చేతనం చేస్తే మాత్రమే ఇదిపనిచేస్తుంది."
+
+#: ../addressbook/e-book-backend-exchange.c:2285
+#: ../addressbook/e-book-backend-gal.c:1865 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "శోధించుచున్నది..."
+
+#: ../addressbook/e-book-backend-gal.c:306
+#: ../addressbook/e-book-backend-gal.c:327
+msgid "Reconnecting to LDAP server..."
+msgstr "LDAP సేవికకు తిరిగిఅనుసంధానించబడుతోంది..."
+
+#: ../addressbook/e-book-backend-gal.c:1624
+msgid "Receiving LDAP search results..."
+msgstr "LDAP శోధన ఫలితాలను తిరిగిపొందుతోంది..."
+
+#: ../addressbook/e-book-backend-gal.c:1896
+msgid "Error performing search"
+msgstr "శోధన జరుపుటలో దోషం"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2090
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"వనరు '%s' కొరకు పువరావృత సమావేశాలను క్రమబద్దంచేయలేదు.\n"
+"మీరు ప్రతి సమావేశాన్ని విడిగా నమోదు చేసుకోవాలి."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2108
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "ఎంపికచేసిన సమయ కాలమునందు వనరు '%s' తీరికలేకుండా ఉంది."
+
+#: ../calendar/e-cal-backend-exchange.c:424
+msgid "Authentication failed"
+msgstr "దృవీకరణ విఫలమైంది"
+
+#: ../calendar/e-cal-backend-exchange.c:466
+msgid "Could not find the calendar"
+msgstr "క్యాలెండర్‌ను కనుగొనలేకపోయింది"
+
+#: ../camel/camel-exchange-folder.c:201
+msgid "You cannot expunge in offline mode."
+msgstr "మీరు ఆఫ్‌లైన్ రీతినందు కొట్టివేయలేరు."
+
+#: ../camel/camel-exchange-folder.c:232
+msgid "No Subject"
+msgstr "ఏ సంగతిలేదు"
+
+#: ../camel/camel-exchange-folder.c:387
+msgid "This message is not available in offline mode."
+msgstr "ఈ సందేశం ఆఫ్‌లైన్ రీతినందు అందుబాటులోలేదు."
+
+#: ../camel/camel-exchange-folder.c:614
+msgid "Moving messages"
+msgstr "సందేశాలను కదుల్చుచున్నది"
+
+#: ../camel/camel-exchange-folder.c:615
+msgid "Copying messages"
+msgstr "సందేశాలను నకలుతీయుచున్నది"
+
+#: ../camel/camel-exchange-folder.c:993
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "సంచయం %s ను సృష్టించలేము: %s"
+
+#: ../camel/camel-exchange-folder.c:1003
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%s కొరకు సారాంశమును లోడుచేయలేము"
+
+#: ../camel/camel-exchange-folder.c:1011
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "%s కొరకు క్యాచిని సృష్టించలేము"
+
+#: ../camel/camel-exchange-folder.c:1021
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s కొరకు పత్రికను సృష్టించలేము"
+
+#: ../camel/camel-exchange-folder.c:1072
+msgid "Scanning for changed messages"
+msgstr "మారిన సందేశాలకొరకు స్కానింగ్‌చేస్తోంది"
+
+#: ../camel/camel-exchange-folder.c:1105
+msgid "Fetching summary information for new messages"
+msgstr "కొత్త సందేశాలకొరకు సారాంశంసమాచారాన్ని సంగ్రహిస్తోంది"
+
+#: ../camel/camel-exchange-journal.c:342
+msgid "No folder name found\n"
+msgstr "ఏ సంచయనామము కనబడలేదు\n"
+
+#: ../camel/camel-exchange-journal.c:375 ../mail/mail-stub-exchange.c:3071
+#: ../mail/mail-stub-exchange.c:3121 ../mail/mail-stub-exchange.c:3251
+#: ../mail/mail-stub-exchange.c:3278 ../mail/mail-stub-exchange.c:3331
+#: ../mail/mail-stub-exchange.c:3353
+msgid "Folder doesn't exist"
+msgstr "సచయం లేదు"
+
+#: ../camel/camel-exchange-journal.c:439
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "సందేశాలను ఆఫ్‌లైన్ రీతినందు జతకూర్చలేము: క్యాచి అందుబాటులోలేదు"
+
+#: ../camel/camel-exchange-journal.c:455
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "ఆఫ్‌లైన్‌ రీతినందు సందేశాలను జతకూర్చలేము: %s"
+
+#: ../camel/camel-exchange-provider.c:55
+msgid "Secure or Plaintext Password"
+msgstr "రక్షిత లేదా సాదాపాఠ్య సంకేతపదము"
+
+#: ../camel/camel-exchange-provider.c:56
+#: ../camel/camel-exchange-provider.c:141
+msgid "Plaintext Password"
+msgstr "సాదాపాఠ్యము సంకేతపదము"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:57
+#: ../camel/camel-exchange-provider.c:130
+msgid "Secure Password"
+msgstr "రక్షిత సంకేతపదము"
+
+#: ../camel/camel-exchange-provider.c:63
+msgid "Checking for New Mail"
+msgstr "కొత్త సందేశం కొరకు పరిశీలించుచున్నది"
+
+#: ../camel/camel-exchange-provider.c:65
+msgid "C_heck for new messages in all folders"
+msgstr "అన్ని సంచయాలనందు కొత్త సందేశాలకొరకు పరిశీలించు(_h)"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:73
+msgid "Windows User_name:"
+msgstr "విండోస్ వినియోగదారి నామము(_n):"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:78
+msgid "Global Address List / Active Directory"
+msgstr "గ్లోబల్ చిరునామా జాబితా / క్రియాశీల సంచయం"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:82
+msgid "_Global Catalog server name:"
+msgstr "గ్లోబల్ కాటలాగ్ సేవిక నామము(_G):"
+
+#: ../camel/camel-exchange-provider.c:84
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "పరిమిత సంఖ్య GAL స్పందనలు(_L): %s"
+
+#: ../camel/camel-exchange-provider.c:86
+msgid "Authentication _Type:"
+msgstr "దృవీకరణ రకము (_T):"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "డౌనులోడు పరిమితిని చేరునంతవరకు GAL అన్వేషణను అనుమతించుము (_b)"
+
+#: ../camel/camel-exchange-provider.c:91
+msgid "Options"
+msgstr "ఐచ్చికాలు"
+
+#: ../camel/camel-exchange-provider.c:93
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "సంకేతపదము కాలముతీరినది అను హెచ్చరిక కాలము(_P): %s"
+
+#: ../camel/camel-exchange-provider.c:95
+msgid "Automatically synchroni_ze account locally"
+msgstr "ఖాతాను స్థానికంగా స్వయంచాలకంగా ఏకకాలంచేయుము(_z)"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:98
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "ఈ సేవికపై ఇన్‌బాక్స్‍ నందు కొత్త సందేశాలకు వడపోతలను ఆపాదించుము(_A)"
+
+#: ../camel/camel-exchange-provider.c:100
+msgid "Check new messages for _Junk contents"
+msgstr "నిరర్ధక సారములకొరకు కొత్త సందేశాలను పరిశీలించుము(_J)"
+
+#: ../camel/camel-exchange-provider.c:102
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "ఇన్‌బాక్స్‍ సంచయంనందు నిరర్ధక సందేశములు కొరకు మాత్రమే పరిశీలించుము(_e)"
+
+#: ../camel/camel-exchange-provider.c:112
+msgid "Microsoft Exchange"
+msgstr "మైక్రొసాఫ్ట్‍ ఎక్సేంజి"
+
+#: ../camel/camel-exchange-provider.c:114
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "మెయిల్ (మరియు ఇతర డాటా) ను మైక్రోసాఫ్ట్‍ ఎక్సేంజి సేవికలపై సంభాలించుటకు"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:133
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr "ఈ ఐచ్చికం ఎక్సేంజ్ సేవికకు రక్షిత సంకేతపదం (NTLM) దృవీకరణను ఉపయోగిస్తూ అనుసంధానించబడుతుంది."
+
+#: ../camel/camel-exchange-provider.c:143
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr "ఈ ఐచ్చికం ఎక్సేంజి సేవికకు ప్రామాణిక సాదాపాఠ్యము సంకేతపదము దృవీకరణను ఉపయోగించి అనుసంధానించబడుతుంది."
+
+#: ../camel/camel-exchange-store.c:314
+#, c-format
+msgid "Exchange server %s"
+msgstr "ఎక్సేంజి సేవిక %s"
+
+#: ../camel/camel-exchange-store.c:317
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "%s పై %s కొరకు ఎక్సేంజి ఖాతా"
+
+#: ../camel/camel-exchange-store.c:399
+msgid "Evolution Exchange backend process"
+msgstr "ఎవాల్యూషన్ ఎక్సేంజి బ్యాక్ఎండ్ ప్రోసెస్"
+
+#: ../camel/camel-exchange-store.c:442
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"సేవికకు దృవీకరించలేకపోయినది. (సంకేతపదము సరికానిది?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:495
+#, c-format
+msgid "No such folder %s"
+msgstr "అటువంటి సంచయం %s లేదు"
+
+#: ../camel/camel-exchange-store.c:572
+msgid "Cannot subscribe folder in offline mode."
+msgstr "ఆఫ్‌లైన్ రీతినందు సంచయమును చందాదారిచేయలేము."
+
+#: ../camel/camel-exchange-store.c:589
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "ఆఫ్‌లైన్ రితినందు సంచయంను చందానుండి విరమింపలేము."
+
+#: ../camel/camel-exchange-store.c:727
+msgid "Cannot get folder info in offline mode."
+msgstr "ఆఫ్‌లైన్ రీతినందు సంచయం సమాచారాన్ని పొందలేము."
+
+#: ../camel/camel-exchange-store.c:800
+msgid "Cannot create folder in offline mode."
+msgstr "ఆఫ్‌లైన్ రీతినందు సంచయాన్ని సృష్టించలేము."
+
+#: ../camel/camel-exchange-store.c:827
+msgid "Cannot delete folder in offline mode."
+msgstr "ఆఫ్‌లైన్ రీతినందు సంచయాన్ని తొలగించలేము."
+
+#: ../camel/camel-exchange-store.c:851
+msgid "Cannot rename folder in offline mode."
+msgstr "ఆఫ్‌లైన్ రీతినందు సంచయాన్ని పునఃనామకరణ చేయలేము."
+
+#: ../camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "ఎక్సేంజి బదిలీకరణ ఎక్సేంజి మెయిల్ మూలంతో మాత్రమే ఉపయోగింపబడగలదు"
+
+#: ../camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "సందేశంను పంపలేదు: ఒకటి లేదా ఎక్కువ సరికాని స్వీకరణదారులు"
+
+#: ../camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "సందేశంనందు 'నుండి' చిరునామాను కనుగోనలేకపోయింది"
+
+#: ../camel/camel-stub.c:165 ../camel/camel-stub.c:229
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "సాకెట్‌ను సృష్టించలేకపోయింది: %s"
+
+#: ../camel/camel-stub.c:183
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "%s కు అనుసంధానించ లేకపోయింది: దయచేసి ఎవాల్యూషన్‌ను పునఃప్రారంభించుము"
+
+#: ../camel/camel-stub.c:188 ../camel/camel-stub.c:247
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "%s కు అనుసంధానించలేకపోయింది: %s"
+
+#: ../camel/camel-stub.c:212
+#, c-format
+msgid "Count not read file '%s': %s"
+msgstr "ఫైలు '%s'ను చదువలేము: %s"
+
+#: ../camel/camel-stub.c:220
+#, c-format
+msgid "Wrong size file '%s'"
+msgstr "తప్పుడు పరిమాణపు ఫైలు '%s'"
+
+#: ../camel/camel-stub.c:283
+#, c-format
+msgid "Path too long: %s"
+msgstr "పాత్ చాలా పొడవుగా ఉంది: %s"
+
+#: ../camel/camel-stub.c:318
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "స్థితి తంతిని ప్రారంభించలేకపోయింది: %s"
+
+#: ../camel/camel-stub.c:572
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s కు అనుసంధానము కోల్పోయినది"
+
+#: ../camel/camel-stub.c:576
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "%s తో సంప్రదించుటలో దోషం: %s"
+
+#: ../mail/mail-stub-exchange.c:269 ../mail/mail-stub-exchange.c:965
+msgid "No such folder"
+msgstr "అటువంటి సంచయంలేదు"
+
+#: ../mail/mail-stub-exchange.c:292 ../mail/mail-stub-exchange.c:3048
+#: ../mail/mail-stub-exchange.c:3088 ../mail/mail-stub-exchange.c:3255
+#: ../mail/mail-stub-exchange.c:3305 ../mail/mail-stub-exchange.c:3368
+msgid "Permission denied"
+msgstr "అనుమతి నిరాకరించబడినది"
+
+#: ../mail/mail-stub-exchange.c:787 ../mail/mail-stub-exchange.c:879
+msgid "Could not open folder"
+msgstr "సంచయంను తెరువలేకపోయింది"
+
+#: ../mail/mail-stub-exchange.c:873 ../mail/mail-stub-exchange.c:895
+msgid "Could not open folder: Permission denied"
+msgstr "సంచయాన్ని తెరువలేకపోయింది: అనుమతి నిరాకరించబడింది"
+
+#: ../mail/mail-stub-exchange.c:974
+msgid "Could not create folder."
+msgstr "సంచయాన్ని సృష్టించలేకపోయింది."
+
+#: ../mail/mail-stub-exchange.c:1062
+msgid "Could not open Deleted Items folder"
+msgstr "తొలగించిన అంశముల సంచయాన్ని తెరువలేకపోయింది"
+
+#: ../mail/mail-stub-exchange.c:1393 ../mail/mail-stub-exchange.c:1434
+msgid "Could not get new messages"
+msgstr "కొత్త సందేశాలను పొందలేకపోయింది"
+
+#: ../mail/mail-stub-exchange.c:1637
+msgid "Could not empty Deleted Items folder"
+msgstr "తొలగించిన అంశముల సంచయాన్ని ఖాళీచేయలేకపోయింది"
+
+#: ../mail/mail-stub-exchange.c:1639
+msgid "Permission denied. Could not delete certain messages."
+msgstr "అనుమతి తిరస్కరించబడింది. అటువంటి సందేశములను తొలగించలేదు."
+
+#: ../mail/mail-stub-exchange.c:1712
+msgid "Could not append message; mailbox is over quota"
+msgstr "సందేశాన్ని జతకూర్చలేకపోయింది; మెయిల్‌బాక్స్‍ కోటా మించినది"
+
+#: ../mail/mail-stub-exchange.c:1713
+msgid "Could not append message"
+msgstr "సందేశాన్ని జతకూర్చలేకపోయింది"
+
+#: ../mail/mail-stub-exchange.c:2475
+msgid "No such message"
+msgstr "అటువంటి సందేశం లేదు"
+
+#: ../mail/mail-stub-exchange.c:2556
+msgid "Message has been deleted"
+msgstr "సందేశం తొలగించబడినది"
+
+#: ../mail/mail-stub-exchange.c:2558
+msgid "Error retrieving message"
+msgstr "సందేశాన్ని తిరిగిపొందుటలో దోషం"
+
+#: ../mail/mail-stub-exchange.c:2601
+msgid "Mailbox does not support full-text searching"
+msgstr "మెయిల్‌బాక్స్‍ పూర్తి-పాఠ్యము శోధనను మద్దతీయుటలేదు"
+
+#: ../mail/mail-stub-exchange.c:2699
+msgid "Unable to move/copy messages"
+msgstr "సందేశాలను కదుపలేదు/నకలుతీయ లేదు"
+
+#: ../mail/mail-stub-exchange.c:2965
+msgid "No mail submission URI for this mailbox"
+msgstr "ఈ మెయిల్‌బాక్స్‍‌కు ఏ మెయిల్ సబ్‌మిషన్ URI లేదు"
+
+#: ../mail/mail-stub-exchange.c:2999
+msgid "Server won't accept mail via Exchange transport"
+msgstr "ఎక్సేంజి బదిలీకరణ ద్వారా సేవిక మెయిల్‌ను ఆమోదించదు"
+
+#: ../mail/mail-stub-exchange.c:3001
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"మీ ఖాతాకు <%s> ను ఫ్రమ్ చిరునామాగా ఉపయోగించే అనుమతి\n"
+"కలగిలేదు."
+
+#: ../mail/mail-stub-exchange.c:3013
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"సందేశాన్ని పంపలేకపోయింది.\n"
+"దీనర్ధం మీ ఖాతా కొటామీరిఉండుట కావచ్చు."
+
+#: ../mail/mail-stub-exchange.c:3017
+msgid "Could not send message"
+msgstr "సందేశాన్ని పంపలేకపోయింది"
+
+#: ../mail/mail-stub-exchange.c:3040 ../mail/mail-stub-exchange.c:3093
+#: ../mail/mail-stub-exchange.c:3259 ../mail/mail-stub-exchange.c:3310
+#: ../mail/mail-stub-exchange.c:3374
+msgid "Generic error"
+msgstr "సాదారణ దోషం"
+
+#: ../mail/mail-stub-exchange.c:3044
+msgid "Folder already exists"
+msgstr "సంచయం ఇప్పటికే ఉంది"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "ఎవాల్యూషన్ చిరునామాపుస్తకం ఎక్సేంజి బ్యాక్ఎండ్"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "ఎవాల్యూషన్ క్యాలెండర్ ఎక్సేంజి బ్యాక్ఎండ్"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+#: ../storage/main.c:219
+msgid "Evolution Connector for Microsoft Exchange"
+msgstr "మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధాని"
+
+#: ../storage/exchange-autoconfig-wizard.c:227
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"ఎక్సేంజి సేవికకు అనుసంధానం కాలేకపోయింది.\n"
+"ఆ URL సరైనదగునట్లు చూడుము(\"%s\" ను \"%s\" బదులుగా ప్రయత్నించుము) మరియు మరలా "
+"ప్రయత్నించుము."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"ఎక్సేంజి సేవికను గుర్తించలేకపోయింది.\n"
+"సేవికనామము సరిగా ఉచ్చరింపబడునట్లు చూచుకొనుము మరియు తిరిగి ప్రయత్నించుము."
+
+#: ../storage/exchange-autoconfig-wizard.c:244
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"ఎక్సేంజి సేవికకు దృవీకరించలేకపోయింది.\n"
+"వినియోగదారినామము మరియు సంకేతపదము సరిగాఉండునట్లు చూచుకొనుము మరియు తిరిగి ప్రయత్నించుము."
+
+#: ../storage/exchange-autoconfig-wizard.c:251
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"ఎక్సేంజి సేవికకు దృవీకరించలేకపోయింది.\n"
+"వినియోగదారినామము మరియు సంకేతపదము సరిచూచుకొనుము మరియు మరలా ప్రయత్నించుము.\n"
+"\n"
+"మీ వినియోగదారినామము లో భాగముగా మీరు విండోస్ డొమైన్ నామమును తెలుపవలిసి ఉంటుంది (ఉదా, \"MY-DOMAIN\\%s"
+"\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:263
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"సూచించిన URL వద్ద OWA డాటాను కనుగొనలేకపోయింది.\n"
+"ఆ URL సరైనదగునట్లు చూచుకొని మరలా ప్రయత్నించుము."
+
+#: ../storage/exchange-autoconfig-wizard.c:270
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధానికి ఎక్సేంజి సేవికనందు అచేతనంచేయబడినట్లు లేదా "
+"బ్లాక్‌చేయబడినట్లు అనిపిస్తున్న కొన్ని కార్యక్రమాలను వాడుకొవలసిఉంది.  (ఇది సాదారణంగా అనుకోకుండా.)  మీరు "
+"ఎవాల్యూషన్ అనుసంధానిని ఉపయోగించుకొనుటకు మీ ఎక్సేంజి నిర్వహణాధికారి ఈ కార్యక్రమాన్ని చేతనం చేయవలిసిఉంది.\n"
+"\n"
+"మీ ఎక్సేంజి నిర్వహణాధికారికి సమకూర్చవలసిన సమాచారం కొరకు, ఈ క్రింది లింకును అనుసరించుము:"
+
+#: ../storage/exchange-autoconfig-wizard.c:292
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"మీరు ఇచ్చిన ఎక్సేంజి సేవిక URL ఎక్సేంజి 5.5 సేవిక కొరకు. మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధాని "
+"మైక్రోసాఫ్ట్‍ ఎక్సేంజి 2000 మరియు 2003 ని మాత్రమే మద్దతిస్తుంది."
+
+#: ../storage/exchange-autoconfig-wizard.c:306
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"ఎక్సేంజి ఖాతాను ఆకృతీకరించలేక పోయింది ఎంచేతంటే తెలియని దోషం ఎదురైంది. URL, వినియోగదారినామము, మరియు "
+"సంకేతపదము ను పరిశీలించి, మరియు మరలా ప్రయత్నించుము."
+
+#: ../storage/exchange-autoconfig-wizard.c:350
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"గ్లోబల్ కాటలాగ్ సేవికకు దృవీకరించలేకపోయింది. మీరు వేనకకు వెళ్ళి మరియు మీ వినియోగదారినామములో బాగముగా "
+"విండోస్ ‍డొమైన్‌నామమును తెలుపవలసిఉంది(\"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:357
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"తెలుపబడిన సేవికకు అనుసంధానించబడలేకపోయింది.\n"
+"దయచేసి సేవికనామమును పరిశీలించి మరియు మరలా ప్రయత్నించుము."
+
+#: ../storage/exchange-autoconfig-wizard.c:394
+#: ../storage/exchange-autoconfig-wizard.c:398
+msgid "Unknown"
+msgstr "తెలియని"
+
+#: ../storage/exchange-autoconfig-wizard.c:463
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"ఆకృతీకరణ సిస్టమ్ దోషం.\n"
+"కొత్త ఖాతాను సృష్టించలేకపోయింది."
+
+#: ../storage/exchange-autoconfig-wizard.c:477
+msgid "You may only configure a single Exchange account"
+msgstr "మీరు ఒక ఎక్సేంజి ఖాతానుమాత్రమే ఆకృతీకరించవచ్చు"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "ఆకృతీకరణ విఫలమైంది"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "అయినది"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "ఈమెయిల్ చిరునామా:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "మైక్రోసాఫ్ట్‍ ఎక్సేంజి ఆకృతీకరణ కొరకు ఎవాల్యూషన్ అనుసంధాని"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"మైక్రోసాఫ్ట్‍ ఎక్సేంజ్ కొరకు ఎవాల్యూషన్ అనుసంధాని మీ అవుట్‌లుక్ వెబ్ యాక్సిస్ (OWA) ఖాతానుండి ఖాతా సమాచారాన్ని "
+"ఉపయోగించుకొగలదు.\n"
+"\n"
+"మీ OWA సైటు చిరునామా (URL), వినియోగదారునినామము, మరియు సంకేతపదము ప్రవేశపెట్టండి, అప్పుడు "
+"\"ముందుకు\" నొక్కండి.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value.\n"
+msgstr ""
+"మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధాని మీ సైటుకొరకు గ్లోబల్ కాటలాగ్ రెప్లికాను కనుగొనలేకపోయింది. "
+"దయచేసి మీ గ్లోబల్ కాటలాగ్ సేవిక యొక్క నామమును ప్రవేశపెట్టండి. సరైన విలువకొరకు మీరు మీ సిస్టమ్ నిర్వహణాదికారిని "
+"అడుగవలసి ఉంటుంది.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account.\n"
+msgstr "మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధాని మీ ఎక్సేంజి ఖాతాను ఆకృతీకరించుటకు ఒక సమస్య ఎదురైంది.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid "Exchange Configuration"
+msgstr "ఎక్సేంజి ఆకృతీకరణ"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:15
+msgid "Full Name:"
+msgstr "పూర్తి నామము:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:16
+msgid "GC Server:"
+msgstr "GC సేవిక:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:17
+msgid "Make this my default account"
+msgstr "దీనిని నా అప్రమేయ ఖాతాగా చేయుము"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:18
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Password:"
+msgstr "సంకేతపదము:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid "Remember this password"
+msgstr "ఈ సంకేతపదమును గుర్తుంచుకొనుము"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:21
+msgid "Username:"
+msgstr "వినియోగదారినామము:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:22
+msgid "Welcome"
+msgstr "సుస్వాగతము"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:23
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధానికు సుస్వాగతము.\n"
+"మీ ఎక్సేంజి ఖాతాకు ఎవాల్యూషన్‌ అనుసంధానించు ఆకృతీకరణకు తరువాతి కొన్ని తెరలు సహాయపడతాయి.\n"
+"\n"
+"కొనసాగించుటకు దయచేసి \"ముందుకు\" బటన్‌ను నొక్కుము."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"మీ అనుసంధాని ఖాతా ఇప్పుడు ఉపయోగించుటకు సిద్ధముగా ఉంది. మీ అమరికలను దాయుటకు \"ఆపాదించు\" "
+"బటన్‌ను\n"
+"నొక్కుము."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr "ఖాతా సమాచారం ఈ క్రింది విధంగాఉంటుంది. దయచేసి ఏ దోషాలైనాఉంటే సరిచేసి, అప్పుడు \"ముందుకు\" నొక్కండి.\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:125
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr "ప్రస్తుత సంకేతపదము మీ ఖాతా సంకేతపదముతో సరిపోలడంలేదు. దయచేసి సరైన సంకేతపదమును ప్రవేశపెట్టండి."
+
+#: ../storage/exchange-change-password.c:132
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "ఆ రెండు సంకేతపదములు సరిపోలడంలేదు. దయచేసి సంకేతపదములను తిరిగి-ప్రవేశపెట్టండి."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "సంకేతపదమును మార్చుము"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "సంకేతపదమును నిర్ధారించుము:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "ప్రస్తుత సంకేతపదము:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "కొత్త సంకేతపదము:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "మీ ప్రస్తుత సంకేతపదము కాలముతీరినది. దయచేసి మీ సంకేతపదమును ఇప్పుడు మార్చుము."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "అధికారం (చదువుట, సృష్టించుట)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "క్యాలెం‍డర్(_a):"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "పరిచయాలు(_n):"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "ప్రతినిధి అనుమతులు"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "ప్రతినిధులు"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "సరికూర్పరి (చదువుట, సృష్టించుట, సరిచేయుట)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "ఏదీకాదు"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "దీనికొరకు అనుమతులు"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "పరిశీలకుడు (చదువుట-మాత్రమే)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"ఈ వినియోగదారులు మీ తరుపున మెయిల్స్‍‌ను పంపగలరు మరియు\n"
+"మీరు వారికి ఇచ్చిన అనుమతులతో మీ సంచయాలను వాడుకోగలరు."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "ప్రతినిధి వ్యక్తిగత అంశాలను చూడగలడు(_D)"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "సరిచేయి(_E)"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "ఇన్‌బాక్స్‍(_I):"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "కర్తవ్యాలు(_T):"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "ఎక్సేంజి సంచయం వృక్షం"
+
+#: ../storage/exchange-migrate.c:60
+msgid "Migrating Exchange Folders..."
+msgstr "ఎక్సేంజి సంచయాలను వలసపంపుతోంది..."
+
+#: ../storage/exchange-migrate.c:68
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"ఎవాల్యూషన్ %d.%d.%d నుండి ఎవాల్యూషన్ ఎక్సేంజి ఖాతా సంచయాల యొక్క స్థానము మరియు క్రమము మార్చబడినవి.\n"
+"\n"
+"ఎవాల్యూషన్ మీ సంచయాలను వలసపంపుతున్నప్పుడు దయచేసి ఓర్పుతో ఉండండి..."
+
+#: ../storage/exchange-migrate.c:101
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"హెచ్చరిక: వర్షన్ %d.%d.%d నుండి ఎవాల్యూషన్ ఎక్సేంజి ఖాతా డాటామొత్తంను వలస పంపలేకపోయింది.\n"
+"ఆ డాటా తొలగించబడలేదు, అయితే ఈ ఎవాల్యూషన్ వర్షన్‌తో చూడలేము."
+
+#: ../storage/exchange-migrate.c:132
+#, c-format
+msgid "Migrating `%s':"
+msgstr "`%s' వలసపంపబ‍డుతోంది:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>ప్రస్తుతం,మీ అందుబాటు \"ఆఫీసు బయట\".</b>\n"
+"\n"
+"మీరు మీ అందుబాటుని \"ఆఫీస్ లోపల\" కు మార్చాలనుకుంటున్నారా? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>ఆఫీస్‌కు బయట సందేశము:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>స్థితి:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>మీరు ఆఫీస్‌నందు లేనప్పుడు మీకు మెయిల్‌పంపిన ప్రతి ఒక్కరికి స్వయంచాలకంగా క్రింద తెలిపిన\n"
+"సందేశం పంపబడుతుంది.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "నేను ప్రస్తుతం ఆఫీస్‌నందు ఉన్నాను"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "నేను ప్రస్తుతం ఆఫీస్‌బయట ఉన్నాను"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "వద్దు, అందుబాటును మార్చవద్దు"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "ఆఫీస్ బయట సహాయకుడు"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "సరే, అందుబాటును మార్చు"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "సంకేతపదము కాలపరిమితి హెచ్చరిక..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "మీ సంకేతపదము కాలపరిమితి 7 రోజులలో మించుతుంది..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "సంకేతపదమును మార్చు(_C)"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "సరే బటన్(_b)"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>అనుమతులు</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "తొలగించలేము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "సరిచేయలేము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "అంశములను సృష్టించుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "ఉపసంచయాలను సృష్టించుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "ఏ అంశాలనైనా తొలగించుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "స్వంత అంశాలను తొలగించుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "ఏ అంశాలనైనా సరిచేయుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "స్వంత అంశాలను సరిచేయుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "సంచయం పరిచయాలు"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "సంచయం యజమాని"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "సంచయం దృశ్యత"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "అంశములను చదువుము"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "పాత్ర: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "అనుసంధానించబడుచున్నది..."
+
+#: ../storage/ximian-connector-setup.c:75
+msgid "Evolution Connector for Microsoft Exchange Setup Tool"
+msgstr "మైక్రోసాఫ్ట్‍ ఎక్సేంజి కొరకు ఎవాల్యూషన్ అనుసంధాని అమర్పు సాధనము"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "మీ ఎక్సేంజ్ సేవిక సంకేతపదమును మార్చుము"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "సంచయం పరిమాణం(_S)"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "వ్యక్తిగత సంచయాల యొక్క పరిమాణంను పొందుము"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "ఇతర వినియోగదారుల సంచయానికి చందాదారు కమ్ము..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "సేవికలోని వేరొక వినియోగదారికి చెందిన సంచయంకు చందాదారు కండి"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid "Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "\"ఇతర వినియోగదారి సంచయంకు చందాదారు కమ్ము\" తొ జతచేయబడిన సంచయంనుండి చందా విరమించుకొనుము"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "న"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "మీ ఆఫీస్-కు-బయట అందుబాటును మరియు స్వయంచాలకప్రత్యుత్తరం దర్శించండి లేదా మార్చండి"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "ఎక్సేంజి సంకేతపదమును మార్చండి(_C)..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "ప్రతినిధి సహాయకి(_D)"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "ఆఫీస్‌ కు బయట సహాయకి(_O)"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "ఇతర వినియోగదారి సంచయంనుండి చందావిరమించుకొనుము(_U)"
+

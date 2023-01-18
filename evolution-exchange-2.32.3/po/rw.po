@@ -1,0 +1,1832 @@
+# translation of evolution-exchange to Kinyarwanda.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the evolution-exchange package.
+# Steve Murphy <murf@e-tools.com>, 2005
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005..
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-31 22:09-0700\n"
+"PO-Revision-Date: 2005-03-31 20:55-0700\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"ULL NAME <EMAIL@ADDRESS>\n"
+
+# 5374
+#: addressbook/e-book-backend-exchange.c:1834
+#: addressbook/e-book-backend-gal.c:1351 storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Gushakisha..."
+
+#: addressbook/e-book-backend-gal.c:243
+#, fuzzy
+msgid "Reconnecting to LDAP server..."
+msgstr "Kuri Seriveri"
+
+#: addressbook/e-book-backend-gal.c:1225
+#, fuzzy
+msgid "Receiving LDAP search results..."
+msgstr "Gushaka Ibisubizo ku"
+
+#: addressbook/e-book-backend-gal.c:1372
+#, fuzzy
+msgid "Error performing search"
+msgstr "Gushaka"
+
+#: calendar/e-cal-backend-exchange.c:312
+#, fuzzy
+msgid "Folder not marked for offline support"
+msgstr "OYA cy/ byagarajwe kugirango Ntibicometse kuri interineti Gushigikira"
+
+#: calendar/e-cal-backend-exchange-calendar.c:1652
+#, fuzzy, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr "Kuri Igenabihe kugirango Igitabo"
+
+#: calendar/e-cal-backend-exchange-calendar.c:1671
+#, fuzzy, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "ni Irahuze i Byahiswemo Igihe Igihe"
+
+#: camel/camel-exchange-folder.c:220
+#, fuzzy
+msgid "Can only expunge in Deleted Items folder"
+msgstr "in Ububiko"
+
+#: camel/camel-exchange-folder.c:244
+#, fuzzy
+msgid "No Subject"
+msgstr "Nta kivugwaho"
+
+#: camel/camel-exchange-folder.c:371
+#, fuzzy
+msgid "This message is not available in offline mode."
+msgstr "Ubutumwa ni OYA Bihari in Ntibicometse kuri interineti Ubwoko"
+
+#: camel/camel-exchange-folder.c:606
+#, fuzzy
+msgid "Moving messages"
+msgstr "Ubutumwa"
+
+#: camel/camel-exchange-folder.c:607
+#, fuzzy
+msgid "Copying messages"
+msgstr "Ubutumwa"
+
+#: camel/camel-exchange-folder.c:938
+#, fuzzy, c-format
+msgid "Could not create directory %s: %s"
+msgstr "OYA Kurema bushyinguro"
+
+#: camel/camel-exchange-folder.c:948
+#, fuzzy, c-format
+msgid "Could not load summary for %s"
+msgstr "OYA Ibirimo Inshamake kugirango"
+
+#: camel/camel-exchange-folder.c:956
+#, fuzzy, c-format
+msgid "Could not create cache for %s"
+msgstr "OYA Kurema Ubwihisho kugirango"
+
+#: camel/camel-exchange-folder.c:966
+#, fuzzy, c-format
+msgid "Could not create journal for %s"
+msgstr "OYA Kurema Ikinyamakuru kugirango"
+
+#: camel/camel-exchange-folder.c:1011
+#, fuzzy
+msgid "Scanning for changed messages"
+msgstr "kugirango Byahinduwe Ubutumwa"
+
+#: camel/camel-exchange-folder.c:1037
+#, fuzzy
+msgid "Fetching summary information for new messages"
+msgstr "Inshamake Ibisobanuro kugirango Gishya Ubutumwa"
+
+#: camel/camel-exchange-journal.c:272
+#, fuzzy
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "Kongeraho... Ubutumwa in Ntibicometse kuri interineti Ubwoko Ubwihisho"
+
+#: camel/camel-exchange-journal.c:288
+#, fuzzy, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Kongeraho... Ubutumwa in Ntibicometse kuri interineti Ubwoko"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: camel/camel-exchange-provider.c:46
+msgid "Windows User_name:"
+msgstr ""
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: camel/camel-exchange-provider.c:51
+msgid "Global Address List / Active Directory"
+msgstr ""
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: camel/camel-exchange-provider.c:55
+#, fuzzy
+msgid "Global Catalog server name:"
+msgstr "Seriveri Izina:"
+
+#: camel/camel-exchange-provider.c:57
+#, fuzzy, c-format
+msgid "Limit number of GAL responses: %s"
+msgstr "Umubare Bya"
+
+# basctl/source\basicide\moduldlg.src:RID_DLG_LIBS.RID_FL_OPTIONS.text
+#: camel/camel-exchange-provider.c:60
+msgid "Options"
+msgstr "Amahitamo"
+
+#: camel/camel-exchange-provider.c:62
+#, fuzzy, c-format
+msgid "Password Expiry Warning period: %s"
+msgstr "Igihe"
+
+#: camel/camel-exchange-provider.c:64
+#, fuzzy
+msgid "Automatically synchronize account locally"
+msgstr "Kuringaniza Aderesi"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: camel/camel-exchange-provider.c:67
+#, fuzzy
+msgid "Apply filters to new messages in Inbox on this server"
+msgstr "Muyunguruzi Kuri Gishya Ubutumwa in ku iyi Seriveri"
+
+#: camel/camel-exchange-provider.c:69
+#, fuzzy
+msgid "Check new messages for Junk contents"
+msgstr "Gishya Ubutumwa kugirango Ibigize"
+
+#: camel/camel-exchange-provider.c:71
+#, fuzzy
+msgid "Only check for Junk messages in the Inbox folder"
+msgstr "Kugenzura... kugirango Ubutumwa in i Ububiko"
+
+#: camel/camel-exchange-provider.c:88
+msgid "Microsoft Exchange"
+msgstr ""
+
+#: camel/camel-exchange-provider.c:90
+#, fuzzy
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "Ubutumwa Na Ikindi Ibyatanzwe ku"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: camel/camel-exchange-provider.c:106
+msgid "Secure Password"
+msgstr ""
+
+#. i18n: "NTLM" probably doesn't translate
+#: camel/camel-exchange-provider.c:109
+#, fuzzy
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr "Ihitamo Kwihuza Kuri i Seriveri ikoresha Ijambobanga..."
+
+#: camel/camel-exchange-provider.c:117
+#, fuzzy
+msgid "Plaintext Password"
+msgstr "Plaintext"
+
+#: camel/camel-exchange-provider.c:119
+#, fuzzy
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr "Ihitamo Kwihuza Kuri i Seriveri ikoresha Bisanzwe Ijambobanga..."
+
+#: camel/camel-exchange-store.c:267
+#, fuzzy, c-format
+msgid "Exchange server %s"
+msgstr "Seriveri"
+
+#: camel/camel-exchange-store.c:270
+#, fuzzy, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Aderesi kugirango ku"
+
+#: camel/camel-exchange-store.c:297
+msgid "Evolution Exchange backend process"
+msgstr ""
+
+#: camel/camel-exchange-store.c:345
+#, fuzzy, c-format
+msgid "No such folder %s"
+msgstr "Ububiko"
+
+#: camel/camel-exchange-store.c:473
+#, fuzzy
+msgid "Cannot get folder info in offline mode."
+msgstr "Kubona Ububiko Ibisobanuro in Ntibicometse kuri interineti Ubwoko"
+
+#: camel/camel-exchange-store.c:537
+#, fuzzy
+msgid "Cannot create folder in offline mode."
+msgstr "Kurema Ububiko in Ntibicometse kuri interineti Ubwoko"
+
+#: camel/camel-exchange-store.c:564
+#, fuzzy
+msgid "Cannot delete folder in offline mode."
+msgstr "Gusiba Ububiko in Ntibicometse kuri interineti Ubwoko"
+
+#: camel/camel-exchange-store.c:580
+#, fuzzy
+msgid "Cannot rename folder in offline mode."
+msgstr "Guhindura izina Ububiko in Ntibicometse kuri interineti Ubwoko"
+
+#: camel/camel-exchange-transport.c:110
+#, fuzzy
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Na: Ubutumwa Inkomoko"
+
+#: camel/camel-exchange-transport.c:121
+#, fuzzy
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Kohereza Ubutumwa Cyangwa Birenzeho Sibyo Abandikiwe..."
+
+#: camel/camel-exchange-transport.c:131
+#, fuzzy
+msgid "Could not find 'From' address in message"
+msgstr "OYA Gushaka Aderesi in Ubutumwa"
+
+#: camel/camel-stub.c:134
+#, fuzzy, c-format
+msgid "Could not create socket: %s"
+msgstr "OYA Kurema"
+
+#: camel/camel-stub.c:149
+#, fuzzy, c-format
+msgid "Could not connect to %s: %s"
+msgstr "OYA Kwihuza Kuri"
+
+#: camel/camel-stub.c:179
+#, c-format
+msgid "Path too long: %s"
+msgstr ""
+
+#: camel/camel-stub.c:205
+#, fuzzy, c-format
+msgid "Could not start status thread: %s"
+msgstr "OYA Gutangira Imimerere Urudodo"
+
+#: camel/camel-stub.c:457
+#, fuzzy, c-format
+msgid "Lost connection to %s"
+msgstr "Ukwihuza Kuri"
+
+#: camel/camel-stub.c:461
+#, fuzzy, c-format
+msgid "Error communicating with %s: %s"
+msgstr "Na:"
+
+#: lib/e2k-autoconfig.c:1471 storage/exchange-autoconfig-wizard.c:224
+#, fuzzy, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr "OYA Kwihuza Kuri i Seriveri i ni Bya Na"
+
+#: lib/e2k-autoconfig.c:1480 storage/exchange-autoconfig-wizard.c:232
+#, fuzzy
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr "OYA Seriveri i Seriveri Izina: ni Na"
+
+#: lib/e2k-autoconfig.c:1490 storage/exchange-autoconfig-wizard.c:241
+#, fuzzy
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr "OYA Kuri i Seriveri i Izina ry'ukoresha Na Ijambobanga... Na"
+
+#: lib/e2k-autoconfig.c:1498 storage/exchange-autoconfig-wizard.c:248
+#, fuzzy, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"OYA Kuri i Seriveri i Izina ry'ukoresha Na Ijambobanga... Na Gicurasi Kuri i "
+"Urwego Izina: Nka Bya Izina ry'ukoresha S"
+
+#: lib/e2k-autoconfig.c:1511 storage/exchange-autoconfig-wizard.c:260
+#, fuzzy
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr "OYA Gushaka Ibyatanzwe ku i i ni Na"
+
+#: lib/e2k-autoconfig.c:1519
+#, fuzzy
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:\n"
+"http://support.novell.com/cgi-bin/search/searchtid.cgi?/ximian/ximian328."
+"html "
+msgstr "Novell."
+
+#: lib/e2k-autoconfig.c:1535 storage/exchange-autoconfig-wizard.c:288
+#, fuzzy
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr "Seriveri ni kugirango 5 5 Na"
+
+#: lib/e2k-autoconfig.c:1544 storage/exchange-autoconfig-wizard.c:301
+#, fuzzy
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"OYA Kugena Imiterere Aderesi Kitazwi Ikosa i Izina ry'ukoresha Na "
+"Ijambobanga... Na"
+
+#: lib/e2k-autoconfig.c:1566
+#, fuzzy, c-format
+msgid "Enter password for %s"
+msgstr "Ijambobanga... kugirango"
+
+# uui/source\passworddlg.src:DLG_UUI_PASSWORD.FT_PASSWORD.text
+#: lib/e2k-autoconfig.c:1567 storage/exchange-account.c:862
+msgid "Enter password"
+msgstr "kwinjiza ijambobanga"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+#: lib/e2k-security-descriptor.c:847
+msgid "Owner"
+msgstr ""
+
+#: lib/e2k-security-descriptor.c:857
+msgid "Publishing Editor"
+msgstr ""
+
+#: lib/e2k-security-descriptor.c:865
+msgid "Editor"
+msgstr "Muhinduzi"
+
+#: lib/e2k-security-descriptor.c:872
+msgid "Publishing Author"
+msgstr ""
+
+# sc/source\ui\miscdlgs\acredlin.src:RID_POPUP_CHANGES.SC_SUB_SORT.SC_SORT_AUTHOR.text
+#: lib/e2k-security-descriptor.c:878
+msgid "Author"
+msgstr "Umwanditsi"
+
+#: lib/e2k-security-descriptor.c:883
+msgid "Non-editing Author"
+msgstr ""
+
+#: lib/e2k-security-descriptor.c:887
+msgid "Reviewer"
+msgstr ""
+
+#: lib/e2k-security-descriptor.c:889
+msgid "Contributor"
+msgstr ""
+
+# goodies/source\filter.vcl\eps\dlgeps.src:DLG_EXPORT_EPS.RB_COMPRESSION_NONE.text
+#: lib/e2k-security-descriptor.c:891 storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Nta na kimwe"
+
+#: lib/e2k-security-descriptor.c:906 storage/exchange-delegates-user.c:144
+#, fuzzy
+msgid "Custom"
+msgstr "Guhanga"
+
+#: lib/e2k-user-dialog.c:144
+msgid "Select User"
+msgstr "Hitamo ukoresha"
+
+#: lib/e2k-user-dialog.c:182
+msgid "Addressbook..."
+msgstr ""
+
+#: mail/mail-stub-exchange.c:231
+#, fuzzy
+msgid "No such folder"
+msgstr "Ububiko"
+
+#: mail/mail-stub-exchange.c:248 mail/mail-stub-exchange.c:2320
+#: mail/mail-stub-exchange.c:2358 mail/mail-stub-exchange.c:2418
+#: shell/e-storage.c:573 storage/xc-commands.c:320
+msgid "Permission denied"
+msgstr ""
+
+#: mail/mail-stub-exchange.c:546
+#, fuzzy
+msgid "No such folder."
+msgstr "Ububiko"
+
+#: mail/mail-stub-exchange.c:555
+#, fuzzy
+msgid "Could not create folder."
+msgstr "OYA Kurema Ububiko"
+
+#: mail/mail-stub-exchange.c:603 mail/mail-stub-exchange.c:621
+#, fuzzy
+msgid "Could not open folder: Permission denied"
+msgstr "OYA Gufungura Ububiko"
+
+#: mail/mail-stub-exchange.c:607 mail/mail-stub-exchange.c:720
+#, fuzzy
+msgid "Could not open folder"
+msgstr "OYA Gufungura Ububiko"
+
+#: mail/mail-stub-exchange.c:775
+#, fuzzy
+msgid "Could not open Deleted Items folder"
+msgstr "OYA Gufungura Ububiko"
+
+#: mail/mail-stub-exchange.c:1105 mail/mail-stub-exchange.c:1146
+#, fuzzy
+msgid "Could not get new messages"
+msgstr "OYA Kubona Gishya Ubutumwa"
+
+#: mail/mail-stub-exchange.c:1311
+#, fuzzy
+msgid "Could not empty Deleted Items folder"
+msgstr "OYA ubusa Ububiko"
+
+#: mail/mail-stub-exchange.c:1383
+#, fuzzy
+msgid "Could not append message; mailbox is over quota"
+msgstr "OYA Kongeraho... Ubutumwa ni KURI Igice"
+
+#: mail/mail-stub-exchange.c:1384
+#, fuzzy
+msgid "Could not append message"
+msgstr "OYA Kongeraho... Ubutumwa"
+
+#: mail/mail-stub-exchange.c:1867
+#, fuzzy
+msgid "No such message"
+msgstr "Ubutumwa"
+
+#: mail/mail-stub-exchange.c:1920
+#, fuzzy
+msgid "Message has been deleted"
+msgstr "Cyasibwe"
+
+#: mail/mail-stub-exchange.c:1922
+#, fuzzy
+msgid "Error retrieving message"
+msgstr "Ubutumwa"
+
+#: mail/mail-stub-exchange.c:1964
+#, fuzzy
+msgid "Mailbox does not support full-text searching"
+msgstr "OYA Gushigikira Umwandiko Ishakisha"
+
+#: mail/mail-stub-exchange.c:2062
+#, fuzzy
+msgid "Unable to move/copy messages"
+msgstr "Kuri Kwimura Gukoporora Ubutumwa"
+
+#: mail/mail-stub-exchange.c:2235
+#, fuzzy
+msgid "No mail submission URI for this mailbox"
+msgstr "Ubutumwa Icyoherejwe kugirango iyi"
+
+#: mail/mail-stub-exchange.c:2271
+#, fuzzy
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Kwemera Ubutumwa Biturutse"
+
+#: mail/mail-stub-exchange.c:2273
+#, fuzzy, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr "Aderesi OYA Kuri Gukoresha Nka a Aderesi"
+
+#: mail/mail-stub-exchange.c:2285
+#, fuzzy
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr "OYA Kohereza Ubutumwa Impuzandengo- Aderesi ni KURI Igice"
+
+#: mail/mail-stub-exchange.c:2289
+#, fuzzy
+msgid "Could not send message"
+msgstr "OYA Kohereza Ubutumwa"
+
+#: mail/mail-stub-exchange.c:2312 mail/mail-stub-exchange.c:2363
+#: mail/mail-stub-exchange.c:2422 shell/e-storage.c:557
+#: storage/xc-commands.c:324
+#, fuzzy
+msgid "Generic error"
+msgstr "Ikosa"
+
+#: mail/mail-stub-exchange.c:2316 storage/xc-commands.c:314
+msgid "Folder already exists"
+msgstr ""
+
+#: mail/mail-stub-exchange.c:2343 mail/mail-stub-exchange.c:2385
+#: mail/mail-stub-exchange.c:2414
+msgid "Folder doesn't exist"
+msgstr ""
+
+#: shell/e-folder-creation-dialog.c:138
+#, fuzzy, c-format
+msgid ""
+"Cannot create the specified folder:\n"
+"%s"
+msgstr "Kurema i Ububiko"
+
+#: shell/e-folder-creation-dialog.c:179
+#, fuzzy, c-format
+msgid "The specified folder name is not valid: %s"
+msgstr "Ububiko Izina: ni OYA Byemewe"
+
+#: shell/e-folder-creation-dialog.c:310
+msgid "Create New Folder"
+msgstr "Rema idosiye nshya"
+
+#: shell/e-folder-creation-dialog.glade.h:1
+#: storage/exchange-autoconfig-wizard.glade.h:1
+#: storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: shell/e-folder-creation-dialog.glade.h:2
+#, fuzzy
+msgid "Folder _name:"
+msgstr "Izina ry'ububiko"
+
+#: shell/e-folder-creation-dialog.glade.h:3
+#, fuzzy
+msgid "Folder _type:"
+msgstr "Ubwoko bw'ububiko:"
+
+#: shell/e-folder-creation-dialog.glade.h:4
+#, fuzzy
+msgid "Specify where to create the folder:"
+msgstr "Kuri Kurema i Ububiko"
+
+#: shell/e-folder-dnd-bridge.c:52
+#, fuzzy, c-format
+msgid ""
+"Cannot transfer folder:\n"
+"%s"
+msgstr "Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:62
+#, fuzzy, c-format
+msgid ""
+"Cannot delete folder:\n"
+"%s"
+msgstr "Gusiba Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:115
+#, fuzzy, c-format
+msgid "Really delete folder \"%s\"?"
+msgstr "Gusiba Ububiko"
+
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\basidesh.src:RID_POPUP_TABBAR.SID_BASICIDE_DELETECURRENT.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\brkdlg.src:RID_BASICIDE_BREAKPOINTDLG.RID_PB_DEL.text
+#: shell/e-folder-misc-dialogs.c:129
+#, fuzzy, c-format
+msgid "Delete \"%s\""
+msgstr "Gusiba"
+
+#: shell/e-folder-misc-dialogs.c:154
+#, fuzzy, c-format
+msgid ""
+"Cannot rename folder:\n"
+"%s"
+msgstr "Guhindura izina Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:188
+#, fuzzy, c-format
+msgid "Rename the \"%s\" folder to:"
+msgstr "i Ububiko Kuri"
+
+#: shell/e-folder-misc-dialogs.c:191
+msgid "Rename Folder"
+msgstr "Hindura izina ry'ububiko"
+
+#: shell/e-folder-misc-dialogs.c:205
+#, fuzzy, c-format
+msgid "A folder named \"%s\" already exists. Please use a different name."
+msgstr "A Ububiko Gukoresha a Izina:"
+
+#. It would be nice to insensitivize the OK button appropriately
+#. instead of doing this, but unfortunately we can't do this for the
+#. Bonobo control.
+#: shell/e-folder-misc-dialogs.c:451
+#, fuzzy
+msgid "Please select a user."
+msgstr "Guhitamo a Ukoresha:"
+
+# 4429
+#: shell/e-folder-misc-dialogs.c:553
+#, fuzzy
+msgid "Opening Folder"
+msgstr "gufungura dosiye"
+
+# 4429
+#: shell/e-folder-misc-dialogs.c:559
+#, fuzzy, c-format
+msgid "Opening Folder \"%s\""
+msgstr "gufungura dosiye"
+
+# vcl/source\src\units.src:SV_FUNIT_STRINGS.10.text
+#: shell/e-folder-misc-dialogs.c:564
+#, fuzzy, c-format
+msgid "in \"%s\" ..."
+msgstr "in"
+
+#: shell/e-folder-misc-dialogs.c:631
+#, fuzzy, c-format
+msgid "Could not open other user's folder: %s."
+msgstr "OYA Gufungura Ikindi Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:681
+#, fuzzy
+msgid "Cannot find the specified other user's folder."
+msgstr "Gushaka i Ikindi Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:713
+#, fuzzy, c-format
+msgid ""
+"Cannot unsubscribe from folder:\n"
+"%s"
+msgstr "Kwivana aho wiyandikishe Bivuye Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:766
+#, fuzzy, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "Kwivana aho wiyandikishe Bivuye Ububiko"
+
+#: shell/e-folder-misc-dialogs.c:780
+#, fuzzy, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "Bivuye"
+
+#: shell/e-foreign-folder-dialog.glade.h:1
+msgid "Open Other User's Folder"
+msgstr ""
+
+# svtools/source\dialogs\logindlg.src:DLG_LOGIN.FT_LOGIN_ACCOUNT.text
+#: shell/e-foreign-folder-dialog.glade.h:2
+#, fuzzy
+msgid "_Account:"
+msgstr "Konti:"
+
+#: shell/e-foreign-folder-dialog.glade.h:3
+#, fuzzy
+msgid "_Folder Name:"
+msgstr "Izina ry'ububiko"
+
+#: shell/e-foreign-folder-dialog.glade.h:4
+#, fuzzy
+msgid "_User:"
+msgstr "Ukoresha:"
+
+#: shell/e-storage-set-view.etspec.h:1
+msgid "Checkbox"
+msgstr ""
+
+# sfx2/source\explorer\explorer.src:STR_SFX_FOLDER.text
+#: shell/e-storage-set-view.etspec.h:2
+msgid "Folder"
+msgstr "Ububiko"
+
+# padmin/source\padialog.src:RID_AFMERROR_OK.text
+#: shell/e-storage.c:555
+msgid "No error"
+msgstr "Nta kosa"
+
+#: shell/e-storage.c:559
+#, fuzzy
+msgid "A folder with the same name already exists"
+msgstr "A Ububiko Na: i Izina:"
+
+#: shell/e-storage.c:561
+#, fuzzy
+msgid "The specified folder type is not valid"
+msgstr "Ububiko Ubwoko ni OYA Byemewe"
+
+#: shell/e-storage.c:563
+#, fuzzy
+msgid "I/O error"
+msgstr "Ikosa"
+
+#: shell/e-storage.c:565
+#, fuzzy
+msgid "Not enough space to create the folder"
+msgstr "Umwanya Kuri Kurema i Ububiko"
+
+#: shell/e-storage.c:567
+#, fuzzy
+msgid "The folder is not empty"
+msgstr "Ububiko ni OYA ubusa"
+
+#: shell/e-storage.c:569
+#, fuzzy
+msgid "The specified folder was not found"
+msgstr "Ububiko OYA Byabonetse"
+
+#: shell/e-storage.c:571
+#, fuzzy
+msgid "Function not implemented in this storage"
+msgstr "OYA in iyi"
+
+#: shell/e-storage.c:575
+#, fuzzy
+msgid "Operation not supported"
+msgstr "OYA"
+
+#: shell/e-storage.c:577
+#, fuzzy
+msgid "The specified type is not supported in this storage"
+msgstr "Ubwoko ni OYA in iyi"
+
+#: shell/e-storage.c:579
+#, fuzzy
+msgid "The specified folder cannot be modified or removed"
+msgstr "Ububiko Byahinduwe Cyangwa Cyavanyweho"
+
+#: shell/e-storage.c:581
+#, fuzzy
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr "Ubwoko a Ububiko a Bya Bya"
+
+#: shell/e-storage.c:583
+#, fuzzy
+msgid "Cannot create a folder with that name"
+msgstr "Kurema a Ububiko Na: Izina:"
+
+#: shell/e-storage.c:585
+#, fuzzy
+msgid "This operation cannot be performed in off-line mode"
+msgstr "in Bidakora Umurongo Ubwoko"
+
+# # @name OTHER
+# # @loc none
+#: shell/e-storage.c:587 storage/exchange-account.c:1462
+msgid "Unknown error"
+msgstr "Ikosa itazwi"
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "*Control*F5"
+msgstr ""
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Addressbook Exchange backend"
+msgstr ""
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Evolution Calendar Exchange backend"
+msgstr ""
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:4
+msgid "Evolution Exchange Component"
+msgstr ""
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:5
+msgid "Exchange"
+msgstr ""
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:6
+#, fuzzy
+msgid "Ximian Connector for Exchange"
+msgstr "kugirango"
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:7
+msgid "_Exchange"
+msgstr ""
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#: storage/exchange-account.c:572
+#, fuzzy, c-format
+msgid "%s's Folders"
+msgstr "%s'S"
+
+#: storage/exchange-account.c:857
+#, fuzzy, c-format
+msgid "%sEnter password for %s"
+msgstr "%sEnterIjambobanga... kugirango"
+
+#. email id is not proper, we return instead of trying nt_domain
+#: storage/exchange-account.c:1057
+#, fuzzy
+msgid "Cannot change password due to configuration problems"
+msgstr "Guhindura>> Ijambobanga... Kuri Iboneza"
+
+#: storage/exchange-account.c:1080
+#, fuzzy
+msgid ""
+"Server rejected password because it is too weak.\n"
+"Try again with a different password."
+msgstr "Byanzwe Ijambobanga... ni Na: a Ijambobanga..."
+
+#: storage/exchange-account.c:1085
+#, fuzzy
+msgid "Could not change password"
+msgstr "OYA Guhindura>> Ijambobanga..."
+
+#: storage/exchange-account.c:1178
+msgid "Personal Folders"
+msgstr ""
+
+#: storage/exchange-account.c:1193
+msgid "Favorite Public Folders"
+msgstr ""
+
+#. i18n: Outlookism
+#: storage/exchange-account.c:1210
+msgid "All Public Folders"
+msgstr ""
+
+#. i18n: Outlookism
+#: storage/exchange-account.c:1224
+msgid "Global Address List"
+msgstr ""
+
+#: storage/exchange-account.c:1315
+#, fuzzy
+msgid "Exchange Account is offline. Cannot display folders\n"
+msgstr "ni Ntibicometse kuri interineti Kugaragaza"
+
+#: storage/exchange-account.c:1373
+#, fuzzy
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr "OYA Kuri Seriveri"
+
+#: storage/exchange-account.c:1378
+#, fuzzy
+msgid ""
+"Could not authenticate to server.\n"
+"\n"
+"This probably means that your server requires you\n"
+"to specify the Windows domain name as part of your\n"
+"username (eg, \"DOMAIN\\user\").\n"
+"\n"
+"Or you might have just typed your password wrong.\n"
+"\n"
+msgstr "OYA Kuri Seriveri Seriveri i Urwego Izina: Nka Bya Ijambobanga..."
+
+#: storage/exchange-account.c:1420
+#, fuzzy, c-format
+msgid "Mailbox for %s is not on this server."
+msgstr "kugirango ni OYA ku iyi Seriveri"
+
+#: storage/exchange-account.c:1425
+#, fuzzy, c-format
+msgid ""
+"The server '%s' is running Exchange 5.5 and is\n"
+"therefore not compatible with Ximian Connector"
+msgstr "Seriveri ni 5 5 Na OYA Na:"
+
+#: storage/exchange-account.c:1432
+#, fuzzy, c-format
+msgid ""
+"Could not find Exchange Web Storage System at %s.\n"
+"If OWA is running on a different path, you must specify that in the\n"
+"account configuration dialog."
+msgstr "OYA Gushaka ku ni ku a Inzira in Iboneza Ikiganiro"
+
+#: storage/exchange-account.c:1440
+#, fuzzy, c-format
+msgid "No mailbox for user %s on %s.\n"
+msgstr "kugirango Ukoresha: ku"
+
+#: storage/exchange-account.c:1446 storage/exchange-account.c:1452
+#: storage/exchange-account.c:1460
+#, fuzzy, c-format
+msgid "Could not connect to server %s: %s"
+msgstr "OYA Kwihuza Kuri Seriveri"
+
+#: storage/exchange-account.c:1448
+#, fuzzy
+msgid "Could not resolve hostname"
+msgstr "OYA Izina ry'inturo:"
+
+#: storage/exchange-account.c:1454
+#, fuzzy
+msgid "Network error"
+msgstr "Ikosa"
+
+#: storage/exchange-autoconfig-wizard.c:267
+#, fuzzy
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Kuri ku i Kuri Yahagaritswe Cyangwa ni Kuri Gushoboza iyi in Itondekanya "
+"kugirango Kuri Kuri Gukoresha Ibisobanuro Kuri Kuri umuyobozi/ uyobora i "
+"Ihuza munsi"
+
+#: storage/exchange-autoconfig-wizard.c:345
+#, fuzzy, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"OYA Kuri i Seriveri Gicurasi Kuri Gyayo Inyuma Na i Urwego Izina: Nka Bya "
+"Izina ry'ukoresha S"
+
+#: storage/exchange-autoconfig-wizard.c:352
+#, fuzzy
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr "OYA Kwihuza Kuri Seriveri Kugenzura... i Seriveri Izina: Na"
+
+# filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_UNKNOWN_APPLICATION.text
+#: storage/exchange-autoconfig-wizard.c:389
+#: storage/exchange-autoconfig-wizard.c:393
+msgid "Unknown"
+msgstr "Kitazwi"
+
+#: storage/exchange-autoconfig-wizard.c:477
+#, fuzzy
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr "Sisitemu Ikosa Kuri Kurema Gishya Aderesi"
+
+#: storage/exchange-autoconfig-wizard.c:491
+#: storage/exchange-config-listener.c:604
+#, fuzzy
+msgid "You may only configure a single Exchange account"
+msgstr "Gicurasi Kugena Imiterere a UMWE Aderesi"
+
+#: storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr ""
+
+# Statusbar
+#: storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Byakozwe"
+
+#: storage/exchange-autoconfig-wizard.glade.h:4
+#, fuzzy
+msgid "Email Address:"
+msgstr "Aderesi ya imeli:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr ""
+
+#: storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr ""
+
+#: storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr ""
+
+#: storage/exchange-autoconfig-wizard.glade.h:8
+#, fuzzy
+msgid "Make this my default account"
+msgstr "iyi Mburabuzi Aderesi"
+
+#: storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr ""
+
+# sc/source\ui\src\scstring.src:SCSTR_PASSWORD.text
+#: storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "Ijambobanga:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:11
+#, fuzzy
+msgid "Remember this password"
+msgstr "iyi Ijambobanga..."
+
+#: storage/exchange-autoconfig-wizard.glade.h:12
+#, fuzzy
+msgid "Username:"
+msgstr "Izina ry'ukoresha"
+
+#: storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Urakaza neza"
+
+#: storage/exchange-autoconfig-wizard.glade.h:14
+#, fuzzy
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Kuri kugirango Komeza>> Ifashayobora Kugena Imiterere Kwihuza Kuri Aderesi "
+"Kanda i Akabuto Kuri urifuzagukomeza"
+
+#: storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr ""
+
+#: storage/exchange-autoconfig-wizard.glade.h:20
+#, fuzzy
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Gukoresha Aderesi Ibisobanuro Bivuye Aderesi Ipaji Aderesi Izina ry'ukoresha "
+"Na Ijambobanga... Hanyuma Kanda"
+
+#: storage/exchange-autoconfig-wizard.glade.h:24
+#, fuzzy
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"OYA Gushaka i kugirango Ipaji Injiza i Izina: Bya Seriveri Gicurasi Kuri "
+"Sisitemu umuyobozi/ uyobora kugirango i Agaciro"
+
+#: storage/exchange-autoconfig-wizard.glade.h:26
+#, fuzzy
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr "a Aderesi"
+
+#: storage/exchange-autoconfig-wizard.glade.h:28
+#, fuzzy
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr "Aderesi ni NONEAHA Cyiteguye Kuri Gukoresha i Akabuto Kuri Kubika"
+
+#: storage/exchange-autoconfig-wizard.glade.h:30
+#, fuzzy
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr "Aderesi Ibisobanuro ni Nka Amakosa Hanyuma Kanda"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: storage/exchange-change-password.c:114
+#, fuzzy
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"KIGEZWEHO Ijambobanga... OYA BIHUYE i Ijambobanga... kugirango Aderesi "
+"Injiza i Ijambobanga..."
+
+#: storage/exchange-change-password.c:121
+#, fuzzy
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Amagambo banga OYA BIHUYE Injiza i Amagambo banga"
+
+#: storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Guhindura Ijambobanga"
+
+#: storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Emeza ijambobanga:"
+
+#: storage/exchange-change-password.glade.h:4
+#, fuzzy
+msgid "Current Password:"
+msgstr "Ijambobanga iriho:"
+
+#: storage/exchange-change-password.glade.h:5
+#, fuzzy
+msgid "New Password:"
+msgstr "Ijambobanga nshya:"
+
+#: storage/exchange-change-password.glade.h:6
+#, fuzzy
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"KIGEZWEHO Ijambobanga... Byarengeje igihe Guhindura>> Ijambobanga... NONEAHA"
+
+# sfx2/source\appl\app.src:STR_MAIL.text
+#: storage/exchange-component.c:322
+msgid "Mail"
+msgstr "Ubutumwa"
+
+#: storage/exchange-component.c:325 storage/exchange-hierarchy-foreign.c:251
+msgid "Contacts"
+msgstr "Aho kubariza"
+
+# officecfg/registry\schema\org\openoffice\Office\Common.xcs:....View.Window.Flag..10.text
+#: storage/exchange-component.c:329 storage/exchange-hierarchy-foreign.c:259
+msgid "Tasks"
+msgstr "Ibikorwa"
+
+# svtools/source\dialogs\addresstemplate.src:STR_FIELD_CALENDAR.text
+#: storage/exchange-component.c:332 storage/exchange-hierarchy-foreign.c:250
+msgid "Calendar"
+msgstr "Kalindari"
+
+#: storage/exchange-config-listener.c:781
+#, fuzzy
+msgid ""
+"Changes to Exchange account configuration will take\n"
+"place after you quit and restart Evolution."
+msgstr "Kuri Aderesi Iboneza Nyuma Kuvamo Na Ongera utangire"
+
+#: storage/exchange-config-listener.c:827
+#, fuzzy
+msgid "The Exchange account will be removed when you quit Evolution"
+msgstr "Aderesi Cyavanyweho Ryari: Kuvamo"
+
+#: storage/exchange-delegates-user.c:191
+#: storage/exchange-permissions-dialog.c:179
+#, fuzzy, c-format
+msgid "Permissions for %s"
+msgstr "kugirango"
+
+#: storage/exchange-delegates.c:221
+#, fuzzy
+msgid ""
+"No Global Catalog server configured for this account.\n"
+"Unable to edit delegates."
+msgstr "Seriveri kugirango iyi Aderesi Kuri Guhindura"
+
+#: storage/exchange-delegates.c:260
+#, fuzzy
+msgid ""
+"Could not read folder permissions.\n"
+"Unable to edit delegates."
+msgstr "OYA Gusoma Ububiko Uruhushya Kuri Guhindura"
+
+#: storage/exchange-delegates.c:267
+#, fuzzy
+msgid ""
+"Could not determine folder permissions for delegates.\n"
+"Unable to edit delegates."
+msgstr "OYA Ububiko Uruhushya kugirango Kuri Guhindura"
+
+#: storage/exchange-delegates.c:419
+msgid "Delegate To:"
+msgstr ""
+
+#: storage/exchange-delegates.c:419
+msgid "Delegate To"
+msgstr ""
+
+#: storage/exchange-delegates.c:435
+#, fuzzy, c-format
+msgid "Could not make %s a delegate"
+msgstr "OYA Ubwoko a"
+
+#: storage/exchange-delegates.c:445
+#, fuzzy
+msgid "You cannot make yourself your own delegate"
+msgstr "Ubwoko"
+
+#: storage/exchange-delegates.c:454
+#, fuzzy, c-format
+msgid "%s is already a delegate"
+msgstr "%sni a"
+
+#: storage/exchange-delegates.c:563
+#, fuzzy, c-format
+msgid "Remove the delegate %s?"
+msgstr "i"
+
+#: storage/exchange-delegates.c:680
+#, fuzzy
+msgid "Could not access Active Directory"
+msgstr "OYA"
+
+#: storage/exchange-delegates.c:695
+#, fuzzy
+msgid "Could not find self in Active Directory"
+msgstr "OYA Gushaka in"
+
+#: storage/exchange-delegates.c:708
+#, fuzzy, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr "OYA Gushaka in"
+
+#: storage/exchange-delegates.c:720
+#, fuzzy, c-format
+msgid "Could not remove delegate %s"
+msgstr "OYA Gukuraho..."
+
+#: storage/exchange-delegates.c:780
+#, fuzzy
+msgid "Could not update list of delegates."
+msgstr "OYA Kuvugurura Urutonde Bya"
+
+#: storage/exchange-delegates.c:798
+#, fuzzy, c-format
+msgid "Could not add delegate %s"
+msgstr "OYA Kongeramo"
+
+#: storage/exchange-delegates.c:814
+#, fuzzy, c-format
+msgid ""
+"Failed to update delegates:\n"
+"%s"
+msgstr "Kuri Kuvugurura"
+
+#: storage/exchange-delegates.c:938 storage/exchange-permissions-dialog.c:706
+msgid "Name"
+msgstr "Izina"
+
+#: storage/exchange-delegates.c:967
+#, fuzzy
+msgid "Error reading delegates list."
+msgstr "Urutonde"
+
+#: storage/exchange-delegates.glade.h:1
+#, fuzzy
+msgid "Author (read, create)"
+msgstr "Gusoma Kurema"
+
+# svtools/source\dialogs\addresstemplate.src:STR_FIELD_CALENDAR.text
+#: storage/exchange-delegates.glade.h:2
+#, fuzzy
+msgid "C_alendar:"
+msgstr "Kalindari"
+
+#: storage/exchange-delegates.glade.h:3
+#, fuzzy
+msgid "Co_ntacts:"
+msgstr "Aho kubariza"
+
+#: storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr ""
+
+#: storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr ""
+
+#: storage/exchange-delegates.glade.h:6
+#, fuzzy
+msgid "Editor (read, create, edit)"
+msgstr "Gusoma Kurema Guhindura"
+
+#: storage/exchange-delegates.glade.h:8
+#, fuzzy
+msgid "Permissions for"
+msgstr "kugirango"
+
+#: storage/exchange-delegates.glade.h:9
+#, fuzzy
+msgid "Reviewer (read-only)"
+msgstr "Gusoma"
+
+#: storage/exchange-delegates.glade.h:10
+#, fuzzy
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr "Kuri Kohereza Ubutumwa ku Na: i Uruhushya"
+
+#: storage/exchange-delegates.glade.h:12
+#, fuzzy
+msgid "_Delegate can see private items"
+msgstr "By'umwihariko"
+
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\basidesh.src:RID_BASICMENU.MN_EDIT.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\basidesh.src:RID_BASICPLUGINMENU.MN_PLEDIT.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\macrodlg.src:RID_MACROCHOOSER.RID_PB_EDIT.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\moduldlg.src:RID_TP_MODULS.RID_PB_EDIT.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\moduldlg.src:RID_TP_LIBS.RID_PB_EDIT.text
+#: storage/exchange-delegates.glade.h:13
+#, fuzzy
+msgid "_Edit"
+msgstr "Guhindura"
+
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\appl\minbox.src:RID_MAIL_INBOX.text
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\explorer\explorer.src:STR_SFX_MAILSRV_INBOX.text
+#: storage/exchange-delegates.glade.h:14
+#, fuzzy
+msgid "_Inbox:"
+msgstr "Ibyinjiye"
+
+# officecfg/registry\schema\org\openoffice\Office\Common.xcs:....View.Window.Flag..10.text
+#: storage/exchange-delegates.glade.h:15
+#, fuzzy
+msgid "_Tasks:"
+msgstr "Ibikorwa"
+
+#: storage/exchange-folder-size.c:322
+#, fuzzy
+msgid "Folder Name"
+msgstr "Izina ry'ububiko"
+
+#: storage/exchange-folder-size.c:326
+msgid "Folder Size"
+msgstr ""
+
+#: storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr ""
+
+#: storage/exchange-hierarchy-foreign.c:252
+msgid "Deleted Items"
+msgstr ""
+
+#: storage/exchange-hierarchy-foreign.c:253
+msgid "Drafts"
+msgstr ""
+
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\appl\minbox.src:RID_MAIL_INBOX.text
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\explorer\explorer.src:STR_SFX_MAILSRV_INBOX.text
+#: storage/exchange-hierarchy-foreign.c:254
+msgid "Inbox"
+msgstr "Ibyinjiye"
+
+#: storage/exchange-hierarchy-foreign.c:255
+msgid "Journal"
+msgstr "Ikinyamakuru"
+
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Impress.xcs:....Print.Content.Note.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\WriterWeb.xcs:....Content.Display.Note.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....Content.Display.Note.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....Wizard.Agenda.Elements.Notes.text
+#: storage/exchange-hierarchy-foreign.c:256
+msgid "Notes"
+msgstr "Ibisobanuro"
+
+# svtools/source\misc\mediatyp.src:STR_SVT_MIMETYPE_CNT_OUTBOX.text
+#: storage/exchange-hierarchy-foreign.c:257
+msgid "Outbox"
+msgstr "Ibyasohotse"
+
+#: storage/exchange-hierarchy-foreign.c:258
+msgid "Sent Items"
+msgstr ""
+
+#: storage/exchange-migrate.c:57
+msgid "Migrating Exchange Folders..."
+msgstr ""
+
+#: storage/exchange-migrate.c:65
+#, fuzzy, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Project- Id- Version: basctl\n"
+"POT- Creation- Date: 2003- 12- 07 17: 13+ 02\n"
+"PO- Revision- Date: 2004- 11- 04 10: 13- 0700\n"
+"Last- Translator: Language- Team:< en@ li. org> MIME- Version: 1. 0\n"
+"Content- Type: text/ plain; charset= UTF- 8\n"
+"Content- Transfer- Encoding: 8bit\n"
+"X- Generator: KBabel 1. 0\n"
+". Project- Id- Version: basctl\n"
+"POT- Creation- Date: 2003- 12- 07 17: 13+ 02\n"
+"PO- Revision- Date: 2004- 11- 04 10: 13- 0700\n"
+"Last- Translator: Language- Team:< en@ li. org> MIME- Version: 1. 0\n"
+"Content- Type: text/ plain; charset= UTF- 8\n"
+"Content- Transfer- Encoding: 8bit\n"
+"X- Generator: KBabel 1. 0\n"
+"."
+
+#: storage/exchange-migrate.c:98
+#, fuzzy, c-format
+msgid ""
+"Warning: Evolution Could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Project- Id- Version: basctl\n"
+"POT- Creation- Date: 2003- 12- 07 17: 13+ 02\n"
+"PO- Revision- Date: 2004- 11- 04 10: 13- 0700\n"
+"Last- Translator: Language- Team:< en@ li. org> MIME- Version: 1. 0\n"
+"Content- Type: text/ plain; charset= UTF- 8\n"
+"Content- Transfer- Encoding: 8bit\n"
+"X- Generator: KBabel 1. 0\n"
+". Project- Id- Version: basctl\n"
+"POT- Creation- Date: 2003- 12- 07 17: 13+ 02\n"
+"PO- Revision- Date: 2004- 11- 04 10: 13- 0700\n"
+"Last- Translator: Language- Team:< en@ li. org> MIME- Version: 1. 0\n"
+"Content- Type: text/ plain; charset= UTF- 8\n"
+"Content- Transfer- Encoding: 8bit\n"
+"X- Generator: KBabel 1. 0\n"
+"."
+
+#: storage/exchange-migrate.c:129
+#, c-format
+msgid "Migrating `%s':"
+msgstr ""
+
+#: storage/exchange-oof.c:199 storage/exchange-oof.c:406
+#, fuzzy
+msgid "Could not update out-of-office state"
+msgstr "OYA Kuvugurura Inyuma Bya Ofise Leta"
+
+#: storage/exchange-oof.c:424
+#, fuzzy
+msgid "Could not read out-of-office state"
+msgstr "OYA Gusoma Inyuma Bya Ofise Leta"
+
+#: storage/exchange-oof.glade.h:1
+#, fuzzy
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr "<B Imimerere ni Bya i B nka Kuri Guhindura>> Imimerere Kuri i"
+
+#: storage/exchange-oof.glade.h:4
+#, fuzzy
+msgid "<b>Out of Office Message:</b>"
+msgstr "<B Bya B"
+
+#: storage/exchange-oof.glade.h:5
+#, fuzzy
+msgid "<b>Status:</b>"
+msgstr "<B B"
+
+#: storage/exchange-oof.glade.h:6
+#, fuzzy
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<Gitoya Ubutumwa munsi ku buryo bwikora Yoherejwe: Kuri Kuri Inyuma Bya i "
+"Ofise Gitoya"
+
+#: storage/exchange-oof.glade.h:8
+#, fuzzy
+msgid "I am currently in the office"
+msgstr "in i Ofise"
+
+#: storage/exchange-oof.glade.h:9
+#, fuzzy
+msgid "I am currently out of the office"
+msgstr "Inyuma Bya i Ofise"
+
+#: storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr ""
+
+#: storage/exchange-oof.glade.h:11
+#, fuzzy
+msgid "Out of Office Assistant"
+msgstr "Bya"
+
+#: storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr ""
+
+#: storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr ""
+
+#: storage/exchange-passwd-expiry.glade.h:2
+#, fuzzy
+msgid "Your password will expire in 7 days..."
+msgstr "Ijambobanga... in 7 Iminsi"
+
+#: storage/exchange-passwd-expiry.glade.h:3
+#, fuzzy
+msgid "_Change Password"
+msgstr "Guhindura Ijambobanga"
+
+#: storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.c:222
+#, fuzzy
+msgid "Could not read folder permissions"
+msgstr "OYA Gusoma Ububiko Uruhushya"
+
+#: storage/exchange-permissions-dialog.c:264
+#, fuzzy
+msgid "Could not update folder permissions."
+msgstr "OYA Kuvugurura Ububiko Uruhushya"
+
+#: storage/exchange-permissions-dialog.c:293
+#, fuzzy, c-format
+msgid "Could not update folder permissions. %s"
+msgstr "OYA Kuvugurura Ububiko Uruhushya"
+
+#: storage/exchange-permissions-dialog.c:295
+msgid "(Permission denied.)"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.c:396
+#, fuzzy
+msgid ""
+"Unable to add user to access control list:\n"
+"No Global Catalog server is configured for this account."
+msgstr ""
+"Kuri Kongeramo Ukoresha: Kuri Igenzura Urutonde Seriveri ni kugirango iyi "
+"Aderesi"
+
+#: storage/exchange-permissions-dialog.c:402
+#, fuzzy
+msgid "Add User:"
+msgstr "Kongeramo ukoresha..."
+
+#: storage/exchange-permissions-dialog.c:402
+#, fuzzy
+msgid "Add User"
+msgstr "Kongeramo ukoresha..."
+
+#: storage/exchange-permissions-dialog.c:421
+#, fuzzy, c-format
+msgid "No such user %s"
+msgstr "Ukoresha:"
+
+#: storage/exchange-permissions-dialog.c:425
+#, fuzzy, c-format
+msgid "%s cannot be added to an access control list"
+msgstr "%sKyongewe Kuri Igenzura Urutonde"
+
+#: storage/exchange-permissions-dialog.c:430
+#, fuzzy, c-format
+msgid "Unknown error looking up %s"
+msgstr "Ikosa Hejuru"
+
+#: storage/exchange-permissions-dialog.c:447
+#, fuzzy, c-format
+msgid "%s is already in the list"
+msgstr "%sni in i Urutonde"
+
+# VCARD_LDAP_ROLE
+# # @name VCARD_LDAP_ROLE
+# # @loc None
+#: storage/exchange-permissions-dialog.c:710
+msgid "Role"
+msgstr "Inshingano"
+
+#: storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:2
+#, fuzzy
+msgid "<b>Permissions</b>"
+msgstr "<B B"
+
+#: storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:11
+#, fuzzy
+msgid "Folder contact"
+msgstr "Umuntu"
+
+#: storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr ""
+
+#: storage/exchange-permissions-dialog.glade.h:13
+#, fuzzy
+msgid "Folder visible"
+msgstr "Kigaragara"
+
+#: storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr ""
+
+# VCARD_LDAP_ROLE
+# # @name VCARD_LDAP_ROLE
+# # @loc None
+#: storage/exchange-permissions-dialog.glade.h:15
+#, fuzzy
+msgid "Role: "
+msgstr "Inshingano"
+
+# sw/source\ui\app\app.src:STR_STATSTR_LAYOUTINIT.text
+#: storage/exchange-storage.c:337
+msgid "Connecting..."
+msgstr "Kwihuza..."
+
+#: storage/main.c:166
+#, fuzzy
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "kugirango"
+
+# 20
+#: storage/xc-backend-view.c:299
+msgid "Account Name"
+msgstr "Izina rya konti"
+
+# uui/source\ids.src:RID_UUI_ERRHDL.(ERRCODE_UUI_IO_NOTEXISTS_FOLDER_&_ERRCODE_RES_MASK).text
+#: storage/xc-commands.c:317
+#, fuzzy
+msgid "Folder does not exist"
+msgstr "Ububiko ntabwo bubaho"
+
+#: storage/xc-commands.c:344
+#, fuzzy, c-format
+msgid "Could not add favorite: %s"
+msgstr "OYA Kongeramo Icyatoranijwe"
+
+#: storage/xc-commands.c:360
+#, fuzzy, c-format
+msgid "Could not remove favorite: %s"
+msgstr "OYA Gukuraho... Icyatoranijwe"
+
+#.
+#. FIXME: See 62440
+#. E_POPUP_ITEM (N_("_Move Folder..."),
+#. G_CALLBACK (do_move_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#. E_POPUP_ITEM (N_("_Copy Folder..."),
+#. G_CALLBACK (do_copy_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#.
+#: storage/xc-commands.c:386
+#, fuzzy
+msgid "_Rename Folder..."
+msgstr "Hindura izina ry'ububiko"
+
+#: storage/xc-commands.c:392
+#, fuzzy
+msgid "_New Folder..."
+msgstr "Idosiye nshya..."
+
+#: storage/xc-commands.c:395
+msgid "_Delete Folder"
+msgstr ""
+
+#: storage/xc-commands.c:400
+msgid "_Add Other User's Folder..."
+msgstr ""
+
+#: storage/xc-commands.c:403
+msgid "_Remove Other User's Folder"
+msgstr ""
+
+#: storage/xc-commands.c:409
+#, fuzzy
+msgid "Add to _Favorites"
+msgstr "Kuri"
+
+#: storage/xc-commands.c:413
+#, fuzzy
+msgid "Remove from Fa_vorites"
+msgstr "Bivuye"
+
+#: storage/xc-commands.c:420
+#, fuzzy
+msgid "_Permissions..."
+msgstr "Uruhushya"
+
+#: storage/xc-commands.c:424
+msgid "_Show Folder Sizes"
+msgstr ""
+
+#: storage/ximian-connector-setup.c:44
+#, fuzzy
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "kugirango"
+
+#: storage/ximian-connector.xml.h:1
+#, fuzzy
+msgid "Change your Exchange server password"
+msgstr "Seriveri Ijambobanga..."
+
+#: storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr ""
+
+#: storage/ximian-connector.xml.h:3
+#, fuzzy
+msgid "Get the size of personal folders"
+msgstr "i Ingano Bya Bwite"
+
+#: storage/ximian-connector.xml.h:4
+#, fuzzy
+msgid "Subscribe to _Other User's Folder..."
+msgstr "Kuri"
+
+#: storage/ximian-connector.xml.h:5
+#, fuzzy
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Kuri a Ububiko Kuri Ikindi Ukoresha: ku i Seriveri"
+
+#: storage/ximian-connector.xml.h:6
+#, fuzzy
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "Bivuye a Ububiko Kyongewe Na: Kuri"
+
+#: storage/ximian-connector.xml.h:7
+#, fuzzy
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Cyangwa Guhindura>> Kalindari Amagenamiterere"
+
+#: storage/ximian-connector.xml.h:8
+#, fuzzy
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "Cyangwa Guhindura>> Bya Imimerere Na Ubutumwa"
+
+#: storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr ""
+
+#: storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr ""
+
+#: storage/ximian-connector.xml.h:11
+#, fuzzy
+msgid "_Out of Office Assistant"
+msgstr "Bya"
+
+#: storage/ximian-connector.xml.h:12
+#, fuzzy
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "Bivuye"

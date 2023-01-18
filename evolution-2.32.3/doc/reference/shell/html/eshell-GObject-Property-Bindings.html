@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GObject Property Bindings</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Bit-Arrays-(Legacy).html" title="Bit Arrays (Legacy)">
+<link rel="next" href="eshell-Categories.html" title="Categories">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Bit-Arrays-(Legacy).html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Categories.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-GObject-Property-Bindings.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-GObject-Property-Bindings.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="GObject Property Bindings">
+<a name="eshell-GObject-Property-Bindings"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-GObject-Property-Bindings.top_of_page"></a>GObject Property Bindings</span></h2>
+<p>GObject Property Bindings</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-GObject-Property-Bindings.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding">EBinding</a>;
+                    <a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding">EMutualBinding</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            (<a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()">*EBindingTransform</a>)                (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *src_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *dst_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="returnvalue">EBinding</span></a> *          <a class="link" href="eshell-GObject-Property-Bindings.html#e-binding-new" title="e_binding_new ()">e_binding_new</a>                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> src_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *src_property</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dst_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dst_property</code></em>);
+<a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="returnvalue">EBinding</span></a> *          <a class="link" href="eshell-GObject-Property-Bindings.html#e-binding-new-full" title="e_binding_new_full ()">e_binding_new_full</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> src_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *src_property</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dst_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dst_property</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()"><span class="type">EBindingTransform</span></a> transform</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy_notify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="returnvalue">EBinding</span></a> *          <a class="link" href="eshell-GObject-Property-Bindings.html#e-binding-new-with-negation" title="e_binding_new_with_negation ()">e_binding_new_with_negation</a>         (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> src_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *src_property</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dst_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dst_property</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-GObject-Property-Bindings.html#e-binding-unbind" title="e_binding_unbind ()">e_binding_unbind</a>                    (<em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="type">EBinding</span></a> *binding</code></em>);
+<a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="returnvalue">EMutualBinding</span></a> *    <a class="link" href="eshell-GObject-Property-Bindings.html#e-mutual-binding-new" title="e_mutual_binding_new ()">e_mutual_binding_new</a>                (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object1</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object2</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property2</code></em>);
+<a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="returnvalue">EMutualBinding</span></a> *    <a class="link" href="eshell-GObject-Property-Bindings.html#e-mutual-binding-new-full" title="e_mutual_binding_new_full ()">e_mutual_binding_new_full</a>           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object1</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object2</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property2</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()"><span class="type">EBindingTransform</span></a> transform</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()"><span class="type">EBindingTransform</span></a> reverse_transform</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy_notify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="returnvalue">EMutualBinding</span></a> *    <a class="link" href="eshell-GObject-Property-Bindings.html#e-mutual-binding-new-with-negation" title="e_mutual_binding_new_with_negation ()">e_mutual_binding_new_with_negation</a>  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object1</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object2</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property2</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-GObject-Property-Bindings.html#e-mutual-binding-unbind" title="e_mutual_binding_unbind ()">e_mutual_binding_unbind</a>             (<em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="type">EMutualBinding</span></a> *binding</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-GObject-Property-Bindings.html#e-binding-transform-color-to-string" title="e_binding_transform_color_to_string ()">e_binding_transform_color_to_string</a> (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *src_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *dst_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-GObject-Property-Bindings.html#e-binding-transform-string-to-color" title="e_binding_transform_string_to_color ()">e_binding_transform_string_to_color</a> (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *src_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *dst_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-GObject-Property-Bindings.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-GObject-Property-Bindings.details"></a><h2>Details</h2>
+<div class="refsect2" title="EBinding">
+<a name="EBinding"></a><h3>EBinding</h3>
+<pre class="programlisting">typedef struct {
+} EBinding;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="EMutualBinding">
+<a name="EMutualBinding"></a><h3>EMutualBinding</h3>
+<pre class="programlisting">typedef struct {
+} EMutualBinding;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="EBindingTransform ()">
+<a name="EBindingTransform"></a><h3>EBindingTransform ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            (*EBindingTransform)                (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *src_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *dst_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_binding_new ()">
+<a name="e-binding-new"></a><h3>e_binding_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="returnvalue">EBinding</span></a> *          e_binding_new                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> src_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *src_property</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dst_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dst_property</code></em>);</pre>
+<p>
+One-way binds <em class="parameter"><code>src_property</code></em> in <em class="parameter"><code>src_object</code></em> to <em class="parameter"><code>dst_property</code></em>
+in <em class="parameter"><code>dst_object</code></em>.
+</p>
+<p>
+Before binding the value of <em class="parameter"><code>dst_property</code></em> is set to the
+value of <em class="parameter"><code>src_property</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_object</code></em> :</span></p></td>
+<td>The source <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_property</code></em> :</span></p></td>
+<td>The name of the property to bind from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_object</code></em> :</span></p></td>
+<td>The destination <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_property</code></em> :</span></p></td>
+<td>The name of the property to bind to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The descriptor of the binding. It is automatically
+         removed if one of the objects is finalized.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_binding_new_full ()">
+<a name="e-binding-new-full"></a><h3>e_binding_new_full ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="returnvalue">EBinding</span></a> *          e_binding_new_full                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> src_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *src_property</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dst_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dst_property</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()"><span class="type">EBindingTransform</span></a> transform</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy_notify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+One-way binds <em class="parameter"><code>src_property</code></em> in <em class="parameter"><code>src_object</code></em> to <em class="parameter"><code>dst_property</code></em>
+in <em class="parameter"><code>dst_object</code></em>.
+</p>
+<p>
+Before binding the value of <em class="parameter"><code>dst_property</code></em> is set to the
+value of <em class="parameter"><code>src_property</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_object</code></em> :</span></p></td>
+<td>The source <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_property</code></em> :</span></p></td>
+<td>The name of the property to bind from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_object</code></em> :</span></p></td>
+<td>The destination <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_property</code></em> :</span></p></td>
+<td>The name of the property to bind to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>transform</code></em> :</span></p></td>
+<td>Transformation function or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy_notify</code></em> :</span></p></td>
+<td>Callback function that is called on
+                 disconnection with <em class="parameter"><code>user_data</code></em> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>User data associated with the binding.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The descriptor of the binding. It is automatically
+         removed if one of the objects is finalized.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_binding_new_with_negation ()">
+<a name="e-binding-new-with-negation"></a><h3>e_binding_new_with_negation ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="returnvalue">EBinding</span></a> *          e_binding_new_with_negation         (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> src_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *src_property</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> dst_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dst_property</code></em>);</pre>
+<p>
+Convenience function for binding with boolean negation of value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_object</code></em> :</span></p></td>
+<td>The source <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_property</code></em> :</span></p></td>
+<td>The name of the property to bind from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_object</code></em> :</span></p></td>
+<td>The destination <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_property</code></em> :</span></p></td>
+<td>The name of the property to bind to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The descriptor of the binding. It is automatically
+         removed if one of the objects is finalized.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_binding_unbind ()">
+<a name="e-binding-unbind"></a><h3>e_binding_unbind ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_binding_unbind                    (<em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="type">EBinding</span></a> *binding</code></em>);</pre>
+<p>
+Disconnects the binding between two properties. Should be
+rarely used by applications.
+</p>
+<p>
+This functions also calls the <em class="parameter"><code>destroy_notify</code></em> function that
+was specified when <em class="parameter"><code>binding</code></em> was created.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>binding</code></em> :</span></p></td>
+<td>An <a class="link" href="eshell-GObject-Property-Bindings.html#EBinding" title="EBinding"><span class="type">EBinding</span></a> to unbind.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mutual_binding_new ()">
+<a name="e-mutual-binding-new"></a><h3>e_mutual_binding_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="returnvalue">EMutualBinding</span></a> *    e_mutual_binding_new                (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object1</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object2</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property2</code></em>);</pre>
+<p>
+Mutually binds values of two properties.
+</p>
+<p>
+Before binding the value of <em class="parameter"><code>property2</code></em> is set to the value
+of <em class="parameter"><code>property1</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object1</code></em> :</span></p></td>
+<td>The first <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property1</code></em> :</span></p></td>
+<td>The first property to bind.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object2</code></em> :</span></p></td>
+<td>The second <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property2</code></em> :</span></p></td>
+<td>The second property to bind.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The descriptor of the binding. It is automatically
+         removed if one of the objects is finalized.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mutual_binding_new_full ()">
+<a name="e-mutual-binding-new-full"></a><h3>e_mutual_binding_new_full ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="returnvalue">EMutualBinding</span></a> *    e_mutual_binding_new_full           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object1</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object2</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property2</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()"><span class="type">EBindingTransform</span></a> transform</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EBindingTransform" title="EBindingTransform ()"><span class="type">EBindingTransform</span></a> reverse_transform</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> destroy_notify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Mutually binds values of two properties.
+</p>
+<p>
+Before binding the value of <em class="parameter"><code>property2</code></em> is set to the value of
+<em class="parameter"><code>property1</code></em>.
+</p>
+<p>
+Both <em class="parameter"><code>transform</code></em> and <em class="parameter"><code>reverse_transform</code></em> should simultaneously be
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. If they are non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, they should be reverse
+in each other.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object1</code></em> :</span></p></td>
+<td>The first <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property1</code></em> :</span></p></td>
+<td>The first property to bind.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object2</code></em> :</span></p></td>
+<td>The second <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property2</code></em> :</span></p></td>
+<td>The second property to bind.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>transform</code></em> :</span></p></td>
+<td>Transformation function or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reverse_transform</code></em> :</span></p></td>
+<td>The inverse transformation function or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy_notify</code></em> :</span></p></td>
+<td>Callback function called on disconnection with
+                 <em class="parameter"><code>user_data</code></em> as argument or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>User data associated with the binding.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The descriptor of the binding. It is automatically
+         removed if one of the objects is finalized.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mutual_binding_new_with_negation ()">
+<a name="e-mutual-binding-new-with-negation"></a><h3>e_mutual_binding_new_with_negation ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="returnvalue">EMutualBinding</span></a> *    e_mutual_binding_new_with_negation  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object1</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object2</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property2</code></em>);</pre>
+<p>
+Convenience function for binding with boolean negation of value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object1</code></em> :</span></p></td>
+<td>The first <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property1</code></em> :</span></p></td>
+<td>The first property to bind.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object2</code></em> :</span></p></td>
+<td>The second <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property2</code></em> :</span></p></td>
+<td>The second property to bind.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The descriptor of the binding. It is automatically removed
+         if one of the objects if finalized.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mutual_binding_unbind ()">
+<a name="e-mutual-binding-unbind"></a><h3>e_mutual_binding_unbind ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_mutual_binding_unbind             (<em class="parameter"><code><a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="type">EMutualBinding</span></a> *binding</code></em>);</pre>
+<p>
+Disconnects the binding between two properties. Should be
+rarely used by applications.
+</p>
+<p>
+This functions also calls the <em class="parameter"><code>destroy_notify</code></em> function that
+was specified when <em class="parameter"><code>binding</code></em> was created.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>binding</code></em> :</span></p></td>
+<td>An <a class="link" href="eshell-GObject-Property-Bindings.html#EMutualBinding" title="EMutualBinding"><span class="type">EMutualBinding</span></a> to unbind.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_binding_transform_color_to_string ()">
+<a name="e-binding-transform-color-to-string"></a><h3>e_binding_transform_color_to_string ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_binding_transform_color_to_string (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *src_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *dst_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Transforms a <a href="http://library.gnome.org/devel/gdk/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> value to a color string specification.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_value</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> of type <span class="type">GDK_TYPE_COLOR</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_value</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-STRING:CAPS"><span class="type">G_TYPE_STRING</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>not used
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> always
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_binding_transform_string_to_color ()">
+<a name="e-binding-transform-string-to-color"></a><h3>e_binding_transform_string_to_color ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_binding_transform_string_to_color (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *src_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *dst_value</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Transforms a color string specification to a <a href="http://library.gnome.org/devel/gdk/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_value</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-STRING:CAPS"><span class="type">G_TYPE_STRING</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst_value</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> of type <span class="type">GDK_TYPE_COLOR</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>not used
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if color string specification was valid
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

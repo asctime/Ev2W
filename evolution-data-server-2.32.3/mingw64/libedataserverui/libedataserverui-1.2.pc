@@ -1,0 +1,13 @@
+prefix=/MSYS2/mingw64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+privincludedir=${includedir}/evolution-data-server-2.32
+
+Name: libedataserverui
+Description: GUI utility library for Evolution Data Server
+Version: 2.32.3
+Requires: gtk+-2.0 >= 2.20.0 libedataserver-1.2 libebook-1.2
+Libs: -L${libdir} -ledataserverui-1.2
+Cflags: -I${privincludedir}

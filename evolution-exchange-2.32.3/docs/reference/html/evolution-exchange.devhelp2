@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual" link="index.html" author="" name="evolution-exchange" version="2" language="c">
+  <chapters>
+    <sub name="Exchange Architectural Notes" link="ch01.html">
+      <sub name="Private Item Handling" link="ximian-connector-bug-private.html"/>
+      <sub name="Bugs in Exchange's XML handling" link="ximian-connector-bug-xml.html"/>
+      <sub name="Calendar Architecture" link="ximian-connector-calendar.html"/>
+      <sub name="Mail Architecture" link="ximian-connector-mail.html"/>
+      <sub name="NTLM Authentication Overview" link="ximian-connector-ntlm.html"/>
+    </sub>
+    <sub name="Implementation of Connector Features" link="ch02.html">
+      <sub name="Account Autoconfiguration" link="ximian-connector-autoconfig.html"/>
+      <sub name="Direct Booking of Resource Calendars" link="ximian-connnector-booking.html"/>
+      <sub name="Delegation" link="ximian-connector-delegation.html"/>
+      <sub name="Favorite Public Folders" link="ximian-connector-favorites.html"/>
+      <sub name="Exchange 2003 Forms-Based Authentication" link="ximian-connector-fba.html"/>
+      <sub name="Free/Busy Searches" link="ximian-connector-freebusy.html"/>
+      <sub name="Out of Office" link="ximian-connector-oof.html"/>
+      <sub name="Other Users' Folders" link="ximian-connector-other-users.html"/>
+      <sub name="Folder Permissions" link="ximian-connector-permissions.html"/>
+      <sub name="Message Threading in Public Folders" link="ximian-connector-mail-threading.html"/>
+    </sub>
+    <sub name="libexchange public API reference" link="ch03.html">
+      <sub name="E2kAutoconfig" link="evolution-exchange-E2kAutoconfig.html"/>
+      <sub name="E2kContext" link="E2kContext.html"/>
+      <sub name="E2kGlobalCatalog" link="E2kGlobalCatalog.html"/>
+      <sub name="E2kOperation" link="evolution-exchange-E2kOperation.html"/>
+      <sub name="E2kProperties" link="evolution-exchange-E2kProperties.html"/>
+      <sub name="E2kRestriction" link="evolution-exchange-e2k-restriction.html"/>
+      <sub name="E2kResult" link="evolution-exchange-e2k-result.html"/>
+      <sub name="E2kSecurityDescriptor" link="E2kSecurityDescriptor.html"/>
+      <sub name="E2kSid" link="evolution-exchange-E2kSid.html"/>
+      <sub name="E2kUri" link="evolution-exchange-e2k-uri.html"/>
+      <sub name="E2kUserDialog" link="evolution-exchange-E2kUserDialog.html"/>
+      <sub name="e2k-http-utils" link="evolution-exchange-e2k-http-utils.html"/>
+      <sub name="e2k-kerberos" link="evolution-exchange-e2k-kerberos.html"/>
+      <sub name="e2k-utils" link="evolution-exchange-e2k-utils.html"/>
+      <sub name="e2k-xml-utils" link="evolution-exchange-e2k-xml-utils.html"/>
+      <sub name="MAPI" link="evolution-exchange-MAPI.html"/>
+    </sub>
+    <sub name="libexchange private API reference" link="ch04.html">
+      <sub name="E2kContext (private)" link="evolution-exchange-E2kContext-(private).html"/>
+      <sub name="E2kOperation (private)" link="evolution-exchange-E2kOperation-(private).html"/>
+      <sub name="E2kResult (private)" link="evolution-exchange-E2kResult-(private).html"/>
+      <sub name="test-utils" link="evolution-exchange-test-utils.html"/>
+    </sub>
+    <sub name="libxntlm API reference" link="ch05.html">
+      <sub name="xntlm" link="evolution-exchange-xntlm.html"/>
+      <sub name="xntlm-des" link="evolution-exchange-xntlm-des.html"/>
+      <sub name="xntlm-md4" link="evolution-exchange-xntlm-md4.html"/>
+    </sub>
+    <sub name="libexchange vaporware API reference" link="ch06.html">
+      <sub name="E2kAction" link="evolution-exchange-e2k-action.html"/>
+      <sub name="E2kFreebusy" link="evolution-exchange-e2k-freebusy.html"/>
+      <sub name="E2kRestriction (vaporware)" link="evolution-exchange-E2kRestriction-(vaporware).html"/>
+      <sub name="E2kRule" link="evolution-exchange-e2k-rule.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="" name="Illegal characters" link="ximian-connector-bug-xml.html#id2949433"/>
+    <keyword type="" name="Illegal tag names" link="ximian-connector-bug-xml.html#id2967509"/>
+    <keyword type="" name="The Negotiate message" link="ximian-connector-ntlm.html#id2957866"/>
+    <keyword type="" name="The Challenge message" link="ximian-connector-ntlm.html#id2956800"/>
+    <keyword type="" name="The Authenticate message" link="ximian-connector-ntlm.html#id2941276"/>
+    <keyword type="" name="The Initial WebDAV Connection" link="ximian-connector-autoconfig.html#id2969971"/>
+    <keyword type="" name="Further WebDAV Probes" link="ximian-connector-autoconfig.html#id2968129"/>
+    <keyword type="" name="The Global Catalog Server" link="ximian-connector-autoconfig.html#id2963455"/>
+    <keyword type="" name="Autoconfiguration Hints" link="ximian-connector-autoconfig.html#id2963522"/>
+    <keyword type="" name="Creating a Resource" link="ximian-connnector-booking.html#id2956380"/>
+    <keyword type="" name="Booking a Resource" link="ximian-connnector-booking.html#id2964986"/>
+    <keyword type="" name="Cancelation" link="ximian-connnector-booking.html#id2969753"/>
+    <keyword type="" name="Public Free/Busy file" link="ximian-connector-freebusy.html#id2971614"/>
+    <keyword type="" name="Personal Free/Busy file" link="ximian-connector-freebusy.html#id2957442"/>
+    <keyword type="" name="Private items" link="ximian-connector-other-users.html#id2940694"/>
+    <keyword type="" name="Exchange Permissions" link="ximian-connector-permissions.html#id2940428"/>
+    <keyword type="" name="SIDs and Security Descriptors" link="ximian-connector-permissions.html#id2968416"/>
+    <keyword type="" name="Order of ACEs" link="ximian-connector-permissions.html#id2950645"/>
+    <keyword type="struct" name="E2kAutoconfig" link="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig"/>
+    <keyword type="enum" name="enum E2kExchangeVersion" link="evolution-exchange-E2kAutoconfig.html#E2kExchangeVersion"/>
+    <keyword type="enum" name="enum E2kAutoconfigAuthPref" link="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigAuthPref"/>
+    <keyword type="enum" name="enum E2kAutoconfigResult" link="evolution-exchange-E2kAutoconfig.html#E2kAutoconfigResult"/>
+    <keyword type="function" name="e2k_autoconfig_new ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-new"/>
+    <keyword type="function" name="e2k_autoconfig_free ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-free"/>
+    <keyword type="function" name="e2k_autoconfig_set_owa_uri ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-owa-uri"/>
+    <keyword type="function" name="e2k_autoconfig_set_gc_server ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-gc-server"/>
+    <keyword type="function" name="e2k_autoconfig_set_username ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-username"/>
+    <keyword type="function" name="e2k_autoconfig_set_password ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-set-password"/>
+    <keyword type="function" name="e2k_autoconfig_get_context ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-get-context"/>
+    <keyword type="function" name="e2k_autoconfig_check_exchange ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-check-exchange"/>
+    <keyword type="function" name="e2k_autoconfig_get_global_catalog ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-get-global-catalog"/>
+    <keyword type="function" name="e2k_autoconfig_check_global_catalog ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-check-global-catalog"/>
+    <keyword type="function" name="e2k_autoconfig_lookup_option ()" link="evolution-exchange-E2kAutoconfig.html#e2k-autoconfig-lookup-option"/>
+    <keyword type="struct" name="struct E2kContext" link="E2kContext.html#E2kContext-struct"/>
+    <keyword type="function" name="e2k_context_new ()" link="E2kContext.html#e2k-context-new"/>
+    <keyword type="function" name="e2k_context_set_auth ()" link="E2kContext.html#e2k-context-set-auth"/>
+    <keyword type="function" name="e2k_context_get ()" link="E2kContext.html#e2k-context-get"/>
+    <keyword type="function" name="e2k_context_get_owa ()" link="E2kContext.html#e2k-context-get-owa"/>
+    <keyword type="function" name="e2k_context_put ()" link="E2kContext.html#e2k-context-put"/>
+    <keyword type="function" name="e2k_context_post ()" link="E2kContext.html#e2k-context-post"/>
+    <keyword type="function" name="e2k_context_proppatch ()" link="E2kContext.html#e2k-context-proppatch"/>
+    <keyword type="function" name="e2k_context_bproppatch_start ()" link="E2kContext.html#e2k-context-bproppatch-start"/>
+    <keyword type="function" name="E2kContextTestCallback ()" link="E2kContext.html#E2kContextTestCallback"/>
+    <keyword type="function" name="e2k_context_put_new ()" link="E2kContext.html#e2k-context-put-new"/>
+    <keyword type="function" name="e2k_context_proppatch_new ()" link="E2kContext.html#e2k-context-proppatch-new"/>
+    <keyword type="function" name="e2k_context_propfind ()" link="E2kContext.html#e2k-context-propfind"/>
+    <keyword type="function" name="e2k_context_bpropfind_start ()" link="E2kContext.html#e2k-context-bpropfind-start"/>
+    <keyword type="function" name="e2k_context_search_start ()" link="E2kContext.html#e2k-context-search-start"/>
+    <keyword type="function" name="e2k_context_delete ()" link="E2kContext.html#e2k-context-delete"/>
+    <keyword type="function" name="e2k_context_bdelete_start ()" link="E2kContext.html#e2k-context-bdelete-start"/>
+    <keyword type="function" name="e2k_context_mkcol ()" link="E2kContext.html#e2k-context-mkcol"/>
+    <keyword type="function" name="e2k_context_transfer_start ()" link="E2kContext.html#e2k-context-transfer-start"/>
+    <keyword type="function" name="e2k_context_transfer_dir ()" link="E2kContext.html#e2k-context-transfer-dir"/>
+    <keyword type="enum" name="enum E2kContextChangeType" link="E2kContext.html#E2kContextChangeType"/>
+    <keyword type="function" name="E2kContextChangeCallback ()" link="E2kContext.html#E2kContextChangeCallback"/>
+    <keyword type="function" name="e2k_context_subscribe ()" link="E2kContext.html#e2k-context-subscribe"/>
+    <keyword type="function" name="e2k_context_unsubscribe ()" link="E2kContext.html#e2k-context-unsubscribe"/>
+    <keyword type="signal" name="The &quot;redirect&quot; signal" link="E2kContext.html#E2kContext-redirect"/>
+    <keyword type="struct" name="struct E2kGlobalCatalog" link="E2kGlobalCatalog.html#E2kGlobalCatalog-struct"/>
+    <keyword type="function" name="e2k_global_catalog_new ()" link="E2kGlobalCatalog.html#e2k-global-catalog-new"/>
+    <keyword type="function" name="e2k_global_catalog_get_ldap ()" link="E2kGlobalCatalog.html#e2k-global-catalog-get-ldap"/>
+    <keyword type="enum" name="enum E2kGlobalCatalogStatus" link="E2kGlobalCatalog.html#E2kGlobalCatalogStatus"/>
+    <keyword type="enum" name="enum E2kGlobalCatalogLookupType" link="E2kGlobalCatalog.html#E2kGlobalCatalogLookupType"/>
+    <keyword type="enum" name="enum E2kGlobalCatalogLookupFlags" link="E2kGlobalCatalog.html#E2kGlobalCatalogLookupFlags"/>
+    <keyword type="struct" name="E2kGlobalCatalogEntry" link="E2kGlobalCatalog.html#E2kGlobalCatalogEntry"/>
+    <keyword type="function" name="e2k_global_catalog_lookup ()" link="E2kGlobalCatalog.html#e2k-global-catalog-lookup"/>
+    <keyword type="macro" name="e2k_global_catalog_entry_free()" link="E2kGlobalCatalog.html#e2k-global-catalog-entry-free"/>
+    <keyword type="function" name="E2kGlobalCatalogCallback ()" link="E2kGlobalCatalog.html#E2kGlobalCatalogCallback"/>
+    <keyword type="function" name="e2k_global_catalog_async_lookup ()" link="E2kGlobalCatalog.html#e2k-global-catalog-async-lookup"/>
+    <keyword type="function" name="e2k_global_catalog_add_delegate ()" link="E2kGlobalCatalog.html#e2k-global-catalog-add-delegate"/>
+    <keyword type="function" name="e2k_global_catalog_remove_delegate ()" link="E2kGlobalCatalog.html#e2k-global-catalog-remove-delegate"/>
+    <keyword type="struct" name="struct E2kOperation" link="evolution-exchange-E2kOperation.html#E2kOperation"/>
+    <keyword type="function" name="e2k_operation_init ()" link="evolution-exchange-E2kOperation.html#e2k-operation-init"/>
+    <keyword type="function" name="e2k_operation_cancel ()" link="evolution-exchange-E2kOperation.html#e2k-operation-cancel"/>
+    <keyword type="function" name="e2k_operation_is_cancelled ()" link="evolution-exchange-E2kOperation.html#e2k-operation-is-cancelled"/>
+    <keyword type="function" name="e2k_operation_free ()" link="evolution-exchange-E2kOperation.html#e2k-operation-free"/>
+    <keyword type="typedef" name="E2kProperties" link="evolution-exchange-E2kProperties.html#E2kProperties"/>
+    <keyword type="function" name="e2k_properties_new ()" link="evolution-exchange-E2kProperties.html#e2k-properties-new"/>
+    <keyword type="function" name="e2k_properties_copy ()" link="evolution-exchange-E2kProperties.html#e2k-properties-copy"/>
+    <keyword type="function" name="e2k_properties_empty ()" link="evolution-exchange-E2kProperties.html#e2k-properties-empty"/>
+    <keyword type="function" name="e2k_properties_free ()" link="evolution-exchange-E2kProperties.html#e2k-properties-free"/>
+    <keyword type="function" name="e2k_properties_get_prop ()" link="evolution-exchange-E2kProperties.html#e2k-properties-get-prop"/>
+    <keyword type="function" name="e2k_properties_remove ()" link="evolution-exchange-E2kProperties.html#e2k-properties-remove"/>
+    <keyword type="enum" name="enum E2kPropType" link="evolution-exchange-E2kProperties.html#E2kPropType"/>
+    <keyword type="macro" name="E2K_PROP_TYPE_IS_ARRAY()" link="evolution-exchange-E2kProperties.html#E2K-PROP-TYPE-IS-ARRAY:CAPS"/>
+    <keyword type="function" name="e2k_properties_set_string ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-string"/>
+    <keyword type="function" name="e2k_properties_set_string_array ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-string-array"/>
+    <keyword type="function" name="e2k_properties_set_binary ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-binary"/>
+    <keyword type="function" name="e2k_properties_set_binary_array ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-binary-array"/>
+    <keyword type="function" name="e2k_properties_set_int ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-int"/>
+    <keyword type="function" name="e2k_properties_set_int_array ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-int-array"/>
+    <keyword type="function" name="e2k_properties_set_xml ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-xml"/>
+    <keyword type="function" name="e2k_properties_set_bool ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-bool"/>
+    <keyword type="function" name="e2k_properties_set_float ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-float"/>
+    <keyword type="function" name="e2k_properties_set_date ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-date"/>
+    <keyword type="function" name="e2k_properties_set_type_as_string ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-type-as-string"/>
+    <keyword type="function" name="e2k_properties_set_type_as_string_array ()" link="evolution-exchange-E2kProperties.html#e2k-properties-set-type-as-string-array"/>
+    <keyword type="function" name="E2kPropertiesForeachFunc ()" link="evolution-exchange-E2kProperties.html#E2kPropertiesForeachFunc"/>
+    <keyword type="function" name="e2k_properties_foreach ()" link="evolution-exchange-E2kProperties.html#e2k-properties-foreach"/>
+    <keyword type="function" name="e2k_properties_foreach_removed ()" link="evolution-exchange-E2kProperties.html#e2k-properties-foreach-removed"/>
+    <keyword type="function" name="E2kPropertiesForeachNamespaceFunc ()" link="evolution-exchange-E2kProperties.html#E2kPropertiesForeachNamespaceFunc"/>
+    <keyword type="function" name="e2k_properties_foreach_namespace ()" link="evolution-exchange-E2kProperties.html#e2k-properties-foreach-namespace"/>
+    <keyword type="function" name="e2k_prop_namespace_name ()" link="evolution-exchange-E2kProperties.html#e2k-prop-namespace-name"/>
+    <keyword type="function" name="e2k_prop_namespace_abbrev ()" link="evolution-exchange-E2kProperties.html#e2k-prop-namespace-abbrev"/>
+    <keyword type="function" name="e2k_prop_property_name ()" link="evolution-exchange-E2kProperties.html#e2k-prop-property-name"/>
+    <keyword type="function" name="e2k_prop_proptag ()" link="evolution-exchange-E2kProperties.html#e2k-prop-proptag"/>
+    <keyword type="function" name="e2k_proptag_prop ()" link="evolution-exchange-E2kProperties.html#e2k-proptag-prop"/>
+    <keyword type="macro" name="E2K_PROPTAG_TYPE()" link="evolution-exchange-E2kProperties.html#E2K-PROPTAG-TYPE:CAPS"/>
+    <keyword type="macro" name="E2K_PROPTAG_ID()" link="evolution-exchange-E2kProperties.html#E2K-PROPTAG-ID:CAPS"/>
+    <keyword type="struct" name="struct E2kRestriction" link="evolution-exchange-e2k-restriction.html#E2kRestriction"/>
+    <keyword type="function" name="e2k_restriction_and ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-and"/>
+    <keyword type="function" name="e2k_restriction_andv ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-andv"/>
+    <keyword type="function" name="e2k_restriction_or ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-or"/>
+    <keyword type="function" name="e2k_restriction_orv ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-orv"/>
+    <keyword type="function" name="e2k_restriction_not ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-not"/>
+    <keyword type="enum" name="enum E2kRestrictionFuzzyLevel" link="evolution-exchange-e2k-restriction.html#E2kRestrictionFuzzyLevel"/>
+    <keyword type="macro" name="E2K_FL_MATCH_TYPE()" link="evolution-exchange-e2k-restriction.html#E2K-FL-MATCH-TYPE:CAPS"/>
+    <keyword type="function" name="e2k_restriction_content ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-content"/>
+    <keyword type="enum" name="enum E2kRestrictionRelop" link="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop"/>
+    <keyword type="function" name="e2k_restriction_prop_bool ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-bool"/>
+    <keyword type="function" name="e2k_restriction_prop_int ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-int"/>
+    <keyword type="function" name="e2k_restriction_prop_date ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-date"/>
+    <keyword type="function" name="e2k_restriction_prop_string ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-string"/>
+    <keyword type="function" name="e2k_restriction_prop_binary ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-binary"/>
+    <keyword type="function" name="e2k_restriction_compare ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-compare"/>
+    <keyword type="enum" name="enum E2kRestrictionBitop" link="evolution-exchange-e2k-restriction.html#E2kRestrictionBitop"/>
+    <keyword type="function" name="e2k_restriction_bitmask ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-bitmask"/>
+    <keyword type="function" name="e2k_restriction_size ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-size"/>
+    <keyword type="function" name="e2k_restriction_exist ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-exist"/>
+    <keyword type="function" name="e2k_restriction_sub ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-sub"/>
+    <keyword type="function" name="e2k_restriction_ref ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-ref"/>
+    <keyword type="function" name="e2k_restriction_unref ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-unref"/>
+    <keyword type="function" name="e2k_restriction_to_sql ()" link="evolution-exchange-e2k-restriction.html#e2k-restriction-to-sql"/>
+    <keyword type="struct" name="E2kResult" link="evolution-exchange-e2k-result.html#E2kResult"/>
+    <keyword type="function" name="e2k_results_free ()" link="evolution-exchange-e2k-result.html#e2k-results-free"/>
+    <keyword type="typedef" name="E2kResultIter" link="evolution-exchange-e2k-result.html#E2kResultIter"/>
+    <keyword type="function" name="e2k_result_iter_next ()" link="evolution-exchange-e2k-result.html#e2k-result-iter-next"/>
+    <keyword type="function" name="e2k_result_iter_get_total ()" link="evolution-exchange-e2k-result.html#e2k-result-iter-get-total"/>
+    <keyword type="function" name="e2k_result_iter_get_index ()" link="evolution-exchange-e2k-result.html#e2k-result-iter-get-index"/>
+    <keyword type="function" name="e2k_result_iter_free ()" link="evolution-exchange-e2k-result.html#e2k-result-iter-free"/>
+    <keyword type="struct" name="struct E2kSecurityDescriptor" link="E2kSecurityDescriptor.html#E2kSecurityDescriptor-struct"/>
+    <keyword type="function" name="e2k_security_descriptor_new ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-new"/>
+    <keyword type="function" name="e2k_security_descriptor_to_binary ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-to-binary"/>
+    <keyword type="function" name="e2k_security_descriptor_get_sids ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-get-sids"/>
+    <keyword type="function" name="e2k_security_descriptor_get_default ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-get-default"/>
+    <keyword type="function" name="e2k_security_descriptor_remove_sid ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-remove-sid"/>
+    <keyword type="enum" name="enum E2kPermissionsRole" link="E2kSecurityDescriptor.html#E2kPermissionsRole"/>
+    <keyword type="function" name="e2k_permissions_role_get_name ()" link="E2kSecurityDescriptor.html#e2k-permissions-role-get-name"/>
+    <keyword type="function" name="e2k_permissions_role_get_perms ()" link="E2kSecurityDescriptor.html#e2k-permissions-role-get-perms"/>
+    <keyword type="function" name="e2k_permissions_role_find ()" link="E2kSecurityDescriptor.html#e2k-permissions-role-find"/>
+    <keyword type="function" name="e2k_security_descriptor_get_permissions ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-get-permissions"/>
+    <keyword type="function" name="e2k_security_descriptor_set_permissions ()" link="E2kSecurityDescriptor.html#e2k-security-descriptor-set-permissions"/>
+    <keyword type="macro" name="E2K_PERMISSION_READ_ANY" link="E2kSecurityDescriptor.html#E2K-PERMISSION-READ-ANY:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_CREATE" link="E2kSecurityDescriptor.html#E2K-PERMISSION-CREATE:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_EDIT_OWNED" link="E2kSecurityDescriptor.html#E2K-PERMISSION-EDIT-OWNED:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_DELETE_OWNED" link="E2kSecurityDescriptor.html#E2K-PERMISSION-DELETE-OWNED:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_EDIT_ANY" link="E2kSecurityDescriptor.html#E2K-PERMISSION-EDIT-ANY:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_DELETE_ANY" link="E2kSecurityDescriptor.html#E2K-PERMISSION-DELETE-ANY:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_CREATE_SUBFOLDER" link="E2kSecurityDescriptor.html#E2K-PERMISSION-CREATE-SUBFOLDER:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_OWNER" link="E2kSecurityDescriptor.html#E2K-PERMISSION-OWNER:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_CONTACT" link="E2kSecurityDescriptor.html#E2K-PERMISSION-CONTACT:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_FOLDER_VISIBLE" link="E2kSecurityDescriptor.html#E2K-PERMISSION-FOLDER-VISIBLE:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_EDIT_MASK" link="E2kSecurityDescriptor.html#E2K-PERMISSION-EDIT-MASK:CAPS"/>
+    <keyword type="macro" name="E2K_PERMISSION_DELETE_MASK" link="E2kSecurityDescriptor.html#E2K-PERMISSION-DELETE-MASK:CAPS"/>
+    <keyword type="struct" name="struct E2kSid" link="evolution-exchange-E2kSid.html#E2kSid"/>
+    <keyword type="enum" name="enum E2kSidType" link="evolution-exchange-E2kSid.html#E2kSidType"/>
+    <keyword type="function" name="e2k_sid_new_from_string_sid ()" link="evolution-exchange-E2kSid.html#e2k-sid-new-from-string-sid"/>
+    <keyword type="function" name="e2k_sid_new_from_binary_sid ()" link="evolution-exchange-E2kSid.html#e2k-sid-new-from-binary-sid"/>
+    <keyword type="macro" name="E2K_SID_WKS_EVERYONE" link="evolution-exchange-E2kSid.html#E2K-SID-WKS-EVERYONE:CAPS"/>
+    <keyword type="macro" name="E2K_SID_WKS_ANONYMOUS" link="evolution-exchange-E2kSid.html#E2K-SID-WKS-ANONYMOUS:CAPS"/>
+    <keyword type="function" name="e2k_sid_get_sid_type ()" link="evolution-exchange-E2kSid.html#e2k-sid-get-sid-type"/>
+    <keyword type="function" name="e2k_sid_get_string_sid ()" link="evolution-exchange-E2kSid.html#e2k-sid-get-string-sid"/>
+    <keyword type="function" name="e2k_sid_get_binary_sid ()" link="evolution-exchange-E2kSid.html#e2k-sid-get-binary-sid"/>
+    <keyword type="function" name="e2k_sid_get_display_name ()" link="evolution-exchange-E2kSid.html#e2k-sid-get-display-name"/>
+    <keyword type="macro" name="E2K_SID_BINARY_SID_LEN()" link="evolution-exchange-E2kSid.html#E2K-SID-BINARY-SID-LEN:CAPS"/>
+    <keyword type="function" name="e2k_sid_binary_sid_hash ()" link="evolution-exchange-E2kSid.html#e2k-sid-binary-sid-hash"/>
+    <keyword type="function" name="e2k_sid_binary_sid_equal ()" link="evolution-exchange-E2kSid.html#e2k-sid-binary-sid-equal"/>
+    <keyword type="struct" name="E2kUri" link="evolution-exchange-e2k-uri.html#E2kUri"/>
+    <keyword type="function" name="e2k_uri_new ()" link="evolution-exchange-e2k-uri.html#e2k-uri-new"/>
+    <keyword type="function" name="e2k_uri_free ()" link="evolution-exchange-e2k-uri.html#e2k-uri-free"/>
+    <keyword type="function" name="e2k_uri_get_param ()" link="evolution-exchange-e2k-uri.html#e2k-uri-get-param"/>
+    <keyword type="function" name="e2k_uri_decode ()" link="evolution-exchange-e2k-uri.html#e2k-uri-decode"/>
+    <keyword type="function" name="e2k_uri_encode ()" link="evolution-exchange-e2k-uri.html#e2k-uri-encode"/>
+    <keyword type="function" name="e2k_uri_append_encoded ()" link="evolution-exchange-e2k-uri.html#e2k-uri-append-encoded"/>
+    <keyword type="function" name="e2k_uri_path ()" link="evolution-exchange-e2k-uri.html#e2k-uri-path"/>
+    <keyword type="function" name="e2k_uri_concat ()" link="evolution-exchange-e2k-uri.html#e2k-uri-concat"/>
+    <keyword type="function" name="e2k_uri_relative ()" link="evolution-exchange-e2k-uri.html#e2k-uri-relative"/>
+    <keyword type="struct" name="E2kUserDialog" link="evolution-exchange-E2kUserDialog.html#E2kUserDialog"/>
+    <keyword type="function" name="e2k_user_dialog_new ()" link="evolution-exchange-E2kUserDialog.html#e2k-user-dialog-new"/>
+    <keyword type="function" name="e2k_user_dialog_get_user ()" link="evolution-exchange-E2kUserDialog.html#e2k-user-dialog-get-user"/>
+    <keyword type="typedef" name="E2kHTTPStatus" link="evolution-exchange-e2k-http-utils.html#E2kHTTPStatus"/>
+    <keyword type="macro" name="E2K_HTTP_STATUS_IS_TRANSPORT_ERROR()" link="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-TRANSPORT-ERROR:CAPS"/>
+    <keyword type="macro" name="E2K_HTTP_STATUS_IS_INFORMATIONAL()" link="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-INFORMATIONAL:CAPS"/>
+    <keyword type="macro" name="E2K_HTTP_STATUS_IS_SUCCESSFUL()" link="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-SUCCESSFUL:CAPS"/>
+    <keyword type="macro" name="E2K_HTTP_STATUS_IS_REDIRECTION()" link="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-REDIRECTION:CAPS"/>
+    <keyword type="macro" name="E2K_HTTP_STATUS_IS_CLIENT_ERROR()" link="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-CLIENT-ERROR:CAPS"/>
+    <keyword type="macro" name="E2K_HTTP_STATUS_IS_SERVER_ERROR()" link="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-SERVER-ERROR:CAPS"/>
+    <keyword type="function" name="e2k_http_parse_date ()" link="evolution-exchange-e2k-http-utils.html#e2k-http-parse-date"/>
+    <keyword type="function" name="e2k_http_parse_status ()" link="evolution-exchange-e2k-http-utils.html#e2k-http-parse-status"/>
+    <keyword type="function" name="e2k_http_accept_language ()" link="evolution-exchange-e2k-http-utils.html#e2k-http-accept-language"/>
+    <keyword type="enum" name="enum E2kKerberosResult" link="evolution-exchange-e2k-kerberos.html#E2kKerberosResult"/>
+    <keyword type="function" name="e2k_kerberos_change_password ()" link="evolution-exchange-e2k-kerberos.html#e2k-kerberos-change-password"/>
+    <keyword type="function" name="e2k_kerberos_check_password ()" link="evolution-exchange-e2k-kerberos.html#e2k-kerberos-check-password"/>
+    <keyword type="function" name="e2k_parse_timestamp ()" link="evolution-exchange-e2k-utils.html#e2k-parse-timestamp"/>
+    <keyword type="function" name="e2k_make_timestamp ()" link="evolution-exchange-e2k-utils.html#e2k-make-timestamp"/>
+    <keyword type="function" name="e2k_make_timestamp_rfc822 ()" link="evolution-exchange-e2k-utils.html#e2k-make-timestamp-rfc822"/>
+    <keyword type="function" name="e2k_systime_to_time_t ()" link="evolution-exchange-e2k-utils.html#e2k-systime-to-time-t"/>
+    <keyword type="function" name="e2k_systime_from_time_t ()" link="evolution-exchange-e2k-utils.html#e2k-systime-from-time-t"/>
+    <keyword type="function" name="e2k_filetime_to_time_t ()" link="evolution-exchange-e2k-utils.html#e2k-filetime-to-time-t"/>
+    <keyword type="function" name="e2k_filetime_from_time_t ()" link="evolution-exchange-e2k-utils.html#e2k-filetime-from-time-t"/>
+    <keyword type="function" name="e2k_lf_to_crlf ()" link="evolution-exchange-e2k-utils.html#e2k-lf-to-crlf"/>
+    <keyword type="function" name="e2k_crlf_to_lf ()" link="evolution-exchange-e2k-utils.html#e2k-crlf-to-lf"/>
+    <keyword type="function" name="e2k_strdup_with_trailing_slash ()" link="evolution-exchange-e2k-utils.html#e2k-strdup-with-trailing-slash"/>
+    <keyword type="function" name="e2k_entryid_to_dn ()" link="evolution-exchange-e2k-utils.html#e2k-entryid-to-dn"/>
+    <keyword type="function" name="e2k_ascii_strcase_equal ()" link="evolution-exchange-e2k-utils.html#e2k-ascii-strcase-equal"/>
+    <keyword type="function" name="e2k_ascii_strcase_hash ()" link="evolution-exchange-e2k-utils.html#e2k-ascii-strcase-hash"/>
+    <keyword type="function" name="e2k_restriction_folders_only ()" link="evolution-exchange-e2k-utils.html#e2k-restriction-folders-only"/>
+    <keyword type="function" name="e2k_entryid_generate_oneoff ()" link="evolution-exchange-e2k-utils.html#e2k-entryid-generate-oneoff"/>
+    <keyword type="function" name="e2k_entryid_generate_local ()" link="evolution-exchange-e2k-utils.html#e2k-entryid-generate-local"/>
+    <keyword type="function" name="e2k_entryid_generate_contact ()" link="evolution-exchange-e2k-utils.html#e2k-entryid-generate-contact"/>
+    <keyword type="function" name="e2k_search_key_generate ()" link="evolution-exchange-e2k-utils.html#e2k-search-key-generate"/>
+    <keyword type="function" name="e2k_entryid_to_permanenturl ()" link="evolution-exchange-e2k-utils.html#e2k-entryid-to-permanenturl"/>
+    <keyword type="function" name="e2k_permanenturl_to_entryid ()" link="evolution-exchange-e2k-utils.html#e2k-permanenturl-to-entryid"/>
+    <keyword type="function" name="e2k_parse_xml ()" link="evolution-exchange-e2k-xml-utils.html#e2k-parse-xml"/>
+    <keyword type="function" name="e2k_parse_html ()" link="evolution-exchange-e2k-xml-utils.html#e2k-parse-html"/>
+    <keyword type="macro" name="E2K_IS_NODE()" link="evolution-exchange-e2k-xml-utils.html#E2K-IS-NODE:CAPS"/>
+    <keyword type="macro" name="E2K_XML_HEADER" link="evolution-exchange-e2k-xml-utils.html#E2K-XML-HEADER:CAPS"/>
+    <keyword type="function" name="e2k_g_string_append_xml_escaped ()" link="evolution-exchange-e2k-xml-utils.html#e2k-g-string-append-xml-escaped"/>
+    <keyword type="function" name="e2k_xml_find ()" link="evolution-exchange-e2k-xml-utils.html#e2k-xml-find"/>
+    <keyword type="function" name="e2k_xml_find_in ()" link="evolution-exchange-e2k-xml-utils.html#e2k-xml-find-in"/>
+    <keyword type="enum" name="enum MapiAccess" link="evolution-exchange-MAPI.html#MapiAccess"/>
+    <keyword type="enum" name="enum CdoInstanceTypes" link="evolution-exchange-MAPI.html#CdoInstanceTypes"/>
+    <keyword type="enum" name="enum MapiObjectType" link="evolution-exchange-MAPI.html#MapiObjectType"/>
+    <keyword type="enum" name="enum MapiPrDisplayType" link="evolution-exchange-MAPI.html#MapiPrDisplayType"/>
+    <keyword type="enum" name="enum MapiPrRecipientType" link="evolution-exchange-MAPI.html#MapiPrRecipientType"/>
+    <keyword type="enum" name="enum MapiPrMessageFlags" link="evolution-exchange-MAPI.html#MapiPrMessageFlags"/>
+    <keyword type="enum" name="enum MapiPrAction" link="evolution-exchange-MAPI.html#MapiPrAction"/>
+    <keyword type="enum" name="enum MapiPrActionFlag" link="evolution-exchange-MAPI.html#MapiPrActionFlag"/>
+    <keyword type="enum" name="enum MapiPrFlagStatus" link="evolution-exchange-MAPI.html#MapiPrFlagStatus"/>
+    <keyword type="enum" name="enum MapiPrPriority" link="evolution-exchange-MAPI.html#MapiPrPriority"/>
+    <keyword type="enum" name="enum MapiPrSensitivity" link="evolution-exchange-MAPI.html#MapiPrSensitivity"/>
+    <keyword type="enum" name="enum MapiPrImportance" link="evolution-exchange-MAPI.html#MapiPrImportance"/>
+    <keyword type="function" name="e2k_soup_message_new ()" link="evolution-exchange-E2kContext-(private).html#e2k-soup-message-new"/>
+    <keyword type="function" name="e2k_soup_message_new_full ()" link="evolution-exchange-E2kContext-(private).html#e2k-soup-message-new-full"/>
+    <keyword type="function" name="e2k_context_queue_message ()" link="evolution-exchange-E2kContext-(private).html#e2k-context-queue-message"/>
+    <keyword type="function" name="e2k_context_send_message ()" link="evolution-exchange-E2kContext-(private).html#e2k-context-send-message"/>
+    <keyword type="function" name="e2k_context_fba ()" link="evolution-exchange-E2kContext-(private).html#e2k-context-fba"/>
+    <keyword type="function" name="e2k_context_get_last_timestamp ()" link="evolution-exchange-E2kContext-(private).html#e2k-context-get-last-timestamp"/>
+    <keyword type="function" name="E2kOperationCancelFunc ()" link="evolution-exchange-E2kOperation-(private).html#E2kOperationCancelFunc"/>
+    <keyword type="function" name="e2k_operation_start ()" link="evolution-exchange-E2kOperation-(private).html#e2k-operation-start"/>
+    <keyword type="function" name="e2k_operation_finish ()" link="evolution-exchange-E2kOperation-(private).html#e2k-operation-finish"/>
+    <keyword type="function" name="e2k_results_array_new ()" link="evolution-exchange-E2kResult-(private).html#e2k-results-array-new"/>
+    <keyword type="function" name="e2k_results_array_add_from_multistatus ()" link="evolution-exchange-E2kResult-(private).html#e2k-results-array-add-from-multistatus"/>
+    <keyword type="function" name="e2k_results_array_free ()" link="evolution-exchange-E2kResult-(private).html#e2k-results-array-free"/>
+    <keyword type="function" name="e2k_results_from_multistatus ()" link="evolution-exchange-E2kResult-(private).html#e2k-results-from-multistatus"/>
+    <keyword type="function" name="e2k_results_copy ()" link="evolution-exchange-E2kResult-(private).html#e2k-results-copy"/>
+    <keyword type="function" name="E2kResultIterFetchFunc ()" link="evolution-exchange-E2kResult-(private).html#E2kResultIterFetchFunc"/>
+    <keyword type="function" name="E2kResultIterFreeFunc ()" link="evolution-exchange-E2kResult-(private).html#E2kResultIterFreeFunc"/>
+    <keyword type="function" name="e2k_result_iter_new ()" link="evolution-exchange-E2kResult-(private).html#e2k-result-iter-new"/>
+    <keyword type="function" name="test_main ()" link="evolution-exchange-test-utils.html#test-main"/>
+    <keyword type="function" name="test_quit ()" link="evolution-exchange-test-utils.html#test-quit"/>
+    <keyword type="function" name="test_abort_if_http_error ()" link="evolution-exchange-test-utils.html#test-abort-if-http-error"/>
+    <keyword type="function" name="test_ask_password ()" link="evolution-exchange-test-utils.html#test-ask-password"/>
+    <keyword type="function" name="test_get_password ()" link="evolution-exchange-test-utils.html#test-get-password"/>
+    <keyword type="function" name="test_get_context ()" link="evolution-exchange-test-utils.html#test-get-context"/>
+    <keyword type="function" name="test_get_gc ()" link="evolution-exchange-test-utils.html#test-get-gc"/>
+    <keyword type="function" name="xntlm_negotiate ()" link="evolution-exchange-xntlm.html#xntlm-negotiate"/>
+    <keyword type="function" name="xntlm_parse_challenge ()" link="evolution-exchange-xntlm.html#xntlm-parse-challenge"/>
+    <keyword type="function" name="xntlm_authenticate ()" link="evolution-exchange-xntlm.html#xntlm-authenticate"/>
+    <keyword type="typedef" name="XNTLM_DES_KS" link="evolution-exchange-xntlm-des.html#XNTLM-DES-KS:CAPS"/>
+    <keyword type="function" name="xntlm_deskey ()" link="evolution-exchange-xntlm-des.html#xntlm-deskey"/>
+    <keyword type="function" name="xntlm_des ()" link="evolution-exchange-xntlm-des.html#xntlm-des"/>
+    <keyword type="function" name="xntlm_md4sum ()" link="evolution-exchange-xntlm-md4.html#xntlm-md4sum"/>
+    <keyword type="struct" name="struct E2kAction" link="evolution-exchange-e2k-action.html#E2kAction"/>
+    <keyword type="enum" name="enum E2kActionType" link="evolution-exchange-e2k-action.html#E2kActionType"/>
+    <keyword type="function" name="e2k_action_move ()" link="evolution-exchange-e2k-action.html#e2k-action-move"/>
+    <keyword type="function" name="e2k_action_copy ()" link="evolution-exchange-e2k-action.html#e2k-action-copy"/>
+    <keyword type="enum" name="enum E2kActionReplyFlavor" link="evolution-exchange-e2k-action.html#E2kActionReplyFlavor"/>
+    <keyword type="function" name="e2k_action_reply ()" link="evolution-exchange-e2k-action.html#e2k-action-reply"/>
+    <keyword type="function" name="e2k_action_oof_reply ()" link="evolution-exchange-e2k-action.html#e2k-action-oof-reply"/>
+    <keyword type="function" name="e2k_action_defer ()" link="evolution-exchange-e2k-action.html#e2k-action-defer"/>
+    <keyword type="enum" name="enum E2kActionBounceCode" link="evolution-exchange-e2k-action.html#E2kActionBounceCode"/>
+    <keyword type="function" name="e2k_action_bounce ()" link="evolution-exchange-e2k-action.html#e2k-action-bounce"/>
+    <keyword type="struct" name="struct E2kAddrList" link="evolution-exchange-e2k-action.html#E2kAddrList"/>
+    <keyword type="enum" name="enum E2kActionForwardFlavor" link="evolution-exchange-e2k-action.html#E2kActionForwardFlavor"/>
+    <keyword type="function" name="e2k_action_forward ()" link="evolution-exchange-e2k-action.html#e2k-action-forward"/>
+    <keyword type="function" name="e2k_action_delegate ()" link="evolution-exchange-e2k-action.html#e2k-action-delegate"/>
+    <keyword type="function" name="e2k_action_tag ()" link="evolution-exchange-e2k-action.html#e2k-action-tag"/>
+    <keyword type="function" name="e2k_action_delete ()" link="evolution-exchange-e2k-action.html#e2k-action-delete"/>
+    <keyword type="function" name="e2k_actions_extract ()" link="evolution-exchange-e2k-action.html#e2k-actions-extract"/>
+    <keyword type="function" name="e2k_actions_append ()" link="evolution-exchange-e2k-action.html#e2k-actions-append"/>
+    <keyword type="function" name="e2k_actions_free ()" link="evolution-exchange-e2k-action.html#e2k-actions-free"/>
+    <keyword type="function" name="e2k_action_free ()" link="evolution-exchange-e2k-action.html#e2k-action-free"/>
+    <keyword type="function" name="e2k_addr_list_new ()" link="evolution-exchange-e2k-action.html#e2k-addr-list-new"/>
+    <keyword type="function" name="e2k_addr_list_set_local ()" link="evolution-exchange-e2k-action.html#e2k-addr-list-set-local"/>
+    <keyword type="function" name="e2k_addr_list_set_oneoff ()" link="evolution-exchange-e2k-action.html#e2k-addr-list-set-oneoff"/>
+    <keyword type="function" name="e2k_addr_list_free ()" link="evolution-exchange-e2k-action.html#e2k-addr-list-free"/>
+    <keyword type="struct" name="E2kFreebusy" link="evolution-exchange-e2k-freebusy.html#E2kFreebusy"/>
+    <keyword type="enum" name="enum E2kBusyStatus" link="evolution-exchange-e2k-freebusy.html#E2kBusyStatus"/>
+    <keyword type="struct" name="E2kFreebusyEvent" link="evolution-exchange-e2k-freebusy.html#E2kFreebusyEvent"/>
+    <keyword type="function" name="e2k_freebusy_new ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-new"/>
+    <keyword type="function" name="e2k_freebusy_reset ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-reset"/>
+    <keyword type="function" name="e2k_freebusy_add_interval ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-add-interval"/>
+    <keyword type="function" name="e2k_freebusy_clear_interval ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-clear-interval"/>
+    <keyword type="function" name="e2k_freebusy_add_from_calendar_uri ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-add-from-calendar-uri"/>
+    <keyword type="function" name="e2k_freebusy_save ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-save"/>
+    <keyword type="function" name="e2k_freebusy_destroy ()" link="evolution-exchange-e2k-freebusy.html#e2k-freebusy-destroy"/>
+    <keyword type="enum" name="enum E2kRestrictionType" link="evolution-exchange-E2kRestriction-(vaporware).html#E2kRestrictionType"/>
+    <keyword type="function" name="e2k_restriction_extract ()" link="evolution-exchange-E2kRestriction-(vaporware).html#e2k-restriction-extract"/>
+    <keyword type="function" name="e2k_restriction_append ()" link="evolution-exchange-E2kRestriction-(vaporware).html#e2k-restriction-append"/>
+    <keyword type="struct" name="E2kRule" link="evolution-exchange-e2k-rule.html#E2kRule"/>
+    <keyword type="struct" name="E2kRules" link="evolution-exchange-e2k-rule.html#E2kRules"/>
+    <keyword type="enum" name="enum E2kRuleState" link="evolution-exchange-e2k-rule.html#E2kRuleState"/>
+    <keyword type="function" name="e2k_rules_from_binary ()" link="evolution-exchange-e2k-rule.html#e2k-rules-from-binary"/>
+    <keyword type="function" name="e2k_rules_to_binary ()" link="evolution-exchange-e2k-rule.html#e2k-rules-to-binary"/>
+    <keyword type="function" name="e2k_rules_to_xml ()" link="evolution-exchange-e2k-rule.html#e2k-rules-to-xml"/>
+    <keyword type="function" name="e2k_rules_free ()" link="evolution-exchange-e2k-rule.html#e2k-rules-free"/>
+    <keyword type="function" name="e2k_rule_free ()" link="evolution-exchange-e2k-rule.html#e2k-rule-free"/>
+    <keyword type="struct" name="E2kRuleProp" link="evolution-exchange-e2k-rule.html#E2kRuleProp"/>
+    <keyword type="function" name="e2k_rule_prop_set ()" link="evolution-exchange-e2k-rule.html#e2k-rule-prop-set"/>
+    <keyword type="struct" name="E2kPropValue" link="evolution-exchange-e2k-rule.html#E2kPropValue"/>
+    <keyword type="function" name="e2k_rule_append_proptag ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-proptag"/>
+    <keyword type="function" name="e2k_rule_extract_proptag ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-proptag"/>
+    <keyword type="function" name="e2k_rule_append_propvalue ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-propvalue"/>
+    <keyword type="function" name="e2k_rule_extract_propvalue ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-propvalue"/>
+    <keyword type="function" name="e2k_rule_free_propvalue ()" link="evolution-exchange-e2k-rule.html#e2k-rule-free-propvalue"/>
+    <keyword type="function" name="e2k_rule_write_uint32 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-write-uint32"/>
+    <keyword type="function" name="e2k_rule_append_uint32 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-uint32"/>
+    <keyword type="function" name="e2k_rule_read_uint32 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-read-uint32"/>
+    <keyword type="function" name="e2k_rule_extract_uint32 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-uint32"/>
+    <keyword type="function" name="e2k_rule_write_uint16 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-write-uint16"/>
+    <keyword type="function" name="e2k_rule_append_uint16 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-uint16"/>
+    <keyword type="function" name="e2k_rule_read_uint16 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-read-uint16"/>
+    <keyword type="function" name="e2k_rule_extract_uint16 ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-uint16"/>
+    <keyword type="function" name="e2k_rule_append_byte ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-byte"/>
+    <keyword type="function" name="e2k_rule_extract_byte ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-byte"/>
+    <keyword type="function" name="e2k_rule_append_string ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-string"/>
+    <keyword type="function" name="e2k_rule_extract_string ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-string"/>
+    <keyword type="function" name="e2k_rule_append_unicode ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-unicode"/>
+    <keyword type="function" name="e2k_rule_extract_unicode ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-unicode"/>
+    <keyword type="function" name="e2k_rule_append_binary ()" link="evolution-exchange-e2k-rule.html#e2k-rule-append-binary"/>
+    <keyword type="function" name="e2k_rule_extract_binary ()" link="evolution-exchange-e2k-rule.html#e2k-rule-extract-binary"/>
+  </functions>
+</book>

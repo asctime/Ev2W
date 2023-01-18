@@ -1,0 +1,1852 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Yair Hershkovitz, 2008.
+# Yaron Shahrabani, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-13 11:25+0300\n"
+"PO-Revision-Date: 2010-07-13 11:26+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Gezer <sh.yaron@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hebrew\n"
+"Plural-Forms: nplurals=2;plural=(n!=1);\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "Specifies the time interval to refresh the GAL Cache."
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days' interval between GAL cache refreshes. "
+"Set this value to zero if you don't want to update GAL and use the current "
+"cache forever. This will work only if you have enabled offline caching for "
+"GAL."
+msgstr ""
+"This key specifies the number of days' interval between GAL cache refreshes. "
+"Set this value to zero if you don't want to update GAL and use the current "
+"cache forever. This will work only if you have enabled offline caching for "
+"GAL."
+
+#: ../addressbook/e-book-backend-exchange.c:135
+#, c-format
+msgid "Operation failed with status %d"
+msgstr "הפעולה כשלה במצב %d"
+
+#: ../addressbook/e-book-backend-exchange.c:1797
+#: ../addressbook/e-book-backend-exchange.c:2642
+msgid "Cancelled"
+msgstr "בוטלה"
+
+#: ../addressbook/e-book-backend-exchange.c:2319
+#: ../addressbook/e-book-backend-gal.c:1931
+msgid "Searching..."
+msgstr "מחפש..."
+
+#: ../addressbook/e-book-backend-gal.c:330
+#: ../addressbook/e-book-backend-gal.c:351
+msgid "Reconnecting to LDAP server..."
+msgstr "מתחבר מחדש לשרת LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1671
+msgid "Receiving LDAP search results..."
+msgstr "מקבל תוצאות חיפוש LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1962
+msgid "Error performing search"
+msgstr "שגיאה בביצוע החיפוש"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2145
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "המשאב '%s' לא זמין במשך תקופת הזמן שנבחרה."
+
+#: ../camel/camel-exchange-folder.c:75
+msgid "No Subject"
+msgstr "אין נושא"
+
+#: ../camel/camel-exchange-folder.c:137
+#, c-format
+msgid "This message is not available in offline mode."
+msgstr "הודעה זו אינה זמינה במצב לא מקוון"
+
+#: ../camel/camel-exchange-folder.c:386
+#, c-format
+msgid "You cannot expunge in offline mode."
+msgstr "לא ניתן לבצע השמדה במצב לא מקוון."
+
+#: ../camel/camel-exchange-folder.c:626
+msgid "Moving messages"
+msgstr "מעביר הודעות"
+
+#: ../camel/camel-exchange-folder.c:627
+msgid "Copying messages"
+msgstr "מעתיק הודעות"
+
+#: ../camel/camel-exchange-folder.c:1070
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "לא ניתן ליצור את הספרייה %s: ‏%s"
+
+#: ../camel/camel-exchange-folder.c:1081
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "לא ניתן לטעון סיכום עבור %s"
+
+#: ../camel/camel-exchange-folder.c:1088
+#, c-format
+msgid "Could not create cache for %s: "
+msgstr "לא ניתן ליצור מטמון עבור %s:"
+
+#: ../camel/camel-exchange-folder.c:1099
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "לא ניתן ליצור יומן עבור %s"
+
+#: ../camel/camel-exchange-folder.c:1146
+msgid "Scanning for changed messages"
+msgstr "סורק אחר הודעות ששונו"
+
+#: ../camel/camel-exchange-folder.c:1173
+msgid "Fetching summary information for new messages"
+msgstr "מוריד נתוני סיכום עבור הודעות חדשות"
+
+#: ../camel/camel-exchange-journal.c:144
+#, c-format
+msgid "No folder name found"
+msgstr "לא נמצא שם תיקייה"
+
+#: ../camel/camel-exchange-journal.c:185 ../camel/camel-exchange-utils.c:3139
+#: ../camel/camel-exchange-utils.c:3203 ../camel/camel-exchange-utils.c:3321
+#: ../camel/camel-exchange-utils.c:3352 ../camel/camel-exchange-utils.c:3404
+#: ../camel/camel-exchange-utils.c:3425
+#, c-format
+msgid "Folder doesn't exist"
+msgstr "התיקייה אינה קיימת"
+
+#: ../camel/camel-exchange-journal.c:417
+#, c-format
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "לא ניתן להוסיף הודעה במצב לא מקוון: המטמון אינו זמין"
+
+#: ../camel/camel-exchange-journal.c:437
+msgid "Cannot append message in offline mode: "
+msgstr "לא ניתן להוסיף הודעה במצב לא מקוון:"
+
+#: ../camel/camel-exchange-provider.c:52
+msgid "Secure or Plaintext Password"
+msgstr "ססמה פשוטה או מאובטחת"
+
+#: ../camel/camel-exchange-provider.c:53
+#: ../camel/camel-exchange-provider.c:140
+#: ../eplugin/exchange-account-setup.c:69
+msgid "Plaintext Password"
+msgstr "ססמה בטקסט פשוט"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:54
+#: ../camel/camel-exchange-provider.c:129
+#: ../eplugin/exchange-account-setup.c:58
+msgid "Secure Password"
+msgstr "ססמה מאובטחת"
+
+#: ../camel/camel-exchange-provider.c:60
+msgid "Checking for New Mail"
+msgstr "בודק עבור דואר חדש"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "C_heck for new messages in all folders"
+msgstr "_בדוק עבור הודעות חדשות בכל התיקיות"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:70
+msgid "Windows User_name:"
+msgstr "שם _משתמש Windows:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:75
+msgid "Global Address List/Active Directory"
+msgstr "Global Address List/Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:79
+msgid "_Global Catalog server name:"
+msgstr "שם ש_רת ה־Global Catalog:"
+
+#: ../camel/camel-exchange-provider.c:81
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "ה_גבלת מספר תגובות ה־GAL: %s"
+
+#: ../camel/camel-exchange-provider.c:83
+msgid "Authentication _Type:"
+msgstr "_סוג האימות:"
+
+#: ../camel/camel-exchange-provider.c:85
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "מתן האפשרות ל_עיון ב־GAL עד ההגעה למכסת ההורדה"
+
+#: ../camel/camel-exchange-provider.c:87
+msgid "_Expand groups of contacts in GAL to contact lists"
+msgstr "הר_חבת רשימות של אנשי קשר ב־GAL לרשימות אנשי קשר"
+
+#: ../camel/camel-exchange-provider.c:90
+msgid "Options"
+msgstr "אפשרויות"
+
+#: ../camel/camel-exchange-provider.c:92
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "משך א_זהרת תפוגת הססמה: %s"
+
+#: ../camel/camel-exchange-provider.c:94
+msgid "Automatically synchroni_ze account locally"
+msgstr "סנכ_רן את החשבון מקומית באופן אוטומטי"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:97
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "החלת _מסננים על הודעות חדשות בדואר הנכנס בשרת זה"
+
+#: ../camel/camel-exchange-provider.c:99
+msgid "Check new messages for _Junk contents"
+msgstr "בדיקת הודעות חדשות עבור תכני _זבל"
+
+#: ../camel/camel-exchange-provider.c:101
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "בדיקה אחר הודעות זבל בתיקיית הדואר הנכנס _בלבד"
+
+#: ../camel/camel-exchange-provider.c:111
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:113
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "לטיפול בדואר (ובנתונים אחרים) בשרתי Microsoft Exchange"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:132
+#: ../eplugin/exchange-account-setup.c:61
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr "אפשרות זו תתחבר אל שרת ה־Exchange באמצעות אימות בססמה מאובטחת (NTLM)."
+
+#: ../camel/camel-exchange-provider.c:142
+#: ../eplugin/exchange-account-setup.c:71
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr "אפשרות זו תתחבר לשרת ה־Exchange באמצעות אימות בססמה בטקסט פשוט."
+
+#: ../camel/camel-exchange-store.c:300
+#, c-format
+msgid "Exchange server %s"
+msgstr "שרת Exchange %s"
+
+#: ../camel/camel-exchange-store.c:304
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "חשבון ה־Exchange של %s על גבי %s"
+
+#: ../camel/camel-exchange-store.c:378
+#, c-format
+msgid "Could not authenticate to server. (Password incorrect?)"
+msgstr "לא ניתן להתאמת מול השרת. (ססמה שגויה?)"
+
+#: ../camel/camel-exchange-store.c:441
+#, c-format
+msgid "No such folder %s"
+msgstr "לא קיימת תיקייה %s"
+
+#: ../camel/camel-exchange-store.c:574
+#, c-format
+msgid "Cannot create folder in offline mode."
+msgstr "לא ניתן ליצור תיקייה במצב לא מקוון."
+
+#: ../camel/camel-exchange-store.c:604
+#, c-format
+msgid "Cannot delete folder in offline mode."
+msgstr "לא ניתן למחוק תיקייה במצב לא מקוון."
+
+#: ../camel/camel-exchange-store.c:630
+#, c-format
+msgid "Cannot rename folder in offline mode."
+msgstr "לא ניתן לשנות שם תיקייה במצב לא מקוון."
+
+#: ../camel/camel-exchange-store.c:711
+#, c-format
+msgid "Cannot subscribe folder in offline mode."
+msgstr "לא ניתן לרשום תיקייה במצב לא מקוון."
+
+#: ../camel/camel-exchange-store.c:730
+#, c-format
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "לא ניתן לבטל הרשמה מתיקייה במצב לא מקוון."
+
+#: ../camel/camel-exchange-transport.c:65
+#, c-format
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "ניתן להשתמש בתעבורת Exchange רק עבור מקור דואר של Exchange"
+
+#: ../camel/camel-exchange-transport.c:79
+#, c-format
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "לא ניתן לשלוח הודעה: נמען אחד או יותר שגוי"
+
+#: ../camel/camel-exchange-transport.c:90
+#, c-format
+msgid "Could not find 'From' address in message"
+msgstr "לא ניתן למצוא את השדה 'מאת' בהודעה"
+
+#: ../camel/camel-exchange-utils.c:529 ../camel/camel-exchange-utils.c:568
+msgid "Could not get new messages"
+msgstr "לא ניתן לקבל הודעות חדשות"
+
+#: ../camel/camel-exchange-utils.c:1056 ../camel/camel-exchange-utils.c:1207
+msgid "Could not open folder"
+msgstr "לא ניתן לפתוח תיקייה"
+
+#: ../camel/camel-exchange-utils.c:1203 ../camel/camel-exchange-utils.c:1221
+msgid "Could not open folder: Permission denied"
+msgstr "לא ניתן לפתוח את התיקייה: ההרשאה נדחתה"
+
+#: ../camel/camel-exchange-utils.c:1270 ../camel/camel-exchange-utils.c:2199
+msgid "No such folder"
+msgstr "לא קיימת תיקייה"
+
+#: ../camel/camel-exchange-utils.c:1292 ../camel/camel-exchange-utils.c:3113
+#: ../camel/camel-exchange-utils.c:3156 ../camel/camel-exchange-utils.c:3325
+#: ../camel/camel-exchange-utils.c:3378 ../camel/camel-exchange-utils.c:3440
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:51
+#: ../server/storage/e-storage.c:573
+msgid "Permission denied"
+msgstr "ההרשאה נדחתה"
+
+#: ../camel/camel-exchange-utils.c:2208
+msgid "Could not create folder."
+msgstr "לא ניתן ליצור תיקייה."
+
+#: ../camel/camel-exchange-utils.c:2296
+msgid "Could not open Deleted Items folder"
+msgstr "לא ניתן לפתוח את תיקיית הפריטים שנמחקו"
+
+#: ../camel/camel-exchange-utils.c:2422
+msgid "Could not empty Deleted Items folder"
+msgstr "לא ניתן לרוקן את תיקיית הפריטים שנמחקו"
+
+#: ../camel/camel-exchange-utils.c:2424
+msgid "Permission denied. Could not delete certain messages."
+msgstr "ההרשאה נדחתה. לא ניתן למחוק הודעות מסוימות."
+
+#: ../camel/camel-exchange-utils.c:2468
+msgid "Could not append message; mailbox is over quota"
+msgstr "לא ניתן להוסיף הודעה; תיבת הדואר אלקטרוני חרגה ממכסתה"
+
+#: ../camel/camel-exchange-utils.c:2469
+msgid "Could not append message"
+msgstr "לא ניתן להוסיף הודעה"
+
+#: ../camel/camel-exchange-utils.c:2655
+msgid "No such message"
+msgstr "אין הודעה כזו"
+
+#: ../camel/camel-exchange-utils.c:2727
+msgid "Message has been deleted"
+msgstr "ההודעה נמחקה"
+
+#: ../camel/camel-exchange-utils.c:2729
+msgid "Error retrieving message"
+msgstr "שגיאה בהורדת הודעה"
+
+#: ../camel/camel-exchange-utils.c:2778
+msgid "Mailbox does not support full-text searching"
+msgstr "תיבת הדוא\"ל לא תומכת בחיפוש טקסט מלא"
+
+#: ../camel/camel-exchange-utils.c:2890
+msgid "Unable to move/copy messages"
+msgstr "לא ניתן להעתיק/להעביר הודעות"
+
+#: ../camel/camel-exchange-utils.c:3018
+msgid "No mail submission URI for this mailbox"
+msgstr "אין כתובת למשלוח דואר לתיבת דואר זו"
+
+#: ../camel/camel-exchange-utils.c:3051
+msgid "Server won't accept mail via Exchange transport"
+msgstr "השרת לא יקבל דואר באמצעות תעבורה של Exchange"
+
+#: ../camel/camel-exchange-utils.c:3053
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"לחשבון שלך אין הרשאה להשתמש ב־<%s>\n"
+"ככתובת 'מאת'."
+
+#: ../camel/camel-exchange-utils.c:3065
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"לא ניתן לשלוח את ההודעה.\n"
+"יתכן שמשמעות הדבר היא שחשבונך התמלא עד למכסתו."
+
+#: ../camel/camel-exchange-utils.c:3069
+msgid "Could not send message"
+msgstr "לא ניתן לשלוח הודעה"
+
+#: ../camel/camel-exchange-utils.c:3105 ../camel/camel-exchange-utils.c:3161
+#: ../camel/camel-exchange-utils.c:3329 ../camel/camel-exchange-utils.c:3382
+#: ../camel/camel-exchange-utils.c:3446
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:40
+#: ../server/storage/e-storage.c:557
+msgid "Generic error"
+msgstr "שגיאה כללית"
+
+#: ../camel/camel-exchange-utils.c:3109
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:37
+msgid "Folder already exists"
+msgstr "התיקייה כבר קיימת"
+
+#: ../eplugin/exchange-account-setup.c:266
+msgid "Out of Office"
+msgstr "מחוץ למשרד"
+
+#: ../eplugin/exchange-account-setup.c:273
+msgid ""
+"The message specified below will be automatically sent to \n"
+"each person who sends mail to you while you are out of the office."
+msgstr ""
+"ההודעה שצוינה להלן תשלח אוטומטית לכל מי\n"
+"ששולח אליך הודעות דוא\"ל כשאינך במשרד."
+
+#: ../eplugin/exchange-account-setup.c:278
+msgid "Status:"
+msgstr "מצב:"
+
+#: ../eplugin/exchange-account-setup.c:285
+#: ../eplugin/exchange-account-setup.c:290
+msgid "I am out of the office"
+msgstr "מחוץ למשרד כרגע"
+
+#: ../eplugin/exchange-account-setup.c:286
+#: ../eplugin/exchange-account-setup.c:289
+msgid "I am in the office"
+msgstr "אני במשרד כרגע"
+
+#. Security settings
+#: ../eplugin/exchange-account-setup.c:325
+msgid "Security"
+msgstr "אבטחה"
+
+#. Change Password
+#: ../eplugin/exchange-account-setup.c:336
+msgid "Change the password for Exchange account"
+msgstr "החלפת הססמה לחשבון Exchange"
+
+#: ../eplugin/exchange-account-setup.c:338
+#: ../eplugin/exchange-change-password.c:85
+msgid "Change Password"
+msgstr "שינוי ססמה"
+
+#. Delegation Assistant
+#: ../eplugin/exchange-account-setup.c:343
+msgid "Manage the delegate settings for Exchange account"
+msgstr "ניהול הגדרות מיופי הכוח או את חשבון ה־Exchange"
+
+#: ../eplugin/exchange-account-setup.c:345
+msgid "Delegation Assistant"
+msgstr "מסייע ייפוי הכוח"
+
+#. Miscelleneous settings
+#: ../eplugin/exchange-account-setup.c:357
+msgid "Miscellaneous"
+msgstr "שונות"
+
+#. Folder Size
+#: ../eplugin/exchange-account-setup.c:367
+msgid "View the size of all Exchange folders"
+msgstr "צפייה בגודל כל תיקיות ה־Exchange"
+
+#: ../eplugin/exchange-account-setup.c:369
+#: ../eplugin/exchange-folder-size-display.c:183
+msgid "Folder Size"
+msgstr "גודל התיקייה"
+
+#: ../eplugin/exchange-account-setup.c:376
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:3
+msgid "Exchange Settings"
+msgstr "הגדרות Exchange"
+
+#: ../eplugin/exchange-account-setup.c:735
+msgid "_OWA URL:"
+msgstr "כ_תובת OWA:"
+
+#: ../eplugin/exchange-account-setup.c:761
+msgid "A_uthenticate"
+msgstr "_אימות"
+
+#: ../eplugin/exchange-account-setup.c:783
+msgid "Mailbox name is _different from username"
+msgstr "שם תיבת הדואר _שונה משם המשתמש"
+
+#: ../eplugin/exchange-account-setup.c:796
+msgid "_Mailbox:"
+msgstr "תיבת _דואר:"
+
+#: ../eplugin/exchange-account-setup.c:1011
+msgid "_Authentication Type"
+msgstr "_סוג האימות"
+
+#: ../eplugin/exchange-account-setup.c:1025
+msgid "Ch_eck for Supported Types"
+msgstr "ב_דיקה אחר סוגים נתמכים"
+
+#: ../eplugin/exchange-account-setup.c:1140 ../eplugin/exchange-contacts.c:217
+#, c-format
+msgid "%s KB"
+msgstr "%s ק\"ב"
+
+#: ../eplugin/exchange-account-setup.c:1142 ../eplugin/exchange-contacts.c:219
+#, c-format
+msgid "0 KB"
+msgstr "0 ק\"ב"
+
+#. FIXME: Take care of i18n
+#: ../eplugin/exchange-account-setup.c:1147 ../eplugin/exchange-calendar.c:236
+#: ../eplugin/exchange-contacts.c:222
+msgid "Size:"
+msgstr "גודל:"
+
+#: ../eplugin/exchange-calendar.c:196 ../eplugin/exchange-contacts.c:170
+msgid ""
+"Evolution is in offline mode. You cannot create or modify folders now.\n"
+"Please switch to online mode for such operations."
+msgstr ""
+"Evolution נמצאת במצב בלתי מקוון. לא ניתן לייצא או לשנות תיקיות כעת.\n"
+"יש לעבור למצב מקוון כדי לבצע פעולות כאלו."
+
+#: ../eplugin/exchange-calendar.c:247 ../eplugin/exchange-contacts.c:239
+msgid "_Location:"
+msgstr "_מיקום:"
+
+#: ../eplugin/exchange-change-password.c:95
+msgid "Your current password has expired. Please change your password now."
+msgstr "פג תוקף הססמה הנוכחית שלך. נא להכניס ססמה חדשה."
+
+#: ../eplugin/exchange-change-password.c:110
+msgid "Current _Password:"
+msgstr "הססמה ה_נוכחית:"
+
+#: ../eplugin/exchange-change-password.c:117
+msgid "_New Password:"
+msgstr "ססמה _חדשה:"
+
+#: ../eplugin/exchange-change-password.c:124
+msgid "_Confirm Password:"
+msgstr "הססמה _לאימות:"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../eplugin/exchange-change-password.c:175
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"הססמה הנוכחית אינה תואמת לססמה הקיימת עבור החשבון שלך. אנא להזין את הססמה "
+"הנכונה"
+
+#: ../eplugin/exchange-change-password.c:182
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "שתי הססמאות אינן תואמות. נא להזין את הססמאות מחדש."
+
+#. Translators: The %d is replaced with the actual number of days
+#: ../eplugin/exchange-config-listener.c:662
+#, c-format
+msgid "Your password will expire in the next %d day"
+msgid_plural "Your password will expire in the next %d days"
+msgstr[0] "ססמתך תפוג מחר..."
+msgstr[1] "יסמתך תפוג בעוד %d ימים..."
+
+#: ../eplugin/exchange-config-listener.c:665
+msgid "Password Expiry Warning..."
+msgstr "אזהרת תפוגת הססמה..."
+
+#: ../eplugin/exchange-config-listener.c:682
+msgid "_Change Password"
+msgstr "ה_חלפת ססמה"
+
+#: ../eplugin/exchange-config-listener.c:735
+msgid "Out of Office Assistant"
+msgstr "מסייע נוכחות במשרד"
+
+#: ../eplugin/exchange-config-listener.c:752
+msgid "Currently, your status is \"Out of the Office\"."
+msgstr "נכון לעכשיו, מצבך הוא \"מחוץ למשרד\""
+
+#: ../eplugin/exchange-config-listener.c:752
+msgid "Would you like to change your status to \"In the Office\"?"
+msgstr "האם ברצונך לשנות את המצב ל\"אני במשרד\""
+
+#: ../eplugin/exchange-config-listener.c:781
+msgid "_No, Don't Change Status"
+msgstr "_לא, לא לשנות את המצב"
+
+#: ../eplugin/exchange-config-listener.c:802
+msgid "_Yes, Change Status"
+msgstr "_כן, לשנות את המצב"
+
+#: ../eplugin/exchange-config-listener.c:834
+#, c-format
+msgid "Enter Password for %s"
+msgstr "יש להזין ססמה עבור %s"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:435
+#: ../server/storage/exchange-hierarchy-foreign.c:260
+msgid "Calendar"
+msgstr "לוח שנה"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:438
+#: ../server/storage/exchange-hierarchy-foreign.c:269
+msgid "Tasks"
+msgstr "משימות"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:433
+#: ../server/storage/exchange-hierarchy-foreign.c:264
+msgid "Inbox"
+msgstr "דואר נכנס"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:441
+#: ../server/storage/exchange-hierarchy-foreign.c:261
+msgid "Contacts"
+msgstr "אנשי קשר"
+
+#: ../eplugin/exchange-delegates-user.c:132
+#: ../eplugin/exchange-permissions-dialog.c:545
+#: ../server/lib/e2k-security-descriptor.c:901
+msgid "Custom"
+msgstr "מותאם אישית"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+#: ../eplugin/exchange-delegates-user.c:155
+#: ../eplugin/exchange-delegates-user.c:298
+#: ../eplugin/exchange-delegates-user.c:308
+#: ../eplugin/exchange-delegates-user.c:318
+#: ../eplugin/exchange-delegates-user.c:328
+msgid "Editor (read, create, edit)"
+msgstr "עורך (קריאה, יצירה, עריכה)"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+#: ../eplugin/exchange-delegates-user.c:160
+#: ../eplugin/exchange-delegates-user.c:297
+#: ../eplugin/exchange-delegates-user.c:307
+#: ../eplugin/exchange-delegates-user.c:317
+#: ../eplugin/exchange-delegates-user.c:327
+msgid "Author (read, create)"
+msgstr "יוצר (קריאה, יצירה)"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+#: ../eplugin/exchange-delegates-user.c:165
+#: ../eplugin/exchange-delegates-user.c:296
+#: ../eplugin/exchange-delegates-user.c:306
+#: ../eplugin/exchange-delegates-user.c:316
+#: ../eplugin/exchange-delegates-user.c:326
+msgid "Reviewer (read-only)"
+msgstr "מבקר (קריאה בלבד)"
+
+#: ../eplugin/exchange-delegates-user.c:168
+#: ../eplugin/exchange-delegates-user.c:295
+#: ../eplugin/exchange-delegates-user.c:305
+#: ../eplugin/exchange-delegates-user.c:315
+#: ../eplugin/exchange-delegates-user.c:325
+#: ../server/lib/e2k-security-descriptor.c:886
+msgid "None"
+msgstr "ללא"
+
+#. Translators: "Delegate Permissions" refers to the permissions on the delegator's folders
+#. that the delegatee would receive
+#: ../eplugin/exchange-delegates-user.c:225
+msgid "Delegate Permissions"
+msgstr "הרשאות מיופה הכוח"
+
+#: ../eplugin/exchange-delegates-user.c:243
+msgid "Permissions for"
+msgstr "הרשאות עבור"
+
+#. Translators: This is used for permissions for <user> for the folder Calendar.
+#: ../eplugin/exchange-delegates-user.c:255
+msgid "C_alendar:"
+msgstr "יו_מן:"
+
+#. Translators: This is used for permissions for <user> for the folder Tasks.
+#: ../eplugin/exchange-delegates-user.c:264
+msgid "_Tasks:"
+msgstr "_משימות:"
+
+#. Translators: This is used for permissions for <user> for the folder Inbox.
+#: ../eplugin/exchange-delegates-user.c:273
+msgid "_Inbox:"
+msgstr "_דואר נכנס:"
+
+#. Translators: This is used for permissions for <user> for the folder Contacts.
+#: ../eplugin/exchange-delegates-user.c:282
+msgid "Co_ntacts:"
+msgstr "_אנשי קשר:"
+
+#: ../eplugin/exchange-delegates-user.c:330
+msgid "_Summarize permissions"
+msgstr "תק_ציר ההרשאות"
+
+#: ../eplugin/exchange-delegates-user.c:334
+msgid "_Delegate can see private items"
+msgstr "_באי כוח יכולים לצפות בפריטים אישיים"
+
+#: ../eplugin/exchange-delegates-user.c:340
+#: ../eplugin/exchange-permissions-dialog.c:168
+#, c-format
+msgid "Permissions for %s"
+msgstr "הרשאות עבור %s"
+
+#. To translators: This is a part of the message to be sent to the delegatee
+#. summarizing the permissions assigned to him.
+#.
+#: ../eplugin/exchange-delegates-user.c:433
+msgid ""
+"This message was sent automatically by Evolution to inform you that you have "
+"been designated as a delegate. You can now send messages on my behalf."
+msgstr ""
+"הודעה זו נשלחה אוטומטית על ידי Evolution כדי ליידע אותך שנבחרת להיות מיופה "
+"כוח שלי. כעת יש בידיך היכולת לשלוח דואר בשמי."
+
+#. To translators: Another chunk of the same message.
+#.
+#: ../eplugin/exchange-delegates-user.c:438
+msgid "You have been given the following permissions on my folders:"
+msgstr "ניתנו לך ההרשאות הבאות לביצוע בתיקיות שלי:"
+
+#. To translators: This message is included if the delegatee has been given access
+#. to the private items.
+#.
+#: ../eplugin/exchange-delegates-user.c:458
+msgid "You are also permitted to see my private items."
+msgstr "יש לך גם את ההרשאות לצפות בפריטים אישיים."
+
+#. To translators: This message is included if the delegatee has not been given access
+#. to the private items.
+#.
+#: ../eplugin/exchange-delegates-user.c:465
+msgid "However, you are not permitted to see my private items."
+msgstr "ועם זאת, אין לך הרשה לצפות בפריטים האישיים שלי."
+
+#: ../eplugin/exchange-delegates-user.c:497
+#, c-format
+msgid "You have been designated as a delegate for %s"
+msgstr "נבחרת להיות מיופה כוח של %s"
+
+#: ../eplugin/exchange-delegates.c:413
+msgid "Delegate To:"
+msgstr "ייפוי כוחו של:"
+
+#: ../eplugin/exchange-delegates.c:413
+msgid "Delegate To"
+msgstr "ייפוי כוחו של"
+
+#: ../eplugin/exchange-delegates.c:578
+#, c-format
+msgid "Remove the delegate %s?"
+msgstr "האם להסיר את מיופה הכוח %s?"
+
+#: ../eplugin/exchange-delegates.c:695
+msgid "Could not access Active Directory"
+msgstr "לא ניתן לגשת אל ה־Active Directory"
+
+#: ../eplugin/exchange-delegates.c:707
+msgid "Could not find self in Active Directory"
+msgstr "לא ניתן למצוא את עצמי ב־Active Directory"
+
+#: ../eplugin/exchange-delegates.c:720
+#, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr "לא ניתן למצוא את מיופה הכוח %s ב־Active Directory"
+
+#: ../eplugin/exchange-delegates.c:732
+#, c-format
+msgid "Could not remove delegate %s"
+msgstr "לא ניתן להסיר את מיופה הכוח %s"
+
+#: ../eplugin/exchange-delegates.c:792
+msgid "Could not update list of delegates."
+msgstr "לא ניתן לעדכן את רשימת מיופי הכוח"
+
+#: ../eplugin/exchange-delegates.c:810
+#, c-format
+msgid "Could not add delegate %s"
+msgstr "לא ניתן להוסיף את מיופה הכוח %s"
+
+#: ../eplugin/exchange-delegates.c:926
+msgid "Delegates"
+msgstr "באי כוח"
+
+#: ../eplugin/exchange-delegates.c:941
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"משתמשים אלה יוכלו לשלוח דואר בשמך\n"
+"ולגשת לתיקיות שלך בהתאם להרשאות שתיתן להם."
+
+#: ../eplugin/exchange-delegates.c:965
+msgid "_Edit"
+msgstr "_ערוך"
+
+#: ../eplugin/exchange-delegates.c:995
+#: ../eplugin/exchange-permissions-dialog.c:920
+msgid "Name"
+msgstr "שם"
+
+#: ../eplugin/exchange-delegates.c:1021
+msgid "Error reading delegates list."
+msgstr "שגיאה בקריאת רשימת מיופי הכוח."
+
+#: ../eplugin/exchange-folder-permission.c:241
+#: ../eplugin/exchange-folder-permission.c:520
+#: ../eplugin/exchange-folder-permission.c:554
+#: ../eplugin/exchange-folder-permission.c:588
+msgid "Permissions..."
+msgstr "הרשאות"
+
+#: ../eplugin/exchange-folder-permission.c:243
+msgid "Check folder permissions"
+msgstr "בדיקת הרשאות התיקייה"
+
+#: ../eplugin/exchange-folder-permission.c:248
+#: ../eplugin/exchange-folder-permission.c:527
+#: ../eplugin/exchange-folder-permission.c:561
+#: ../eplugin/exchange-folder-permission.c:595
+msgid "Subscribe to Other User's Folder..."
+msgstr "מינוי לתיקייה של משתמש אחר..."
+
+#: ../eplugin/exchange-folder-permission.c:250
+#: ../eplugin/exchange-folder-permission.c:529
+#: ../eplugin/exchange-folder-permission.c:563
+#: ../eplugin/exchange-folder-permission.c:597
+#: ../eplugin/exchange-folder-subscription.c:306
+msgid "Subscribe to Other User's Folder"
+msgstr "מינוי לתיקייה של משתמש אחר"
+
+#: ../eplugin/exchange-folder-permission.c:255
+#: ../eplugin/exchange-folder-permission.c:534
+#: ../eplugin/exchange-folder-permission.c:568
+#: ../eplugin/exchange-folder-permission.c:602
+msgid "Unsubscribe Folder..."
+msgstr "ביטול המינוי לתיקייה..."
+
+#: ../eplugin/exchange-folder-permission.c:522
+msgid "Check calendar permissions"
+msgstr "בדיקת הרשאות לוח השנה"
+
+#: ../eplugin/exchange-folder-permission.c:556
+msgid "Check tasks permissions"
+msgstr "בדיקת הרשאות המשימות"
+
+#: ../eplugin/exchange-folder-permission.c:590
+msgid "Check address book permissions"
+msgstr "בדיקת הרשאות פנקס הכתובות"
+
+#: ../eplugin/exchange-folder-size-display.c:136
+msgid "Exchange Folder Tree"
+msgstr "עץ תיקיות ה־Exchange"
+
+#: ../eplugin/exchange-folder-size-display.c:151
+#, c-format
+msgid "Total size: %.2f KB"
+msgstr "גודל כולל: %.2f ק\"ב"
+
+#: ../eplugin/exchange-folder-size-display.c:179
+msgid "Folder Name"
+msgstr "שם התיקייה"
+
+#. FIXME Limit to one user
+#: ../eplugin/exchange-folder-subscription.c:72
+msgid "User"
+msgstr "משתמש"
+
+#: ../eplugin/exchange-folder-subscription.c:322
+msgid "_Account:"
+msgstr "_חשבון:"
+
+#: ../eplugin/exchange-folder-subscription.c:329
+msgid "_Folder Name:"
+msgstr "שם ה_תיקייה:"
+
+#: ../eplugin/exchange-folder-subscription.c:342
+msgid "_User:"
+msgstr "_משתמש:"
+
+#: ../eplugin/exchange-folder.c:320 ../eplugin/exchange-folder.c:376
+#, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "האם באמת לבטל את המינוי לתיקייה \"%s\"?"
+
+#: ../eplugin/exchange-folder.c:333 ../eplugin/exchange-folder.c:389
+#, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "ביטול המינוי אל \"%s\""
+
+#: ../eplugin/exchange-mail-send-options.c:220
+msgid "_Send Options"
+msgstr "אפשרויות _שליחה"
+
+#: ../eplugin/exchange-mail-send-options.c:222
+msgid "Insert Send options"
+msgstr "הוספת אפשרויות שליחה"
+
+#. FIXME: Don't hardcode this
+#: ../eplugin/exchange-operations.c:122 ../eplugin/exchange-operations.c:167
+#: ../server/storage/exchange-account.c:1259
+msgid "Personal Folders"
+msgstr "תיקיות אישיות"
+
+#: ../eplugin/exchange-permissions-dialog.c:278
+msgid "(Permission denied.)"
+msgstr "(ההרשאה נדחתה.)"
+
+#: ../eplugin/exchange-permissions-dialog.c:384
+msgid "Add User:"
+msgstr "הוספת משתמש:"
+
+#: ../eplugin/exchange-permissions-dialog.c:384
+#: ../eplugin/exchange-send-options.c:469
+msgid "Add User"
+msgstr "הוספת משתמש"
+
+#: ../eplugin/exchange-permissions-dialog.c:796
+msgid "Permissions"
+msgstr "הרשאות"
+
+#: ../eplugin/exchange-permissions-dialog.c:813
+msgid "Role: "
+msgstr "תפקיד: "
+
+#: ../eplugin/exchange-permissions-dialog.c:839
+msgid "Create items"
+msgstr "יצירת פריטים"
+
+#: ../eplugin/exchange-permissions-dialog.c:843
+msgid "Read items"
+msgstr "פריטים שנקראו"
+
+#: ../eplugin/exchange-permissions-dialog.c:847
+msgid "Create subfolders"
+msgstr "יצירת תת־תיקיות"
+
+#: ../eplugin/exchange-permissions-dialog.c:855
+msgid "Cannot Edit"
+msgstr "לא ניתן לערוך"
+
+#: ../eplugin/exchange-permissions-dialog.c:861
+msgid "Edit Own Items"
+msgstr "עריכת פריטים עצמיים"
+
+#: ../eplugin/exchange-permissions-dialog.c:867
+msgid "Edit Any Items"
+msgstr "עריכת כל הפריטים"
+
+#: ../eplugin/exchange-permissions-dialog.c:881
+msgid "Folder owner"
+msgstr "בעל התיקייה"
+
+#: ../eplugin/exchange-permissions-dialog.c:885
+msgid "Folder contact"
+msgstr "איש הקשר של התיקייה"
+
+#: ../eplugin/exchange-permissions-dialog.c:889
+msgid "Folder visible"
+msgstr "התיקייה גלויה"
+
+#: ../eplugin/exchange-permissions-dialog.c:897
+msgid "Cannot Delete"
+msgstr "לא ניתן למחוק"
+
+#: ../eplugin/exchange-permissions-dialog.c:904
+msgid "Delete Own Items"
+msgstr "מחיקת פריטים עצמיים"
+
+#: ../eplugin/exchange-permissions-dialog.c:910
+msgid "Delete Any Items"
+msgstr "מחיקת כל הפריטים"
+
+#: ../eplugin/exchange-permissions-dialog.c:924
+msgid "Role"
+msgstr "תפקיד"
+
+#: ../eplugin/exchange-send-options.c:337
+msgid "Exchange - Send Options"
+msgstr "Exchange - אפשרויות שליחה"
+
+#: ../eplugin/exchange-send-options.c:358
+msgid "Message Settings"
+msgstr "הגדרות הודעה"
+
+#: ../eplugin/exchange-send-options.c:372
+msgid "I_mportance: "
+msgstr "_חשיבות:"
+
+#. Translators: Here's set a message sensitivity, which means for exchange
+#. one of Normal, Personal, Private, Confidential.
+#: ../eplugin/exchange-send-options.c:381
+msgid "_Sensitivity: "
+msgstr "ר_גישות:"
+
+#: ../eplugin/exchange-send-options.c:393
+#: ../eplugin/exchange-send-options.c:403
+msgid "Normal"
+msgstr "רגילה"
+
+#: ../eplugin/exchange-send-options.c:394
+msgid "Personal"
+msgstr "אישי"
+
+#: ../eplugin/exchange-send-options.c:395
+msgid "Private"
+msgstr "פרטי"
+
+#: ../eplugin/exchange-send-options.c:396
+msgid "Confidential"
+msgstr "חסוי"
+
+#: ../eplugin/exchange-send-options.c:404
+msgid "High"
+msgstr "גבוהה"
+
+#: ../eplugin/exchange-send-options.c:405
+msgid "Low"
+msgstr "נמוכה"
+
+#: ../eplugin/exchange-send-options.c:407
+msgid "Send as Delegate"
+msgstr "שליחה כמיופה כוח"
+
+#: ../eplugin/exchange-send-options.c:424
+msgid "_User"
+msgstr "_משתמש"
+
+#: ../eplugin/exchange-send-options.c:432
+msgid "Tracking Options"
+msgstr "אפשרויות מעקב"
+
+#: ../eplugin/exchange-send-options.c:440
+msgid "Request a _delivery receipt for this message"
+msgstr "בקשת תגובת מ_שלוח עבור הודעה זו"
+
+#: ../eplugin/exchange-send-options.c:445
+msgid "Request a _read receipt for this message"
+msgstr "בקשת תגובת קריאה עבור הודעה זו"
+
+#: ../eplugin/exchange-user-dialog.c:135
+msgid "Select User"
+msgstr "בחירת משתמש"
+
+#: ../eplugin/exchange-user-dialog.c:174
+msgid "Address Book..."
+msgstr "ספר כתובות..."
+
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:1
+msgid "Activates the Evolution-Exchange extension package."
+msgstr "הפעלת חבילת ההרחבה Evolution-Exchange."
+
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:2
+msgid "Exchange Operations"
+msgstr "פעולות Exchange"
+
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:4
+msgid "Size"
+msgstr "גודל"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:1
+msgid "Cannot access the \"Exchange settings\" tab in offline mode."
+msgstr "לא ניתן לגשת ללשונית \"הגדרות ה־Exchange\" במצב בלתי מקוון."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:2
+msgid "Cannot change password due to configuration problems."
+msgstr "לא ניתן לשנות את הססמה עקב תקלות תצורה"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:3
+msgid "Cannot display folders."
+msgstr "לא ניתן להציג את התיקיות."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:4
+msgid "Cannot perform the operation."
+msgstr "לא ניתן לבצע את הפעולה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:5
+msgid ""
+"Changes to options for Exchange account \"{0}\" will only take effect after "
+"restarting Evolution."
+msgstr ""
+"השינויים באפשרויות חשבון ה־Exchange‏ \"{0}\" יכנסו לתוקף רק לאחר הפעלת "
+"Evolution מחדש."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:6
+msgid "Could not authenticate to server."
+msgstr "לא ניתן להתאמת מול השרת."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:7
+msgid "Could not change password."
+msgstr "לא ניתן לשנות את הססמה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:8
+msgid ""
+"Could not configure Exchange account because \n"
+"an unknown error occurred. Check the URL, \n"
+"username and password, and try again."
+msgstr ""
+"לא ניתן להגדיר את חשבון ה־Exchange\n"
+" כיווןשארעה שגיאה בלתי מוכרת. יש לבדוק את\n"
+"הכתובת, שם המשתמש והססמה ולנסות שוב."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:11
+msgid "Could not connect to Exchange server."
+msgstr "לא ניתן להתחבר לשרת ה־Exchange."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:12
+msgid "Could not connect to server {0}."
+msgstr "לא ניתן להתחבר לשרת {0}."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:13
+msgid "Could not determine folder permissions for delegates."
+msgstr "לא ניתן לזהות מהן הרשאות התיקייה עבור מיופי הכוח."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:14
+msgid "Could not find Exchange Web Storage System."
+msgstr "לא ניתן למצוא את מערכת האחסון המקוון של Exhange"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:15
+msgid "Could not locate server {0}."
+msgstr "לא ניתן לאתר את השרת {0}."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:16
+msgid "Could not make {0} a delegate"
+msgstr "לא ניתן להפוך את {0} למיופה כוח"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:17
+msgid "Could not read folder permissions"
+msgstr "לא ניתן לקרוא את הרשאות התיקייה"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:18
+msgid "Could not read folder permissions."
+msgstr "לא ניתן לקרוא את הרשאות התיקייה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:19
+msgid "Could not read out-of-office state"
+msgstr "לא ניתן לקרוא את מצב הנוכחות במשרד"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:20
+msgid "Could not update folder permissions."
+msgstr "לא ניתן לעדכן את הרשאות התיקייה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:21
+msgid "Could not update out-of-office state"
+msgstr "לא ניתן לעדכן את מצב הנוכחות במשרד"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:22
+msgid "Evolution requires a restart to load the subscribed user's mailbox"
+msgstr "Evolution דורשת הפעלה מחדש כדי לטעון את תיבת הדואר של המשתמש במינוי"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:23
+msgid "Exchange Account is offline."
+msgstr "חשבון ה־Exchange אינו מקוון."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:24
+msgid ""
+"Exchange Connector requires access to certain\n"
+"functionality on the Exchange Server that appears\n"
+"to be disabled or blocked. (This is usually \n"
+"unintentional.) Your Exchange Administrator will \n"
+"need to enable this functionality in order for \n"
+"you to be able to use Evolution Exchange Connector.\n"
+"\n"
+"For information to provide to your Exchange \n"
+"administrator, please follow the link below:\n"
+"\n"
+"{0}\n"
+"  "
+msgstr ""
+"Exchange Connector דורש גישה לתכונות מסוימות\n"
+"בשרת ה־Exchange שנראה כי הן מבוטלות\n"
+"או חסומות. (לרוב זה לא נעשה בכוונה.) \n"
+"על מנהל ה־Exchange להפעיל תכונה זו \n"
+"כדי שתהיה לך האפשרות להשתמש \n"
+"ב־Evolution Exchange Connector.\n"
+"\n"
+"כדי לספק מידע נוסף למנהל ה־Exchange \n"
+"ניתן להיכנס לקישור הבא:\n"
+"\n"
+"{0}\n"
+"  "
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:36
+msgid "Failed to update delegates:"
+msgstr "ארע כשל בעדכון מיופי הכוח:"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:38
+msgid "Folder does not exist"
+msgstr "התיקייה אינה קיימת"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:39
+msgid "Folder offline"
+msgstr "תיקייה בלתי מקוונת"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:41
+msgid "Global Catalog Server is not reachable"
+msgstr "שרת ה־Global Catalog אינו נגיש"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:42
+msgid ""
+"If OWA is running on a different path, you must specify that in the account "
+"configuration dialog."
+msgstr "אם OWA פעיל בנתיב אחר, יהיה עליך לציין זאת בדו־שיח הגדרות החשבון."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:43
+msgid "Mailbox for {0} is not on this server."
+msgstr "תיבת הדואר עבור {0} אינה בשרת זה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:44
+msgid "Make sure the URL is correct and try again."
+msgstr "נא לוודא כי הכתובת נכונה ולנסות שוב."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:45
+msgid "Make sure the server name is spelled correctly and try again."
+msgstr "נא לוודא כי שם השרת מאוית כראוי ולנסות שוב."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:46
+msgid "Make sure the username and password are correct and try again."
+msgstr "נא לוודא ששם המשתמש והססמה נכונים ולנסות שוב."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:47
+msgid "No Global Catalog server configured for this account."
+msgstr "לא מוגדר שרת Global Catalog"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:48
+msgid "No mailbox for user {0} on {1}."
+msgstr "למשתמש {0} אין תיבת דואר ב־{1}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:49
+msgid "No such user {0}"
+msgstr "אין כזה משתמש {0}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:50
+msgid "Password successfully changed."
+msgstr "הססמה שונתה בהצלחה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:52
+msgid "Please enter a Delegate's ID or deselect the Send as a Delegate option."
+msgstr "נא להזין את מזהה מיופה הכוח או לבטל את בחירת אפשרות השליחה כמיופה כוח."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:53
+msgid "Please make sure the Global Catalog Server name is correct."
+msgstr "נא לוודא כי שם שרת ה־Global Catalog הוא נכון."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:54
+msgid "Please restart Evolution for changes to take effect"
+msgstr "יש להפעיל את Evolution מחדש כדי שהשינויים ייכנסו לתוקף."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:55
+msgid "Please select a user."
+msgstr "נא לבחור משתמש."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:56
+msgid "Server rejected password because it is too weak."
+msgstr "השרת דחה את הססמה כיוון שהיא חלשה מדי."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:57
+msgid "The Exchange account will be disabled when you quit Evolution"
+msgstr "חשבון ה־Exchange ינוטרל עם היציאה מ־Evolution"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:58
+msgid "The Exchange account will be removed when you quit Evolution"
+msgstr "חשבון ה־Exchange יוסר עם היציאה מ־Evolution"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:59
+msgid "The Exchange server is not compatible with Exchange Connector."
+msgstr "שרת ה־Exchange אינו תואם ל־Exchange Connector."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:60
+msgid ""
+"The server is running Exchange 5.5. Exchange Connector \n"
+"supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"על השרת רץ Exchange 5.5.‏ Exchange Connector \n"
+"תומך ב־Microsoft Exchange 2000 ו־2003 בלבד."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:62
+msgid ""
+"This probably means that your server requires \n"
+"you to specify the Windows domain name \n"
+"as part of your username (eg, &quot;DOMAIN\\user&quot;).\n"
+"\n"
+"Also, you may have typed your password incorrectly."
+msgstr ""
+"משמעות הדבר היא שהשרת שלך דורש \n"
+"ממך לציין את שם מתחם ה־Windows \n"
+"כחלק משם המשתמש שלך (דוגמה &quot;DOMAIN\\user&quot;).\n"
+"\n"
+"בנוסף, יתכן ששגית בהזנת הססמה שלך."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:67
+msgid "Try again with a different password."
+msgstr "נא לנסות שוב עם ססמה אחרת."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:68
+msgid "Unable to add user to access control list:"
+msgstr "לא ניתן להוסיף משתמש לרשימת בקרת הגישה:"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:69
+msgid "Unable to edit delegates."
+msgstr "לא ניתן לערוך את מיופי הכוח."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:70
+msgid "Unknown error looking up {0}"
+msgstr "שגיאה בלתי מוכרת בחיפוש אחר {0}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:71
+msgid "Unknown error."
+msgstr "שגיאה בלתי מוכרת."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:72
+msgid "Unknown type"
+msgstr "סוג בלתי ידוע"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:73
+msgid "Unsupported operation"
+msgstr "פעולה שאינה נתמכת"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:74
+msgid "You are nearing your quota available for storing mail on this server."
+msgstr "תיבת הדואר שלך מתקרבת למכסה המוקצית לה לשרת זה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:75
+msgid ""
+"You are permitted to send a message on behalf of only one delegator at a "
+"time."
+msgstr "יש באפשרותך לשלוח הודעה בשמו של מיופה כוח אחד בלבד בכל פעם."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:76
+msgid "You cannot make yourself your own delegate"
+msgstr "אין לך את האפשרות להיות מיופה כוח של עצמך"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:77
+msgid "You have exceeded your quota for storing mail on this server."
+msgstr "חרגת ממכסת אחסון דברי הדואר בשרת זה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:78
+msgid "You may only configure a single Exchange account."
+msgstr "ניתן להגדיר חשבון Exchange יחיד בלבד."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:79
+msgid ""
+"Your current usage is: {0} KB. Try to clear up some space by deleting some "
+"mail."
+msgstr ""
+"הכמות בה נעשה שימוש היא: {0} ק\"ב. נא לנסות לפנות קצת מקום על ידי מחיקת כמה "
+"דברי דואר."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:80
+msgid ""
+"Your current usage is: {0} KB. You will not be able to either send or "
+"receive mail now."
+msgstr ""
+"הכמות בה נעשה שימוש היא: {0} ק\"ב. לא תהיה לך האפשרות לשלוח או לקבל דברי "
+"דואר לעת עתה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:81
+msgid ""
+"Your current usage is: {0} KB. You will not be able to send mail until you "
+"clear up some space by deleting some mail."
+msgstr ""
+"הכמות בה נעשה שימוש היא: {0} ק\"ב. לא ניתן לשלוח דואר עד אשר יתפנה מעט מקום "
+"על ידי מחיקת פרטי דואר."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:82
+msgid "Your password has expired."
+msgstr "ססמתך פגה."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:83
+msgid "{0}"
+msgstr "{0}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:84
+msgid "{0} cannot be added to an access control list"
+msgstr "לא ניתן להוסיף את{0} רשימת בקרת גישה"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:85
+msgid "{0} is already a delegate"
+msgstr "{0} כבר מיופה כוח"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:86
+msgid "{0} is already in the list"
+msgstr "{0} כבר ברשימה"
+
+#: ../server/lib/e2k-autoconfig.c:1692
+#: ../server/storage/exchange-account.c:954
+#, c-format
+msgid "Enter password for %s"
+msgstr "הזנת ססמה עבור %s"
+
+#: ../server/lib/e2k-autoconfig.c:1693
+#: ../server/storage/exchange-account.c:959
+msgid "Enter password"
+msgstr "הזנת ססמה"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+#: ../server/lib/e2k-security-descriptor.c:842
+msgid "Owner"
+msgstr "בעלים"
+
+#: ../server/lib/e2k-security-descriptor.c:852
+msgid "Publishing Editor"
+msgstr "עורך להפצה"
+
+#: ../server/lib/e2k-security-descriptor.c:860
+msgid "Editor"
+msgstr "עורך"
+
+#: ../server/lib/e2k-security-descriptor.c:867
+msgid "Publishing Author"
+msgstr "יוצר להפצה"
+
+#: ../server/lib/e2k-security-descriptor.c:873
+msgid "Author"
+msgstr "יוצר"
+
+#: ../server/lib/e2k-security-descriptor.c:878
+msgid "Non-editing Author"
+msgstr "יוצר שלא ערך"
+
+#: ../server/lib/e2k-security-descriptor.c:882
+msgid "Reviewer"
+msgstr "מבקר"
+
+#: ../server/lib/e2k-security-descriptor.c:884
+msgid "Contributor"
+msgstr "תורם"
+
+#: ../server/storage/e-storage.c:555
+msgid "No error"
+msgstr "אין שגיאה"
+
+#: ../server/storage/e-storage.c:559
+msgid "A folder with the same name already exists"
+msgstr "תיקייה בשם זה כבר קיימת"
+
+#: ../server/storage/e-storage.c:561
+msgid "The specified folder type is not valid"
+msgstr "סוג התיקייה שצוינה אינו תקין"
+
+#: ../server/storage/e-storage.c:563
+msgid "I/O error"
+msgstr "שגיאת קלט/פלט"
+
+#: ../server/storage/e-storage.c:565
+msgid "Not enough space to create the folder"
+msgstr "אין די מקום כדי ליצור את התיקייה"
+
+#: ../server/storage/e-storage.c:567
+msgid "The folder is not empty"
+msgstr "התיקייה אינה ריקה"
+
+#: ../server/storage/e-storage.c:569
+msgid "The specified folder was not found"
+msgstr "התיקייה שצוינה לא נמצאה"
+
+#: ../server/storage/e-storage.c:571
+msgid "Function not implemented in this storage"
+msgstr "הפונקציה לא הוטמעה באחסון זה"
+
+#: ../server/storage/e-storage.c:575
+msgid "Operation not supported"
+msgstr "הפעולה אינה נתמכת"
+
+#: ../server/storage/e-storage.c:577
+msgid "The specified type is not supported in this storage"
+msgstr "הסוג שצוין אינו נתמך באחסון זה"
+
+#: ../server/storage/e-storage.c:579
+msgid "The specified folder cannot be modified or removed"
+msgstr "לא ניתן לשנות או להסיר את התיקייה שצוינה"
+
+#: ../server/storage/e-storage.c:581
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr "לא ניתן להפוך את התיקייה לצאצא של אחד מצאצאיה"
+
+#: ../server/storage/e-storage.c:583
+msgid "Cannot create a folder with that name"
+msgstr "לא ניתן ליצור תיקייה בשם זה"
+
+#: ../server/storage/e-storage.c:585
+msgid "This operation cannot be performed in offline mode"
+msgstr "לא ניתן לבצע פעולה זו במצב בלתי מקוון"
+
+#: ../server/storage/e-storage.c:587
+msgid "Unknown error"
+msgstr "שגיאה בלתי מוכרת"
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#: ../server/storage/exchange-account.c:639
+#, c-format
+msgid "%s's Folders"
+msgstr "התיקיות של %s"
+
+#: ../server/storage/exchange-account.c:1274
+msgid "Favorite Public Folders"
+msgstr "תיקיות ציבוריות מועדפות"
+
+#. i18n: Outlookism
+#: ../server/storage/exchange-account.c:1291
+msgid "All Public Folders"
+msgstr "כל התיקיות הציבוריות"
+
+#. i18n: Outlookism
+#: ../server/storage/exchange-account.c:1305
+msgid "Global Address List"
+msgstr "Global Address List"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:262
+msgid "Deleted Items"
+msgstr "פריטים שנמחקו"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:263
+msgid "Drafts"
+msgstr "טיוטות"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:265
+msgid "Journal"
+msgstr "יומן"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:266
+msgid "Notes"
+msgstr "הערות"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:267
+msgid "Outbox"
+msgstr "דואר יוצא"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:268
+msgid "Sent Items"
+msgstr "פריטים שנשלחו"
+
+#: ../tools/exchange-autoconfig-wizard.c:176
+msgid "Welcome"
+msgstr "ברוכים הבאים"
+
+#: ../tools/exchange-autoconfig-wizard.c:176
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"ברוך בואך ל־Evolution Connectorל־Microsoft Exchange.\n"
+"סדרת המסכים הבאים תסייע לך בהגדרת Evolution\n"
+"לחיבור אל חשבון ה־Exchange שלך.\n"
+"\n"
+"נא ללחוץ על הלחצן \"קדימה\" כדי להמשיך."
+
+#: ../tools/exchange-autoconfig-wizard.c:188
+#: ../tools/exchange-autoconfig-wizard.c:361
+#: ../tools/exchange-autoconfig-wizard.c:448
+msgid "Exchange Configuration"
+msgstr "הגדרת Exchange"
+
+#: ../tools/exchange-autoconfig-wizard.c:188
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Evolution Connector ל־Microsoft Exchange יכול להשתמש בנתוני החשבון של חשבון "
+"נוכחי שלך ב־Outlook Web Access (OWA).\n"
+"\n"
+"יש להזין את כתובת ה־OWA שלך, את שם המשתמש ואת הססמה ואז ללחוץ על \"קדימה\".\n"
+
+#: ../tools/exchange-autoconfig-wizard.c:196
+msgid "OWA _URL:"
+msgstr "_כתובת OWA:"
+
+#: ../tools/exchange-autoconfig-wizard.c:200
+msgid "User_name:"
+msgstr "שם מש_תמש:"
+
+#: ../tools/exchange-autoconfig-wizard.c:204
+msgid "_Password:"
+msgstr "_ססמה:"
+
+#: ../tools/exchange-autoconfig-wizard.c:209
+msgid "_Remember this password"
+msgstr "שמ_ירת ססמה זאת"
+
+#: ../tools/exchange-autoconfig-wizard.c:282
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"לא ניתן להתחבר אל שרת ה־Exchange.\n"
+"נא לוודא כי הכתובת נכונה (אולי \"%s\" במקום \"%s\"?) ולנסות שוב."
+
+#: ../tools/exchange-autoconfig-wizard.c:290
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"לא ניתן לאתר את שרת ה־Exchange.\n"
+"נא לוודא כי שם השרת מאוית כראוי ולנסות שוב."
+
+#: ../tools/exchange-autoconfig-wizard.c:299
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"לא ניתן להתאמת אל מול שרת ה־Exchange\n"
+"נא לוודא כי שם המשתמש והססמה נכונים ולנסות שוב."
+
+#: ../tools/exchange-autoconfig-wizard.c:306
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"לא ניתן להתאמת מול שרת ה־Exhcnage.\n"
+"נא לוודא כי שם המשתמש והססמה נכונים ולנסות שוב.\n"
+"\n"
+"יתכן שיהיה עליך לציין את שם מתחם ה־Windows כחלק משם המשתמש שלך (לדוגמה: \"MY-"
+"DOMAIN\\%s\")."
+
+#: ../tools/exchange-autoconfig-wizard.c:318
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"לא ניתן למצוא את נתוני ה־OWA בכתובת שצוינה.\n"
+"נא לוודא כי הכתובת נכונה ולנסות שוב."
+
+#: ../tools/exchange-autoconfig-wizard.c:324
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Exchange Connector דורש גישה לתכונות מסוימות בשרת ה־Exchange שנראה כי הן "
+"מבוטלות או חסומות. (לרוב זה לא נעשה בכוונה.) על מנהל ה־Exchange להפעיל תכונה "
+"זו כדי שתהיה לך האפשרות להשתמש ב־Evolution Exchange Connector.\n"
+"\n"
+"כדי לספק מידע נוסף למנהל ה־Exchange, ניתן להיכנס לקישור הבא:"
+
+#: ../tools/exchange-autoconfig-wizard.c:337
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"כתובת שרת ה־Exchange שסופקה היא עבור שרת Exchange 5.5.‏ Evolution Connector "
+"ל־Microsoft Exchange תומך ב־Microsoft Exchange 2000 ו־2003 בלבד."
+
+#: ../tools/exchange-autoconfig-wizard.c:345
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"לא ניתן להגדיר את חשבון ה־Exchange כיוון שארעה שגיאה בלתי מוכרת. יש לבדוק את "
+"הכתובת, שם המשתמש והססמה ולנסות שוב."
+
+#: ../tools/exchange-autoconfig-wizard.c:361
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value."
+msgstr ""
+"Evolution Connector ל־Microsoft Exchange לא יכולה למצוא את שכפול ה־Global "
+"Catalog עבור האתר שלך. יש להזין את שם שרת ה־Global Catalog. יתכן שיהיה עליך "
+"ליצור קשר עם מנהל המערכות כדי לקבל את הערך הנכון."
+
+#: ../tools/exchange-autoconfig-wizard.c:369
+msgid "GC _Server:"
+msgstr "_שרת GC:"
+
+#: ../tools/exchange-autoconfig-wizard.c:402
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"לא ניתן לבצע אימות אל מול שרת ה־Global Catalog. יתכן שיהיה אליך לחזור אחורה "
+"ולציין את שם מתחם ה־Windows כחלק משם המשתמש שלך (לדוגמה: \"MY-DOMAIN\\%s\")."
+
+#: ../tools/exchange-autoconfig-wizard.c:409
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"לא ניתן להתחבר לשרת שצוין.\n"
+"נא לבדוק את שם השרת ולנסות שוב."
+
+#: ../tools/exchange-autoconfig-wizard.c:421
+msgid "Configuration Failed"
+msgstr "התצורה נכשלה"
+
+#: ../tools/exchange-autoconfig-wizard.c:421
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account."
+msgstr ""
+"Evolution Connector ל־Microsoft Exchange נתקל בבעיה בעת הגדרת חשבון "
+"ה־Exchange שלך."
+
+#: ../tools/exchange-autoconfig-wizard.c:448
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\"."
+msgstr "פרטי החשבון שלך הם הבאים. נא לתקן שגיאות כלשהן וללחוץ על \"קדימה\"."
+
+#: ../tools/exchange-autoconfig-wizard.c:456
+msgid "Full _Name:"
+msgstr "שם _מלא:"
+
+#: ../tools/exchange-autoconfig-wizard.c:460
+msgid "_Email Address:"
+msgstr "כתובת _דוא\"ל:"
+
+#: ../tools/exchange-autoconfig-wizard.c:464
+msgid "Make this my _default account"
+msgstr "הפיכת חשבון זה לחשבון _ברירת המחדל"
+
+#: ../tools/exchange-autoconfig-wizard.c:481
+#: ../tools/exchange-autoconfig-wizard.c:485
+msgid "Unknown"
+msgstr "לא ידוע"
+
+#: ../tools/exchange-autoconfig-wizard.c:508
+msgid "Done"
+msgstr "בוצע"
+
+#: ../tools/exchange-autoconfig-wizard.c:508
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your settings."
+msgstr ""
+"חשבון ה־Connector שלך כעת מוכן לשימוש. יש ללחוץ על הלחצן \"החלה\" כדי לשמור "
+"את הגדרותיך."
+
+#: ../tools/exchange-autoconfig-wizard.c:557
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"שגיאת מערכת התצורה.\n"
+"לא ניתן ליצור חשבון חדש."
+
+#: ../tools/exchange-autoconfig-wizard.c:572
+msgid "You may only configure a single Exchange account"
+msgstr "ניתן להגדיר רק חשבון Exchange אחד"
+
+#: ../tools/exchange-autoconfig-wizard.c:747
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "תצורת Evolution Connector ל־Microsoft Exchange"
+
+#: ../tools/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "יש לשנות את ססמת שרת ה־Exchange שלך"
+
+#: ../tools/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "גו_דל תיקייה"
+
+#: ../tools/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "הורד את הגודל של התיקיות האישיות"
+
+#: ../tools/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "הרשם לתיקיות של משתמשים _אחרים..."
+
+#: ../tools/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "הרשם לתיקייה השייכת למשתמש אחר בשרת"
+
+#: ../tools/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "ביטול המינוי מהתיקייה שנוספה דרך \"מינוי לתיקייה של משתמש אחר\""
+
+#: ../tools/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "צפייה או עריכה של אפשרויות ייפוי כוח ללוח השנה שלך ב־Exchange"
+
+#: ../tools/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "צפייה או שינוי מצב הנוכחות במשרד והודעת תגובה אוטומטית"
+
+#: ../tools/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_שינוי ססמת ה־Exchange‏..."
+
+#: ../tools/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "מסייע י_פוי הכוח"
+
+#: ../tools/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "מסייע המ_חוץ למשרד"
+
+#: ../tools/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_ביטול ההרשמה מתיקייה של משתמש אחר..."
+
+#~ msgid "Authentication failed"
+#~ msgstr "האימות נכשל"
+
+#~ msgid "Could not find the calendar"
+#~ msgstr "לא ניתן למצוא את לוח השנה"
+
+#~ msgid "Cannot get folder info in offline mode."
+#~ msgstr "לא ניתן לקבל מידע תיקייה במצב לא מקוון."
+
+#~ msgid ""
+#~ "Unable to schedule resource '%s' for recurring meetings.\n"
+#~ "You must book each meeting separately."
+#~ msgstr ""
+#~ "לא ניתן לקבוע את המשאב '%s' לישיבות חוזרות.\n"
+#~ "יש לתייק כל פגישה בנפרד."
+
+#~ msgid "Evolution Exchange backend process"
+#~ msgstr "תהליך מנוע Evolution Exchange"
+
+#~ msgid "Could not connect to %s: Please restart Evolution"
+#~ msgstr "לא ניתן להתחבר אל %s: נא להפעיל את Evolution מחדש"

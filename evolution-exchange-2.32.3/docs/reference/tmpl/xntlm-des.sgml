@@ -1,0 +1,48 @@
+<!-- ##### SECTION Title ##### -->
+xntlm-des
+
+<!-- ##### SECTION Short_Description ##### -->
+DES encryption/decryption
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+These routines implement DES encryption and decryption. They are here
+primarly for xntlm-internal use, but can also be used by other code.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### TYPEDEF XNTLM_DES_KS ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION xntlm_deskey ##### -->
+<para>
+
+</para>
+
+@ks: 
+@key: 
+@decrypt: 
+
+
+<!-- ##### FUNCTION xntlm_des ##### -->
+<para>
+
+</para>
+
+@ks: 
+@block: 
+
+

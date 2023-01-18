@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellBackend</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShell.html" title="EShell">
+<link rel="next" href="EShellWindow.html" title="EShellWindow">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShell.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="EShellWindow.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellBackend.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellBackend.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellBackend.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#EShellBackend.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellBackend">
+<a name="EShellBackend"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellBackend.top_of_page"></a>EShellBackend</span></h2>
+<p>EShellBackend — dynamically loaded capabilities</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellBackend.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-backend.h&gt;
+
+                    <a class="link" href="EShellBackend.html#EShellBackend-struct" title="EShellBackend">EShellBackend</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="EShellBackend.html#e-shell-backend-compare" title="e_shell_backend_compare ()">e_shell_backend_compare</a>             (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend_a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend_b</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellBackend.html#e-shell-backend-get-config-dir" title="e_shell_backend_get_config_dir ()">e_shell_backend_get_config_dir</a>      (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellBackend.html#e-shell-backend-get-data-dir" title="e_shell_backend_get_data_dir ()">e_shell_backend_get_data_dir</a>        (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);
+struct <a class="link" href="EShell.html" title="EShell"><span class="returnvalue">_EShell</span></a> *    <a class="link" href="EShellBackend.html#e-shell-backend-get-shell" title="e_shell_backend_get_shell ()">e_shell_backend_get_shell</a>           (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellBackend.html#e-shell-backend-add-activity" title="e_shell_backend_add_activity ()">e_shell_backend_add_activity</a>        (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>,
+                                                         <em class="parameter"><code><span class="type">EActivity</span> *activity</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellBackend.html#e-shell-backend-start" title="e_shell_backend_start ()">e_shell_backend_start</a>               (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellBackend.html#e-shell-backend-migrate" title="e_shell_backend_migrate ()">e_shell_backend_migrate</a>             (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> major</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> minor</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> micro</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellBackend.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="EExtension.html" title="EExtension">EExtension</a>
+         +----EShellBackend
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="EShellBackend.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellBackend.html#EShellBackend-activity-added" title='The "activity-added" signal'>activity-added</a>"                                 : Run Last
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellBackend.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellBackend.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellBackend">
+<a name="EShellBackend-struct"></a><h3>EShellBackend</h3>
+<pre class="programlisting">typedef struct _EShellBackend EShellBackend;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_compare ()">
+<a name="e-shell-backend-compare"></a><h3>e_shell_backend_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_shell_backend_compare             (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend_a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend_b</code></em>);</pre>
+<p>
+Using the <em class="structfield"><code>sort_order</code></em> field from both backends'
+<span class="type">EShellBackendClass</span>, compares <em class="parameter"><code>shell_backend_a</code></em> with <em class="parameter"><code>shell_mobule_b</code></em> and
+returns -1, 0 or +1 if <em class="parameter"><code>shell_backend_a</code></em> is found to be less than, equal
+to or greater than <em class="parameter"><code>shell_backend_b</code></em>, respectively.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend_a</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend_b</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> -1, 0 or +1, for a less than, equal to or greater than result
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_get_config_dir ()">
+<a name="e-shell-backend-get-config-dir"></a><h3>e_shell_backend_get_config_dir ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_backend_get_config_dir      (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);</pre>
+<p>
+Returns the absolute path to the configuration directory for
+<em class="parameter"><code>shell_backend</code></em>.  The string is owned by <em class="parameter"><code>shell_backend</code></em> and should
+not be modified or freed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the backend's configuration directory
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_get_data_dir ()">
+<a name="e-shell-backend-get-data-dir"></a><h3>e_shell_backend_get_data_dir ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_backend_get_data_dir        (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);</pre>
+<p>
+Returns the absolute path to the data directory for <em class="parameter"><code>shell_backend</code></em>.
+The string is owned by <em class="parameter"><code>shell_backend</code></em> and should not be modified or
+freed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the backend's data directory
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_get_shell ()">
+<a name="e-shell-backend-get-shell"></a><h3>e_shell_backend_get_shell ()</h3>
+<pre class="programlisting">struct <a class="link" href="EShell.html" title="EShell"><span class="returnvalue">_EShell</span></a> *    e_shell_backend_get_shell           (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShell.html" title="EShell"><span class="type">EShell</span></a> singleton.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShell.html" title="EShell"><span class="type">EShell</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_add_activity ()">
+<a name="e-shell-backend-add-activity"></a><h3>e_shell_backend_add_activity ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_backend_add_activity        (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>,
+                                                         <em class="parameter"><code><span class="type">EActivity</span> *activity</code></em>);</pre>
+<p>
+Emits an <a class="link" href="EShellBackend.html#EShellBackend-activity-added" title='The "activity-added" signal'><span class="type">"activity-added"</span></a> signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>activity</code></em> :</span></p></td>
+<td>an <span class="type">EActivity</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_start ()">
+<a name="e-shell-backend-start"></a><h3>e_shell_backend_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_backend_start               (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>);</pre>
+<p>
+Tells the <em class="parameter"><code>shell_backend</code></em> to begin loading data or running background
+tasks which may consume significant resources.  This gets called in
+reponse to the user switching to the corresponding <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> for
+the first time.  The function is idempotent for each <em class="parameter"><code>shell_backend</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_backend_migrate ()">
+<a name="e-shell-backend-migrate"></a><h3>e_shell_backend_migrate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_backend_migrate             (<em class="parameter"><code><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> major</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> minor</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> micro</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Attempts to migrate data and settings from version <code class="literal">major</code>.<code class="literal">minor</code>.<code class="literal">micro</code>.
+Returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the migration was successful or if no action was
+necessary.  Returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and sets <code class="literal">error</code> if the migration failed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>major</code></em> :</span></p></td>
+<td>major part of version to migrate from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minor</code></em> :</span></p></td>
+<td>minor part of version to migrate from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>micro</code></em> :</span></p></td>
+<td>micro part of version to migrate from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if successful, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="EShellBackend.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "activity-added" signal'>
+<a name="EShellBackend-activity-added"></a><h3>The <code class="literal">"activity-added"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *shell_backend,
+                                                        <span class="type">EActivity</span>     *activity,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : Run Last</pre>
+<p>
+Broadcasts a newly added activity.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_backend</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> that emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>activity</code></em> :</span></p></td>
+<td>an <span class="type">EActivity</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

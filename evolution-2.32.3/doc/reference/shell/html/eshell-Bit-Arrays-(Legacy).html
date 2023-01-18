@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bit Arrays (Legacy)</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-User-Alert-Handling.html" title="User Alert Handling">
+<link rel="next" href="eshell-GObject-Property-Bindings.html" title="GObject Property Bindings">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-User-Alert-Handling.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-GObject-Property-Bindings.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Bit-Arrays-(Legacy).synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Bit-Arrays-(Legacy).description" class="shortcut">Description</a>
+                   | 
+                  <a href="#eshell-Bit-Arrays-(Legacy).object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="Bit Arrays (Legacy)">
+<a name="eshell-Bit-Arrays-(Legacy)"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Bit-Arrays-(Legacy).top_of_page"></a>Bit Arrays (Legacy)</span></h2>
+<p>Bit Arrays (Legacy)</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Bit-Arrays-(Legacy).synopsis"></a><h2>Synopsis</h2>
+<a name="EBitArray"></a><pre class="synopsis">                    <a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray-struct" title="EBitArray">EBitArray</a>;
+<a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="returnvalue">EBitArray</span></a> *         <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-new" title="e_bit_array_new ()">e_bit_array_new</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-value-at" title="e_bit_array_value_at ()">e_bit_array_value_at</a>                (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-foreach" title="e_bit_array_foreach ()">e_bit_array_foreach</a>                 (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><span class="type">EForeachFunc</span> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> closure</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-selected-count" title="e_bit_array_selected_count ()">e_bit_array_selected_count</a>          (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-select-all" title="e_bit_array_select_all ()">e_bit_array_select_all</a>              (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-invert-selection" title="e_bit_array_invert_selection ()">e_bit_array_invert_selection</a>        (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-bit-count" title="e_bit_array_bit_count ()">e_bit_array_bit_count</a>               (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-change-one-row" title="e_bit_array_change_one_row ()">e_bit_array_change_one_row</a>          (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> grow</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-change-range" title="e_bit_array_change_range ()">e_bit_array_change_range</a>            (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> end</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> grow</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-select-single-row" title="e_bit_array_select_single_row ()">e_bit_array_select_single_row</a>       (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *eba</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-toggle-single-row" title="e_bit_array_toggle_single_row ()">e_bit_array_toggle_single_row</a>       (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *eba</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-insert" title="e_bit_array_insert ()">e_bit_array_insert</a>                  (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-delete" title="e_bit_array_delete ()">e_bit_array_delete</a>                  (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-delete-single-mode" title="e_bit_array_delete_single_mode ()">e_bit_array_delete_single_mode</a>      (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Bit-Arrays-(Legacy).html#e-bit-array-move-row" title="e_bit_array_move_row ()">e_bit_array_move_row</a>                (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> old_row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> new_row</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="eshell-Bit-Arrays-(Legacy).object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----EBitArray
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Bit-Arrays-(Legacy).description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Bit-Arrays-(Legacy).details"></a><h2>Details</h2>
+<div class="refsect2" title="EBitArray">
+<a name="EBitArray-struct"></a><h3>EBitArray</h3>
+<pre class="programlisting">typedef struct _EBitArray EBitArray;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_new ()">
+<a name="e-bit-array-new"></a><h3>e_bit_array_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="returnvalue">EBitArray</span></a> *         e_bit_array_new                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>count</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_value_at ()">
+<a name="e-bit-array-value-at"></a><h3>e_bit_array_value_at ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_bit_array_value_at                (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_foreach ()">
+<a name="e-bit-array-foreach"></a><h3>e_bit_array_foreach ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_foreach                 (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><span class="type">EForeachFunc</span> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> closure</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_selected_count ()">
+<a name="e-bit-array-selected-count"></a><h3>e_bit_array_selected_count ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_bit_array_selected_count          (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_select_all ()">
+<a name="e-bit-array-select-all"></a><h3>e_bit_array_select_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_select_all              (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_invert_selection ()">
+<a name="e-bit-array-invert-selection"></a><h3>e_bit_array_invert_selection ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_invert_selection        (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_bit_count ()">
+<a name="e-bit-array-bit-count"></a><h3>e_bit_array_bit_count ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_bit_array_bit_count               (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_change_one_row ()">
+<a name="e-bit-array-change-one-row"></a><h3>e_bit_array_change_one_row ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_change_one_row          (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> grow</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grow</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_change_range ()">
+<a name="e-bit-array-change-range"></a><h3>e_bit_array_change_range ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_change_range            (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *selection</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> end</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> grow</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grow</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_select_single_row ()">
+<a name="e-bit-array-select-single-row"></a><h3>e_bit_array_select_single_row ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_select_single_row       (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *eba</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>eba</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_toggle_single_row ()">
+<a name="e-bit-array-toggle-single-row"></a><h3>e_bit_array_toggle_single_row ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_toggle_single_row       (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *eba</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>eba</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_insert ()">
+<a name="e-bit-array-insert"></a><h3>e_bit_array_insert ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_insert                  (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>count</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_delete ()">
+<a name="e-bit-array-delete"></a><h3>e_bit_array_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_delete                  (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>count</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_delete_single_mode ()">
+<a name="e-bit-array-delete-single-mode"></a><h3>e_bit_array_delete_single_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_delete_single_mode      (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> count</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>count</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bit_array_move_row ()">
+<a name="e-bit-array-move-row"></a><h3>e_bit_array_move_row ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bit_array_move_row                (<em class="parameter"><code><a class="link" href="eshell-Bit-Arrays-(Legacy).html#EBitArray"><span class="type">EBitArray</span></a> *esm</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> old_row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> new_row</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

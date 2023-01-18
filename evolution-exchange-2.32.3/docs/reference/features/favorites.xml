@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-favorites">
+<refmeta>
+<refentrytitle>Favorite Public Folders</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+"Favorite" public folders are recorded in the
+<uri>NON_IPM_SUBTREE/Shortcuts</uri> directory of the user's mailbox.
+There is one file for each favorite; the filenames don't matter.
+</para>
+
+<para>
+Each favorite has the following properties:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>PR_FAV_DISPLAY_NAME</literal></term>
+	<listitem><para><literal>PR_DISPLAY_NAME</literal> of
+	referent</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_DISPLAY_ALIAS</literal></term>
+	<listitem><para>User-chosen display name. (If not set, use
+	<literal>PR_FAV_DISPLAY_NAME</literal>.)</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_PUBLIC_SOURCE_KEY</literal></term>
+	<listitem><para><literal>PR_SOURCE_KEY</literal> of
+	referent</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_PARENT_SOURCE_KEY</literal></term>
+	<listitem><para><literal>PR_FAV_PUBLIC_SOURCE_KEY</literal> of
+	parent folder in the Favorites hierarchy</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_LEVEL_MASK</literal></term>
+	<listitem><para>The depth of the folder in the Favorites
+	hierarchy (first level is <constant>1</constant>)
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_AUTOSUBFOLDERS</literal></term>
+	<listitem><para><constant>1</constant> if subfolders should be
+	automatically added as well</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_INHERIT_AUTO</literal></term>
+	<listitem><para><constant>1</constant> if
+	<emphasis>all</emphasis> subfolders should be automatically
+	added, as opposed to just immediate subfolders</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FAV_DEL_SUBS</literal></term>
+	<listitem><para>set if
+	<literal>PR_FAV_AUTOSUBFOLDERS</literal> is set. Uncertain use.
+	</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+The <literal>PR_FAV_PUBLIC_SOURCE_KEY</literal> can be used to find
+the public folder that this favorite points to, by using
+<link
+linkend="e2k-entryid-to-permanenturl"><function>e2k_entryid_to_permanenturl()</function></link>.
+</para>
+
+</refentry>

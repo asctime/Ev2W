@@ -1,0 +1,38 @@
+<!-- ##### SECTION Title ##### -->
+e2k-encoding-utils
+
+<!-- ##### SECTION Short_Description ##### -->
+Data-encoding utility functions
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION e2k_base64_encode ##### -->
+<para>
+
+</para>
+
+@data: 
+@len: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_base64_decode ##### -->
+<para>
+
+</para>
+
+@string: 
+@Returns: 
+
+

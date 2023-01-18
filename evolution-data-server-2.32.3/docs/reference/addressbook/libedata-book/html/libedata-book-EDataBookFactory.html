@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EDataBookFactory</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution-Data-Server Manual: Address Book Backend (libedata-book)">
+<link rel="up" href="ch01.html" title="Evolution-Data-Server Manual: Address Book Backend (libedata-book)">
+<link rel="prev" href="EDataBook.html" title="EDataBook">
+<link rel="next" href="EDataBookView.html" title="EDataBookView">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EDataBook.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution-Data-Server Manual: Address Book Backend (libedata-book)</th>
+<td><a accesskey="n" href="EDataBookView.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libedata-book-EDataBookFactory.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libedata-book-EDataBookFactory.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="EDataBookFactory">
+<a name="libedata-book-EDataBookFactory"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libedata-book-EDataBookFactory.top_of_page"></a>EDataBookFactory</span></h2>
+<p>EDataBookFactory</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libedata-book-EDataBookFactory.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="libedata-book-EDataBookFactory.html#E-DATA-BOOK-FACTORY-ERROR:CAPS" title="E_DATA_BOOK_FACTORY_ERROR">E_DATA_BOOK_FACTORY_ERROR</a>
+enum                <a class="link" href="libedata-book-EDataBookFactory.html#EDataBookFactoryError" title="enum EDataBookFactoryError">EDataBookFactoryError</a>;
+                    <a class="link" href="libedata-book-EDataBookFactory.html#EDataBookFactory" title="EDataBookFactory">EDataBookFactory</a>;
+<span class="returnvalue">void</span>                <a class="link" href="libedata-book-EDataBookFactory.html#e-data-book-factory-set-backend-mode" title="e_data_book_factory_set_backend_mode ()">e_data_book_factory_set_backend_mode</a>
+                                                        (<em class="parameter"><code><a class="link" href="libedata-book-EDataBookFactory.html#EDataBookFactory" title="EDataBookFactory"><span class="type">EDataBookFactory</span></a> *factory</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> mode</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libedata-book-EDataBookFactory.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libedata-book-EDataBookFactory.details"></a><h2>Details</h2>
+<div class="refsect2" title="E_DATA_BOOK_FACTORY_ERROR">
+<a name="E-DATA-BOOK-FACTORY-ERROR:CAPS"></a><h3>E_DATA_BOOK_FACTORY_ERROR</h3>
+<pre class="programlisting">#define E_DATA_BOOK_FACTORY_ERROR e_data_book_factory_error_quark ()
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum EDataBookFactoryError">
+<a name="EDataBookFactoryError"></a><h3>enum EDataBookFactoryError</h3>
+<pre class="programlisting">typedef enum {
+	E_DATA_BOOK_FACTORY_ERROR_GENERIC
+} EDataBookFactoryError;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="EDataBookFactory">
+<a name="EDataBookFactory"></a><h3>EDataBookFactory</h3>
+<pre class="programlisting">typedef struct {
+	GObject parent;
+	EDataBookFactoryPrivate *priv;
+} EDataBookFactory;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_book_factory_set_backend_mode ()">
+<a name="e-data-book-factory-set-backend-mode"></a><h3>e_data_book_factory_set_backend_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_book_factory_set_backend_mode
+                                                        (<em class="parameter"><code><a class="link" href="libedata-book-EDataBookFactory.html#EDataBookFactory" title="EDataBookFactory"><span class="type">EDataBookFactory</span></a> *factory</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> mode</code></em>);</pre>
+<p>
+Sets the online mode for all backends created by the given factory.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>factory</code></em> :</span></p></td>
+<td>A bookendar factory.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mode</code></em> :</span></p></td>
+<td>Online mode to set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

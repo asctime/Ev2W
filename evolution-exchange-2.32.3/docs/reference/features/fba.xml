@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-fba">
+<refmeta>
+<refentrytitle><application>Exchange 2003</application> Forms-Based Authentication</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+<application>Exchange 2003</application> introduced "forms-based
+authentication" for <application>OWA</application>, which lets the
+administrator configure <application>OWA</application> to present an
+HTML form to the user to type his username and password into instead
+of using HTTP authentication. This main benefit of this is that it
+gives the administrator more control over how and when the
+authentication expires. It's annoying for us though. If forms-based
+auth is turned on, then HTTP auth just won't work. You have to play
+the forms game.
+</para>
+
+<para>
+If forms-based auth is turned on, then SSL must also be required, and
+non-https requests will get "<literal><errorcode>403</errorcode>
+<errorname>Forbidden</errorname></literal>".
+</para>
+
+<para>
+<command>GET</command> requests under <uri>/exchange</uri> will be
+redirected to
+<uri>/exchweb/bin/auth/owalogon.asp?url=<replaceable>original-url</replaceable>&amp;reason=0</uri>.
+All other HTTP/WebDAV requests will get a
+"<literal><errorcode>440</errorcode> <errorname>Login
+Timeout</errorname></literal>". (This is not a real IANA-registered
+HTTP error code.)
+</para>
+
+<para>
+Trying to <command>GET</command> <uri>owalogon.asp</uri> with
+"<literal>Translate: F</literal>" will return
+"<literal><errorcode>403</errorcode>
+<errorname>Forbidden</errorname></literal>".
+</para>
+
+<para>
+The page returned by <uri>owalogon.asp</uri> is slightly different for
+<application>IE</application> and non-<application>IE</application>.
+Either way it contains a form with at least the following fields:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>destination</literal> (hidden)</term>
+	<listitem><para>the original URL that redirected us
+	here</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>flags</literal> (hidden)</term>
+	<listitem><para>options bitfield, as described
+	below</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>username</literal></term>
+	<listitem><para>the username entry</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>password</literal></term>
+	<listitem><para>the password entry</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>trusted</literal></term>
+	<listitem><para>whether this is a public or private
+	computer</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+The "<literal>private</literal>" value for
+"<literal>trusted</literal>" is <constant>4</constant>, and we pass
+that, so that we get the longer credentials timeout time. (24 hours by
+default). You also have to pass <constant>4</constant> for
+"<literal>flags</literal>" to indicate this. (The
+"<literal>1</literal>" bit in flags indicate that you want to use the
+non-<application>IE</application> version of
+<application>OWA</application> even if you are on
+<application>IE</application>. We don't pass that option.)
+</para>
+
+<para>
+We then <command>POST</command> the form with the user's username and
+password:
+</para>
+
+<informalexample><programlisting>
+POST /exchweb/bin/auth/owaauth.dll HTTP/1.1
+Host: ex2k3.xcs.ximian.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: <replaceable>len</replaceable>
+
+destination=https%3A%2F%2Fex2k3.xcs.ximian.com%2Fexchange%2F&amp;flags=0&amp;username=<replaceable>username</replaceable>&amp;password=<replaceable>password</replaceable>&amp;SubmitCreds=Log+On&amp;trusted=4
+</programlisting></informalexample>
+
+<para>
+To which the server responds:
+</para>
+
+<informalexample><programlisting>
+HTTP/1.1 302 Moved Temporarily
+Server: Microsoft-IIS/5.0
+Date: Thu, 24 Jul 2003 17:23:33 GMT
+X-Powered-By: ASP.NET
+Location: https://ex2k3.xcs.ximian.com/exchange/
+Set-Cookie: sessionid=fbb50caf-381a-4f85-9582-a7a902b4561f,0x409; path=/
+Set-Cookie: cadata="2,8JOrhvROIJykiSTShG6Ujrigo+a5XQgEbws7tq3//37QERyFwWDoV7xw6DG+Awlm"; HttpOnly; secure; path=/
+Content-Length: 0
+</programlisting></informalexample>
+
+<para>
+("<literal>HttpOnly</literal>" is a Microsoft extension to the Cookie
+protocol, which means that the cookie should not be visible to
+Javascript/VBScript, etc. "<literal>secure</literal>" means that you
+should only send it over https, and "<literal>path=/</literal>" means
+it's good for any path on this server.)
+</para>
+
+<para>
+Now you have to make another request to find out if the cookie is any
+good. This request (and all further requests) should include the two
+cookies:
+</para>
+
+<informalexample><programlisting>
+Cookie: sessionid=fbb50caf-381a-4f85-9582-a7a902b4561f,0x409;
+        cadata="2,8JOrhvROIJykiSTShG6Ujrigo+a5XQgEbws7tq3//37QERyFwWDoV7xw6DG+Awlm"
+</programlisting></informalexample>
+
+<para>
+If you do an <application>OWA</application> <command>GET</command> (a
+<command>GET</command> without "<literal>Translate: F</literal>"),
+failure will be indicated by a "<literal><errorcode>200</errorcode>
+<errorname>OK</errorname></literal>" response containing the login
+form again. If you do any other request, failure is indicated by a
+"<literal><errorcode>440</errorcode> <errorname>Login
+Timeout</errorname></literal>" cancelling the cookie:
+</para>
+
+<informalexample><programlisting>
+440 Login Timeout
+Set-Cookie: sessionid=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
+Set-Cookie: cadata=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
+Connection: close
+</programlisting></informalexample>
+
+<para>
+Eventually, when the cookie does expire, you will get a
+"<literal><errorcode>440</errorcode> <errorname>Login
+Timeout</errorname></literal>" as above, and have to reauthenticate to
+get a new cookie.
+</para>
+
+</refentry>

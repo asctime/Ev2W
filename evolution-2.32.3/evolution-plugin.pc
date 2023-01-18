@@ -1,0 +1,20 @@
+prefix=/home/mbarnes/local/2.32
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+libexecdir=${exec_prefix}/libexec
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+privlibdir=${libdir}/evolution/2.32
+privlibexecdir=${libexecdir}/evolution/2.32
+privincludedir=${includedir}/evolution-2.32
+plugindir=${libdir}/evolution/2.32/plugins
+errordir=${datadir}/evolution/2.32/errors
+
+Name: evolution-plugin
+Description: libraries needed for Evolution plugin development
+Version: 2.32.3
+Requires: camel-provider-1.2 libxml-2.0 unique-1.0 libgtkhtml-3.14 gtkhtml-editor-3.14
+Libs: -L${privlibdir} -leutil -Wl,-R${privlibdir}
+Cflags: -I${privincludedir}

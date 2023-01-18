@@ -1,0 +1,1011 @@
+# Canadian English translation for evolution-exchange
+# Copyright (C) 2004-2005 Adam Weinberger and the GNOME Foundation
+# This file is distributed under the same licence as the evolution-exchange package.
+# Adam Weinberger <adamw@gnome.org>, 2004, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-26 17:07-0400\n"
+"PO-Revision-Date: 2005-07-26 15:51-0400\n"
+"Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
+"Language-Team: Canadian English <adamw@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "Specifies the time interval to refresh the GAL Cache."
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+
+#: ../addressbook/e-book-backend-exchange.c:1880
+#: ../addressbook/e-book-backend-gal.c:1798 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Searching..."
+
+#: ../addressbook/e-book-backend-gal.c:301
+#: ../addressbook/e-book-backend-gal.c:326
+msgid "Reconnecting to LDAP server..."
+msgstr "Reconnecting to LDAP server..."
+
+#: ../addressbook/e-book-backend-gal.c:1585
+msgid "Receiving LDAP search results..."
+msgstr "Receiving LDAP search results..."
+
+#: ../addressbook/e-book-backend-gal.c:1825
+msgid "Error performing search"
+msgstr "Error performing search"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2088
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2106
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "The resource '%s' is busy during the selected time period."
+
+#: ../calendar/e-cal-backend-exchange.c:389
+#: ../calendar/e-cal-backend-exchange.c:398
+msgid "Authentication failed"
+msgstr "Authentication failed"
+
+#: ../calendar/e-cal-backend-exchange.c:409
+msgid "Could not find the calendar"
+msgstr "Could not find the calendar"
+
+#: ../camel/camel-exchange-folder.c:222
+msgid "You cannot expunge in offline mode."
+msgstr "You cannot expunge in offline mode."
+
+#: ../camel/camel-exchange-folder.c:253
+msgid "No Subject"
+msgstr "No Subject"
+
+#: ../camel/camel-exchange-folder.c:408
+msgid "This message is not available in offline mode."
+msgstr "This message is not available in offline mode."
+
+#: ../camel/camel-exchange-folder.c:665
+msgid "Moving messages"
+msgstr "Moving messages"
+
+#: ../camel/camel-exchange-folder.c:666
+msgid "Copying messages"
+msgstr "Copying messages"
+
+#: ../camel/camel-exchange-folder.c:1039
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Could not create directory %s: %s"
+
+#: ../camel/camel-exchange-folder.c:1049
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "Could not load summary for %s"
+
+#: ../camel/camel-exchange-folder.c:1057
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "Could not create cache for %s"
+
+#: ../camel/camel-exchange-folder.c:1067
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "Could not create journal for %s"
+
+#: ../camel/camel-exchange-folder.c:1115
+msgid "Scanning for changed messages"
+msgstr "Scanning for changed messages"
+
+#: ../camel/camel-exchange-folder.c:1148
+msgid "Fetching summary information for new messages"
+msgstr "Fetching summary information for new messages"
+
+#: ../camel/camel-exchange-journal.c:341
+msgid "No folder name found\n"
+msgstr "No folder name found\n"
+
+#: ../camel/camel-exchange-journal.c:374 ../mail/mail-stub-exchange.c:2874
+#: ../mail/mail-stub-exchange.c:2918 ../mail/mail-stub-exchange.c:2953
+#: ../mail/mail-stub-exchange.c:2980 ../mail/mail-stub-exchange.c:3033
+#: ../mail/mail-stub-exchange.c:3055
+msgid "Folder doesn't exist"
+msgstr "Folder doesn't exist"
+
+#: ../camel/camel-exchange-journal.c:438
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "Cannot append message in offline mode: cache unavailable"
+
+#: ../camel/camel-exchange-journal.c:454
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Cannot append message in offline mode: %s"
+
+#: ../camel/camel-exchange-provider.c:41
+msgid "Checking for New Mail"
+msgstr "Checking for New Mail"
+
+#: ../camel/camel-exchange-provider.c:43
+msgid "C_heck for new messages in all folders"
+msgstr "C_heck for new messages in all folders"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:51
+msgid "Windows User_name:"
+msgstr "Windows User_name:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:56
+msgid "Global Address List / Active Directory"
+msgstr "Global Address List / Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:60
+msgid "_Global Catalog server name:"
+msgstr "_Global Catalogue server name:"
+
+#: ../camel/camel-exchange-provider.c:62
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "_Limit number of GAL responses: %s"
+
+#: ../camel/camel-exchange-provider.c:65
+msgid "Options"
+msgstr "Options"
+
+#: ../camel/camel-exchange-provider.c:67
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "_Password Expiration Warning period: %s"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Automatically synchroni_ze account locally"
+msgstr "Automatically synchroni_ze account locally"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:72
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "_Apply filters to new messages in Inbox on this server"
+
+#: ../camel/camel-exchange-provider.c:74
+msgid "Check new messages for _Junk contents"
+msgstr "Check new messages for _Junk contents"
+
+#: ../camel/camel-exchange-provider.c:76
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Only check for Junk messag_es in the Inbox folder"
+
+#: ../camel/camel-exchange-provider.c:86
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "For handling mail (and other data) on Microsoft Exchange servers"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:104
+msgid "Secure Password"
+msgstr "Secure Password"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:107
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+
+#: ../camel/camel-exchange-provider.c:115
+msgid "Plaintext Password"
+msgstr "Plaintext Password"
+
+#: ../camel/camel-exchange-provider.c:117
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+
+#: ../camel/camel-exchange-store.c:310
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange server %s"
+
+#: ../camel/camel-exchange-store.c:313
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Exchange account for %s on %s"
+
+#: ../camel/camel-exchange-store.c:354
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%sEnter password for %s"
+
+#: ../camel/camel-exchange-store.c:405
+msgid "Evolution Exchange backend process"
+msgstr "Evolution Exchange backend process"
+
+#: ../camel/camel-exchange-store.c:446
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:488
+#, c-format
+msgid "No such folder %s"
+msgstr "No such folder %s"
+
+#: ../camel/camel-exchange-store.c:565
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Cannot subscribe to folder in offline mode."
+
+#: ../camel/camel-exchange-store.c:582
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Cannot unsubscribe from folder in offline mode."
+
+#: ../camel/camel-exchange-store.c:714
+msgid "Cannot get folder info in offline mode."
+msgstr "Cannot get folder info in offline mode."
+
+#: ../camel/camel-exchange-store.c:787
+msgid "Cannot create folder in offline mode."
+msgstr "Cannot create folder in offline mode."
+
+#: ../camel/camel-exchange-store.c:814
+msgid "Cannot delete folder in offline mode."
+msgstr "Cannot delete folder in offline mode."
+
+#: ../camel/camel-exchange-store.c:830
+msgid "Cannot rename folder in offline mode."
+msgstr "Cannot rename folder in offline mode."
+
+#: ../camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Exchange transport can only be used with Exchange mail source"
+
+#: ../camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Cannot send message: one or more invalid recipients"
+
+#: ../camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "Could not find 'From' address in message"
+
+#: ../camel/camel-stub.c:153
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "Could not create socket: %s"
+
+#: ../camel/camel-stub.c:171
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "Could not connect to %s: Please restart Evolution"
+
+#: ../camel/camel-stub.c:176
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "Could not connect to %s: %s"
+
+#: ../camel/camel-stub.c:206
+#, c-format
+msgid "Path too long: %s"
+msgstr "Path too long: %s"
+
+#: ../camel/camel-stub.c:232
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "Could not start status thread: %s"
+
+#: ../camel/camel-stub.c:486
+#, c-format
+msgid "Lost connection to %s"
+msgstr "Lost connection to %s"
+
+#: ../camel/camel-stub.c:490
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "Error communicating with %s: %s"
+
+#: ../mail/mail-stub-exchange.c:264 ../mail/mail-stub-exchange.c:946
+msgid "No such folder"
+msgstr "No such folder"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:287 ../mail/mail-stub-exchange.c:1595
+#: ../mail/mail-stub-exchange.c:2851 ../mail/mail-stub-exchange.c:2891
+#: ../mail/mail-stub-exchange.c:2957 ../mail/mail-stub-exchange.c:3007
+#: ../mail/mail-stub-exchange.c:3070
+msgid "Permission denied"
+msgstr "Permission denied"
+
+#: ../mail/mail-stub-exchange.c:768 ../mail/mail-stub-exchange.c:860
+msgid "Could not open folder"
+msgstr "Could not open folder"
+
+#: ../mail/mail-stub-exchange.c:854 ../mail/mail-stub-exchange.c:876
+msgid "Could not open folder: Permission denied"
+msgstr "Could not open folder: Permission denied"
+
+#: ../mail/mail-stub-exchange.c:955
+msgid "Could not create folder."
+msgstr "Could not create folder."
+
+#: ../mail/mail-stub-exchange.c:1043
+msgid "Could not open Deleted Items folder"
+msgstr "Could not open Deleted Items folder"
+
+#: ../mail/mail-stub-exchange.c:1374 ../mail/mail-stub-exchange.c:1415
+msgid "Could not get new messages"
+msgstr "Could not get new messages"
+
+#: ../mail/mail-stub-exchange.c:1591
+msgid "Could not empty Deleted Items folder"
+msgstr "Could not empty Deleted Items folder"
+
+#: ../mail/mail-stub-exchange.c:1668
+msgid "Could not append message; mailbox is over quota"
+msgstr "Could not append message; mailbox is over quota"
+
+#: ../mail/mail-stub-exchange.c:1669
+msgid "Could not append message"
+msgstr "Could not append message"
+
+#: ../mail/mail-stub-exchange.c:2324
+msgid "No such message"
+msgstr "No such message"
+
+#: ../mail/mail-stub-exchange.c:2386
+msgid "Message has been deleted"
+msgstr "Message has been deleted"
+
+#: ../mail/mail-stub-exchange.c:2388
+msgid "Error retrieving message"
+msgstr "Error retrieving message"
+
+#: ../mail/mail-stub-exchange.c:2430
+msgid "Mailbox does not support full-text searching"
+msgstr "Mailbox does not support full-text searching"
+
+#: ../mail/mail-stub-exchange.c:2528
+msgid "Unable to move/copy messages"
+msgstr "Unable to move/copy messages"
+
+#: ../mail/mail-stub-exchange.c:2766
+msgid "No mail submission URI for this mailbox"
+msgstr "No mail submission URI for this mailbox"
+
+#: ../mail/mail-stub-exchange.c:2802
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Server won't accept mail via Exchange transport"
+
+#: ../mail/mail-stub-exchange.c:2804
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+
+#: ../mail/mail-stub-exchange.c:2816
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+
+#: ../mail/mail-stub-exchange.c:2820
+msgid "Could not send message"
+msgstr "Could not send message"
+
+#: ../mail/mail-stub-exchange.c:2843 ../mail/mail-stub-exchange.c:2896
+#: ../mail/mail-stub-exchange.c:2961 ../mail/mail-stub-exchange.c:3012
+#: ../mail/mail-stub-exchange.c:3076
+msgid "Generic error"
+msgstr "Generic error"
+
+#: ../mail/mail-stub-exchange.c:2847
+msgid "Folder already exists"
+msgstr "Folder already exists"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Evolution Addressbook Exchange backend"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Evolution Calendar Exchange backend"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Ximian Connector for Exchange"
+msgstr "Ximian Connector for Exchange"
+
+#: ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+
+#: ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+
+#: ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+
+#: ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+
+#: ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Could not authenticate to the Global Catalogue server. You may need to go "
+"back and specify the Windows domain name as part of your username (eg, \"MY-"
+"DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "Unknown"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Configuration system error.\n"
+"Unable to create new account."
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr "You may only configure a single Exchange account"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Configuration Failed"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Done"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "Email Address:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "Exchange Configuration"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "Full Name:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "GC Server:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "Make this my default account"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "Password:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "Remember this password"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "Username:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Welcome"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Ximian Connector Configuration"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"Ximian Connector could not find the Global Catalogue replica for your site. "
+"Please enter the name of your Global Catalogue server. You may need to ask "
+"your system administrator for the correct value.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "The two passwords do not match. Please re-enter the passwords."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Change Password"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Confirm Password:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "Current Password:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "New Password:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "Your current password has expired. Please change your password now."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Author (read, create)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "C_alendar:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "Co_ntacts:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Delegate Permissions"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Delegates"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "Editor (read, create, edit)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "None"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "Permissions for"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "Reviewer (read-only)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_Delegate can see private items"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_Edit"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_Inbox:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_Tasks:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Exchange Folder Tree"
+
+#: ../storage/exchange-migrate.c:58
+msgid "Migrating Exchange Folders..."
+msgstr "Migrating Exchange Folders..."
+
+#: ../storage/exchange-migrate.c:66
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+
+#: ../storage/exchange-migrate.c:99
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data have not been deleted, but will not be seen by this version of "
+"Evolution"
+
+#: ../storage/exchange-migrate.c:130
+#, c-format
+msgid "Migrating `%s':"
+msgstr "Migrating `%s':"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>Out of Office Message:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Status:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "I am currently in the office"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "I am currently out of the office"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "No, Don't Change Status"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "Out of Office Assistant"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Yes, Change Status"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "Password Expiry Warning..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "Your password will expire in 7 days..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Change Password"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_button"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>Permissions</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Cannot Delete"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Cannot Edit"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Create items"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Create subfolders"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "Delete Any Items"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Delete Own Items"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "Edit Any Items"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Edit Own Items"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "Folder contact"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Folder owner"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "Folder visible"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "Read items"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "Role: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "Connecting..."
+
+#: ../storage/main.c:183
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "Ximian Connector for Microsoft Exchange"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "Ximian Connector for Microsoft Exchange Setup Tool"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Change your Exchange server password"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Folder _Size"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Get the size of personal folders"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "Subscribe to _Other User's Folder..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Subscribe to a folder belonging to some other user on the server"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "View or change your Exchange calendar delegation settings"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "View or change your Out-of-Office status and autoreply message"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Change Exchange Password..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_Delegation Assistant"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "_Out of Office Assistant"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_Unsubscribe from Other User's Folder"

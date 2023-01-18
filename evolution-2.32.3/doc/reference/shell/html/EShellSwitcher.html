@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellSwitcher</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShellSettings.html" title="EShellSettings">
+<link rel="next" href="eshell-Shell-Utilities.html" title="Shell Utilities">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShellSettings.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Shell-Utilities.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellSwitcher.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellSwitcher.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellSwitcher.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#EShellSwitcher.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#EShellSwitcher.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#EShellSwitcher.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellSwitcher">
+<a name="EShellSwitcher"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellSwitcher.top_of_page"></a>EShellSwitcher</span></h2>
+<p>EShellSwitcher — buttons for switching views</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellSwitcher.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-switcher.h&gt;
+
+                    <a class="link" href="EShellSwitcher.html#EShellSwitcher-struct" title="EShellSwitcher">EShellSwitcher</a>;
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="EShellSwitcher.html#e-shell-switcher-new" title="e_shell_switcher_new ()">e_shell_switcher_new</a>                (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSwitcher.html#e-shell-switcher-add-action" title="e_shell_switcher_add_action ()">e_shell_switcher_add_action</a>         (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *switch_action</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *new_window_action</code></em>);
+<a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="returnvalue">GtkToolbarStyle</span></a>     <a class="link" href="EShellSwitcher.html#e-shell-switcher-get-style" title="e_shell_switcher_get_style ()">e_shell_switcher_get_style</a>          (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSwitcher.html#e-shell-switcher-set-style" title="e_shell_switcher_set_style ()">e_shell_switcher_set_style</a>          (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="type">GtkToolbarStyle</span></a> style</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSwitcher.html#e-shell-switcher-unset-style" title="e_shell_switcher_unset_style ()">e_shell_switcher_unset_style</a>        (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSwitcher.html#e-shell-switcher-get-visible" title="e_shell_switcher_get_visible ()">e_shell_switcher_get_visible</a>        (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSwitcher.html#e-shell-switcher-set-visible" title="e_shell_switcher_set_visible ()">e_shell_switcher_set_visible</a>        (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> visible</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellSwitcher.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a href="http://library.gnome.org/devel/gtk/unstable/GtkObject.html">GtkObject</a>
+               +----<a href="http://library.gnome.org/devel/gtk/GtkWidget.html">GtkWidget</a>
+                     +----<a href="http://library.gnome.org/devel/gtk/GtkContainer.html">GtkContainer</a>
+                           +----<a href="http://library.gnome.org/devel/gtk/GtkBin.html">GtkBin</a>
+                                 +----EShellSwitcher
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="EShellSwitcher.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+EShellSwitcher implements
+ AtkImplementorIface,  <a href="http://library.gnome.org/devel/gtk/GtkBuildable.html">GtkBuildable</a>,  <a class="link" href="EExtensible.html" title="EExtensible">EExtensible</a> and  <a href="http://library.gnome.org/devel/gtk/GtkToolShell.html">GtkToolShell</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EShellSwitcher.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellSwitcher.html#EShellSwitcher--toolbar-style" title='The "toolbar-style" property'>toolbar-style</a>"            <a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="type">GtkToolbarStyle</span></a>       : Read / Write / Construct
+  "<a class="link" href="EShellSwitcher.html#EShellSwitcher--toolbar-visible" title='The "toolbar-visible" property'>toolbar-visible</a>"          <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="EShellSwitcher.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellSwitcher.html#EShellSwitcher-style-changed" title='The "style-changed" signal'>style-changed</a>"                                  : Run First
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellSwitcher.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellSwitcher.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellSwitcher">
+<a name="EShellSwitcher-struct"></a><h3>EShellSwitcher</h3>
+<pre class="programlisting">typedef struct _EShellSwitcher EShellSwitcher;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_new ()">
+<a name="e-shell-switcher-new"></a><h3>e_shell_switcher_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_shell_switcher_new                (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> instance
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_add_action ()">
+<a name="e-shell-switcher-add-action"></a><h3>e_shell_switcher_add_action ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_switcher_add_action         (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *switch_action</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *new_window_action</code></em>);</pre>
+<p>
+Adds a button to <em class="parameter"><code>switcher</code></em> that proxies for <em class="parameter"><code>switcher_action</code></em>.
+Switcher buttons appear in the order they were added. A middle
+click opens a new window of this type.
+</p>
+<p>
+<a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> adds switcher actions in the order given by the
+<em class="structfield"><code>sort_order</code></em> field in <span class="type">EShellBackendClass</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switch_action</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_window_action</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_get_style ()">
+<a name="e-shell-switcher-get-style"></a><h3>e_shell_switcher_get_style ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="returnvalue">GtkToolbarStyle</span></a>     e_shell_switcher_get_style          (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>);</pre>
+<p>
+Returns whether <em class="parameter"><code>switcher</code></em> has text, icons or both.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the current style of <em class="parameter"><code>shell</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_set_style ()">
+<a name="e-shell-switcher-set-style"></a><h3>e_shell_switcher_set_style ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_switcher_set_style          (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="type">GtkToolbarStyle</span></a> style</code></em>);</pre>
+<p>
+Alters the view of <em class="parameter"><code>switcher</code></em> to display either icons only, text only,
+or both.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>the new style for <em class="parameter"><code>switcher</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_unset_style ()">
+<a name="e-shell-switcher-unset-style"></a><h3>e_shell_switcher_unset_style ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_switcher_unset_style        (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>);</pre>
+<p>
+Unsets a switcher style set with <a class="link" href="EShellSwitcher.html#e-shell-switcher-set-style" title="e_shell_switcher_set_style ()"><code class="function">e_shell_switcher_set_style()</code></a>, so
+that user preferences will be used to determine the switcher style.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_get_visible ()">
+<a name="e-shell-switcher-get-visible"></a><h3>e_shell_switcher_get_visible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_switcher_get_visible        (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>);</pre>
+<p>
+Returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the switcher buttons are visible.
+</p>
+<p>
+Note that switcher button visibility is different than
+<em class="parameter"><code>switcher</code></em>'s GTK_VISIBLE flag, since <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+is actually a container widget for <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the switcher buttons are visible
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_switcher_set_visible ()">
+<a name="e-shell-switcher-set-visible"></a><h3>e_shell_switcher_set_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_switcher_set_visible        (<em class="parameter"><code><a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> visible</code></em>);</pre>
+<p>
+Sets the switcher button visiblity to <em class="parameter"><code>visible</code></em>.
+</p>
+<p>
+Note that switcher button visibility is different than
+<em class="parameter"><code>switcher</code></em>'s GTK_VISIBLE flag, since <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+is actually a container widget for <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>visible</code></em> :</span></p></td>
+<td>whether the switcher buttons should be visible
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EShellSwitcher.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "toolbar-style" property'>
+<a name="EShellSwitcher--toolbar-style"></a><h3>The <code class="literal">"toolbar-style"</code> property</h3>
+<pre class="programlisting">  "toolbar-style"            <a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="type">GtkToolbarStyle</span></a>       : Read / Write / Construct</pre>
+<p>
+The switcher's toolbar style.
+</p>
+<p>Default value: GTK_TOOLBAR_BOTH_HORIZ</p>
+</div>
+<hr>
+<div class="refsect2" title='The "toolbar-visible" property'>
+<a name="EShellSwitcher--toolbar-visible"></a><h3>The <code class="literal">"toolbar-visible"</code> property</h3>
+<pre class="programlisting">  "toolbar-visible"          <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p>
+Whether the switcher is visible.
+</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="EShellSwitcher.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "style-changed" signal'>
+<a name="EShellSwitcher-style-changed"></a><h3>The <code class="literal">"style-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> *switcher,
+                                                        <a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="type">GtkToolbarStyle</span></a> style,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : Run First</pre>
+<p>
+Emitted when the style of the switcher changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>switcher</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a> which emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>the new <a href="http://library.gnome.org/devel/gtk/gtk3-Standard-Enumerations.html#GtkToolbarStyle"><span class="type">GtkToolbarStyle</span></a> of the switcher
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

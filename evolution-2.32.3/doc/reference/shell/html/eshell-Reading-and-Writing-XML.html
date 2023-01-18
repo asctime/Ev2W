@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Reading and Writing XML</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Miscellaneous-Utilities.html" title="Miscellaneous Utilities">
+<link rel="next" href="eshell-GConf-Bridge.html" title="GConf Bridge">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Miscellaneous-Utilities.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-GConf-Bridge.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Reading-and-Writing-XML.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Reading-and-Writing-XML.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Reading and Writing XML">
+<a name="eshell-Reading-and-Writing-XML"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Reading-and-Writing-XML.top_of_page"></a>Reading and Writing XML</span></h2>
+<p>Reading and Writing XML</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Reading-and-Writing-XML.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">xmlNode</span> *           <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-child-by-name-by-lang" title="e_xml_get_child_by_name_by_lang ()">e_xml_get_child_by_name_by_lang</a>     (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *child_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *lang</code></em>);
+<span class="returnvalue">xmlNode</span> *           <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-child-by-name-by-lang-list" title="e_xml_get_child_by_name_by_lang_list ()">e_xml_get_child_by_name_by_lang_list</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *lang_list</code></em>);
+<span class="returnvalue">xmlNode</span> *           <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-child-by-name-no-lang" title="e_xml_get_child_by_name_no_lang ()">e_xml_get_child_by_name_no_lang</a>     (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-integer-prop-by-name" title="e_xml_get_integer_prop_by_name ()">e_xml_get_integer_prop_by_name</a>      (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-integer-prop-by-name-with-default" title="e_xml_get_integer_prop_by_name_with_default ()">e_xml_get_integer_prop_by_name_with_default</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> def</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-set-integer-prop-by-name" title="e_xml_set_integer_prop_by_name ()">e_xml_set_integer_prop_by_name</a>      (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-uint-prop-by-name" title="e_xml_get_uint_prop_by_name ()">e_xml_get_uint_prop_by_name</a>         (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-uint-prop-by-name-with-default" title="e_xml_get_uint_prop_by_name_with_default ()">e_xml_get_uint_prop_by_name_with_default</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> def</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-set-uint-prop-by-name" title="e_xml_set_uint_prop_by_name ()">e_xml_set_uint_prop_by_name</a>         (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-bool-prop-by-name" title="e_xml_get_bool_prop_by_name ()">e_xml_get_bool_prop_by_name</a>         (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-bool-prop-by-name-with-default" title="e_xml_get_bool_prop_by_name_with_default ()">e_xml_get_bool_prop_by_name_with_default</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> def</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-set-bool-prop-by-name" title="e_xml_set_bool_prop_by_name ()">e_xml_set_bool_prop_by_name</a>         (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-double-prop-by-name" title="e_xml_get_double_prop_by_name ()">e_xml_get_double_prop_by_name</a>       (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-double-prop-by-name-with-default" title="e_xml_get_double_prop_by_name_with_default ()">e_xml_get_double_prop_by_name_with_default</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> def</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-set-double-prop-by-name" title="e_xml_set_double_prop_by_name ()">e_xml_set_double_prop_by_name</a>       (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-string-prop-by-name" title="e_xml_get_string_prop_by_name ()">e_xml_get_string_prop_by_name</a>       (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-string-prop-by-name-with-default" title="e_xml_get_string_prop_by_name_with_default ()">e_xml_get_string_prop_by_name_with_default</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *def</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-set-string-prop-by-name" title="e_xml_set_string_prop_by_name ()">e_xml_set_string_prop_by_name</a>       (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Reading-and-Writing-XML.html#e-xml-get-translated-string-prop-by-name" title="e_xml_get_translated_string_prop_by_name ()">e_xml_get_translated_string_prop_by_name</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Reading-and-Writing-XML.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Reading-and-Writing-XML.details"></a><h2>Details</h2>
+<div class="refsect2" title="e_xml_get_child_by_name_by_lang ()">
+<a name="e-xml-get-child-by-name-by-lang"></a><h3>e_xml_get_child_by_name_by_lang ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNode</span> *           e_xml_get_child_by_name_by_lang     (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *child_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *lang</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lang</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_child_by_name_by_lang_list ()">
+<a name="e-xml-get-child-by-name-by-lang-list"></a><h3>e_xml_get_child_by_name_by_lang_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNode</span> *           e_xml_get_child_by_name_by_lang_list
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *lang_list</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lang_list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_child_by_name_no_lang ()">
+<a name="e-xml-get-child-by-name-no-lang"></a><h3>e_xml_get_child_by_name_no_lang ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNode</span> *           e_xml_get_child_by_name_no_lang     (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_integer_prop_by_name ()">
+<a name="e-xml-get-integer-prop-by-name"></a><h3>e_xml_get_integer_prop_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_xml_get_integer_prop_by_name      (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_integer_prop_by_name_with_default ()">
+<a name="e-xml-get-integer-prop-by-name-with-default"></a><h3>e_xml_get_integer_prop_by_name_with_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_xml_get_integer_prop_by_name_with_default
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> def</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>def</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_set_integer_prop_by_name ()">
+<a name="e-xml-set-integer-prop-by-name"></a><h3>e_xml_set_integer_prop_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_xml_set_integer_prop_by_name      (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_uint_prop_by_name ()">
+<a name="e-xml-get-uint-prop-by-name"></a><h3>e_xml_get_uint_prop_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               e_xml_get_uint_prop_by_name         (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_uint_prop_by_name_with_default ()">
+<a name="e-xml-get-uint-prop-by-name-with-default"></a><h3>e_xml_get_uint_prop_by_name_with_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               e_xml_get_uint_prop_by_name_with_default
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> def</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>def</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_set_uint_prop_by_name ()">
+<a name="e-xml-set-uint-prop-by-name"></a><h3>e_xml_set_uint_prop_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_xml_set_uint_prop_by_name         (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> value</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_bool_prop_by_name ()">
+<a name="e-xml-get-bool-prop-by-name"></a><h3>e_xml_get_bool_prop_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_xml_get_bool_prop_by_name         (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_bool_prop_by_name_with_default ()">
+<a name="e-xml-get-bool-prop-by-name-with-default"></a><h3>e_xml_get_bool_prop_by_name_with_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_xml_get_bool_prop_by_name_with_default
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> def</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>def</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_set_bool_prop_by_name ()">
+<a name="e-xml-set-bool-prop-by-name"></a><h3>e_xml_set_bool_prop_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_xml_set_bool_prop_by_name         (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_double_prop_by_name ()">
+<a name="e-xml-get-double-prop-by-name"></a><h3>e_xml_get_double_prop_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             e_xml_get_double_prop_by_name       (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_double_prop_by_name_with_default ()">
+<a name="e-xml-get-double-prop-by-name-with-default"></a><h3>e_xml_get_double_prop_by_name_with_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             e_xml_get_double_prop_by_name_with_default
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> def</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>def</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_set_double_prop_by_name ()">
+<a name="e-xml-set-double-prop-by-name"></a><h3>e_xml_set_double_prop_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_xml_set_double_prop_by_name       (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_string_prop_by_name ()">
+<a name="e-xml-get-string-prop-by-name"></a><h3>e_xml_get_string_prop_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_xml_get_string_prop_by_name       (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_string_prop_by_name_with_default ()">
+<a name="e-xml-get-string-prop-by-name-with-default"></a><h3>e_xml_get_string_prop_by_name_with_default ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_xml_get_string_prop_by_name_with_default
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *def</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>def</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_set_string_prop_by_name ()">
+<a name="e-xml-set-string-prop-by-name"></a><h3>e_xml_set_string_prop_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_xml_set_string_prop_by_name       (<em class="parameter"><code><span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_xml_get_translated_string_prop_by_name ()">
+<a name="e-xml-get-translated-string-prop-by-name"></a><h3>e_xml_get_translated_string_prop_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_xml_get_translated_string_prop_by_name
+                                                        (<em class="parameter"><code>const <span class="type">xmlNode</span> *parent</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlChar</span> *prop_name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

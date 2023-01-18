@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>e2k-http-utils</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch03.html" title="libexchange public API reference">
+<link rel="prev" href="evolution-exchange-E2kUserDialog.html" title="E2kUserDialog">
+<link rel="next" href="evolution-exchange-e2k-kerberos.html" title="e2k-kerberos">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="evolution-exchange-E2kUserDialog.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="evolution-exchange-e2k-kerberos.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#evolution-exchange-e2k-http-utils.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#evolution-exchange-e2k-http-utils.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="e2k-http-utils">
+<a name="evolution-exchange-e2k-http-utils"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="evolution-exchange-e2k-http-utils.top_of_page"></a>e2k-http-utils</span></h2>
+<p>e2k-http-utils — HTTP utility functions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="evolution-exchange-e2k-http-utils.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">typedef             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2kHTTPStatus" title="E2kHTTPStatus">E2kHTTPStatus</a>;
+#define             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-TRANSPORT-ERROR:CAPS" title="E2K_HTTP_STATUS_IS_TRANSPORT_ERROR()">E2K_HTTP_STATUS_IS_TRANSPORT_ERROR</a>  (status)
+#define             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-INFORMATIONAL:CAPS" title="E2K_HTTP_STATUS_IS_INFORMATIONAL()">E2K_HTTP_STATUS_IS_INFORMATIONAL</a>    (status)
+#define             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-SUCCESSFUL:CAPS" title="E2K_HTTP_STATUS_IS_SUCCESSFUL()">E2K_HTTP_STATUS_IS_SUCCESSFUL</a>       (status)
+#define             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-REDIRECTION:CAPS" title="E2K_HTTP_STATUS_IS_REDIRECTION()">E2K_HTTP_STATUS_IS_REDIRECTION</a>      (status)
+#define             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-CLIENT-ERROR:CAPS" title="E2K_HTTP_STATUS_IS_CLIENT_ERROR()">E2K_HTTP_STATUS_IS_CLIENT_ERROR</a>     (status)
+#define             <a class="link" href="evolution-exchange-e2k-http-utils.html#E2K-HTTP-STATUS-IS-SERVER-ERROR:CAPS" title="E2K_HTTP_STATUS_IS_SERVER_ERROR()">E2K_HTTP_STATUS_IS_SERVER_ERROR</a>     (status)
+
+<span class="returnvalue">time_t</span>              <a class="link" href="evolution-exchange-e2k-http-utils.html#e2k-http-parse-date" title="e2k_http_parse_date ()">e2k_http_parse_date</a>                 (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *date</code></em>);
+<a class="link" href="evolution-exchange-e2k-http-utils.html#E2kHTTPStatus" title="E2kHTTPStatus"><span class="returnvalue">E2kHTTPStatus</span></a>       <a class="link" href="evolution-exchange-e2k-http-utils.html#e2k-http-parse-status" title="e2k_http_parse_status ()">e2k_http_parse_status</a>               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *status_line</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="evolution-exchange-e2k-http-utils.html#e2k-http-accept-language" title="e2k_http_accept_language ()">e2k_http_accept_language</a>            (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="evolution-exchange-e2k-http-utils.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="evolution-exchange-e2k-http-utils.details"></a><h2>Details</h2>
+<div class="refsect2" title="E2kHTTPStatus">
+<a name="E2kHTTPStatus"></a><h3>E2kHTTPStatus</h3>
+<pre class="programlisting">typedef guint E2kHTTPStatus;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E2K_HTTP_STATUS_IS_TRANSPORT_ERROR()">
+<a name="E2K-HTTP-STATUS-IS-TRANSPORT-ERROR:CAPS"></a><h3>E2K_HTTP_STATUS_IS_TRANSPORT_ERROR()</h3>
+<pre class="programlisting">#define E2K_HTTP_STATUS_IS_TRANSPORT_ERROR(status) SOUP_STATUS_IS_TRANSPORT_ERROR(status)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_HTTP_STATUS_IS_INFORMATIONAL()">
+<a name="E2K-HTTP-STATUS-IS-INFORMATIONAL:CAPS"></a><h3>E2K_HTTP_STATUS_IS_INFORMATIONAL()</h3>
+<pre class="programlisting">#define E2K_HTTP_STATUS_IS_INFORMATIONAL(status)   SOUP_STATUS_IS_INFORMATIONAL(status)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_HTTP_STATUS_IS_SUCCESSFUL()">
+<a name="E2K-HTTP-STATUS-IS-SUCCESSFUL:CAPS"></a><h3>E2K_HTTP_STATUS_IS_SUCCESSFUL()</h3>
+<pre class="programlisting">#define E2K_HTTP_STATUS_IS_SUCCESSFUL(status)      SOUP_STATUS_IS_SUCCESSFUL(status)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_HTTP_STATUS_IS_REDIRECTION()">
+<a name="E2K-HTTP-STATUS-IS-REDIRECTION:CAPS"></a><h3>E2K_HTTP_STATUS_IS_REDIRECTION()</h3>
+<pre class="programlisting">#define E2K_HTTP_STATUS_IS_REDIRECTION(status)     SOUP_STATUS_IS_REDIRECTION(status)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_HTTP_STATUS_IS_CLIENT_ERROR()">
+<a name="E2K-HTTP-STATUS-IS-CLIENT-ERROR:CAPS"></a><h3>E2K_HTTP_STATUS_IS_CLIENT_ERROR()</h3>
+<pre class="programlisting">#define E2K_HTTP_STATUS_IS_CLIENT_ERROR(status)    SOUP_STATUS_IS_CLIENT_ERROR(status)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_HTTP_STATUS_IS_SERVER_ERROR()">
+<a name="E2K-HTTP-STATUS-IS-SERVER-ERROR:CAPS"></a><h3>E2K_HTTP_STATUS_IS_SERVER_ERROR()</h3>
+<pre class="programlisting">#define E2K_HTTP_STATUS_IS_SERVER_ERROR(status)    SOUP_STATUS_IS_SERVER_ERROR(status)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_http_parse_date ()">
+<a name="e2k-http-parse-date"></a><h3>e2k_http_parse_date ()</h3>
+<pre class="programlisting"><span class="returnvalue">time_t</span>              e2k_http_parse_date                 (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *date</code></em>);</pre>
+<p>
+Converts an HTTP Date header into a time_t value. Doesn't
+do much sanity checking on the format since we know IIS always
+returns the date in RFC 1123 format, not either of the other two
+allowable formats.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>date</code></em> :</span></p></td>
+<td>an HTTP Date header, returned from Exchange
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <code class="literal">time_t</code> corresponding to <em class="parameter"><code>date</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_http_parse_status ()">
+<a name="e2k-http-parse-status"></a><h3>e2k_http_parse_status ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-http-utils.html#E2kHTTPStatus" title="E2kHTTPStatus"><span class="returnvalue">E2kHTTPStatus</span></a>       e2k_http_parse_status               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *status_line</code></em>);</pre>
+<p>
+Parses an HTTP Status-Line and returns the Status-Code
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status_line</code></em> :</span></p></td>
+<td>an HTTP Status-Line
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the Status-Code portion of <em class="parameter"><code>status_line</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_http_accept_language ()">
+<a name="e2k-http-accept-language"></a><h3>e2k_http_accept_language ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e2k_http_accept_language            (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Generates an Accept-Language value to send to the Exchange server.
+The user's default folders (Inbox, Calendar, etc) are not created
+until the user connects to Exchange for the first time, and in that
+case, it needs to know what language to name the folders in.
+libexchange users are responsible for setting the Accept-Language
+header on any request that could be the first-ever request to a
+mailbox. (Exchange will return 401 Unauthorized if it receives a
+request with no Accept-Language header for an uninitialized
+mailbox.)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an Accept-Language string.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

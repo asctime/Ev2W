@@ -1,0 +1,26 @@
+diff -Naur evolution-data-server-2.32.3/configure evolution-data-server-2.32.3-glib-deprecated/configure
+--- evolution-data-server-2.32.3/configure	2011-04-21 21:41:16.000000000 +0200
++++ evolution-data-server-2.32.3-glib-deprecated/configure	2013-04-10 19:09:24.819248612 +0200
+@@ -4275,8 +4275,7 @@
+ 
+ 
+ 
+-  list="-DG_DISABLE_DEPRECATED
+-	-DPANGO_DISABLE_DEPRECATED
++  list="-DPANGO_DISABLE_DEPRECATED
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED
+ 	-DGTK_DISABLE_DEPRECATED
+ 	-DG_DISABLE_SINGLE_INCLUDES
+diff -Naur evolution-data-server-2.32.3/configure.ac evolution-data-server-2.32.3-glib-deprecated/configure.ac
+--- evolution-data-server-2.32.3/configure.ac	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3-glib-deprecated/configure.ac	2013-04-10 19:08:57.267111992 +0200
+@@ -164,8 +164,7 @@
+ dnl Compiler Warning Flags
+ dnl ******************************
+ AS_COMPILER_FLAGS(WARNING_FLAGS,
+-	"-DG_DISABLE_DEPRECATED
+-	-DPANGO_DISABLE_DEPRECATED
++	"-DPANGO_DISABLE_DEPRECATED
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED
+ 	-DGTK_DISABLE_DEPRECATED
+ 	-DG_DISABLE_SINGLE_INCLUDES

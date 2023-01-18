@@ -1,0 +1,137 @@
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml.sgml:Image ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml.sgml:Title ##### -->
+e-shell-window.sgml.sgml.sgml
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml:Image ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml.sgml:Title ##### -->
+e-shell-window.sgml.sgml
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml:Image ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/e-shell-window.sgml.sgml:Title ##### -->
+e-shell-window.sgml
+
+
+<!-- ##### ARG EShellSearchbar:label-visible ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO E_SHELL_WINDOW_ACTION_SYNC_OPTIONS ##### -->
+<para>
+
+</para>
+
+@window: 
+
+<!-- ##### FUNCTION e_get_user_data_dir ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+<!-- ##### FUNCTION e_shell_content_get_search_name ##### -->
+<para>
+
+</para>
+
+@shell_content: 
+@Returns: 
+
+<!-- ##### FUNCTION e_shell_content_get_searchbar ##### -->
+<para>
+
+</para>
+
+@shell_content: 
+@Returns: 
+
+<!-- ##### FUNCTION e_shell_searchbar_get_label_visible ##### -->
+<para>
+
+</para>
+
+@searchbar: 
+@Returns: 
+
+<!-- ##### FUNCTION e_shell_searchbar_set_label_visible ##### -->
+<para>
+
+</para>
+
+@searchbar: 
+@label_visible: 
+

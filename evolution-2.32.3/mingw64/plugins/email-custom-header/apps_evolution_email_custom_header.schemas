@@ -1,0 +1,308 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/email_custom_header/customHeader</key>
+      <applyto>/apps/evolution/eplugin/email_custom_header/customHeader</applyto>
+      <owner>evolution-eplugin</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[Security=Personal;Unclassified;Protected;InConfidence;Secret;Topsecret]</default>
+      <locale name="C">
+         <short>List of Custom Headers</short>
+         <long>The key specifies the list of custom headers that you can add  to an outgoing message. The format for specifying a Header and Header value is: Name of the custom header followed by "=" and the values separated by ";"</long>
+      </locale>
+
+      <locale name="ar">
+         <short>قائمة بالترويسات المخصصة</short>
+         <long>المفتاح يحدد قائمة من الترويسات المخصصة التي يمكنك إضافتها إلى الرسائل الصادرة. هيئة تحديد ترويسة وقيمة الترويسة هي: اسم الترويسة المخصصة متبوعة ب &quot;=&quot; ثم القيم مفصولة ب &quot;;&quot;</long>
+      </locale>
+
+      <locale name="as">
+         <short>স্বনির্ধারিত হেডারের তালিকা</short>
+         
+      </locale>
+
+      <locale name="be@latin">
+         <short>Śpis ułasnych šapak</short>
+         
+      </locale>
+
+      <locale name="bg">
+         <short>Списък с потребителски заглавни части</short>
+         <long>Този ключ указва списъка с потребителски заглавни части, които могат да се добавят към изходящо писмо. Форматът за задаване на заглавна част и стойност е: Име на заглавната част, последвано от „=“ и стойности, разделени с „;“.</long>
+      </locale>
+
+      <locale name="bn">
+         <short>স্বনির্ধারিত শীর্ষচরণের তালিকা</short>
+         <long>পাঠানোর জন্য প্রস্তুত বার্তার মধ্যে যোগ করার জন্য উপলব্ধ স্বনির্ধারিত শীর্ষচরণের তালিকা এই কী দ্বারা চিহ্নিত করা হয়। শীর্ষচরণ ও শীর্ষচরণের মান নির্ধারণের বিন্যাস হল: স্বনির্ধারিত শীর্ষচরণের নাম &quot;=&quot; ও মান ও দুটি জুটির মধ্যে &quot;;&quot; চিহ্ন সহযোগে বিভাজন করা হবে</long>
+      </locale>
+
+      <locale name="bn_IN">
+         <short>স্বনির্ধারিত হেডারের তালিকা</short>
+         <long>পাঠানোর জন্য প্রস্তুত বার্তার মধ্যে যোগ করার জন্য উপলব্ধ স্বনির্ধারিত হেডারের তালিকা এই কি দ্বারা চিহ্নিত করা হয়। হেডার ও হেডারের মান নির্ধারণের বিন্যাস হল: স্বনির্ধারিত হেডারের নাম &quot;=&quot; ও মান ও দুটি জুটির মধ্যে &quot;;&quot; চিহ্ন সহযোগে বিভাজন করা হবে</long>
+      </locale>
+
+      <locale name="ca">
+         <short>Llista de les capçaleres personalitzades</short>
+         <long>La clau especifica la llista de capçaleres personalitzades que podeu afegir a un missatge que envieu. El format per especificar una capçalera i el seu valor és: el nom de la capçalera seguit del signe d&apos;igualtat («=») i els valors separats per punts i comes («;»)</long>
+      </locale>
+
+      <locale name="ca@valencia">
+         <short>Llista de les capçaleres personalitzades</short>
+         <long>La clau especifica la llista de capçaleres personalitzades que podeu afegir a un missatge que envieu. El format per especificar una capçalera i el seu valor és: el nom de la capçalera seguit del signe d&apos;igualtat («=») i els valors separats per punts i comes («;»)</long>
+      </locale>
+
+      <locale name="cs">
+         <short>Seznam vlastních hlaviček</short>
+         <long>Klíč udává seznam vlastních hlaviček, které můžete přidat do odchozí zprávy. Formát, určující hlavičku a hodnotu hlavičky, je: Název vlastní hlavičky následovaný „=“ a hodnoty oddělené „;“</long>
+      </locale>
+
+      <locale name="da">
+         <short>Liste over tilpassede brevhoveder</short>
+         <long>Denne nøgle specificerer listen over tilpassede brevhoveder som du kan tilføje til en udgående besked. Formatet som et brevhoved og dets værdier angives i er: Navnet på det tilpassede brevhoved, efterfulgt af et &quot;=&quot; og værdierne separeret med et &quot;;&quot;</long>
+      </locale>
+
+      <locale name="de">
+         <short>Liste der benutzerdefinierten Kopfzeilen</short>
+         <long>Diese Liste legt die benutzerdefinierten Kopfzeilen fest, die ausgehenden Nachrichten hinzugefügt werden können. Das Format für eine Kopfzeile und ihren Wert ist: Name der Kopfzeile gefolgt von »=« und die Werte, die durch ein Semikolon (»;«) getrennt werden</long>
+      </locale>
+
+      <locale name="el">
+         <short>Λίστα προσαρμοσμένων κεφαλίδων</short>
+         <long>Αυτό το κλειδί ορίζει τη λίστα με τις προσαρμοσμένες κεφαλίδες που μπορείτε να προσθέσετε σε εξερχόμενα μηνύματα. Η μορφή για τον καθορισμό Κεφαλίδας και τιμής Κεφαλίδας είναι: Όνομα της κεφαλίδας ακολουθούμενο από &quot;=&quot; και οι τιμές διαχωρισμένες με &quot;;&quot;</long>
+      </locale>
+
+      <locale name="en@shaw">
+         <short>𐑤𐑦𐑕𐑑 𐑝 𐑒𐑳𐑕𐑑𐑩𐑥 𐑣𐑧𐑛𐑼𐑟</short>
+         <long>𐑞 𐑒𐑰 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑞 𐑤𐑦𐑕𐑑 𐑝 𐑒𐑳𐑕𐑑𐑩𐑥 𐑣𐑧𐑛𐑼𐑟 𐑞𐑨𐑑 𐑿 𐑒𐑨𐑯 𐑨𐑛 𐑑 𐑩𐑯 𐑬𐑑𐑜𐑴𐑦𐑙 𐑥𐑧𐑕𐑦𐑡. 𐑞 𐑓𐑹𐑥𐑨𐑑 𐑓𐑹 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑦𐑙 𐑩 𐑣𐑧𐑛𐑼 𐑯 𐑣𐑧𐑛𐑼 𐑝𐑨𐑤𐑿 𐑦𐑟: 𐑯𐑱𐑥 𐑝 𐑞 𐑒𐑳𐑕𐑑𐑩𐑥 𐑣𐑧𐑛𐑼 𐑓𐑪𐑤𐑴𐑛 𐑚𐑲 &quot;=&quot; 𐑯 𐑞 𐑝𐑨𐑤𐑿𐑟 𐑕𐑧𐑐𐑼𐑱𐑑𐑩𐑛 𐑚𐑲 &quot;;&quot;</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>List of Custom Headers</short>
+         <long>The key specifies the list of custom headers that you can add to an outgoing message. The format for specifying a Header and Header value is: Name of the custom header followed by &quot;=&quot; and the values separated by &quot;;&quot;</long>
+      </locale>
+
+      <locale name="es">
+         <short>Lista de cabeceras personalizadas</short>
+         <long>La clave especifica la lista de cabeceras personalizadas que puede añadir a un mensaje saliente. El formato para especificar una cabecera y el valor de la cabecera es: el nombre de la cabecera personalizada seguido de un «=» y los valores separados por «;».</long>
+      </locale>
+
+      <locale name="et">
+         <short>Kohandatud päiste nimekiri</short>
+         <long>See võti määrab kohandatud päiste loendi, mida võid lisada väljuvale sõnumile. Päise ja päise väärtuse määramise vorming on järgmine: päise nimi, seejärel võrdusmärk &quot;=&quot; ja väärtus, omavahel eraldatakse need semikooloniga &quot;;&quot;</long>
+      </locale>
+
+      <locale name="eu">
+         <short>Goiburu pertsonalizatuen zerrenda</short>
+         <long>Gakoak irteerako mezuari gehitu diezaiokezun goiburu pertsonalizatuen zerrenda zehazten du. Goiburua eta dagokion balioa zehazteko formatua honakoa da: goiburu pertsonalizatuaren izena, ondoren &quot;=&quot; karakterea eta gero &quot;;&quot; karakterearekin bereiztutako balioak.</long>
+      </locale>
+
+      <locale name="fi">
+         <short>Luettelo omista otsakkeista</short>
+         <long>Avain määrittää luettelon omista otsakkeita, joita voit lisätä lähteviin viesteihin. Muoto otsakkeiden määrittelyksi avaimessa on seuraava: Otsakkeen nimi, &quot;=&quot;-merkki ja otsakkeen sisältö, eroteltuna &quot;;&quot;-merkeillä.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Liste d&apos;en-têtes personnalisés</short>
+         <long>Cette clé fournit la liste des en-têtes personnalisés que vous pouvez ajouter à un message sortant. Le format pour indiquer un en-tête et sa valeur est : nom de l&apos;en-tête personnalisé suivi de « = » puis les valeurs, séparées par des « ; »</long>
+      </locale>
+
+      <locale name="ga">
+         <short>Liosta Cheanntásc Saincheaptha</short>
+         
+      </locale>
+
+      <locale name="gl">
+         <short>Listaxe de cabeceiras personalizadas</short>
+         <long>A chave especifica a listaxe de cabeceiras personalizadas que quere engadir a unha mensaxe saínte. O formato para especificar unha cabeceira e un valor de cabeceira é: Nome da cabeceira personalizada seguido de &quot;=&quot; e os valores separados por &quot;;&quot;</long>
+      </locale>
+
+      <locale name="gu">
+         <short>વૈવિધ્યપૂર્ણ હેડરોની યાદી</short>
+         <long>કી વૈવિધ્યપૂર્ણ હેડરોની યાદી સ્પષ્ટ કરે છે કે જેને તમે જતા સંદેશાઓમાં ઉમેરી શકો છો. હેડર અને હેડર કિંમત સ્પષ્ટ કરવાનું બંધારણ આવું છે: વૈવિધ્યપૂર્ણ હેડરનું નામ &quot;=&quot; ને અનુસરવામાં આવે છે અને કિંમતો &quot;;&quot; દ્વારા અલગ કરવામાં આવે છે</long>
+      </locale>
+
+      <locale name="he">
+         <short>List of Custom Headers</short>
+         <long>The key specifies the list of custom headers that you can add to an outgoing message. The format for specifying a Header and Header value is: Name of the custom header followed by &quot;=&quot; and the values separated by &quot;;&quot;</long>
+      </locale>
+
+      <locale name="hi">
+         <short>कस्टम शीर्षिका की सूची</short>
+         <long>यह कुंजी मनपसंद शीर्षिका की सूची निर्दिष्ट करता है जिसे आप बाहर जाने वाले संदेश में जोड़ सकते हैं. किसी शीर्षिका या शीर्षिका मान निर्दिष्ट करने के लिए प्रारूप है: मनपसंद शीर्षिका के नाम के &quot;=&quot; आना चाहिए और मान जो कि &quot;;&quot; से पृथक हो.</long>
+      </locale>
+
+      <locale name="hu">
+         <short>Egyéni fejlécek listája</short>
+         <long>A kulcs megadja a kimenő üzenethez adható egyéni fejlécek listáját. A fejléc és fejlécérték megadásának formátuma: Az egyéni fejléc neve=értékek ;-vel elválasztott listája</long>
+      </locale>
+
+      <locale name="id">
+         <short>Daftar Tajuk Ubahan</short>
+         <long>Kunci ini menyatakan daftar dari tajuk ubahan yang dapat Anda tambahkan ke pesan keluar. Format untuk menyatakan suatu Tajuk dan nilai Tajuk adalah: Nama dari tajuk ubahan diikuti dengan &quot;=&quot; dan nilai-nilai dipisahkan dengan &quot;;&quot;</long>
+      </locale>
+
+      <locale name="it">
+         <short>Elenco delle intestazioni personalizzate</short>
+         <long>La chiave specifica la lista di intestazioni personalizzate che è possibile aggiungere a un messaggio in uscita. Il formato per specificare una intestazione e il valore dell&apos;intestazione è: nome dell&apos;intestazione personalizzata seguita da un &quot;=&quot; e i valori separati da &quot;;&quot;</long>
+      </locale>
+
+      <locale name="ja">
+         <short>独自ヘッダのリスト</short>
+         <long>送信するメールに独自のヘッダとして挿入するキーのリストです。その書式は &quot;=&quot; の次に独自ヘッダの名前を指定して &quot;;&quot; でその値を区切ります。</long>
+      </locale>
+
+      <locale name="kn">
+         <short>ನಿಮ್ಮ ಇಚ್ಛೆಯ ಹೆಡರ್‌ಗಳು ಪಟ್ಟಿ</short>
+         <long>ಹೊರ ಹೋಗುವ ಸಂದೇಶಗಳಿಗೆ ನೀವು ಸೇರಿಸಬಹುದಾದ ನಿಮ್ಮ ಇಚ್ಛೆಯ ಹೆಡರ್‌ಗಳ ಪಟ್ಟಿಯನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ. ಒಂದು ಹೆಡರ್ ಹಾಗು ಹೆಡರ್ ಮೌಲ್ಯದ ವಿನ್ಯಾಸ: ನಿಮ್ಮ ಇಚ್ಛೆಯ ಹೆಡರ್‌ನ ಹೆಸರು ನಂತರ &quot;=&quot; ಹಾಗು &quot;;&quot; ಇಂದ ಪ್ರತ್ಯೇಕಿಸಲ್ಪಟ್ಟಿರುತ್ತದೆ</long>
+      </locale>
+
+      <locale name="ko">
+         <short>사용자 설정 헤더의 목록</short>
+         <long>이 키는 보내는 메시지에 추가할 사용자 설정 헤더의 목록입니다. 헤더와 헤더 값을 지정하는 방법은 다음과 같습니다: 사용자 설정 헤더의 이름 다음에 &quot;=&quot; 다음에 값을 쓰고 &quot;;&quot;으로 구분.</long>
+      </locale>
+
+      <locale name="lt">
+         <short>Pasirinktinių antraščių sąrašas</short>
+         <long>Šis raktas nurodo pasirinktinių antraščių, kurias galite įterpti siunčiamame laiške, sąrašą. Antraštės ir antraštės reikšmės nurodymo formatas yra toks: pasirinktinės antraštės pavadinimas, po jo einantis ženklas „=“ ir „;“ atskirtos reikšmės</long>
+      </locale>
+
+      <locale name="lv">
+         <short>Pielāgotu galvu saraksts</short>
+         <long>Atslēga norāda pielāgoto galvu sarakstu, kuru varat pievienot izejošajām vēstulēm. Formāts, lai norādītu galvu un galvas vērtību, ir: pielāgotās galvas nosaukums, pēc kuras seko &quot;=&quot; un vērtības tiek atdalītas ar &quot;;&quot;</long>
+      </locale>
+
+      <locale name="mk">
+         <short>Листа на прилагодени заглавија</short>
+         <long>Овој клуч одредува листа на прилагодени заглавија кои можете да ги додавате на појдовните пораки. Форматот за одредување на заглавие и вредност се: име на заглавието проследено со „=“ и вредноста, потоа разделено со „;“</long>
+      </locale>
+
+      <locale name="ml">
+         <short>തയ്യാറിക്കിയ ഹെഡറുകളുടെ പട്ടിക</short>
+         
+      </locale>
+
+      <locale name="mr">
+         <short>इच्छिक हेड्डरची यादी</short>
+         <long>ही की बाहेरील संदेश करीता जोडण्याजोगी इच्छिक हेड्डरची यादी दर्शविते. हेड्डर व हेड्डर मुल्यचे स्वरूपन खालिल रित्या आहे: इच्छिक हेड्डर नावानंतर &quot;=&quot; व मुल्य &quot;;&quot; द्वारे विभाजीत केले जातील</long>
+      </locale>
+
+      <locale name="nb">
+         <short>Liste med egendefinerte meldingshoder</short>
+         <long>Nøkkelen spesifiserer en liste med egendefinerte meldingshoder som du kan legge til i en utgående melding. Format for spesifisering av et meldingshode og verdi er: Navn på egendefinert meldingshode fulgt av «=» og verdiene adskilt med «;»</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Lijst van aangepaste berichtkoppen</short>
+         <long>De sleutel specificeert de lijst met aangepaste headers die u aan een uitgaand bericht kunt toevoegen. Het format voor een header en headerwaarde is: naam van de aangepaste header, gevolgd door ‘=’ en de waarden gescheiden door ‘;’</long>
+      </locale>
+
+      <locale name="oc">
+         <short>Tièra dels encaps personalizats</short>
+         
+      </locale>
+
+      <locale name="or">
+         <short>ଇଚ୍ଛାରୂପଣ ଶୀର୍ଷକଗୁଡିକର ତାଲିକା</short>
+         <long>ଇଚ୍ଛାମୁତାବକ ଶୀର୍ଷକ ଯାହାକୁକି ଆପଣ ଯାଉଥିବା ସନ୍ଦେଶରେ ବ୍ୟବହାର କରିପାରିବେ। ଗୋଟିଏ ଶୀର୍ଷକ ଏବଂ ଶୀର୍ଷକ ମୂଲ୍ୟକୁ ଉଲ୍ଲେଖ କରିବା ପାଇଁ: ଇଚ୍ଛାରୂପଣ ଶୀର୍ଷକର ନାମ ଏବଂ ତାପରେ &quot;=&quot; ଏବଂ &quot;;&quot; ଦ୍ୱାରା ପୃଥକ ହୋଇଥିବା ମୂଲ୍ୟ</long>
+      </locale>
+
+      <locale name="pa">
+         <short>ਪਸੰਦੀਦਾ ਹੈੱਡਰ ਦੀ ਲਿਸਟ</short>
+         <long>ਕੁੰਜੀ ਕਸਟਮ ਹੈੱਡਰਾਂ ਦੀ ਲਿਸਟ ਦਿੰਦੀ ਹੈ, ਜੋ ਕਿ ਤੁਸੀਂ ਬਾਹਰ ਭੇਜ ਰਹੇ ਸੁਨੇਹਿਆਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ। ਇੱਕ ਹੈੱਡਰ ਜਾਂ ਹੈੱਡਰ ਮੁੱਲ ਦੇਣ ਲਈ ਫਾਰਮੈਟ: &quot;=&quot; ਦੇ ਬਾਅਦ ਕਸਟਮ ਹੈੱਡਰ ਦਾ ਨਾਂ ਅਤੇ ਮੁੱਲ &quot;;&quot; ਨਾਲ ਵੱਖ।</long>
+      </locale>
+
+      <locale name="pl">
+         <short>Lista własnych nagłówków</short>
+         <long>Ten klucz określa listę nagłówków użytkownika, które będą dodawane do wychodzących wiadomości. Format wartości to: nazwa nagłówka, znak &quot;=&quot; oraz wartości rozdzielone znakami &quot;;&quot;</long>
+      </locale>
+
+      <locale name="pt">
+         <short>Lista de Cabeçalhos Personalizados</short>
+         <long>A chave especifica a lista de cabeçalhos personalizados que pode adicionar a uma mensagem enviada. O formato para especificar um Cabeçalho e um valor de Cabeçalho é: Nome do cabeçalho personalizado seguido de &quot;=&quot; e os valores separados por &quot;;&quot;</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Lista de cabeçalhos personalizados</short>
+         <long>A chave especifica a lista de cabeçalhos personalizados que você pode adicionar a uma mensagem enviada. O formato para especificar um cabeçalho e valor de cabeçalho é: Nome do cabeçalho personalizado seguido por &quot;=&quot; e os valores separados por &quot;;&quot;</long>
+      </locale>
+
+      <locale name="ro">
+         <short>Lista antetelor personalizate</short>
+         <long>Cheia specifică lista de antete personalizate pe care le puteți adăuga unui mesaj la trimitere. Formatul pentru specificarea unui antet și a valorii acestuia este: Numele antetului personalizat urmat de „=” și valorile separate prin &quot;;&quot;</long>
+      </locale>
+
+      <locale name="ru">
+         <short>Список дополнительных заголовков</short>
+         <long>Этот ключ задаёт список дополнительных заголовков, которые можно добавлять к исходящим сообщениям. Формат для задания заголовка и значения следующий: Сначала идёт имя заголовка, затем «=» и затем значения, разделённые символом «;»</long>
+      </locale>
+
+      <locale name="sl">
+         <short>Seznam glav po meri</short>
+         <long>Ključ določa seznam glav po meri, ki jih lahko dodate odhajajoči pošti. Oblika za navedbo glave in vrednosti glave je: Ime glave po meri, ki mu sledi znak &quot;=&quot; in nato vrednosti ločene z znakom &quot;;&quot;</long>
+      </locale>
+
+      <locale name="sr">
+         <short>Списак прилагођених заглавља</short>
+         <long>Кључ наводи списак прилагођених заглавља које можете додати одлазној поруци. Формат за навођење заглавља и његове вредности је: назив прилагођеног заглавља, затим „=“ и вредности одвојене са „;“</long>
+      </locale>
+
+      <locale name="sr@latin">
+         <short>Spisak prilagođenih zaglavlja</short>
+         <long>Ključ navodi spisak prilagođenih zaglavlja koje možete dodati odlaznoj poruci. Format za navođenje zaglavlja i njegove vrednosti je: naziv prilagođenog zaglavlja, zatim „=“ i vrednosti odvojene sa „;“</long>
+      </locale>
+
+      <locale name="sv">
+         <short>Lista över anpassade rubriker</short>
+         <long>Denna nyckel anger listan över anpassade rubriker som du kan lägga till i ett utgående meddelande. Formatet är att ange en rubrik och rubrikvärde är: Namn på anpassad rubrik följt av &quot;=&quot; och dess värden separerade med &quot;;&quot;</long>
+      </locale>
+
+      <locale name="ta">
+         <short>தனிப்பயன் தலைப்புகளின் பட்டியல்</short>
+         <long>இந்த விசை பட்டியல் வெளிச்செல்லும்  செய்திகளுக்கு தனிப்பயன் தலைப்பு சேர்க்க பயனாகிறது.  தலைப்புக்கும் தலைப்பு மதிப்புக்கும் குறிக்கும் ஒழுங்கு :
+தனிப்பயன் தலைப்பின் பெயர், அதன் பின் &quot;=&quot; . இதன் மதிப்புகள்  &quot;;&quot; ஆல் பிரிக்கப்படும்  </long>
+      </locale>
+
+      <locale name="te">
+         <short>మలుచుకొనిన పీఠికల జాబితా</short>
+         <long>బయటకువెళ్ళు సందేశాలకు జతచేయగల మలుచుకొనిన పీఠికల జాబితాను కీ తెలుపుతుంది. పీఠికను మరియు పీఠిక విలువను తెలుపుటకు విధానం: ములచుకొనిన పీఠిక నామము &quot;=&quot; ముందు వుండాలి మరియు విలువలు &quot;;&quot; చేత వేరుచేయబడాలి</long>
+      </locale>
+
+      <locale name="th">
+         <short>รายชื่อข้อมูลส่วนหัวกำหนดเอง</short>
+         <long>ระบุรายชื่อข้อมูลส่วนหัวกำหนดเอง ซึ่งคุณสามารถเพิ่มเข้าในข้อความขาออกได้ สำหรับแต่ละรายการ รูปแบบของการกำหนดข้อมูลส่วนหัวและค่าของข้อมูลคือ: ชื่อข้อมูลส่วนหัว ตามด้วย &quot;=&quot; และค่าของข้อมูล คั่นแต่ละรายการด้วย &quot;;&quot;</long>
+      </locale>
+
+      <locale name="tr">
+         <short>Özel Başlıkların Listesi</short>
+         <long>Bu anatar giden iletilere eklenebilecek özel başlıkların listesini içerir. Bir başlık ve başlık değeri için biçim: Özel başlığın ismi ile devam eden &quot;=&quot; ve &quot;;&quot; ile ayrı değerler</long>
+      </locale>
+
+      <locale name="uk">
+         <short>Список додаткових заголовків</short>
+         <long>Цей ключ задає список додаткових заголовків, які можна додавати до первинних повідомлень. Формат для вказування заголовку та значень наступний: Спочатку йде ім&apos;я заголовку, потім «=» а потім значення, розділені символом «;»</long>
+      </locale>
+
+      <locale name="vi">
+         <short>Danh sách Dòng đầu Riêng</short>
+         <long>Khoá này ghi rõ danh sách các dòng đầu tự chọn mà bạn có thể thêm vào một thư được gửi đi. Định dạng ghi rõ một dòng đầu và giá trị dòng đầu là tên của dòng đầu tự chọn với một dấu bằng « = » theo sau, và các giá trị định giới bằng dấu chấm phẩy « ; ».</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>自定义信头列表</short>
+         <long>此键值指定了您可以向发送邮件中添加的自定义头的列表。指定头和头值的格式为：自定义头的名称，接下来是“=”和它的值，头与头之间以“;”分割</long>
+      </locale>
+
+      <locale name="zh_HK">
+         <short>自選標頭的清單</short>
+         <long>這個鍵值指定的是你可以加到外寄郵件的自選標頭清單。指定標頭與標頭數值的格式為：自選標頭名稱加上「=」，後面的數值則以「;」隔開</long>
+      </locale>
+
+      <locale name="zh_TW">
+         <short>自訂標頭的清單</short>
+         <long>這個鍵值指定的是您可以加到外寄郵件的自訂標頭清單。指定標頭與標頭數值的格式為：自訂標頭名稱加上「=」，後面的數值則以「;」隔開</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>
+

@@ -1,0 +1,32 @@
+<!-- ##### SECTION Title ##### -->
+xntlm-md4
+
+<!-- ##### SECTION Short_Description ##### -->
+MD4 hash
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This is here for use by xntlm, but can also be used by other code.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION xntlm_md4sum ##### -->
+<para>
+
+</para>
+
+@in: 
+@nbytes: 
+@digest: 
+
+

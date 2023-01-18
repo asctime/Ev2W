@@ -1,0 +1,1607 @@
+# translation of evolution-exchange to Turkish
+# This file is distributed under the same license as the evolution-exchange package.
+# Copyright (C) 2005.
+#
+# Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-13 05:41+0300\n"
+"PO-Revision-Date: 2008-09-11 00:53+0300\n"
+"Last-Translator: Baris Cicek <baris@teamforce.name.tr>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "GAL Önbelleğinin tazelenme için zaman aralığını belirtir."
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr ""
+"Bu anahtar GAL önbelleğinin tazelenmesi için aralığın kaç gün olacağını "
+"belirtir. GAL'ı güncellemek için değeri sıfır olarak atayın ve mevcut "
+"önbelleği sonsuza kadar kullanır. Bu sadece GAL için çevirim dışı "
+"önbellekleme etkin olduğunda çalışır."
+
+#: ../addressbook/e-book-backend-exchange.c:2285
+#: ../addressbook/e-book-backend-gal.c:1863 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Aranıyor..."
+
+#: ../addressbook/e-book-backend-gal.c:306
+#: ../addressbook/e-book-backend-gal.c:327
+msgid "Reconnecting to LDAP server..."
+msgstr "LDAP sunucusuna tekrar bağlanılıyor..."
+
+#: ../addressbook/e-book-backend-gal.c:1625
+msgid "Receiving LDAP search results..."
+msgstr "LDAP arama sonuçları alınıyor..."
+
+#: ../addressbook/e-book-backend-gal.c:1894
+msgid "Error performing search"
+msgstr "Arama gerçekleştirilirken hata"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2090
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"Tekrarlanan toplantılar için '%s' kaynağı zamanlanamadı.\n"
+"Her toplantıyı ayrı olarak zamanlamalısınız."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2108
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Seçilen zaman aralığında '%s' kaynağı meşgul."
+
+#: ../calendar/e-cal-backend-exchange.c:424
+msgid "Authentication failed"
+msgstr "Kimlik doğrulama başarısız oldu"
+
+#: ../calendar/e-cal-backend-exchange.c:466
+msgid "Could not find the calendar"
+msgstr "Takvim bulunamadı"
+
+#: ../camel/camel-exchange-folder.c:54
+msgid "Always check for new mail in this folder"
+msgstr "Bu klasörde her zaman yeni posta kontrolü yap"
+
+#: ../camel/camel-exchange-folder.c:211
+msgid "You cannot expunge in offline mode."
+msgstr "Çevrim dışı kipte temizleme yapamazsınız."
+
+#: ../camel/camel-exchange-folder.c:242
+msgid "No Subject"
+msgstr "Konu Yok"
+
+#: ../camel/camel-exchange-folder.c:397
+msgid "This message is not available in offline mode."
+msgstr "Bu ileti çevrim dışı kipte mevcut değil."
+
+#: ../camel/camel-exchange-folder.c:607
+msgid "Moving messages"
+msgstr "İletiler taşınıyor"
+
+#: ../camel/camel-exchange-folder.c:608
+msgid "Copying messages"
+msgstr "İletiler kopyalanıyor"
+
+#: ../camel/camel-exchange-folder.c:994
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "%sdizini oluşturulamadı: %s"
+
+#: ../camel/camel-exchange-folder.c:1004
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%s için özet yüklenemedi"
+
+#: ../camel/camel-exchange-folder.c:1012
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "%s için önbellek oluşturulamadı"
+
+#: ../camel/camel-exchange-folder.c:1022
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s için günlük oluşturulamadı"
+
+#: ../camel/camel-exchange-folder.c:1073
+msgid "Scanning for changed messages"
+msgstr "Değişen iletiler taranıyor"
+
+#: ../camel/camel-exchange-folder.c:1106
+msgid "Fetching summary information for new messages"
+msgstr "Yeni iletiler için özet bilgisi alınıyor"
+
+#: ../camel/camel-exchange-journal.c:342
+msgid "No folder name found\n"
+msgstr "Hiçbir klasör ismi bulunamadı\n"
+
+#: ../camel/camel-exchange-journal.c:375 ../mail/mail-stub-exchange.c:3071
+#: ../mail/mail-stub-exchange.c:3121 ../mail/mail-stub-exchange.c:3251
+#: ../mail/mail-stub-exchange.c:3278 ../mail/mail-stub-exchange.c:3331
+#: ../mail/mail-stub-exchange.c:3353
+msgid "Folder doesn't exist"
+msgstr "Klasör mevcut değil"
+
+#: ../camel/camel-exchange-journal.c:439
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "İleti çevrim dışı kipte eklenemiyor: önbellek mevcut değil"
+
+#: ../camel/camel-exchange-journal.c:455
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "İleti çevrim dışı kipte eklenemiyor: %s"
+
+#: ../camel/camel-exchange-provider.c:55
+msgid "Secure or Plaintext Password"
+msgstr "Güvenli ya da Salt Metin Parola"
+
+#: ../camel/camel-exchange-provider.c:56
+#: ../camel/camel-exchange-provider.c:141
+msgid "Plaintext Password"
+msgstr "Düz Metin Parola"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:57
+#: ../camel/camel-exchange-provider.c:130
+msgid "Secure Password"
+msgstr "Güvenli Parola"
+
+#: ../camel/camel-exchange-provider.c:63
+msgid "Checking for New Mail"
+msgstr "Yeni Posta Kontrol Ediliyor"
+
+#: ../camel/camel-exchange-provider.c:65
+msgid "C_heck for new messages in all folders"
+msgstr "Tüm klasörleri yeni iletiler için _kontrol et"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:73
+msgid "Windows User_name:"
+msgstr "Windows Kullanıcı _ismi:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:78
+msgid "Global Address List / Active Directory"
+msgstr "Genel Adres Listesi / Aktif Dizin"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:82
+msgid "_Global Catalog server name:"
+msgstr "_Global Katalog sunucu ismi:"
+
+#: ../camel/camel-exchange-provider.c:84
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "GAL yanıtlarının _sayısının sınırı: %s"
+
+#: ../camel/camel-exchange-provider.c:86
+msgid "Authentication _Type:"
+msgstr "Kimlik Denetimi _Türü:"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "İndime sınırına ulaşılana kadar GAL'a _göz atmaya izin ver"
+
+#: ../camel/camel-exchange-provider.c:91
+msgid "Options"
+msgstr "Seçenekler"
+
+#: ../camel/camel-exchange-provider.c:93
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "_Parola Bitimi Uyarı dönemi: %s"
+
+#: ../camel/camel-exchange-provider.c:95
+msgid "Automatically synchroni_ze account locally"
+msgstr "Hesabı yerelde otomatik olarak _eş zamanlandır"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:98
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "_Bu sunucudaki Gelen Kutusu içindeki iletilere filtreleri uygula"
+
+#: ../camel/camel-exchange-provider.c:100
+msgid "Check new messages for _Junk contents"
+msgstr "_Gereksiz içeriği için yeni iletileri kontrol et"
+
+#: ../camel/camel-exchange-provider.c:102
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Sadece Gelen Kutusu klasörü içindeki Gere_ksiz iletileri kontrol et"
+
+#: ../camel/camel-exchange-provider.c:112
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:114
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr ""
+"Microsoft Exchange sunucuları üzerindeki mektup (ya da başka veri) işlemek "
+"için"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:133
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"Bu seçenek Exchange sunucusuna güvenli parola (NTLM) kimlik doğrulamasını "
+"kullanarak bağlanacak."
+
+#: ../camel/camel-exchange-provider.c:143
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"Bu seçenek Exchange sunucusuna standart düz metin parola kimlik "
+"doğrulamasını kullanarak bağlanacak."
+
+#: ../camel/camel-exchange-store.c:314
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange sunucu %s"
+
+#: ../camel/camel-exchange-store.c:317
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "%s için %s üzerinde Exchange hesabı"
+
+#: ../camel/camel-exchange-store.c:399
+msgid "Evolution Exchange backend process"
+msgstr "Evolution Exchange arkayüz süreci"
+
+#: ../camel/camel-exchange-store.c:442
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"Sunucuyla kimlik doğrulaması yapılamadı. (Parola geçersiz?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:495
+#, c-format
+msgid "No such folder %s"
+msgstr "Böyle bir klasör %s yok"
+
+#: ../camel/camel-exchange-store.c:572
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Çevrim dışı kipte klasöre kayıt olunamıyor."
+
+#: ../camel/camel-exchange-store.c:589
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Çevrim dışı kipte klasörden kayıt silinemiyor."
+
+#: ../camel/camel-exchange-store.c:727
+msgid "Cannot get folder info in offline mode."
+msgstr "Çevrim dışı kipte klasör bilgisi alınamıyor."
+
+#: ../camel/camel-exchange-store.c:800
+msgid "Cannot create folder in offline mode."
+msgstr "Çevrim dışı kipte klasör yaratılamıyor."
+
+#: ../camel/camel-exchange-store.c:827
+msgid "Cannot delete folder in offline mode."
+msgstr "Çevrim dışı kipte klasör silinemiyor."
+
+#: ../camel/camel-exchange-store.c:851
+msgid "Cannot rename folder in offline mode."
+msgstr "Çevrim dışı kipte klasör yeniden adlandırılamıyor."
+
+#: ../camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Exchange iletimi sadece Exchange posta kaynağı ile kullanılabilir"
+
+#: ../camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "İleti gönderilemiyor: bir ya da daha fazla geçersiz alıcı"
+
+#: ../camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "'Kimden' adresi ileti içinde bulunamadı"
+
+#: ../camel/camel-stub.c:165 ../camel/camel-stub.c:229
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "Soket oluşturulamadı: %s"
+
+#: ../camel/camel-stub.c:183
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "%s bağlantısı gerçekleştirilemedi: Lütfen Evolution'ı tekrarn başlatın"
+
+#: ../camel/camel-stub.c:188 ../camel/camel-stub.c:247
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "%s bağlantısı gerçekleştirilemedi: %s"
+
+#: ../camel/camel-stub.c:212
+#, c-format
+msgid "Count not read file '%s': %s"
+msgstr "'%s' dosyası okunamadı: %s"
+
+#: ../camel/camel-stub.c:220
+#, c-format
+msgid "Wrong size file '%s'"
+msgstr "Yanlış boyutta dosy '%s'"
+
+#: ../camel/camel-stub.c:283
+#, c-format
+msgid "Path too long: %s"
+msgstr "Yok çok uzun: %s"
+
+#: ../camel/camel-stub.c:318
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "Durum dalı başlatılamadı: %s"
+
+#: ../camel/camel-stub.c:572
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s bağlantısı kesildi"
+
+#: ../camel/camel-stub.c:576
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "%s ile iletişim kurulurken hata: %s"
+
+#: ../mail/mail-stub-exchange.c:269 ../mail/mail-stub-exchange.c:965
+msgid "No such folder"
+msgstr "Böyle bir klasör yok"
+
+#: ../mail/mail-stub-exchange.c:292 ../mail/mail-stub-exchange.c:3048
+#: ../mail/mail-stub-exchange.c:3088 ../mail/mail-stub-exchange.c:3255
+#: ../mail/mail-stub-exchange.c:3305 ../mail/mail-stub-exchange.c:3368
+msgid "Permission denied"
+msgstr "İzin verilmedi"
+
+#: ../mail/mail-stub-exchange.c:787 ../mail/mail-stub-exchange.c:879
+msgid "Could not open folder"
+msgstr "Klasör açılamadı"
+
+#: ../mail/mail-stub-exchange.c:873 ../mail/mail-stub-exchange.c:895
+msgid "Could not open folder: Permission denied"
+msgstr "Klasör açılamadı: İzin verilmedi"
+
+#: ../mail/mail-stub-exchange.c:974
+msgid "Could not create folder."
+msgstr "Klasör oluşturulamadı."
+
+#: ../mail/mail-stub-exchange.c:1062
+msgid "Could not open Deleted Items folder"
+msgstr "Silinmiş Öğeler klasörü açılamadı"
+
+#: ../mail/mail-stub-exchange.c:1393 ../mail/mail-stub-exchange.c:1434
+msgid "Could not get new messages"
+msgstr "Yeni iletiler alınamadı"
+
+#: ../mail/mail-stub-exchange.c:1637
+msgid "Could not empty Deleted Items folder"
+msgstr "Silinmiş Öğeler klasörü boşaltılamadı"
+
+#: ../mail/mail-stub-exchange.c:1639
+msgid "Permission denied. Could not delete certain messages."
+msgstr "İzin verilmedi. Bazı iletiler silinemedi."
+
+#: ../mail/mail-stub-exchange.c:1712
+msgid "Could not append message; mailbox is over quota"
+msgstr "İleti eklenemedi; posta kutusu kotayı aştı"
+
+#: ../mail/mail-stub-exchange.c:1713
+msgid "Could not append message"
+msgstr "İleti eklenemedi"
+
+#: ../mail/mail-stub-exchange.c:2475
+msgid "No such message"
+msgstr "Böyle bir ileti yok"
+
+#: ../mail/mail-stub-exchange.c:2556
+msgid "Message has been deleted"
+msgstr "İleti silindi"
+
+#: ../mail/mail-stub-exchange.c:2558
+msgid "Error retrieving message"
+msgstr "İleti alınırken hata"
+
+#: ../mail/mail-stub-exchange.c:2601
+msgid "Mailbox does not support full-text searching"
+msgstr "Posta kutusu tam metin aramaları desteklemiyor"
+
+#: ../mail/mail-stub-exchange.c:2699
+msgid "Unable to move/copy messages"
+msgstr "İletiler taşınamadı/kopyalanamadı"
+
+#: ../mail/mail-stub-exchange.c:2965
+msgid "No mail submission URI for this mailbox"
+msgstr "Bu posta kutusu için posta yollama URI'si yok"
+
+#: ../mail/mail-stub-exchange.c:2999
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Sunucu Exchange iletimi ile posta kabul etmeyecek"
+
+#: ../mail/mail-stub-exchange.c:3001
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"Hesabınız Kimden adresi olarak <%s> kullanmak için\n"
+"izne sahip deği."
+
+#: ../mail/mail-stub-exchange.c:3013
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"İleti gönderilemedi.\n"
+"Bu hesabınız kotasını aşmış anlamına gelebilir."
+
+#: ../mail/mail-stub-exchange.c:3017
+msgid "Could not send message"
+msgstr "İleti gönderilemedi"
+
+#: ../mail/mail-stub-exchange.c:3040 ../mail/mail-stub-exchange.c:3093
+#: ../mail/mail-stub-exchange.c:3259 ../mail/mail-stub-exchange.c:3310
+#: ../mail/mail-stub-exchange.c:3374
+msgid "Generic error"
+msgstr "Genel hata"
+
+#: ../mail/mail-stub-exchange.c:3044
+msgid "Folder already exists"
+msgstr "Klasör zaten mevcut"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Evolution Adres Defteri Exchange arkayüzü"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Evolution Takvim Exchange arkayüzü"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+#: ../storage/main.c:219
+msgid "Evolution Connector for Microsoft Exchange"
+msgstr "Microsoft Exchange için Evolution Connector"
+
+#: ../storage/exchange-autoconfig-wizard.c:227
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Exchange sunucusuna bağlanılamadı.\n"
+"URL'nin doğru olduğundan emin olun (\"%s\" yeine \"%s\" denediniz mi?) ve "
+"tekrar deneyin."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Exchange sunucusu bulunamadı.\n"
+"Sunucu adını doğru yazdığınızdan emin olup tekrar deneyin."
+
+#: ../storage/exchange-autoconfig-wizard.c:244
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Exchange sunucusuyla kimlik doğrulaması yapılamadı.\n"
+"Kullanıcı adının ve parolanın doğru olduğundan emin olup tekrar deneyin."
+
+#: ../storage/exchange-autoconfig-wizard.c:251
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Exchange sunucusuyla kimlik doğrulaması yapılamadı.\n"
+"Kullanıcı adının ve parolanın doğru olduğundan emin olup tekrar deneyin. \n"
+"Windows alan adını kullanıcı adınızın bir parçası olarak belirtmeniz "
+"gerekebilir (örn, \"ALAN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:263
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Belirtilen URL'de OWA verisi bulunamadı.\n"
+"URL'nin doğru olduğundan emin olup tekrar deneyin."
+
+#: ../storage/exchange-autoconfig-wizard.c:270
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Evolution Connector'un, Exchange Sunucusunda bulunan ancak kapalı ya da "
+"engellenmiş gibi görünen bazı işlevlere erişmesi gerekiyor.  (Bu genelde "
+"tahmin edilemez.)  Evolution Connector'u kullanabilmeniz için, Exchange "
+"Yöneticinizin bu özellikleri etkinleştirmesi gerekiyor. \n"
+"\n"
+"Exchange yöneticinize bilgi sağlamak için, lütfen aşağıdaki bağı takip edin:"
+
+#: ../storage/exchange-autoconfig-wizard.c:292
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"Vermiş olduğunuz Exchange sunucu URL'si Exchange 5.5 sunucusu için. "
+"Evolution Connector sadece Microsoft Exchange 2000 ve 2003 destekler."
+
+#: ../storage/exchange-autoconfig-wizard.c:306
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Bilinmeyen bir hata oluştuğu için Exchange heasabı yapılanadırılamadı. "
+"URL'nin, kullanıcı adının, ve paraloanın doğru olup olmadığını kontrol edip "
+"tekrar deneyin."
+
+#: ../storage/exchange-autoconfig-wizard.c:350
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Genel Katalog sunucusu ile kimlik doğrulaması yapılamadı. Geriye dönmeniz ve "
+"Windows alan adınızı kullanıcı adınızın bir parçası olarak belirtmeniz "
+"gerekebilir (örn: \"ALAN-ADIM\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:357
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Belirtilen sunucuya bağlanılamadı.\n"
+"Lütfen sunucu adını kontrol edin ve tekrar deneyin."
+
+#: ../storage/exchange-autoconfig-wizard.c:394
+#: ../storage/exchange-autoconfig-wizard.c:398
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: ../storage/exchange-autoconfig-wizard.c:463
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Yapılandırma sistemi hatası.\n"
+"Yeni hesap oluşturulamadı."
+
+#: ../storage/exchange-autoconfig-wizard.c:477
+msgid "You may only configure a single Exchange account"
+msgstr "Sadece bir Exchange hesabı yapılandırabilirsiniz"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Yapılandırma Başarısız"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Tamamlandı"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "E-posta Adresi:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "Microsoft Exchange için Evolution Connector Yapılandırması"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Evolution Connector hesap bilgisini mevcut olan Outlook Web Erişimi (OWA) "
+"hesabından alabilir.\n"
+"OWA site adresinizi (URL), kullanıcı adınızı, ve parolanızı girin, sonra "
+"\"İleri\"ye tıklayın.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value.\n"
+msgstr ""
+"Evolution Connector, sitenizde Genel Katalog kopyasını bulamadı. Lütfen "
+"Genel Katalog sunucunuzun adını girin. Doğru değer için sistem yöneticinize "
+"danışmanız gerekebilir.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account.\n"
+msgstr ""
+"Evolution Connector Exchange hesabınızı yapılandırırken bir sorun ile "
+"karşılaştı.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid "Exchange Configuration"
+msgstr "Exchange Yapılandırması"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:15
+msgid "Full Name:"
+msgstr "Tam İsim:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:16
+msgid "GC Server:"
+msgstr "GC Sunucusu:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:17
+msgid "Make this my default account"
+msgstr "Bunu öntanımlı hesabım yap"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:18
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Password:"
+msgstr "Parola:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid "Remember this password"
+msgstr "Bu parolayı hatırla"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:21
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:22
+msgid "Welcome"
+msgstr "Hoşgeldiniz"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:23
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Microsoft Exchange için Evolution Connector'a Hoşgeldiniz.\n"
+"Gelecek bir kaç ekran Evolution'ın Exchange hesabınıza\n"
+"bağlanması için yardımcı olacak.\n"
+"\n"
+"Lütfen devam etmek için \"İleri\" düğmesine basın."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"Connector hesabınız şimdi kullanılmaya hazır. Ayarlarınızı kaydetmek için "
+"\"Uygula\"\n"
+"düğmesine tıklayın."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"Hesap bilgileriniz aşağıdaki gibi. Lütfen hata varsa düzeltin, sonra \"İleri"
+"\"ye tıklayın.\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:125
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Bu parola hesabınız için bulunan parola ile eşleşmiyor. Lütfen doğru "
+"parolayı girin"
+
+#: ../storage/exchange-change-password.c:132
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "İki parola eşleşmiyor. Lütfen parolaları tekrar girin."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Parolayı Değiştir"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Parolayı Onayla:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "Mevcut Parola:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "Yeni Parola:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"Mevcut parolanızın kullanım süresi doldu. Lütfen parolanızı şimdi değiştirin."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Sahibi (okuma, oluşturma)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "T_akvim:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "Bağ_lantılar:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Yetkili İzinleri"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Yetkililer"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "Düzenleyici (okuma, oluşturma, düzenleme)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Hiçbiri"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "İzin sahibi"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "Gözden geçirici (salt-okuma)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"Bu kullanıcılar sizin adınıza mektup gönderebilecekler ve\n"
+"sizin verdiğiniz yetkilerle sizin klasörlerinize erişebilecekler."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_Yetkili özel öğeleri görebilir"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_Düzenle"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "G_elen Kutusu:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_Görevler:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Exchange Klasör Ağacı"
+
+#: ../storage/exchange-migrate.c:60
+msgid "Migrating Exchange Folders..."
+msgstr "Exchange Klasörleri Aktarılıyor..."
+
+#: ../storage/exchange-migrate.c:68
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Evolution %d.%d.%d sürümünden beri Evolution exchange hesap klasörlerinin "
+"konumu ve hiyerarşisi değişti.\n"
+"\n"
+"Lütfen Evolution klasörlerinizi aktarırken bekleyin..."
+
+#: ../storage/exchange-migrate.c:101
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Uyarı: Evolution %d.%d.%d sürümünden tüm Exchange hesap bilgilerini "
+"aktaramadı.\n"
+"Veri silinmedi, fakat Evolution'ın bu sürümünde görünmeyecek"
+
+#: ../storage/exchange-migrate.c:132
+#, c-format
+msgid "Migrating `%s':"
+msgstr "`%s' aktarılıyor:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>Şu anda durumunuz \"Ofis Dışında\".</b>\n"
+"\n"
+"\"Ofis İçinde\" olarak durumunuzu değiştirmek ister misiniz? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>Ofis Dışında Mesajı:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Durum:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>Aşağıda belirtilen ileti siz ofisinizin dışındayken size mektup "
+"gönderen tüm kişilere\n"
+"kendiliğinden gönderilecektir.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "Şu anda ofisimdeyim"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "Şu anda ofis dışındayım"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "Hayır, Durumu Değiştirme"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "Ofis Dışında Asistanı"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Evet, Durumu Değiştir"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "Parola Bitimi Uyarısı..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "Parolanızın 7 gün içinde kullanımı bitecek..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Parolayı Değiştir"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "tamam_düğmesi"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>İzinler</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Silinemiyor"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Düzenlenemiyor"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Öğeler oluştur"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Alt klasörler oluştur"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "Herhangi Bir Öğe Sil"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Kendi Öğelerini Sil"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "Herhangi Bir Öğe Düzenle"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Kendi Öğelerini Düzenle"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "Klasör bağlantısı"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Klasör sahibi"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "Klasör görünürlüğü"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "Öğeleri oku"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "Rol: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "Bağlanılıyor..."
+
+#: ../storage/ximian-connector-setup.c:75
+msgid "Evolution Connector for Microsoft Exchange Setup Tool"
+msgstr "Microsoft Exchange için Evolution Connector Kurulum Aracı"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Exchange sunucu parolasını değiştir"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Klasör _Boyutu"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Kişisel klasörlerin boyutunu al"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "_Diğer Kullanıcıların Klasörlerine Kaydol..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Sunucuda başka kullanıcılara ailt olan klasörlere kaydol"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"\"Diğer Kullanıcıların Klasörlerine Kaydol\" ile eklediğiniz bir klasörden "
+"kaydı sil"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Exchange takvim yetkilendirme ayarlarını görüntüle ya da değiştir"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+"Ofis-Dışında durumunu ve kendiliğinden cevap iletisini görüntüle ya da "
+"değiştir"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "Exchange _Parolası Değiştir..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_Yetkilendirme Yardımcısı"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "_Ofis Dışında Asistanı"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "Diğer Kullanıcıların Klasörlerinden _Kaydı Sil"
+
+#~ msgid "%sEnter password for %s"
+#~ msgstr "%s%s için parola girin"
+
+#~ msgid "Ximian Connector for Exchange"
+#~ msgstr "Exchange için Ximian Connector"
+
+#~ msgid "Ximian Connector Configuration"
+#~ msgstr "Ximian Connector Yapılandırması"
+
+#~ msgid "Can only expunge in Deleted Items folder"
+#~ msgstr "Sadece Silinmiş Öğeler klasöründe temizleme yapılabilir"
+
+#~ msgid ""
+#~ "Ximian Connector requires access to certain functionality on the Exchange "
+#~ "Server that appears to be disabled or blocked.  (This is usually "
+#~ "unintentional.)  Your Exchange Administrator will need to enable this "
+#~ "functionality in order for you to be able to use Ximian Connector.\n"
+#~ "\n"
+#~ "For information to provide to your Exchange administrator, please follow "
+#~ "the link below:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Ximian Connector'un, Exchange Sunucusunda bulunan ancak kapalı ya da "
+#~ "engellenmiş gibi görünen bazı işlevlere erişmesi gerekiyor.  (Bu genelde "
+#~ "tahmin edilemez.)  Ximian Connector'u kullanabilmeniz için, Exchange "
+#~ "Yöneticinizin bu özellikleri etkinleştirmesi gerekiyor. \n"
+#~ "\n"
+#~ "Exchange yöneticinize bilgi sağlamak için, lütfen aşağıdaki bağı takip "
+#~ "edin:\n"
+#~ "%s"
+
+#~ msgid "Enter password for %s"
+#~ msgstr "%s için parola girin"
+
+#~ msgid "Enter password"
+#~ msgstr "Parola girin"
+
+#~ msgid "Owner"
+#~ msgstr "Sahibi"
+
+#~ msgid "Publishing Editor"
+#~ msgstr "Yayınlama Düzenleyicisi"
+
+#~ msgid "Editor"
+#~ msgstr "Düzenleyici"
+
+#~ msgid "Publishing Author"
+#~ msgstr "Yayınlama Sahibi"
+
+#~ msgid "Author"
+#~ msgstr "Sahibi"
+
+#~ msgid "Non-editing Author"
+#~ msgstr "Düzenleme Yapmayan Sahip"
+
+#~ msgid "Reviewer"
+#~ msgstr "Gözden Geçiren"
+
+#~ msgid "Contributor"
+#~ msgstr "Katkıda Bulunan"
+
+#~ msgid "Custom"
+#~ msgstr "Özel"
+
+#~ msgid "Select User"
+#~ msgstr "Kullanıcı Seç"
+
+#~ msgid "Addressbook..."
+#~ msgstr "Adres defteri..."
+
+#~ msgid "No such folder."
+#~ msgstr "Böyle bir klasör yok."
+
+#~ msgid ""
+#~ "Cannot create the specified folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Belirtilen klasör oluşturulamadı:\n"
+#~ "%s"
+
+#~ msgid "The specified folder name is not valid: %s"
+#~ msgstr "Belirtilen klasör ismi geçerli değil: %s"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Yeni Klasör Oluştur"
+
+#~ msgid "Folder _name:"
+#~ msgstr "Klasör _ismi:"
+
+#~ msgid "Folder _type:"
+#~ msgstr "Klasör _türü:"
+
+#~ msgid "Specify where to create the folder:"
+#~ msgstr "Klasörün oluşturulacağı yeri belirtin:"
+
+#~ msgid ""
+#~ "Cannot transfer folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Klasör iletilemiyor:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Cannot delete folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Klasör silinemiyor:\n"
+#~ "%s"
+
+#~ msgid "Really delete folder \"%s\"?"
+#~ msgstr "\"%s\" klasörü gerçekten silinsin mi?"
+
+#~ msgid "Delete \"%s\""
+#~ msgstr "\"%s\" Sil"
+
+#~ msgid ""
+#~ "Cannot rename folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Klasör yeniden adlandırılamıyor:\n"
+#~ "%s"
+
+#~ msgid "Rename the \"%s\" folder to:"
+#~ msgstr "\"%s\" klasörünü yeniden adlandır:"
+
+#~ msgid "Rename Folder"
+#~ msgstr "Klasörü Yeniden Adlandır"
+
+#~ msgid "A folder named \"%s\" already exists. Please use a different name."
+#~ msgstr ""
+#~ "\"%s\" adında bir klasör zaten mevcut. Lütfen başka bir isim kullanın."
+
+#~ msgid "Please select a user."
+#~ msgstr "Lütfen kullanıcı seçin."
+
+#~ msgid "Opening Folder"
+#~ msgstr "Klasör Açılıyor"
+
+#~ msgid "Opening Folder \"%s\""
+#~ msgstr "\"%s\" Klasörü Açılıyor"
+
+#~ msgid "in \"%s\" ..."
+#~ msgstr "\"%s içinde..."
+
+#~ msgid "Could not open other user's folder: %s."
+#~ msgstr "Diğer kullanıcının klasörü açılamadı: %s."
+
+#~ msgid "Cannot find the specified other user's folder."
+#~ msgstr "Belirtilen diğer kullanıcının klasörü bulunamadı."
+
+#~ msgid ""
+#~ "Cannot unsubscribe from folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Klasörden kayıt silinemedi:\n"
+#~ "%s"
+
+#~ msgid "Really unsubscribe from folder \"%s\"?"
+#~ msgstr "\"%s\" klasöründen gerçekten kayıt silinsin mi?"
+
+#~ msgid "Unsubscribe from \"%s\""
+#~ msgstr "\"%s\" Klasöründen Kayıt Sil"
+
+#~ msgid "Open Other User's Folder"
+#~ msgstr "Dğer Kullanıcının Klasörünü Aç"
+
+#~ msgid "_Account:"
+#~ msgstr "_Hesap:"
+
+#~ msgid "_Folder Name:"
+#~ msgstr "_Klasör İsmi:"
+
+#~ msgid "_User:"
+#~ msgstr "_Kullanıcı:"
+
+#~ msgid "Checkbox"
+#~ msgstr "Kontrol kutusu"
+
+#~ msgid "Folder"
+#~ msgstr "Klasör"
+
+#~ msgid "No error"
+#~ msgstr "Hata yok"
+
+#~ msgid "A folder with the same name already exists"
+#~ msgstr "Aynı adla bir klasör zaten var"
+
+#~ msgid "The specified folder type is not valid"
+#~ msgstr "Belirtilen klasör türü geçerli değil"
+
+#~ msgid "I/O error"
+#~ msgstr "G/Ç hatası"
+
+#~ msgid "Not enough space to create the folder"
+#~ msgstr "Klasör oluşturmak için yeterli alan yok"
+
+#~ msgid "The folder is not empty"
+#~ msgstr "Klasör boş değil"
+
+#~ msgid "The specified folder was not found"
+#~ msgstr "Belirtilen klasör bulunamadı"
+
+#~ msgid "Function not implemented in this storage"
+#~ msgstr "Bu konumda islev henüz uygulanmadı"
+
+#~ msgid "Operation not supported"
+#~ msgstr "İşlem desteklenmiyor"
+
+#~ msgid "The specified type is not supported in this storage"
+#~ msgstr "Bu konuda belirtilen tür desteklenmiyor"
+
+#~ msgid "The specified folder cannot be modified or removed"
+#~ msgstr "Belirtilen klasör değiştirilemez ya da silinemez"
+
+#~ msgid "Cannot make a folder a child of one of its descendants"
+#~ msgstr "Klasör alt klasörlerinden birinin altı olarak belirtilemez"
+
+#~ msgid "Cannot create a folder with that name"
+#~ msgstr "Bu adla bir klasör oluşturulamaz"
+
+#~ msgid "This operation cannot be performed in off-line mode"
+#~ msgstr "Bu işlem çevirim dışı kipte gerçekleştirilemez"
+
+#~ msgid "Unknown error"
+#~ msgstr "Bilinmeyen hata"
+
+#~ msgid "*Control*F5"
+#~ msgstr "*Kontrol*F5"
+
+#~ msgid "Evolution Exchange Component"
+#~ msgstr "Evolution Exchange Bileşeni"
+
+#~ msgid "Exchange"
+#~ msgstr "Exchange"
+
+#~ msgid "_Exchange"
+#~ msgstr "_Exchange"
+
+#~ msgid "%s's Folders"
+#~ msgstr "%s Kullanıcısının Klasörleri"
+
+#~ msgid "Cannot change password due to configuration problems"
+#~ msgstr "Yapılandırma sorunları yüzünden parola değiştirilemiyor"
+
+#~ msgid ""
+#~ "Server rejected password because it is too weak.\n"
+#~ "Try again with a different password."
+#~ msgstr ""
+#~ "Sunucu parolayı geri çevirdi çünkü parola çok zayıf.\n"
+#~ "Farklı bir parola ile yeniden deneyin."
+
+#~ msgid "Could not change password"
+#~ msgstr "Parola değiştirilemedi"
+
+#~ msgid "Personal Folders"
+#~ msgstr "Kişisel Klasörler"
+
+#~ msgid "Favorite Public Folders"
+#~ msgstr "Favori Genel Klasörler"
+
+#~ msgid "All Public Folders"
+#~ msgstr "Tüm Genel Klasörler"
+
+#~ msgid "Global Address List"
+#~ msgstr "Global Adres Listesi"
+
+#~ msgid "Exchange Account is offline. Cannot display folders\n"
+#~ msgstr "Exchange Hesabı çevrim dışı. Klasörler gösterilemiyor\n"
+
+#~ msgid ""
+#~ "Could not authenticate to server.\n"
+#~ "\n"
+#~ "This probably means that your server requires you\n"
+#~ "to specify the Windows domain name as part of your\n"
+#~ "username (eg, \"DOMAIN\\user\").\n"
+#~ "\n"
+#~ "Or you might have just typed your password wrong.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Sunucuyla kimlik doğrulaması yapılamadı.\n"
+#~ "\n"
+#~ "Bu muhtemelen sunucunun kullanıcı adınızın\n"
+#~ "bir parçası olarak Windows alan adı belirtmenizi\n"
+#~ "gerektirdiği anlamına geliyordur (örn, \"ALAN\\kullanıcı\").\n"
+#~ "\n"
+#~ "Ya da sadece parolanızı yanlış yazdınız.\n"
+#~ "\n"
+
+#~ msgid "Mailbox for %s is not on this server."
+#~ msgstr "%s için posta kutusu bu sunucuda değil."
+
+#~ msgid ""
+#~ "The server '%s' is running Exchange 5.5 and is\n"
+#~ "therefore not compatible with Ximian Connector"
+#~ msgstr ""
+#~ "'%s' sunucusu Exchange 5.5 çalıştırıyor\n"
+#~ "dolayısıyla Ximian Connector ile uyumlu değil"
+
+#~ msgid ""
+#~ "Could not find Exchange Web Storage System at %s.\n"
+#~ "If OWA is running on a different path, you must specify that in the\n"
+#~ "account configuration dialog."
+#~ msgstr ""
+#~ "%s konumunda Exchange Web Depo Sistemi bulunamadı.\n"
+#~ "Eğer OWA farklı bir yolda çalışısıyorsa, bunu hesap yapılandırma\n"
+#~ "penceresinde belirtmelisiniz."
+
+#~ msgid "No mailbox for user %s on %s.\n"
+#~ msgstr "%s kullanıcısı için %s üzerinde posta kutusu yok.\n"
+
+#~ msgid "Could not connect to server %s: %s"
+#~ msgstr "%s sunucusuna bağlanılamadı: %s"
+
+#~ msgid "Could not resolve hostname"
+#~ msgstr "Makine ismi çözümlenemedi"
+
+#~ msgid "Network error"
+#~ msgstr "Ağ hatası"
+
+#~ msgid ""
+#~ "You have exceeded your quota of %d %s for storing mails on this server. "
+#~ "Your current usage is : %.0f %s."
+#~ msgstr ""
+#~ "Bu sunucuda posta saklamak için %d %s olan kotanızı aştınız. Mevcut "
+#~ "kullanımınız : %.0f %s."
+
+#~ msgid "You will not be able to either send or receive mails now\n"
+#~ msgstr "Şimdi mektup gönderemeyecek ya da alamayacaksınız\n"
+
+#~ msgid ""
+#~ "You will not be able to send mails till you clear up some space by "
+#~ "deleting some mails.\n"
+#~ msgstr ""
+#~ "Bazı mektuplarınızı silerek boş alan açana kadar mektup "
+#~ "gönderemeyeceksiniz.\n"
+
+#~ msgid "Try to clear up some space by deleting some mails.\n"
+#~ msgstr "Bazı mektuplarınızı silerek boş alan açmayı deneyin.\n"
+
+#~ msgid "Permissions for %s"
+#~ msgstr "%s için izinler"
+
+#~ msgid ""
+#~ "No Global Catalog server configured for this account.\n"
+#~ "Unable to edit delegates."
+#~ msgstr ""
+#~ "Bu hesap için Global Katalog sunucusu yapılandırılmamış.\n"
+#~ "Yetkililer düzenlenemiyor."
+
+#~ msgid ""
+#~ "Could not read folder permissions.\n"
+#~ "Unable to edit delegates."
+#~ msgstr ""
+#~ "Klasör izinleri okunamadı.\n"
+#~ "Yetkililer düzenlenemiyor."
+
+#~ msgid ""
+#~ "Could not determine folder permissions for delegates.\n"
+#~ "Unable to edit delegates."
+#~ msgstr ""
+#~ "Yetkililer için klasör izinleri belirlenemedi.\n"
+#~ "Yetkililer düzenlenemiyor."
+
+#~ msgid "Delegate To:"
+#~ msgstr "Yetkilendir:"
+
+#~ msgid "Delegate To"
+#~ msgstr "Yetkilendir"
+
+#~ msgid "Could not make %s a delegate"
+#~ msgstr "%s bir yetkili yapılamadı"
+
+#~ msgid "You cannot make yourself your own delegate"
+#~ msgstr "Kendinizi kendinizin yetkilisi yapamazsınız"
+
+#~ msgid "%s is already a delegate"
+#~ msgstr "%s zaten bir yetkili"
+
+#~ msgid "Remove the delegate %s?"
+#~ msgstr "%s yetkilisi silinsin mi?"
+
+#~ msgid "Could not access Active Directory"
+#~ msgstr "Aktif Dizin'e erişilemedi"
+
+#~ msgid "Could not find self in Active Directory"
+#~ msgstr "Aktif Dizin'de kendisi bulunamadı"
+
+#~ msgid "Could not find delegate %s in Active Directory"
+#~ msgstr "Aktif Dizin'de %s yetkilisi bulunamadı"
+
+#~ msgid "Could not remove delegate %s"
+#~ msgstr "%s yetkilisi silinemedi"
+
+#~ msgid "Could not update list of delegates."
+#~ msgstr "Yetkililer listesi güncellenemedi."
+
+#~ msgid "Could not add delegate %s"
+#~ msgstr "%s yetkilisi eklenemedi"
+
+#~ msgid ""
+#~ "Failed to update delegates:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Yetkililer güncellenirken hata:\n"
+#~ "%s"
+
+#~ msgid "Name"
+#~ msgstr "İsim"
+
+#~ msgid "Error reading delegates list."
+#~ msgstr "Yetkili listesi okunurken hata."
+
+#~ msgid "Folder Name"
+#~ msgstr "Klasör İsmi"
+
+#~ msgid "Folder Size"
+#~ msgstr "Klasör Boyutu"
+
+#~ msgid "Calendar"
+#~ msgstr "Takvim"
+
+#~ msgid "Contacts"
+#~ msgstr "Bağlantılar"
+
+#~ msgid "Deleted Items"
+#~ msgstr "Silinmiş Öğeler"
+
+#~ msgid "Drafts"
+#~ msgstr "Taslaklar"
+
+#~ msgid "Inbox"
+#~ msgstr "Gelen Kutusu"
+
+#~ msgid "Journal"
+#~ msgstr "Günlük"
+
+#~ msgid "Notes"
+#~ msgstr "Notlar"
+
+#~ msgid "Outbox"
+#~ msgstr "Giden Kutusu"
+
+#~ msgid "Sent Items"
+#~ msgstr "Gönderilmiş Öğeler"
+
+#~ msgid "Tasks"
+#~ msgstr "Görevler"
+
+#~ msgid "Could not update out-of-office state"
+#~ msgstr "Ofis dışında durumu güncellenemedi"
+
+#~ msgid "Could not read out-of-office state"
+#~ msgstr "Ofis dışında durumu okunamadı"
+
+#~ msgid "Could not read folder permissions"
+#~ msgstr "Klasör izinleri okunamadı"
+
+#~ msgid "Could not update folder permissions."
+#~ msgstr "Klasör izinleri güncellenemedi."
+
+#~ msgid "Could not update folder permissions. %s"
+#~ msgstr "Klasör izinleri güncellenemedi. %s"
+
+#~ msgid "(Permission denied.)"
+#~ msgstr "(İzin verilmedi.)"
+
+#~ msgid ""
+#~ "Unable to add user to access control list:\n"
+#~ "No Global Catalog server is configured for this account."
+#~ msgstr ""
+#~ "Kulalnıcı erişimi kontrol listesi eklenemedi:\n"
+#~ "Bu hesap için Global Catalog sunucusu yapılandırılmamış."
+
+#~ msgid "Add User:"
+#~ msgstr "Kullanıcı Ekle:"
+
+#~ msgid "Add User"
+#~ msgstr "Kullanıcı Ekle"
+
+#~ msgid "No such user %s"
+#~ msgstr "%s kullanıcısı yok"
+
+#~ msgid "%s cannot be added to an access control list"
+#~ msgstr "%s erişim kontrol listesine eklenemiyor"
+
+#~ msgid "Unknown error looking up %s"
+#~ msgstr "%s aranırken bilinmeyen hata"
+
+#~ msgid "%s is already in the list"
+#~ msgstr "%s zaten listede"
+
+#~ msgid "Role"
+#~ msgstr "Rol"
+
+#~ msgid "Account Name"
+#~ msgstr "Hesap İsmi"
+
+#~ msgid "Folder does not exist"
+#~ msgstr "Klasör mevcut değil"
+
+#~ msgid "Could not add favorite: %s"
+#~ msgstr "Favori eklenemedi: %s"
+
+#~ msgid "Could not remove favorite: %s"
+#~ msgstr "Favori silinemedi: %s"
+
+#~ msgid "_Rename Folder..."
+#~ msgstr "_Klasörü Yeniden Adlandır..."
+
+#~ msgid "_New Folder..."
+#~ msgstr "_Yeni Klasör..."
+
+#~ msgid "_Delete Folder"
+#~ msgstr "_Klasör Sil"
+
+#~ msgid "_Add Other User's Folder..."
+#~ msgstr "_Başka Kullanıcı Klasörü Ekle..."
+
+#~ msgid "_Remove Other User's Folder"
+#~ msgstr "B_aşka Kullanıcı Klasörü Sil"
+
+#~ msgid "Add to _Favorites"
+#~ msgstr "Favorlere _Ekle"
+
+#~ msgid "Remove from Fa_vorites"
+#~ msgstr "_Favorilerden Sil"
+
+#~ msgid "_Show Folder Sizes"
+#~ msgstr "_Klasör Boyutlarını Göster"
+
+#~ msgid "Folder not marked for offline support"
+#~ msgstr "Klasör çevrim dışı destek için işaretlenmemiş"
+
+#~ msgid ""
+#~ "Ximian Connector requires access to certain functionality on the Exchange "
+#~ "Server that appears to be disabled or blocked.  (This is usually "
+#~ "unintentional.)  Your Exchange Administrator will need to enable this "
+#~ "functionality in order for you to be able to use Ximian Connector.\n"
+#~ "\n"
+#~ "For information to provide to your Exchange administrator, please follow "
+#~ "the link below:\n"
+#~ "http://support.novell.com/cgi-bin/search/searchtid.cgi?/ximian/ximian328."
+#~ "html "
+#~ msgstr ""
+#~ "Ximian Connector'un, Exchange Sunucusunda bulunan ancak kapalı ya da "
+#~ "engellenmiş gibi görünen bazı işlevlere erişmesi gerekiyor.  (Bu genelde "
+#~ "tahmin edilemez.)  Ximian Connector'u kullanabilmeniz için, Exchange "
+#~ "Yöneticinizin bu özellikleri etkinleştirmesi gerekiyor. \n"
+#~ "\n"
+#~ "Exchange yöneticinize bilgi sağlamak için, lütfen aşağıdaki bağı takip "
+#~ "edin:\n"
+#~ "http://support.novell.com/cgi-bin/search/searchtid.cgi?/ximian/ximian328."
+#~ "html "
+
+#~ msgid "Mail"
+#~ msgstr "Posta"
+
+#~ msgid ""
+#~ "Changes to Exchange account configuration will take\n"
+#~ "place after you quit and restart Evolution."
+#~ msgstr ""
+#~ "Exchange hesabınızdaki değişiklikler Evolution'dan çıkıp\n"
+#~ "tekrar başlattığınızda gerçekleşecek."
+
+#~ msgid "The Exchange account will be removed when you quit Evolution"
+#~ msgstr "Evolution'dan çıktığındazda Exchange hesabınız silinecek"
+
+#~ msgid "_Permissions..."
+#~ msgstr "_İzinler..."

@@ -1,0 +1,22 @@
+prefix=/home/mbarnes/local/2.32
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+libexecdir=${exec_prefix}/libexec
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+privlibdir=${libdir}/evolution/2.32
+privlibexecdir=${libexecdir}/evolution/2.32
+privincludedir=${includedir}/evolution-2.32
+moduledir=${libdir}/evolution/2.32/modules
+imagesdir=${datadir}/evolution/2.32/images
+
+execversion=2.32
+
+Name: evolution-shell
+Description: libraries needed for Evolution shell components
+Version: 2.32.3
+Requires: gconf-2.0 gnome-desktop-2.0 gtk+-2.0 libedataserverui-1.2 unique-1.0
+Libs: -L${privlibdir} -leshell -Wl,-R${privlibdir}
+Cflags: -I${privincludedir}

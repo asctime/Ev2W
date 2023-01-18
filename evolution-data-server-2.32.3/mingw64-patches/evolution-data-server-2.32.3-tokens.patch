@@ -1,0 +1,10 @@
+--- evolution-data-server-2.32.3/camel/providers/imapx/camel-imapx-tokens.txt	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/camel/providers/imapx/camel-imapx-tokens.txt	2017-07-19 10:11:42.824792037 +0200
+@@ -1,7 +1,6 @@
+ /* This contains all of the keywords we care about.  These
+    can be converted to an id very efficiently */
+ struct _imapx_keyword {const gchar *name; camel_imapx_id_t id; };
+-struct _imapx_keyword *imapx_tokenise_struct (register const char *str, register unsigned int len);
+ %%
+ ALERT,          IMAPX_ALERT
+ APPENDUID,	IMAPX_APPENDUID

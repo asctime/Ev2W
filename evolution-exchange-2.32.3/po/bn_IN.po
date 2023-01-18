@@ -1,0 +1,1045 @@
+# translation of bn_IN.po to Bengali INDIA
+# This file is distributed under the same license as the evolution-exchange package.
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Runa Bhattacharjee <runa@bengalinux.com>, 2004.
+# Runa Bhattacharjee <runabh@gmail.com>, 2007.
+# Runa Bhattacharjee <runab@fedoraproject.org>, 2008.
+# Runa Bhattacharjee <runab@redhat.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: bn_IN\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-01 03:37+0000\n"
+"PO-Revision-Date: 2008-09-16 15:35+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
+"\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "GAL Cache নবীকরণের জন্য সময়ের বিরতি উল্লেখ করে।"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr ""
+"এই কি দ্বারা GAL cache নবীকরণের মধ্যে অন্তর্বর্তী দিনের সংখ্যা উল্লেখ করা হয়। এই "
+"মান শূণ্য নির্ধারিত হলে GAL আপডেট করা হবে না ও বর্তমান ক্যাশে সর্বদা ব্যবহার করা "
+"হবে। GAL-র ক্ষেত্রে অফ-লাইন ক্যাশে সক্রিয় করা হলে এটি কার্যকরী হবে।"
+
+#: ../addressbook/e-book-backend-exchange.c:2276
+#: ../addressbook/e-book-backend-gal.c:1860 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "অনুসন্ধান করা হচ্ছে..."
+
+#: ../addressbook/e-book-backend-gal.c:306
+#: ../addressbook/e-book-backend-gal.c:327
+msgid "Reconnecting to LDAP server..."
+msgstr "LDAP সার্ভারের সাথে পুনরায় সংযোগ করা হচ্ছে..."
+
+#: ../addressbook/e-book-backend-gal.c:1622
+msgid "Receiving LDAP search results..."
+msgstr "LDAP-এ অনুসন্ধানের ফলাফল গ্রহণ করা হচ্ছে..."
+
+#: ../addressbook/e-book-backend-gal.c:1891
+msgid "Error performing search"
+msgstr "অনুসন্ধানে সমস্যা"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2090
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"ধারাবাহিক বৈঠকের জন্য '%s' রিসোর্স ব্যবহারের সময় নির্ধারণ করতে ব্যর্থ।\n"
+"প্রতিটি বৈঠিক পৃথকরূপে নির্ধারণ করা আবশ্যক।"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2108
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "নির্বাচিত সময়ে '%s' রিসোর্সটি ব্যস্ত।"
+
+#: ../calendar/e-cal-backend-exchange.c:424
+msgid "Authentication failed"
+msgstr "অনুমোদন ব্যর্থ"
+
+#: ../calendar/e-cal-backend-exchange.c:466
+msgid "Could not find the calendar"
+msgstr "বর্ষপঞ্জি অনুসন্ধান করতে ব্যর্থ"
+
+#: ../camel/camel-exchange-folder.c:54
+msgid "Always check for new mail in this folder"
+msgstr "চিহ্নিত ফোল্ডারের মধ্যে সর্বদা নতুন বার্তা অনুসন্ধান করা হবে"
+
+#: ../camel/camel-exchange-folder.c:197
+msgid "You cannot expunge in offline mode."
+msgstr "অপ-লাইন অবস্থায় স্থায়ীরূপে বর্জন করা যাবে না।"
+
+#: ../camel/camel-exchange-folder.c:228
+msgid "No Subject"
+msgstr "বিষয় উল্লিখিত হয়নি"
+
+#: ../camel/camel-exchange-folder.c:383
+msgid "This message is not available in offline mode."
+msgstr "অফ-লাইন মোডে বার্তা উপলব্ধ হবে না।"
+
+#: ../camel/camel-exchange-folder.c:593
+msgid "Moving messages"
+msgstr "বার্তা সরিয়ে ফেলা হচ্ছে"
+
+#: ../camel/camel-exchange-folder.c:594
+msgid "Copying messages"
+msgstr "বার্তা কপি করা হচ্ছে"
+
+#: ../camel/camel-exchange-folder.c:967
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "%s ডিরেক্টরি নির্মাণ করতে ব্যর্থ: %s"
+
+#: ../camel/camel-exchange-folder.c:977
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%sর সংক্ষিপ্ত বিবরণ লোড করতে ব্যর্থ"
+
+#: ../camel/camel-exchange-folder.c:985
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "%s'র জন্য ক্যাশে নির্মাণ করতে ব্যর্থ"
+
+#: ../camel/camel-exchange-folder.c:995
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s'র জন্য জার্নাল নির্মাণ করতে ব্যর্থ"
+
+#: ../camel/camel-exchange-folder.c:1046
+msgid "Scanning for changed messages"
+msgstr "পরিবর্তিত বার্তা অনুসন্ধান করা হচ্ছে"
+
+#: ../camel/camel-exchange-folder.c:1079
+msgid "Fetching summary information for new messages"
+msgstr "নতুন বার্তার সংক্ষিপ্ত বিবরণ প্রাপ্ত করা হচ্ছে"
+
+#: ../camel/camel-exchange-journal.c:342
+msgid "No folder name found\n"
+msgstr "ফোল্ডারের নাম পাওয়া যায়নি\n"
+
+#: ../camel/camel-exchange-journal.c:375 ../mail/mail-stub-exchange.c:3042
+#: ../mail/mail-stub-exchange.c:3092 ../mail/mail-stub-exchange.c:3222
+#: ../mail/mail-stub-exchange.c:3249 ../mail/mail-stub-exchange.c:3302
+#: ../mail/mail-stub-exchange.c:3324
+msgid "Folder doesn't exist"
+msgstr "ফোল্ডার অনুপস্থিত"
+
+#: ../camel/camel-exchange-journal.c:439
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "অফ-লাইন অবস্থায় বার্তা যোগ করতে ব্যর্থ: ক্যাশে উপলব্ধ নয়"
+
+#: ../camel/camel-exchange-journal.c:455
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "অফ-লাইন অবস্থায় বার্তা যোগ করতে ব্যর্থ: %s"
+
+#: ../camel/camel-exchange-provider.c:55
+msgid "Secure or Plaintext Password"
+msgstr "নিরাপদ অথবা প্লেইন-টেক্সট পাসওয়ার্ড"
+
+#: ../camel/camel-exchange-provider.c:56
+#: ../camel/camel-exchange-provider.c:141
+msgid "Plaintext Password"
+msgstr "প্লেইন-টেক্সট পাসওয়ার্ড"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:57
+#: ../camel/camel-exchange-provider.c:130
+msgid "Secure Password"
+msgstr "সুরক্ষিত পাসওয়ার্ড"
+
+#: ../camel/camel-exchange-provider.c:63
+msgid "Checking for New Mail"
+msgstr "নতুন বার্তার প্রাপ্তি পরীক্ষা করা হচ্ছে"
+
+#: ../camel/camel-exchange-provider.c:65
+msgid "C_heck for new messages in all folders"
+msgstr "সব ফোল্ডারে নতুন বার্তা পরীক্ষা করুন (_h)"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:73
+msgid "Windows User_name:"
+msgstr "Windows ব্যবহারকারীর নাম:(_n)"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:78
+msgid "Global Address List / Active Directory"
+msgstr "ঠিকানার গ্লোবাল তালিকা / সক্রিয় ডিরেক্টরি"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:82
+msgid "_Global Catalog server name:"
+msgstr "Global Catalog সার্ভারের নাম:(_G)"
+
+#: ../camel/camel-exchange-provider.c:84
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "GAL প্রত্যুত্তরের সংখ্যা সীমিত করা হবে: %s (_L)"
+
+#: ../camel/camel-exchange-provider.c:86
+msgid "Authentication _Type:"
+msgstr "অনুমোদন প্রণালী: (_T)"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "ডাউনলোডের চিহ্নিত সীমা অবধিক GAL ব্রাউজ করার অনুমতি প্রদান করা হবে (_b)"
+
+#: ../camel/camel-exchange-provider.c:91
+msgid "Options"
+msgstr "বিকল্প"
+
+#: ../camel/camel-exchange-provider.c:93
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "পাসওয়ার্ডের মেয়াদপূর্তীর সময়সীময়: %s(_P)"
+
+#: ../camel/camel-exchange-provider.c:95
+msgid "Automatically synchroni_ze account locally"
+msgstr "স্বয়ংক্রিয়ভাবে স্থানীয়রূপে অ্যাকাউন্ট সুসংসগত করা হবে (_z)"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:98
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "চিহ্নিত সার্ভারের ইনবক্সে ফিল্টার প্রয়োগ করুন (_A)"
+
+#: ../camel/camel-exchange-provider.c:100
+msgid "Check new messages for _Junk contents"
+msgstr "নতুন বার্তার মাঝে অবাঞ্ছীত বার্তা অনুসন্ধান করা হবে (_J)"
+
+#: ../camel/camel-exchange-provider.c:102
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "ইনবক্স ফোল্ডারে শুধুমাত্র অবাঞ্ছিত বার্তা পরীক্ষা করা হবে (_e)"
+
+#: ../camel/camel-exchange-provider.c:112
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:114
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "Microsoft Exchange সার্ভারে বার্তা (এবং অন্যান্য ডাটা) পরিচালনার জন্য"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:133
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"এই বিকল্পের দরুণ Exchange সার্ভারের সাথে সুরক্ষিত পাসওয়ার্ড বিশিষ্ট অনুমোদন প্রক্রিয়ার "
+"দ্বারা সংযোগ করা হবে (NTLM)।"
+
+#: ../camel/camel-exchange-provider.c:143
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"এই বিকল্পের দরুণ Exchange সার্ভারের সাথে প্লেইন-টেক্সট পাসওয়ার্ড বিশিষ্ট অনুমোদন "
+"প্রক্রিয়ার দ্বারা সংযোগ করা হবে (NTLM)।"
+
+#: ../camel/camel-exchange-store.c:314
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange server %s"
+
+#: ../camel/camel-exchange-store.c:317
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "%s-র জন্য %s-এ Exchange অ্যাকাউন্ট"
+
+#: ../camel/camel-exchange-store.c:399
+msgid "Evolution Exchange backend process"
+msgstr "Evolution Exchange'র ব্যাকএন্ড প্রসেস"
+
+#: ../camel/camel-exchange-store.c:442
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"সার্ভারে অনুমোদিত হয়নি। (পাসওয়ার্ড সঠিক কি?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:495
+#, c-format
+msgid "No such folder %s"
+msgstr "%s'র মত ফোল্ডার উপস্থিত নেই"
+
+#: ../camel/camel-exchange-store.c:572
+msgid "Cannot subscribe folder in offline mode."
+msgstr "অফ-লাইন মোডে ফোল্ডার সাব-স্ক্রাইব করা সম্ভব নয়।"
+
+#: ../camel/camel-exchange-store.c:589
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "অফ-লাইন মোডে ফোল্ডার আন-সাবস্ক্রাইব করা সম্ভব নয়।"
+
+#: ../camel/camel-exchange-store.c:727
+msgid "Cannot get folder info in offline mode."
+msgstr "অফ-লাইন মোডে ফোল্ডার সম্বন্ধীয় তথ্য প্রাপ্ত করা সম্ভব নয়।"
+
+#: ../camel/camel-exchange-store.c:800
+msgid "Cannot create folder in offline mode."
+msgstr "অফ-লাইন মোডে ফোল্ডার নির্মাণ করা সম্ভব নয়।"
+
+#: ../camel/camel-exchange-store.c:827
+msgid "Cannot delete folder in offline mode."
+msgstr "অফ-লাইন মোডে ফোল্ডার মুছে ফেলা সম্ভব নয়।"
+
+#: ../camel/camel-exchange-store.c:851
+msgid "Cannot rename folder in offline mode."
+msgstr "অফ-লাইন মোডে ফোল্ডারের নাম পরিবর্তন করা সম্ভব নয়।"
+
+#: ../camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Exchange পরিবহনব্যবস্থা শুধুমাত্র Exchange মেইলের উত্সর সাথে ব্যবহার করা যাবে"
+
+#: ../camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "বার্তা প্রেরণ করা সম্ভব হয়নি: এক অথবা অধিক অবৈধ প্রাপক"
+
+#: ../camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "বার্তায় 'প্রেরকের' ঠিকানা পাওয়া যায়নি"
+
+#: ../camel/camel-stub.c:165 ../camel/camel-stub.c:229
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "সকেট তৈরি করতে ব্যর্থ: %s"
+
+#: ../camel/camel-stub.c:183
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "%s'র সাথে সংযোগ করতে ব্যর্থ: অনুগ্রহ করে Evolution পুনরায় আরম্ভ করুন"
+
+#: ../camel/camel-stub.c:188 ../camel/camel-stub.c:247
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "%s'র সাথে সংযোগ করতে ব্যর্থ: %s"
+
+#: ../camel/camel-stub.c:212
+#, c-format
+msgid "Count not read file '%s': %s"
+msgstr "%s ফাইল পড়তে ব্যর্থ: %s"
+
+#: ../camel/camel-stub.c:220
+#, c-format
+msgid "Wrong size file '%s'"
+msgstr "ফাইলের মান '%s' সঠিক নয়"
+
+#: ../camel/camel-stub.c:283
+#, c-format
+msgid "Path too long: %s"
+msgstr "অত্যাধিক লম্বা পাথ: %s"
+
+#: ../camel/camel-stub.c:318
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "অবস্থার থ্রেড আরম্ভ করতে ব্যর্থ: %s"
+
+#: ../camel/camel-stub.c:572
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s'র সাথে সংযোগ বিচ্ছিন্ন হয়ে গেছে"
+
+#: ../camel/camel-stub.c:576
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "%s'র সাথে যোগাযোগ করতে সমস্যা: %s"
+
+#: ../mail/mail-stub-exchange.c:267 ../mail/mail-stub-exchange.c:963
+msgid "No such folder"
+msgstr "এই ধরনের কোনো ফোল্ডার উপস্থিত নেই"
+
+#: ../mail/mail-stub-exchange.c:290 ../mail/mail-stub-exchange.c:3019
+#: ../mail/mail-stub-exchange.c:3059 ../mail/mail-stub-exchange.c:3226
+#: ../mail/mail-stub-exchange.c:3276 ../mail/mail-stub-exchange.c:3339
+msgid "Permission denied"
+msgstr "অনুমতি প্রদান করা হয়নি"
+
+#: ../mail/mail-stub-exchange.c:785 ../mail/mail-stub-exchange.c:877
+msgid "Could not open folder"
+msgstr "ফোল্ডার খোলা যায়নি"
+
+#: ../mail/mail-stub-exchange.c:871 ../mail/mail-stub-exchange.c:893
+msgid "Could not open folder: Permission denied"
+msgstr "ফোল্ডার খোলা যায়নি: অনুমতি প্রদান করা হয়নি"
+
+#: ../mail/mail-stub-exchange.c:972
+msgid "Could not create folder."
+msgstr "ফোল্ডার নির্মাণ করা যায়নি।"
+
+#: ../mail/mail-stub-exchange.c:1060
+msgid "Could not open Deleted Items folder"
+msgstr "মুছে ফেলা বস্তুর ফোল্ডার খোলা যায়নি"
+
+#: ../mail/mail-stub-exchange.c:1391 ../mail/mail-stub-exchange.c:1432
+msgid "Could not get new messages"
+msgstr "নতুন বার্তা প্রাপ্ত করা যায়নি"
+
+#: ../mail/mail-stub-exchange.c:1608
+msgid "Could not empty Deleted Items folder"
+msgstr "মুছে ফেলা বস্তুর ফোল্ডার ফাঁকা করা যায়নি"
+
+#: ../mail/mail-stub-exchange.c:1610
+msgid "Permission denied. Could not delete certain messages."
+msgstr "অনুমতি দেওয়া হয়নি। কয়েকটি বার্তা মুছে ফেলা যায়নি।"
+
+#: ../mail/mail-stub-exchange.c:1683
+msgid "Could not append message; mailbox is over quota"
+msgstr "বার্তায় যোগ করা যায়নি; মেইলবক্সের ধারণক্ষমতা পূর্ণ হয়ে গেছে"
+
+#: ../mail/mail-stub-exchange.c:1684
+msgid "Could not append message"
+msgstr "বার্তা যোগ করা যায়নি"
+
+#: ../mail/mail-stub-exchange.c:2446
+msgid "No such message"
+msgstr "এ ধরনের কোনো বার্তা উপস্থিত নেই"
+
+#: ../mail/mail-stub-exchange.c:2527
+msgid "Message has been deleted"
+msgstr "বার্তা মুছে ফেলা হয়েছে"
+
+#: ../mail/mail-stub-exchange.c:2529
+msgid "Error retrieving message"
+msgstr "বার্তা আহরণ করতে সমস্যা"
+
+#: ../mail/mail-stub-exchange.c:2572
+msgid "Mailbox does not support full-text searching"
+msgstr "মেইলবক্সে সম্পূর্ণ-টেকস্ট ভিত্তিক অনুসন্ধান সমর্থন করা হয় না"
+
+#: ../mail/mail-stub-exchange.c:2670
+msgid "Unable to move/copy messages"
+msgstr "বার্তা স্থানান্তরণ/অপসারণে সমস্যা"
+
+#: ../mail/mail-stub-exchange.c:2936
+msgid "No mail submission URI for this mailbox"
+msgstr "এই মেইলবক্সের জন্য কোনো মেইল প্রেরণের URI উপস্থিত নেই"
+
+#: ../mail/mail-stub-exchange.c:2970
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Exchange পরিবহনব্যবস্থার মাধ্যমে সার্ভারে কোনো মেইল গ্রহণ করা যাবে না"
+
+#: ../mail/mail-stub-exchange.c:2972
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"আপনার অ্যাকাউন্ট থেকে প্রেরকের ঠিকানা রূপে <%s>\n"
+"ব্যবহার করা যাবে না।"
+
+#: ../mail/mail-stub-exchange.c:2984
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"বার্তা পাঠাতে ব্যর্থ।\n"
+"সম্ভবত আপনার অ্যাকউন্টের জন্য নির্ধারিত স্থান সম্পূর্ণরূপে পূর্ণ হয়ে গেছে।"
+
+#: ../mail/mail-stub-exchange.c:2988
+msgid "Could not send message"
+msgstr "বার্তা প্রেরণ করা যায়নি"
+
+#: ../mail/mail-stub-exchange.c:3011 ../mail/mail-stub-exchange.c:3064
+#: ../mail/mail-stub-exchange.c:3230 ../mail/mail-stub-exchange.c:3281
+#: ../mail/mail-stub-exchange.c:3345
+msgid "Generic error"
+msgstr "সাধারণ ত্রুটি"
+
+#: ../mail/mail-stub-exchange.c:3015
+msgid "Folder already exists"
+msgstr "ফোল্ডার বর্তমানে উপস্থিত রয়েছে"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Evolution Addressbook Exchange'র ব্যাক-এন্ড"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Evolution Calendar Exchange'র ব্যাক-এন্ড"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+#: ../storage/main.c:219
+msgid "Evolution Connector for Microsoft Exchange"
+msgstr "Microsoft Exchange-র সাথে ব্যবহারযোগ্য Evolution Connector"
+
+#: ../storage/exchange-autoconfig-wizard.c:227
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Exchange সার্ভারের সাথে সংযোগ করতে ব্যর্থ।\n"
+"অনুগ্রহ করে URL-র বৈধতা পরীক্ষা করে (\"%s\" প্রয়োগ করুন \"%s\" -র পরিবর্তে) পুনরায় "
+"চেষ্টা করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Exchange সার্ভারের অবস্থান সনাক্ত করতে ব্যর্থ।\n"
+"অনুগ্রহ করে সার্ভারের নামের বানান পরীক্ষা করে পুনরায় চেষ্টা করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.c:244
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Exchange সার্ভারে অনুমোদন করা যায়নি।\n"
+"আপনার অ্যাকাউন্টের নাম ও পাসওয়ার্ড সঠিকরূপে উল্লিখিত হয়েছে কিনা পরীক্ষা করে পুনরায় "
+"প্রচেষ্টা করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.c:251
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Exchange সার্ভারে অনুমোদন করা যায়নি।\n"
+"আপনার অ্যাকাউন্টের নাম ও পাসওয়ার্ড সঠিকরূপে উল্লিখিত হয়েছে কিনা পরীক্ষা করে পুনরায় "
+"প্রচেষ্টা করুন।\n"
+"\n"
+"অ্যাকাউন্টের নামের সাথে Windows ডেমেইনের নাম উল্লেখ করার প্রয়োজন হতে পারে।"
+"(উদাহরণস্বরূপ, \"MY-DOMAIN\\%s\")।"
+
+#: ../storage/exchange-autoconfig-wizard.c:263
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"উল্লিখিত URL'এ কোনো OWA তথ্য পাওয়া যায়নি।\n"
+"অনুগ্রহ করে URL সঠিক কিনা পরীক্ষা করে পুনরায় চেষ্টা করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.c:270
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Exchange সার্ভারের কিছু নিষ্ক্রিয় অথবা প্রতিরোধ করা পরিসেবা Microsoft Exchange-র "
+"জন্য নির্মিত Evolution Connector -র ক্ষেত্রে প্রয়োজন।  (এটি সাধারণত ইচ্ছাকৃতভাবে "
+"রোধ করা হয় না।)  Evolution Connector ব্যবহার করার জন্য Exchange "
+"অ্যাডমিনিস্ট্রেটরের দ্বারা ঐ পরিসেবাগুলি কার্যকরী করা আবশ্যক।\n"
+"\n"
+"Exchange অ্যাডমিনিস্ট্রেটরের জন্য প্রয়োজনীয় সংকগ্রহ করতে অনুগ্রহ করে নিম্নোক্ত লিঙ্কটি "
+"ব্যবহার করুন:"
+
+#: ../storage/exchange-autoconfig-wizard.c:292
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"আপনার দ্বারা উল্লিখিত Exchange সার্ভার URL'টি Exchange 5.5 সার্ভারের প্রতি নির্দেশ "
+"করে। Evolution Connector'র দ্বারা শুধুমাত্র Microsoft Exchange 2000 ও 2003 "
+"সমর্থিত হয়।"
+
+#: ../storage/exchange-autoconfig-wizard.c:306
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"অজানা সমস্যার ফলপ Exchange অ্যাকাউন্ট কনফিগার করা যায়নি। URL, ব্যবহারকারীর-নাম ও "
+"পাসওয়ার্ড পরীক্ষা করে পুনরায় প্রচেষ্টা করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.c:350
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Global Catalog সার্ভারে অনুমোদন করা যায়নি।আপনার অ্যাকাউন্টের নাম ও পাসওয়ার্ড "
+"সঠিকরূপে উল্লিখিত হয়েছে কিনা পরীক্ষা করে পুনরায় প্রচেষ্টা করুন।অ্যাকাউন্টের নামের "
+"সাথে Windows ডেমেইনের নাম উল্লেখ করার প্রয়োজন হতে পারে।(উদাহরণস্বরূপ, \"MY-DOMAIN"
+"\\%s\")।"
+
+#: ../storage/exchange-autoconfig-wizard.c:357
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"উল্লেখিত সার্ভারের সাথে সংযোগ করতে ব্যর্থ।\n"
+"অনুগ্রহ করে সার্ভারের নাম পরীক্ষা করে পুনরায় চেষ্টা করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.c:394
+#: ../storage/exchange-autoconfig-wizard.c:398
+msgid "Unknown"
+msgstr "অজানা"
+
+#: ../storage/exchange-autoconfig-wizard.c:463
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"কনফিগারেশন সংক্রান্ত সিস্টেমের ত্রুটি।\n"
+"নতুন অ্যাকাউন্ট তৈরি করতে ব্যর্থ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:477
+msgid "You may only configure a single Exchange account"
+msgstr "শুধুমাত্র একটি Exchange অ্যাকাউন্ট কনফিগার করা যাবে"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "কনফিগারেশন করা যায়নি"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "সম্পন্ন"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "ই-মেইল ঠিকানা:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "Microsoft Exchange-র সাথে ব্যবহারযোগ্য Evolution Connector"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Evolution Connector'র দ্বারা আপনার Outlook Web Access (OWA অ্যাকাউন্ট থেকে "
+"অ্যাকাউন্ট সংক্রান্ত তথ্য সংগ্রহ করা যাবে।\n"
+"\n"
+"আপনার OWA সাইটের ঠিকানা (URL), ব্যবহারকারীর নাম, এবং পাসওয়ার্ড লিখে \"এগিয়ে চলুন"
+"\" বাটনে টিপুন।\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value.\n"
+msgstr ""
+"Evolution Connector'র দ্বারা আপনার সাইটের জন্য কোনো Global Catalog অনুলিপি "
+"সনাক্ত করা সম্ভব হয়নি।অনুগ্রহ করে আপনার ব্যবহৃথ Global Catalog সার্ভারের নাম লিখুন। "
+"সম্ভবত সঠিক তথ্যের জন্য আপনার অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করার প্রয়োজন হবে।\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account.\n"
+msgstr ""
+"Evolution Connector'র দ্বারা আপনার Exchange অ্যাকাউন্ট সম্মুখীন কনফিগার করতে "
+"সমস্যা।\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid "Exchange Configuration"
+msgstr "Exchange কনফিগারেশন"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:15
+msgid "Full Name:"
+msgstr "সম্পূর্ণ নাম:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:16
+msgid "GC Server:"
+msgstr "GC সার্ভার:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:17
+msgid "Make this my default account"
+msgstr "চিহ্নিত অ্যাকাউন্টটি ডিফল্ট রূপে চিহ্নিত করা হবে"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:18
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Password:"
+msgstr "পাসওয়ার্ড:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid "Remember this password"
+msgstr "পাসওয়ার্ড মনে রাখা হবে"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:21
+msgid "Username:"
+msgstr "ব্যবহারকারীর নাম:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:22
+msgid "Welcome"
+msgstr "স্বাগতম"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:23
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Microsoft Exchange-র সাথে ব্যবহারযোগ্য Evolution Connector-এ আপনাকে স্বাগতম।\n"
+"পরবর্তী পর্দা প্রদর্শিত তথ্যের সাহায্যে আপনি Evolution কনফিগার করে\n"
+"আপনার Exchange অ্যাকাউন্টের সাথে সংযোগ করতে সক্ষম হবেন।\n"
+"\n"
+"অনুগ্রহ করে \"এগিয়ে চলুন\" বাটনটি টিপে পরবর্তী ধাপে এগিয়ে চলুন।"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"আপনার Connector অ্যাকাউন্টটি বর্তমানে ব্যবহারের জন্য প্রস্তুত।  আপনার নির্ধারতি "
+"বৈশিষ্ট্য সংরক্ষণ করতে\n"
+"\"প্রয়োগ করুন\" বাটন ক্লিক করুন।"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"আপনার অ্যাকাউন্ট সংক্রান্ত তথ্য নিচে বর্ণিত হল। অনুগ্রহ করে কোনো ত্রুটি হয়ে থাকলে তা "
+"সংশোধন করে, \"অগ্রসর\" ক্লিক করুন।\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:125
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"বর্তমান পাসওয়ার্ড আপনার অ্যাকাউন্টের উপস্থিত পাসওয়ার্ডের সাথে মেলেনি। অনুগ্রহ করে "
+"সঠিক পাসওয়ার্ড লিখুন"
+
+#: ../storage/exchange-change-password.c:132
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "পাসওয়ার্ডে গরমিল। অনুগ্রহ করে পাসওয়ার্ড পুনরায় লিখুন।"
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "পাসওয়ার্ড পরিবর্তন করুন"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "পাসওয়ার্ড নিশ্চিত করুন:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "বর্তমান পাসওয়ার্ড:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "নতুন পাসওয়ার্ড:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"বর্তমান পাসওয়ার্ডের মেয়াদ উত্তীর্ণ হয়ে গেছে। অনুগ্রহ করে আপনার পাসওয়ার্ড এখন "
+"পরিবর্তন করুন।"
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "লেখক (পড়া, নির্মাণ)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "বর্ষপঞ্জি:(_a)"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "পরিচিতি:(_n)"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "প্রতিনিধিদের অনুমতি"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "প্রতিনিধি"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "সম্পাদক (পড়া, নির্মাণ, সম্পাদনা)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "শূণ্য"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "চিহ্নিত বস্তুর অনুমতি"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "পরিদর্শক (শুধুমাত্র পড়া)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"এই ব্যবহারকারীরা আপনার প্রতিনিধিস্বরূপ মেইল প্রেরণ করতে এবং\n"
+"আপনার প্রদত্ত অনুমতি অনুযায়ী আপনার ফোল্ডার ব্যবহার করতে পারবেন।"
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "প্রতিনিধিরা ব্যক্তিগত বস্তু দেখতে পারবেন (_D)"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "সম্পাদনা (_E)"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "ইনবক্স:(_I)"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "কর্ম:(_T)"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Exchange ফোল্ডার ট্রি"
+
+#: ../storage/exchange-migrate.c:60
+msgid "Migrating Exchange Folders..."
+msgstr "Exchange ফোল্ডার মাইগ্রেট করার প্রণালী..."
+
+#: ../storage/exchange-migrate.c:68
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Evolution %d.%d.%d -র পরে Evolution Exchange অ্যাকাউন্ট ফোল্ডারের অবস্থান এবং "
+"ক্রম পরিবর্তিত হয়েছে।\n"
+"\n"
+"Evolution'র দ্বারা আপনার ফোল্ডার স্থানান্তর করা হচ্ছে, অনুগ্রহ করে প্রতীক্ষা করুন..."
+
+#: ../storage/exchange-migrate.c:101
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"সতর্কবার্তা: Evolution'র দ্বারা সংস্করণ %d.%d.%d থেকে Exchange অ্যাকাউন্টের সমস্ত "
+"তথ্য মাইগ্রেট করা হয়নি। \n"
+"তথ্য মুছে ফেলা হয়নি, কিন্তু Evolution-র এই সংস্করণ তা প্রদর্শিত হবে না"
+
+#: ../storage/exchange-migrate.c:132
+#, c-format
+msgid "Migrating `%s':"
+msgstr "`%s' মাইগ্রেট করা হচ্ছে:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>বর্তমান, আপনি\"অফিসে-অনুপস্থিত\" অবস্থায় আছেন। </b>\n"
+"\n"
+"আপনি \"অফিসে-উপস্থিত\" অবস্থায় পরিবর্তন করতে ইচ্ছুক? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>অফিসে-অনুপস্থিত অবস্থার জন্য বার্তা:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>অবস্থা:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>আপনি অফিসে অনুপস্থিত থাকাকালীন আপনাকে লেখা কোনো মেইলের উত্তরে ঐ বার্তাটি "
+"সকল মেইল-প্রেরকদের কাছে \n"
+"প্রেরিত হবে।</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "আমি বর্তমানে অফিসে উপস্থিত আছি"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "আমি বর্তমানে অফিসে নেই"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "না, অবস্থা পরিবর্তন করা হবে না"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "অফিসে-অনুপস্থিত থাকাকালীন সহায়ক ব্যবস্থা"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "হ্যাঁ, অবস্থা পরিবর্তন করা হবে"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "পাসওয়ার্ড মেয়াদপূর্তীর সতর্কবার্তা..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "আপনার পাসওয়ার্ডের মেয়াদ ৭ দিন পরে উত্তীর্ণ হয়ে যাবে..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "পাসওয়ার্ড পরিবর্তন করুন (_C)"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_button"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>অনুমতি</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "মুছে ফেলা যাবে না"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "সম্পাদন করা যাবে না"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "বস্তু তৈরি করুন"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "সাব-ফোল্ডার নির্মাণ করুন"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "যে কোনো বস্তু মুছে ফেলুন"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "নিজস্ব বস্তু মুছে ফেলুন"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "যে কোনো বস্তু সম্পাদন করুন"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "নিজস্ব বস্তু সম্পাদন করুন"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "ফোল্ডারের পরিচিতি"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "ফোল্ডারের মালিক"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "ফোল্ডার দৃশ্যমান"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "পাঠ হওয়া বস্তু"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "ভূমিকা: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "সংযোগ স্থাপন করা হচ্ছে..."
+
+#: ../storage/ximian-connector-setup.c:75
+msgid "Evolution Connector for Microsoft Exchange Setup Tool"
+msgstr "Microsoft Exchange Setup Tool-র সাথে ব্যবহারযোগ্য Evolution Connector"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "আপনার Exchange সার্ভারের পাসওয়ার্ড পরিবর্তন করুন"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "ফোল্ডারের নাম (_S)"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "ব্যক্তিগত ফোল্ডারের মাপ প্রাপ্ত করুন"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "অন্য ব্যবহারকারীর ফোল্ডারে সাবস্ক্রাইব করুন...(_O)"
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "সার্ভারে উপস্থিত অন্য কোনো ব্যবহারকারীর ফোল্ডারে সাবস্ক্রাইব করুন"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid "Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"\"অন্য ব্যবহারকারীর ফোল্ডারে সাবস্ক্রাইব করুন\" ব্যবহার করে যোগ করা ফোল্ডার থেকে আন-"
+"সাবস্ক্রাইব করুন"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "আপনার Exchange বর্ষপঞ্জির প্রতিনিধি সংক্রান্ত বৈশিষ্ট্য প্রত্যক্ষ অথবা পরিবর্তন করুন"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "অফিসে-অনুপস্থিত অবস্থা এবং স্বয়ংক্রিয় উত্তরের বার্তা প্রত্যক্ষ অথবা পরিবর্তন করুন"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "Exchange'র পাসওয়ার্ড পরিবর্তন করুন...(_C)"
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "প্রতিনিধি সংক্রান্ত সহায়ক (_D)"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "অফিসে-অনুপস্থিত থাকাকালীন সহায়ক (_O)"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "অন্য ব্যবহারকারীর ফোল্ডার থেকে আন-সাবস্ক্রাইব করুন(_U)"
+

@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellContent</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShellView.html" title="EShellView">
+<link rel="next" href="EShellSidebar.html" title="EShellSidebar">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShellView.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="EShellSidebar.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellContent.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellContent.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellContent.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#EShellContent.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#EShellContent.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellContent">
+<a name="EShellContent"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellContent.top_of_page"></a>EShellContent</span></h2>
+<p>EShellContent — the right side of the main window</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellContent.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-content.h&gt;
+
+                    <a class="link" href="EShellContent.html#EShellContent-struct" title="EShellContent">EShellContent</a>;
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="EShellContent.html#e-shell-content-new" title="e_shell_content_new ()">e_shell_content_new</a>                 (<em class="parameter"><code><span class="type">struct _EShellView</span> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellContent.html#e-shell-content-set-searchbar" title="e_shell_content_set_searchbar ()">e_shell_content_set_searchbar</a>       (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *searchbar</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             <a class="link" href="EShellContent.html#e-shell-content-check-state" title="e_shell_content_check_state ()">e_shell_content_check_state</a>         (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellContent.html#e-shell-content-focus-search-results" title="e_shell_content_focus_search_results ()">e_shell_content_focus_search_results</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+struct <a class="link" href="EShellView.html" title="EShellView"><span class="returnvalue">_EShellView</span></a> * <a class="link" href="EShellContent.html#e-shell-content-get-shell-view" title="e_shell_content_get_shell_view ()">e_shell_content_get_shell_view</a>     (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellContent.html#e-shell-content-get-view-id" title="e_shell_content_get_view_id ()">e_shell_content_get_view_id</a>         (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellContent.html#e-shell-content-set-view-id" title="e_shell_content_set_view_id ()">e_shell_content_set_view_id</a>         (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *view_id</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellContent.html#e-shell-content-run-advanced-search-dialog" title="e_shell_content_run_advanced_search_dialog ()">e_shell_content_run_advanced_search_dialog</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellContent.html#e-shell-content-run-edit-searches-dialog" title="e_shell_content_run_edit_searches_dialog ()">e_shell_content_run_edit_searches_dialog</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellContent.html#e-shell-content-run-save-search-dialog" title="e_shell_content_run_save_search_dialog ()">e_shell_content_run_save_search_dialog</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellContent.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a href="http://library.gnome.org/devel/gtk/unstable/GtkObject.html">GtkObject</a>
+               +----<a href="http://library.gnome.org/devel/gtk/GtkWidget.html">GtkWidget</a>
+                     +----<a href="http://library.gnome.org/devel/gtk/GtkContainer.html">GtkContainer</a>
+                           +----<a href="http://library.gnome.org/devel/gtk/GtkBin.html">GtkBin</a>
+                                 +----EShellContent
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="EShellContent.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+EShellContent implements
+ AtkImplementorIface,  <a href="http://library.gnome.org/devel/gtk/GtkBuildable.html">GtkBuildable</a> and  <a class="link" href="EExtensible.html" title="EExtensible">EExtensible</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EShellContent.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellContent.html#EShellContent--shell-view" title='The "shell-view" property'>shell-view</a>"               <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>*           : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellContent.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellContent.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellContent">
+<a name="EShellContent-struct"></a><h3>EShellContent</h3>
+<pre class="programlisting">typedef struct _EShellContent EShellContent;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_new ()">
+<a name="e-shell-content-new"></a><h3>e_shell_content_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_shell_content_new                 (<em class="parameter"><code><span class="type">struct _EShellView</span> *shell_view</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> instance belonging to <em class="parameter"><code>shell_view</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> instance
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_set_searchbar ()">
+<a name="e-shell-content-set-searchbar"></a><h3>e_shell_content_set_searchbar ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_content_set_searchbar       (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *searchbar</code></em>);</pre>
+<p>
+Packs <em class="parameter"><code>searchbar</code></em> at the top of <em class="parameter"><code>shell_content</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_check_state ()">
+<a name="e-shell-content-check-state"></a><h3>e_shell_content_check_state ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             e_shell_content_check_state         (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+<a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> subclasses should implement the
+<em class="structfield"><code>check_state</code></em> method in <span class="type">EShellContentClass</span>
+to return a set of flags describing the current content selection.
+Subclasses are responsible for defining their own flags.  This is
+primarily used to assist shell views with updating actions (see
+<a class="link" href="EShellView.html#e-shell-view-update-actions" title="e_shell_view_update_actions ()"><code class="function">e_shell_view_update_actions()</code></a>).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a set of flags describing the current <em class="parameter"><code>shell_content</code></em> selection
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_focus_search_results ()">
+<a name="e-shell-content-focus-search-results"></a><h3>e_shell_content_focus_search_results ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_content_focus_search_results
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+<a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> subclasses should implement the
+<em class="structfield"><code>focus_search_results</code></em> method in
+<span class="type">EShellContentClass</span> to direct input focus to the widget
+displaying search results.  This is usually called during
+<a class="link" href="EShellView.html#e-shell-view-execute-search" title="e_shell_view_execute_search ()"><code class="function">e_shell_view_execute_search()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_get_shell_view ()">
+<a name="e-shell-content-get-shell-view"></a><h3>e_shell_content_get_shell_view ()</h3>
+<pre class="programlisting">struct <a class="link" href="EShellView.html" title="EShellView"><span class="returnvalue">_EShellView</span></a> * e_shell_content_get_shell_view     (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> that was passed to <a class="link" href="EShellContent.html#e-shell-content-new" title="e_shell_content_new ()"><code class="function">e_shell_content_new()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> to which <em class="parameter"><code>shell_content</code></em> belongs
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_get_view_id ()">
+<a name="e-shell-content-get-view-id"></a><h3>e_shell_content_get_view_id ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_content_get_view_id         (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_set_view_id ()">
+<a name="e-shell-content-set-view-id"></a><h3>e_shell_content_set_view_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_content_set_view_id         (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *view_id</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>view_id</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_run_advanced_search_dialog ()">
+<a name="e-shell-content-run-advanced-search-dialog"></a><h3>e_shell_content_run_advanced_search_dialog ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_content_run_advanced_search_dialog
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_run_edit_searches_dialog ()">
+<a name="e-shell-content-run-edit-searches-dialog"></a><h3>e_shell_content_run_edit_searches_dialog ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_content_run_edit_searches_dialog
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_content_run_save_search_dialog ()">
+<a name="e-shell-content-run-save-search-dialog"></a><h3>e_shell_content_run_save_search_dialog ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_content_run_save_search_dialog
+                                                        (<em class="parameter"><code><a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> *shell_content</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_content</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EShellContent.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "shell-view" property'>
+<a name="EShellContent--shell-view"></a><h3>The <code class="literal">"shell-view"</code> property</h3>
+<pre class="programlisting">  "shell-view"               <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>*           : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> to which the content widget belongs.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!-- ##### SECTION Title ##### -->
+test-utils
+
+<!-- ##### SECTION Short_Description ##### -->
+Utility routines for libexchange test programs
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION test_main ##### -->
+<para>
+
+</para>
+
+@argc: 
+@argv: 
+
+
+<!-- ##### FUNCTION test_quit ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### FUNCTION test_abort_if_http_error ##### -->
+<para>
+
+</para>
+
+@status: 
+
+
+<!-- ##### FUNCTION test_ask_password ##### -->
+<para>
+
+</para>
+
+@prompt: 
+@Returns: 
+
+
+<!-- ##### FUNCTION test_get_password ##### -->
+<para>
+
+</para>
+
+@user: 
+@host: 
+@Returns: 
+
+
+<!-- ##### FUNCTION test_get_context ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION test_get_gc ##### -->
+<para>
+
+</para>
+
+@server: 
+@Returns: 
+
+

@@ -1,0 +1,334 @@
+Rule Message Properties
+-----------------------
+
+PR_RULE_MSG_STATE
+  Bitfield:
+    #define ST_ENABLED        0x0001 /* Rule is enabled */
+    #define ST_ERROR          0x0002 /* ? */
+    #define ST_ONLY_WHEN_OOF  0x0004 /* Only runs with OOF is turned on */
+    #define ST_KEEP_OOF_HIST  0x0008 /* ? */
+    #define ST_EXIT_LEVEL     0x0010 /* Stop processing further rules */
+    #define ST_CLEAR_OOF_HIST 0x80000000 /* ? */
+
+  ST_KEEP_OOF_HIST probably means "only run this rule once per sender".
+  Outlook sets it on Out-of-office rules (along with ST_ONLY_WHEN_OOF).
+
+
+PR_RULE_MSG_USER_FLAGS
+  Always 0?
+
+
+PR_RULE_MSG_PROVIDER
+  "RuleOrganizer" for normal Outlook rules
+  "Schedule+ EMS Interface" for delegation rule
+  "MSFT:TDX OOF Rules" for OOF Wizard rule
+  "MSFT:TDX Rules" for Public Folder rule
+  "MSFT:MR" for Public Folder moderation rule
+
+  OOF Rules with deferred actions have provider names like
+  "MSFT:TDX OOF Rules74DD310AFA51594E85BAD79C8386D016"
+
+PR_RULE_MSG_NAME
+  The user-visible name
+
+
+PR_RULE_MSG_LEVEL
+  Always 0?
+
+
+PR_RULE_MSG_PROVIDER_DATA
+  Mystery data for the provider.
+
+  Delegation and OOF rules just have 00 00 00 00 or nothing.
+  Public Folder rules don't seem to use this field.
+
+  Normal "RuleOrganizer" rules have 16 bytes of data which probably
+  identifies the Outlook profile associated with the rule.
+
+  Deferred rules have additional data, presumably identifying the
+  deferred portion of the rule somehow.
+
+
+PR_RULE_MSG_CONDITION_LCID
+  Locale ID. 0x0409 (1033) for all of my rules. Not sure what this
+  is used for since rule data seems to be stored in Unicode anyway.
+
+
+PR_RULE_MSG_VERSION
+  Always 2
+
+
+PR_RULE_MSG_SEQUENCE
+  Specifies the order of this rule relative to other rules in the folder
+
+
+PR_RULE_MSG_CONDITION
+  Specifies when the rule triggers.
+
+  Always (?) starts with 00 00, then an SRestriction record:
+    Restriction starts with a 1-byte restriction type, followed by
+    type-specific data:
+      RES_AND            (0x0): 2-byte count, followed by that many
+                                restrictions
+      RES_OR             (0x1): Same as RES_AND
+      RES_NOT            (0x2): a single restriction
+      RES_CONTENT        (0x3): 4-byte "fuzzy level", followed by a
+                                4-byte proptag twice (but see below),
+                                followed by the value to compare against
+      RES_PROPERTY       (0x4): 1-byte relop, followed by a 4-byte
+                                proptag twice, followed by the value to
+                                compare against
+      RES_COMPAREPROPS   (0x5): ???
+      RES_BITMASK        (0x6): 1-byte bitop, followed by a 4-byte
+                                proptag and a 4-byte mask value
+      RES_SIZE           (0x7): ???
+      RES_EXIST          (0x8): 4-byte proptag
+      RES_SUBRESTRICTION (0x9): 4-byte proptag of table followed by
+                                restriction to apply against that table
+      RES_COMMENT        (0xA): 1-byte count, followed by that many
+                                proptag/value pairs, followed by a
+                                restriction
+
+  RES_CONTENT is used for string/binary matching. The fuzzy level
+  specifies full/prefix/substring and strict/loose matching.
+
+  RES_PROPERTY is used for numeric/boolean comparisons.
+
+  RES_BITMASK is used to test one or more bits of a bitfield. Eg, to
+  check a specific flag on PR_MESSAGE_FLAGS.
+
+  RES_EXIST is used to test if a property exists.
+
+  RES_SUBRESTRICTION is used to test properties in a subtable, (eg
+  PR_MESSAGE_RECIPIENTS or PR_MESSAGE_ATTACHMENTS).
+
+  RES_COMMENT is weird. The proptag/value pairs are not interpreted by
+  Exchange, only the restriction at the end. It is apparently used for
+  Outlook to keep additional information about the semantics of a rule
+  so it can present it more prettily to the user. I don't completely
+  understand it.
+
+  I haven't been able to get Outlook to generate a rule using
+  RES_COMPAREPROPS or RES_SIZE. (RES_SIZE is used to check the size of
+  a specific property; to check the size of the message itself, use
+  RES_PROPERTY on PR_MESSAGE_SIZE.)
+
+  The proptags used are the standard MAPI proptags except that strings
+  have type 84b0 instead of 001e or 001f. Numbers are 4 bytes.
+  Booleans are 1. Strings are NUL-terminated UTF16-LE. Binary data has
+  a 2-byte length followed by the data. Dates are 8-byte FILETIME
+  values.
+
+  In RES_CONTENT and RES_PROPERTY, the proptag appears twice, but
+  sometimes the two high bytes are wrong (0001) in the second copy;
+  this seems to be random and irrelevant.
+
+
+PR_RULE_MSG_ACTIONS
+  Specifies the actions when the rule triggers. (Except for "Don't
+  process any more rules", which is specified by setting ST_EXIT_LEVEL
+  in PR_RULE_MSG_STATE. If "Don't process any more rules" is the
+  only action, Outlook specifies the action as OP_DEFER_ACTION).
+
+  The property starts with a 2-byte count, followed by that many
+  actions.
+
+  Each action has a 2-byte length, a 1-byte type, a 4-byte flavor, and
+  a 4-byte flags field (which seems to always be 0), followed by
+  type-specific data:
+
+    OP_MOVE         (0x1): binary store entryid followed by binary
+                           folder PR_SOURCE_KEY and 26 0x00 bytes
+    OP_COPY         (0x2): Likewise
+    OP_REPLY        (0x3): arbitrary-length reply template entryid
+                           followed by 16-byte PR_REPLY_TEMPLATE_ID
+    OP_OOF_REPLY    (0x4): Likewise
+    OP_DEFER_ACTION (0x5): Always the single byte 0x31 ?
+    OP_BOUNCE       (0x6): 4-byte bounce code
+    OP_FORWARD      (0x7): 2-byte count followed by that many entries.
+			   Each entry starts with a mystery 0x01 byte
+			   followed by a 2-byte count followed by that
+			   many proptag/value pairs.
+    OP_DELEGATE     (0x8): Likewise
+    OP_TAG          (0x9): 4-byte proptag followed by value to set
+    OP_DELETE       (0xA): no data
+    OP_MARK_AS_READ (0xB): ???
+
+  The store entryid used by OP_MOVE and OP_COPY seems to start with a
+  large constant (across servers) string:
+      00 00 00 00 38 a1 bb 10 05 e5 10 1a a1 bb 08 00    ....8...........
+      2b 2a 56 c2 00 00 45 4d 53 4d 44 42 2e 44 4c 4c    +*V...EMSMDB.DLL
+      00 00 00 00                                        ....            
+  which is then followed by the actual PR_STORE_ENTRYID.
+
+  The "reply template entryid" in OP_REPLY is not quite the value of
+  any property on the template. It is bytes 1-17 of the
+  PR_INSTANCE_KEY, and can also be extracted according to certain
+  rules from the PR_ENTRYID.
+
+  See below for more information about the recipient lists for
+  OP_FORWARD/OP_DELEGATE
+
+
+Implementation of specific conditions/rules
+-------------------------------------------
+To local address:
+    (subrestrict PR_MESSAGE_RECIPIENTS
+      (comment ((0x60000003 1)
+                (0x00010102 [his PR_ENTRYID])
+                (0x0001001f "Aaron Weber")
+                (0x39000003 0))
+        (= PR_SEARCH_KEY "EX:/O=XCS/OU=FIRST ADMINISTRATIVE GROUP/CN=RECIPIENTS/CN=AARON\0")))
+
+From local address:
+    (comment ((0x60000003 1)
+              (0x00010102 [his PR_ENTRYID])
+              (0x0001001f "Aaron Weber")
+              (0x39000003 0))
+      (= PR_SENDER_SEARCH_KEY "EX:/O=XCS/OU=FIRST ADMINISTRATIVE GROUP/CN=RECIPIENTS/CN=AARON\0"))
+
+To SMTP address:
+    (subrestrict PR_MESSAGE_RECIPIENTS
+      (comment ((0x60000003 1)
+                (0x00010102 [its PR_ENTRYID])
+                (0x0001001f "Evolution (E-mail)")
+                (0x39000003 0))
+        (= PR_SEARCH_KEY "SMTP:EVOLUTION@XIMIAN.COM\0")))
+
+From SMTP address:
+    (comment ((0x60000003 1)
+              (0x00010102 [its PR_ENTRYID])
+              (0x0001001f "Evolution (E-mail)")
+              (0x39000003 0))
+      (= PR_SENDER_SEARCH_KEY "SMTP:EVOLUTION@XIMIAN.COM\0"))
+
+Sent directly to me:
+    (!= PR_MESSAGE_TO_ME #f)
+
+CCed to me:
+    (!= PR_MESSAGE_CC_ME #f)
+
+Only to me:
+    (and
+      (= PR_MESSAGE_TO_ME #t)
+      (not (contains PR_DISPLAY_TO ";"))
+      (= PR_DISPLAY_CC ""))
+
+Subject contains:
+    (contains PR_SUBJECT "SPAMASSASSINATED" ignorecase)
+
+Body contains:
+    (contains PR_BODY "exchange" ignorecase)
+
+Headers contain:
+    (contains PR_TRANSPORT_MESSAGE_HEADERS "test")
+
+Date sent is before/after:
+    ???
+
+Date received is before/after:
+    (>= PR_MESSAGE_DELIVERY_TIME "2003-06-10T04:00:00Z")
+
+Date is (relative)
+    ???
+
+Size is ...
+    (>= PR_MESSAGE_SIZE 1047553)
+
+Importantance is High
+    (= PR_IMPORTANCE 2)
+
+Sensitivity is Private
+    (= PR_SENSITIVITY 2)
+
+Follow Up set/unset
+    ????
+
+Attachments exist
+    (!=0 (& PR_MESSAGE_FLAGS 16))
+
+Message is Out-of-office reply
+    (is PR_MESSAGE_CLASS "IPM.Note.Rules.OofTemplate.Microsoft" ignorecase)
+
+Delegation rule
+    (and
+      (begins-with PR_MESSAGE_CLASS "IPM.Schedule.Meeting")
+      (not (exists PR_DELEGATED_BY_RULE))
+      (or
+        (not (exists PR_SENSITIVITY))
+        (!= PR_SENSITIVITY 2)))
+
+OOF rule
+    [All messages]
+
+
+
+OP_FORWARD/OP_DELEGATE recipient list:
+  Local recipient:
+      PR_ENTRYID "AAAAANynQMjAQhAatLkIACsv4YIBAAAAAAAAAC9vPVhDUy9vdT1GaXJzdCBBZG1pbmlzdHJhdGl2ZSBHcm91cC9jbj1SZWNpcGllbnRzL2NuPWVsZWFub3IA"
+          guint32 zero;
+	  guint8  mapiuid[16] =
+                  { 0xdc, 0xa7, 0x40, 0xc8, 0xc0, 0x42, 0x10, 0x1a,
+		    0xb4, 0xb9, 0x08, 0x00, 0x2b, 0x2f, 0xe1, 0x82 };
+          guint32 unknown = 1;
+	  guint32 length = 0;
+	  char    exchange_dn; /* NUL-terminated */
+      PR_DISPLAY_NAME "Eleanor Garcia"
+      PR_OBJECT_TYPE 6
+      PR_DISPLAY_TYPE 0
+      PR_TRANSMITABLE_DISPLAY_NAME "Eleanor Garcia"
+      PR_EMAIL_ADDRESS "/o=XCS/ou=First Administrative Group/cn=Recipients/cn=eleanor"
+      PR_ADDRTYPE "EX"
+      PR_EMS_AB_DISPLAY_NAME_PRINTABLE "eleanor"
+      PR_SMTP_ADDRESS "eleanor@xcs.ximian.com"
+      PR_SEND_INTERNET_ENCODING 0
+      PR_SEARCH_KEY "EX:/O=XCS/OU=FIRST ADMINISTRATIVE GROUP/CN=RECIPIENTS/CN=ELEANOR\0"
+      PR_RECIPIENT_TYPE 1
+
+  Contact entry:
+      PR_ENTRYID "AAAAAP5CqgoYxxoQ6IULZRwkAAADAAAABAAAAAAAAABGAAAAAAAAABlI/Q0Gbt1Jizm6FYAgSAMHAITVVAj2bpFPtC37Igb7TJkAAAAAAOwAAITVVAj2bpFPtC37Igb7TJkAAAABhV4AAAAAQA=="
+          guint32 zero;
+	  guint8  mapiuid[16] =
+	          { 0xfe, 0x42, 0xaa, 0x0a, 0x18, 0xc7, 0x1a, 0x10,
+		    0xe8, 0x85, 0x0b, 0x65, 0x1c, 0x24, 0x00, 0x00 };
+          guint32 unknown = 3;
+	  guint32 length = 4; /* length of next field */
+	  guint32 address; /* which contact address to use */
+	  guint32 length2;
+	  guint8  contact_entryid[length2];
+      PR_DISPLAY_NAME "Evolution (E-mail)"
+      PR_OBJECT_TYPE 6
+      PR_DISPLAY_TYPE 0
+      PR_TRANSMITABLE_DISPLAY_NAME "Evolution (E-mail)"
+      PR_EMAIL_ADDRESS "evolution@ximian.com"
+      PR_ADDRTYPE "SMTP"
+      PR_SEND_RICH_INFO #f
+      PR_RECIPIENT_TYPE 1
+      PR_SEARCH_KEY "SMTP:EVOLUTION@XIMIAN.COM\0"
+
+  One-off:
+      PR_ENTRYID "AAAAAIErH6S+oxAZnW4A3QEPVAIAAAGQZABhAG4AdwBAAHgAaQBtAGkAYQBuAC4AYwBvAG0AAABTAE0AVABQAAAAZABhAG4AdwBAAHgAaQBtAGkAYQBuAC4AYwBvAG0AAAA="
+          guint32 zero;
+	  guint8  mapiuid[16] = MAPI_ONE_OFF_UID; /* from MAPIDEFS.H */
+          guint16 version = 0;
+          guint16 flags = 0x9001;
+	  /* 0x9001 = MAPI_ONE_OFF_UNICODE | MAPI_ONE_OFF_NO_RICH_INFO
+	   * plus 0x1000. The presence of MAPI_ONE_OFF_UNICODE means
+	   * that the following strings are UTF16LE
+	   */
+          char    display_name[];
+          char    address_type[];
+          char    email_address[];
+      PR_DISPLAY_NAME "danw@ximian.com"
+      PR_OBJECT_TYPE 6
+      PR_DISPLAY_TYPE 0
+      PR_TRANSMITABLE_DISPLAY_NAME "'danw@ximian.com'"
+      PR_EMAIL_ADDRESS "danw@ximian.com"
+      PR_ADDRTYPE "SMTP"
+      PR_SEND_RICH_INFO #f
+      PR_SEND_INTERNET_ENCODING 0
+      PR_RECIPIENT_TYPE 1
+      PR_SEARCH_KEY "SMTP:DANW@XIMIAN.COM\0"
+      PR_RECORD_KEY "AAAAAIErH6S+oxAZnW4A3QEPVAIAAAEQZGFud0B4aW1pYW4uY29tAFNNVFAAZGFud0B4aW1pYW4uY29tAA=="
+          The PR_RECORD_KEY is in the same format as PR_ENTRYID, but
+	  without MAPI_ONE_OFF_UNICODE set

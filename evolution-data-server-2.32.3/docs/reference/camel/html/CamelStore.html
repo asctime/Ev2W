@@ -1,0 +1,1681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CamelStore</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Camel Reference Manual">
+<link rel="up" href="Services.html" title="Services">
+<link rel="prev" href="CamelService.html" title="CamelService">
+<link rel="next" href="CamelStoreSummary.html" title="CamelStoreSummary">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="CamelService.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="Services.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Camel Reference Manual</th>
+<td><a accesskey="n" href="CamelStoreSummary.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#CamelStore.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#CamelStore.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#CamelStore.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#CamelStore.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="CamelStore">
+<a name="CamelStore"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="CamelStore.top_of_page"></a>CamelStore</span></h2>
+<p>CamelStore</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="CamelStore.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="CamelStore.html#CamelStore-struct" title="CamelStore">CamelStore</a>;
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-ERROR:CAPS" title="CAMEL_STORE_ERROR">CAMEL_STORE_ERROR</a>
+enum                <a class="link" href="CamelStore.html#CamelStoreError" title="enum CamelStoreError">CamelStoreError</a>;
+                    <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo">CamelFolderInfo</a>;
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-NOSELECT:CAPS" title="CAMEL_FOLDER_NOSELECT">CAMEL_FOLDER_NOSELECT</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-NOINFERIORS:CAPS" title="CAMEL_FOLDER_NOINFERIORS">CAMEL_FOLDER_NOINFERIORS</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-CHILDREN:CAPS" title="CAMEL_FOLDER_CHILDREN">CAMEL_FOLDER_CHILDREN</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-NOCHILDREN:CAPS" title="CAMEL_FOLDER_NOCHILDREN">CAMEL_FOLDER_NOCHILDREN</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-SUBSCRIBED:CAPS" title="CAMEL_FOLDER_SUBSCRIBED">CAMEL_FOLDER_SUBSCRIBED</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-VIRTUAL:CAPS" title="CAMEL_FOLDER_VIRTUAL">CAMEL_FOLDER_VIRTUAL</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-SYSTEM:CAPS" title="CAMEL_FOLDER_SYSTEM">CAMEL_FOLDER_SYSTEM</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-VTRASH:CAPS" title="CAMEL_FOLDER_VTRASH">CAMEL_FOLDER_VTRASH</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-SHARED-TO-ME:CAPS" title="CAMEL_FOLDER_SHARED_TO_ME">CAMEL_FOLDER_SHARED_TO_ME</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-SHARED-BY-ME:CAPS" title="CAMEL_FOLDER_SHARED_BY_ME">CAMEL_FOLDER_SHARED_BY_ME</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-MASK:CAPS" title="CAMEL_FOLDER_TYPE_MASK">CAMEL_FOLDER_TYPE_MASK</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-BIT:CAPS" title="CAMEL_FOLDER_TYPE_BIT">CAMEL_FOLDER_TYPE_BIT</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-NORMAL:CAPS" title="CAMEL_FOLDER_TYPE_NORMAL">CAMEL_FOLDER_TYPE_NORMAL</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-INBOX:CAPS" title="CAMEL_FOLDER_TYPE_INBOX">CAMEL_FOLDER_TYPE_INBOX</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-OUTBOX:CAPS" title="CAMEL_FOLDER_TYPE_OUTBOX">CAMEL_FOLDER_TYPE_OUTBOX</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-TRASH:CAPS" title="CAMEL_FOLDER_TYPE_TRASH">CAMEL_FOLDER_TYPE_TRASH</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-JUNK:CAPS" title="CAMEL_FOLDER_TYPE_JUNK">CAMEL_FOLDER_TYPE_JUNK</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-FOLDER-TYPE-SENT:CAPS" title="CAMEL_FOLDER_TYPE_SENT">CAMEL_FOLDER_TYPE_SENT</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-READ:CAPS" title="CAMEL_STORE_READ">CAMEL_STORE_READ</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-WRITE:CAPS" title="CAMEL_STORE_WRITE">CAMEL_STORE_WRITE</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-SUBSCRIPTIONS:CAPS" title="CAMEL_STORE_SUBSCRIPTIONS">CAMEL_STORE_SUBSCRIPTIONS</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-VTRASH:CAPS" title="CAMEL_STORE_VTRASH">CAMEL_STORE_VTRASH</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FILTER-INBOX:CAPS" title="CAMEL_STORE_FILTER_INBOX">CAMEL_STORE_FILTER_INBOX</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-VJUNK:CAPS" title="CAMEL_STORE_VJUNK">CAMEL_STORE_VJUNK</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-PROXY:CAPS" title="CAMEL_STORE_PROXY">CAMEL_STORE_PROXY</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-IS-MIGRATING:CAPS" title="CAMEL_STORE_IS_MIGRATING">CAMEL_STORE_IS_MIGRATING</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-ASYNC:CAPS" title="CAMEL_STORE_ASYNC">CAMEL_STORE_ASYNC</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-REAL-JUNK-FOLDER:CAPS" title="CAMEL_STORE_REAL_JUNK_FOLDER">CAMEL_STORE_REAL_JUNK_FOLDER</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-CREATE:CAPS" title="CAMEL_STORE_FOLDER_CREATE">CAMEL_STORE_FOLDER_CREATE</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-EXCL:CAPS" title="CAMEL_STORE_FOLDER_EXCL">CAMEL_STORE_FOLDER_EXCL</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-BODY-INDEX:CAPS" title="CAMEL_STORE_FOLDER_BODY_INDEX">CAMEL_STORE_FOLDER_BODY_INDEX</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-PRIVATE:CAPS" title="CAMEL_STORE_FOLDER_PRIVATE">CAMEL_STORE_FOLDER_PRIVATE</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-CREATE-EXCL:CAPS" title="CAMEL_STORE_FOLDER_CREATE_EXCL">CAMEL_STORE_FOLDER_CREATE_EXCL</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-FAST:CAPS" title="CAMEL_STORE_FOLDER_INFO_FAST">CAMEL_STORE_FOLDER_INFO_FAST</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-RECURSIVE:CAPS" title="CAMEL_STORE_FOLDER_INFO_RECURSIVE">CAMEL_STORE_FOLDER_INFO_RECURSIVE</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-SUBSCRIBED:CAPS" title="CAMEL_STORE_FOLDER_INFO_SUBSCRIBED">CAMEL_STORE_FOLDER_INFO_SUBSCRIBED</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-NO-VIRTUAL:CAPS" title="CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL">CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL</a>
+#define             <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-SUBSCRIPTION-LIST:CAPS" title="CAMEL_STORE_FOLDER_INFO_SUBSCRIPTION_LIST">CAMEL_STORE_FOLDER_INFO_SUBSCRIPTION_LIST</a>
+<a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       <a class="link" href="CamelStore.html#camel-store-get-folder" title="camel_store_get_folder ()">camel_store_get_folder</a>              (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       <a class="link" href="CamelStore.html#camel-store-get-inbox" title="camel_store_get_inbox ()">camel_store_get_inbox</a>               (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       <a class="link" href="CamelStore.html#camel-store-get-trash" title="camel_store_get_trash ()">camel_store_get_trash</a>               (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       <a class="link" href="CamelStore.html#camel-store-get-junk" title="camel_store_get_junk ()">camel_store_get_junk</a>                (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   <a class="link" href="CamelStore.html#camel-store-create-folder" title="camel_store_create_folder ()">camel_store_create_folder</a>           (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *parent_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-delete-folder" title="camel_store_delete_folder ()">camel_store_delete_folder</a>           (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-rename-folder" title="camel_store_rename_folder ()">camel_store_rename_folder</a>           (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_namein</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-folder-created" title="camel_store_folder_created ()">camel_store_folder_created</a>          (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-folder-deleted" title="camel_store_folder_deleted ()">camel_store_folder_deleted</a>          (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-folder-renamed" title="camel_store_folder_renamed ()">camel_store_folder_renamed</a>          (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-folder-subscribed" title="camel_store_folder_subscribed ()">camel_store_folder_subscribed</a>       (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-folder-unsubscribed" title="camel_store_folder_unsubscribed ()">camel_store_folder_unsubscribed</a>     (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-sync" title="camel_store_sync ()">camel_store_sync</a>                    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> expunge</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   <a class="link" href="CamelStore.html#camel-store-get-folder-info" title="camel_store_get_folder_info ()">camel_store_get_folder_info</a>         (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *top</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-free-folder-info" title="camel_store_free_folder_info ()">camel_store_free_folder_info</a>        (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-free-folder-info-full" title="camel_store_free_folder_info_full ()">camel_store_free_folder_info_full</a>   (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-free-folder-info-nop" title="camel_store_free_folder_info_nop ()">camel_store_free_folder_info_nop</a>    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);
+<a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   <a class="link" href="CamelStore.html#camel-folder-info-new" title="camel_folder_info_new ()">camel_folder_info_new</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-folder-info-free" title="camel_folder_info_free ()">camel_folder_info_free</a>              (<em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);
+<a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   <a class="link" href="CamelStore.html#camel-folder-info-build" title="camel_folder_info_build ()">camel_folder_info_build</a>             (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *folders</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *namespace</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> separator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> short_names</code></em>);
+<a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   <a class="link" href="CamelStore.html#camel-folder-info-clone" title="camel_folder_info_clone ()">camel_folder_info_clone</a>             (<em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-supports-subscriptions" title="camel_store_supports_subscriptions ()">camel_store_supports_subscriptions</a>  (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-folder-is-subscribed" title="camel_store_folder_is_subscribed ()">camel_store_folder_is_subscribed</a>    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-subscribe-folder" title="camel_store_subscribe_folder ()">camel_store_subscribe_folder</a>        (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-unsubscribe-folder" title="camel_store_unsubscribe_folder ()">camel_store_unsubscribe_folder</a>      (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-noop" title="camel_store_noop ()">camel_store_noop</a>                    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="CamelStore.html#camel-store-folder-uri-equal" title="camel_store_folder_uri_equal ()">camel_store_folder_uri_equal</a>        (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri0</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri1</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="CamelStore.html#camel-store-can-refresh-folder" title="camel_store_can_refresh_folder ()">camel_store_can_refresh_folder</a>      (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+enum                <a class="link" href="CamelStore.html#CamelStoreLock" title="enum CamelStoreLock">CamelStoreLock</a>;
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-lock" title="camel_store_lock ()">camel_store_lock</a>                    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelStoreLock" title="enum CamelStoreLock"><span class="type">CamelStoreLock</span></a> lock</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="CamelStore.html#camel-store-unlock" title="camel_store_unlock ()">camel_store_unlock</a>                  (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelStoreLock" title="enum CamelStoreLock"><span class="type">CamelStoreLock</span></a> lock</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="CamelStore.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="CamelObject.html" title="CamelObject">CamelObject</a>
+         +----<a class="link" href="CamelService.html" title="CamelService">CamelService</a>
+               +----CamelStore
+                     +----<a class="link" href="CamelDiscoStore.html" title="CamelDiscoStore">CamelDiscoStore</a>
+                     +----<a class="link" href="CamelOfflineStore.html" title="CamelOfflineStore">CamelOfflineStore</a>
+                     +----<a class="link" href="CamelVeeStore.html" title="CamelVeeStore">CamelVeeStore</a>
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="CamelStore.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="CamelStore.html#CamelStore-folder-created" title='The "folder-created" signal'>folder-created</a>"                                 : Run First
+  "<a class="link" href="CamelStore.html#CamelStore-folder-deleted" title='The "folder-deleted" signal'>folder-deleted</a>"                                 : Run First
+  "<a class="link" href="CamelStore.html#CamelStore-folder-opened" title='The "folder-opened" signal'>folder-opened</a>"                                  : Run First
+  "<a class="link" href="CamelStore.html#CamelStore-folder-renamed" title='The "folder-renamed" signal'>folder-renamed</a>"                                 : Run First
+  "<a class="link" href="CamelStore.html#CamelStore-folder-subscribed" title='The "folder-subscribed" signal'>folder-subscribed</a>"                              : Run First
+  "<a class="link" href="CamelStore.html#CamelStore-folder-unsubscribed" title='The "folder-unsubscribed" signal'>folder-unsubscribed</a>"                            : Run First
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="CamelStore.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="CamelStore.details"></a><h2>Details</h2>
+<div class="refsect2" title="CamelStore">
+<a name="CamelStore-struct"></a><h3>CamelStore</h3>
+<pre class="programlisting">typedef struct _CamelStore CamelStore;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_ERROR">
+<a name="CAMEL-STORE-ERROR:CAPS"></a><h3>CAMEL_STORE_ERROR</h3>
+<pre class="programlisting">#define             CAMEL_STORE_ERROR</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="enum CamelStoreError">
+<a name="CamelStoreError"></a><h3>enum CamelStoreError</h3>
+<pre class="programlisting">typedef enum {
+	CAMEL_STORE_ERROR_INVALID,
+	CAMEL_STORE_ERROR_NO_FOLDER
+} CamelStoreError;
+</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="CamelFolderInfo">
+<a name="CamelFolderInfo"></a><h3>CamelFolderInfo</h3>
+<pre class="programlisting">typedef struct {
+	struct _CamelFolderInfo *next;
+	struct _CamelFolderInfo *parent;
+	struct _CamelFolderInfo *child;
+
+	gchar *uri;
+	gchar *name;
+	gchar *full_name;
+
+	guint32 flags;
+	gint32 unread;
+	gint32 total;
+} CamelFolderInfo;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_NOSELECT">
+<a name="CAMEL-FOLDER-NOSELECT:CAPS"></a><h3>CAMEL_FOLDER_NOSELECT</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_NOSELECT (1&lt;&lt;0)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_NOINFERIORS">
+<a name="CAMEL-FOLDER-NOINFERIORS:CAPS"></a><h3>CAMEL_FOLDER_NOINFERIORS</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_NOINFERIORS (1&lt;&lt;1)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_CHILDREN">
+<a name="CAMEL-FOLDER-CHILDREN:CAPS"></a><h3>CAMEL_FOLDER_CHILDREN</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_CHILDREN (1&lt;&lt;2)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_NOCHILDREN">
+<a name="CAMEL-FOLDER-NOCHILDREN:CAPS"></a><h3>CAMEL_FOLDER_NOCHILDREN</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_NOCHILDREN (1&lt;&lt;3)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_SUBSCRIBED">
+<a name="CAMEL-FOLDER-SUBSCRIBED:CAPS"></a><h3>CAMEL_FOLDER_SUBSCRIBED</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_SUBSCRIBED (1&lt;&lt;4)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_VIRTUAL">
+<a name="CAMEL-FOLDER-VIRTUAL:CAPS"></a><h3>CAMEL_FOLDER_VIRTUAL</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_VIRTUAL (1&lt;&lt;5)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_SYSTEM">
+<a name="CAMEL-FOLDER-SYSTEM:CAPS"></a><h3>CAMEL_FOLDER_SYSTEM</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_SYSTEM (1&lt;&lt;6)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_VTRASH">
+<a name="CAMEL-FOLDER-VTRASH:CAPS"></a><h3>CAMEL_FOLDER_VTRASH</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_VTRASH (1&lt;&lt;7)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_SHARED_TO_ME">
+<a name="CAMEL-FOLDER-SHARED-TO-ME:CAPS"></a><h3>CAMEL_FOLDER_SHARED_TO_ME</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_SHARED_TO_ME (1&lt;&lt;8)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_SHARED_BY_ME">
+<a name="CAMEL-FOLDER-SHARED-BY-ME:CAPS"></a><h3>CAMEL_FOLDER_SHARED_BY_ME</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_SHARED_BY_ME (1&lt;&lt;9)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_MASK">
+<a name="CAMEL-FOLDER-TYPE-MASK:CAPS"></a><h3>CAMEL_FOLDER_TYPE_MASK</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_MASK (7 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_BIT">
+<a name="CAMEL-FOLDER-TYPE-BIT:CAPS"></a><h3>CAMEL_FOLDER_TYPE_BIT</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_BIT (10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_NORMAL">
+<a name="CAMEL-FOLDER-TYPE-NORMAL:CAPS"></a><h3>CAMEL_FOLDER_TYPE_NORMAL</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_NORMAL (0 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_INBOX">
+<a name="CAMEL-FOLDER-TYPE-INBOX:CAPS"></a><h3>CAMEL_FOLDER_TYPE_INBOX</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_INBOX (1 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_OUTBOX">
+<a name="CAMEL-FOLDER-TYPE-OUTBOX:CAPS"></a><h3>CAMEL_FOLDER_TYPE_OUTBOX</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_OUTBOX (2 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_TRASH">
+<a name="CAMEL-FOLDER-TYPE-TRASH:CAPS"></a><h3>CAMEL_FOLDER_TYPE_TRASH</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_TRASH (3 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_JUNK">
+<a name="CAMEL-FOLDER-TYPE-JUNK:CAPS"></a><h3>CAMEL_FOLDER_TYPE_JUNK</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_JUNK (4 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_FOLDER_TYPE_SENT">
+<a name="CAMEL-FOLDER-TYPE-SENT:CAPS"></a><h3>CAMEL_FOLDER_TYPE_SENT</h3>
+<pre class="programlisting">#define CAMEL_FOLDER_TYPE_SENT (5 &lt;&lt; 10)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_READ">
+<a name="CAMEL-STORE-READ:CAPS"></a><h3>CAMEL_STORE_READ</h3>
+<pre class="programlisting">#define CAMEL_STORE_READ  (1 &lt;&lt; 0)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_WRITE">
+<a name="CAMEL-STORE-WRITE:CAPS"></a><h3>CAMEL_STORE_WRITE</h3>
+<pre class="programlisting">#define CAMEL_STORE_WRITE (1 &lt;&lt; 1)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_SUBSCRIPTIONS">
+<a name="CAMEL-STORE-SUBSCRIPTIONS:CAPS"></a><h3>CAMEL_STORE_SUBSCRIPTIONS</h3>
+<pre class="programlisting">#define CAMEL_STORE_SUBSCRIPTIONS (1 &lt;&lt; 0)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_VTRASH">
+<a name="CAMEL-STORE-VTRASH:CAPS"></a><h3>CAMEL_STORE_VTRASH</h3>
+<pre class="programlisting">#define CAMEL_STORE_VTRASH		(1 &lt;&lt; 1)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FILTER_INBOX">
+<a name="CAMEL-STORE-FILTER-INBOX:CAPS"></a><h3>CAMEL_STORE_FILTER_INBOX</h3>
+<pre class="programlisting">#define CAMEL_STORE_FILTER_INBOX (1 &lt;&lt; 2)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_VJUNK">
+<a name="CAMEL-STORE-VJUNK:CAPS"></a><h3>CAMEL_STORE_VJUNK</h3>
+<pre class="programlisting">#define CAMEL_STORE_VJUNK		(1 &lt;&lt; 3)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_PROXY">
+<a name="CAMEL-STORE-PROXY:CAPS"></a><h3>CAMEL_STORE_PROXY</h3>
+<pre class="programlisting">#define CAMEL_STORE_PROXY		(1 &lt;&lt; 4)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_IS_MIGRATING">
+<a name="CAMEL-STORE-IS-MIGRATING:CAPS"></a><h3>CAMEL_STORE_IS_MIGRATING</h3>
+<pre class="programlisting">#define CAMEL_STORE_IS_MIGRATING (1 &lt;&lt; 5)
+</pre>
+<p class="since">Since 2.26</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_ASYNC">
+<a name="CAMEL-STORE-ASYNC:CAPS"></a><h3>CAMEL_STORE_ASYNC</h3>
+<pre class="programlisting">#define CAMEL_STORE_ASYNC		(1 &lt;&lt; 6)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_REAL_JUNK_FOLDER">
+<a name="CAMEL-STORE-REAL-JUNK-FOLDER:CAPS"></a><h3>CAMEL_STORE_REAL_JUNK_FOLDER</h3>
+<pre class="programlisting">#define CAMEL_STORE_REAL_JUNK_FOLDER (1 &lt;&lt; 7)
+</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_CREATE">
+<a name="CAMEL-STORE-FOLDER-CREATE:CAPS"></a><h3>CAMEL_STORE_FOLDER_CREATE</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_CREATE (1&lt;&lt;0)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_EXCL">
+<a name="CAMEL-STORE-FOLDER-EXCL:CAPS"></a><h3>CAMEL_STORE_FOLDER_EXCL</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_EXCL (1&lt;&lt;1)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_BODY_INDEX">
+<a name="CAMEL-STORE-FOLDER-BODY-INDEX:CAPS"></a><h3>CAMEL_STORE_FOLDER_BODY_INDEX</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_BODY_INDEX (1&lt;&lt;2)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_PRIVATE">
+<a name="CAMEL-STORE-FOLDER-PRIVATE:CAPS"></a><h3>CAMEL_STORE_FOLDER_PRIVATE</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_PRIVATE (1&lt;&lt;3) /* a private folder, that shouldn't show up in unmatched/folder info's, etc */
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_CREATE_EXCL">
+<a name="CAMEL-STORE-FOLDER-CREATE-EXCL:CAPS"></a><h3>CAMEL_STORE_FOLDER_CREATE_EXCL</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_CREATE_EXCL (CAMEL_STORE_FOLDER_CREATE | CAMEL_STORE_FOLDER_EXCL)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_INFO_FAST">
+<a name="CAMEL-STORE-FOLDER-INFO-FAST:CAPS"></a><h3>CAMEL_STORE_FOLDER_INFO_FAST</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_INFO_FAST       (1 &lt;&lt; 0)
+</pre>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p><code class="literal">CAMEL_STORE_FOLDER_INFO_FAST</code> is deprecated and should not be used in newly-written code.</p>
+</div>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_INFO_RECURSIVE">
+<a name="CAMEL-STORE-FOLDER-INFO-RECURSIVE:CAPS"></a><h3>CAMEL_STORE_FOLDER_INFO_RECURSIVE</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_INFO_RECURSIVE  (1 &lt;&lt; 1)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_INFO_SUBSCRIBED">
+<a name="CAMEL-STORE-FOLDER-INFO-SUBSCRIBED:CAPS"></a><h3>CAMEL_STORE_FOLDER_INFO_SUBSCRIBED</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_INFO_SUBSCRIBED (1 &lt;&lt; 2)
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL">
+<a name="CAMEL-STORE-FOLDER-INFO-NO-VIRTUAL:CAPS"></a><h3>CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL (1 &lt;&lt; 3)  /* don't include vTrash/vJunk folders */
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="CAMEL_STORE_FOLDER_INFO_SUBSCRIPTION_LIST">
+<a name="CAMEL-STORE-FOLDER-INFO-SUBSCRIPTION-LIST:CAPS"></a><h3>CAMEL_STORE_FOLDER_INFO_SUBSCRIPTION_LIST</h3>
+<pre class="programlisting">#define CAMEL_STORE_FOLDER_INFO_SUBSCRIPTION_LIST (1 &lt;&lt; 4)
+</pre>
+<p>
+Fetch only the subscription list. Clients should use this
+flag for requesting the list of folders available for
+subscription. Used in Exchange / IMAP connectors for public
+folder fetching.
+</p>
+<p class="since">Since 2.28</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_get_folder ()">
+<a name="camel-store-get-folder"></a><h3>camel_store_get_folder ()</h3>
+<pre class="programlisting"><a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       camel_store_get_folder              (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Get a specific folder object from the store by name.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folder_name</code></em> :</span></p></td>
+<td>name of the folder to get
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>folder flags (create, save body index, etc)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the folder corresponding to the path <em class="parameter"><code>folder_name</code></em> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_get_inbox ()">
+<a name="camel-store-get-inbox"></a><h3>camel_store_get_inbox ()</h3>
+<pre class="programlisting"><a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       camel_store_get_inbox               (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the folder in the store into which new mail is delivered,
+or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such folder exists.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_get_trash ()">
+<a name="camel-store-get-trash"></a><h3>camel_store_get_trash ()</h3>
+<pre class="programlisting"><a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       camel_store_get_trash               (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the folder in the store into which trash is delivered, or
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such folder exists.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_get_junk ()">
+<a name="camel-store-get-junk"></a><h3>camel_store_get_junk ()</h3>
+<pre class="programlisting"><a class="link" href="CamelFolder.html" title="CamelFolder"><span class="returnvalue">CamelFolder</span></a> *       camel_store_get_junk                (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the folder in the store into which junk is delivered, or
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such folder exists.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_create_folder ()">
+<a name="camel-store-create-folder"></a><h3>camel_store_create_folder ()</h3>
+<pre class="programlisting"><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   camel_store_create_folder           (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *parent_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Creates a new folder as a child of an existing folder.
+<em class="parameter"><code>parent_name</code></em> can be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to create a new top-level folder.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_name</code></em> :</span></p></td>
+<td>name of the new folder's parent, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folder_name</code></em> :</span></p></td>
+<td>name of the folder to create
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> info about the created folder, which the caller must
+free with <a class="link" href="CamelStore.html#camel-store-free-folder-info" title="camel_store_free_folder_info ()"><span class="type">camel_store_free_folder_info</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_delete_folder ()">
+<a name="camel-store-delete-folder"></a><h3>camel_store_delete_folder ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_delete_folder           (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Deletes the named folder. The folder must be empty.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folder_name</code></em> :</span></p></td>
+<td>name of the folder to delete
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_rename_folder ()">
+<a name="camel-store-rename-folder"></a><h3>camel_store_rename_folder ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_rename_folder           (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_namein</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Rename a named folder to a new name.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_namein</code></em> :</span></p></td>
+<td>the current name of the folder
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_name</code></em> :</span></p></td>
+<td>the new name of the folder
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_created ()">
+<a name="camel-store-folder-created"></a><h3>camel_store_folder_created ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_folder_created          (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);</pre>
+<p>
+Emits the <a class="link" href="CamelStore.html#CamelStore-folder-created" title='The "folder-created" signal'><span class="type">"folder-created"</span></a> signal.
+</p>
+<p>
+This function is only intended for Camel providers.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>information about the created folder
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_deleted ()">
+<a name="camel-store-folder-deleted"></a><h3>camel_store_folder_deleted ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_folder_deleted          (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);</pre>
+<p>
+Emits the <a class="link" href="CamelStore.html#CamelStore-folder-deleted" title='The "folder-deleted" signal'><span class="type">"folder-deleted"</span></a> signal.
+</p>
+<p>
+This function is only intended for Camel providers.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>information about the deleted folder
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_renamed ()">
+<a name="camel-store-folder-renamed"></a><h3>camel_store_folder_renamed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_folder_renamed          (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);</pre>
+<p>
+Emits the <a class="link" href="CamelStore.html#CamelStore-folder-renamed" title='The "folder-renamed" signal'><span class="type">"folder-renamed"</span></a> signal.
+</p>
+<p>
+This function is only intended for Camel providers.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_name</code></em> :</span></p></td>
+<td>the old name of the folder
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>information about the renamed folder
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_subscribed ()">
+<a name="camel-store-folder-subscribed"></a><h3>camel_store_folder_subscribed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_folder_subscribed       (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);</pre>
+<p>
+Emits the <a class="link" href="CamelStore.html#CamelStore-folder-subscribed" title='The "folder-subscribed" signal'><span class="type">"folder-subscribed"</span></a> signal.
+</p>
+<p>
+This function is only intended for Camel providers.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>information about the subscribed folder
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_unsubscribed ()">
+<a name="camel-store-folder-unsubscribed"></a><h3>camel_store_folder_unsubscribed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_folder_unsubscribed     (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>);</pre>
+<p>
+Emits the <a class="link" href="CamelStore.html#CamelStore-folder-unsubscribed" title='The "folder-unsubscribed" signal'><span class="type">"folder-unsubscribed"</span></a> signal.
+</p>
+<p>
+This function is only intended for Camel providers.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>information about the unsubscribed folder
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_sync ()">
+<a name="camel-store-sync"></a><h3>camel_store_sync ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_sync                    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> expunge</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Syncs any changes that have been made to the store object and its
+folders with the real store.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>expunge</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if an expunge should be done after sync or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_get_folder_info ()">
+<a name="camel-store-get-folder-info"></a><h3>camel_store_get_folder_info ()</h3>
+<pre class="programlisting"><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   camel_store_get_folder_info         (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *top</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+This fetches information about the folder structure of <em class="parameter"><code>store</code></em>,
+starting with <em class="parameter"><code>top</code></em>, and returns a tree of CamelFolderInfo
+structures. If <em class="parameter"><code>flags</code></em> includes <a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-SUBSCRIBED:CAPS" title="CAMEL_STORE_FOLDER_INFO_SUBSCRIBED"><span class="type">CAMEL_STORE_FOLDER_INFO_SUBSCRIBED</span></a>,
+only subscribed folders will be listed.   If the store doesn't support
+subscriptions, then it will list all folders.  If <em class="parameter"><code>flags</code></em> includes
+<a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-RECURSIVE:CAPS" title="CAMEL_STORE_FOLDER_INFO_RECURSIVE"><span class="type">CAMEL_STORE_FOLDER_INFO_RECURSIVE</span></a>, the returned tree will include
+all levels of hierarchy below <em class="parameter"><code>top</code></em>. If not, it will only include
+the immediate subfolders of <em class="parameter"><code>top</code></em>. If <em class="parameter"><code>flags</code></em> includes
+<a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-FAST:CAPS" title="CAMEL_STORE_FOLDER_INFO_FAST"><span class="type">CAMEL_STORE_FOLDER_INFO_FAST</span></a>, the unread_message_count fields of
+some or all of the structures may be set to <code class="literal">-1</code>, if the store cannot
+determine that information quickly.  If <em class="parameter"><code>flags</code></em> includes
+<a class="link" href="CamelStore.html#CAMEL-STORE-FOLDER-INFO-NO-VIRTUAL:CAPS" title="CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL"><span class="type">CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL</span></a>, don't include special virtual
+folders (such as vTrash or vJunk).
+</p>
+<p>
+The CAMEL_STORE_FOLDER_INFO_FAST flag should be considered
+deprecated; most backends will behave the same whether it is
+supplied or not.  The only guaranteed way to get updated folder
+counts is to both open the folder and invoke <code class="function">refresh_info()</code> it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>top</code></em> :</span></p></td>
+<td>the name of the folder to start from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>various CAMEL_STORE_FOLDER_INFO_* flags to control behavior
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> tree, which must be freed with
+<a class="link" href="CamelStore.html#camel-store-free-folder-info" title="camel_store_free_folder_info ()"><span class="type">camel_store_free_folder_info</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_free_folder_info ()">
+<a name="camel-store-free-folder-info"></a><h3>camel_store_free_folder_info ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_free_folder_info        (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);</pre>
+<p>
+Frees the data returned by <a class="link" href="CamelStore.html#camel-store-get-folder-info" title="camel_store_get_folder_info ()"><span class="type">camel_store_get_folder_info</span></a>. If <em class="parameter"><code>fi</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+nothing is done, the routine simply returns.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fi</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> as gotten via <a class="link" href="CamelStore.html#camel-store-get-folder-info" title="camel_store_get_folder_info ()"><span class="type">camel_store_get_folder_info</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_free_folder_info_full ()">
+<a name="camel-store-free-folder-info-full"></a><h3>camel_store_free_folder_info_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_free_folder_info_full   (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);</pre>
+<p>
+An implementation for <span class="type">"free_folder_info"</span>. Frees all
+of the data.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fi</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> as gotten via <a class="link" href="CamelStore.html#camel-store-get-folder-info" title="camel_store_get_folder_info ()"><span class="type">camel_store_get_folder_info</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_free_folder_info_nop ()">
+<a name="camel-store-free-folder-info-nop"></a><h3>camel_store_free_folder_info_nop ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_free_folder_info_nop    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);</pre>
+<p>
+An implementation for <span class="type">"free_folder_info"</span>. Does nothing.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fi</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> as gotten via <a class="link" href="CamelStore.html#camel-store-get-folder-info" title="camel_store_get_folder_info ()"><span class="type">camel_store_get_folder_info</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_folder_info_new ()">
+<a name="camel-folder-info-new"></a><h3>camel_folder_info_new ()</h3>
+<pre class="programlisting"><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   camel_folder_info_new               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new empty CamelFolderInfo instance
+
+</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 2.22</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_folder_info_free ()">
+<a name="camel-folder-info-free"></a><h3>camel_folder_info_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_folder_info_free              (<em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);</pre>
+<p>
+Frees <em class="parameter"><code>fi</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>fi</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_folder_info_build ()">
+<a name="camel-folder-info-build"></a><h3>camel_folder_info_build ()</h3>
+<pre class="programlisting"><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   camel_folder_info_build             (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *folders</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *namespace</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> separator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> short_names</code></em>);</pre>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p><code class="literal">camel_folder_info_build</code> is deprecated and should not be used in newly-written code.</p>
+</div>
+<p>
+This takes an array of folders and attaches them together according
+to the hierarchy described by their full_names and <em class="parameter"><code>separator</code></em>. If
+<em class="parameter"><code>namespace</code></em> is non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then it will be ignored as a full_name
+prefix, for purposes of comparison. If necessary,
+<a class="link" href="CamelStore.html#camel-folder-info-build" title="camel_folder_info_build ()"><span class="type">camel_folder_info_build</span></a> will create additional <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> with
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> urls to fill in gaps in the tree. The value of <em class="parameter"><code>short_names</code></em>
+is used in constructing the names of these intermediate folders.
+</p>
+<p>
+NOTE: This is deprected, do not use this.
+FIXME: remove this/move it to imap, which is the only user of it now.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folders</code></em> :</span></p></td>
+<td>an array of <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>namespace</code></em> :</span></p></td>
+<td>an ignorable prefix on the folder names
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>separator</code></em> :</span></p></td>
+<td>the hieararchy separator character
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>short_names</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the (short) name of a folder is the part after
+the last <em class="parameter"><code>separator</code></em> in the full name. <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if it is the full name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the top level of the tree of linked folder info.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_folder_info_clone ()">
+<a name="camel-folder-info-clone"></a><h3>camel_folder_info_clone ()</h3>
+<pre class="programlisting"><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="returnvalue">CamelFolderInfo</span></a> *   camel_folder_info_clone             (<em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *fi</code></em>);</pre>
+<p>
+Clones <em class="parameter"><code>fi</code></em> recursively.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fi</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the cloned <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> tree.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_supports_subscriptions ()">
+<a name="camel-store-supports-subscriptions"></a><h3>camel_store_supports_subscriptions ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_supports_subscriptions  (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>);</pre>
+<p>
+Get whether or not <em class="parameter"><code>store</code></em> supports subscriptions to folders.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if folder subscriptions are supported or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_is_subscribed ()">
+<a name="camel-store-folder-is-subscribed"></a><h3>camel_store_folder_is_subscribed ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_folder_is_subscribed    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>);</pre>
+<p>
+Find out if a folder has been subscribed to.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folder_name</code></em> :</span></p></td>
+<td>full path of the folder
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the folder has been subscribed to or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_subscribe_folder ()">
+<a name="camel-store-subscribe-folder"></a><h3>camel_store_subscribe_folder ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_subscribe_folder        (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Subscribe to the folder described by <em class="parameter"><code>folder_name</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folder_name</code></em> :</span></p></td>
+<td>full path of the folder
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_unsubscribe_folder ()">
+<a name="camel-store-unsubscribe-folder"></a><h3>camel_store_unsubscribe_folder ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_unsubscribe_folder      (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *folder_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Unsubscribe from the folder described by <em class="parameter"><code>folder_name</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>folder_name</code></em> :</span></p></td>
+<td>full path of the folder
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_noop ()">
+<a name="camel-store-noop"></a><h3>camel_store_noop ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_noop                    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Pings <em class="parameter"><code>store</code></em> so that its connection doesn't timeout.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_folder_uri_equal ()">
+<a name="camel-store-folder-uri-equal"></a><h3>camel_store_folder_uri_equal ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                camel_store_folder_uri_equal        (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri0</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri1</code></em>);</pre>
+<p>
+Compares two folder uris to check that they are equal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri0</code></em> :</span></p></td>
+<td>a folder uri
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri1</code></em> :</span></p></td>
+<td>another folder uri
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if they are equal or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_can_refresh_folder ()">
+<a name="camel-store-can-refresh-folder"></a><h3>camel_store_can_refresh_folder ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            camel_store_can_refresh_folder      (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a> *info</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Returns if this folder (param info) should be checked for new mail or not.
+It should not look into sub infos (info-&gt;child) or next infos, it should
+return value only for the actual folder info.
+Default behavior is that all Inbox folders are intended to be refreshed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html#CamelFolderInfo" title="CamelFolderInfo"><span class="type">CamelFolderInfo</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> whether folder should be checked for new mails
+
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.22</p>
+</div>
+<hr>
+<div class="refsect2" title="enum CamelStoreLock">
+<a name="CamelStoreLock"></a><h3>enum CamelStoreLock</h3>
+<pre class="programlisting">typedef enum {
+	CAMEL_STORE_FOLDER_LOCK
+} CamelStoreLock;
+</pre>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_lock ()">
+<a name="camel-store-lock"></a><h3>camel_store_lock ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_lock                    (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelStoreLock" title="enum CamelStoreLock"><span class="type">CamelStoreLock</span></a> lock</code></em>);</pre>
+<p>
+Locks <span class="type">store</span>'s <span class="type">lock</span>. Unlock it with <a class="link" href="CamelStore.html#camel-store-unlock" title="camel_store_unlock ()"><code class="function">camel_store_unlock()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
+<td>lock type to lock
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_store_unlock ()">
+<a name="camel-store-unlock"></a><h3>camel_store_unlock ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                camel_store_unlock                  (<em class="parameter"><code><a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *store</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="CamelStore.html#CamelStoreLock" title="enum CamelStoreLock"><span class="type">CamelStoreLock</span></a> lock</code></em>);</pre>
+<p>
+Unlocks <span class="type">store</span>'s <span class="type">lock</span>, previously locked with <a class="link" href="CamelStore.html#camel-store-lock" title="camel_store_lock ()"><code class="function">camel_store_lock()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
+<td>lock type to unlock
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="CamelStore.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "folder-created" signal'>
+<a name="CamelStore-folder-created"></a><h3>The <code class="literal">"folder-created"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *camelstore,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>camelstore</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "folder-deleted" signal'>
+<a name="CamelStore-folder-deleted"></a><h3>The <code class="literal">"folder-deleted"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *camelstore,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>camelstore</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "folder-opened" signal'>
+<a name="CamelStore-folder-opened"></a><h3>The <code class="literal">"folder-opened"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a>  *camelstore,
+                                                        <a class="link" href="CamelFolder.html" title="CamelFolder"><span class="type">CamelFolder</span></a> *arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)       : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>camelstore</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "folder-renamed" signal'>
+<a name="CamelStore-folder-renamed"></a><h3>The <code class="literal">"folder-renamed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *camelstore,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>      *arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    arg2,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>camelstore</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "folder-subscribed" signal'>
+<a name="CamelStore-folder-subscribed"></a><h3>The <code class="literal">"folder-subscribed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *camelstore,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>camelstore</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "folder-unsubscribed" signal'>
+<a name="CamelStore-folder-unsubscribed"></a><h3>The <code class="literal">"folder-unsubscribed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="CamelStore.html" title="CamelStore"><span class="type">CamelStore</span></a> *camelstore,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>camelstore</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

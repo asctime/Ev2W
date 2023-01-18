@@ -1,0 +1,986 @@
+# evolution-exchange in Welsh.
+# This file is distributed under the same license
+# as the evolution-exchange package.
+# Rhys Jones <rhys@sucs.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-03-30 18:03+0100\n"
+"PO-Revision-Date: 2006-03-30 18:21+0100\n"
+"Last-Translator: Rhys Jones <rhys@sucs.org>\n"
+"Language-Team: Welsh <gnome-cy@lists.linux.org.uk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural= (n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != "
+"11) ? 2 : 3;\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1867
+#: ../addressbook/e-book-backend-gal.c:1499 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Wrthi'n chwilio..."
+
+#: ../addressbook/e-book-backend-gal.c:267
+msgid "Reconnecting to LDAP server..."
+msgstr "Ail-gysylltu â'r gweinydd LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1363
+msgid "Receiving LDAP search results..."
+msgstr "Derbyn canlyniadau chwilio LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1522
+msgid "Error performing search"
+msgstr "Gwall wrth chwilio"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1934
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"Methu rhoi adnodd '%s' ar yr amserlen ar gyfer cyfarfodydd sy'n ail-"
+"ddigwydd.\n"
+"Rhaid i chi logi pob cyfarfod yn unigol."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1952
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Mae'r adnodd '%s' yn brysur yn ystod y cyfnod amser a ddewiswyd."
+
+#: ../camel/camel-exchange-folder.c:222
+msgid "You cannot expunge in offline mode."
+msgstr "Fedrwch chi ddim "
+
+#: ../camel/camel-exchange-folder.c:253
+msgid "No Subject"
+msgstr "Dim Pwnc"
+
+#: ../camel/camel-exchange-folder.c:407
+msgid "This message is not available in offline mode."
+msgstr "Nid yw'r neges hon ar gael yn y modd all-lein."
+
+#: ../camel/camel-exchange-folder.c:642
+msgid "Moving messages"
+msgstr "Symud negeseuon"
+
+#: ../camel/camel-exchange-folder.c:643
+msgid "Copying messages"
+msgstr "Copïo negeseuon"
+
+#: ../camel/camel-exchange-folder.c:1014
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Methu creu cyfeiriadur %s: %s"
+
+#: ../camel/camel-exchange-folder.c:1024
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "Methu llwytho crynodeb ar gyfer %s"
+
+#: ../camel/camel-exchange-folder.c:1032
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "Methu creu storfa ar gyfer %s"
+
+#: ../camel/camel-exchange-folder.c:1042
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "Methu creu dyddlyfr ar gyfer %s"
+
+#: ../camel/camel-exchange-folder.c:1087
+msgid "Scanning for changed messages"
+msgstr "Sganio am negeseuon sydd wedi newid"
+
+#: ../camel/camel-exchange-folder.c:1113
+msgid "Fetching summary information for new messages"
+msgstr "Llwytho crynodeb gwybodaeth ar gyfer negeseuon newydd"
+
+#: ../camel/camel-exchange-journal.c:339
+msgid "No folder name found\n"
+msgstr "Dim enw plygell wedi ei ganfod\n"
+
+#: ../camel/camel-exchange-journal.c:372 ../mail/mail-stub-exchange.c:2549
+#: ../mail/mail-stub-exchange.c:2593 ../mail/mail-stub-exchange.c:2628
+#: ../mail/mail-stub-exchange.c:2655 ../mail/mail-stub-exchange.c:2702
+#: ../mail/mail-stub-exchange.c:2724
+msgid "Folder doesn't exist"
+msgstr "Plygell ddim yn bodoli"
+
+#: ../camel/camel-exchange-journal.c:436
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "Methu atodi at y neges yn y modd all-lein: storfa ddim ar gael"
+
+#: ../camel/camel-exchange-journal.c:452
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Methu atodi at y neges yn y modd all-lein: %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:44
+msgid "Windows User_name:"
+msgstr "Enw Defnyddiwr Windows:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:49
+msgid "Global Address List / Active Directory"
+msgstr "Rhestr Gyfeiriadau (Global Address List) / Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:53
+msgid "_Global Catalog server name:"
+msgstr "Enw gweinydd _Global Catalog:"
+
+#: ../camel/camel-exchange-provider.c:55
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "_Rhoi terfyn ar nifer ymatebion GAL: %s"
+
+#: ../camel/camel-exchange-provider.c:58
+msgid "Options"
+msgstr "Opsiynau"
+
+#: ../camel/camel-exchange-provider.c:60
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "Cyfnod rhybudd cyn i gyfrinair ddod i ben: %s"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "Automatically synchroni_ze account locally"
+msgstr "_Cysoni cyfrif yn lleol yn awtomatig"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:65
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr ""
+"_Rhoi hidlyddion ar waith ar negeseuon newydd o fewn y Blwch Derbyn ar y "
+"gweinydd hwn"
+
+#: ../camel/camel-exchange-provider.c:67
+msgid "Check new messages for _Junk contents"
+msgstr "Gwirio am gynnwys _Sothach yn y negeseuon newydd"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Gwirio am negeseuon _Sothach yn y Blwch Derbyn yn unig"
+
+#: ../camel/camel-exchange-provider.c:79
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:81
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "I ddelio ag e-bost (a data arall) ar weinyddion Microsoft Exchange"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:97
+msgid "Secure Password"
+msgstr "Cyfrinair Diogel"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:100
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"Bydd yr opsiwn hwn yn cysylltu â'r gweinydd Exchange gan ddefnyddio NTLM / "
+"Dilysiant Cyfrinair Diogel."
+
+#: ../camel/camel-exchange-provider.c:108
+msgid "Plaintext Password"
+msgstr "Cyfrinair Testun Plaen"
+
+#: ../camel/camel-exchange-provider.c:110
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"Bydd yr opsiwn hwn yn cysylltu â'r gweinydd Exchange gan ddefnyddio NTLM / "
+"Dilysiant Cyfrinair Diogel."
+
+#: ../camel/camel-exchange-store.c:308
+#, c-format
+msgid "Exchange server %s"
+msgstr "Gweinydd Exchange %s"
+
+#: ../camel/camel-exchange-store.c:311
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Cyfrif Exchange ar gyfer %s ar %s"
+
+#: ../camel/camel-exchange-store.c:352
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%sRhowch y cyfrinair ar gyfer %s"
+
+#: ../camel/camel-exchange-store.c:403
+msgid "Evolution Exchange backend process"
+msgstr "Proses ochr gefn Exchange Evolution"
+
+#: ../camel/camel-exchange-store.c:444
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"Methu dilysu â'r gweinydd. (Cyfrinair anghywir?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:486
+#, c-format
+msgid "No such folder %s"
+msgstr "Dim plygell o'r fath %s"
+
+#: ../camel/camel-exchange-store.c:563
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Methu tanysgrifio i blygell yn y modd all-lein."
+
+#: ../camel/camel-exchange-store.c:580
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Methu dad-danysgrifio o blygell yn y modd all-lein."
+
+#: ../camel/camel-exchange-store.c:695
+msgid "Cannot get folder info in offline mode."
+msgstr "Methu cael gwybodaeth plygell yn y modd all-lein."
+
+#: ../camel/camel-exchange-store.c:766
+msgid "Cannot create folder in offline mode."
+msgstr "Methu creu plygell yn y modd all-lein."
+
+#: ../camel/camel-exchange-store.c:793
+msgid "Cannot delete folder in offline mode."
+msgstr "Methu dileu plygell yn y modd all-lein."
+
+#: ../camel/camel-exchange-store.c:809
+msgid "Cannot rename folder in offline mode."
+msgstr "Methu ail-enwi plygell yn y modd all-lein."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr ""
+"Dim ond gyda ffynhonnell e-bost Exchange y gellir defnyddio cludiant Exchange"
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Methu anfon neges: o leiaf un derbynnydd annilys"
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr "Methu canfod cyfeiriad 'Oddi wrth' o fewn y neges"
+
+#: ../camel/camel-stub.c:134
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "Methu creu soced: %s"
+
+#: ../camel/camel-stub.c:149
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "Methu cysylltu â %s: %s"
+
+#: ../camel/camel-stub.c:179
+#, c-format
+msgid "Path too long: %s"
+msgstr "Llwybr yn rhy hir: %s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "Methu cychwyn edefyn statws: %s"
+
+#: ../camel/camel-stub.c:457
+#, c-format
+msgid "Lost connection to %s"
+msgstr "Wedi colli'r cysylltiad â %s"
+
+#: ../camel/camel-stub.c:461
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "Gwall wrth gyfathrebu â %s: %s"
+
+#: ../mail/mail-stub-exchange.c:257
+msgid "No such folder"
+msgstr "Dim plygell o'r fath"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:280 ../mail/mail-stub-exchange.c:1390
+#: ../mail/mail-stub-exchange.c:2526 ../mail/mail-stub-exchange.c:2566
+#: ../mail/mail-stub-exchange.c:2632 ../mail/mail-stub-exchange.c:2676
+#: ../mail/mail-stub-exchange.c:2739
+msgid "Permission denied"
+msgstr "Caniatâd wedi'i wrthod"
+
+#: ../mail/mail-stub-exchange.c:578 ../mail/mail-stub-exchange.c:600
+msgid "Could not open folder: Permission denied"
+msgstr "Methu agor y blygell: Caniatâd wedi'i wrthod"
+
+#: ../mail/mail-stub-exchange.c:584 ../mail/mail-stub-exchange.c:707
+msgid "Could not open folder"
+msgstr "Methu agor y blygell"
+
+#: ../mail/mail-stub-exchange.c:755
+msgid "No such folder."
+msgstr "Dim plygell o'r fath."
+
+#: ../mail/mail-stub-exchange.c:764
+msgid "Could not create folder."
+msgstr "Methu creu plygell."
+
+#: ../mail/mail-stub-exchange.c:844
+msgid "Could not open Deleted Items folder"
+msgstr "Methu agor plygell Eitemau Wedi'u Dileu"
+
+#: ../mail/mail-stub-exchange.c:1175 ../mail/mail-stub-exchange.c:1216
+msgid "Could not get new messages"
+msgstr "Methu cael negeseuon newydd"
+
+#: ../mail/mail-stub-exchange.c:1386
+msgid "Could not empty Deleted Items folder"
+msgstr "Methu gwacáu plygell Eitemau Wedi'u Dileu"
+
+#: ../mail/mail-stub-exchange.c:1463
+msgid "Could not append message; mailbox is over quota"
+msgstr "Methu atodi at y neges; blwch e-bost dros y cwota"
+
+#: ../mail/mail-stub-exchange.c:1464
+msgid "Could not append message"
+msgstr "Methu atodi at y neges"
+
+#: ../mail/mail-stub-exchange.c:2016
+msgid "No such message"
+msgstr "Dim neges o'r fath"
+
+#: ../mail/mail-stub-exchange.c:2069
+msgid "Message has been deleted"
+msgstr "Neges wedi ei ddileu"
+
+#: ../mail/mail-stub-exchange.c:2071
+msgid "Error retrieving message"
+msgstr "Gwall wrth gyrchu neges"
+
+#: ../mail/mail-stub-exchange.c:2113
+msgid "Mailbox does not support full-text searching"
+msgstr "Blwch e-bost ddim yn cynnal chwilio'r holl destun"
+
+#: ../mail/mail-stub-exchange.c:2211
+msgid "Unable to move/copy messages"
+msgstr "Methu symud/copïo negeseuon"
+
+#: ../mail/mail-stub-exchange.c:2441
+msgid "No mail submission URI for this mailbox"
+msgstr "Does gan y blwch e-bost hwn ddim URI i gyflwyno e-bost"
+
+#: ../mail/mail-stub-exchange.c:2477
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Gweinydd ddim yn derbyn e-bost trwy gludiant Exchange"
+
+#: ../mail/mail-stub-exchange.c:2479
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"Does gan eich cyfrif ddim caniatâd i ddefnyddio <%s>\n"
+"fel cyfeiriad Oddi wrth."
+
+#: ../mail/mail-stub-exchange.c:2491
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Methu anfon neges.\n"
+"Gall hyn olygu fod eich cyfrif dros y cwota."
+
+#: ../mail/mail-stub-exchange.c:2495
+msgid "Could not send message"
+msgstr "Methu anfon neges"
+
+#: ../mail/mail-stub-exchange.c:2518 ../mail/mail-stub-exchange.c:2571
+#: ../mail/mail-stub-exchange.c:2636 ../mail/mail-stub-exchange.c:2681
+#: ../mail/mail-stub-exchange.c:2745
+msgid "Generic error"
+msgstr "Gwall generig"
+
+#: ../mail/mail-stub-exchange.c:2522
+msgid "Folder already exists"
+msgstr "Plygell yn bodoli'n barod"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Ochr gefn Llyfr Cyfeiriadau Evolution Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Ochr gefn Calendr Evolution Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Ximian Connector for Exchange"
+msgstr "Ximian Connector ar gyfer Exchange"
+
+#: ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Methu cysylltu â'r gweinydd Exchange.\n"
+"Gwnewch yn siŵr fod y LAU yn gywir (ceisiwch \"%s\" yn lle \"%s\"?) a rhowch "
+"gynnig eto."
+
+#: ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Methu lleoli'r gweinydd Exchange.\n"
+"Gwnewch yn siŵr fod enw'r gweinydd wedi ei sillafu'n gywir cyn ceisio eto."
+
+#: ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Methu dilysu â'r gweinydd Exchange.\n"
+"Gwnewch yn siŵr fod yr enw defnyddiwr a'r cyfrinair yn gywir cyn ceisio eto."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Methu dilysu â'r gweinydd Exchange.\n"
+"Gwnewch yn siŵr fod yr enw defnyddiwr a'r cyfrinair yn gywir cyn ceisio "
+"eto.\n"
+"\n"
+"Mae'n bosib fod rhaid i chi roi enw parth Windows fel rhan o'ch enw "
+"defnyddiwr (e.e. \"FY-MHARTH\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Methu canfod data OWA yn y LAU a nodwyd.\n"
+"Gwnewch yn siŵr fod y LAU yn gywir cyn ceisio eto."
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Mae Ximian Connector am ddefnyddio rhai nodweddion ar y gweinydd Exchange "
+"sydd yn ymddangos eu bod wedi eu hanalluogi neu eu rhwystro. (Yn ddamweiniol "
+"mae hyn yn digwydd fel arfer.) Bydd rhaid i'r sawl sy'n gweinyddu eich "
+"gosodiad Exchange alluogi hyn cyn i chi fedru defnyddio Ximian Connector.\n"
+"\n"
+"Er mwyn cael gwybodaeth i'w rhoi i'ch gweinyddwr Exchange, dilynwch y "
+"cyswllt isod:"
+
+#: ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"Mae'r LAU gweinydd Exchange wnaethoch chi ei roi yn cyfeirio at weinydd "
+"Exchange 5.5. Dim ond Microsoft Exchange 2000 a 2003 mae Ximian Connector yn "
+"eu cynnal."
+
+#: ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Methu cyflunio cyfrif Exchange am i wall anhysbys ddigwydd. Gwiriwch y LAU, "
+"yr enw defnyddiwr, a'r cyfrinair, cyn ail-geisio."
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Methu dilysu â'r gweinydd Global Catalog. Mae'n bosib fod rhaid i chi fynd "
+"yn ôl a phenodi enw parth Windows fel rhan o'ch enw defnyddiwr (e.e. \"FY-"
+"MHARTH\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Methu cysylltu â'r gweinydd a benodwyd.\n"
+"Gwiriwch enw'r gweinydd ac ail-geisio."
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "Anhysbys"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Gwall yng nghyfluniad y system.\n"
+"Methu creu cyfrif newydd."
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr "Fedrwch chi ond cyflunio un cyfrif Exchange."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Cyflunio wedi Methu"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Wedi gorffen"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "Cyfeiriad E-bost:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "Cyfluniad Exchange"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "Enw Llawn:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "Gweinydd GC:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "Gwneud hwn yn gyfrif rhagosodedig i fi"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "LAU OWA:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "Cyfrinair:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "Cofio'r cyfrinair hwn"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "Enw defnyddiwr:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Croeso"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Croeso i Ximian Connector ar gyfer Microsoft Exchange.\n"
+"Bydd y sgriniau sy'n dilyn yn eich helpu i gyflunio Evolution\n"
+"i gysylltu â'ch cyfrif Exchange.\n"
+"\n"
+"Cliciwch y botwm \"Ymlaen\" i barhau."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Cyfluniad Ximian Connector"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Gall Ximian Connector ddefnyddio gwybodaeth o gyfrif gwe Outlook (Outlook "
+"Web Access - OWA) sydd gennych yn barod.\n"
+"\n"
+"Rhowch gyfeiriad (LAU) eich safle OWA, enw defnyddiwr, a chyfrinair, yna "
+"cliciwch \"Ymlaen\".\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"Methodd Ximian Connector â chanfod replica Global Catalog ar gyfer eich "
+"safle. Rhowch enw eich gweinydd Global Catalog. Mae'n bosib fydd rhaid i chi "
+"ofyn i weinyddwr eich system am y gwerth cywir.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+"Mae Ximian Connector wedi dod ar draws problem wrth gyflunio'ch cyfrif "
+"Exchange.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"Mae'ch cyfrif Connector yn barod i'w ddefnyddio. Cliciwch y botwm \"Defnyddio"
+"\" i\n"
+"gadw'ch gosodiadau."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"Mae gwybodaeth eich cyfrif fel a ganlyn. Cywirwch unrhyw wallau, yna "
+"cliciwch \"Ymlaen\".\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Nid yw'r cyfrinair yr un peth â chyfrinair presennol eich cyfrif. Rhowch y "
+"cyfrinair cywir"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Nid yw'r ddau gyfrinair yr un peth. Rhowch y cyfrineiriau eto."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Newid Cyfrinair"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Cadarnhau Cyfrinair:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "Cyfrinair Presennol:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "Cyfrinair Newydd:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "Mae'ch cyfrinair wedi dod i ben. Newidiwch eich cyfrinair nawr."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Awduron (darllen, creu)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "_Calendr:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "_Cysylltiadau: "
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Caniatadau Dirprwy"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Dirprwyon"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "Golygydd (darllen, creu, golygu)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Dim"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "Caniatadau ar gyfer"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "Adolygydd (darllen-yn-unig)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"Bydd y defnyddwyr yma'n medru anfon e-bost ar eich rhan\n"
+"a chael mynediad i'ch plygellau gyda'r caniatâd y rhowch chi iddyn nhw."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_Dirprwy yn medru gweld eitemau preifat"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_Golygu"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_Blwch Derbyn:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_Tasgau:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Coeden Plygell Exchange"
+
+#: ../storage/exchange-migrate.c:58
+msgid "Migrating Exchange Folders..."
+msgstr "Mudo Plygellau Exchange..."
+
+#: ../storage/exchange-migrate.c:66
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Mae lleoliad a strwythur plygellau Exchange o fewn Evolution wedi newid ers "
+"Evolution %d.%d.%d.\n"
+"\n"
+"Byddwch yn amyneddgar wrth i Evolution fudo'ch plygellau..."
+
+#: ../storage/exchange-migrate.c:99
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Rhybudd: Methodd Evolution fudo'r holl ddata cyfrif Exchange o'r fersiwn %d.%"
+"d.%d.\n"
+"Chafodd y data mo'i ddileu, ond ni fydd y fersiwn hwn o Evolution yn medru "
+"ei weld"
+
+#: ../storage/exchange-migrate.c:130
+#, c-format
+msgid "Migrating `%s':"
+msgstr "Wrthi'n mudo `%s':"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>Ar hyn o bryd, eich statws yw \"Allan o'r Swyddfa\". </b>\n"
+"\n"
+"Hoffech chi ei newid i \"Yn y Swyddfa\"?"
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>Neges Allan o'r Swyddfa:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Statws:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>Anfonir y neges a benodir isod i bob person sy'n anfon e-bost atoch "
+"chi\n"
+"tra'ch bod chi allan o'r swyddfa.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "Rwyf yn y swyddfa ar hyn o bryd"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "Rwyf allan o'r swyddfa ar hyn o bryd"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "Na, Peidio â Newid Statws"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "Cynorthwyydd Allan o'r Swyddfa"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Ie, Newid Statws"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "Rhybudd Cyfrinair yn Dod i Ben..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "Bydd eich cyfrinair yn dod i ben o fewn 7 diwrnod..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Newid Cyfrinair"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_button"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>Caniatadau</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Methu Dileu"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Methu Golygu"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Creu eitemau"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Creu is-blygellau"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "Dileu Unrhyw Eitemau"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Dileu Eitemau fy Hun"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "Golygu Unrhyw Eitem"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Golygu Eitemau fy Hun"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "Cyswllt plygell"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Perchennog plygell"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "Plygell yn weladwy"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "Darllen eitemau"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "Rôl:"
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "Wrthi'n cysylltu..."
+
+#: ../storage/main.c:183
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "Ximian Connector ar gyfer Microsoft Exchange"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "Teclyn Gosod Ximian Connector ar gyfer Microsoft Exchange"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Newid cyfrinair eich gweinydd Exchange"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Maint _Plygell"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Gweld maint plygellau personol"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "Tanysgrifio i Blygell _Defnyddiwr Arall..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Tanysgrifio i blygell sy'n berchen i ddefnyddiwr arall ar y system"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"Dad-danysgrifio o blygell a ychwanegwyd drwy'r opsiwn \"Tanysgrifio i "
+"Blygell Defnyddiwr Arall\""
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Gweld neu newid eich gosodiadau dirprwyo ar galendr Exchange"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+"Gweld neu newid eich statws Allan o'r Swyddfa a'ch neges ymateb awtomatig"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Newid Cyfrinair Exchange..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "Cynorthwyydd _Dirprwyo"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "Cynorthwyydd _Allan o'r Swyddfa"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_Dad-danysgrifio o Blygell Defnyddiwr Arall"

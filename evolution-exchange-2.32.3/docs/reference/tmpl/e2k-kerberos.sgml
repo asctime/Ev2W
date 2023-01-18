@@ -1,0 +1,59 @@
+<!-- ##### SECTION Title ##### -->
+e2k-kerberos
+
+<!-- ##### SECTION Short_Description ##### -->
+Kerberos utilities
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM E2kKerberosResult ##### -->
+<para>
+
+</para>
+
+@E2K_KERBEROS_OK: 
+@E2K_KERBEROS_USER_UNKNOWN: 
+@E2K_KERBEROS_PASSWORD_INCORRECT: 
+@E2K_KERBEROS_PASSWORD_EXPIRED: 
+@E2K_KERBEROS_PASSWORD_TOO_WEAK: 
+@E2K_KERBEROS_KDC_UNREACHABLE: 
+@E2K_KERBEROS_TIME_SKEW: 
+@E2K_KERBEROS_FAILED: 
+
+<!-- ##### FUNCTION e2k_kerberos_change_password ##### -->
+<para>
+
+</para>
+
+@user: 
+@domain: 
+@old_password: 
+@new_password: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_kerberos_check_password ##### -->
+<para>
+
+</para>
+
+@user: 
+@domain: 
+@password: 
+@Returns: 
+
+

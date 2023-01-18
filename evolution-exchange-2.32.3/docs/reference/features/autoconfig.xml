@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-autoconfig">
+<refmeta>
+<refentrytitle>Account Autoconfiguration</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+Because <application>Exchange</application> wasn't really designed for
+what Connector tries to do with it, there are a lot of different
+configuration possibilities that Connector needs to deal with.
+Autoconfiguration attempts to figure all of these out automatically so
+that the user doesn't need to enter in any more information than is
+absolutely necessary.
+</para>
+
+<refsect2>
+<title>The Initial WebDAV Connection</title>
+
+<para>
+To start things off, the user must provide three pieces of
+information: an <application>OWA</application> URL, a username, and a
+password. The <application>OWA</application> URL is used because it
+encodes several important pieces of information, and the user should
+already know what it is (and if not, it should be easy for them to
+find out by asking someone).
+</para>
+
+<para>
+If the provided URL doesn't start with "<literal>http://</literal>" or
+"<literal>https://</literal>", Connector prepends that. From the URL
+we get:
+</para>
+
+<itemizedlist>
+    <listitem><para>Whether or not to use SSL (based on whether the
+    provided URL is <literal>http</literal> or
+    <literal>https</literal>).</para></listitem>
+
+    <listitem><para>The name of the
+    <application>Exchange</application> server to connect to (which
+    may just be a front-end <application>OWA</application> server).
+    </para></listitem>
+
+    <listitem><para>The port number to use, if non-standard
+    </para></listitem>
+
+    <listitem><para>The <application>OWA</application> path
+    </para></listitem>
+
+    <listitem><para><emphasis>Possibly</emphasis> the user's mailbox
+    name (if they provided a URL like
+    <uri>http://example.com/exchange/<replaceable>mailbox-name</replaceable></uri>
+    rather than just <uri>http://example.com/exchange/</uri>).
+    </para></listitem>
+</itemizedlist>
+
+<para>
+Using that, Connector tries to log in to
+<application>OWA</application> and fetch the HTML data. There are
+various results possible:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>E2K_HTTP_CANT_RESOLVE</literal></term>
+	<listitem><para>The hostname can't be resolved. Connector will
+	suggest that the user check for typos and try again.
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>E2K_HTTP_CANT_CONNECT</literal></term>
+	<listitem><para>Can't connect to server. Connector suggests the
+	user check that the hostname is correct, and also suggests
+	toggling <literal>http</literal>/<literal>https</literal>,
+	since it's possible the server may only be listening on one
+	port.</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal><errorcode>302</errorcode> <errorname>Moved Temporarily</errorname></literal></term>
+	<listitem><para>There are three possibilities, depending on
+	the final component of the redirect URL:</para>
+
+	<variablelist>
+	    <varlistentry>
+		<term><uri>/logon.asp</uri></term>
+		<listitem><para>The server is actually
+		<application>Exchange 5.5</application>. (Many users
+		are quite convinced that their site uses
+		<application>Exchange 2000</application>, when in
+		fact, they are still running 5.5.)</para></listitem>
+	    </varlistentry>
+	    <varlistentry>
+		<term><uri>/owalogon.asp</uri></term>
+		<listitem><para>The server is using
+		<application>Exchange 2003</application> <link
+		linkend="ximian-connector-fba">forms-based authentication</link>.
+		We attempt to authenticate via that, and try again.
+		</para></listitem>
+	    </varlistentry>
+	    <varlistentry>
+		<term>anything else</term>
+		<listitem><para>The server is redirecting us to
+		another URL, so we try again there. This could happen
+		if the administrator created a redirect from an
+		easy-to-remember URL to the actual
+		<application>OWA</application> URL. Or it could mean
+		that the user provided the wrong
+		<application>Exchange</application> server name, and
+		the server is telling us to log in on a different
+		machine instead.
+		</para></listitem>
+	    </varlistentry>
+	</variablelist>
+	</listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal><errorcode>401</errorcode> <errorname>Unauthorized</errorname></literal></term>
+	<listitem><para>Again, there are several possibilities:</para>
+
+	<itemizedlist>
+	    <listitem><para>If we were trying to use NTLM
+	    authentication, but the server didn't offer NTLM, we can
+	    try falling back to Basic auth.</para></listitem>
+
+	    <listitem><para>Likewise, if we were trying to use Basic
+	    authentication, but the server didn't offer it, we can try
+	    NTLM.</para></listitem>
+
+	    <listitem><para>If we tried to use Basic auth, and didn't
+	    provide an explicit domain name as part of the username,
+	    then we can suggest that the user try that.
+	    </para></listitem>
+	</itemizedlist>
+
+	<para>Of course, it is also always possible that the user just
+	typed their password wrong, so we suggest that too.</para>
+	</listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal><errorcode>403</errorcode> <errorname>Forbidden</errorname></literal></term>
+	<listitem><para>If the server requires SSL, it will sometimes
+	be configured to return this error code on the standard HTTP
+	port. The body of the response includes a message telling the
+	user to use SSL, so we look for that, and try again with SSL
+	if appropriate.</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal><errorcode>404</errorcode> <errorname>Not Found</errorname></literal></term>
+	<listitem><para>If we are certain that we are talking to an
+	<application>Exchange</application> server (because the
+	response also included a "<literal>MS-WebStorage</literal>"
+	header), then this means that the user doesn't have a mailbox
+	on that server, and the server doesn't know where he does have
+	a mailbox.</para>
+	<para>On the other hand, if we didn't see a
+	"<literal>MS-WebStorage</literal>" header, it probably means
+	this isn't an <application>Exchange</application>
+	server.</para>
+	</listitem>
+    </varlistentry>
+    <varlistentry>
+	<term>Any <literal><errorcode>2xx</errorcode></literal></term>
+	<listitem><para>We parse the returned HTML and see if it looks
+	like <application>OWA</application>. For <application>Exchange
+	2000</application> or <application>Exchange
+	2003</application>, we expect to see a
+	<literal>&lt;FRAMESET&gt;</literal> containing the main
+	<application>OWA</application> frames. If we get back bad
+	HTML, non-HTML, or HTML that looks like <application>Exchange
+	5.5</application>, we return an error.
+	</para></listitem>
+    </varlistentry>
+</variablelist>
+
+</refsect2>
+
+<refsect2>
+<title>Further WebDAV Probes</title>
+
+<para>
+At this point, we should have the HTML of the
+<application>OWA</application> frame. (If we used NTLM authentication,
+we may also have managed to extract the NT and <application>Windows
+2000</application> domain names from the NTLM challenge, which may be
+needed later.) We extract the <literal>BASE</literal> element from the
+HTML, and consider that to be the canonical form of the
+<application>OWA</application> URI. Because of how
+<application>OWA</application> works, this URI
+<emphasis>will</emphasis> have the user's mailbox name in it, even if
+the URI we started with did not.
+</para>
+
+<para>
+The next thing we do is find the name of the server to use to access
+public folders, by finding the "Public Folders" link in
+<application>OWA</application>. This is in a different location in
+<application>Exchange 2000</application> and <application>Exchange
+2003</application>, but hopefully we know which one we are talking at
+this point, from looking at the "<literal>MS-WebStorage</literal>"
+header. So we fetch the appropriate pane of
+<application>OWA</application> (the content pane for
+<application>Exchange 2000</application>, or the navigation bar for
+<application>Exchange 2003</application>), walk through the HTML
+looking for the link, and remember the URI.
+</para>
+
+<para>
+Then we do a <command>BPROPFIND</command> on the top level of the
+mailbox to find the <literal>PR_STORE_ENTRYID</literal> (which can be
+used to find the user's "<application>Exchange 5.5</application> DN",
+which can be used to uniquely identify the user in <application>Active
+Directory</application> later), and the time zone that the user
+selected in <application>OWA</application>. The time zone is mapped
+from an <application>Exchange</application> time zone to one of
+<application>Evolution</application>'s.
+</para>
+
+<para>
+The use of <command>BPROPFIND</command> here is also for autodetection
+purposes: if it fails, we return an error to the user explaining about
+the <link linkend="ximian-connector-bug-bpropfind"><application>IIS</application>
+Lockdown <command>BPROPFIND</command> problem</link>.
+</para>
+
+<para>
+Another possibility is that we will get an authentication error here
+even though we had successfully authenticated before. This can happen
+if we are using NTLM authentication, and the user's HTTP traffic is
+being intercepted by a transparent web proxy that doesn't understand
+NTLM (for reasons explained in the <link linkend="ximian-connector-ntlm-http">NTLM
+notes</link>). So if this happens, we start over using Basic
+authentication instead.
+</para>
+
+</refsect2>
+
+<refsect2>
+<title>The Global Catalog Server</title>
+
+<para>
+At the moment, we can only autodetect the Global Catalog server if we
+are using NTLM authentication and managed to autodetect the
+<application>Windows 2000</application> domain name before. In that
+case, we do a DNS query for a service (<literal>SRV</literal>) record
+for
+<literal>_gc._tcp.<replaceable>domain-name</replaceable></literal>",
+which should give us the GC server name.
+</para>
+
+<para>
+There are other possibilities we should try if we don't have the
+domain name though: in almost all cases, the
+<application>Exchange</application> server hostname will be
+"<replaceable>something</replaceable>.<replaceable>domain-name</replaceable>",
+so we could also try that.
+</para>
+
+<para>
+Given a connection to the Global Catalog, we use the
+<application>Exchange 5.5</application> DN detected earlier to find
+the user and look up their full name and email address, and
+autodetection is complete.
+</para>
+
+</refsect2>
+
+<refsect2>
+<title>Autoconfiguration Hints</title>
+
+<para>
+It is possible for a system administrator to provide hints to the
+autoconfig process, to make things easier on users. This is done by
+creating a configuration file, which presumably would be installed
+along with the Connector binary on each machine.
+</para>
+
+<para>
+The configuration file can be stored in
+<filename>/etc/ximian/connector.conf</filename>, or in
+<filename><replaceable>$PREFIX</replaceable>/etc/connector.conf</filename>.
+It consists of a series of lines such as:
+</para>
+
+<informalexample><programlisting>
+OWA-URL: https://exchange.rupertcorp.com/exchange/
+Disable-Plaintext: true
+</programlisting></informalexample>
+
+<para>
+The available hints are:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>OWA-URL</literal></term>
+	<listitem><para>The default <application>OWA</application> URL
+	to suggest at the beginning of autoconfiguration.
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>Global-Catalog</literal></term>
+	<listitem><para>The Global Catalog server to use.
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>NT-Domain</literal></term>
+	<listitem><para>The <application>Windows NT</application>
+	domain name (eg, <literal>RUPERTCORP</literal>), to be
+	prefixed to the username when authenticating).
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>Domain</literal></term>
+	<listitem><para>The <application>Windows 2000</application>
+	domain name (eg, <literal>rupertcorp.com</literal>).
+	</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>Disable-Plaintext</literal></term>
+	<listitem><para>If <literal>true</literal>, NTLM
+	authentication will be required. Autoconfiguration will not
+	fall back to Basic auth, even if NTLM fails.
+	</para></listitem>
+    </varlistentry>
+</variablelist>
+
+</refsect2>
+
+</refentry>

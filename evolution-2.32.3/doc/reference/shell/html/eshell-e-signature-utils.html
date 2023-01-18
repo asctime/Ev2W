@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>More Signature Utilities</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Container-for-Signatures.html" title="Container for Signatures">
+<link rel="next" href="eshell-Miscellaneous-Utilities.html" title="Miscellaneous Utilities">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Container-for-Signatures.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Miscellaneous-Utilities.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-e-signature-utils.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-e-signature-utils.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="More Signature Utilities">
+<a name="eshell-e-signature-utils"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-e-signature-utils.top_of_page"></a>More Signature Utilities</span></h2>
+<p>More Signature Utilities</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-e-signature-utils.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView">EWebView</a>;
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="eshell-e-signature-utils.html#e-web-view-new" title="e_web_view_new ()">e_web_view_new</a>                      (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-clear" title="e_web_view_clear ()">e_web_view_clear</a>                    (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-load-string" title="e_web_view_load_string ()">e_web_view_load_string</a>              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-animate" title="e_web_view_get_animate ()">e_web_view_get_animate</a>              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-animate" title="e_web_view_set_animate ()">e_web_view_set_animate</a>              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> animate</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-caret-mode" title="e_web_view_get_caret_mode ()">e_web_view_get_caret_mode</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-caret-mode" title="e_web_view_set_caret_mode ()">e_web_view_set_caret_mode</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> caret_mode</code></em>);
+<a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="returnvalue">GtkTargetList</span></a> *     <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-copy-target-list" title="e_web_view_get_copy_target_list ()">e_web_view_get_copy_target_list</a>     (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-disable-printing" title="e_web_view_get_disable_printing ()">e_web_view_get_disable_printing</a>     (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-disable-printing" title="e_web_view_set_disable_printing ()">e_web_view_set_disable_printing</a>     (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> disable_printing</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-disable-save-to-disk" title="e_web_view_get_disable_save_to_disk ()">e_web_view_get_disable_save_to_disk</a> (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-disable-save-to-disk" title="e_web_view_set_disable_save_to_disk ()">e_web_view_set_disable_save_to_disk</a> (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> disable_save_to_disk</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-editable" title="e_web_view_get_editable ()">e_web_view_get_editable</a>             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-editable" title="e_web_view_set_editable ()">e_web_view_set_editable</a>             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> editable</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-inline-spelling" title="e_web_view_get_inline_spelling ()">e_web_view_get_inline_spelling</a>      (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-inline-spelling" title="e_web_view_set_inline_spelling ()">e_web_view_set_inline_spelling</a>      (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> inline_spelling</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-magic-links" title="e_web_view_get_magic_links ()">e_web_view_get_magic_links</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-magic-links" title="e_web_view_set_magic_links ()">e_web_view_set_magic_links</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> magic_links</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-magic-smileys" title="e_web_view_get_magic_smileys ()">e_web_view_get_magic_smileys</a>        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-magic-smileys" title="e_web_view_set_magic_smileys ()">e_web_view_set_magic_smileys</a>        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> magic_smileys</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-selected-uri" title="e_web_view_get_selected_uri ()">e_web_view_get_selected_uri</a>         (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-selected-uri" title="e_web_view_set_selected_uri ()">e_web_view_set_selected_uri</a>         (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *selected_uri</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-open-proxy" title="e_web_view_get_open_proxy ()">e_web_view_get_open_proxy</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-open-proxy" title="e_web_view_set_open_proxy ()">e_web_view_set_open_proxy</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *open_proxy</code></em>);
+<a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="returnvalue">GtkTargetList</span></a> *     <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-paste-target-list" title="e_web_view_get_paste_target_list ()">e_web_view_get_paste_target_list</a>    (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-print-proxy" title="e_web_view_get_print_proxy ()">e_web_view_get_print_proxy</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-print-proxy" title="e_web_view_set_print_proxy ()">e_web_view_set_print_proxy</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *print_proxy</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-save-as-proxy" title="e_web_view_get_save_as_proxy ()">e_web_view_get_save_as_proxy</a>        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-set-save-as-proxy" title="e_web_view_set_save_as_proxy ()">e_web_view_set_save_as_proxy</a>        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *save_as_proxy</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-action" title="e_web_view_get_action ()">e_web_view_get_action</a>               (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="returnvalue">GtkActionGroup</span></a> *    <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-action-group" title="e_web_view_get_action_group ()">e_web_view_get_action_group</a>         (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-e-signature-utils.html#e-web-view-extract-uri" title="e_web_view_extract_uri ()">e_web_view_extract_uri</a>              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> *event</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkHTML</span> *frame</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-copy-clipboard" title="e_web_view_copy_clipboard ()">e_web_view_copy_clipboard</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-cut-clipboard" title="e_web_view_cut_clipboard ()">e_web_view_cut_clipboard</a>            (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-is-selection-active" title="e_web_view_is_selection_active ()">e_web_view_is_selection_active</a>      (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-paste-clipboard" title="e_web_view_paste_clipboard ()">e_web_view_paste_clipboard</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-scroll-forward" title="e_web_view_scroll_forward ()">e_web_view_scroll_forward</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-e-signature-utils.html#e-web-view-scroll-backward" title="e_web_view_scroll_backward ()">e_web_view_scroll_backward</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-select-all" title="e_web_view_select_all ()">e_web_view_select_all</a>               (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-unselect-all" title="e_web_view_unselect_all ()">e_web_view_unselect_all</a>             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-zoom-100" title="e_web_view_zoom_100 ()">e_web_view_zoom_100</a>                 (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-zoom-in" title="e_web_view_zoom_in ()">e_web_view_zoom_in</a>                  (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-zoom-out" title="e_web_view_zoom_out ()">e_web_view_zoom_out</a>                 (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="returnvalue">GtkUIManager</span></a> *      <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-ui-manager" title="e_web_view_get_ui_manager ()">e_web_view_get_ui_manager</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="eshell-e-signature-utils.html#e-web-view-get-popup-menu" title="e_web_view_get_popup_menu ()">e_web_view_get_popup_menu</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-show-popup-menu" title="e_web_view_show_popup_menu ()">e_web_view_show_popup_menu</a>          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> *event</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkMenu.html#GtkMenuPositionFunc"><span class="type">GtkMenuPositionFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-status-message" title="e_web_view_status_message ()">e_web_view_status_message</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *status_message</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-stop-loading" title="e_web_view_stop_loading ()">e_web_view_stop_loading</a>             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-e-signature-utils.html#e-web-view-update-actions" title="e_web_view_update_actions ()">e_web_view_update_actions</a>           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-e-signature-utils.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-e-signature-utils.details"></a><h2>Details</h2>
+<div class="refsect2" title="EWebView">
+<a name="EWebView"></a><h3>EWebView</h3>
+<pre class="programlisting">typedef struct {
+	GtkHTML parent;
+	EWebViewPrivate *priv;
+} EWebView;
+</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_new ()">
+<a name="e-web-view-new"></a><h3>e_web_view_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_web_view_new                      (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_clear ()">
+<a name="e-web-view-clear"></a><h3>e_web_view_clear ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_clear                    (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_load_string ()">
+<a name="e-web-view-load-string"></a><h3>e_web_view_load_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_load_string              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_animate ()">
+<a name="e-web-view-get-animate"></a><h3>e_web_view_get_animate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_animate              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_animate ()">
+<a name="e-web-view-set-animate"></a><h3>e_web_view_set_animate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_animate              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> animate</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_caret_mode ()">
+<a name="e-web-view-get-caret-mode"></a><h3>e_web_view_get_caret_mode ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_caret_mode           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_caret_mode ()">
+<a name="e-web-view-set-caret-mode"></a><h3>e_web_view_set_caret_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_caret_mode           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> caret_mode</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_copy_target_list ()">
+<a name="e-web-view-get-copy-target-list"></a><h3>e_web_view_get_copy_target_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="returnvalue">GtkTargetList</span></a> *     e_web_view_get_copy_target_list     (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_disable_printing ()">
+<a name="e-web-view-get-disable-printing"></a><h3>e_web_view_get_disable_printing ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_disable_printing     (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_disable_printing ()">
+<a name="e-web-view-set-disable-printing"></a><h3>e_web_view_set_disable_printing ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_disable_printing     (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> disable_printing</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_disable_save_to_disk ()">
+<a name="e-web-view-get-disable-save-to-disk"></a><h3>e_web_view_get_disable_save_to_disk ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_disable_save_to_disk (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_disable_save_to_disk ()">
+<a name="e-web-view-set-disable-save-to-disk"></a><h3>e_web_view_set_disable_save_to_disk ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_disable_save_to_disk (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> disable_save_to_disk</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_editable ()">
+<a name="e-web-view-get-editable"></a><h3>e_web_view_get_editable ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_editable             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_editable ()">
+<a name="e-web-view-set-editable"></a><h3>e_web_view_set_editable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_editable             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> editable</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_inline_spelling ()">
+<a name="e-web-view-get-inline-spelling"></a><h3>e_web_view_get_inline_spelling ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_inline_spelling      (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_inline_spelling ()">
+<a name="e-web-view-set-inline-spelling"></a><h3>e_web_view_set_inline_spelling ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_inline_spelling      (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> inline_spelling</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_magic_links ()">
+<a name="e-web-view-get-magic-links"></a><h3>e_web_view_get_magic_links ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_magic_links          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_magic_links ()">
+<a name="e-web-view-set-magic-links"></a><h3>e_web_view_set_magic_links ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_magic_links          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> magic_links</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_magic_smileys ()">
+<a name="e-web-view-get-magic-smileys"></a><h3>e_web_view_get_magic_smileys ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_get_magic_smileys        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_magic_smileys ()">
+<a name="e-web-view-set-magic-smileys"></a><h3>e_web_view_set_magic_smileys ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_magic_smileys        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> magic_smileys</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_selected_uri ()">
+<a name="e-web-view-get-selected-uri"></a><h3>e_web_view_get_selected_uri ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_web_view_get_selected_uri         (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_selected_uri ()">
+<a name="e-web-view-set-selected-uri"></a><h3>e_web_view_set_selected_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_selected_uri         (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *selected_uri</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_open_proxy ()">
+<a name="e-web-view-get-open-proxy"></a><h3>e_web_view_get_open_proxy ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         e_web_view_get_open_proxy           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_open_proxy ()">
+<a name="e-web-view-set-open-proxy"></a><h3>e_web_view_set_open_proxy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_open_proxy           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *open_proxy</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_paste_target_list ()">
+<a name="e-web-view-get-paste-target-list"></a><h3>e_web_view_get_paste_target_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="returnvalue">GtkTargetList</span></a> *     e_web_view_get_paste_target_list    (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_print_proxy ()">
+<a name="e-web-view-get-print-proxy"></a><h3>e_web_view_get_print_proxy ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         e_web_view_get_print_proxy          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_print_proxy ()">
+<a name="e-web-view-set-print-proxy"></a><h3>e_web_view_set_print_proxy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_print_proxy          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *print_proxy</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_save_as_proxy ()">
+<a name="e-web-view-get-save-as-proxy"></a><h3>e_web_view_get_save_as_proxy ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         e_web_view_get_save_as_proxy        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_set_save_as_proxy ()">
+<a name="e-web-view-set-save-as-proxy"></a><h3>e_web_view_set_save_as_proxy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_set_save_as_proxy        (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *save_as_proxy</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_action ()">
+<a name="e-web-view-get-action"></a><h3>e_web_view_get_action ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         e_web_view_get_action               (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_action_group ()">
+<a name="e-web-view-get-action-group"></a><h3>e_web_view_get_action_group ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="returnvalue">GtkActionGroup</span></a> *    e_web_view_get_action_group         (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group_name</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_extract_uri ()">
+<a name="e-web-view-extract-uri"></a><h3>e_web_view_extract_uri ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_web_view_extract_uri              (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> *event</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkHTML</span> *frame</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_copy_clipboard ()">
+<a name="e-web-view-copy-clipboard"></a><h3>e_web_view_copy_clipboard ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_copy_clipboard           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_cut_clipboard ()">
+<a name="e-web-view-cut-clipboard"></a><h3>e_web_view_cut_clipboard ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_cut_clipboard            (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_is_selection_active ()">
+<a name="e-web-view-is-selection-active"></a><h3>e_web_view_is_selection_active ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_is_selection_active      (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_paste_clipboard ()">
+<a name="e-web-view-paste-clipboard"></a><h3>e_web_view_paste_clipboard ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_paste_clipboard          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_scroll_forward ()">
+<a name="e-web-view-scroll-forward"></a><h3>e_web_view_scroll_forward ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_scroll_forward           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_scroll_backward ()">
+<a name="e-web-view-scroll-backward"></a><h3>e_web_view_scroll_backward ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_web_view_scroll_backward          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_select_all ()">
+<a name="e-web-view-select-all"></a><h3>e_web_view_select_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_select_all               (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_unselect_all ()">
+<a name="e-web-view-unselect-all"></a><h3>e_web_view_unselect_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_unselect_all             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_zoom_100 ()">
+<a name="e-web-view-zoom-100"></a><h3>e_web_view_zoom_100 ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_zoom_100                 (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_zoom_in ()">
+<a name="e-web-view-zoom-in"></a><h3>e_web_view_zoom_in ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_zoom_in                  (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_zoom_out ()">
+<a name="e-web-view-zoom-out"></a><h3>e_web_view_zoom_out ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_zoom_out                 (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_ui_manager ()">
+<a name="e-web-view-get-ui-manager"></a><h3>e_web_view_get_ui_manager ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="returnvalue">GtkUIManager</span></a> *      e_web_view_get_ui_manager           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_get_popup_menu ()">
+<a name="e-web-view-get-popup-menu"></a><h3>e_web_view_get_popup_menu ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_web_view_get_popup_menu           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_show_popup_menu ()">
+<a name="e-web-view-show-popup-menu"></a><h3>e_web_view_show_popup_menu ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_show_popup_menu          (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> *event</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkMenu.html#GtkMenuPositionFunc"><span class="type">GtkMenuPositionFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_status_message ()">
+<a name="e-web-view-status-message"></a><h3>e_web_view_status_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_status_message           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *status_message</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_stop_loading ()">
+<a name="e-web-view-stop-loading"></a><h3>e_web_view_stop_loading ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_stop_loading             (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2" title="e_web_view_update_actions ()">
+<a name="e-web-view-update-actions"></a><h3>e_web_view_update_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_web_view_update_actions           (<em class="parameter"><code><a class="link" href="eshell-e-signature-utils.html#EWebView" title="EWebView"><span class="type">EWebView</span></a> *web_view</code></em>);</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

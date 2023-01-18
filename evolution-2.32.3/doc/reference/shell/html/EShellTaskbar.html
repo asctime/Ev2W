@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellTaskbar</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShellSidebar.html" title="EShellSidebar">
+<link rel="next" href="EShellSearchbar.html" title="EShellSearchbar">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShellSidebar.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="EShellSearchbar.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellTaskbar.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellTaskbar.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellTaskbar.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#EShellTaskbar.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#EShellTaskbar.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellTaskbar">
+<a name="EShellTaskbar"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellTaskbar.top_of_page"></a>EShellTaskbar</span></h2>
+<p>EShellTaskbar — the bottom of the main window</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellTaskbar.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-taskbar.h&gt;
+
+                    <a class="link" href="EShellTaskbar.html#EShellTaskbar-struct" title="EShellTaskbar">EShellTaskbar</a>;
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="EShellTaskbar.html#e-shell-taskbar-new" title="e_shell_taskbar_new ()">e_shell_taskbar_new</a>                 (<em class="parameter"><code><span class="type">struct _EShellView</span> *shell_view</code></em>);
+struct <a class="link" href="EShellView.html" title="EShellView"><span class="returnvalue">_EShellView</span></a> * <a class="link" href="EShellTaskbar.html#e-shell-taskbar-get-shell-view" title="e_shell_taskbar_get_shell_view ()">e_shell_taskbar_get_shell_view</a>     (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellTaskbar.html#e-shell-taskbar-get-message" title="e_shell_taskbar_get_message ()">e_shell_taskbar_get_message</a>         (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellTaskbar.html#e-shell-taskbar-set-message" title="e_shell_taskbar_set_message ()">e_shell_taskbar_set_message</a>         (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellTaskbar.html#e-shell-taskbar-unset-message" title="e_shell_taskbar_unset_message ()">e_shell_taskbar_unset_message</a>       (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="EShellTaskbar.html#e-shell-taskbar-get-activity-count" title="e_shell_taskbar_get_activity_count ()">e_shell_taskbar_get_activity_count</a>  (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellTaskbar.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a href="http://library.gnome.org/devel/gtk/unstable/GtkObject.html">GtkObject</a>
+               +----<a href="http://library.gnome.org/devel/gtk/GtkWidget.html">GtkWidget</a>
+                     +----<a href="http://library.gnome.org/devel/gtk/GtkContainer.html">GtkContainer</a>
+                           +----<a href="http://library.gnome.org/devel/gtk/GtkBox.html">GtkBox</a>
+                                 +----<a href="http://library.gnome.org/devel/gtk/GtkHBox.html">GtkHBox</a>
+                                       +----EShellTaskbar
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="EShellTaskbar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+EShellTaskbar implements
+ AtkImplementorIface,  <a href="http://library.gnome.org/devel/gtk/GtkBuildable.html">GtkBuildable</a>,  <a href="http://library.gnome.org/devel/gtk/gtk3-Orientable.html#GtkOrientable">GtkOrientable</a> and  <a class="link" href="EExtensible.html" title="EExtensible">EExtensible</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EShellTaskbar.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellTaskbar.html#EShellTaskbar--message" title='The "message" property'>message</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct
+  "<a class="link" href="EShellTaskbar.html#EShellTaskbar--shell-view" title='The "shell-view" property'>shell-view</a>"               <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>*           : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellTaskbar.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellTaskbar.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellTaskbar">
+<a name="EShellTaskbar-struct"></a><h3>EShellTaskbar</h3>
+<pre class="programlisting">typedef struct _EShellTaskbar EShellTaskbar;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_taskbar_new ()">
+<a name="e-shell-taskbar-new"></a><h3>e_shell_taskbar_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_shell_taskbar_new                 (<em class="parameter"><code><span class="type">struct _EShellView</span> *shell_view</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> instance belonging to <em class="parameter"><code>shell_view</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> instance
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_taskbar_get_shell_view ()">
+<a name="e-shell-taskbar-get-shell-view"></a><h3>e_shell_taskbar_get_shell_view ()</h3>
+<pre class="programlisting">struct <a class="link" href="EShellView.html" title="EShellView"><span class="returnvalue">_EShellView</span></a> * e_shell_taskbar_get_shell_view     (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> that was passed to <a class="link" href="EShellTaskbar.html#e-shell-taskbar-new" title="e_shell_taskbar_new ()"><code class="function">e_shell_taskbar_new()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_taskbar</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> to which <em class="parameter"><code>shell_taskbar</code></em> belongs
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_taskbar_get_message ()">
+<a name="e-shell-taskbar-get-message"></a><h3>e_shell_taskbar_get_message ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_taskbar_get_message         (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);</pre>
+<p>
+Returns the message currently shown in the taskbar, or an empty string
+if no message is shown.  Taskbar messages are used primarily for menu
+tooltips.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_taskbar</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the current taskbar message
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_taskbar_set_message ()">
+<a name="e-shell-taskbar-set-message"></a><h3>e_shell_taskbar_set_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_taskbar_set_message         (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>);</pre>
+<p>
+Shows a message in the taskbar.  If <em class="parameter"><code>message</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> or an empty string,
+the taskbar message is cleared.  Taskbar messages are used primarily for
+menu tooltips.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_taskbar</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>the message to show
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_taskbar_unset_message ()">
+<a name="e-shell-taskbar-unset-message"></a><h3>e_shell_taskbar_unset_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_taskbar_unset_message       (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);</pre>
+<p>
+This is equivalent to passing a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> message to
+<a class="link" href="EShellTaskbar.html#e-shell-taskbar-set-message" title="e_shell_taskbar_set_message ()"><code class="function">e_shell_taskbar_set_message()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_taskbar</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_taskbar_get_activity_count ()">
+<a name="e-shell-taskbar-get-activity-count"></a><h3>e_shell_taskbar_get_activity_count ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               e_shell_taskbar_get_activity_count  (<em class="parameter"><code><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> *shell_taskbar</code></em>);</pre>
+<p>
+Returns the number of active <span class="type">EActivity</span> instances being tracked.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_taskbar</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of <span class="type">EActivity</span> instances
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EShellTaskbar.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "message" property'>
+<a name="EShellTaskbar--message"></a><h3>The <code class="literal">"message"</code> property</h3>
+<pre class="programlisting">  "message"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct</pre>
+<p>
+The message to display in the taskbar.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-view" property'>
+<a name="EShellTaskbar--shell-view"></a><h3>The <code class="literal">"shell-view"</code> property</h3>
+<pre class="programlisting">  "shell-view"               <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>*           : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> to which the taskbar widget belongs.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

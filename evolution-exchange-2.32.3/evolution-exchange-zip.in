@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Build Win32 zipfile distribution of Evolution-Exchange. Just a
+# runtime zipfile, no developer package. Not for end-users. They will
+# install Evolution using an executable installer combining all
+# necessary pieces, of course, not unzipping each module separately.
+
+ZIP=/tmp/evolution-exchange-@VERSION@.zip
+rm $ZIP
+
+# Some stuff is installed into evolution's and evolution-data-server's
+# prefixes, and there is no way to override that in configure.in. Oh
+# well.
+cd `pkg-config --variable=prefix evolution-shell`
+zip $ZIP -@ <<EOF
+libexec/evolution/@BASE_VERSION@/evolution-exchange-storage.exe
+bin/exchange-connector-setup-@BASE_VERSION@.exe
+EOF
+
+cd `pkg-config --variable=prefix camel-provider-@API_VERSION@`
+zip $ZIP -@ <<EOF
+lib/evolution-data-server-@API_VERSION@/camel-providers/libcamelexchange.urls
+lib/evolution-data-server-@API_VERSION@/camel-providers/libcamelexchange.dll
+EOF
+
+# Rest has been installed in our own prefix.
+cd @prefix@
+zip -r $ZIP -@ <<EOF
+lib/bonobo/servers/GNOME_Evolution_Exchange_Storage_@BASE_VERSION@.server
+share/evolution-exchange/@BASE_VERSION@/glade
+share/evolution-exchange/@BASE_VERSION@/images
+share/evolution-exchange/@BASE_VERSION@/ui
+EOF
+
+zip $ZIP share/locale/*/LC_MESSAGES/evolution-exchange-@BASE_VERSION@.mo

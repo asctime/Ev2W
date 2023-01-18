@@ -1,0 +1,1412 @@
+# Evolution-Exchange'i eesti keele tõlge.
+# Estonian translation of Evolution-Exchange.
+#
+# Copyright (C) 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2007–2010 The GNOME Project.
+# This file is distributed under the same license as the evolution-exchange
+# package.
+#
+# Ivar Smolin <okul linux ee>, 2005–2010.
+# Mattias Põldaru <mahfiaz gmail com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Evolution-Exchange 2.32\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=evolution-exchange&component=general\n"
+"POT-Creation-Date: 2010-09-13 11:13+0000\n"
+"PO-Revision-Date: 2010-09-18 21:37+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "GAL-puhvrite värskendamise sageduse määramine."
+
+msgid ""
+"This key specifies the number of days' interval between GAL cache refreshes. "
+"Set this value to zero if you don't want to update GAL and use the current "
+"cache forever. This will work only if you have enabled offline caching for "
+"GAL."
+msgstr ""
+"Selle võtmega määratakse päevade arv, mille möödudes tuleb GAL-puhvreid "
+"värskendada. Kui sul pole vaja GAL-puhvreid värskendada, määra väärtuseks 0. "
+"See võti rakendub ainult juhul, kui sul on GAL-i tarbeks võrguvaba režiimi "
+"puhverdamine lubatud."
+
+#, c-format
+msgid "Operation failed with status %d"
+msgstr "Tegevus nurjus olekuga %d"
+
+msgid "Cancelled"
+msgstr "Tühistatud"
+
+msgid "Searching..."
+msgstr "Otsimine..."
+
+msgid "Reconnecting to LDAP server..."
+msgstr "Taasühendumine LDAP serverisse..."
+
+msgid "Receiving LDAP search results..."
+msgstr "LDAP otsingutulemuste vastuvõtmine..."
+
+msgid "Error performing search"
+msgstr "Viga otsingu läbiviimisel"
+
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Ressurss '%s' on valitud aja vältel hõivatud."
+
+msgid "No Subject"
+msgstr "Teema puudub"
+
+#, c-format
+msgid "This message is not available in offline mode."
+msgstr "See sõnum pole autonoomses režiimis saadaval."
+
+#, c-format
+msgid "You cannot expunge in offline mode."
+msgstr "Kausta pole autonoomses režiimis võimalik puhastada."
+
+msgid "Moving messages"
+msgstr "Sõnumite ümbertõstmine"
+
+msgid "Copying messages"
+msgstr "Sõnumite kopeerimine"
+
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Kataloogi %s pole võimalik luua: %s"
+
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%s jaoks pole võimalik kokkuvõtet laadida"
+
+#, c-format
+msgid "Could not create cache for %s: "
+msgstr "%s jaoks pole võimalik puhvrit luua: "
+
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s jaoks pole võimalik päevikut luua"
+
+msgid "Scanning for changed messages"
+msgstr "Sõnumite läbivaatus muudetud sõnumite leidmiseks"
+
+msgid "Fetching summary information for new messages"
+msgstr "Uute sõnumite kokkuvõtvate andmete hankimine"
+
+#, c-format
+msgid "No folder name found"
+msgstr "Kausta nime ei leitud"
+
+#, c-format
+msgid "Folder doesn't exist"
+msgstr "Kausta pole olemas"
+
+#, c-format
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "Kausta pole võimalik autonoomses režiimis lisada: puhver pole saadaval"
+
+msgid "Cannot append message in offline mode: "
+msgstr "Kausta pole võimalik autonoomses režiimis lisada: "
+
+msgid "Secure or Plaintext Password"
+msgstr "Turvaline või avatekstiline parool"
+
+msgid "Plaintext Password"
+msgstr "Avatekstiline parool"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+msgid "Secure Password"
+msgstr "Turvaline parool"
+
+msgid "Checking for New Mail"
+msgstr "Uute sõnumite kontroll"
+
+msgid "C_heck for new messages in all folders"
+msgstr "_Rämpssõnumeid kontrollitakse kõigis kaustades"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+msgid "Windows User_name:"
+msgstr "Windowsi kasutaja_nimi:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+msgid "Global Address List/Active Directory"
+msgstr "Global Address List/Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+msgid "_Global Catalog server name:"
+msgstr "_Globaalse kataloogiserveri nimi:"
+
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "GA_L vastuste arvu piirang: %s"
+
+msgid "Authentication _Type:"
+msgstr "Autentimise _liik:"
+
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "GAL-i _lehitsemine on lubatud allalaadimise piirangu täitumiseni"
+
+msgid "_Expand groups of contacts in GAL to contact lists"
+msgstr "_Kontaktigruppide laiendamine GAL kontaktiloendis"
+
+msgid "Options"
+msgstr "Valikud"
+
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "_Parooli aegumishoiatuse periood: %s"
+
+msgid "Automatically synchroni_ze account locally"
+msgstr "Ko_nto automaatne kohapeale sünkroniseerimine"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr ""
+"Filtrite r_akendamine kõigile selle serveri Sisendkasti uutele sõnumitele"
+
+msgid "Check new messages for _Junk contents"
+msgstr "Uute sõnumite sisule tehakse _rämpspostikontroll"
+
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Rämpssõnumeid kontrollitakse ainult sis_endkaustas"
+
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "E-posti (ja muude andmete) käsitlemiseks Microsoft Exchange serveris"
+
+#. i18n: "NTLM" probably doesn't translate
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"Selle valikuga kasutab Exchange server ühendumisel turvalise parooliga "
+"(NTLM) autentimist."
+
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"Selle valikuga kasutab Exchange server ühendumisel standardset avatekstilise "
+"parooliga autentimist."
+
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange server %s"
+
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Kasutaja %s Exchange konto hostil %s"
+
+#, c-format
+msgid "Could not authenticate to server. (Password incorrect?)"
+msgstr "Serverisse pole võimalik autentida. (Vale parool?)"
+
+#, c-format
+msgid "No such folder %s"
+msgstr "Kausta %s ei ole"
+
+#, c-format
+msgid "Cannot create folder in offline mode."
+msgstr "Kausta pole autonoomses režiimis võimalik luua."
+
+#, c-format
+msgid "Cannot delete folder in offline mode."
+msgstr "Kausta pole autonoomses režiimis võimalik kustutada."
+
+#, c-format
+msgid "Cannot rename folder in offline mode."
+msgstr "Kausta pole autonoomses režiimis võimalik ümber nimetada."
+
+#, c-format
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Kausta pole autonoomses režiimis võimalik tellida."
+
+#, c-format
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Kaustas tellimusest pole autonoomses režiimis võimalik loobuda."
+
+#, c-format
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Exchange transporti saab kasutada ainult Exchange e-posti allikatega"
+
+#, c-format
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Sõnumit pole võimalik saata: üks või enam saajaid on vigased"
+
+#, c-format
+msgid "Could not find 'From' address in message"
+msgstr "Sõnumist pole võimalik 'Saatja' aadressi leida"
+
+msgid "Could not get new messages"
+msgstr "Uusi sõnumeid pole võimalik hankida"
+
+msgid "Could not open folder"
+msgstr "Kausta pole võimalik avada"
+
+msgid "Could not open folder: Permission denied"
+msgstr "Kausta pole võimalik avada: Ligipääs keelatud"
+
+msgid "No such folder"
+msgstr "Sellist kausta pole"
+
+msgid "Permission denied"
+msgstr "Ligipääs keelatud"
+
+msgid "Could not create folder."
+msgstr "Kausta pole võimalik luua."
+
+msgid "Could not open Deleted Items folder"
+msgstr "Kustutatud kirjete kausta pole võimalik avada"
+
+msgid "Could not empty Deleted Items folder"
+msgstr "Kustutatud kirjete kausta pole võimalik tühjendada"
+
+msgid "Permission denied. Could not delete certain messages."
+msgstr "Ligipääs keelatud. Mõnda sõnumit pole võimalik kustutada."
+
+msgid "Could not append message; mailbox is over quota"
+msgstr "Sõnumit pole võimalik lisada; postkasti maht ületab kvooti"
+
+msgid "Could not append message"
+msgstr "Sõnumit pole võimalik lisada"
+
+msgid "No such message"
+msgstr "Sellist sõnumit pole"
+
+msgid "Message has been deleted"
+msgstr "Sõnum on kustutatud"
+
+msgid "Error retrieving message"
+msgstr "Viga sõnumi vastuvõtmisel"
+
+msgid "Mailbox does not support full-text searching"
+msgstr "Postkast ei toeta täistekstiotsingut"
+
+msgid "Unable to move/copy messages"
+msgstr "Sõnumeid pole võimalik kopeerida või ümber tõsta"
+
+msgid "No mail submission URI for this mailbox"
+msgstr "Sellele postkastile pole posti tellimise URI"
+
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Server ei nõustu posti transportimisega läbi Exchange"
+
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"Sinu kontol pole õiguset kasutada\n"
+"<%s> saatja aadressiks."
+
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Sõnumit pole võimalik saata.\n"
+"See võib tähendada, et Sinu konto ületab kehtestatud kvooti."
+
+msgid "Could not send message"
+msgstr "Sõnumit pole võimalik saata"
+
+msgid "Generic error"
+msgstr "Üldine viga"
+
+msgid "Folder already exists"
+msgstr "Kaust on juba olemas"
+
+msgid "Out of Office"
+msgstr "Kontorist väljas"
+
+msgid ""
+"The message specified below will be automatically sent to \n"
+"each person who sends mail to you while you are out of the office."
+msgstr ""
+"Allpool olev sõnum saadetakse automaatselt kõigile isikutele,\n"
+"kes saadavad sulle e-posti ajal, mil sind pole kontoris."
+
+msgid "Status:"
+msgstr "Olek:"
+
+msgid "I am out of the office"
+msgstr "Ma pole kontoris"
+
+msgid "I am in the office"
+msgstr "Ma olen kontoris"
+
+#. Security settings
+msgid "Security"
+msgstr "Turvalisus"
+
+#. Change Password
+msgid "Change the password for Exchange account"
+msgstr "Exchange konto parooli muutmine"
+
+msgid "Change Password"
+msgstr "Paroolivahetus"
+
+#. Delegation Assistant
+msgid "Manage the delegate settings for Exchange account"
+msgstr "Exchange konto delegaatide sätete haldus"
+
+msgid "Delegation Assistant"
+msgstr "Delegeerimisabiline"
+
+#. Miscelleneous settings
+msgid "Miscellaneous"
+msgstr "Muu"
+
+#. Folder Size
+msgid "View the size of all Exchange folders"
+msgstr "Exchange kaustade suuruse kuvamine"
+
+msgid "Folder Size"
+msgstr "Kausta suurus"
+
+msgid "Exchange Settings"
+msgstr "Exchange sätted"
+
+msgid "_OWA URL:"
+msgstr "_OWA URL:"
+
+msgid "A_uthenticate"
+msgstr "_Autendi"
+
+msgid "Mailbox name is _different from username"
+msgstr "Postkasti nimi ei _kattu kasutajanimega"
+
+msgid "_Mailbox:"
+msgstr "_Postkast:"
+
+msgid "_Authentication Type"
+msgstr "_Autentimise liik"
+
+msgid "Ch_eck for Supported Types"
+msgstr "_Kontrolli toetatud liike"
+
+#, c-format
+msgid "%s KB"
+msgstr "%s KB"
+
+#, c-format
+msgid "0 KB"
+msgstr "0 KB"
+
+#. FIXME: Take care of i18n
+msgid "Size:"
+msgstr "Suurus:"
+
+msgid ""
+"Evolution is in offline mode. You cannot create or modify folders now.\n"
+"Please switch to online mode for such operations."
+msgstr ""
+"Evolution töötab autonoomses režiimis. Praegu ei ole võimalik kaustu\n"
+"luua ega muuta. Nendeks toiminguteks lülitu võrgurežiimi."
+
+msgid "_Location:"
+msgstr "_Asukoht:"
+
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"Sinu praegune parool on aegunud. Palun muuda oma parool viivitamatult ära."
+
+msgid "Current _Password:"
+msgstr "Praegune _parool:"
+
+msgid "_New Password:"
+msgstr "_Uus parool:"
+
+msgid "_Confirm Password:"
+msgstr "Parool _uuesti:"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Sisestatud parool ei klapi Sinu konto praeguse parooliga. Palun sisesta õige "
+"parool"
+
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Paroolid ei klapi omavahel. Palun sisesta paroolid uuesti."
+
+#. Translators: The %d is replaced with the actual number of days
+#, c-format
+msgid "Your password will expire in the next %d day"
+msgid_plural "Your password will expire in the next %d days"
+msgstr[0] "Sinu parool aegub %d päeva pärast"
+msgstr[1] "Sinu parool aegub %d päeva pärast"
+
+msgid "Password Expiry Warning..."
+msgstr "Parooli aegumishoiatus..."
+
+msgid "_Change Password"
+msgstr "_Muuda parooli"
+
+msgid "Out of Office Assistant"
+msgstr "Assistent kontorist äraolekul"
+
+msgid "Currently, your status is \"Out of the Office\"."
+msgstr "Praegu on su olek \"Ma pole hetkel kontoris\"."
+
+msgid "Would you like to change your status to \"In the Office\"?"
+msgstr "Kas sa soovid määrata uueks olekuks \"Kontoris\"?"
+
+msgid "_No, Don't Change Status"
+msgstr "_Ei, olekut mitte muuta"
+
+msgid "_Yes, Change Status"
+msgstr "_Jah, olekut tuleb muuta"
+
+#, c-format
+msgid "Enter Password for %s"
+msgstr "Sisesta %s parool"
+
+msgid "Calendar"
+msgstr "Kalender"
+
+msgid "Tasks"
+msgstr "Ülesanded"
+
+msgid "Inbox"
+msgstr "Sisendkast"
+
+msgid "Contacts"
+msgstr "Kontaktid"
+
+msgid "Custom"
+msgstr "Kohandatud"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+msgid "Editor (read, create, edit)"
+msgstr "Toimetaja (lugemine, loomine, muutmine)"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+msgid "Author (read, create)"
+msgstr "Autor (lugemine, loomine)"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+msgid "Reviewer (read-only)"
+msgstr "Ülevaataja (ainult lugemiseks)"
+
+msgid "None"
+msgstr "Puuduvad"
+
+#. Translators: "Delegate Permissions" refers to the permissions on the delegator's folders
+#. that the delegatee would receive
+msgid "Delegate Permissions"
+msgstr "Delegaadi pääsuõigused"
+
+msgid "Permissions for"
+msgstr "Õigused kasutajale"
+
+#. Translators: This is used for permissions for <user> for the folder Calendar.
+msgid "C_alendar:"
+msgstr "K_alender:"
+
+#. Translators: This is used for permissions for <user> for the folder Tasks.
+msgid "_Tasks:"
+msgstr "Ü_lesanded:"
+
+#. Translators: This is used for permissions for <user> for the folder Inbox.
+msgid "_Inbox:"
+msgstr "_Sisendkast:"
+
+#. Translators: This is used for permissions for <user> for the folder Contacts.
+msgid "Co_ntacts:"
+msgstr "Ko_ntaktid:"
+
+msgid "_Summarize permissions"
+msgstr "_Pääsuõiguste kokkuvõte"
+
+msgid "_Delegate can see private items"
+msgstr "_Delegaat saab näha isiklikke kirjeid"
+
+#, c-format
+msgid "Permissions for %s"
+msgstr "Õigused kasutajale %s"
+
+#. To translators: This is a part of the message to be sent to the delegatee
+#. summarizing the permissions assigned to him.
+#.
+msgid ""
+"This message was sent automatically by Evolution to inform you that you have "
+"been designated as a delegate. You can now send messages on my behalf."
+msgstr ""
+"Selle teate saatis Evolution sulle automaatselt, et teatada, et sind on "
+"valitud delegaadiks. Nüüd võid minu nimel kirju saata."
+
+#. To translators: Another chunk of the same message.
+#.
+msgid "You have been given the following permissions on my folders:"
+msgstr "Sulle on antud minu kaustades järgmised õigused:"
+
+#. To translators: This message is included if the delegatee has been given access
+#. to the private items.
+#.
+msgid "You are also permitted to see my private items."
+msgstr "Sul on luba vaadata minu isiklikke kirjeid."
+
+#. To translators: This message is included if the delegatee has not been given access
+#. to the private items.
+#.
+msgid "However, you are not permitted to see my private items."
+msgstr "Kuid sul pole luba näha minu isiklikke kirjeid."
+
+#, c-format
+msgid "You have been designated as a delegate for %s"
+msgstr "Sind on määratud %s delegaadiks"
+
+msgid "Delegate To:"
+msgstr "Kellele delegeerida:"
+
+msgid "Delegate To"
+msgstr "Delegeeri kellele"
+
+#, c-format
+msgid "Remove the delegate %s?"
+msgstr "Kas eemaldada delegaat %s?"
+
+msgid "Could not access Active Directory"
+msgstr "Puudub ligipääs Active Directory-le"
+
+msgid "Could not find self in Active Directory"
+msgstr "Ennast pole võimalik Active Directory-st leida"
+
+#, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr "Delegaati %s pole võimalik Active Directory-st leida"
+
+#, c-format
+msgid "Could not remove delegate %s"
+msgstr "Delegaati %s pole võimalik eemaldada"
+
+msgid "Could not update list of delegates."
+msgstr "Delegaatide loendit pole võimalik uuendada."
+
+#, c-format
+msgid "Could not add delegate %s"
+msgstr "Delegaati %s pole võimalik lisada"
+
+msgid "Delegates"
+msgstr "Delegaadid"
+
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"Nendel kasutajatel on õigus sinu nimel e-posti saata ja\n"
+"vastavalt sinu poolt määratud õigustele sinu kaustu kasutada."
+
+msgid "_Edit"
+msgstr "_Redigeeri"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Error reading delegates list."
+msgstr "Viga delegaatide loendi lugemisel."
+
+msgid "Permissions..."
+msgstr "Õigused..."
+
+msgid "Check folder permissions"
+msgstr "Kataloogi pääsuõiguste kontroll"
+
+msgid "Subscribe to Other User's Folder..."
+msgstr "Telli teiste kasutajate kaustu..."
+
+msgid "Subscribe to Other User's Folder"
+msgstr "Teiste kasutajate kaustade tellimine"
+
+msgid "Unsubscribe Folder..."
+msgstr "Kausta tellimusest loobumine..."
+
+msgid "Check calendar permissions"
+msgstr "Kalendri pääsuõiguste kontroll"
+
+msgid "Check tasks permissions"
+msgstr "Ülesannete pääsuõiguste kontroll"
+
+msgid "Check address book permissions"
+msgstr "Aadressiraamatu pääsuõiguste kontroll"
+
+msgid "Exchange Folder Tree"
+msgstr "Exchange kaustapuu"
+
+#, c-format
+msgid "Total size: %.2f KB"
+msgstr "Kogusuurus: %.2f KB"
+
+msgid "Folder Name"
+msgstr "Kausta nimi"
+
+#. FIXME Limit to one user
+msgid "User"
+msgstr "Kasutaja"
+
+msgid "_Account:"
+msgstr "_Konto:"
+
+msgid "_Folder Name:"
+msgstr "_Kausta nimi:"
+
+msgid "_User:"
+msgstr "_Kasutaja:"
+
+#, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "Kas tõesti lõpetada kausta \"%s\" tellimus?"
+
+#, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "Loobu \"%s\" tellimusest"
+
+msgid "_Send Options"
+msgstr "_Saatmise valikud"
+
+msgid "Insert Send options"
+msgstr "Saatmisvalikute lisamine"
+
+#. FIXME: Don't hardcode this
+msgid "Personal Folders"
+msgstr "Isiklikud kaustad"
+
+msgid "(Permission denied.)"
+msgstr "(Ligipääs keelatud.)"
+
+msgid "Add User:"
+msgstr "Lisa kasutaja:"
+
+msgid "Add User"
+msgstr "Lisa kasutaja"
+
+msgid "Permissions"
+msgstr "Õigused"
+
+msgid "Role: "
+msgstr "Roll: "
+
+msgid "Create items"
+msgstr "Kirjete loomine"
+
+msgid "Read items"
+msgstr "Kirjete lugemine"
+
+msgid "Create subfolders"
+msgstr "Alamkaustade loomine"
+
+msgid "Cannot Edit"
+msgstr "Muutmine keelatud"
+
+msgid "Edit Own Items"
+msgstr "Oma kirjete muutmine"
+
+msgid "Edit Any Items"
+msgstr "Suvaliste kirjete muutmine"
+
+msgid "Folder owner"
+msgstr "Kaustaomanik"
+
+msgid "Folder contact"
+msgstr "Kausta kontakt"
+
+msgid "Folder visible"
+msgstr "Kaust nähtaval"
+
+msgid "Cannot Delete"
+msgstr "Kustutamine keelatud"
+
+msgid "Delete Own Items"
+msgstr "Oma kirjete kustutamine"
+
+msgid "Delete Any Items"
+msgstr "Suvaliste kirjete kustutamine"
+
+msgid "Role"
+msgstr "Roll"
+
+msgid "Exchange - Send Options"
+msgstr "Exchange - saatmise valikud"
+
+msgid "Message Settings"
+msgstr "Sõnumite sätted"
+
+msgid "I_mportance: "
+msgstr "_Tähtsus:"
+
+#. Translators: Here's set a message sensitivity, which means for exchange
+#. one of Normal, Personal, Private, Confidential.
+msgid "_Sensitivity: "
+msgstr "T_undlikkus:"
+
+msgid "Normal"
+msgstr "Tavaline"
+
+msgid "Personal"
+msgstr "Isiklik"
+
+msgid "Private"
+msgstr "Privaatne"
+
+msgid "Confidential"
+msgstr "Salajane"
+
+msgid "High"
+msgstr "Kõrge"
+
+msgid "Low"
+msgstr "Madal"
+
+msgid "Send as Delegate"
+msgstr "Saada delegaadina"
+
+msgid "_User"
+msgstr "_Kasutaja"
+
+msgid "Tracking Options"
+msgstr "Jälitamise valikud"
+
+msgid "Request a _delivery receipt for this message"
+msgstr "Nõutakse selle sõnumi _kättetoimetamiskinnitust"
+
+msgid "Request a _read receipt for this message"
+msgstr "Nõutakse selle sõnumi _lugemiskinnitust"
+
+msgid "Select User"
+msgstr "Kasutaja valimine"
+
+msgid "Address Book..."
+msgstr "Aadressiraamat..."
+
+msgid "Activates the Evolution-Exchange extension package."
+msgstr "Aktiveerib Evolution-Exchange laienduspaketi."
+
+msgid "Exchange Operations"
+msgstr "Exchange toimingud"
+
+msgid "Size"
+msgstr "Suurus"
+
+msgid "Cannot access the \"Exchange settings\" tab in offline mode."
+msgstr "Autonoomses režiimis puudub ligipääs kaardile \"Exchange sätted\"."
+
+msgid "Cannot change password due to configuration problems."
+msgstr "Seadistusvigade tõttu pole võimalik parooli muuta."
+
+msgid "Cannot display folders."
+msgstr "Kaustu pole võimalik kuvada."
+
+msgid "Cannot perform the operation."
+msgstr "Toimingut pole võimalik teostada."
+
+msgid ""
+"Changes to options for Exchange account \"{0}\" will only take effect after "
+"restarting Evolution."
+msgstr ""
+"Exchange kontole \"{0}\" tehtud muudatused mõjuvad alles pärast Evolutioni "
+"taaskäivitust."
+
+msgid "Could not authenticate to server."
+msgstr "Serverisse pole võimalik autentida."
+
+msgid "Could not change password."
+msgstr "Parooli pole võimalik muuta."
+
+msgid ""
+"Could not configure Exchange account because \n"
+"an unknown error occurred. Check the URL, \n"
+"username and password, and try again."
+msgstr ""
+"Tundmatu vea tõttu pole Exchange kontot \n"
+"võimalik seadistada. Kontrolli URL-i, \n"
+"kasutajanime ja parooli ning proovi uuesti."
+
+msgid "Could not connect to Exchange server."
+msgstr "Exchange serveriga pole võimalik ühenduda."
+
+msgid "Could not connect to server {0}."
+msgstr "Serveriga {0} pole võimalik ühenduda."
+
+msgid "Could not determine folder permissions for delegates."
+msgstr "Delegaatide pääsuõiguseid kaustadele pole võimalik määrata."
+
+msgid "Could not find Exchange Web Storage System."
+msgstr "Exchange veebisalvestussüsteemi ei leitud."
+
+msgid "Could not locate server {0}."
+msgstr "Serveri {0} asukohta pole võimalik leida."
+
+msgid "Could not make {0} a delegate"
+msgstr "Kasutajat {0} pole võimalik määrata delegaadiks"
+
+msgid "Could not read folder permissions"
+msgstr "Kausta õiguseid pole võimalik lugeda"
+
+msgid "Could not read folder permissions."
+msgstr "Kausta õiguseid pole võimalik lugeda."
+
+msgid "Could not read out-of-office state"
+msgstr "Kontorist-väljas olekut pole võimalik lugeda"
+
+msgid "Could not update folder permissions."
+msgstr "Kaustade pääsuõiguseid pole võimalik uuendada."
+
+msgid "Could not update out-of-office state"
+msgstr "Kontorist-väljas olekut pole võimalik uuendada"
+
+msgid "Evolution requires a restart to load the subscribed user's mailbox"
+msgstr "Tellitud kasutajakausta laadimiseks tuleb Evolution taaskäivitada"
+
+msgid "Exchange Account is offline."
+msgstr "Exchange konto pole võrgus."
+
+msgid ""
+"Exchange Connector requires access to certain\n"
+"functionality on the Exchange Server that appears\n"
+"to be disabled or blocked. (This is usually \n"
+"unintentional.) Your Exchange Administrator will \n"
+"need to enable this functionality in order for \n"
+"you to be able to use Evolution Exchange Connector.\n"
+"\n"
+"For information to provide to your Exchange \n"
+"administrator, please follow the link below:\n"
+"\n"
+"{0}\n"
+"  "
+msgstr ""
+"Evolution Connector vajab ligipääsu teatavale \n"
+"Exchange Serveri funktsionaalsusele, mis aga paistab \n"
+"olevat (ilmselt tahtmatult) keelatud või blokitud. \n"
+"Evolution Connectori kasutamiseks peab Exchange \n"
+"haldaja vajaliku funktsionaalsuse lubama.\n"
+"\n"
+"Exchange haldajale edastamiseks mõeldud teabe \n"
+"nägemiseks klõpsa allpool asuvat viita.\n"
+"\n"
+"{0}\n"
+" "
+
+msgid "Failed to update delegates:"
+msgstr "Delegaatide uuendamine nurjus:"
+
+msgid "Folder does not exist"
+msgstr "Kausta pole olemas"
+
+msgid "Folder offline"
+msgstr "Kaust pole võrgus"
+
+msgid "Global Catalog Server is not reachable"
+msgstr "Globaalne kataloogiserver pole ligipääsetav"
+
+msgid ""
+"If OWA is running on a different path, you must specify that in the account "
+"configuration dialog."
+msgstr ""
+"OWA töötab teises kataloogis, pead konto seadistamise dialoogis selle "
+"määrama."
+
+msgid "Mailbox for {0} is not on this server."
+msgstr "Kasutaja {0} postkast ei asu selles serveris."
+
+msgid "Make sure the URL is correct and try again."
+msgstr "Veendu, et URL on korrektne ja proovi uuesti."
+
+msgid "Make sure the server name is spelled correctly and try again."
+msgstr "Veendu, et serveri nimi on õigesti sisestatud ja proovi uuesti."
+
+msgid "Make sure the username and password are correct and try again."
+msgstr "Veendu, et kasutajanimi ja parool on õiged ning proovi uuesti."
+
+msgid "No Global Catalog server configured for this account."
+msgstr "Sellele kontole pole määratud globaalset kataloogiserverit."
+
+msgid "No mailbox for user {0} on {1}."
+msgstr "Kasutajal {0} pole serveris {1} postkasti."
+
+msgid "No such user {0}"
+msgstr "Kasutajat {0} pole"
+
+msgid "Password successfully changed."
+msgstr "Parooli muutmine edukas."
+
+msgid "Please enter a Delegate's ID or deselect the Send as a Delegate option."
+msgstr ""
+"Palun sisesta delegaadi ID või eemalda märgistus valikult Saada delegaadina."
+
+msgid "Please make sure the Global Catalog Server name is correct."
+msgstr "Palun veendu, et globaalse kataloogiserveri nimi on õige."
+
+msgid "Please restart Evolution for changes to take effect"
+msgstr "Muudatuste jõustumiseks tuleb Evolution taaskäivitada"
+
+msgid "Please select a user."
+msgstr "Palun vali kasutaja."
+
+msgid "Server rejected password because it is too weak."
+msgstr "Server lükkas parooli tagasi, kuna see on liiga nõrk."
+
+msgid "The Exchange account will be disabled when you quit Evolution"
+msgstr "Exchange konto keelatakse, kui Evolutioni töö lõpetad"
+
+msgid "The Exchange account will be removed when you quit Evolution"
+msgstr "Exchange konto eemaldatakse, kui Evolutioni töö lõpetad"
+
+msgid "The Exchange server is not compatible with Exchange Connector."
+msgstr "Exchange server ei ühildu Exchange ühendajata."
+
+msgid ""
+"The server is running Exchange 5.5. Exchange Connector \n"
+"supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"Serveris töötab Exchange 5.5. Exchange Connector toetab \n"
+"ainult Microsoft Exchange  versioone 2000 ja 2003."
+
+msgid ""
+"This probably means that your server requires \n"
+"you to specify the Windows domain name \n"
+"as part of your username (eg, &quot;DOMAIN\\user&quot;).\n"
+"\n"
+"Also, you may have typed your password incorrectly."
+msgstr ""
+"See võib tähendada, et server nõuab, et sa määraksid\n"
+"Windowsi domeeninime oma kasutajanime osana\n"
+"(nt \"DOMAIN\\user\").\n"
+"\n"
+"Võib-olla oled aga lihtsalt parooli valesti sisestanud."
+
+msgid "Try again with a different password."
+msgstr "Proovi uuesti mõne muu parooliga."
+
+msgid "Unable to add user to access control list:"
+msgstr "Kasutajat pole võimalik pääsujuhtimisloendisse lisada:"
+
+msgid "Unable to edit delegates."
+msgstr "Delegaatide muutmine pole võimalik."
+
+msgid "Unknown error looking up {0}"
+msgstr "{0} otsimisel esines tundmatu viga"
+
+msgid "Unknown error."
+msgstr "Tundmatu viga."
+
+msgid "Unknown type"
+msgstr "Tundmatu liik"
+
+msgid "Unsupported operation"
+msgstr "Toetamata toiming"
+
+msgid "You are nearing your quota available for storing mail on this server."
+msgstr "Sinu selles serveris olev meilide salvestuskvoot hakkab otsa lõppema."
+
+msgid ""
+"You are permitted to send a message on behalf of only one delegator at a "
+"time."
+msgstr "Sul on õigus kirju saata ainult ühe delegeerija nimel korraga."
+
+msgid "You cannot make yourself your own delegate"
+msgstr "Ennast pole võimalik määrata iseenda delegaadiks"
+
+msgid "You have exceeded your quota for storing mail on this server."
+msgstr "Oled ületanud selles serveris säilitatavate kirjade kvoodi."
+
+msgid "You may only configure a single Exchange account."
+msgstr "Sa võid seadistada ainult ühe Exchange konto."
+
+msgid ""
+"Your current usage is: {0} KB. Try to clear up some space by deleting some "
+"mail."
+msgstr ""
+"Praegu on kasutusel {0} KB. Püüa kirjade kustutamisega ruumi juurde teha."
+
+msgid ""
+"Your current usage is: {0} KB. You will not be able to either send or "
+"receive mail now."
+msgstr ""
+"Praegu on kasutusel {0} KB. Nüüd pole võimalik kirju saata ega vastu võtta."
+
+msgid ""
+"Your current usage is: {0} KB. You will not be able to send mail until you "
+"clear up some space by deleting some mail."
+msgstr ""
+"Praegu on kasutusel {0} KB. Kuni ruumi vabastamiseni kirjade kustutamise "
+"kaudu pole võimalik kirju saata."
+
+msgid "Your password has expired."
+msgstr "Sinu parool on aegunud."
+
+msgid "{0}"
+msgstr "{0}"
+
+msgid "{0} cannot be added to an access control list"
+msgstr "{0} pole võimalik lisada ligipääsu tagamise loendisse"
+
+msgid "{0} is already a delegate"
+msgstr "{0} juba on delegaat"
+
+msgid "{0} is already in the list"
+msgstr "{0} juba on loendis"
+
+#, c-format
+msgid "Enter password for %s"
+msgstr "Sisesta %s parool"
+
+msgid "Enter password"
+msgstr "Sisesta parool"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+msgid "Owner"
+msgstr "Omanik"
+
+msgid "Publishing Editor"
+msgstr "Avaldav toimetaja"
+
+msgid "Editor"
+msgstr "Redaktor"
+
+msgid "Publishing Author"
+msgstr "Avaldav autor"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Non-editing Author"
+msgstr "Muutusteta autor"
+
+msgid "Reviewer"
+msgstr "Kontrollija"
+
+msgid "Contributor"
+msgstr "Kaastöö"
+
+msgid "No error"
+msgstr "Viga pole"
+
+msgid "A folder with the same name already exists"
+msgstr "Sellenimeline kaust on juba olemas"
+
+msgid "The specified folder type is not valid"
+msgstr "Määratud kausta liik pole sobiv"
+
+msgid "I/O error"
+msgstr "S/V viga"
+
+msgid "Not enough space to create the folder"
+msgstr "Kausta loomiseks pole piisavalt ruumi"
+
+msgid "The folder is not empty"
+msgstr "See kaust pole tühi"
+
+msgid "The specified folder was not found"
+msgstr "Määratud kausta ei leitud"
+
+msgid "Function not implemented in this storage"
+msgstr "Sellel salvestil pole see funktsioon toetatud"
+
+msgid "Operation not supported"
+msgstr "Toiming pole toetatud"
+
+msgid "The specified type is not supported in this storage"
+msgstr "Määratud tüüp pole selles salvestis toetatud"
+
+msgid "The specified folder cannot be modified or removed"
+msgstr "Määratud kasuta ei saa muuta ega eemaldada"
+
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr "Kausta ei saa enda alamkataloogide alla tõsta"
+
+msgid "Cannot create a folder with that name"
+msgstr "Sellenimelist kausta pole võimalik luua"
+
+msgid "This operation cannot be performed in offline mode"
+msgstr "Seda toimingut pole võimalik ilma võrguühenduseta sooritada"
+
+msgid "Unknown error"
+msgstr "Tundmatu viga"
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#, c-format
+msgid "%s's Folders"
+msgstr "%s kaustad"
+
+msgid "Favorite Public Folders"
+msgstr "Avalikud lemmikkaustad"
+
+#. i18n: Outlookism
+msgid "All Public Folders"
+msgstr "Kõik avalikud kaustad"
+
+#. i18n: Outlookism
+msgid "Global Address List"
+msgstr "Globaalne aadressiloend"
+
+msgid "Deleted Items"
+msgstr "Kustutatud kirjed"
+
+msgid "Drafts"
+msgstr "Mustandid"
+
+msgid "Journal"
+msgstr "Päevik"
+
+msgid "Notes"
+msgstr "Märkmed"
+
+msgid "Outbox"
+msgstr "Saatmata"
+
+msgid "Sent Items"
+msgstr "Saadetud"
+
+msgid "Welcome"
+msgstr "Tere tulemast"
+
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Tere tulemast kasutama Evolution Connector'it Microsoft Exchange jaoks.\n"
+"Järgnevad vormid aitavad Sul seadistada Evolution'i Sinu Exchange\n"
+"konto tarbeks.\n"
+"\n"
+"Jätkamiseks palun vajuta \"Edasi\"."
+
+msgid "Exchange Configuration"
+msgstr "Exchange sätted"
+
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Evolution Connector võib kasutada sinu olemasoleva Outlook Web Access (OWA) "
+"konto andmeid.\n"
+"\n"
+"Sisesta oma OWA saidi aadress (URL), kasutajanimi ja parool ning klõpsa "
+"\"Edasi\".\n"
+
+msgid "OWA _URL:"
+msgstr "OWA _URL:"
+
+msgid "User_name:"
+msgstr "Kasutaja_nimi:"
+
+msgid "_Password:"
+msgstr "_Parool:"
+
+msgid "_Remember this password"
+msgstr "_Parooli meeldejätmine"
+
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Exchange serveriga pole võimalik ühenduda.\n"
+"Veendu, et URL on korrektne (proovi \"%s\" kasutuseloleva \"%s\" asemel?) ja "
+"proovi uuesti."
+
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Exchange serveri asukohta pole võimalik määrata.\n"
+"Veendu, et serveri nimi on õigesti sisestatud ja proovi uuesti."
+
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Exchange serverisse pole võimalik autentida.\n"
+"Veendu, et kasutajanimi ja parool on õiged ning proovi uuesti."
+
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Exchange serverisse pole võimalik autentida.\n"
+"Veendu, et kasutajanimi ja parool on õiged ning proovi uuesti.\n"
+"Võibolla pead sa oma kasutajanimele lisama ka Windowsi domeeni nime (näiteks "
+"\"MINUDOMEEN\\%s\")."
+
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Määratud URL-ilt pole võimalik OWA andmeid leida.\n"
+"Veendu, et URL on korrektne ja proovi uuesti."
+
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Evolution Connector vajab ligipääsu teatavale Exchange Serveri "
+"funktsionaalsusele, mis aga paistab olevat (ilmselt tahtmatult) keelatud või "
+"blokitud. Evolution Connectori kasutamiseks peab Exchange haldaja vajaliku "
+"funktsionaalsuse lubama.\n"
+"\n"
+"Lähema teabe jaoks klõpsa allpool asuvat viita. Selle teabe võiks edastada "
+"ka Exchange haldajale:"
+
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"Sinu poolt määratud Exchange serveri URL on Exchange 5.5 Serverile. "
+"Evolution Connector toetab ainult Microsoft Exchange versioone 2000 ja 2003."
+
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Tundmatu vea tõttu pole Exchange kontot võimalik seadistada. Kontrolli URL-"
+"i, kasutajanime ja parooli ning proovi uuesti."
+
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value."
+msgstr ""
+"Evolutioni Microsoft Exchange ühendaja ei suutnud leida sinu saidi globaalse "
+"kataloogi koopiat (Global Catalog replica). Palun sisesta globaalse "
+"kataloogi serveri nimi. Õige väärtuse võid küsida süsteemiadministraatori "
+"käest."
+
+msgid "GC _Server:"
+msgstr "GC _server:"
+
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Global Catalog serverisse pole võimalik autentida. Võibolla pead sa oma "
+"kasutajanimele lisama ka Windowsi domeeni nime (näiteks \"MINUDOMEEN\\%s\")."
+
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Määratud serveriga pole võimalik ühendust võtta.\n"
+"Palun kontrolli serveri nime ja proovi uuesti."
+
+msgid "Configuration Failed"
+msgstr "Tõrge seadistamisel"
+
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account."
+msgstr ""
+"Evolution Connector'il tekkis sinu Exchange konto seadistamisel probleem."
+
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\"."
+msgstr ""
+"Sinu konto andmed on toodud allpool. Palun paranda selles kõik vead ja "
+"vajuta siis \"Edasi\"."
+
+msgid "Full _Name:"
+msgstr "_Täisnimi:"
+
+msgid "_Email Address:"
+msgstr "_E-posti aadress:"
+
+msgid "Make this my _default account"
+msgstr "Muuda see minu _vaikimis kontoks"
+
+msgid "Unknown"
+msgstr "Tundmatu"
+
+msgid "Done"
+msgstr "Valmis"
+
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your settings."
+msgstr ""
+"Sinu Connectori konto on kasutamiseks valmis. Sätete salvestamisesk vajuta "
+"\"Rakenda\"."
+
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Seadistamise süsteemne viga.\n"
+"Uut kontot pole võimalik luua."
+
+msgid "You may only configure a single Exchange account"
+msgstr "Sa võid seadistada ainult ühe Exchange konto"
+
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "Evolution Connector for Microsoft Exchange seadistused"
+
+msgid "Change your Exchange server password"
+msgstr "Exchange serveris sinu parooli muutmine"
+
+msgid "Folder _Size"
+msgstr "Kausta _suurus"
+
+msgid "Get the size of personal folders"
+msgstr "Isiklike kaustade suuruse hankimine"
+
+msgid "Subscribe to _Other User's Folder..."
+msgstr "_Telli teiste kasutajate kaustu..."
+
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Serveris olevate teistele kasutajatele kuuluvate kaustade tellimine"
+
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"Käsuga \"Telli teiste kasutajate kaustu\" tellitud kaustadest loobumine"
+
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Exchange kalendri delegaatide sätete vaatamine või muutmine"
+
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "Kontorist eemal oleku ja automaatvastuse vaatamine ja muutmine"
+
+msgid "_Change Exchange Password..."
+msgstr "_Muuda Exchange parooli..."
+
+msgid "_Delegation Assistant"
+msgstr "_Delegeerimisabiline"
+
+msgid "_Out of Office Assistant"
+msgstr "_Assistent kontorist äraolekul"
+
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_Loobu teiste kasutajate kaustade tellimusest"

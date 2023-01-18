@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>E2kResult (private)</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch04.html" title="libexchange private API reference">
+<link rel="prev" href="evolution-exchange-E2kOperation-(private).html" title="E2kOperation (private)">
+<link rel="next" href="evolution-exchange-test-utils.html" title="test-utils">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="evolution-exchange-E2kOperation-(private).html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="evolution-exchange-test-utils.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#evolution-exchange-E2kResult-(private).synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#evolution-exchange-E2kResult-(private).description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="E2kResult (private)">
+<a name="evolution-exchange-E2kResult-(private)"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="evolution-exchange-E2kResult-(private).top_of_page"></a>E2kResult (private)</span></h2>
+<p>E2kResult (private) — private <a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> methods</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="evolution-exchange-E2kResult-(private).synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="returnvalue">GArray</span></a> *            <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-array-new" title="e2k_results_array_new ()">e2k_results_array_new</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-array-add-from-multistatus" title="e2k_results_array_add_from_multistatus ()">e2k_results_array_add_from_multistatus</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> *results_array</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/libsoup-2.4/SoupMessage.html"><span class="type">SoupMessage</span></a> *msg</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-array-free" title="e2k_results_array_free ()">e2k_results_array_free</a>              (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> *results_array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> free_results</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-from-multistatus" title="e2k_results_from_multistatus ()">e2k_results_from_multistatus</a>        (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/libsoup-2.4/SoupMessage.html"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> **results</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *nresults</code></em>);
+<a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="returnvalue">E2kResult</span></a> *         <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-copy" title="e2k_results_copy ()">e2k_results_copy</a>                    (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> *results</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nresults</code></em>);
+
+<a class="link" href="evolution-exchange-e2k-http-utils.html#E2kHTTPStatus" title="E2kHTTPStatus"><span class="returnvalue">E2kHTTPStatus</span></a>       (<a class="link" href="evolution-exchange-E2kResult-(private).html#E2kResultIterFetchFunc" title="E2kResultIterFetchFunc ()">*E2kResultIterFetchFunc</a>)           (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResultIter" title="E2kResultIter"><span class="type">E2kResultIter</span></a> *iter</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a> *ctx</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> **results</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *nresults</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *first</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *total</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<span class="returnvalue">void</span>                (<a class="link" href="evolution-exchange-E2kResult-(private).html#E2kResultIterFreeFunc" title="E2kResultIterFreeFunc ()">*E2kResultIterFreeFunc</a>)            (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResultIter" title="E2kResultIter"><span class="type">E2kResultIter</span></a> *iter</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a class="link" href="evolution-exchange-e2k-result.html#E2kResultIter" title="E2kResultIter"><span class="returnvalue">E2kResultIter</span></a> *     <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-result-iter-new" title="e2k_result_iter_new ()">e2k_result_iter_new</a>                 (<em class="parameter"><code><a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a> *ctx</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> ascending</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> total</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kResult-(private).html#E2kResultIterFetchFunc" title="E2kResultIterFetchFunc ()"><span class="type">E2kResultIterFetchFunc</span></a> fetch_func</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kResult-(private).html#E2kResultIterFreeFunc" title="E2kResultIterFreeFunc ()"><span class="type">E2kResultIterFreeFunc</span></a> free_func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="evolution-exchange-E2kResult-(private).description"></a><h2>Description</h2>
+<p>
+These are the <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> methods used internally by <a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a>.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="evolution-exchange-E2kResult-(private).details"></a><h2>Details</h2>
+<div class="refsect2" title="e2k_results_array_new ()">
+<a name="e2k-results-array-new"></a><h3>e2k_results_array_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="returnvalue">GArray</span></a> *            e2k_results_array_new               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new results array
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the array
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_results_array_add_from_multistatus ()">
+<a name="e2k-results-array-add-from-multistatus"></a><h3>e2k_results_array_add_from_multistatus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_results_array_add_from_multistatus
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> *results_array</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/libsoup-2.4/SoupMessage.html"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>
+Constructs an <a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> for each response in <em class="parameter"><code>msg</code></em> and appends them
+to <em class="parameter"><code>results_array</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results_array</code></em> :</span></p></td>
+<td>a results array, created by <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-array-new" title="e2k_results_array_new ()"><code class="function">e2k_results_array_new()</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>a 207 Multi-Status response
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_results_array_free ()">
+<a name="e2k-results-array-free"></a><h3>e2k_results_array_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_results_array_free              (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> *results_array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> free_results</code></em>);</pre>
+<p>
+Frees <em class="parameter"><code>results_array</code></em>, and optionally its contents
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results_array</code></em> :</span></p></td>
+<td>the array
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>free_results</code></em> :</span></p></td>
+<td>whether or not to also free the contents of the array
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_results_from_multistatus ()">
+<a name="e2k-results-from-multistatus"></a><h3>e2k_results_from_multistatus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_results_from_multistatus        (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/libsoup-2.4/SoupMessage.html"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> **results</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *nresults</code></em>);</pre>
+<p>
+Parses <em class="parameter"><code>msg</code></em> and puts the results in *<em class="parameter"><code>results</code></em> and *<em class="parameter"><code>nresults</code></em>.
+The caller should free the data with <a class="link" href="evolution-exchange-e2k-result.html#e2k-results-free" title="e2k_results_free ()"><code class="function">e2k_results_free()</code></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>a 207 Multi-Status response
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>pointer to a variable to store an array of E2kResult in
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nresults</code></em> :</span></p></td>
+<td>pointer to a variable to store the length of *<em class="parameter"><code>results</code></em> in
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_results_copy ()">
+<a name="e2k-results-copy"></a><h3>e2k_results_copy ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="returnvalue">E2kResult</span></a> *         e2k_results_copy                    (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> *results</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nresults</code></em>);</pre>
+<p>
+Performs a deep copy of <em class="parameter"><code>results</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>a results array returned from <a class="link" href="evolution-exchange-E2kResult-(private).html#e2k-results-from-multistatus" title="e2k_results_from_multistatus ()"><code class="function">e2k_results_from_multistatus()</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nresults</code></em> :</span></p></td>
+<td>the length of <em class="parameter"><code>results</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a copy of <em class="parameter"><code>results</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2kResultIterFetchFunc ()">
+<a name="E2kResultIterFetchFunc"></a><h3>E2kResultIterFetchFunc ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-http-utils.html#E2kHTTPStatus" title="E2kHTTPStatus"><span class="returnvalue">E2kHTTPStatus</span></a>       (*E2kResultIterFetchFunc)           (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResultIter" title="E2kResultIter"><span class="type">E2kResultIter</span></a> *iter</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a> *ctx</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a> **results</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *nresults</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *first</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *total</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nresults</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>first</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>total</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2kResultIterFreeFunc ()">
+<a name="E2kResultIterFreeFunc"></a><h3>E2kResultIterFreeFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*E2kResultIterFreeFunc)            (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-result.html#E2kResultIter" title="E2kResultIter"><span class="type">E2kResultIter</span></a> *iter</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_result_iter_new ()">
+<a name="e2k-result-iter-new"></a><h3>e2k_result_iter_new ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-result.html#E2kResultIter" title="E2kResultIter"><span class="returnvalue">E2kResultIter</span></a> *     e2k_result_iter_new                 (<em class="parameter"><code><a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a> *ctx</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> ascending</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> total</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kResult-(private).html#E2kResultIterFetchFunc" title="E2kResultIterFetchFunc ()"><span class="type">E2kResultIterFetchFunc</span></a> fetch_func</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kResult-(private).html#E2kResultIterFreeFunc" title="E2kResultIterFreeFunc ()"><span class="type">E2kResultIterFreeFunc</span></a> free_func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Creates a object that can be used to return the results of
+a Multi-Status query on <em class="parameter"><code>ctx</code></em>.
+</p>
+<p>
+<em class="parameter"><code>fetch_func</code></em> will be called to fetch results, and it may update the
+<span class="type">first</span> and <span class="type">total</span> fields if necessary. If <em class="parameter"><code>ascending</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then
+<a class="link" href="evolution-exchange-e2k-result.html#e2k-result-iter-next" title="e2k_result_iter_next ()"><code class="function">e2k_result_iter_next()</code></a> will first return the first result, then the
+second result, etc. If <em class="parameter"><code>ascending</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, it will return the
+last result, then the second-to-last result, etc.
+</p>
+<p>
+When all of the results returned by the first <em class="parameter"><code>fetch_func</code></em> call have
+been returned to the caller, <em class="parameter"><code>fetch_func</code></em> will be called again to
+get more results. This will continue until <em class="parameter"><code>fetch_func</code></em> returns 0
+results, or returns an error code.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctx</code></em> :</span></p></td>
+<td>an <a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a>, to use for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ascending</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if results should be returned in ascending
+order, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if they should be returned in descending order
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>total</code></em> :</span></p></td>
+<td>the total number of results that will be returned, or -1
+if not yet known
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fetch_func</code></em> :</span></p></td>
+<td>function to call to fetch more results
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>free_func</code></em> :</span></p></td>
+<td>function to call when the iterator is freed
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>data to pass to <em class="parameter"><code>fetch_func</code></em> and <em class="parameter"><code>free_func</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new iterator
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="evolution-exchange-E2kResult-(private).see-also"></a><h2>See Also</h2>
+<p>
+<a class="link" href="evolution-exchange-e2k-result.html#E2kResult" title="E2kResult"><span class="type">E2kResult</span></a>, <a class="link" href="E2kContext.html" title="E2kContext"><span class="type">E2kContext</span></a>
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

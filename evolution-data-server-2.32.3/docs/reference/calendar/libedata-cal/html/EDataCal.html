@@ -1,0 +1,1389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EDataCal</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution-Data-Server Manual: Calendar Backend (libedata-cal)">
+<link rel="up" href="ch01.html" title="Evolution-Data-Server Manual: Calendar Backend (libedata-cal)">
+<link rel="prev" href="libedata-cal-e-cal-backend-util.html" title="e-cal-backend-util">
+<link rel="next" href="libedata-cal-EDataCalFactory.html" title="EDataCalFactory">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libedata-cal-e-cal-backend-util.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution-Data-Server Manual: Calendar Backend (libedata-cal)</th>
+<td><a accesskey="n" href="libedata-cal-EDataCalFactory.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EDataCal.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EDataCal.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EDataCal.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="EDataCal">
+<a name="EDataCal"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EDataCal.top_of_page"></a>EDataCal</span></h2>
+<p>EDataCal — Implementation of the calendar CORBA client interface.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EDataCal.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="EDataCal.html#E-DATA-CAL-ERROR:CAPS" title="E_DATA_CAL_ERROR">E_DATA_CAL_ERROR</a>
+                    <a class="link" href="EDataCal.html#EDataCal-struct" title="EDataCal">EDataCal</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a> *            <a class="link" href="EDataCal.html#e-data-cal-create-error" title="e_data_cal_create_error ()">e_data_cal_create_error</a>             (<em class="parameter"><code><span class="type">EDataCalCallStatus</span> status</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *custom_msg</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a> *            <a class="link" href="EDataCal.html#e-data-cal-create-error-fmt" title="e_data_cal_create_error_fmt ()">e_data_cal_create_error_fmt</a>         (<em class="parameter"><code><span class="type">EDataCalCallStatus</span> status</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *custom_msg_fmt</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EDataCal.html#e-data-cal-status-to-string" title="e_data_cal_status_to_string ()">e_data_cal_status_to_string</a>         (<em class="parameter"><code><span class="type">EDataCalCallStatus</span> status</code></em>);
+#define             <a class="link" href="EDataCal.html#e-return-data-cal-error-if-fail" title="e_return_data_cal_error_if_fail()">e_return_data_cal_error_if_fail</a>     (expr,
+                                                         _code)
+<a class="link" href="EDataCal.html" title="EDataCal"><span class="returnvalue">EDataCal</span></a> *          <a class="link" href="EDataCal.html#e-data-cal-new" title="e_data_cal_new ()">e_data_cal_new</a>                      (<em class="parameter"><code><a class="link" href="ECalBackend.html" title="ECalBackend"><span class="type">ECalBackend</span></a> *backend</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/libedataserver/ESource.html"><span class="type">ESource</span></a> *source</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="EDataCal.html#e-data-cal-register-gdbus-object" title="e_data_cal_register_gdbus_object ()">e_data_cal_register_gdbus_object</a>    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a> *connection</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="ECalBackend.html" title="ECalBackend"><span class="returnvalue">ECalBackend</span></a> *       <a class="link" href="EDataCal.html#e-data-cal-get-backend" title="e_data_cal_get_backend ()">e_data_cal_get_backend</a>              (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>);
+<a href="/usr/share/gtk-doc/html/libedataserver/ESource.html"><span class="returnvalue">ESource</span></a>*            <a class="link" href="EDataCal.html#e-data-cal-get-source" title="e_data_cal_get_source ()">e_data_cal_get_source</a>               (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-read-only" title="e_data_cal_notify_read_only ()">e_data_cal_notify_read_only</a>         (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> read_only</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-cal-address" title="e_data_cal_notify_cal_address ()">e_data_cal_notify_cal_address</a>       (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *address</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-alarm-email-address" title="e_data_cal_notify_alarm_email_address ()">e_data_cal_notify_alarm_email_address</a>
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *address</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-ldap-attribute" title="e_data_cal_notify_ldap_attribute ()">e_data_cal_notify_ldap_attribute</a>    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attribute</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-static-capabilities" title="e_data_cal_notify_static_capabilities ()">e_data_cal_notify_static_capabilities</a>
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *capabilities</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-open" title="e_data_cal_notify_open ()">e_data_cal_notify_open</a>              (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-refresh" title="e_data_cal_notify_refresh ()">e_data_cal_notify_refresh</a>           (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-remove" title="e_data_cal_notify_remove ()">e_data_cal_notify_remove</a>            (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-object-created" title="e_data_cal_notify_object_created ()">e_data_cal_notify_object_created</a>    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uid</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-object-modified" title="e_data_cal_notify_object_modified ()">e_data_cal_notify_object_modified</a>   (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-object-removed" title="e_data_cal_notify_object_removed ()">e_data_cal_notify_object_removed</a>    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/libecal/ECalComponent.html#ECalComponentId"><span class="type">ECalComponentId</span></a> *id</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-alarm-discarded" title="e_data_cal_notify_alarm_discarded ()">e_data_cal_notify_alarm_discarded</a>   (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-objects-received" title="e_data_cal_notify_objects_received ()">e_data_cal_notify_objects_received</a>  (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-objects-sent" title="e_data_cal_notify_objects_sent ()">e_data_cal_notify_objects_sent</a>      (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *users</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *calobj</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-default-object" title="e_data_cal_notify_default_object ()">e_data_cal_notify_default_object</a>    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-object" title="e_data_cal_notify_object ()">e_data_cal_notify_object</a>            (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-object-list" title="e_data_cal_notify_object_list ()">e_data_cal_notify_object_list</a>       (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *objects</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-query" title="e_data_cal_notify_query ()">e_data_cal_notify_query</a>             (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *query_path</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-timezone-requested" title="e_data_cal_notify_timezone_requested ()">e_data_cal_notify_timezone_requested</a>
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-timezone-added" title="e_data_cal_notify_timezone_added ()">e_data_cal_notify_timezone_added</a>    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tzid</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-default-timezone-set" title="e_data_cal_notify_default_timezone_set ()">e_data_cal_notify_default_timezone_set</a>
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-changes" title="e_data_cal_notify_changes ()">e_data_cal_notify_changes</a>           (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *adds</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modifies</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *deletes</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-free-busy" title="e_data_cal_notify_free_busy ()">e_data_cal_notify_free_busy</a>         (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *freebusy</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-mode" title="e_data_cal_notify_mode ()">e_data_cal_notify_mode</a>              (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EDataCalViewListenerSetModeStatus</span> status</code></em>,
+                                                         <em class="parameter"><code><span class="type">EDataCalMode</span> mode</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-auth-required" title="e_data_cal_notify_auth_required ()">e_data_cal_notify_auth_required</a>     (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-error" title="e_data_cal_notify_error ()">e_data_cal_notify_error</a>             (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EDataCal.html#e-data-cal-notify-attachment-list" title="e_data_cal_notify_attachment_list ()">e_data_cal_notify_attachment_list</a>   (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *objects</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EDataCal.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----EDataCal
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EDataCal.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EDataCal.details"></a><h2>Details</h2>
+<div class="refsect2" title="E_DATA_CAL_ERROR">
+<a name="E-DATA-CAL-ERROR:CAPS"></a><h3>E_DATA_CAL_ERROR</h3>
+<pre class="programlisting">#define E_DATA_CAL_ERROR e_data_cal_error_quark ()
+</pre>
+<p class="since">Since 2.30</p>
+</div>
+<hr>
+<div class="refsect2" title="EDataCal">
+<a name="EDataCal-struct"></a><h3>EDataCal</h3>
+<pre class="programlisting">typedef struct _EDataCal EDataCal;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_create_error ()">
+<a name="e-data-cal-create-error"></a><h3>e_data_cal_create_error ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a> *            e_data_cal_create_error             (<em class="parameter"><code><span class="type">EDataCalCallStatus</span> status</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *custom_msg</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>custom_msg</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_create_error_fmt ()">
+<a name="e-data-cal-create-error-fmt"></a><h3>e_data_cal_create_error_fmt ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="returnvalue">GError</span></a> *            e_data_cal_create_error_fmt         (<em class="parameter"><code><span class="type">EDataCalCallStatus</span> status</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *custom_msg_fmt</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>custom_msg_fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_status_to_string ()">
+<a name="e-data-cal-status-to-string"></a><h3>e_data_cal_status_to_string ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_data_cal_status_to_string         (<em class="parameter"><code><span class="type">EDataCalCallStatus</span> status</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="e_return_data_cal_error_if_fail()">
+<a name="e-return-data-cal-error-if-fail"></a><h3>e_return_data_cal_error_if_fail()</h3>
+<pre class="programlisting">#define             e_return_data_cal_error_if_fail(expr, _code)</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>expr</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>_code</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_new ()">
+<a name="e-data-cal-new"></a><h3>e_data_cal_new ()</h3>
+<pre class="programlisting"><a class="link" href="EDataCal.html" title="EDataCal"><span class="returnvalue">EDataCal</span></a> *          e_data_cal_new                      (<em class="parameter"><code><a class="link" href="ECalBackend.html" title="ECalBackend"><span class="type">ECalBackend</span></a> *backend</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/libedataserver/ESource.html"><span class="type">ESource</span></a> *source</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>backend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_register_gdbus_object ()">
+<a name="e-data-cal-register-gdbus-object"></a><h3>e_data_cal_register_gdbus_object ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               e_data_cal_register_gdbus_object    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GDBusConnection.html"><span class="type">GDBusConnection</span></a> *connection</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Registers GDBus object of this EDataCal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.32</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_get_backend ()">
+<a name="e-data-cal-get-backend"></a><h3>e_data_cal_get_backend ()</h3>
+<pre class="programlisting"><a class="link" href="ECalBackend.html" title="ECalBackend"><span class="returnvalue">ECalBackend</span></a> *       e_data_cal_get_backend              (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_get_source ()">
+<a name="e-data-cal-get-source"></a><h3>e_data_cal_get_source ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/libedataserver/ESource.html"><span class="returnvalue">ESource</span></a>*            e_data_cal_get_source               (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>);</pre>
+<p>
+Returns the <a href="/usr/share/gtk-doc/html/libedataserver/ESource.html"><span class="type">ESource</span></a> for <em class="parameter"><code>cal</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>an <a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a href="/usr/share/gtk-doc/html/libedataserver/ESource.html"><span class="type">ESource</span></a> for <em class="parameter"><code>cal</code></em>
+
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.30</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_read_only ()">
+<a name="e-data-cal-notify-read-only"></a><h3>e_data_cal_notify_read_only ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_read_only         (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> read_only</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the is_read_only method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>read_only</code></em> :</span></p></td>
+<td>Read only value.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_cal_address ()">
+<a name="e-data-cal-notify-cal-address"></a><h3>e_data_cal_notify_cal_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_cal_address       (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *address</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_cal_address method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>address</code></em> :</span></p></td>
+<td>Calendar address.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_alarm_email_address ()">
+<a name="e-data-cal-notify-alarm-email-address"></a><h3>e_data_cal_notify_alarm_email_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_alarm_email_address
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *address</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_alarm_email_address method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>address</code></em> :</span></p></td>
+<td>Alarm email address.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_ldap_attribute ()">
+<a name="e-data-cal-notify-ldap-attribute"></a><h3>e_data_cal_notify_ldap_attribute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_ldap_attribute    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *attribute</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_ldap_attribute method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attribute</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_static_capabilities ()">
+<a name="e-data-cal-notify-static-capabilities"></a><h3>e_data_cal_notify_static_capabilities ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_static_capabilities
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *capabilities</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_static_capabilities method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capabilities</code></em> :</span></p></td>
+<td>Static capabilities from the backend.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_open ()">
+<a name="e-data-cal-notify-open"></a><h3>e_data_cal_notify_open ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_open              (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the open method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_refresh ()">
+<a name="e-data-cal-notify-refresh"></a><h3>e_data_cal_notify_refresh ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_refresh           (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the refresh method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 2.30</p>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_remove ()">
+<a name="e-data-cal-notify-remove"></a><h3>e_data_cal_notify_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_remove            (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the remove method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_object_created ()">
+<a name="e-data-cal-notify-object-created"></a><h3>e_data_cal_notify_object_created ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_object_created    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uid</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the create_object method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uid</code></em> :</span></p></td>
+<td>UID of the object created.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>The object created as an iCalendar string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_object_modified ()">
+<a name="e-data-cal-notify-object-modified"></a><h3>e_data_cal_notify_object_modified ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_object_modified   (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the modify_object method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_object</code></em> :</span></p></td>
+<td>The old object as an iCalendar string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>The modified object as an iCalendar string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_object_removed ()">
+<a name="e-data-cal-notify-object-removed"></a><h3>e_data_cal_notify_object_removed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_object_removed    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/libecal/ECalComponent.html#ECalComponentId"><span class="type">ECalComponentId</span></a> *id</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *old_object</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the remove_object method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_object</code></em> :</span></p></td>
+<td>The old object as an iCalendar string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>The new object as an iCalendar string. This will not be NULL only
+when removing instances of a recurring appointment.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_alarm_discarded ()">
+<a name="e-data-cal-notify-alarm-discarded"></a><h3>e_data_cal_notify_alarm_discarded ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_alarm_discarded   (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the discard_alarm method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_objects_received ()">
+<a name="e-data-cal-notify-objects-received"></a><h3>e_data_cal_notify_objects_received ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_objects_received  (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the receive_objects method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_objects_sent ()">
+<a name="e-data-cal-notify-objects-sent"></a><h3>e_data_cal_notify_objects_sent ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_objects_sent      (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *users</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *calobj</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the send_objects method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>users</code></em> :</span></p></td>
+<td>List of users.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>calobj</code></em> :</span></p></td>
+<td>An iCalendar string representing the object sent.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_default_object ()">
+<a name="e-data-cal-notify-default-object"></a><h3>e_data_cal_notify_default_object ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_default_object    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_default_object method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>The default object as an iCalendar string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_object ()">
+<a name="e-data-cal-notify-object"></a><h3>e_data_cal_notify_object ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_object            (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_object method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>The object retrieved as an iCalendar string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_object_list ()">
+<a name="e-data-cal-notify-object-list"></a><h3>e_data_cal_notify_object_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_object_list       (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *objects</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_object_list method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td>List of retrieved objects.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_query ()">
+<a name="e-data-cal-notify-query"></a><h3>e_data_cal_notify_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_query             (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *query_path</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query_path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_timezone_requested ()">
+<a name="e-data-cal-notify-timezone-requested"></a><h3>e_data_cal_notify_timezone_requested ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_timezone_requested
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_timezone method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>The requested timezone as an iCalendar string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_timezone_added ()">
+<a name="e-data-cal-notify-timezone-added"></a><h3>e_data_cal_notify_timezone_added ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_timezone_added    (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tzid</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the add_timezone method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tzid</code></em> :</span></p></td>
+<td>ID of the added timezone.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_default_timezone_set ()">
+<a name="e-data-cal-notify-default-timezone-set"></a><h3>e_data_cal_notify_default_timezone_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_default_timezone_set
+                                                        (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the set_default_timezone method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_changes ()">
+<a name="e-data-cal-notify-changes"></a><h3>e_data_cal_notify_changes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_changes           (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *adds</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modifies</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *deletes</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_changes method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>adds</code></em> :</span></p></td>
+<td>List of additions.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>modifies</code></em> :</span></p></td>
+<td>List of modifications.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>deletes</code></em> :</span></p></td>
+<td>List of removals.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_free_busy ()">
+<a name="e-data-cal-notify-free-busy"></a><h3>e_data_cal_notify_free_busy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_free_busy         (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *freebusy</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_free_busy method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>freebusy</code></em> :</span></p></td>
+<td>List of free/busy objects.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_mode ()">
+<a name="e-data-cal-notify-mode"></a><h3>e_data_cal_notify_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_mode              (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EDataCalViewListenerSetModeStatus</span> status</code></em>,
+                                                         <em class="parameter"><code><span class="type">EDataCalMode</span> mode</code></em>);</pre>
+<p>
+Notifies the listener of the results of a set_mode call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>Status of the mode set.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mode</code></em> :</span></p></td>
+<td>The current mode.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_auth_required ()">
+<a name="e-data-cal-notify-auth-required"></a><h3>e_data_cal_notify_auth_required ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_auth_required     (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>);</pre>
+<p>
+Notifies listeners that authorization is required to open the calendar.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_error ()">
+<a name="e-data-cal-notify-error"></a><h3>e_data_cal_notify_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_error             (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>);</pre>
+<p>
+Notify a calendar client of an error occurred in the backend.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>Error message.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_data_cal_notify_attachment_list ()">
+<a name="e-data-cal-notify-attachment-list"></a><h3>e_data_cal_notify_attachment_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_data_cal_notify_attachment_list   (<em class="parameter"><code><a class="link" href="EDataCal.html" title="EDataCal"><span class="type">EDataCal</span></a> *cal</code></em>,
+                                                         <em class="parameter"><code><span class="type">EServerMethodContext</span> context</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> *error</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *objects</code></em>);</pre>
+<p>
+Notifies listeners of the completion of the get_attachment_list method call.+ */
+void
+e_data_cal_notify_attachment_list (EDataCal *cal, EServerMethodContext context, GError *error, GSList *attachments)
+{
+	GDBusMethodInvocation *invocation = context;
+	gchar **seq;
+</p>
+<p>
+	seq = create_str_array_from_gslist (attachments);
+</p>
+<p>
+	if (error) {
+		/* Translators: The '<code class="literal">s</code>' is replaced with a detailed error message */
+		data_cal_return_error (invocation, error, _("Could not retrieve attachment list: <code class="literal">s</code>"));
+		g_error_free (error);
+	} else
+		e_gdbus_cal_complete_get_attachment_list (cal-&gt;priv-&gt;gdbus_object, invocation, (const gchar * const *) seq);
+</p>
+<p>
+	g_free (seq);
+}
+</p>
+<p>
+/**
+e_data_cal_notify_query:
+<em class="parameter"><code>cal</code></em>: A calendar client interface.
+<em class="parameter"><code>error</code></em>: Operation error, if any, automatically freed if passed it.
+<em class="parameter"><code>query</code></em>: The new live query.
+</p>
+<p>
+Notifies listeners of the completion of the get_query method call.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cal</code></em> :</span></p></td>
+<td>A calendar client interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>Operation error, if any, automatically freed if passed it.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>objects</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

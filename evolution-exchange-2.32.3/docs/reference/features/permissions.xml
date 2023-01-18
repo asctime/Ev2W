@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-permissions">
+<refmeta>
+<refentrytitle>Folder Permissions</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<refsect2>
+<title><application>Exchange</application> Permissions</title>
+
+<para>
+Every object in the <application>Exchange</application> database has a
+security descriptor that controls access to it. (This includes both
+folders and items, but security descriptors for items are virtually
+always inherited from their parent folders in well-defined ways, so we
+don't bother thinking about them.)
+</para>
+
+<para>
+The <application>Exchange 2000 Web Storage System</application> has a
+nifty sytem for translating <application>Windows</application> security
+descriptors into XML and back, which unfortunately we cannot use,
+because it's <link
+linkend="ximian-connector-bug-permissions">buggy</link>. So we have to
+generate binary format security descriptors, as described below. 
+</para>
+
+<para>
+When considering folder permissions, it is important to remember that
+while the <application>Exchange</application> database
+<emphasis>looks</emphasis> like a file system when accessed via
+WebDAV, it does not behave like a filesystem internally. In
+particular, access to an object is controlled only by its
+<emphasis>own</emphasis> security descriptor; you do not need to have
+"folder visible" permission on an object's parent in order to be able
+to access the object.
+</para>
+
+</refsect2>
+
+<refsect2>
+<title>SIDs and Security Descriptors</title>
+
+<para>
+This information mostly comes from <filename>WinNT.h</filename>
+(though I've changed the code samples to use
+<application>GNOME</application> types rather than
+<application>Windows</application> ones).
+</para>
+
+<para>
+A SID (Security IDentifier) looks like:
+</para>
+
+<informalexample><programlisting>
+typedef struct {
+       guint8  Revision;
+       guint8  SubauthorityCount;
+       guint8  IdentifierAuthority[6];
+       guint32 Subauthority[];
+} SID;
+
+#define SID_REVISION 1
+</programlisting></informalexample>
+
+<para>
+<structfield>Revision</structfield> is always
+<literal>SID_REVISION</literal>.
+<structfield>IdentifierAuthority</structfield> appears to be a 6-byte
+big-endian number. At any rate, the first 5 bytes are always
+<literal>0</literal>. There are then
+<structfield>SubauthorityCount</structfield> 4-byte
+<structfield>Subauthority</structfield> values.
+</para>
+
+<para>
+A user has a list of SIDs associated with them, including their own
+personal SID, the SID for "all users in the local domain", the SID for
+"Default", and SIDs for any <application>Windows</application>
+security groups that they are members of.
+</para>
+
+<para>
+SIDs are also sometimes expressed in string form as:
+"<literal>S-<replaceable>r</replaceable>-<replaceable>i</replaceable>-<replaceable>s0</replaceable>-<replaceable>s1</replaceable>...</literal>"
+where "<replaceable>r</replaceable>" is the
+<structfield>Revision</structfield>, "<replaceable>i</replaceable>" is the
+<structfield>IdentifierAuthority</structfield>, and
+"<replaceable>sn</replaceable>" is the <replaceable>n</replaceable>th
+<structfield>Subauthority</structfield>.
+</para>
+
+<para>
+The <literal>ntsecuritydescriptor</literal> property on an
+<application>Exchange 2000</application> object always (?) starts with
+the bytes:
+</para>
+
+<informalexample><para>
+<literal>08 00 04 00 00 00 00 00</literal>
+</para></informalexample>
+
+<para>
+This does not appear to be part of the descriptor itself, but just
+some sort of <application>Exchange</application>-specific overhead.
+According to <ulink
+url="http://peach.ease.lsoft.com/archives/mapi-l.html">MAPI-L</ulink>, the
+first two bytes are the length of the header data to be skipped.
+</para>
+
+<para>
+The security descriptor header looks like:
+</para>
+
+<informalexample><programlisting>
+typedef struct {
+	guint8   Revision;
+	guint8   Sbz1;
+	guint16  Control;
+	guint32  Owner;
+	guint32  Group;
+	guint32  Sacl;
+	guint32  Dacl;
+} SECURITY_DESCRIPTOR_RELATIVE;
+
+#define SECURITY_DESCRIPTOR_REVISION 1
+</programlisting></informalexample>
+
+<para>
+<structfield>Revision</structfield> is always
+<literal>SECURITY_DESCRIPTOR_REVISION</literal>.
+<structfield>Sbz1</structfield> is zero padding.
+<structfield>Control</structfield> is a bitfield as described below.
+The remaining fields are offsets from the start of the header
+(ignoring the Exchange-specific data mentioned above). Missing
+sections (eg, the SACL) have <constant>0</constant> for their offset.
+</para>
+
+<para>
+<structfield>Control</structfield> is a bitfield of:
+</para>
+
+<informalexample><programlisting>
+#define SE_OWNER_DEFAULTED         0x0001
+#define SE_GROUP_DEFAULTED         0x0002
+#define SE_DACL_PRESENT            0x0004
+#define SE_DACL_DEFAULTED          0x0008
+#define SE_SACL_PRESENT            0x0010
+#define SE_SACL_DEFAULTED          0x0020
+#define SE_DACL_AUTO_INHERIT_REQ   0x0100
+#define SE_SACL_AUTO_INHERIT_REQ   0x0200
+#define SE_DACL_AUTO_INHERITED     0x0400
+#define SE_SACL_AUTO_INHERITED     0x0800
+#define SE_DACL_PROTECTED          0x1000
+#define SE_SACL_PROTECTED          0x2000
+#define SE_RM_CONTROL_VALID        0x4000
+#define SE_SELF_RELATIVE           0x8000
+</programlisting></informalexample>
+
+<para>
+Where (from <filename>WinNT.h</filename>):
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>SE_OWNER_DEFAULTED</literal>, <literal>SE_GROUP_DEFAULTED</literal></term>
+	<listitem><para>
+	The Owner / Group was provided by a defaulting mechanism
+	rather than explicitly provided by the original provider of
+	the security descriptor.
+	</para></listitem>
+    </varlistentry>
+	
+    <varlistentry>
+	<term><literal>SE_DACL_PRESENT</literal>, <literal>SE_SACL_PRESENT</literal></term>
+	<listitem><para>
+	The Discretionary/Security ACL is present.
+	</para></listitem>
+    </varlistentry>
+	
+    <varlistentry>
+	<term><literal>SE_DACL_DEFAULTED</literal>, <literal>SE_SACL_DEFAULTED</literal></term>
+	<listitem><para>
+	The DACL/SACL was provided by a defaulting mechanism rather
+	than explicitly provided by the original provider of the
+	security descriptor.
+	</para></listitem>
+    </varlistentry>
+	
+    <varlistentry>
+	<term><literal>SE_SELF_RELATIVE</literal></term>
+	<listitem><para>
+	Always set when using this interface. Indicates that the SD
+	occupies contiguous memory and contains offsets rather than
+	pointers.
+	</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+<application>Outlook</application>-generated descriptors usually have
+<constant>0x8c04</constant> (<literal>SE_SELF_RELATIVE</literal>, 
+<literal>SE_SACL</literal>/<literal>DACL_AUTO_INHERITED</literal>, and
+<literal>SE_DACL_PRESENT</literal>).
+</para>
+
+<para>
+Each ACL header looks like:
+</para>
+
+<informalexample><programlisting>
+typedef struct {
+	guint8  AclRevision;
+	guint8  Sbz1;
+	guint16 AclSize;
+	guint16 AceCount;
+	guint16 Sbz2;
+} ACL;
+
+#define ACL_REVISION     (2)
+#define ACL_REVISION_DS  (4)
+</programlisting></informalexample>
+
+<para>
+<application>Outlook</application> seems to always use
+<literal>ACL_REVISION</literal> for
+<structfield>AclRevision</structfield>, but the <link
+linkend="ximian-connector-bug-permissions">buggy case of setting an
+XML security descriptor</link> uses
+<literal>ACL_REVISION_DS</literal>. <filename>WinNT.h</filename> says
+"The current <structfield>AclRevision</structfield> is defined to be
+<literal>ACL_REVISION</literal>." MSDN says "Use
+<literal>ACL_REVISION_DS</literal> if the ACL contains object-specific
+ACEs." We require <structfield>AclRevision</structfield> to be
+<constant>2</constant>.
+</para>
+
+<para>
+<structfield>AclSize</structfield> is the total size of the ACL
+including all of its ACEs.
+</para>
+
+<para>
+Each ACE looks like:
+</para>
+
+<informalexample><programlisting>
+typedef struct {
+	guint8  AceType;
+	guint8  AceFlags;
+	guint16 AceSize;
+	guint32 Mask;
+	SID     Sid;
+} ACE;
+
+/* type */
+#define ACCESS_ALLOWED_ACE_TYPE  (0x00)
+#define ACCESS_DENIED_ACE_TYPE   (0x01)
+
+/* flags */
+#define OBJECT_INHERIT_ACE       (0x01)
+#define CONTAINER_INHERIT_ACE    (0x02)
+#define NO_PROPAGATE_INHERIT_ACE (0x04)
+#define INHERIT_ONLY_ACE         (0x08)
+#define INHERITED_ACE            (0x10)
+</programlisting></informalexample>
+
+<para>
+If <literal>INHERIT_ONLY_ACE</literal> is NOT set, the ACE applies to
+the folder itself. If <literal>CONTAINER_INHERIT_ACE</literal> is set,
+it applies to subfolders. If <literal>OBJECT_INHERIT_ACE</literal> is
+set, it applies to subitems. In normal
+<application>Outlook</application>-generated ACEs,
+<literal>OBJECT_INHERIT_ACE</literal> and
+<literal>INHERIT_ONLY_ACE</literal> always go together, and our code
+requires that. (This means we can't parse the default ACL on
+<uri>/public</uri> though...)
+</para>
+
+<para>
+<literal>INHERITED_ACE</literal> means the ACE was inherited from
+something. We don't care about, but we still have to keep track of it,
+because if it is set when you read the ACE, you have to set it when
+you write the ACE back (even if you changed the permissions), or
+<application>Exchange</application> will consider your ACE to be an
+additional ACE rather than a replacement, and then you'll end up with
+an ACL that <application>Outlook</application> doesn't like.
+</para>
+
+<para>
+The <structfield>Mask</structfield> is essentially opaque to us. <link
+linkend="E2kSecurityDescriptor">e2k-security-descriptor.c</link>
+handles translating the MAPI permissions into sets of allowed and
+denied NT permissions according to rules from the WSS SDK.
+</para>
+
+</refsect2>
+
+<refsect2>
+<title>Order of ACEs</title>
+
+<para>
+The ACEs <emphasis>must</emphasis> appear in a specific order. This is
+at least partly determined by how security descriptors work, and how
+the <application>Outlook</application> permissions model works.
+</para>
+
+<para>
+The way <application>Windows</application> checks an action against an
+ACL is something like this:
+</para>
+
+<informalexample><programlisting>
+for each ACE in the ACL {
+	if ((ACE.Mask covers the attempted_action) &amp;&amp;
+	    (ACE.Sid is in CurrentUserSidList))
+		return (ACE.AceType == ACCESS_ALLOWED_ACE);
+}
+return FALSE;
+</programlisting></informalexample>
+
+<para>
+In <application>Outlook</application>'s permissions model, there are
+three possibilities:
+</para>
+
+<itemizedlist>
+    <listitem><para>
+	If the user is specified explicitly in the ACL, he gets
+	exactly the rights he's specified to have, and nothing more
+    </para></listitem>
+    <listitem><para>
+	If the user isn't specified, but is a member of at least
+	one group that is specified, he has the superset of all
+	the rights granted to those groups.
+    </para></listitem>
+    <listitem><para>
+	Otherwise, the user has the rights granted to "Default"
+    </para></listitem>
+</itemizedlist>
+
+<para>
+So if you have:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term>Default</term> <listitem><para>Editor</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term>Bob</term> <listitem><para>Reviewer</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term>Bob&amp;Jane</term> <listitem><para>Contributor</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term>Jane&amp;Ted</term> <listitem><para>delete items</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+then Bob has "Reviewer", Ted has "delete items", Jane has
+"Contributor" and "delete items", and everyone else has "Editor". To
+make that work in the <application>Windows</application> security
+model, we have to put the ACEs in a specific order, and add explicit
+"deny" ACEs to prevent fallthrough.
+</para>
+
+<para>
+So, the ordering is:
+</para>
+
+<caution><para>
+While this is what we implement in
+<link linkend="E2kSecurityDescriptor">e2k-security-descriptor.c</link>,
+it is known to be wrong. Some folders' ACLs (especially public
+folders) don't obey this order. Further investigation is needed.
+</para></caution>
+
+<orderedlist>
+    <listitem><para>
+    Object-level ACEs for real users, in allow/deny pairs
+    </para></listitem>
+    <listitem><para>
+    Container-level ACEs for real users, in allow/deny pairs
+    </para></listitem>
+    <listitem><para>
+    Object-level ACEs for Anonymous, in allow/deny pairs
+    </para></listitem>
+    <listitem><para>
+    Container-level ACEs for Anonymous, in allow/deny pairs
+    </para></listitem>
+    <listitem><para>
+    Container-level ACEs for groups, first all the allows, then all denies
+    </para></listitem>
+    <listitem><para>
+    Container-level ACEs for Default (allow only)
+    </para></listitem>
+    <listitem><para>
+    Object-level ACEs for groups, first allows, then denies
+    </para></listitem>
+    <listitem><para>
+    Object-level ACEs for Default (allow only)
+    </para></listitem>
+</orderedlist>
+
+<para>
+"Default" is never explicitly denied anything.
+</para>
+
+<para>
+The ordering above isn't explained completely by the preceding
+description (in particular, there doesn't seem to be any reason to
+want to put object- and container-level ACEs in a particular order).
+I'm not sure if there are additional unknown constraints that force
+exactly that ordering or if it's just an artifact of how
+<application>Outlook</application> creates them. At any rate, we do it
+the same way.
+</para>
+
+</refsect2>
+
+</refentry>

@@ -1,0 +1,97 @@
+URLs and Interfaces
+-------------------
+By default, OWA runs at http://SERVERNAME/exchange/USERNAME, but the
+"/exchange" part can be changed by the administrator.
+
+There are roughly three interfaces all running on the same set of
+URLs: HTML-only, HTML/XML/ActiveX, and WebDAV. In general, WebDAV-only
+methods like PROPPATCH and SEARCH always access the WebDAV interface.
+Standard HTTP methods like GET and POST access the WebDAV interface if
+you pass "Translate: f" in the request headers, the IE interface if
+you claim to be IE in the User-Agent header, and the HTML OWA
+interface otherwise:
+
+	HTML-only:
+		GET /exchange/danw/Inbox/foo.EML HTTP/1.0
+		User-Agent: Mozilla blah blah blah
+
+		200 OK HTTP/1.0
+		Content-Type: text/html
+
+	HTML/XML/ActiveX:
+		GET /exchange/danw/Inbox/foo.EML HTTP/1.0
+		User-Agent: Mozilla blah (compatible; MSIE blah)
+
+		200 OK HTTP/1.0
+		Content-Type: text/xml
+
+	WebDAV:
+		GET /exchange/danw/Inbox/foo.EML HTTP/1.0
+		Translate: f
+
+		200 OK HTTP/1.0
+		Content-Type: message/rfc822
+
+
+
+HTTP methods
+------------
+GET - Used with "Translate: f" to fetch message bodies and iCalendar
+data. Used with "User-Agent: MSIE..." to access certain bits of XML
+OWA functionality (particularly free/busy data and GAL lookup).
+
+PUT - Used (with "Translate: f") to create new messages and calendar
+objects, and to send mail using the mail submission URI.
+
+POST - Used to update out-of-office data by posting new values to the
+Options page. Not used for anything else: if you POST a message to a
+folder, it is marked as being a draft (meaning that if you
+double-click on it in Outlook, it opens in a composer window), and
+there doesn't seem to be any way to undo that.
+
+
+WebDAV methods
+--------------
+PROPFIND - Used in a few places to fetch properties from one or more
+objects. SEARCH and BPROPFIND are used more often though, because they
+allow easy selection of multiple objects.
+
+SEARCH - This is a proposed extension to WebDAV (see
+draft-davis-dasl-protocol-00.txt in the ietf/ subdir), although IIS's
+implementation does not match the proposal completely. (In particular,
+it only allows SQL searching, while the spec requires a "simple"
+search method as well.) Full info about the SQL syntax can be found on
+MSDN, but you only need to know the details if you are editing the
+sql-construction code in e2k-connection.c or e2k-restriction.c
+
+PROPPATCH - Used to change properties. Also used to create new objects
+in some places (eg, contacts and tasks).
+
+MKCOL, DELETE, COPY, MOVE - Used for shell folder ops only
+
+BPROPFIND, BPROPPATCH, BDELETE, BCOPY, BMOVE - Bulk operations.
+Another MS extension. These allow you to act on multiple objects at
+once.
+
+BDELETE is used for "empty trash".
+
+BCOPY and BMOVE are used for message moves/copies. We also use the MS
+"Allow-Rename" header to tell it to rename the messages if needed.
+(Messages delivered to your Inbox get the message Subject plus ".EML"
+as their name, by default. Duplicate names get "-2", "-3", etc
+appended. So if you receive a message with the subject "Re: foo", it
+would be called "Re:%20foo.EML". If you delete it, it is moved to the
+Deleted Items folder. Then if you get another message with the subject
+"Re: foo", it would also be called "Re:%20foo.EML". If you delete
+that, since we use the Allow-Rename header, it would be renamed to
+"Re:%20foo-2.EML" automatically.)
+
+The bulk operations return the same result codes as their non-bulk
+equivalents if you use them on a single object. If you use them on
+multiple objects, they return status 207 (multistatus) with an XML
+response giving the results for each object.
+
+SUBSCRIBE/UNSUBSCRIBE/POLL - Another MS extension, explained in the
+"subscriptions" doc.
+
+

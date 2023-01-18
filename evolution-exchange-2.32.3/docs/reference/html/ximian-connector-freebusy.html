@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Free/Busy Searches</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch02.html" title="Implementation of Connector Features">
+<link rel="prev" href="ximian-connector-fba.html" title="Exchange 2003 Forms-Based Authentication">
+<link rel="next" href="ximian-connector-oof.html" title="Out of Office">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="ximian-connector-fba.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="ximian-connector-oof.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry" title="Free/Busy Searches">
+<a name="ximian-connector-freebusy"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">Free/Busy Searches</span></h2>
+<p></p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1" title="The OWA XML Free/Busy interface">
+<a name="id2959546"></a><h2>The <span class="application">OWA</span> XML Free/Busy interface</h2>
+<p>
+In Connector versions up to and including 2.0, we get free/busy data
+by using the XML interface to <span class="application">OWA</span>. The
+request URL looks like:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">/</span><span class="normal">public</span><span class="symbol">/?</span><span class="normal">Cmd</span><span class="symbol">=</span><span class="normal">freebusy</span>
+<span class="normal">    </span><span class="symbol">&amp;</span><span class="normal">start</span><span class="symbol">=</span><span class="number">2002</span><span class="symbol">-</span><span class="number">10</span><span class="symbol">-</span><span class="normal">23T04</span><span class="symbol">:</span><span class="number">00</span><span class="symbol">:</span><span class="normal">00Z</span>
+<span class="normal">    </span><span class="symbol">&amp;</span><span class="normal">end</span><span class="symbol">=</span><span class="number">2002</span><span class="symbol">-</span><span class="number">11</span><span class="symbol">-</span><span class="normal">27T05</span><span class="symbol">:</span><span class="number">00</span><span class="symbol">:</span><span class="normal">00Z</span>
+<span class="normal">    </span><span class="symbol">&amp;</span><span class="normal">interval</span><span class="symbol">=</span><span class="number">30</span>
+<span class="normal">    </span><span class="symbol">&amp;</span><span class="normal">u</span><span class="symbol">=</span><span class="normal">SMTP</span><span class="symbol">:</span><span class="normal">danw@xcs</span><span class="symbol">.</span><span class="normal">ximian</span><span class="symbol">.</span><span class="normal">com</span>
+<span class="normal">    </span><span class="symbol">&amp;</span><span class="normal">u</span><span class="symbol">=</span><span class="normal">SMTP</span><span class="symbol">:</span><span class="normal">eleanor@xcs</span><span class="symbol">.</span><span class="normal">ximian</span><span class="symbol">.</span><span class="normal">com</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+(Line breaks inserted for clarity. The actual URL would all be on one
+line of course.) This must be sent with a proper
+<code class="literal">User-Agent</code> header to make it believe you are
+<span class="application">IE</span> (or you'll get the HTML form instead.)
+You can add as many users as you like.
+</p>
+<p>
+The response (with a status of <code class="literal"><span class="errorcode">200</span>
+<span class="errorname">OK</span></code>) looks like:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="usertype">response</span><span class="normal"> xmlns</span><span class="symbol">:</span><span class="normal">a</span><span class="symbol">=</span><span class="string">"WM"</span><span class="symbol">&gt;</span>
+<span class="normal">  </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">recipients</span><span class="symbol">&gt;</span>
+<span class="normal">    </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">item</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">displayname</span><span class="symbol">&gt;</span><span class="usertype">All</span><span class="normal"> Attendees</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">displayname</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">type</span><span class="symbol">&gt;</span><span class="number">1</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">type</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">fbdata</span><span class="symbol">&gt;</span><span class="number">00000022220000000000000001221000222222</span><span class="symbol">...&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">fbdata</span><span class="symbol">&gt;</span>
+<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">item</span><span class="symbol">&gt;</span>
+<span class="normal">    </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">item</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">displayname</span><span class="symbol">&gt;</span><span class="usertype">Dan</span><span class="normal"> Winship</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">displayname</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="usertype">email</span><span class="normal"> type</span><span class="symbol">=</span><span class="string">"SMTP"</span><span class="symbol">&gt;</span><span class="normal">danw@xcs</span><span class="symbol">.</span><span class="normal">ximian</span><span class="symbol">.</span><span class="normal">com</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">email</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">type</span><span class="symbol">&gt;</span><span class="number">1</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">type</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">fbdata</span><span class="symbol">&gt;</span><span class="number">00000000000000000000000000220000222222</span><span class="symbol">...&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">fbdata</span><span class="symbol">&gt;</span>
+<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">item</span><span class="symbol">&gt;</span>
+<span class="normal">    </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">item</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">displayname</span><span class="symbol">&gt;</span><span class="usertype">Eleanor</span><span class="normal"> Garcia</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">displayname</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="usertype">email</span><span class="normal"> type</span><span class="symbol">=</span><span class="string">"SMTP"</span><span class="symbol">&gt;</span><span class="normal">eleanor@xcs</span><span class="symbol">.</span><span class="normal">ximian</span><span class="symbol">.</span><span class="normal">com</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">email</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">type</span><span class="symbol">&gt;</span><span class="number">1</span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">type</span><span class="symbol">&gt;</span>
+<span class="normal">      </span><span class="symbol">&lt;</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">fbdata</span><span class="symbol">&gt;</span><span class="number">00000022220000000000000001111000000000</span><span class="symbol">...&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">fbdata</span><span class="symbol">&gt;</span>
+<span class="normal">    </span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">item</span><span class="symbol">&gt;</span>
+<span class="normal">  </span><span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">recipients</span><span class="symbol">&gt;</span><span class="normal">  </span>
+<span class="symbol">&lt;/</span><span class="normal">a</span><span class="symbol">:</span><span class="normal">response</span><span class="symbol">&gt;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+Each character in the <code class="literal">fbdata</code> section represents a
+length of "<code class="literal">interval</code>" minutes (the interval
+specified in the request URL), with the following mapping:
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="constant">0</code></span></p></td>
+<td><p>Free</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="constant">1</code></span></p></td>
+<td><p>Tentative</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="constant">2</code></span></p></td>
+<td><p>Busy</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="constant">3</code></span></p></td>
+<td><p>Out of Office</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1" title="The Lower-level Free/Busy Interface">
+<a name="id2971592"></a><h2>The Lower-level Free/Busy Interface</h2>
+<div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>There is some code in
+<code class="filename">e2k-freebusy.c</code>
+that works with these interfaces, but it is not very heavily tested
+and is not currently used by Connector.
+</p>
+</div>
+<div class="refsect2" title="Public Free/Busy file">
+<a name="id2971614"></a><h3>Public Free/Busy file</h3>
+<p>
+<span class="application">OWA</span>'s free/busy data is generated from the
+data in <code class="uri">/public/NON_IPM_SUBTREE/SCHEDULE%2B%20FREE%20BUSY/</code>.
+Under that directory, there is a directory for each
+<span class="application">Exchange</span> organization. Eg:
+</p>
+<div class="informalexample"><p>
+<code class="uri">EX:_xF8FF_o=Ximian%20XCS_xF8FF_ou=XCS</code>
+</p></div>
+<p>
+In that directory is a file for each user, eg:
+</p>
+<div class="informalexample"><p>
+<code class="uri">USER-_xF8FF_CN=RECIPIENTS_xF8FF_CN=DANW.EML</code>
+</p></div>
+<p>
+So, given that my <em class="structfield"><code>legacyExchangeDN</code></em> is
+</p>
+<div class="informalexample"><p>
+<code class="uri">/o=Ximian XCS/ou=XCS/cn=Recipients/cn=danw</code>
+</p></div>
+<p>
+you can find my public free/busy file. ("<code class="literal">_xF8FF_</code>" is
+the URI-encoded form of '<code class="literal">/</code>' when it's not a path
+separator. <a class="link" href="evolution-exchange-e2k-uri.html#e2k-uri-encode" title="e2k_uri_encode ()"><code class="function">e2k_uri_encode</code></a>
+handles this.). The <em class="structfield"><code>legacyExchangeDN</code></em> is
+also stored as the <code class="literal">PR_FREEBUSY_EMAIL_ADDRESS</code>
+property on the message, so we can also just search for that.
+</p>
+<p>
+The <code class="literal">PR_FREEBUSY_START_RANGE</code> and
+<code class="literal">PR_FREEBUSY_END_RANGE</code> properties on this message
+give the start and end times of the published range, in systime
+(minutes since <code class="literal">16010101T00000000Z</code>) format. These
+always fall on month boundaries. (The start time is always the
+beginning of the current month, and the end time is determined by the
+<code class="literal">PR_FREEBUSY_NUM_MONTHS</code> property on the private
+free/busy file (described below).)
+</p>
+<p>
+Four pairs of multivalued properties give the actual free/busy data.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">PR_FREEBUSY_ALL_MONTHS</code> / <code class="literal">PR_FREEBUSY_ALL_EVENTS</code></span></p></td>
+<td><p>all events</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">PR_FREEBUSY_TENTATIVE_MONTHS</code> / <code class="literal">PR_FREEBUSY_TENTATIVE_EVENTS</code></span></p></td>
+<td><p>tentative events</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">PR_FREEBUSY_BUSY_MONTHS</code> / <code class="literal">PR_FREEBUSY_BUSY_EVENTS</code></span></p></td>
+<td><p>busy events</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">PR_FREEBUSY_OOF_MONTHS</code> / <code class="literal">PR_FREEBUSY_OOF_EVENTS</code></span></p></td>
+<td><p>out-of-office events</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+The <code class="literal">_MONTHS</code> properties are arrays of
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">guint</span><span class="normal"> month</span><span class="symbol">:</span><span class="number">4</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* 1 = January */</span>
+<span class="normal">    </span><span class="usertype">guint</span><span class="normal"> year </span><span class="symbol">:</span><span class="number">28</span><span class="symbol">;</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+Each element of this array has a corresponding element in the
+<code class="literal">_EVENTS</code> array containing the events in that month
+and year as an array of:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> start</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* minutes since start of month */</span>
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> end</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">/* minutes since start of month */</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+If there are no events of a given type in the given interval, then
+<span class="application">Outlook</span> leaves the two properties for that
+type unset. (If there are no events at all, then all 8 properties will
+be unset.) But when <span class="application">Exchange</span> regenerates
+them itself, it just creates them empty instead.
+</p>
+<p>
+Additionally, several other properties are used:
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">PR_FREEBUSY_LAST_MODIFIED</code></span></p></td>
+<td><p>the last modtime</p></td>
+</tr>
+<tr>
+<td><p><span class="term">MAPI proptag <code class="constant">0x68410003</code></span></p></td>
+<td><p>Unknown. (Usually
+	<code class="constant">0</code>)</p></td>
+</tr>
+<tr>
+<td><p><span class="term">MAPI proptag <code class="constant">0x6846000b</code></span></p></td>
+<td><p>Unknown. (Usually
+	<code class="constant">1</code>)</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+There is also one more property,
+<code class="uri">http://schemas.microsoft.com/mapi/string/{8CDA1CAE-AFDB-11D2-9379-00C04FA357AA}/microsoft.cdo.calendar.fbhistory</code>,
+of type <code class="literal">PT_MV_BINARY</code>, which seems to always contain
+3 24-byte items. The first two bytes of each are a month-year like the
+<code class="literal">_MONTHS</code> properties (and for an up-to-date free/busy
+file, the 3 items will be this month, next month, and the month
+after). There are then 6 0 bytes, followed by 8 bytes of data that are
+almost always the same in each of the 3 items, followed by 8 0 bytes.
+The purpose of this data is currently unknown. The middle chunk of
+data seems to get changed every time the free/busy data is updated. It
+may be a timestamp of some unknown sort?
+</p>
+</div>
+<hr>
+<div class="refsect2" title="Personal Free/Busy file">
+<a name="id2957442"></a><h3>Personal Free/Busy file</h3>
+<p>
+Each user also has a personal free/busy message, at:
+</p>
+<div class="informalexample"><p>
+<code class="uri">/exchange/<em class="replaceable"><code>username</code></em>/NON_IPM_SUBTREE/Freebusy%20Data/LocalFreebusy.EML</code>
+</p></div>
+<p>
+This is known to be used for at least three things:
+</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>
+    The user's free/busy information is stored on it (in a completely
+    different format from the public free/busy file), as described
+    below.
+    </p></li>
+<li class="listitem"><p>
+    The user's list of delegates and their "see private items"
+    permissions are stored on it, as described in "Delegates".
+    </p></li>
+<li class="listitem"><p>
+    Certain preferences that allow the account to be used as a
+    "resource" are stored here, as described in "Direct Booking".
+    </p></li>
+</ol></div>
+<p>
+When you create an event via WebDAV, the server will eventually update
+the free/busy file with that data, but this is subject to various
+delays and exceptions that we don't understand. Among other things,
+<span class="application">Outlook</span> uses the free/busy file to decide
+what dates to make bold in the minicalendar, which is why
+Connector-created appointments don't always show up there right away
+even when <span class="application">Outlook</span> does display the event
+itself.
+</p>
+<p>
+The free/busy data is stored in the
+<code class="literal">PR_PERSONAL_FREEBUSY</code> property as follows:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> magic</span><span class="symbol">;</span><span class="normal">      </span><span class="comment">/* 0xdeadbeef */</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> header_len</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">/* 0x00000040 */</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> unknown_1</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* 0x00010000 */</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> unknown_2</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* 0x00000000 */</span>
+
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> num_groups</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">/* number of free/busy groups */</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> num_events</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">/* total number of free/busy objects */</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> unknown_3</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* 0x00000008 */</span>
+<span class="normal">    </span><span class="usertype">guint32</span><span class="normal"> unknown_4</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* 0x00000004 */</span>
+
+<span class="normal">    </span><span class="usertype">guint64</span><span class="normal"> first_event</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">/* Windows filetime of start of first event */</span>
+<span class="normal">    </span><span class="usertype">guint64</span><span class="normal"> last_event</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">/* Windows filetime of end of last event */</span>
+<span class="normal">    </span><span class="usertype">guint64</span><span class="normal"> start_valid</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">/* Windows filetime of start of range */</span>
+<span class="normal">    </span><span class="usertype">guint64</span><span class="normal"> end_valid</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* Windows filetime of end of range */</span>
+
+<span class="normal">    </span><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> index</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* Index of first event belonging to this group */</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> count</span><span class="symbol">;</span><span class="normal">  </span><span class="comment">/* Number of events in this group */</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="normal"> groups</span><span class="symbol">[</span><span class="normal">num_groups</span><span class="symbol">];</span>
+
+<span class="normal">    </span><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> offset</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">/* Offset in minutes of event from start of group */</span>
+<span class="normal">        </span><span class="usertype">guint</span><span class="normal"> len</span><span class="symbol">:</span><span class="number">13</span><span class="symbol">;</span><span class="normal">   </span><span class="comment">/* Length of event in minutes */</span>
+<span class="normal">        </span><span class="usertype">guint</span><span class="normal"> status</span><span class="symbol">:</span><span class="number">3</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">/* Status (1 = tentative, 2 = busy, 3 = oof) */</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="normal"> events</span><span class="symbol">[</span><span class="normal">num_events</span><span class="symbol">];</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+The first group starts at the time indicated by
+<em class="structfield"><code>start_valid</code></em>, so an event in group
+<code class="constant">0</code> with an <em class="structfield"><code>offset</code></em> of
+<code class="constant">0</code> starts at
+<em class="structfield"><code>start_valid</code></em>. Group
+<em class="replaceable"><code>N</code></em> starts at time
+<code class="code">(<em class="structfield"><code>start_valid</code></em> +
+<em class="replaceable"><code>N</code></em> * <code class="constant">0x10000</code>)</code>.
+If there are no events in the timeframe of a group, its
+<em class="structfield"><code>index</code></em> and <em class="structfield"><code>count</code></em>
+will both be <code class="constant">0</code>.
+</p>
+<p>
+There is no particular correlation between free/busy events and events
+on the calendar: two adjacent calendar events can be stored as a
+single free/busy event, and a given calendar event may be split across
+two or more free/busy groups.
+</p>
+<p>
+The number of months covered by the free/busy data is in
+<code class="literal">PR_FREEBUSY_NUM_MONTHS</code>.
+</p>
+<p>
+A posting on the <a class="ulink" href="http://peach.ease.lsoft.com/archives/mapi-l.html" target="_top">MAPI-L</a>
+list claimed that setting <code class="literal">PR_DISABLE_FULL_FIDELITY</code>
+to <code class="literal">0</code> on the free/busy message will force
+<span class="application">Outlook</span> to regenerate it, but I haven't
+tested this.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

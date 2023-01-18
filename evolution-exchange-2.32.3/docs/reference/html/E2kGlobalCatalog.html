@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>E2kGlobalCatalog</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch03.html" title="libexchange public API reference">
+<link rel="prev" href="E2kContext.html" title="E2kContext">
+<link rel="next" href="evolution-exchange-E2kOperation.html" title="E2kOperation">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="E2kContext.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="evolution-exchange-E2kOperation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#E2kGlobalCatalog.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#E2kGlobalCatalog.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#E2kGlobalCatalog.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="E2kGlobalCatalog">
+<a name="E2kGlobalCatalog"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="E2kGlobalCatalog.top_of_page"></a>E2kGlobalCatalog</span></h2>
+<p>E2kGlobalCatalog — Connection to the local Active Directory Global Catalog replica server</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="E2kGlobalCatalog.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalog-struct" title="struct E2kGlobalCatalog">E2kGlobalCatalog</a>;
+<a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="returnvalue">E2kGlobalCatalog</span></a> *  <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-new" title="e2k_global_catalog_new ()">e2k_global_catalog_new</a>              (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *server</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> response_limit</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>,
+                                                         <em class="parameter"><code><span class="type">E2kAutoconfigGalAuthPref</span> use_auth</code></em>);
+<span class="returnvalue">LDAP</span> *              <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-get-ldap" title="e2k_global_catalog_get_ldap ()">e2k_global_catalog_get_ldap</a>         (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *ldap_error</code></em>);
+
+enum                <a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus">E2kGlobalCatalogStatus</a>;
+enum                <a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupType" title="enum E2kGlobalCatalogLookupType">E2kGlobalCatalogLookupType</a>;
+enum                <a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupFlags" title="enum E2kGlobalCatalogLookupFlags">E2kGlobalCatalogLookupFlags</a>;
+                    <a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogEntry" title="E2kGlobalCatalogEntry">E2kGlobalCatalogEntry</a>;
+<a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="returnvalue">E2kGlobalCatalogStatus</span></a>  <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-lookup" title="e2k_global_catalog_lookup ()">e2k_global_catalog_lookup</a>       (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupType" title="enum E2kGlobalCatalogLookupType"><span class="type">E2kGlobalCatalogLookupType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupFlags" title="enum E2kGlobalCatalogLookupFlags"><span class="type">E2kGlobalCatalogLookupFlags</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogEntry" title="E2kGlobalCatalogEntry"><span class="type">E2kGlobalCatalogEntry</span></a> **entry_p</code></em>);
+#define             <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-entry-free" title="e2k_global_catalog_entry_free()">e2k_global_catalog_entry_free</a>       (gc,
+                                                         entry)
+<span class="returnvalue">void</span>                (<a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogCallback" title="E2kGlobalCatalogCallback ()">*E2kGlobalCatalogCallback</a>)         (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="type">E2kGlobalCatalogStatus</span></a> status</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogEntry" title="E2kGlobalCatalogEntry"><span class="type">E2kGlobalCatalogEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-async-lookup" title="e2k_global_catalog_async_lookup ()">e2k_global_catalog_async_lookup</a>     (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupType" title="enum E2kGlobalCatalogLookupType"><span class="type">E2kGlobalCatalogLookupType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupFlags" title="enum E2kGlobalCatalogLookupFlags"><span class="type">E2kGlobalCatalogLookupFlags</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogCallback" title="E2kGlobalCatalogCallback ()"><span class="type">E2kGlobalCatalogCallback</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+
+<a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="returnvalue">E2kGlobalCatalogStatus</span></a>  <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-add-delegate" title="e2k_global_catalog_add_delegate ()">e2k_global_catalog_add_delegate</a> (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *self_dn</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *delegate_dn</code></em>);
+<a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="returnvalue">E2kGlobalCatalogStatus</span></a>  <a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-remove-delegate" title="e2k_global_catalog_remove_delegate ()">e2k_global_catalog_remove_delegate</a>
+                                                        (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *self_dn</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *delegate_dn</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="E2kGlobalCatalog.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----E2kGlobalCatalog
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="E2kGlobalCatalog.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> represents a connection to the local Active
+Directory Global Catalog replica. The Global Catalog is replicated at
+each site in a Windows domain, and contains a subset of Active
+Directory information for every object in the entire Active Directory
+tree. (As opposed to the regular Active Directory servers, which
+contain complete information about only the local portion of the
+tree.)
+</p>
+<p>
+Connector uses the global catalog for two major purposes:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>To populate the Global Address List</p></li>
+<li class="listitem"><p>To look up information about other users, such as what
+Exchange server their mail is on, or what their SID is.</p></li>
+</ul></div>
+</div>
+<div class="refsect1" title="Details">
+<a name="E2kGlobalCatalog.details"></a><h2>Details</h2>
+<div class="refsect2" title="struct E2kGlobalCatalog">
+<a name="E2kGlobalCatalog-struct"></a><h3>struct E2kGlobalCatalog</h3>
+<pre class="programlisting">struct E2kGlobalCatalog;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_new ()">
+<a name="e2k-global-catalog-new"></a><h3>e2k_global_catalog_new ()</h3>
+<pre class="programlisting"><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="returnvalue">E2kGlobalCatalog</span></a> *  e2k_global_catalog_new              (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *server</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> response_limit</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *password</code></em>,
+                                                         <em class="parameter"><code><span class="type">E2kAutoconfigGalAuthPref</span> use_auth</code></em>);</pre>
+<p>
+Create an object for communicating with the Windows Global Catalog
+via LDAP.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>server</code></em> :</span></p></td>
+<td>the GC server name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>response_limit</code></em> :</span></p></td>
+<td>the maximum number of responses to return from a search
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td>username to authenticate with
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>NT domain of <em class="parameter"><code>user</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to autodetect.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>password</code></em> :</span></p></td>
+<td>password to authenticate with
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_auth</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new E2kGlobalCatalog. (This call will always succeed.
+If the passed-in data is bad, it will fail on a later call.)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_get_ldap ()">
+<a name="e2k-global-catalog-get-ldap"></a><h3>e2k_global_catalog_get_ldap ()</h3>
+<pre class="programlisting"><span class="returnvalue">LDAP</span> *              e2k_global_catalog_get_ldap         (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *ldap_error</code></em>);</pre>
+<p>
+Returns a new LDAP handle. The caller must <code class="function">ldap_unbind()</code> it when it
+is done.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>the global catalog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>pointer to an initialized <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> to use for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ldap_error</code></em> :</span></p></td>
+<td>set the value returned from get_ldap_connection if not NULL
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an LDAP handle, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it can't connect
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kGlobalCatalogStatus">
+<a name="E2kGlobalCatalogStatus"></a><h3>enum E2kGlobalCatalogStatus</h3>
+<pre class="programlisting">typedef enum {
+	E2K_GLOBAL_CATALOG_OK,
+	E2K_GLOBAL_CATALOG_NO_SUCH_USER,
+	E2K_GLOBAL_CATALOG_NO_DATA,
+	E2K_GLOBAL_CATALOG_BAD_DATA,
+	E2K_GLOBAL_CATALOG_EXISTS,
+	E2K_GLOBAL_CATALOG_AUTH_FAILED,
+	E2K_GLOBAL_CATALOG_CANCELLED,
+	E2K_GLOBAL_CATALOG_ERROR
+} E2kGlobalCatalogStatus;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kGlobalCatalogLookupType">
+<a name="E2kGlobalCatalogLookupType"></a><h3>enum E2kGlobalCatalogLookupType</h3>
+<pre class="programlisting">typedef enum {
+	E2K_GLOBAL_CATALOG_LOOKUP_BY_EMAIL,
+	E2K_GLOBAL_CATALOG_LOOKUP_BY_DN,
+	E2K_GLOBAL_CATALOG_LOOKUP_BY_LEGACY_EXCHANGE_DN
+} E2kGlobalCatalogLookupType;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kGlobalCatalogLookupFlags">
+<a name="E2kGlobalCatalogLookupFlags"></a><h3>enum E2kGlobalCatalogLookupFlags</h3>
+<pre class="programlisting">typedef enum {
+	E2K_GLOBAL_CATALOG_LOOKUP_SID                = (1 &lt;&lt; 0),
+	E2K_GLOBAL_CATALOG_LOOKUP_EMAIL              = (1 &lt;&lt; 1),
+	E2K_GLOBAL_CATALOG_LOOKUP_MAILBOX            = (1 &lt;&lt; 2),
+	E2K_GLOBAL_CATALOG_LOOKUP_LEGACY_EXCHANGE_DN = (1 &lt;&lt; 3),
+	E2K_GLOBAL_CATALOG_LOOKUP_DELEGATES          = (1 &lt;&lt; 4),
+	E2K_GLOBAL_CATALOG_LOOKUP_DELEGATORS         = (1 &lt;&lt; 5),
+	E2K_GLOBAL_CATALOG_LOOKUP_QUOTA		     = (1 &lt;&lt; 6),
+	E2K_GLOBAL_CATALOG_LOOKUP_ACCOUNT_CONTROL    = (1 &lt;&lt; 7)
+} E2kGlobalCatalogLookupFlags;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E2kGlobalCatalogEntry">
+<a name="E2kGlobalCatalogEntry"></a><h3>E2kGlobalCatalogEntry</h3>
+<pre class="programlisting">typedef struct {
+	gchar *dn, *display_name;
+	E2kSid *sid;
+	gchar *email, *exchange_server, *mailbox, *legacy_exchange_dn;
+	GPtrArray *delegates, *delegators;
+	gint quota_warn, quota_nosend, quota_norecv;
+	gint user_account_control;
+
+	E2kGlobalCatalogLookupFlags mask;
+} E2kGlobalCatalogEntry;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_lookup ()">
+<a name="e2k-global-catalog-lookup"></a><h3>e2k_global_catalog_lookup ()</h3>
+<pre class="programlisting"><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="returnvalue">E2kGlobalCatalogStatus</span></a>  e2k_global_catalog_lookup       (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupType" title="enum E2kGlobalCatalogLookupType"><span class="type">E2kGlobalCatalogLookupType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupFlags" title="enum E2kGlobalCatalogLookupFlags"><span class="type">E2kGlobalCatalogLookupFlags</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogEntry" title="E2kGlobalCatalogEntry"><span class="type">E2kGlobalCatalogEntry</span></a> **entry_p</code></em>);</pre>
+<p>
+Look up the indicated user in the global catalog and
+return their information in *<em class="parameter"><code>entry_p</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>the global catalog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>pointer to an <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> to use for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type of information in <em class="parameter"><code>key</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>email address or DN to look up
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>the information to look up
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry_p</code></em> :</span></p></td>
+<td>pointer to a variable to return the entry in.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the status of the lookup
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_entry_free()">
+<a name="e2k-global-catalog-entry-free"></a><h3>e2k_global_catalog_entry_free()</h3>
+<pre class="programlisting">#define e2k_global_catalog_entry_free(gc, entry)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2kGlobalCatalogCallback ()">
+<a name="E2kGlobalCatalogCallback"></a><h3>E2kGlobalCatalogCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*E2kGlobalCatalogCallback)         (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="type">E2kGlobalCatalogStatus</span></a> status</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogEntry" title="E2kGlobalCatalogEntry"><span class="type">E2kGlobalCatalogEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_async_lookup ()">
+<a name="e2k-global-catalog-async-lookup"></a><h3>e2k_global_catalog_async_lookup ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_global_catalog_async_lookup     (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupType" title="enum E2kGlobalCatalogLookupType"><span class="type">E2kGlobalCatalogLookupType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogLookupFlags" title="enum E2kGlobalCatalogLookupFlags"><span class="type">E2kGlobalCatalogLookupFlags</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogCallback" title="E2kGlobalCatalogCallback ()"><span class="type">E2kGlobalCatalogCallback</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Asynchronously look up the indicated user in the global catalog and
+return the requested information to the callback.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>the global catalog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>pointer to an <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> to use for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type of information in <em class="parameter"><code>key</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>email address or DN to look up
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>the information to look up
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>the callback to invoke after finding the user
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>data to pass to callback
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_add_delegate ()">
+<a name="e2k-global-catalog-add-delegate"></a><h3>e2k_global_catalog_add_delegate ()</h3>
+<pre class="programlisting"><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="returnvalue">E2kGlobalCatalogStatus</span></a>  e2k_global_catalog_add_delegate (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *self_dn</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *delegate_dn</code></em>);</pre>
+<p>
+Attempts to make <em class="parameter"><code>delegate_dn</code></em> a delegate of <em class="parameter"><code>self_dn</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>the global catalog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>pointer to an <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> to use for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self_dn</code></em> :</span></p></td>
+<td>Active Directory DN of the user to add a delegate to
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>delegate_dn</code></em> :</span></p></td>
+<td>Active Directory DN of the new delegate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">E2K_GLOBAL_CATALOG_OK</code> on success,
+<code class="literal">E2K_GLOBAL_CATALOG_NO_SUCH_USER</code> if <em class="parameter"><code>self_dn</code></em> is invalid,
+<code class="literal">E2K_GLOBAL_CATALOG_BAD_DATA</code> if <em class="parameter"><code>delegate_dn</code></em> is invalid,
+<code class="literal">E2K_GLOBAL_CATALOG_EXISTS</code> if <em class="parameter"><code>delegate_dn</code></em> is already a delegate,
+<code class="literal">E2K_GLOBAL_CATALOG_ERROR</code> on other errors.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_global_catalog_remove_delegate ()">
+<a name="e2k-global-catalog-remove-delegate"></a><h3>e2k_global_catalog_remove_delegate ()</h3>
+<pre class="programlisting"><a class="link" href="E2kGlobalCatalog.html#E2kGlobalCatalogStatus" title="enum E2kGlobalCatalogStatus"><span class="returnvalue">E2kGlobalCatalogStatus</span></a>  e2k_global_catalog_remove_delegate
+                                                        (<em class="parameter"><code><a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><span class="type">E2kGlobalCatalog</span></a> *gc</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *self_dn</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *delegate_dn</code></em>);</pre>
+<p>
+Attempts to remove <em class="parameter"><code>delegate_dn</code></em> as a delegate of <em class="parameter"><code>self_dn</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gc</code></em> :</span></p></td>
+<td>the global catalog
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>pointer to an <a class="link" href="evolution-exchange-E2kOperation.html#E2kOperation" title="struct E2kOperation"><span class="type">E2kOperation</span></a> to use for cancellation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self_dn</code></em> :</span></p></td>
+<td>Active Directory DN of the user to remove a delegate from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>delegate_dn</code></em> :</span></p></td>
+<td>Active Directory DN of the delegate to remove
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">E2K_GLOBAL_CATALOG_OK</code> on success,
+<code class="literal">E2K_GLOBAL_CATALOG_NO_SUCH_USER</code> if <em class="parameter"><code>self_dn</code></em> is invalid,
+<code class="literal">E2K_GLOBAL_CATALOG_NO_DATA</code> if <em class="parameter"><code>delegate_dn</code></em> is not a delegate of <em class="parameter"><code>self_dn</code></em>,
+<code class="literal">E2K_GLOBAL_CATALOG_ERROR</code> on other errors.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="E2kGlobalCatalog.see-also"></a><h2>See Also</h2>
+<p>
+<a class="link" href="evolution-exchange-E2kAutoconfig.html#E2kAutoconfig" title="E2kAutoconfig"><span class="type">E2kAutoconfig</span></a>,
+<a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a>
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[Desktop Entry]
+_Name=Evolution
+_GenericName=Groupware Suite
+_X-GNOME-FullName=Evolution Mail and Calendar
+_Comment=Manage your email, contacts and schedule
+Exec=evolution %U
+Icon=evolution
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Office;Email;Calendar;ContactManagement;X-Red-Hat-Base;
+StartupNotify=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=Evolution
+X-GNOME-Bugzilla-Component=BugBuddyBugs
+X-GNOME-Bugzilla-Version=2.32.x
+X-GNOME-Bugzilla-OtherBinaries=e-addressbook-factory;e-calendar-factory
+MimeType=text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;

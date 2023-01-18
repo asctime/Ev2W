@@ -1,0 +1,17 @@
+prefix=/home/mbarnes/local/2.32
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+privlibdir=${libdir}/evolution/2.32
+privincludedir=${includedir}/evolution-2.32
+
+# The requirements list is kind of guesswork at
+# the moment.  Add more requirements as needed.
+
+Name: Evolution Calendar
+Description: Calendar utilities for Evolution
+Version: 2.32.3
+Requires: evolution-shell
+Libs: -L${privlibdir} -levolution-calendar
+Cflags: -I${privincludedir}

@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-freebusy">
+<refmeta>
+<refentrytitle>Free/Busy Searches</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<refsect1>
+<title>The <application>OWA</application> XML Free/Busy interface</title>
+
+<para>
+In Connector versions up to and including 2.0, we get free/busy data
+by using the XML interface to <application>OWA</application>. The
+request URL looks like:
+</para>
+
+<informalexample><programlisting>
+	/public/?Cmd=freebusy
+		&amp;start=2002-10-23T04:00:00Z
+		&amp;end=2002-11-27T05:00:00Z
+		&amp;interval=30
+		&amp;u=SMTP:danw@xcs.ximian.com
+		&amp;u=SMTP:eleanor@xcs.ximian.com
+</programlisting></informalexample>
+
+<para>
+(Line breaks inserted for clarity. The actual URL would all be on one
+line of course.) This must be sent with a proper
+<literal>User-Agent</literal> header to make it believe you are
+<application>IE</application> (or you'll get the HTML form instead.)
+You can add as many users as you like.
+</para>
+
+<para>
+The response (with a status of <literal><errorcode>200</errorcode>
+<errorname>OK</errorname></literal>) looks like:
+</para>
+
+<informalexample><programlisting>
+	&lt;a:response xmlns:a="WM"&gt;
+	  &lt;a:recipients&gt;
+	    &lt;a:item&gt;
+	      &lt;a:displayname&gt;All Attendees&lt;/a:displayname&gt;
+	      &lt;a:type&gt;1&lt;/a:type&gt;
+	      &lt;a:fbdata&gt;00000022220000000000000001221000222222...&lt;/a:fbdata&gt;
+	    &lt;/a:item&gt;
+	    &lt;a:item&gt;
+	      &lt;a:displayname&gt;Dan Winship&lt;/a:displayname&gt;
+	      &lt;a:email type="SMTP"&gt;danw@xcs.ximian.com&lt;/a:email&gt;
+	      &lt;a:type&gt;1&lt;/a:type&gt;
+	      &lt;a:fbdata&gt;00000000000000000000000000220000222222...&lt;/a:fbdata&gt;
+	    &lt;/a:item&gt;
+	    &lt;a:item&gt;
+	      &lt;a:displayname&gt;Eleanor Garcia&lt;/a:displayname&gt;
+	      &lt;a:email type="SMTP"&gt;eleanor@xcs.ximian.com&lt;/a:email&gt;
+	      &lt;a:type&gt;1&lt;/a:type&gt;
+	      &lt;a:fbdata&gt;00000022220000000000000001111000000000...&lt;/a:fbdata&gt;
+	    &lt;/a:item&gt;
+	  &lt;/a:recipients&gt;  
+	&lt;/a:response&gt;
+</programlisting></informalexample>
+
+<para>
+Each character in the <literal>fbdata</literal> section represents a
+length of "<literal>interval</literal>" minutes (the interval
+specified in the request URL), with the following mapping:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><constant>0</constant></term>
+	<listitem><para>Free</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><constant>1</constant></term>
+	<listitem><para>Tentative</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><constant>2</constant></term>
+	<listitem><para>Busy</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><constant>3</constant></term>
+	<listitem><para>Out of Office</para></listitem>
+    </varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title>The Lower-level Free/Busy Interface</title>
+
+<note><para>There is some code in
+<link linkend="ximian-connector-e2k-freebusy"><filename>e2k-freebusy.c</filename></link>
+that works with these interfaces, but it is not very heavily tested
+and is not currently used by Connector.
+</para></note>
+
+<refsect2>
+<title>Public Free/Busy file</title>
+
+<para>
+<application>OWA</application>'s free/busy data is generated from the
+data in <uri>/public/NON_IPM_SUBTREE/SCHEDULE%2B%20FREE%20BUSY/</uri>.
+Under that directory, there is a directory for each
+<application>Exchange</application> organization. Eg:
+</para>
+
+<informalexample><para>
+<uri>EX:_xF8FF_o=Ximian%20XCS_xF8FF_ou=XCS</uri>
+</para></informalexample>
+
+<para>
+In that directory is a file for each user, eg:
+</para>
+
+<informalexample><para>
+<uri>USER-_xF8FF_CN=RECIPIENTS_xF8FF_CN=DANW.EML</uri>
+</para></informalexample>
+
+<para>
+So, given that my <structfield>legacyExchangeDN</structfield> is
+</para>
+
+<informalexample><para>
+<uri>/o=Ximian XCS/ou=XCS/cn=Recipients/cn=danw</uri>
+</para></informalexample>
+
+<para>
+you can find my public free/busy file. ("<literal>_xF8FF_</literal>" is
+the URI-encoded form of '<literal>/</literal>' when it's not a path
+separator. <link
+linkend="e2k-uri-encode"><function>e2k_uri_encode</function></link>
+handles this.). The <structfield>legacyExchangeDN</structfield> is
+also stored as the <literal>PR_FREEBUSY_EMAIL_ADDRESS</literal>
+property on the message, so we can also just search for that.
+</para>
+
+<para>
+The <literal>PR_FREEBUSY_START_RANGE</literal> and
+<literal>PR_FREEBUSY_END_RANGE</literal> properties on this message
+give the start and end times of the published range, in systime
+(minutes since <literal>16010101T00000000Z</literal>) format. These
+always fall on month boundaries. (The start time is always the
+beginning of the current month, and the end time is determined by the
+<literal>PR_FREEBUSY_NUM_MONTHS</literal> property on the private
+free/busy file (described below).)
+</para>
+
+<para>
+Four pairs of multivalued properties give the actual free/busy data.
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>PR_FREEBUSY_ALL_MONTHS</literal> / <literal>PR_FREEBUSY_ALL_EVENTS</literal></term>
+	<listitem><para>all events</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FREEBUSY_TENTATIVE_MONTHS</literal> / <literal>PR_FREEBUSY_TENTATIVE_EVENTS</literal></term>
+	<listitem><para>tentative events</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FREEBUSY_BUSY_MONTHS</literal> / <literal>PR_FREEBUSY_BUSY_EVENTS</literal></term>
+	<listitem><para>busy events</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term><literal>PR_FREEBUSY_OOF_MONTHS</literal> / <literal>PR_FREEBUSY_OOF_EVENTS</literal></term>
+	<listitem><para>out-of-office events</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+The <literal>_MONTHS</literal> properties are arrays of
+</para>
+
+<informalexample><programlisting>
+struct {
+	guint month:4;	/* 1 = January */
+	guint year :28;
+};
+</programlisting></informalexample>
+
+<para>
+Each element of this array has a corresponding element in the
+<literal>_EVENTS</literal> array containing the events in that month
+and year as an array of:
+</para>
+
+<informalexample><programlisting>
+struct {
+	guint16 start;	/* minutes since start of month */
+	guint16 end;	/* minutes since start of month */
+};
+</programlisting></informalexample>
+
+<para>
+If there are no events of a given type in the given interval, then
+<application>Outlook</application> leaves the two properties for that
+type unset. (If there are no events at all, then all 8 properties will
+be unset.) But when <application>Exchange</application> regenerates
+them itself, it just creates them empty instead.
+</para>
+
+<para>
+Additionally, several other properties are used:
+</para>
+
+<variablelist>
+    <varlistentry>
+	<term><literal>PR_FREEBUSY_LAST_MODIFIED</literal></term>
+	<listitem><para>the last modtime</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term>MAPI proptag <constant>0x68410003</constant></term>
+	<listitem><para>Unknown. (Usually
+	<constant>0</constant>)</para></listitem>
+    </varlistentry>
+    <varlistentry>
+	<term>MAPI proptag <constant>0x6846000b</constant></term>
+	<listitem><para>Unknown. (Usually
+	<constant>1</constant>)</para></listitem>
+    </varlistentry>
+</variablelist>
+
+<para>
+There is also one more property,
+<uri>http://schemas.microsoft.com/mapi/string/{8CDA1CAE-AFDB-11D2-9379-00C04FA357AA}/microsoft.cdo.calendar.fbhistory</uri>,
+of type <literal>PT_MV_BINARY</literal>, which seems to always contain
+3 24-byte items. The first two bytes of each are a month-year like the
+<literal>_MONTHS</literal> properties (and for an up-to-date free/busy
+file, the 3 items will be this month, next month, and the month
+after). There are then 6 0 bytes, followed by 8 bytes of data that are
+almost always the same in each of the 3 items, followed by 8 0 bytes.
+The purpose of this data is currently unknown. The middle chunk of
+data seems to get changed every time the free/busy data is updated. It
+may be a timestamp of some unknown sort?
+</para>
+
+</refsect2>
+
+<refsect2>
+<title>Personal Free/Busy file</title>
+
+<para>
+Each user also has a personal free/busy message, at:
+</para>
+
+<informalexample><para>
+<uri>/exchange/<replaceable>username</replaceable>/NON_IPM_SUBTREE/Freebusy%20Data/LocalFreebusy.EML</uri>
+</para></informalexample>
+
+<para>
+This is known to be used for at least three things:
+</para>
+
+<orderedlist>
+    <listitem><para>
+    The user's free/busy information is stored on it (in a completely
+    different format from the public free/busy file), as described
+    below.
+    </para></listitem>
+
+    <listitem><para>
+    The user's list of delegates and their "see private items"
+    permissions are stored on it, as described in "<link
+    linkend="ximian-connector-delegates">Delegates</link>".
+    </para></listitem>
+
+    <listitem><para>
+    Certain preferences that allow the account to be used as a
+    "resource" are stored here, as described in "<link
+    linkend="ximian-connector-booking">Direct Booking</link>".
+    </para></listitem>
+</orderedlist>
+
+<para>
+When you create an event via WebDAV, the server will eventually update
+the free/busy file with that data, but this is subject to various
+delays and exceptions that we don't understand. Among other things,
+<application>Outlook</application> uses the free/busy file to decide
+what dates to make bold in the minicalendar, which is why
+Connector-created appointments don't always show up there right away
+even when <application>Outlook</application> does display the event
+itself.
+</para>
+
+<para>
+The free/busy data is stored in the
+<literal>PR_PERSONAL_FREEBUSY</literal> property as follows:
+</para>
+
+<informalexample><programlisting>
+struct {
+	guint32 magic;		/* 0xdeadbeef */
+	guint32 header_len;	/* 0x00000040 */
+	guint32 unknown_1;	/* 0x00010000 */
+	guint32 unknown_2;	/* 0x00000000 */
+
+	guint32 num_groups;	/* number of free/busy groups */
+	guint32 num_events;	/* total number of free/busy objects */
+	guint32 unknown_3;	/* 0x00000008 */
+	guint32 unknown_4;	/* 0x00000004 */
+
+	guint64 first_event;	/* Windows filetime of start of first event */
+	guint64 last_event;	/* Windows filetime of end of last event */
+	guint64 start_valid;	/* Windows filetime of start of range */
+	guint64 end_valid;	/* Windows filetime of end of range */
+
+	struct {
+		guint32 index;	/* Index of first event belonging to this group */
+		guint32 count;	/* Number of events in this group */
+	} groups[num_groups];
+
+	struct {
+		guint32 offset;	/* Offset in minutes of event from start of group */
+		guint len:13;	/* Length of event in minutes */
+		guint status:3;	/* Status (1 = tentative, 2 = busy, 3 = oof) */
+	} events[num_events];
+};
+</programlisting></informalexample>
+
+<para>
+The first group starts at the time indicated by
+<structfield>start_valid</structfield>, so an event in group
+<constant>0</constant> with an <structfield>offset</structfield> of
+<constant>0</constant> starts at
+<structfield>start_valid</structfield>. Group
+<replaceable>N</replaceable> starts at time
+<code>(<structfield>start_valid</structfield> +
+<replaceable>N</replaceable> * <constant>0x10000</constant>)</code>.
+If there are no events in the timeframe of a group, its
+<structfield>index</structfield> and <structfield>count</structfield>
+will both be <constant>0</constant>.
+</para>
+
+<para>
+There is no particular correlation between free/busy events and events
+on the calendar: two adjacent calendar events can be stored as a
+single free/busy event, and a given calendar event may be split across
+two or more free/busy groups.
+</para>
+
+<para>
+The number of months covered by the free/busy data is in
+<literal>PR_FREEBUSY_NUM_MONTHS</literal>.
+</para>
+
+<para>
+A posting on the <ulink
+url="http://peach.ease.lsoft.com/archives/mapi-l.html">MAPI-L</ulink>
+list claimed that setting <literal>PR_DISABLE_FULL_FIDELITY</literal>
+to <literal>0</literal> on the free/busy message will force
+<application>Outlook</application> to regenerate it, but I haven't
+tested this.
+</para>
+
+</refsect2>
+
+</refsect1>
+
+</refentry>

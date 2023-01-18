@@ -1,0 +1,846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>E2kRestriction</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch03.html" title="libexchange public API reference">
+<link rel="prev" href="evolution-exchange-E2kProperties.html" title="E2kProperties">
+<link rel="next" href="evolution-exchange-e2k-result.html" title="E2kResult">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="evolution-exchange-E2kProperties.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="evolution-exchange-e2k-result.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#evolution-exchange-e2k-restriction.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#evolution-exchange-e2k-restriction.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="E2kRestriction">
+<a name="evolution-exchange-e2k-restriction"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="evolution-exchange-e2k-restriction.top_of_page"></a>E2kRestriction</span></h2>
+<p>E2kRestriction — Search criteria</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="evolution-exchange-e2k-restriction.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction">E2kRestriction</a>;
+
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-and" title="e2k_restriction_and ()">e2k_restriction_and</a>                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nrns</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> **rns</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-andv" title="e2k_restriction_andv ()">e2k_restriction_andv</a>                (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-or" title="e2k_restriction_or ()">e2k_restriction_or</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nrns</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> **rns</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-orv" title="e2k_restriction_orv ()">e2k_restriction_orv</a>                 (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-not" title="e2k_restriction_not ()">e2k_restriction_not</a>                 (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);
+enum                <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionFuzzyLevel" title="enum E2kRestrictionFuzzyLevel">E2kRestrictionFuzzyLevel</a>;
+#define             <a class="link" href="evolution-exchange-e2k-restriction.html#E2K-FL-MATCH-TYPE:CAPS" title="E2K_FL_MATCH_TYPE()">E2K_FL_MATCH_TYPE</a>                   (fl)
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-content" title="e2k_restriction_content ()">e2k_restriction_content</a>             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionFuzzyLevel" title="enum E2kRestrictionFuzzyLevel"><span class="type">E2kRestrictionFuzzyLevel</span></a> fuzzy_level</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);
+enum                <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop">E2kRestrictionRelop</a>;
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-bool" title="e2k_restriction_prop_bool ()">e2k_restriction_prop_bool</a>           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-int" title="e2k_restriction_prop_int ()">e2k_restriction_prop_int</a>            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-date" title="e2k_restriction_prop_date ()">e2k_restriction_prop_date</a>           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-string" title="e2k_restriction_prop_string ()">e2k_restriction_prop_string</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-binary" title="e2k_restriction_prop_binary ()">e2k_restriction_prop_binary</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> len</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-compare" title="e2k_restriction_compare ()">e2k_restriction_compare</a>             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname1</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname2</code></em>);
+enum                <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionBitop" title="enum E2kRestrictionBitop">E2kRestrictionBitop</a>;
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-bitmask" title="e2k_restriction_bitmask ()">e2k_restriction_bitmask</a>             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionBitop" title="enum E2kRestrictionBitop"><span class="type">E2kRestrictionBitop</span></a> bitop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> mask</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-size" title="e2k_restriction_size ()">e2k_restriction_size</a>                (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> size</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-exist" title="e2k_restriction_exist ()">e2k_restriction_exist</a>               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+<a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-sub" title="e2k_restriction_sub ()">e2k_restriction_sub</a>                 (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subtable</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);
+
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-ref" title="e2k_restriction_ref ()">e2k_restriction_ref</a>                 (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-unref" title="e2k_restriction_unref ()">e2k_restriction_unref</a>               (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>);
+
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-to-sql" title="e2k_restriction_to_sql ()">e2k_restriction_to_sql</a>              (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="evolution-exchange-e2k-restriction.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="evolution-exchange-e2k-restriction.details"></a><h2>Details</h2>
+<div class="refsect2" title="struct E2kRestriction">
+<a name="E2kRestriction"></a><h3>struct E2kRestriction</h3>
+<pre class="programlisting">struct E2kRestriction {
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_and ()">
+<a name="e2k-restriction-and"></a><h3>e2k_restriction_and ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_and                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nrns</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> **rns</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);</pre>
+<p>
+Creates a new restriction which is true if all of the restrictions
+in <em class="parameter"><code>rns</code></em> are true.
+</p>
+<p>
+If <em class="parameter"><code>unref</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-and" title="e2k_restriction_and ()"><code class="function">e2k_restriction_and()</code></a> is essentially
+stealing the caller's references on the restrictions. If it is
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-and" title="e2k_restriction_and ()"><code class="function">e2k_restriction_and()</code></a> will acquire its own references
+to each of the restrictions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nrns</code></em> :</span></p></td>
+<td>length of <em class="parameter"><code>rns</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rns</code></em> :</span></p></td>
+<td>an array of <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unref</code></em> :</span></p></td>
+<td>whether or not to unref the restrictions when it is done
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_andv ()">
+<a name="e2k-restriction-andv"></a><h3>e2k_restriction_andv ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_andv                (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+Creates a new restriction which is true if all of the passed-in
+restrictions are true. <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-andv" title="e2k_restriction_andv ()"><code class="function">e2k_restriction_andv()</code></a> steals the caller's
+reference on each of the passed-in restrictions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated list of additional <a href="evolution-exchange-e2k-restriction.html#E2kRestriction"><span class="type">E2kRestrictions</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_or ()">
+<a name="e2k-restriction-or"></a><h3>e2k_restriction_or ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_or                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> nrns</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> **rns</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);</pre>
+<p>
+Creates a new restriction which is true if any of the restrictions
+in <em class="parameter"><code>rns</code></em> are true.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nrns</code></em> :</span></p></td>
+<td>length of <em class="parameter"><code>rns</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rns</code></em> :</span></p></td>
+<td>an array of <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unref</code></em> :</span></p></td>
+<td>see <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-and" title="e2k_restriction_and ()"><code class="function">e2k_restriction_and()</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_orv ()">
+<a name="e2k-restriction-orv"></a><h3>e2k_restriction_orv ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_orv                 (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+Creates a new restriction which is true if any of the passed-in
+restrictions are true. <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-orv" title="e2k_restriction_orv ()"><code class="function">e2k_restriction_orv()</code></a> steals the caller's
+reference on each of the passed-in restrictions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated list of additional <a href="evolution-exchange-e2k-restriction.html#E2kRestriction"><span class="type">E2kRestrictions</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_not ()">
+<a name="e2k-restriction-not"></a><h3>e2k_restriction_not ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_not                 (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);</pre>
+<p>
+Creates a new restriction which is true if <em class="parameter"><code>rn</code></em> is false.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unref</code></em> :</span></p></td>
+<td>see <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-and" title="e2k_restriction_and ()"><code class="function">e2k_restriction_and()</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kRestrictionFuzzyLevel">
+<a name="E2kRestrictionFuzzyLevel"></a><h3>enum E2kRestrictionFuzzyLevel</h3>
+<pre class="programlisting">typedef enum {
+	E2K_FL_FULLSTRING     = 0x00000,
+	E2K_FL_SUBSTRING      = 0x00001,
+	E2K_FL_PREFIX         = 0x00002,
+	E2K_FL_SUFFIX         = 0x00003, /* Not a MAPI constant */
+
+	E2K_FL_IGNORECASE     = 0x10000,
+	E2K_FL_IGNORENONSPACE = 0x20000,
+	E2K_FL_LOOSE          = 0x40000
+} E2kRestrictionFuzzyLevel;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E2K_FL_MATCH_TYPE()">
+<a name="E2K-FL-MATCH-TYPE:CAPS"></a><h3>E2K_FL_MATCH_TYPE()</h3>
+<pre class="programlisting">#define E2K_FL_MATCH_TYPE(fl) ((fl) &amp; 0x3)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>fl</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_content ()">
+<a name="e2k-restriction-content"></a><h3>e2k_restriction_content ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_content             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionFuzzyLevel" title="enum E2kRestrictionFuzzyLevel"><span class="type">E2kRestrictionFuzzyLevel</span></a> fuzzy_level</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated property's value matches <em class="parameter"><code>value</code></em> according to <em class="parameter"><code>fuzzy_level</code></em>.
+</p>
+<p>
+For a WebDAV SEARCH, <em class="parameter"><code>fuzzy_level</code></em> should be <code class="literal">E2K_FL_FULLSTRING</code>,
+<code class="literal">E2K_FL_SUBSTRING</code>, <code class="literal">E2K_FL_PREFIX</code>, or <code class="literal">E2K_FL_SUFFIX</code>.
+</p>
+<p>
+For a MAPI restriction, <em class="parameter"><code>fuzzy_level</code></em> may not be <code class="literal">E2K_FL_SUFFIX</code>, but
+may be ORed with any of the additional values <code class="literal">E2K_FL_IGNORECASE</code>,
+<code class="literal">E2K_FL_IGNORENONSPACE</code>, or <code class="literal">E2K_FL_LOOSE</code>.
+</p>
+<p>
+To compare a property's sort order to another string, use
+<a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-string" title="e2k_restriction_prop_string ()"><code class="function">e2k_restriction_prop_string()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>text property to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fuzzy_level</code></em> :</span></p></td>
+<td>how to compare
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>value to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kRestrictionRelop">
+<a name="E2kRestrictionRelop"></a><h3>enum E2kRestrictionRelop</h3>
+<pre class="programlisting">typedef enum {
+	E2K_RELOP_LT = 0,
+	E2K_RELOP_LE = 1,
+	E2K_RELOP_GT = 2,
+	E2K_RELOP_GE = 3,
+	E2K_RELOP_EQ = 4,
+	E2K_RELOP_NE = 5,
+	E2K_RELOP_RE = 6,
+
+	E2K_RELOP_DL_MEMBER = 100
+} E2kRestrictionRelop;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_prop_bool ()">
+<a name="e2k-restriction-prop-bool"></a><h3>e2k_restriction_prop_bool ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_prop_bool           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated property matches <em class="parameter"><code>relop</code></em> and <em class="parameter"><code>value</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>boolean property to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>
+<code class="literal">E2K_RELOP_EQ</code> or <code class="literal">E2K_RELOP_NE</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_prop_int ()">
+<a name="e2k-restriction-prop-int"></a><h3>e2k_restriction_prop_int ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_prop_int            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated property matches <em class="parameter"><code>value</code></em> according to <em class="parameter"><code>relop</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>integer property to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>number to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_prop_date ()">
+<a name="e2k-restriction-prop-date"></a><h3>e2k_restriction_prop_date ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_prop_date           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated property matches <em class="parameter"><code>value</code></em> according to <em class="parameter"><code>relop</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>date/time property to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>date/time to compare against (as returned by <a class="link" href="evolution-exchange-e2k-utils.html#e2k-make-timestamp" title="e2k_make_timestamp ()"><code class="function">e2k_make_timestamp()</code></a>)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_prop_string ()">
+<a name="e2k-restriction-prop-string"></a><h3>e2k_restriction_prop_string ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_prop_string         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated property matches <em class="parameter"><code>value</code></em> according to <em class="parameter"><code>relop</code></em>.
+</p>
+<p>
+To do a substring match, use <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-content" title="e2k_restriction_content ()"><code class="function">e2k_restriction_content()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>text property to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>text to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_prop_binary ()">
+<a name="e2k-restriction-prop-binary"></a><h3>e2k_restriction_prop_binary ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_prop_binary         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> len</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated property matches <em class="parameter"><code>value</code></em> according to <em class="parameter"><code>relop</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>binary property to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>
+<code class="literal">E2K_RELOP_EQ</code> or <code class="literal">E2K_RELOP_NE</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>data to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
+<td>length of <em class="parameter"><code>data</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_compare ()">
+<a name="e2k-restriction-compare"></a><h3>e2k_restriction_compare ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_compare             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname1</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname2</code></em>);</pre>
+<p>
+Creates a new restriction which is true for objects where
+<em class="parameter"><code>propname1</code></em> and <em class="parameter"><code>propname2</code></em> have the relationship described by
+<em class="parameter"><code>relop</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname1</code></em> :</span></p></td>
+<td>first property
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname2</code></em> :</span></p></td>
+<td>second property
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kRestrictionBitop">
+<a name="E2kRestrictionBitop"></a><h3>enum E2kRestrictionBitop</h3>
+<pre class="programlisting">typedef enum {
+	E2K_BMR_EQZ = 0,
+	E2K_BMR_NEZ = 1
+} E2kRestrictionBitop;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_bitmask ()">
+<a name="e2k-restriction-bitmask"></a><h3>e2k_restriction_bitmask ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_bitmask             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionBitop" title="enum E2kRestrictionBitop"><span class="type">E2kRestrictionBitop</span></a> bitop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> mask</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where the
+indicated bits of the value of <em class="parameter"><code>propname</code></em> either are or aren't zero,
+as indicated by <em class="parameter"><code>bitop</code></em>.
+</p>
+<p>
+This cannot be used for WebDAV SEARCH restrictions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>integer property to compare
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bitop</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionBitop" title="enum E2kRestrictionBitop"><span class="type">E2kRestrictionBitop</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mask</code></em> :</span></p></td>
+<td>mask of bits to compare against
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_size ()">
+<a name="e2k-restriction-size"></a><h3>e2k_restriction_size ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_size                (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a> relop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> size</code></em>);</pre>
+<p>
+Creates a new restriction which is true for objects where the size
+of the value of <em class="parameter"><code>propname</code></em> matches <em class="parameter"><code>size</code></em> according to <em class="parameter"><code>relop</code></em>.
+</p>
+<p>
+This cannot be used for WebDAV SEARCH restrictions.
+</p>
+<p>
+You probably do not want to use this. The standard idiom for
+checking the size of a message is to use <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-prop-int" title="e2k_restriction_prop_int ()"><code class="function">e2k_restriction_prop_int()</code></a>
+on its <code class="literal">PR_MESSAGE_SIZE</code> property, not to use <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-size" title="e2k_restriction_size ()"><code class="function">e2k_restriction_size()</code></a>
+on its <code class="literal">PR_BODY</code>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property to compare
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relop</code></em> :</span></p></td>
+<td>an <a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestrictionRelop" title="enum E2kRestrictionRelop"><span class="type">E2kRestrictionRelop</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>the size to compare <em class="parameter"><code>propname</code></em> to
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_exist ()">
+<a name="e2k-restriction-exist"></a><h3>e2k_restriction_exist ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_exist               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<p>
+Creates a new restriction which is true for objects that have
+a <em class="parameter"><code>propname</code></em> property.
+</p>
+<p>
+This cannot be used for WebDAV SEARCH restrictions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property to check
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_sub ()">
+<a name="e2k-restriction-sub"></a><h3>e2k_restriction_sub ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="returnvalue">E2kRestriction</span></a> *    e2k_restriction_sub                 (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subtable</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> unref</code></em>);</pre>
+<p>
+Creates a new restriction that is true for objects where <em class="parameter"><code>rn</code></em> is
+true when applied to the value of <em class="parameter"><code>subtable</code></em> on that object.
+</p>
+<p>
+<em class="parameter"><code>subtable</code></em> is generally <code class="literal">PR_MESSAGE_RECIPIENTS</code> (for finding messages
+whose recipients match a given restriction) or
+<code class="literal">PR_MESSAGE_ATTACHMENTS</code> (for finding messages whose attachments
+match a given restriction).
+</p>
+<p>
+This cannot be used for WebDAV SEARCH restrictions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>subtable</code></em> :</span></p></td>
+<td>the WebDAV name of a MAPI property of type PT_OBJECT
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>the restriction to apply against the values of <em class="parameter"><code>subtable</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unref</code></em> :</span></p></td>
+<td>see <a class="link" href="evolution-exchange-e2k-restriction.html#e2k-restriction-and" title="e2k_restriction_and ()"><code class="function">e2k_restriction_and()</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new restriction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_ref ()">
+<a name="e2k-restriction-ref"></a><h3>e2k_restriction_ref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_restriction_ref                 (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>);</pre>
+<p>
+Refs <em class="parameter"><code>rn</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>a restriction
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_unref ()">
+<a name="e2k-restriction-unref"></a><h3>e2k_restriction_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e2k_restriction_unref               (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>);</pre>
+<p>
+Unrefs <em class="parameter"><code>rn</code></em>. If there are no more references to <em class="parameter"><code>rn</code></em>, it is freed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>a restriction
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_restriction_to_sql ()">
+<a name="e2k-restriction-to-sql"></a><h3>e2k_restriction_to_sql ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e2k_restriction_to_sql              (<em class="parameter"><code><a class="link" href="evolution-exchange-e2k-restriction.html#E2kRestriction" title="struct E2kRestriction"><span class="type">E2kRestriction</span></a> *rn</code></em>);</pre>
+<p>
+Converts <em class="parameter"><code>rn</code></em> to an SQL WHERE clause to be used with the WebDAV
+SEARCH method. Note that certain restriction types cannot be used
+in SQL, as mentioned in their descriptions above.
+</p>
+<p>
+If the restriction matches all objects, the return value will
+be the empty string. Otherwise it will start with "WHERE ".
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rn</code></em> :</span></p></td>
+<td>a restriction
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the SQL WHERE clause, which the caller must free,
+or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>rn</code></em> could not be converted to SQL.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>
