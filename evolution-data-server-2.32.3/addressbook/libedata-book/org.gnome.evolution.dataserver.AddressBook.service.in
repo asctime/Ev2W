@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.gnome.evolution.dataserver.AddressBook
-Exec=@LIBEXECDIR@/e-addressbook-factory@EXEEXT@
