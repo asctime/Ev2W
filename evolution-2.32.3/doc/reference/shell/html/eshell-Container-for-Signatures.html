@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Container for Signatures</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Personalized-Signatures.html" title="Personalized Signatures">
+<link rel="next" href="eshell-e-signature-utils.html" title="More Signature Utilities">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Personalized-Signatures.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-e-signature-utils.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Container-for-Signatures.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Container-for-Signatures.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#eshell-Container-for-Signatures.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#eshell-Container-for-Signatures.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="Container for Signatures">
+<a name="eshell-Container-for-Signatures"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Container-for-Signatures.top_of_page"></a>Container for Signatures</span></h2>
+<p>Container for Signatures</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Container-for-Signatures.synopsis"></a><h2>Synopsis</h2>
+<a name="ESignatureList"></a><pre class="synopsis">                    <a class="link" href="eshell-Container-for-Signatures.html#ESignatureList-struct" title="ESignatureList">ESignatureList</a>;
+<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="returnvalue">ESignatureList</span></a> *    <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-new" title="e_signature_list_new ()">e_signature_list_new</a>                (<em class="parameter"><code><span class="type">GConfClient</span> *gconf</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-construct" title="e_signature_list_construct ()">e_signature_list_construct</a>          (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><span class="type">GConfClient</span> *gconf</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-save" title="e_signature_list_save ()">e_signature_list_save</a>               (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-add" title="e_signature_list_add ()">e_signature_list_add</a>                (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-change" title="e_signature_list_change ()">e_signature_list_change</a>             (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-remove" title="e_signature_list_remove ()">e_signature_list_remove</a>             (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+const <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="returnvalue">ESignature</span></a> *  <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-find" title="e_signature_list_find ()">e_signature_list_find</a>               (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><span class="type">e_signature_find_t</span> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="eshell-Container-for-Signatures.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="/usr/share/gtk-doc/html/libedataserver/EList.html">EList</a>
+         +----ESignatureList
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="eshell-Container-for-Signatures.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList-signature-added" title='The "signature-added" signal'>signature-added</a>"                                : Run Last
+  "<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList-signature-changed" title='The "signature-changed" signal'>signature-changed</a>"                              : Run Last
+  "<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList-signature-removed" title='The "signature-removed" signal'>signature-removed</a>"                              : Run Last
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Container-for-Signatures.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Container-for-Signatures.details"></a><h2>Details</h2>
+<div class="refsect2" title="ESignatureList">
+<a name="ESignatureList-struct"></a><h3>ESignatureList</h3>
+<pre class="programlisting">typedef struct _ESignatureList ESignatureList;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_new ()">
+<a name="e-signature-list-new"></a><h3>e_signature_list_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="returnvalue">ESignatureList</span></a> *    e_signature_list_new                (<em class="parameter"><code><span class="type">GConfClient</span> *gconf</code></em>);</pre>
+<p>
+Reads the list of signaturess from <em class="parameter"><code>gconf</code></em> and listens for changes.
+Will emit <span class="type">signature_added</span>, <span class="type">signature_changed</span>, and <span class="type">signature_removed</span>
+signals according to notifications from GConf.
+</p>
+<p>
+You can modify the list using <a href="/usr/share/gtk-doc/html/libedataserver/EList.html#e-list-append"><code class="function">e_list_append()</code></a>, <a href="/usr/share/gtk-doc/html/libedataserver/EList.html#e-list-remove"><code class="function">e_list_remove()</code></a>, and
+<a href="/usr/share/gtk-doc/html/libedataserver/EIterator.html#e-iterator-delete"><code class="function">e_iterator_delete()</code></a>. After adding, removing, or changing accounts,
+you must call <a class="link" href="eshell-Container-for-Signatures.html#e-signature-list-save" title="e_signature_list_save ()"><code class="function">e_signature_list_save()</code></a> to push the changes back to
+GConf.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gconf</code></em> :</span></p></td>
+<td>a <span class="type">GConfClient</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the list of signatures
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_construct ()">
+<a name="e-signature-list-construct"></a><h3>e_signature_list_construct ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_list_construct          (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><span class="type">GConfClient</span> *gconf</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gconf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_save ()">
+<a name="e-signature-list-save"></a><h3>e_signature_list_save ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_list_save               (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>);</pre>
+<p>
+Saves <em class="parameter"><code>signature_list</code></em> to GConf. Signals will be emitted for changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>signature_list</code></em> :</span></p></td>
+<td>an <a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_add ()">
+<a name="e-signature-list-add"></a><h3>e_signature_list_add ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_list_add                (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+Add an signature to the signature list.  Will emit the signature-changed
+event.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_list</code></em> :</span></p></td>
+<td>signature list
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>signature to add
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_change ()">
+<a name="e-signature-list-change"></a><h3>e_signature_list_change ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_list_change             (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+Signal that the details of an signature have changed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_list</code></em> :</span></p></td>
+<td>signature list
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>signature to change
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_remove ()">
+<a name="e-signature-list-remove"></a><h3>e_signature_list_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_list_remove             (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+Remove an signature from the signature list, and emit the
+signature-removed signal.  If the signature was the default signature,
+then reset the default to the first signature.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_list</code></em> :</span></p></td>
+<td>signature list
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>signature
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_list_find ()">
+<a name="e-signature-list-find"></a><h3>e_signature_list_find ()</h3>
+<pre class="programlisting">const <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="returnvalue">ESignature</span></a> *  e_signature_list_find               (<em class="parameter"><code><a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *signature_list</code></em>,
+                                                         <em class="parameter"><code><span class="type">e_signature_find_t</span> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>
+Perform a search of the signature list on a single key.
+</p>
+<p>
+<em class="parameter"><code>type</code></em> must be set from one of the following search types:
+E_SIGNATURE_FIND_NAME - Find a signature by signature name.
+E_SIGNATURE_FIND_UID - Find a signature based on UID
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_list</code></em> :</span></p></td>
+<td>signature list
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>Type of search.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>Search key.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The signature or NULL if it doesn't exist.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="eshell-Container-for-Signatures.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "signature-added" signal'>
+<a name="ESignatureList-signature-added"></a><h3>The <code class="literal">"signature-added"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *esignaturelist,
+                                                        <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a>     *arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)           : Run Last</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esignaturelist</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "signature-changed" signal'>
+<a name="ESignatureList-signature-changed"></a><h3>The <code class="literal">"signature-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *esignaturelist,
+                                                        <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a>     *arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)           : Run Last</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esignaturelist</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "signature-removed" signal'>
+<a name="ESignatureList-signature-removed"></a><h3>The <code class="literal">"signature-removed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a> *esignaturelist,
+                                                        <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a>     *arg1,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)           : Run Last</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>esignaturelist</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

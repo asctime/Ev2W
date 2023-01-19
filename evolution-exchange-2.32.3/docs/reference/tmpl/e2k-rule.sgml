@@ -1,0 +1,338 @@
+<!-- ##### SECTION Title ##### -->
+E2kRule
+
+<!-- ##### SECTION Short_Description ##### -->
+Exchange server-side rules
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+e2k-rule contains functions for handling Exchange server-side rules.
+</para>
+
+<note><para>
+This code is not heavily tested. It is possible that some of the
+information in this file about how server-side rules work is wrong.
+</para></note>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#E2kRestriction, #E2kAction
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT E2kRule ##### -->
+<para>
+
+</para>
+
+@name: 
+@sequence: 
+@state: 
+@user_flags: 
+@level: 
+@condition_lcid: 
+@condition: 
+@actions: 
+@provider: 
+@provider_data: 
+
+<!-- ##### STRUCT E2kRules ##### -->
+<para>
+
+</para>
+
+@version: 
+@codepage: 
+@rules: 
+
+<!-- ##### ENUM E2kRuleState ##### -->
+<para>
+
+</para>
+
+@E2K_RULE_STATE_DISABLED: 
+@E2K_RULE_STATE_ENABLED: 
+@E2K_RULE_STATE_ERROR: 
+@E2K_RULE_STATE_ONLY_WHEN_OOF: 
+@E2K_RULE_STATE_KEEP_OOF_HISTORY: 
+@E2K_RULE_STATE_EXIT_LEVEL: 
+@E2K_RULE_STATE_CLEAR_OOF_HISTORY: 
+
+<!-- ##### FUNCTION e2k_rules_from_binary ##### -->
+<para>
+
+</para>
+
+@rules_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rules_to_binary ##### -->
+<para>
+
+</para>
+
+@rules: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rules_to_xml ##### -->
+<para>
+
+</para>
+
+@rules: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rules_free ##### -->
+<para>
+
+</para>
+
+@rules: 
+
+
+<!-- ##### FUNCTION e2k_rule_free ##### -->
+<para>
+
+</para>
+
+@rule: 
+
+
+<!-- ##### STRUCT E2kRuleProp ##### -->
+<para>
+
+</para>
+
+@name: 
+@proptag: 
+
+<!-- ##### FUNCTION e2k_rule_prop_set ##### -->
+<para>
+
+</para>
+
+@prop: 
+@propname: 
+
+
+<!-- ##### STRUCT E2kPropValue ##### -->
+<para>
+
+</para>
+
+@prop: 
+@type: 
+@value: 
+
+<!-- ##### FUNCTION e2k_rule_append_proptag ##### -->
+<para>
+
+</para>
+
+@ba: 
+@prop: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_proptag ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@prop: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_propvalue ##### -->
+<para>
+
+</para>
+
+@ba: 
+@pv: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_propvalue ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@pv: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_free_propvalue ##### -->
+<para>
+
+</para>
+
+@pv: 
+
+
+<!-- ##### FUNCTION e2k_rule_write_uint32 ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@val: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_uint32 ##### -->
+<para>
+
+</para>
+
+@ba: 
+@val: 
+
+
+<!-- ##### FUNCTION e2k_rule_read_uint32 ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_uint32 ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_write_uint16 ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@val: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_uint16 ##### -->
+<para>
+
+</para>
+
+@ba: 
+@val: 
+
+
+<!-- ##### FUNCTION e2k_rule_read_uint16 ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_uint16 ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_byte ##### -->
+<para>
+
+</para>
+
+@ba: 
+@val: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_byte ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_string ##### -->
+<para>
+
+</para>
+
+@ba: 
+@str: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_string ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@str: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_unicode ##### -->
+<para>
+
+</para>
+
+@ba: 
+@str: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_unicode ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@str: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_rule_append_binary ##### -->
+<para>
+
+</para>
+
+@ba: 
+@data: 
+
+
+<!-- ##### FUNCTION e2k_rule_extract_binary ##### -->
+<para>
+
+</para>
+
+@ptr: 
+@len: 
+@data: 
+@Returns: 
+
+

@@ -1,0 +1,159 @@
+<!-- ##### SECTION Title ##### -->
+E2kSid
+
+<!-- ##### SECTION Short_Description ##### -->
+Windows Security Identifiers
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+Every user in a Windows domain has a list of Security Identifiers, or
+SIDs, associated with them. This includes:
+</para>
+
+<itemizedlist>
+<listitem><para>their own personal SID</para></listitem>
+<listitem><para>the SID representing &ldquo;all users in the local domain&rdquo;</para></listitem>
+<listitem><para>the SID representing &ldquo;Default&rdquo;</para></listitem>
+<listitem><para>the SIDs for any Windows security groups that they are members of</para></listitem>
+</itemizedlist>
+
+<para>
+The user&rsquo;s personal SID is stored in the
+<literal>objectSid</literal> property of their Active Directory entry.
+Unfortunately, we have no way of retrieving the complete list of SIDs
+associated with a user.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+e2k_global_catalog_lookup(), #E2kSecurityDescriptor
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT E2kSid ##### -->
+<para>
+
+</para>
+
+@parent: 
+@priv: 
+
+<!-- ##### ENUM E2kSidType ##### -->
+<para>
+
+</para>
+
+@E2K_SID_TYPE_INVALID: 
+@E2K_SID_TYPE_USER: 
+@E2K_SID_TYPE_ALIAS: 
+@E2K_SID_TYPE_GROUP: 
+@E2K_SID_TYPE_WELL_KNOWN_GROUP: 
+@E2K_SID_TYPE_DOMAIN: 
+@E2K_SID_TYPE_DELETED_ACCOUNT: 
+@E2K_SID_TYPE_UNKNOWN: 
+@E2K_SID_TYPE_COMPUTER: 
+
+<!-- ##### FUNCTION e2k_sid_new_from_string_sid ##### -->
+<para>
+
+</para>
+
+@type: 
+@string_sid: 
+@display_name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_sid_new_from_binary_sid ##### -->
+<para>
+
+</para>
+
+@type: 
+@binary_sid: 
+@display_name: 
+@Returns: 
+
+
+<!-- ##### MACRO E2K_SID_WKS_EVERYONE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_SID_WKS_ANONYMOUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION e2k_sid_get_sid_type ##### -->
+<para>
+
+</para>
+
+@sid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_sid_get_string_sid ##### -->
+<para>
+
+</para>
+
+@sid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_sid_get_binary_sid ##### -->
+<para>
+
+</para>
+
+@sid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_sid_get_display_name ##### -->
+<para>
+
+</para>
+
+@sid: 
+@Returns: 
+
+
+<!-- ##### MACRO E2K_SID_BINARY_SID_LEN ##### -->
+<para>
+
+</para>
+
+@bsid: 
+
+
+<!-- ##### FUNCTION e2k_sid_binary_sid_hash ##### -->
+<para>
+
+</para>
+
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_sid_binary_sid_equal ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@Returns: 
+
+

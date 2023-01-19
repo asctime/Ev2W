@@ -1,0 +1,73 @@
+Each user mailbox is divided into two subtrees:
+
+	* the IPM (Interpersonal Messaging) subtree, which contains
+	  the normal, visible folders such as Inbox, Calendar, etc.
+
+	* the non-IPM subtree, which contains internal data,
+          preferences, etc
+
+Clients present the root folder of the IPM subtree to the user as
+though it was the top of the hierarchy; the non-IPM subtree is
+generally completely invisible.
+
+When using WebDAV, the non-IPM subtree can be accessed by appending
+/NON_IPM_SUBTREE/ to the end of a mailbox URL. (It is never returned
+when listing the subfolders of the mailbox root folder though.)
+
+Outlook creates a number of subfolders in the non-IPM subtree:
+
+	* Views, Common Views - used to store folder view data
+
+	* Deferred Action - server-side rules that use OP_DEFER send
+	  messages into this folder. (I think they're just linked from
+	  Inbox rather than actually being moved, but I haven't
+	  investigated this thoroughly yet.) This is used for rules
+	  that are processed partly by Exchange and partly by Outlook.
+
+	* Finder - used as the parent folder for temporary search
+	  folders
+
+	* Freebusy Data - contains two files, Sniffer.EML, whose
+          purpose is unknown, and FreebusyData.EML, which is discussed
+          in the file "freebusy"
+
+	* Net Folder Inbox - this has something to do with the Outlook
+          2000 "Net Folders" functionality
+
+	* Reminders - this is essentially a persistent search for the
+          next instance of each appointment with an associated
+          reminder.
+
+	* Schedule - Not sure what this is for
+
+	* Shortcuts - Stores the contents of the "Favorites" Public
+          Folder subtree.
+
+	* Spooler Queue - I assume Outlook uses this when printing?
+
+The NON_IPM_SUBTREE folder also has the useful property that the
+"default folders" properties (urn:schemas:httpmail:inbox, etc) are
+duplicated there, and can always be read if you have permission to
+access the folder they point to. This lets us reliably find other
+users' calendars, etc, when they don't have the standard (English)
+names.
+
+The Public Folder hierarchy also has a non-IPM subtree
+(/public/NON_IPM_SUBTREE), which contains stuff we mostly don't
+understand or care about:
+
+	* EFORMS REGISTRY - custom Outlook forms are kept here
+
+	* SCHEDULE+ FREE BUSY - public free/busy data (see "freebusy")
+
+	* OFFLINE ADDRESS BOOK - apparently the source of OAB data.
+          Unknown format.
+
+	* Events Root, StoreEvents* - WSS event stuff
+
+	* OWAScratchPad - Presumably OWA temporary space of some sort
+
+	* Nntp Control Folder - Presumably something NNTP-related
+
+
+	

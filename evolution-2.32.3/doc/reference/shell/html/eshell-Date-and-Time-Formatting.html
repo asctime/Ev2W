@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Date and Time Formatting</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Categories.html" title="Categories">
+<link rel="next" href="eshell-Dialog-Utilities-(Legacy).html" title="Dialog Utilities (Legacy)">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Categories.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Dialog-Utilities-(Legacy).html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Date-and-Time-Formatting.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Date-and-Time-Formatting.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Date and Time Formatting">
+<a name="eshell-Date-and-Time-Formatting"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Date-and-Time-Formatting.top_of_page"></a>Date and Time Formatting</span></h2>
+<p>Date and Time Formatting</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Date-and-Time-Formatting.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">enum                <a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind">DTFormatKind</a>;
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Date-and-Time-Formatting.html#e-datetime-format-add-setup-widget" title="e_datetime_format_add_setup_widget ()">e_datetime_format_add_setup_widget</a>  (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *table</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind"><span class="type">DTFormatKind</span></a> kind</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *caption</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Date-and-Time-Formatting.html#e-datetime-format-format" title="e_datetime_format_format ()">e_datetime_format_format</a>            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind"><span class="type">DTFormatKind</span></a> kind</code></em>,
+                                                         <em class="parameter"><code><span class="type">time_t</span> value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Date-and-Time-Formatting.html#e-datetime-format-format-tm" title="e_datetime_format_format_tm ()">e_datetime_format_format_tm</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind"><span class="type">DTFormatKind</span></a> kind</code></em>,
+                                                         <em class="parameter"><code><span class="type">struct tm</span> *tm_time</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Date-and-Time-Formatting.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Date-and-Time-Formatting.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum DTFormatKind">
+<a name="DTFormatKind"></a><h3>enum DTFormatKind</h3>
+<pre class="programlisting">typedef enum _DTFormatKind {
+	DTFormatKindDate,
+	DTFormatKindTime,
+	DTFormatKindDateTime,
+	DTFormatKindShortDate
+} DTFormatKind;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_datetime_format_add_setup_widget ()">
+<a name="e-datetime-format-add-setup-widget"></a><h3>e_datetime_format_add_setup_widget ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_datetime_format_add_setup_widget  (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *table</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> row</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind"><span class="type">DTFormatKind</span></a> kind</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *caption</code></em>);</pre>
+<p>
+Adds a setup widget for a component and part. The table should have 3 columns.
+All the work related to loading and saving the value is done automatically,
+on user's changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>Where to attach widgets. Requires 3 columns.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>On which row to attach.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>component</code></em> :</span></p></td>
+<td>Component identifier for the format. Cannot be empty nor NULL.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>Part in the component, can be NULL or empty string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>kind</code></em> :</span></p></td>
+<td>Kind of the format for the component/part.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>caption</code></em> :</span></p></td>
+<td>Caption for the widget, can be NULL, then the "Format:" is used.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_datetime_format_format ()">
+<a name="e-datetime-format-format"></a><h3>e_datetime_format_format ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_datetime_format_format            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind"><span class="type">DTFormatKind</span></a> kind</code></em>,
+                                                         <em class="parameter"><code><span class="type">time_t</span> value</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>component</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>kind</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_datetime_format_format_tm ()">
+<a name="e-datetime-format-format-tm"></a><h3>e_datetime_format_format_tm ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_datetime_format_format_tm         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *component</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Date-and-Time-Formatting.html#DTFormatKind" title="enum DTFormatKind"><span class="type">DTFormatKind</span></a> kind</code></em>,
+                                                         <em class="parameter"><code><span class="type">struct tm</span> *tm_time</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>component</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>kind</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tm_time</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

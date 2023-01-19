@@ -1,0 +1,973 @@
+# translation of nn.po to Norwegian Nynorsk
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Åsmund Skjæveland <aasmunds@fys.uio.no>, 2004, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: nn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-05 02:28+0200\n"
+"PO-Revision-Date: 2006-09-05 02:28+0200\n"
+"Last-Translator: Åsmund Skjæveland <aasmunds@fys.uio.no>\n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1882
+#: ../addressbook/e-book-backend-gal.c:1499 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Søkjer ..."
+
+#: ../addressbook/e-book-backend-gal.c:267
+msgid "Reconnecting to LDAP server..."
+msgstr "Koplar til LDAP-tenaren på nytt ..."
+
+#: ../addressbook/e-book-backend-gal.c:1363
+msgid "Receiving LDAP search results..."
+msgstr "Hentar LDAP-søkjesvar ..."
+
+#: ../addressbook/e-book-backend-gal.c:1522
+msgid "Error performing search"
+msgstr "Feil under utføring av søk"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2004
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"Klarte ikkje å reservera ressursen «%s» for gjentakande møter.\n"
+"Du må reservera kvart møte for seg."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2022
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Ressursen «%s» er oppteken i det valde tidsrommet."
+
+#: ../camel/camel-exchange-folder.c:222
+msgid "You cannot expunge in offline mode."
+msgstr "Du kan ikkje fjerna sletta element i fråkopla modus."
+
+#: ../camel/camel-exchange-folder.c:253
+msgid "No Subject"
+msgstr "Ikkje noko emne"
+
+#: ../camel/camel-exchange-folder.c:407
+msgid "This message is not available in offline mode."
+msgstr "Denne meldinga er ikkje tilgjengeleg i fråkopla modus."
+
+#: ../camel/camel-exchange-folder.c:642
+msgid "Moving messages"
+msgstr "Flyttar meldingar"
+
+#: ../camel/camel-exchange-folder.c:643
+msgid "Copying messages"
+msgstr "Kopierer meldingar"
+
+#: ../camel/camel-exchange-folder.c:1014
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Klarte ikkje å laga katalogen «%s»: %s"
+
+#: ../camel/camel-exchange-folder.c:1024
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "Klarte ikkje å lasta oppsummeringa til %s"
+
+#: ../camel/camel-exchange-folder.c:1032
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "Klarte ikkje å laga mellomlageret til %s"
+
+#: ../camel/camel-exchange-folder.c:1042
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "Klarte ikkje å laga journal for %s"
+
+#: ../camel/camel-exchange-folder.c:1087
+msgid "Scanning for changed messages"
+msgstr "Ser etter endra meldingar"
+
+#: ../camel/camel-exchange-folder.c:1113
+msgid "Fetching summary information for new messages"
+msgstr "Hentar oppsummeringar av nye meldingar"
+
+#: ../camel/camel-exchange-journal.c:339
+msgid "No folder name found\n"
+msgstr "Fann ikkje noko mappenamn\n"
+
+#: ../camel/camel-exchange-journal.c:372 ../mail/mail-stub-exchange.c:2549
+#: ../mail/mail-stub-exchange.c:2593 ../mail/mail-stub-exchange.c:2628
+#: ../mail/mail-stub-exchange.c:2655 ../mail/mail-stub-exchange.c:2708
+#: ../mail/mail-stub-exchange.c:2730
+msgid "Folder doesn't exist"
+msgstr "Mappa finst ikkje"
+
+#: ../camel/camel-exchange-journal.c:436
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr ""
+"Kan ikkje leggja til melding i fråkopla modus: Mellomlager utilgjengeleg"
+
+#: ../camel/camel-exchange-journal.c:452
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Kan ikkje leggja til melding i fråkopla modus: %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:44
+msgid "Windows User_name:"
+msgstr "Windows-brukar_namn:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:49
+msgid "Global Address List / Active Directory"
+msgstr "Global adresseliste / Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:53
+msgid "_Global Catalog server name:"
+msgstr "Namn på _global katalogtenar:"
+
+#: ../camel/camel-exchange-provider.c:55
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "_Avgrensa talet på GAL-førespurnader: %s"
+
+#: ../camel/camel-exchange-provider.c:58
+msgid "Options"
+msgstr "Val"
+
+#: ../camel/camel-exchange-provider.c:60
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "_Tid med åtvaring om gamalt passord: %s"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "Automatically synchroni_ze account locally"
+msgstr "_Synkroniser konto lokalt automatisk"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:65
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "_Bruk filter på nye meldingar i innboksen på denne tenaren"
+
+#: ../camel/camel-exchange-provider.c:67
+msgid "Check new messages for _Junk contents"
+msgstr "Kontroller om ny e-post er _skrot"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Sjå etter skrotm_eldingar berre i innboksen"
+
+#: ../camel/camel-exchange-provider.c:79
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:81
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "For å handsama epost (og andre data) på Microsoft Exchange-tenarar"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:97
+msgid "Secure Password"
+msgstr "Trygt passord"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:100
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"Dette valet vil kopla til Exchange-tenaren med trygg passord-autentisering "
+"(NTLM)."
+
+#: ../camel/camel-exchange-provider.c:108
+msgid "Plaintext Password"
+msgstr "Passord i klartekst"
+
+#: ../camel/camel-exchange-provider.c:110
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"Dette valet vil kopla til Exchange-tenaren med klartekstpassordautentisering."
+
+#: ../camel/camel-exchange-store.c:309
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange-tenar %s"
+
+#: ../camel/camel-exchange-store.c:312
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Exchange-kontoen til %s på %s"
+
+#: ../camel/camel-exchange-store.c:353
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%sSkriv passordet til %s"
+
+#: ../camel/camel-exchange-store.c:404
+msgid "Evolution Exchange backend process"
+msgstr "Evolution Exchange motorprosess"
+
+#: ../camel/camel-exchange-store.c:445
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"Klarte ikkje å autentisera mot tenar. (Passord feil?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:487
+#, c-format
+msgid "No such folder %s"
+msgstr "Mappa «%s» finst ikkje"
+
+#: ../camel/camel-exchange-store.c:564
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Kan ikkje tinga mappa i fråkopla modus."
+
+#: ../camel/camel-exchange-store.c:581
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Kan ikkje slutta å tinga mappa i fråkopla modus."
+
+#: ../camel/camel-exchange-store.c:696
+msgid "Cannot get folder info in offline mode."
+msgstr "Kan ikkje henta mappeinformasjon i fråkopla modus."
+
+#: ../camel/camel-exchange-store.c:767
+msgid "Cannot create folder in offline mode."
+msgstr "Kan ikkje laga mappa i fråkopla modus."
+
+#: ../camel/camel-exchange-store.c:794
+msgid "Cannot delete folder in offline mode."
+msgstr "Kan ikkje sletta mappa i fråkopla modus."
+
+#: ../camel/camel-exchange-store.c:810
+msgid "Cannot rename folder in offline mode."
+msgstr "Kan ikkje byta namn på mappa i fråkopla modus."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Exchange-transport kan berre brukast med Exchange-epostkjelde"
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Kan ikkje senda meldinga. Ein eller fleire ugyldige mottakarar"
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr "Kan ikkje finna nokon frå-adresse i meldinga"
+
+#: ../camel/camel-stub.c:152
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "Klarte ikkje å laga sokkel: %s"
+
+#: ../camel/camel-stub.c:170
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "Kan ikkje kopla til %s: Avslutt og start Evolution på nytt"
+
+#: ../camel/camel-stub.c:175
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "Kan ikkje kopla til %s: %s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Path too long: %s"
+msgstr "Stien er for lang: %s"
+
+#: ../camel/camel-stub.c:231
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "Klarte ikkje å starta statustråd: %s"
+
+#: ../camel/camel-stub.c:485
+#, c-format
+msgid "Lost connection to %s"
+msgstr "Mista tilkoplinga til %s"
+
+#: ../camel/camel-stub.c:489
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "Feil i sambandet til %s: %s"
+
+#: ../mail/mail-stub-exchange.c:257 ../mail/mail-stub-exchange.c:755
+msgid "No such folder"
+msgstr "Mappa finst ikkje"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:280 ../mail/mail-stub-exchange.c:1390
+#: ../mail/mail-stub-exchange.c:2526 ../mail/mail-stub-exchange.c:2566
+#: ../mail/mail-stub-exchange.c:2632 ../mail/mail-stub-exchange.c:2682
+#: ../mail/mail-stub-exchange.c:2745
+msgid "Permission denied"
+msgstr "Nekta tilgang"
+
+#: ../mail/mail-stub-exchange.c:578 ../mail/mail-stub-exchange.c:600
+msgid "Could not open folder: Permission denied"
+msgstr "Klarte ikkje å opna mappa. Tilgang vart nekta"
+
+#: ../mail/mail-stub-exchange.c:584 ../mail/mail-stub-exchange.c:707
+msgid "Could not open folder"
+msgstr "Klarte ikkje å opna mappa"
+
+#: ../mail/mail-stub-exchange.c:764
+msgid "Could not create folder."
+msgstr "Klarte ikkje å laga mappa."
+
+#: ../mail/mail-stub-exchange.c:844
+msgid "Could not open Deleted Items folder"
+msgstr "Klarte ikkje å opna papirkorga"
+
+#: ../mail/mail-stub-exchange.c:1175 ../mail/mail-stub-exchange.c:1216
+msgid "Could not get new messages"
+msgstr "Klarte ikkje å henta nye meldingar"
+
+#: ../mail/mail-stub-exchange.c:1386
+msgid "Could not empty Deleted Items folder"
+msgstr "Klarte ikkje å tøma papirkorga"
+
+#: ../mail/mail-stub-exchange.c:1463
+msgid "Could not append message; mailbox is over quota"
+msgstr "Klarte ikkje å leggja til meldinga, postboksen er over kvota"
+
+#: ../mail/mail-stub-exchange.c:1464
+msgid "Could not append message"
+msgstr "Klarte ikkje å leggja til melding"
+
+#: ../mail/mail-stub-exchange.c:2016
+msgid "No such message"
+msgstr "Meldinga finst ikkje"
+
+#: ../mail/mail-stub-exchange.c:2069
+msgid "Message has been deleted"
+msgstr "Meldinga er sletta"
+
+#: ../mail/mail-stub-exchange.c:2071
+msgid "Error retrieving message"
+msgstr "Feil under henting av melding"
+
+#: ../mail/mail-stub-exchange.c:2113
+msgid "Mailbox does not support full-text searching"
+msgstr "Postboksen støttar ikkje fulltekstsøk"
+
+#: ../mail/mail-stub-exchange.c:2211
+msgid "Unable to move/copy messages"
+msgstr "Klarte ikkje å flytta/kopiera meldingar"
+
+#: ../mail/mail-stub-exchange.c:2441
+msgid "No mail submission URI for this mailbox"
+msgstr "Inga postleveringsadresse på denne postboksen"
+
+#: ../mail/mail-stub-exchange.c:2477
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Tenaren tek ikkje imot e-post over Exchange-transporten"
+
+#: ../mail/mail-stub-exchange.c:2479
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"Kontoen din har ikkje lov til å bruka <%s> som\n"
+"Frå-adresse."
+
+#: ../mail/mail-stub-exchange.c:2491
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Klarte ikkje å senda meldinga.\n"
+"Det kan tyda på at kontoen din har gått over kvota."
+
+#: ../mail/mail-stub-exchange.c:2495
+msgid "Could not send message"
+msgstr "Klarte ikkje å senda meldinga"
+
+#: ../mail/mail-stub-exchange.c:2518 ../mail/mail-stub-exchange.c:2571
+#: ../mail/mail-stub-exchange.c:2636 ../mail/mail-stub-exchange.c:2687
+#: ../mail/mail-stub-exchange.c:2751
+msgid "Generic error"
+msgstr "Allmenn feil"
+
+#: ../mail/mail-stub-exchange.c:2522
+msgid "Folder already exists"
+msgstr "Mappa finst frå før"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Evolution Adressebok Exchange motor"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Evolution Kalender Exchange motor"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Ximian Connector for Exchange"
+msgstr "Ximian Connector for Exchange"
+
+#: ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Klarte ikkje å kopla til Exchange-tenaren.\n"
+"Kontroller at adressa er rett (prøv «%s» i staden for «%s»?) og prøv igjen."
+
+#: ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Klarte ikkje å finna Exchange-tenaren.\n"
+"Kontroller at tenarnamnet er skrive rett og prøv igjen."
+
+#: ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Klarte ikkje å autentisera mot Exchange-tenaren.\n"
+"Kontroller at brukarnamnet og passordet er rett og prøv igjen."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Klarte ikkje å autentisera mot Exchange-tenaren.\n"
+"Kontroller at brukarnamnet og passordet er rett og prøv igjen.\n"
+"\n"
+"Det er mogleg at du må oppgje Windows-domenet som ein del av brukarnamnet (t."
+"d. «DOMENE\\%s»)."
+
+#: ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Klarte ikkje å finna OWA-data på den oppgjevne adressa.\n"
+"Kontroller at adressa er rett og prøv igjen."
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Exchange Connector krev adgang til visse funksjonar på Exchange-tenaren som "
+"ser ut til å vera slått av eller sperra. (Dette er vanlegvis gjort ved ein "
+"feil.) Exchange-administratoren din på slå på desse funksjonane for at du "
+"skal kunna bruka Ximian Connector.\n"
+"Følg lenkja under for informasjon du kan gje til Exchange-administratoren "
+"din."
+
+#: ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"Den oppgjevne adressa til Exchange-tenaren er til ein Exchange 5.5-tenar. "
+"Ximian Connector støttar berre Microsoft Exchange 2002 og 2003."
+
+#: ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Klarte ikkje å setja opp Exchange-kontoen. Ein ukjend feil oppstod. "
+"Kontroller adressa, brukarnamnet og passordet, og prøv igjen."
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Klarte ikkje å autentisera mot den globale katalogtenaren. Det er mogleg du "
+"må gå tilbake og oppgje Windows-domenet som ein del av brukarnamnet (t.d. "
+"«DOMENE\\%s»)."
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Klarte ikkje å kopla til oppgiven tenar.\n"
+"Kontroller tenarnamnet og prøv igjen."
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "Ukjend"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Feil i oppsettsystemet.\n"
+"Klarte ikkje å laga ny konto."
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr "Du kan berre bruka ein Exchange-konto"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Oppsett mislukkast"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Ferdig"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "Epost-adresse:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "Exchange-oppsett"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "Fullt namn:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "Global katalogtenar:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "Gjer dette til standardkontoen min"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "OWA-adresse:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "Passord:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "Hugs dette passordet"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "Brukarnamn:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Velkomen"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Velkommen til Ximian Connector for Microsoft Exchange.\n"
+"Dei neste skjermane vil hjelpa deg å stilla inn Evolution\n"
+"til å kopla til Exchange-kontoen din.\n"
+"\n"
+"Klikk for «Framover» for å gå vidare."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Oppsett av Ximian Connector"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Ximian Connector kan bruka kontoinformasjon frå den eksisterande Outlook Web "
+"Access (OWA)-kontoen din.\n"
+"\n"
+"Skriv inn OWA-adressa, brukarnamn og passord, og klikk «Framover».\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"Ximian Connector klarte ikkje å finna kopien av den globale katalogen for "
+"nettstaden din. Skriv inn vertsnamnet til den globale tenaren. Det er mogleg "
+"at du må spørja systemadministratoren din om dette.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+"Ximian Connector har støytt på eit problem under oppsettet av Exchange-"
+"kontoen din.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"Connector-kontoen din er klar til bruk. Klikk på «Bruk»-knappen for å lagra "
+"innstillingane."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"Kontoinformasjonen din følgjer. Rett opp eventuelle feil, og klikk "
+"«Framover».\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Dette passordet er ikkje det same som noverande passord for kontoen din. "
+"Skriv inn det rette passordet"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Dei to passorda er ikkje like. Skriv dei inn på nytt."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Endra passord"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Stadfest passord:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "Noverande passord:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "Nytt passord:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "Ditt noverande passord har gått ut. Byt passordet ditt no."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Forfattar (lesa, laga)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "K_alender:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "Ko_ntaktar:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Delegatløyve"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Delegatar"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "Redaktør (lesa, laga, redigera)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Ingen"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "Løyve for"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "Gjennomlesar (berre lesa)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"Desse brukarane vil kunna senda e-post på dine vegne\n"
+"og ha tilgang til mappene dine med dei løyva du gir dei."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_Delegat kan sjå private oppføringar"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "R_ediger"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_Innboks:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_Oppgåver:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Exchange-mappetre"
+
+#: ../storage/exchange-migrate.c:58
+msgid "Migrating Exchange Folders..."
+msgstr "Migrerer Exchange-mapper ..."
+
+#: ../storage/exchange-migrate.c:66
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Plasseringa av og hierarkiet i Evolution Exchange-kontoar sine mapper har "
+"endra seg sidan Evolution %d.%d.%d.\n"
+"\n"
+"Ha tolmod medan Evolution migrerer mappene dine ..."
+
+#: ../storage/exchange-migrate.c:99
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Åtvaring: Evolution klarte ikkje å migrera alle data frå Exchange-konto "
+"versjon %d.%d.%d.\n"
+"Ingen data er sletta, men denne versjonen av Evolution kan ikkje visa dei"
+
+#: ../storage/exchange-migrate.c:130
+#, c-format
+msgid "Migrating `%s':"
+msgstr "Overfører «%s»:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>No er statusen din «ikkje på kontoret».</b>\n"
+"\n"
+"Vil du endra statusen til «på kontoret»? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>Ikkje på kontoret-melding:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Status:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>Meldinga under vil automatisk verta sendt til alle som sender e-post "
+"til deg\n"
+"medan du ikkje er på kontoret.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "Eg er på kontoret no"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "Eg er ikkje på kontoret no"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "Ikkje endra status"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "Ikkje på kontoret-assistent"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Endra status"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "Åtvaring om forelding av passord ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "Passordet ditt vert forelda om 7 dagar ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Endra passord"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_knapp"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>Løyve</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Kan ikkje sletta"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Kan ikke redigera"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Lag element"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Lag undermapper"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "Slett alle typar element"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Slett eigne element"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "Redigér alle typar element"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Redigér eigne element"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "Mappekontakt"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Mappeeigar"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "Mappe synleg"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "Lesne element"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "Rolle: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "Koplar til ..."
+
+#: ../storage/main.c:183
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "Ximian Connector for Microsoft Exchange"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "Oppsettsverktøy for Ximian Connector for Microsoft Exchange"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Endra passordet ditt på Exchange-tenaren"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Mappe_storleik:"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Hent storleik på personlege mapper"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "Tinga a_nnan brukar sine mapper ..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Tinga ei mappe som tilhøyrer ein annan brukar på tenaren"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "Slutta å tinga ei mappe som tilhøyrer ein annan brukar på tenaren"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Vis eller endra delegatinnstillingane i Exchange-kalenderen"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "Vis eller endra ikkje på kontoret-meldingar og automatisk svar"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Byta Exchange-passord ..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_Delegeringsassistent"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "_Ikkje på kontoret-assistent"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "Sl_utt å tinga annan brukar si mappe"

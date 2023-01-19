@@ -1,0 +1,1537 @@
+# Thai translation of evolution-exchange.
+# Copyright (C) 2005-2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the evolution-exchange package.
+# Udomsak Chundang <udomsak@swpark.or.th>, 2005.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange 2.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-01 11:11+0700\n"
+"PO-Revision-Date: 2008-09-01 11:13+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "ระบุช่วงเวลาปรับข้อมูลแคชของ GAL"
+
+#: addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr ""
+"คีย์นี้ระบุจำนวนวันระหว่างการปรับข้อมูลแคชของ GAL แต่ละรอบ "
+"กำหนดค่านี้เป็นศูนย์ถ้าคุณไม่ต้องการปรับข้อมูล GAL และใช้แคชปัจจุบันไปตลอด "
+"คีย์นี้จะมีผลก็ต่อเมื่อคุณได้เปิดการทำแคชแบบออฟไลน์สำหรับ GAL ไว้เท่านั้น"
+
+#: addressbook/e-book-backend-exchange.c:2285
+#: addressbook/e-book-backend-gal.c:1860 storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "กำลังค้นหา..."
+
+#: addressbook/e-book-backend-gal.c:306
+#: addressbook/e-book-backend-gal.c:327
+msgid "Reconnecting to LDAP server..."
+msgstr "กำลังเชื่อมต่อใหม่ไปยังเซิร์ฟเวอร์ LDAP..."
+
+#: addressbook/e-book-backend-gal.c:1622
+msgid "Receiving LDAP search results..."
+msgstr "กำลังรับผลการค้นหา LDAP..."
+
+#: addressbook/e-book-backend-gal.c:1891
+msgid "Error performing search"
+msgstr "เกิดข้อผิดพลาดขณะค้นหา"
+
+#: calendar/e-cal-backend-exchange-calendar.c:2090
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"ไม่สามารถจัดตารางเวลาสำหรับทรัพยากร '%s' เพื่อใช้ในการประชุมแบบเวียนซ้ำได้\n"
+"คุณจะต้องจองการประชุมแต่ละครั้งแยกจากกัน"
+
+#: calendar/e-cal-backend-exchange-calendar.c:2108
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "ทรัพยากร '%s'  ไม่ว่างระหว่างช่วงเวลาที่เลือก"
+
+#: calendar/e-cal-backend-exchange.c:424
+msgid "Authentication failed"
+msgstr "การยืนยันตัวบุคคลไม่ผ่าน"
+
+#: calendar/e-cal-backend-exchange.c:466
+msgid "Could not find the calendar"
+msgstr "หาปฏิทินไม่พบ"
+
+#: camel/camel-exchange-folder.c:54
+msgid "Always check for new mail in this folder"
+msgstr "ตรวจสอบเมลใหม่เสมอในโฟลเดอร์นี้"
+
+#: camel/camel-exchange-folder.c:197
+msgid "You cannot expunge in offline mode."
+msgstr "ไม่สามารถเก็บกวาดโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-folder.c:228
+msgid "No Subject"
+msgstr "ไม่มีชื่อเรื่อง"
+
+#: camel/camel-exchange-folder.c:383
+msgid "This message is not available in offline mode."
+msgstr "ข้อความนี้ ไม่สามารถอ่านได้ขณะออฟไลน์"
+
+#: camel/camel-exchange-folder.c:593
+msgid "Moving messages"
+msgstr "กำลังย้ายข้อความ"
+
+#: camel/camel-exchange-folder.c:594
+msgid "Copying messages"
+msgstr "กำลังคัดลอกข้อความ"
+
+#: camel/camel-exchange-folder.c:967
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "ไม่สามารถสร้างไดเรกทอรี %s: %s"
+
+#: camel/camel-exchange-folder.c:977
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "ไม่สามารถโหลดข้อมูลสรุปสำหรับ %s ได้"
+
+#: camel/camel-exchange-folder.c:985
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "ไม่สามารถสร้างแคชสำหรับ %s"
+
+#: camel/camel-exchange-folder.c:995
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "ไม่สามารถสร้างวารสารสำหรับ %s"
+
+#: camel/camel-exchange-folder.c:1046
+msgid "Scanning for changed messages"
+msgstr "กำลังตรวจหาข้อความที่เปลี่ยนแปลง"
+
+#: camel/camel-exchange-folder.c:1079
+msgid "Fetching summary information for new messages"
+msgstr "กำลังดึงข้อมูลสรุปสำหรับข้อความใหม่"
+
+#: camel/camel-exchange-journal.c:342
+msgid "No folder name found\n"
+msgstr "ไม่พบชื่อโฟลเดอร์\n"
+
+#: camel/camel-exchange-journal.c:375 mail/mail-stub-exchange.c:3042
+#: mail/mail-stub-exchange.c:3092 mail/mail-stub-exchange.c:3222
+#: mail/mail-stub-exchange.c:3249 mail/mail-stub-exchange.c:3302
+#: mail/mail-stub-exchange.c:3324
+msgid "Folder doesn't exist"
+msgstr "ไม่มีโฟลเดอร์นั้นอยู่"
+
+#: camel/camel-exchange-journal.c:439
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "ไม่สามารถเพิ่มข้อความต่อท้ายขณะออฟไลน์: ไม่มีแคชให้ใช้"
+
+#: camel/camel-exchange-journal.c:455
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "ไม่สามารถเพิ่มข้อความต่อท้ายขณะออฟไลน์: %s"
+
+#: camel/camel-exchange-provider.c:55
+msgid "Secure or Plaintext Password"
+msgstr "รหัสผ่านแบบนิรภัยหรือข้อความเปล่า"
+
+#: camel/camel-exchange-provider.c:56
+#: camel/camel-exchange-provider.c:141
+msgid "Plaintext Password"
+msgstr "รหัสผ่านแบบข้อความเปล่า"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: camel/camel-exchange-provider.c:57
+#: camel/camel-exchange-provider.c:130
+msgid "Secure Password"
+msgstr "รหัสผ่านแบบนิรภัย"
+
+#: camel/camel-exchange-provider.c:63
+msgid "Checking for New Mail"
+msgstr "ตรวจสอบเมลใหม่"
+
+#: camel/camel-exchange-provider.c:65
+msgid "C_heck for new messages in all folders"
+msgstr "_ตรวจสอบข้อความใหม่ในทุกโฟลเดอร์"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: camel/camel-exchange-provider.c:73
+msgid "Windows User_name:"
+msgstr "_ชื่อผู้ใช้ Windows:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: camel/camel-exchange-provider.c:78
+msgid "Global Address List / Active Directory"
+msgstr "Global Address List / Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: camel/camel-exchange-provider.c:82
+msgid "_Global Catalog server name:"
+msgstr "ชื่อเซิร์ฟเวอร์ _Global Catalog:"
+
+#: camel/camel-exchange-provider.c:84
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "_จำกัดจำนวนการตอบรับจาก GAL: %s"
+
+#: camel/camel-exchange-provider.c:86
+msgid "Authentication _Type:"
+msgstr "_ชนิดการยืนยันตัวบุคคล:"
+
+#: camel/camel-exchange-provider.c:88
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "อนุญาตให้เ_รียกดู GAL จนกว่าจะถึงขีดจำกัดการดาวน์โหลดที่กำหนดไว้"
+
+#: camel/camel-exchange-provider.c:91
+msgid "Options"
+msgstr "ตัวเลือก"
+
+#: camel/camel-exchange-provider.c:93
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "ช่วงเวลาการเตือนรหัสผ่านห_มดอายุ: %s"
+
+#: camel/camel-exchange-provider.c:95
+msgid "Automatically synchroni_ze account locally"
+msgstr "_ปรับบัญชีผู้ใช้ให้ตรงกันภายในเครื่องโดยอัตโนมัติ"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: camel/camel-exchange-provider.c:98
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "ใช้ตัว_กรองกับข้อความใหม่ในกล่องจดหมายเข้าที่เซิร์ฟเวอร์นี้"
+
+#: camel/camel-exchange-provider.c:100
+msgid "Check new messages for _Junk contents"
+msgstr "ตรวจสอบ_ขยะในข้อความใหม่"
+
+#: camel/camel-exchange-provider.c:102
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "ตรวจสอบข้อความขยะในโฟลเดอร์กล่อง_จดหมายเข้าเท่านั้น"
+
+#: camel/camel-exchange-provider.c:112
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: camel/camel-exchange-provider.c:114
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "สำหรับจัดการเมล (และข้อมูลอื่น) ในเซิร์ฟเวอร์ Microsoft Exchange"
+
+#. i18n: "NTLM" probably doesn't translate
+#: camel/camel-exchange-provider.c:133
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr "ตัวเลือกนี้จะเชื่อมต่อไปยังเซิร์ฟเวอร์ Exchange โดยยืนยันตัวบุคคลด้วยรหัสผ่านนิรภัย (NTLM)"
+
+#: camel/camel-exchange-provider.c:143
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"ต้วเลือกนี้จะเชื่อมต่อไปยังเซิร์ฟเวอร์ Exchange โดยยืนยันตัวบุคคลด้วยรหัสผ่านแบบข้อความธรรมดา"
+
+#: camel/camel-exchange-store.c:314
+#, c-format
+msgid "Exchange server %s"
+msgstr "เซิร์ฟเวอร์ Exchange %s"
+
+#: camel/camel-exchange-store.c:317
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "บัญชี Exchange สำหรับ %s ที่ %s"
+
+#: camel/camel-exchange-store.c:399
+msgid "Evolution Exchange backend process"
+msgstr "โพรเซสเบื้องหลัง Evolution Exchange"
+
+#: camel/camel-exchange-store.c:442
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"ไม่สามารถยืนยันตัวบุคคลกับเซิร์ฟเวอร์ (รหัสผ่านไม่ถูกต้อง?)\n"
+"\n"
+
+#: camel/camel-exchange-store.c:495
+#, c-format
+msgid "No such folder %s"
+msgstr "ไม่มีโฟลเดอร์ %s ที่อ้าง"
+
+#: camel/camel-exchange-store.c:572
+msgid "Cannot subscribe folder in offline mode."
+msgstr "ไม่สามารถบอกรับข้อมูลให้กับโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-store.c:589
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "ไม่สามารถเลิกบอกรับข้อมูลสำหรับโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-store.c:727
+msgid "Cannot get folder info in offline mode."
+msgstr "ไม่สามารถอ่านข้อมูลโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-store.c:800
+msgid "Cannot create folder in offline mode."
+msgstr "ไม่สามารถสร้างโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-store.c:827
+msgid "Cannot delete folder in offline mode."
+msgstr "ไม่สามารถลบโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-store.c:851
+msgid "Cannot rename folder in offline mode."
+msgstr "ไม่สามารถเปลี่ยนชื่อโฟลเดอร์ขณะออฟไลน์ได้"
+
+#: camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "การส่งข้อมูล Exchange สามารถใช้ได้กับแหล่งเมลของ Exchange เท่านั้น"
+
+#: camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "ไม่สามารถส่งข้อความ: มีผู้รับอย่างน้อยหนึ่งคนไม่ถูกต้อง"
+
+#: camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "หาที่อยู่ 'จาก' ในข้อความไม่พบ"
+
+#: camel/camel-stub.c:165 camel/camel-stub.c:229
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "ไม่สามารถสร้าง socket: %s"
+
+#: camel/camel-stub.c:183
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "ไม่สามารถเชื่อมต่อไปยัง %s: กรุณาเริ่ม Evolution ใหม่"
+
+#: camel/camel-stub.c:188 camel/camel-stub.c:247
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "ไม่สามารถเชื่อมต่อไปยัง %s: %s"
+
+#: camel/camel-stub.c:212
+#, c-format
+msgid "Count not read file '%s': %s"
+msgstr "ไม่สามารถอ่านแฟ้ม '%s': %s"
+
+#: camel/camel-stub.c:220
+#, c-format
+msgid "Wrong size file '%s'"
+msgstr "แฟ้ม '%s' ผิดขนาด"
+
+#: camel/camel-stub.c:283
+#, c-format
+msgid "Path too long: %s"
+msgstr "พาธยาวเกินไป: %s"
+
+#: camel/camel-stub.c:318
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "ไม่สามารถเริ่มเธรดสถานะ: %s"
+
+#: camel/camel-stub.c:572
+#, c-format
+msgid "Lost connection to %s"
+msgstr "การเชื่อมต่อไปยัง %s ถูกตัดขาด"
+
+#: camel/camel-stub.c:576
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "เกิดข้อผิดพลาดขณะสื่อสารกับ %s: %s"
+
+#: mail/mail-stub-exchange.c:267 mail/mail-stub-exchange.c:963
+msgid "No such folder"
+msgstr "ไม่มีโฟลเดอร์ดังกล่าว"
+
+#: mail/mail-stub-exchange.c:290 mail/mail-stub-exchange.c:3019
+#: mail/mail-stub-exchange.c:3059 mail/mail-stub-exchange.c:3226
+#: mail/mail-stub-exchange.c:3276 mail/mail-stub-exchange.c:3339
+msgid "Permission denied"
+msgstr "ไม่ได้รับอนุญาต"
+
+#: mail/mail-stub-exchange.c:785 mail/mail-stub-exchange.c:877
+msgid "Could not open folder"
+msgstr "ไม่สามารถเปิดโฟลเดอร์"
+
+#: mail/mail-stub-exchange.c:871 mail/mail-stub-exchange.c:893
+msgid "Could not open folder: Permission denied"
+msgstr "ไม่สามารถเปิดโฟลเดอร์: ไม่ได้รับอนุญาต"
+
+#: mail/mail-stub-exchange.c:972
+msgid "Could not create folder."
+msgstr "ไม่สามารถสร้างโฟลเดอร์"
+
+#: mail/mail-stub-exchange.c:1060
+msgid "Could not open Deleted Items folder"
+msgstr "ไม่สามารถเปิดโฟลเดอร์ \"รายการที่ลบ\" ได้"
+
+#: mail/mail-stub-exchange.c:1391 mail/mail-stub-exchange.c:1432
+msgid "Could not get new messages"
+msgstr "ไม่สามารถอ่านข้อความใหม่ได้"
+
+#: mail/mail-stub-exchange.c:1608
+msgid "Could not empty Deleted Items folder"
+msgstr "ไม่สามารถเทขยะในโฟลเดอร์ \"รายการที่ลบ\" ทิ้งได้"
+
+#: mail/mail-stub-exchange.c:1610
+msgid "Permission denied. Could not delete certain messages."
+msgstr "ไม่ได้รับอนุญาต จึงไม่สามารถลบข้อความบางข้อความได้"
+
+#: mail/mail-stub-exchange.c:1683
+msgid "Could not append message; mailbox is over quota"
+msgstr "ไม่สามารถเพิ่มข้อความต่อท้ายได้; กล่องจดหมายโตเกินขนาดที่อนุญาต"
+
+#: mail/mail-stub-exchange.c:1684
+msgid "Could not append message"
+msgstr "ไม่สามารถเพิ่มข้อความต่อท้าย"
+
+#: mail/mail-stub-exchange.c:2446
+msgid "No such message"
+msgstr "ไม่มีข้อความดังกล่าว"
+
+#: mail/mail-stub-exchange.c:2527
+msgid "Message has been deleted"
+msgstr "ข้อความถูกลบไปแล้ว"
+
+#: mail/mail-stub-exchange.c:2529
+msgid "Error retrieving message"
+msgstr "เกิดข้อผิดพลาดขณะรับข้อความ"
+
+#: mail/mail-stub-exchange.c:2572
+msgid "Mailbox does not support full-text searching"
+msgstr "กล่องจดหมายไม่รองรับการค้นหาแบบ full text"
+
+#: mail/mail-stub-exchange.c:2670
+msgid "Unable to move/copy messages"
+msgstr "ไม่สามารถย้ายหรือคัดลอกข้อความ"
+
+#: mail/mail-stub-exchange.c:2936
+msgid "No mail submission URI for this mailbox"
+msgstr "ไม่มี URI ส่งเมลสำหรับกล่องเมลนี้"
+
+#: mail/mail-stub-exchange.c:2970
+msgid "Server won't accept mail via Exchange transport"
+msgstr "เซิร์ฟเวอร์ไม่รับเมลผ่าน Exchange"
+
+#: mail/mail-stub-exchange.c:2972
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr "บัญชีของคุณไม่มีสิทธิ์ใช้ <%s> เป็นที่อยู่ส่งเมล"
+
+#: mail/mail-stub-exchange.c:2984
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"ไม่สามารถส่งข้อความ\n"
+"อาจหมายความว่าบัญชีของคุณกำลังเก็บข้อมูลเกินขนาดที่อนุญาต"
+
+#: mail/mail-stub-exchange.c:2988
+msgid "Could not send message"
+msgstr "ไม่สามารถส่งข้อความได้"
+
+#: mail/mail-stub-exchange.c:3011 mail/mail-stub-exchange.c:3064
+#: mail/mail-stub-exchange.c:3230 mail/mail-stub-exchange.c:3281
+#: mail/mail-stub-exchange.c:3345
+msgid "Generic error"
+msgstr "ข้อผิดพลาดทั่วไป"
+
+#: mail/mail-stub-exchange.c:3015
+msgid "Folder already exists"
+msgstr "มีโฟลเดอร์อยู่แล้ว"
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "แบ็กเอนด์ Exchange ของสมุดที่อยู่ Evolution"
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "แบ็กเอนด์ Exchange ของปฏิทิน Evolution"
+
+#: storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+#: storage/main.c:219
+msgid "Evolution Connector for Microsoft Exchange"
+msgstr "ปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange"
+
+#: storage/exchange-autoconfig-wizard.c:227
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ Exchange\n"
+"กรุณาตรวจสอบแน่ใจว่า URL ถูกต้อง (ลองใช้ \"%s\" แทน \"%s\"?) แล้วลองอีกครั้ง"
+
+#: storage/exchange-autoconfig-wizard.c:235
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"ไม่สามารถระบุที่ตั้งเซิร์ฟเวอร์ Exchange\n"
+"กรุณาตรวจสอบให้แน่ใจว่าสะกดชื่อเซิร์ฟเวอร์ถูกต้อง แล้วลองอีกครั้ง"
+
+#: storage/exchange-autoconfig-wizard.c:244
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"ไม่สามารถยืนยันตัวบุคคลกับเซิร์ฟเวอร์ Exchange\n"
+"กรุณาตรวจสอบให้แน่ใจ ว่าชื่อผู้ใช้และรหัสผ่านถูกต้อง แล้วลองอีกครั้ง"
+
+#: storage/exchange-autoconfig-wizard.c:251
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"ไม่สามารถยืนยันตัวบุคคลกับเซิร์ฟเวอร์ Exchange\n"
+"กรุณาตรวจสอบให้แน่ใจ ว่าชื่อผู้ใช้และรหัสผ่านถูกต้อง แล้วลองอีกครั้ง\n"
+"\n"
+"คุณอาจต้องกำหนดชื่อโดเมนของ Windows ในชื่อผู้ใช้ของคุณด้วย (เช่น \"MY-DOMAIN\\%s\")"
+
+#: storage/exchange-autoconfig-wizard.c:263
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"ไม่พบข้อมูล OWA ที่ URL ที่ระบุ\n"
+"กรุณาตรวจสอบให้แน่ใจว่า URL ถูกต้อง แล้วลองใหม่"
+
+#: storage/exchange-autoconfig-wizard.c:270
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"ปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange "
+"ต้องการใช้ความสามารถบางอย่างของเซิร์ฟเวอร์ Exchange ซึ่งถูกปิดหรือห้ามใช้อยู่ "
+"(มักจะโดยไม่เจตนา) ผู้ดูแล Exchange ของคุณจำเป็นต้องเปิดความสามารถนี้ "
+"เพื่อที่คุณจะสามารถใช้ปลั๊กอินเชื่อมต่อนี้ของ Evolution ได้\n"
+"\n"
+"สำหรับข้อมูลที่จะบอกกับผู้ดูแล Exchange ของคุณ กรุณาดูที่ลิงก์ข้างล่างนี้:"
+
+#: storage/exchange-autoconfig-wizard.c:292
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"URL ของเซิร์ฟเวอร์ Exchange ที่คุณระบุนั้น ใช้กับเซิร์ฟเวอร์ Exchange 5.5 แต่ปลั๊กอินเชื่อมต่อของ "
+"Evolution สำหรับ Microsoft Exchange รองรับ Microsoft Exchange 2000 และ 2003 "
+"เท่านั้น"
+
+#: storage/exchange-autoconfig-wizard.c:306
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"ไม่สามารถตั้งค่าบัญชีผู้ใช้ Exchange ได้ เพราะเกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ กรุณาตรวจสอบ URL "
+"ชื่อผู้ใช้ และรหัสผ่าน แล้วลองอีกครั้ง"
+
+#: storage/exchange-autoconfig-wizard.c:350
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"ไม่สามารถยืนยันตัวบุคคลกับเซิร์ฟเวอร์ Global Catalog ได้ คุณอาจต้องย้อนกลับไป "
+"และกำหนดชื่อโดเมนของ Windows ในชื่อผู้ใช้ของคุณด้วย (เช่น \"MY-DOMAIN\\%s\")"
+
+#: storage/exchange-autoconfig-wizard.c:357
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ที่ระบุ\n"
+"กรุณาตรวจสอบชื่อเซิร์ฟเวอร์ และลองอีกครั้ง"
+
+#: storage/exchange-autoconfig-wizard.c:394
+#: storage/exchange-autoconfig-wizard.c:398
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+#: storage/exchange-autoconfig-wizard.c:463
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"ระบบการกำหนดค่าเกิดข้อผิดพลาด\n"
+"ไม่สามารถสร้างบัญชีผู้ใช้ใหม่ได้"
+
+#: storage/exchange-autoconfig-wizard.c:477
+msgid "You may only configure a single Exchange account"
+msgstr "คุณสามารถตั้งค่าบัญชี Exchange ได้ทีละบัญชีเท่านั้น"
+
+#: storage/exchange-autoconfig-wizard.glade.h:1
+#: storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "การตั้งค่าล้มเหลว"
+
+#: storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "เสร็จแล้ว"
+
+#: storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "ที่อยู่อีเมล:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "การตั้งค่าปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange"
+
+#: storage/exchange-autoconfig-wizard.glade.h:6
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"ปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange สามารถใช้ข้อมูลของบัญชีจากบัญชี "
+"Outlook Web Access (OWA) ที่มีอยู่ของคุณได้\n"
+"\n"
+"กรุณาป้อนที่อยู่ (URL) ของไซต์ OWA, ชื่อผู้ใช้ และรหัสผ่าน แล้วคลิก \"ถัดไป\"\n"
+
+#: storage/exchange-autoconfig-wizard.glade.h:10
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value.\n"
+msgstr ""
+"ปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange ไม่สามารถค้นหา Global "
+"Catalog ฉบับสำเนา สำหรับไซต์ของคุณได้ กรุณาป้อนชื่อของเซิร์ฟเวอร์ Global Catalog ของคุณ "
+"คุณอาจต้องถามผู้ดูแลระบบของคุณ ว่าค่าที่ถูกต้องคืออะไร\n"
+
+#: storage/exchange-autoconfig-wizard.glade.h:12
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account.\n"
+msgstr ""
+"ปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange พบปัญหาบางอย่างระหว่างตั้งค่าบัญชี "
+"Exchange ของคุณ\n"
+
+#: storage/exchange-autoconfig-wizard.glade.h:14
+msgid "Exchange Configuration"
+msgstr "การตั้งค่า Exchange"
+
+#: storage/exchange-autoconfig-wizard.glade.h:15
+msgid "Full Name:"
+msgstr "ชื่อเต็ม:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:16
+msgid "GC Server:"
+msgstr "เซิร์ฟเวอร์ GC:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:17
+msgid "Make this my default account"
+msgstr "ใช้บัญชีนี้เป็นค่าปกติของฉัน"
+
+#: storage/exchange-autoconfig-wizard.glade.h:18
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:20
+msgid "Remember this password"
+msgstr "จำรหัสผ่านนี้"
+
+#: storage/exchange-autoconfig-wizard.glade.h:21
+msgid "Username:"
+msgstr "ชื่อผู้ใช้:"
+
+#: storage/exchange-autoconfig-wizard.glade.h:22
+msgid "Welcome"
+msgstr "ยินดีต้อนรับ"
+
+#: storage/exchange-autoconfig-wizard.glade.h:23
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"ยินดีต้อนรับสู่ปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange\n"
+"หน้าจอถัดไป จะช่วยคุณกำหนดค่า Evolution ให้เชื่อมต่อไปยังบัญชี\n"
+"Exchange ของคุณ\n"
+"\n"
+"กรุณาคลิกปุ่ม \"ถัดไป\" เพื่อดำเนินการต่อ"
+
+#: storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr "บัญชีปลั๊กอินเชื่อมต่อของคุณพร้อมใช้งานแล้ว กรุณากดปุ่ม \"เริ่มใช้\" เพื่อเก็บค่าตั้งของคุณ"
+
+#: storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr "ข้อมูลของบัญชีของคุณมีรายละเอียดต่อไปนี้ กรุณาแก้ไขข้อผิดพลาดถ้ามี แล้วคลิก \"ถัดไป\"\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: storage/exchange-change-password.c:125
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr "รหัสผ่านปัจจุบัน ไม่ตรงกับรหัสผ่านที่มีอยู่สำหรับบัญชีรายชื่อของคุณ กรุณาป้อนรหัสผ่านที่ถูกต้อง"
+
+#: storage/exchange-change-password.c:132
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "รหัสผ่านทั้งสองไม่ตรงกัน กรุณากรอกรหัสผ่านใหม่"
+
+#: storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+#: storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "ยืนยันรหัสผ่าน:"
+
+#: storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "รหัสผ่านปัจจุบัน:"
+
+#: storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "รหัสผ่านใหม่:"
+
+#: storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "รหัสผ่านปัจจุบันของคุณ หมดอายุแล้ว กรุณาเปลี่ยนรหัสผ่านด้วย"
+
+#: storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "ผู้เขียน (อ่าน, สร้าง)"
+
+#: storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "_ปฏิทิน:"
+
+#: storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "_ที่อยู่ติดต่อ:"
+
+#: storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "การกำหนดสิทธิ์ตัวแทน"
+
+#: storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "ตัวแทน"
+
+#: storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "ผู้แก้ไข (อ่าน, สร้าง, แก้ไข)"
+
+#: storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "ไม่มี"
+
+#: storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "การกำหนดสิทธิ์สำหรับ"
+
+#: storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "ผู้ตรวจทาน (อ่านเท่านั้น)"
+
+#: storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"ผู้ใช้เหล่านี้จะสามารถส่งเมลในนามของคุณได้\n"
+"และสามารถเข้าถึงโฟลเดอร์ของคุณด้วยสิทธิ์ที่คุณให้เขา"
+
+#: storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_ตัวแทนสามารถมองเห็นรายการส่วนตัว"
+
+#: storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "แ_ก้ไข"
+
+#: storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_จดหมายเข้า:"
+
+#: storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_งาน:"
+
+#: storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "โครงสร้างลำดับชั้นโฟลเดอร์ของ Exchange"
+
+#: storage/exchange-migrate.c:60
+msgid "Migrating Exchange Folders..."
+msgstr "กำลังแปลงโฟลเดอร์ Exchange..."
+
+#: storage/exchange-migrate.c:68
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"ตำแหน่งและลำดับชั้นของบัญชี Exchange ของ Evolution มีการเปลี่ยนแปลงจากรุ่น %d.%d.%d\n"
+"\n"
+"กรุณาอดใจรอ ขณะที่ Evolution ถ่ายโอนโฟลเดอร์ของคุณ..."
+
+#: storage/exchange-migrate.c:101
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"คำเตือน: Evolution ไม่สามารถถ่ายโอนข้อมูลทั้งหมดของบัญชี Exchange จากรุ่น %d.%d.%d ได้\n"
+"ข้อมูลยังไม่ถูกลบ แต่ Evolution รุ่นนี้จะมองไม่เห็นข้อมูลดังกล่าว"
+
+#: storage/exchange-migrate.c:132
+#, c-format
+msgid "Migrating `%s':"
+msgstr "กำลังแปลง `%s':"
+
+#: storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>สถานะปัจจุบันของคุณคือ \"ไม่อยู่ที่ทำงาน\"</b>\n"
+"\n"
+"คุณต้องการเปลี่ยนสถานะของคุณเป็น \"อยู่ที่ทำงาน\" หรือไม่?"
+
+#: storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>ข้อความเมื่อไม่อยู่ที่ทำงาน:</b>"
+
+#: storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>สถานะ:</b>"
+
+#: storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>ข้อความที่ระบุข้างล่างนี้ จะถูกส่งไปยังแต่ละบุคคลที่ส่งจดหมายถึงคุณ ขณะที่คุณไม่อยู่ที่ทำงาน</"
+"small>"
+
+#: storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "ฉันกำลังอยู่ที่ที่ทำงาน"
+
+#: storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "ฉันไม่อยู่ที่ทำงาน"
+
+#: storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "ไม่ต้องเปลี่ยนสถานะ"
+
+#: storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "ผู้ช่วยจัดการสถานะไม่อยู่ที่ทำงาน"
+
+#: storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "ใช่ เปลี่ยนสถานะเลย"
+
+#: storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "รหัสผ่านกำลังจะหมดอายุ..."
+
+#: storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "รหัสผ่านของคุณจะหมดอายุภายใน 7 วัน..."
+
+#: storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_เปลี่ยนรหัสผ่าน"
+
+#: storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ปุ่ม_ตกลง"
+
+#: storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>การกำหนดสิทธิ์</b>"
+
+#: storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "ไม่สามารถลบ"
+
+#: storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "ไม่สามารถแก้ไข"
+
+#: storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "สร้างรายการ"
+
+#: storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "สร้างโฟลเดอร์ย่อย"
+
+#: storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "ลบรายการใดๆ"
+
+#: storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "ลบรายการของตัวเอง"
+
+#: storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "แก้ไขรายการใดๆ"
+
+#: storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "แก้ไขรายการของตัวเอง"
+
+#: storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "ที่อยู่ติดต่อในโฟลเดอร์"
+
+#: storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "เจ้าของโฟลเดอร์"
+
+#: storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "มองเห็นโฟลเดอร์"
+
+#: storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "รายการอ่าน"
+
+#: storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "บทบาท:"
+
+#: storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "กำลังเชื่อมต่อ..."
+
+#: storage/ximian-connector-setup.c:75
+msgid "Evolution Connector for Microsoft Exchange Setup Tool"
+msgstr "เครื่องมือตั้งค่าปลั๊กอินเชื่อมต่อของ Evolution สำหรับ Microsoft Exchange"
+
+#: storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "เปลี่ยนรหัสผ่านของเซิร์ฟเวอร์ Exchange ของคุณ"
+
+#: storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "_ขนาดโฟลเดอร์"
+
+#: storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "อ่านขนาดของโฟลเดอร์ส่วนบุคคล"
+
+#: storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "บอกรับข้อมูลจากโฟลเดอร์ผู้ใช้_อื่น..."
+
+#: storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "บอกรับข้อมูลจากโฟลเดอร์ซึ่งเป็นของผู้ใช้อื่นในเซิร์ฟเวอร์"
+
+#: storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "เลิกบอกรับข้อมูลจากโฟลเดอร์ซึ่งเพิ่มโดยคำสั่ง \"บอกรับข้อมูลจากโฟลเดอร์ผู้ใช้อื่น\""
+
+#: storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "ดูหรือเปลี่ยนการตั้งค่าการตั้งตัวแทนของปฏิทิน Exchange ของคุณ"
+
+#: storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "ดูหรือเปลี่ยนสถานะ \"ไม่อยู่ที่ทำงาน\" และข้อความตอบกลับอัตโนมัติของคุณ"
+
+#: storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_เปลี่ยนรหัสผ่าน Exchange..."
+
+#: storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_ผู้ช่วยจัดการการตั้งตัวแทน"
+
+#: storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "ผู้ช่วยจัดการสถานะไ_ม่อยู่ที่ทำงาน"
+
+#: storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_เลิกบอกรับข้อมูลจากโฟลเดอร์ผู้ใช้อื่น"
+
+#~ msgid "%s at %s on behalf of %s"
+#~ msgstr "%s ที่ %s ในนามของ %s"
+
+#~ msgid "%s on behalf of %s"
+#~ msgstr "%s ในนามของ %s"
+
+#~ msgid "%sEnter password for %s"
+#~ msgstr "%sป้อนรหัสผ่านสำหรับ %s"
+
+#~ msgid "Ximian Connector for Exchange"
+#~ msgstr "ปลั๊กอินเชื่อมต่อ Ximian สำหรับ Exchange"
+
+#~ msgid "Ximian Connector Configuration"
+#~ msgstr "การกำหนดค่า ปลั๊กอินเชื่อมต่อ Ximian"
+
+#~ msgid "Internal error.\n"
+#~ msgstr "ข้อผิดพลาดภายใน\n"
+
+#~ msgid "Paged results response control could not be decoded.\n"
+#~ msgstr "ไม่สามารถอ่านรหัสจากตัวควบคุมผลลัพธ์แบบแบ่งหน้าได้\n"
+
+#~ msgid "Invalid entries estimate in paged results response.\n"
+#~ msgstr "ค่าประมาณจำนวนรายการในผลลัพธ์แบบแบ่งหน้าไม่ถูกต้อง\n"
+
+#~ msgid "No such folder."
+#~ msgstr "ไม่มีโฟลเดอร์ดังกล่าว"
+
+#~ msgid "Custom"
+#~ msgstr "กำหนดเอง"
+
+#~ msgid "Permissions for %s"
+#~ msgstr "การกำหนดสิทธิสำหรับ %s"
+
+#~ msgid ""
+#~ "No Global Catalog server configured for this account.\n"
+#~ "Unable to edit delegates."
+#~ msgstr ""
+#~ "ไม่มีการกำหนดค่าเซิร์ฟเวอร์ Global Catalog สำหรับบัญชีนี้\n"
+#~ "ไม่สามารถแก้ไขตัวแทนได้"
+
+#~ msgid ""
+#~ "Could not read folder permissions.\n"
+#~ "Unable to edit delegates."
+#~ msgstr ""
+#~ "ไม่สามารถอ่านการกำหนดสิทธิ์สำหรับโฟลเดอร์นี้ได้\n"
+#~ "ไม่สามารถแก้ไขตัวแทนได้"
+
+#~ msgid ""
+#~ "Could not determine folder permissions for delegates.\n"
+#~ "Unable to edit delegates."
+#~ msgstr ""
+#~ "ไม่สามารถพิจารณาการกำหนดสิทธิ์ในโฟลเดอร์ของตัวแทนได้\n"
+#~ "ไม่สามารถแก้ไขตัวแทนได้"
+
+#~ msgid "Delegate To:"
+#~ msgstr "มอบฉันทะให้กับ:"
+
+#~ msgid "Delegate To"
+#~ msgstr "มอบฉันทะให้กับ"
+
+#~ msgid "Could not make %s a delegate"
+#~ msgstr "ไม่สามารถกำหนดให้ %s เป็นตัวแทนได้"
+
+#~ msgid "You cannot make yourself your own delegate"
+#~ msgstr "คุณไม่สามารถทำให้ตัวคุณเป็นตัวแทนของคุณเองได้"
+
+#~ msgid "%s is already a delegate"
+#~ msgstr "%s เป็นตัวแทนอยู่แล้ว"
+
+#~ msgid "Remove the delegate %s?"
+#~ msgstr "ลบตัวแทน %s หรือไม่?"
+
+#~ msgid "Could not access Active Directory"
+#~ msgstr "ไม่สามารถเข้าถึง Active Directory ได้"
+
+#~ msgid "Could not find self in Active Directory"
+#~ msgstr "หาตัวเองใน Active Directory ไม่พบ"
+
+#~ msgid "Could not find delegate %s in Active Directory"
+#~ msgstr "หาตัวแทน %s ใน Active Directory ไม่พบ"
+
+#~ msgid "Could not remove delegate %s"
+#~ msgstr "ไม่สามารถลบตัวแทน %s ได้"
+
+#~ msgid "Could not update list of delegates."
+#~ msgstr "ไม่สามารถอัพเดตรายการตัวแทนได้"
+
+#~ msgid "Could not add delegate %s"
+#~ msgstr "ไม่สามารถเพิ่มตัวแทน %s ได้"
+
+#~ msgid ""
+#~ "Failed to update delegates:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถอัพเดตตัวแทน:\n"
+#~ "%s"
+
+#~ msgid "Name"
+#~ msgstr "ชื่อ"
+
+#~ msgid "Error reading delegates list."
+#~ msgstr "เกิดข้อผิดพลาดขณะอ่านรายการตัวแทน"
+
+#~ msgid "Could not read folder permissions"
+#~ msgstr "ไม่สามารถอ่านการกำหนดสิทธิ์โฟลเดอร์"
+
+#~ msgid "Could not update folder permissions."
+#~ msgstr "ไม่สามารถอัพเดตการกำหนดสิทธิ์ของโฟลเดอร์"
+
+#~ msgid "Could not update folder permissions. %s"
+#~ msgstr "ไม่สามารถอัพเดตการกำหนดสิทธิ์ของโฟลเดอร์ %s"
+
+#~ msgid "(Permission denied.)"
+#~ msgstr "(ไม่ได้รับอนุญาต)"
+
+#~ msgid ""
+#~ "Unable to add user to access control list:\n"
+#~ "No Global Catalog server is configured for this account."
+#~ msgstr ""
+#~ "ไม่สามารถเพิ่มผู้ใช้ในรายการควบคุมการเข้าถึง:\n"
+#~ "ไม่มีการกำหนดค่าเซิร์ฟเวอร์ Global Catalog สำหรับบัญชีนี้"
+
+#~ msgid "Add User:"
+#~ msgstr "เพิ่มผู้ใช้:"
+
+#~ msgid "Add User"
+#~ msgstr "เพิ่มผู้ใช้"
+
+#~ msgid "No such user %s"
+#~ msgstr "ไม่มีผู้ใช้ %s ที่อ้าง"
+
+#~ msgid "%s cannot be added to an access control list"
+#~ msgstr "ไม่สามารถเพิ่ม %s ในรายการควบคุมการเข้าถึง"
+
+#~ msgid "Unknown error looking up %s"
+#~ msgstr "เกิดข้อผิดพลาดไม่ทราบสาเหตุขณะค้นหา %s"
+
+#~ msgid "%s is already in the list"
+#~ msgstr "%s มีอยู่แล้วในรายการ"
+
+#~ msgid "Role"
+#~ msgstr "บทบาท"
+
+#~ msgid "Account Name"
+#~ msgstr "ชื่อบัญชี"
+
+#~ msgid "Folder does not exist"
+#~ msgstr "ไม่มีโฟลเดอร์นี้อยู่"
+
+#~ msgid "Could not add favorite: %s"
+#~ msgstr "ไม่สามารถเพิ่มรายการโปรด: %s"
+
+#~ msgid "Could not remove favorite: %s"
+#~ msgstr "ไม่สามารถลบรายการโปรด: %s"
+
+#~ msgid "_Rename Folder..."
+#~ msgstr "_เปลี่ยนชื่อโฟลเดอร์..."
+
+#~ msgid "_New Folder..."
+#~ msgstr "_โฟลเดอร์ใหม่..."
+
+#~ msgid "_Delete Folder"
+#~ msgstr "_ลบโฟลเดอร์"
+
+#~ msgid "_Add Other User's Folder..."
+#~ msgstr "_เพิ่มโฟลเดอร์ผู้ใช้อื่น..."
+
+#~ msgid "_Remove Other User's Folder"
+#~ msgstr "_ลบโฟลเดอร์ผู้ใช้อื่น"
+
+#~ msgid "Add to _Favorites"
+#~ msgstr "เพิ่มใน_รายการโปรด"
+
+#~ msgid "Remove from Fa_vorites"
+#~ msgstr "ลบออกจากราย_การโปรด"
+
+#~ msgid "_Show Folder Sizes"
+#~ msgstr "_แสดงขนาดโฟลเดอร์"
+
+#~ msgid "Can only expunge in Deleted Items folder"
+#~ msgstr "สามารถเก็บกวาดได้เฉพาะกับโฟลเดอร์ \"รายการที่ลบ\" เท่านั้น"
+
+#~ msgid ""
+#~ "Ximian Connector requires access to certain functionality on the Exchange "
+#~ "Server that appears to be disabled or blocked.  (This is usually "
+#~ "unintentional.)  Your Exchange Administrator will need to enable this "
+#~ "functionality in order for you to be able to use Ximian Connector.\n"
+#~ "\n"
+#~ "For information to provide to your Exchange administrator, please follow "
+#~ "the link below:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ปลั๊กอินเชื่อมต่อ Ximian ต้องการใช้ความสามารถบางอย่างของเซิร์ฟเวอร์ Exchange "
+#~ "ซึ่งถูกปิดหรือห้ามใช้อยู่ (มักจะโดยไม่เจตนา) ผู้ดูแล Exchange "
+#~ "ของคุณจำเป็นต้องเปิดความสามารถนี้เพื่อที่คุณจะสามารถใช้ปลั๊กอินเชื่อมต่อ Ximian ได้\n"
+#~ "\n"
+#~ "สำหรับข้อมูลที่จะบอกกับผู้ดูแล Exchange ของคุณ กรุณาดูที่ลิงก์ข้างล่างนี้:\n"
+#~ "%s"
+
+#~ msgid "Enter password for %s"
+#~ msgstr "ป้อนรหัสผ่านสำหรับ %s"
+
+#~ msgid "Enter password"
+#~ msgstr "ป้อนรหัสผ่าน"
+
+#~ msgid "Owner"
+#~ msgstr "เจ้าของ"
+
+#~ msgid "Publishing Editor"
+#~ msgstr "บรรณาธิการจัดพิมพ์"
+
+#~ msgid "Editor"
+#~ msgstr "บรรณาธิการ"
+
+#~ msgid "Publishing Author"
+#~ msgstr "ผู้เขียนและจัดพิมพ์"
+
+#~ msgid "Author"
+#~ msgstr "ผู้เขียน"
+
+#~ msgid "Non-editing Author"
+#~ msgstr "ผู้เขียนโดยไม่แก้ไข"
+
+#~ msgid "Reviewer"
+#~ msgstr "ผู้ตรวจทาน"
+
+#~ msgid "Contributor"
+#~ msgstr "ผู้ร่วมสมทบ"
+
+#~ msgid "Select User"
+#~ msgstr "เลือกผู้ใช้"
+
+#~ msgid "Addressbook..."
+#~ msgstr "สมุดที่อยู่..."
+
+#~ msgid ""
+#~ "Cannot create the specified folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถสร้างโฟล์เดอร์ที่ระบุได้:\n"
+#~ "%s"
+
+#~ msgid "The specified folder name is not valid: %s"
+#~ msgstr "ชื่อโฟลเดอร์ที่ระบุใช้ไม่ได้: %s"
+
+#~ msgid "Create New Folder"
+#~ msgstr "สร้างโฟลเดอร์ใหม่"
+
+#~ msgid "Folder _name:"
+#~ msgstr "_ชื่อโฟลเดอร์:"
+
+#~ msgid "Folder _type:"
+#~ msgstr "_ประเภทโฟลเดอร์:"
+
+#~ msgid "Specify where to create the folder:"
+#~ msgstr "ระบุแหล่งที่จะสร้างโฟลเดอร์:"
+
+#~ msgid ""
+#~ "Cannot transfer folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถถ่ายโอนโฟลเดอร์:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Cannot delete folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถลบโฟลเดอร์:\n"
+#~ "%s"
+
+#~ msgid "Really delete folder \"%s\"?"
+#~ msgstr "ต้องการลบโฟลเดอร์ \"%s\" จริงหรือ?"
+
+#~ msgid "Delete \"%s\""
+#~ msgstr "ลบ \"%s\""
+
+#~ msgid ""
+#~ "Cannot rename folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถ เปลี่ยนชื่อ โฟลเดอร์:\n"
+#~ "%s"
+
+#~ msgid "Rename the \"%s\" folder to:"
+#~ msgstr "เปลี่ยนชื่อโฟลเดอร์ \"%s\" ไปเป็น:"
+
+#~ msgid "Rename Folder"
+#~ msgstr "เปลี่ยนชื่อโฟลเดอร์"
+
+#~ msgid "A folder named \"%s\" already exists. Please use a different name."
+#~ msgstr "โฟลเดอร์ชื่อ \"%s\" มีอยู่แล้ว กรุณาใช้ชื่ออื่น"
+
+#~ msgid "Please select a user."
+#~ msgstr "กรุณาเลือกผู้ใช้"
+
+#~ msgid "Opening Folder"
+#~ msgstr "กำลังเปิดโฟลเดอร์"
+
+#~ msgid "Opening Folder \"%s\""
+#~ msgstr "กำลังเปิดโฟลเดอร์ \"%s\""
+
+#~ msgid "in \"%s\" ..."
+#~ msgstr "ใน \"%s\" ..."
+
+#~ msgid "Could not open other user's folder: %s."
+#~ msgstr "ไม่สามารถเปิดโฟลเดอร์ของผู้ใช้อื่น: %s"
+
+#~ msgid "Cannot find the specified other user's folder."
+#~ msgstr "ไม่สามารถค้นหาในโฟลเดอร์ผู้ใช้อื่นที่ระบุได้"
+
+#~ msgid ""
+#~ "Cannot unsubscribe from folder:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถบอกเลิกการรับข้อมูลสำหรับโฟลเดอร์:\n"
+#~ "%s"
+
+#~ msgid "Really unsubscribe from folder \"%s\"?"
+#~ msgstr "ต้องการเลิกการบอกรับข้อมูลสำหรับโฟลเดอร์ \"%s\" หรือไม่?"
+
+#~ msgid "Unsubscribe from \"%s\""
+#~ msgstr "เลิกบอกรับข้อมูลจาก \"%s\""
+
+#~ msgid "Open Other User's Folder"
+#~ msgstr "เปิดโฟลเดอร์ผู้ใช้อื่น"
+
+#~ msgid "_Account:"
+#~ msgstr "_บัญชีรายชื่อ:"
+
+#~ msgid "_Folder Name:"
+#~ msgstr "ชื่อ_โฟลเดอร์:"
+
+#~ msgid "_User:"
+#~ msgstr "_ผู้ใช้:"
+
+#~ msgid "Checkbox"
+#~ msgstr "กล่องกากบาท"
+
+#~ msgid "Folder"
+#~ msgstr "โฟลเดอร์"
+
+#~ msgid "No error"
+#~ msgstr "ไม่มีข้อผิดพลาด"
+
+#~ msgid "A folder with the same name already exists"
+#~ msgstr "มีโฟลเดอร์ชื่อเดียวกันอยู่แล้ว"
+
+#~ msgid "The specified folder type is not valid"
+#~ msgstr "ประเภทโฟลเดอร์ที่ระบุไม่ถูกต้อง"
+
+#~ msgid "I/O error"
+#~ msgstr "ข้อผิดพลาดในการอ่าน-เขียนข้อมูล"
+
+#~ msgid "Not enough space to create the folder"
+#~ msgstr "พื้นที่ว่างไม่พอสำหรับการสร้างโฟลเดอร์"
+
+#~ msgid "The folder is not empty"
+#~ msgstr "โฟลเดอร์ไม่ว่าง"
+
+#~ msgid "The specified folder was not found"
+#~ msgstr "ไม่พบโฟล์เดอร์ที่ระบุ"
+
+#~ msgid "Function not implemented in this storage"
+#~ msgstr "หน้าที่การทำงานสำหรับพื้นที่จัดเก็บนี้ยังไม่ทำงาน"
+
+#~ msgid "Operation not supported"
+#~ msgstr "ไม่รองรับปฏิบัติการนี้"
+
+#~ msgid "The specified type is not supported in this storage"
+#~ msgstr "ไม่รองรับประเภทที่กำหนดในพื้นที่จัดเก็บนี้"
+
+#~ msgid "The specified folder cannot be modified or removed"
+#~ msgstr "โฟลเดอร์ที่ระบุไม่สามารถเปลี่ยนแปลงหรือลบออกได้"
+
+#~ msgid "Cannot make a folder a child of one of its descendants"
+#~ msgstr "ไม่สามารถให้โฟลเดอร์อยู่ใต้โฟลเดอร์ที่อยู่ข้างใต้ลงไปอีกได้"
+
+#~ msgid "Cannot create a folder with that name"
+#~ msgstr "ไม่สามารถสร้างโฟลเดอร์ด้วยชื่อนั้นได้"
+
+#~ msgid "This operation cannot be performed in off-line mode"
+#~ msgstr "ปฏิบัติการนี้ไม่สามารถกระทำขณะออฟไลน์ได้"
+
+#~ msgid "Unknown error"
+#~ msgstr "ข้อผิดพลาดไม่ทราบสาเหตุ"
+
+#~ msgid "%s's Folders"
+#~ msgstr "โฟลเดอร์ของ %s"
+
+#~ msgid "Cannot change password due to configuration problems"
+#~ msgstr "ไม่สามารถเปลี่ยนรหัสผ่าน เนื่องจากมีปัญหาเกี่ยวกับการตั้งค่า"
+
+#~ msgid ""
+#~ "Server rejected password because it is too weak.\n"
+#~ "Try again with a different password."
+#~ msgstr ""
+#~ "เซิร์ฟเวอร์ไม่ยอมรับรหัสผ่าน เพราะเดาง่ายเกินไป\n"
+#~ "กรุณาลองใหม่ โดยใช้รหัสผ่านอื่น"
+
+#~ msgid "Could not change password"
+#~ msgstr "ไม่สามารถเปลี่ยนรหัสผ่าน"
+
+#~ msgid "Personal Folders"
+#~ msgstr "โฟลเดอร์ส่วนบุคคล"
+
+#~ msgid "Favorite Public Folders"
+#~ msgstr "โฟลเดอร์สาธารณะรายการโปรด"
+
+#~ msgid "All Public Folders"
+#~ msgstr "โฟลเดอร์สาธารณะทั้งหมด"
+
+#~ msgid "Exchange Account is offline. Cannot display folders\n"
+#~ msgstr "บัญชี Exchange ออฟไลน์อยู่ ไม่สามารถแสดงโฟลเดอร์ได้\n"
+
+#~ msgid ""
+#~ "Could not authenticate to server.\n"
+#~ "\n"
+#~ "This probably means that your server requires you\n"
+#~ "to specify the Windows domain name as part of your\n"
+#~ "username (eg, \"DOMAIN\\user\").\n"
+#~ "\n"
+#~ "Or you might have just typed your password wrong.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "ไม่สามารถยืนยันตัวบุคคลกับเซิร์ฟเวอร์\n"
+#~ "\n"
+#~ "เป็นไปได้ว่าเซิร์ฟเวอร์ของคุณต้องการให้คุณระบุ\n"
+#~ "ชื่อโดเมนของ Windows ในชื่อผู้ใช้ของคุณด้วย\n"
+#~ "(เช่น \"DOMAIN\\user\")\n"
+#~ "\n"
+#~ "หรือคุณอาจป้อนรหัสผ่านผิด\n"
+#~ "\n"
+
+#~ msgid "Mailbox for %s is not on this server."
+#~ msgstr "กล่องจดหมายสำหรับ %s ไม่ได้อยู่ที่เซิร์ฟเวอร์นี้"
+
+#~ msgid ""
+#~ "The server '%s' is running Exchange 5.5 and is\n"
+#~ "therefore not compatible with Ximian Connector"
+#~ msgstr ""
+#~ "เซิร์ฟเวอร์ '%s' กำลังใช้ Exchange 5.5 อยู่\n"
+#~ "ซึ่งเข้ากันไม่ได้กับปลั๊กอินเชื่อมต่อ Ximain"
+
+#~ msgid ""
+#~ "Could not find Exchange Web Storage System at %s.\n"
+#~ "If OWA is running on a different path, you must specify that in the\n"
+#~ "account configuration dialog."
+#~ msgstr ""
+#~ "หาระบบการจัดเก็บ Exchange Web ที่ %s ไม่พบ\n"
+#~ "ถ้า OWA ทำงานอยู่ในพาธอื่น คุณจะต้องระบุไว้ใน\n"
+#~ "ไดอะล็อกตั้งค่าบัญชีด้วย"
+
+#~ msgid "No mailbox for user %s on %s.\n"
+#~ msgstr "ไม่พบกล่องจดหมายสำหรับผู้ใช้ %s ที่ %s\n"
+
+#~ msgid "Could not connect to server %s: %s"
+#~ msgstr "ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ %s: %s"
+
+#~ msgid "Could not resolve hostname"
+#~ msgstr "ไม่สามารถแปลงที่อยู่ชื่อเครื่อง"
+
+#~ msgid "Network error"
+#~ msgstr "เกิดข้อผิดพลาดของเครือข่าย"
+
+#~ msgid ""
+#~ "You have exceeded your quota of %d %s for storing mails on this server. "
+#~ "Your current usage is : %.0f %s."
+#~ msgstr ""
+#~ "คุณใช้เนื้อที่เกินขนาด %d %s ที่อนุญาตสำหรับเก็บเมลในเซิร์ฟเวอร์นี้แล้ว ขนาดที่คุณใช้อยู่คือ : "
+#~ "%.0f %s"
+
+#~ msgid "You will not be able to either send or receive mails now\n"
+#~ msgstr "คุณจะไม่สามารถรับหรือส่งเมลได้แล้ว\n"
+
+#~ msgid ""
+#~ "You will not be able to send mails till you clear up some space by "
+#~ "deleting some mails.\n"
+#~ msgstr "คุณจะไม่สามารถส่งเมลได้ จนกว่าคุณจะเคลียร์พื้นที่บางส่วน โดยลบเมลบางฉบับ\n"
+
+#~ msgid "Try to clear up some space by deleting some mails.\n"
+#~ msgstr "กรุณาเคลียร์พื้นที่บางส่วน โดยลบเมลบางฉบับ\n"
+
+#~ msgid "Folder Name"
+#~ msgstr "ชื่อโฟลเดอร์"
+
+#~ msgid "Folder Size"
+#~ msgstr "ขนาดโฟลเดอร์"
+
+#~ msgid "Calendar"
+#~ msgstr "ปฏิทิน"
+
+#~ msgid "Contacts"
+#~ msgstr "ที่อยู่ติดต่อ"
+
+#~ msgid "Deleted Items"
+#~ msgstr "รายการที่ลบ"
+
+#~ msgid "Drafts"
+#~ msgstr "ฉบับร่าง"
+
+#~ msgid "Inbox"
+#~ msgstr "จดหมายเข้า"
+
+#~ msgid "Journal"
+#~ msgstr "วารสาร"
+
+#~ msgid "Notes"
+#~ msgstr "บันทึกข้อความ"
+
+#~ msgid "Outbox"
+#~ msgstr "จดหมายออก"
+
+#~ msgid "Sent Items"
+#~ msgstr "ส่งแล้ว"
+
+#~ msgid "Tasks"
+#~ msgstr "งาน"
+
+#~ msgid "Could not update out-of-office state"
+#~ msgstr "ไม่สามารถอัพเดตสถานะการไม่อยู่ที่ทำงานได้"
+
+#~ msgid "Could not read out-of-office state"
+#~ msgstr "ไม่สามารถอ่านสถานะการไม่อยู่ที่ทำงานได้"

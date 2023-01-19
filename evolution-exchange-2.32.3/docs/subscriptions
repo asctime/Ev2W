@@ -1,0 +1,154 @@
+SUBSCRIBE uri HTTP/1.1
+
+  Subscribes to notifications on the given uri
+
+  Required headers:
+
+    Notification-Type: update | update/newmember | delete | move |
+                       pragma/<http://schemas.microsoft.com/exchange/newmail>
+      The kind of notifications to subscribe to:
+
+      Type		Target	Depth	Meaning
+      update		message	0	message body/props modified
+      update		folder	0	folder props modified
+      update		folder	1	folder props modified, or object
+					added/removed/modified
+      update/newmember	folder	1	object added to folder
+      delete		any	0	object was deleted
+      delete		folder	1	object deleted from folder
+      move		any	0	object was moved
+      move		folder	1	object moved in/out of folder
+      pragma/...	mailbox	any	special new mail notification
+
+      Depth defaults to 0 for a message or 1 for a folder.
+
+      "mailbox" means the top level of the store. I assume the
+      newmail notification triggers whenever a message is delivered
+      by the MTA to any folder in the mailbox, but I don't know for
+      sure.
+
+      Note that "update/newmember" will notice both newly-created
+      objects and objects moved/copied into the folder, but "delete"
+      will only notice DELETEs, not MOVEs out of the folder.
+
+
+  Optional headers:
+
+    Depth: 0 | 1
+      see above
+
+    Subscription-Lifetime:
+      Lifetime of the subscription, in seconds
+
+    Call-Back: httpu://HOSTNAME:PORT/PATH
+      Specifies UDP port for the server to send NOTIFY messages to.
+      (See ietf/draft-goland-http-udp-00.txt for details about how
+      httpu works.) If no Call-Back is specified, the client must POLL
+      for changes.
+
+    Notification-Delay:
+      Only valid if using a Call-Back. Theoretically, the server will
+      coalesce events that occur within this interval into a single
+      NOTIFY, but I don't think it actually does.
+
+    Subscription-Id:
+      If specified, then this is a renewal (and Notification-Type,
+      Depth, and Call-Back cannot be specified). May be a
+      comma-separated list of IDs.
+
+
+  Status codes:
+
+    200, 400, 401, 404, 415, 501
+    207 - See "Response body" below
+    412 - Subscription-Id no longer exists or doesn't go with URI
+
+
+  Response headers:
+
+    Subscription-Id:
+      gives the ID of the subscription, which can be used to renew
+      or UNSUBSCRIBE
+
+    Subscription-Lifetime:
+    Notification-Delay:
+      may not be exactly what was requested
+
+
+  Response body:
+
+    For a 207 response (eg, renewing multiple subscriptions), the
+    body looks like:
+
+    <?xml version="1.0"?>
+    <a:multistatus xmlns:b="http://schemas.microsoft.com/Exchange/" xmlns:a="DAV:">
+      <a:response>
+        <a:href>http://shrewdness.xcs.ximian.com/exchange/danw/Inbox</a:href>
+        <a:status>HTTP/1.1 200 OK</a:status>
+        <b:subscriptionID>
+          <li>21</li>
+        </b:subscriptionID>
+      </a:response>
+    </a:multistatus>
+
+
+
+UNSUBSCRIBE uri HTTP/1.1
+
+  Unsubscribes from changes on uri. (Otherwise the server will continue
+  sending them even after the client exits, until the subscription
+  expires.)
+
+  Required headers:
+
+    Subscription-Id:
+      the subscription id returned by SUBSCRIBE. May be a
+      comma-separated list.
+
+  Status codes:
+
+    200, 400
+    207 - As for SUBSCRIBE
+
+
+
+POLL uri HTTP/1.1
+
+  Polls for changes to subscriptions. This will stop the server from
+  sending NOTIFY messages about the subscription until it is triggered
+  again.
+
+  Required headers:
+
+    Subscription-Id:
+      the subscription(s) to poll. It seems that the subscriptions do
+      not have to correspond to the uri?
+
+  Status codes:
+
+    207 - As for SUBSCRIBE
+    406
+    412 - As for SUBSCRIBE. The server also returns 412 (inside
+          Multi-Status) if you try to POLL without authenticating.
+
+    Inside Multi-Status:
+    200 - Events have occurred on the subscription
+    204 - Events have not occurred on the subscription
+    401, 404
+
+
+NOTIFY uri HTTP/1.1
+
+  Sent from the server to the Call-Back port on the client to notify
+  of a change to the subscription. The server will continue sending
+  NOTIFY messages until the client POLLs the subscription or the
+  subscription expires.
+
+  Required headers:
+
+    Subscription-Id:
+      The subscription(s) that are being notified.
+
+  Status codes:
+
+    N/A: the client responds to the NOTIFY by POLLing

@@ -1,0 +1,2386 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/notify-only-inbox</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/notify-only-inbox</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Notify new messages for Inbox only.</short>
+        <long>Whether to notify new messages in Inbox folder only.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>بلِّغ بالرسائل الجديدة للبريد الوافد فقط.</short>
+        <long>فيما يجب التبليغ عن الرسائل الجديدة في مجلد الداخل فقط.</long>
+      </locale>
+
+      <locale name="as">
+        <short>শুধুমাত্র ইনবক্সের মধ্যে নতুন বার্তার ক্ষেত্রে সূচনাপ্রদান করা হবে।</short>
+        <long>ইনবক্স.</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Notificar nuevos mensaxes namái pa la bandexa d&apos;entrada.</short>
+        
+      </locale>
+
+      <locale name="be@latin">
+        <short>Nahadvaj ab novaj pošcie tolki ŭ atrymanaj pošcie.</short>
+        
+      </locale>
+
+      <locale name="bg">
+        <short>Уведомяване за нови писма само в „Пощенска кутия“.</short>
+        <long>Дали уведомлението да е за нови писма само в папката „Пощенска кутия“.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>শুধুমাত্র ইনবক্সের মধ্যে নতুন বার্তার ক্ষেত্রে সূচনাপ্রদান করা হবে।</short>
+        <long>শুধুমাত্র ইনবক্স ফোল্ডারের মধ্যে নতুন বার্তার আগমন সম্বন্ধে সূচনাপ্রদান করা হবে কি না।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>শুধুমাত্র ইনবক্সের মধ্যে নতুন বার্তার ক্ষেত্রে সূচনাপ্রদান করা হবে।</short>
+        <long>শুধুমাত্র ইনবক্স ফোল্ডারের মধ্যে নতুন বার্তার আগমন সম্বন্ধে সূচনাপ্রদান করা হবে কি না।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Notifica només quan hi hagi correu nou a la safata d&apos;entrada.</short>
+        <long>Si s&apos;ha de notificar només per al correu nou a la safata d&apos;entrada.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Notifica només quan hi haja correu nou a la safata d&apos;entrada.</short>
+        <long>Si s&apos;ha de notificar només per al correu nou a la safata d&apos;entrada.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Upozornit na nové zprávy pouze v „Příchozí“.</short>
+        <long>Zdali upozornit na nové zprávy pouze ve složce „Příchozí“.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Hysbysu negeseuon newydd ar gyfer y Blwch Derbyn yn unig.</short>
+        <long>A ddylid hysbysu negeseuon newydd yn y Blwch Derbyn yn unig.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Påmind kun om nye breve i indbakkken.</short>
+        <long>Om der kun skal påmindes for nye breve i indbakken.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Nur über neue Nachrichten im Eingangsordner benachrichtigen.</short>
+        <long>Legt fest, ob nur über Nachrichten im Eingangsordner benachrichtigt werden soll.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>ནང་སྒྲོམ་གྱི་དོན་ལུ་རྐྱངམ་ཅིག་ འཕྲིན་དོན་གསརཔ་ཚུ་ བརྡ་བསྐུལ་འབད། </short>
+        <long>ནང་སྒྲོམ་ སྣོད་འཛིན་ནང་ལུ་རྐྱངམ་ཅིག་ འཕྲིན་དོན་གསརཔ་ཚུ་ བརྡ་བསྐུལ་འབད་ནི་ཨིན་ན་མེན་ན། </long>
+      </locale>
+
+      <locale name="el">
+        <short>Ειδοποίηση για νέο μήνυμα μόνο για τα εισερχόμενα.</short>
+        <long>Αν γίνεται ειδοποίηση μόνο για νέα μηνύματα στο φάκελο εισερχομένα.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Notify new messages for Inbox only.</short>
+        <long>Whether to notify new messages in Inbox folder only.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Notificar nuevos correos sólo para la bandeja de entrada.</short>
+        <long>Indica si se deben notificar sólo los mensajes en la carpeta bandeja de entrada.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Teatatakse ainult Saabuvad kausta tulnud uutest sõnumitest.</short>
+        <long>Kas teavitusi tuleb näidata ainult &quot;Saabuvad&quot; või ka teiste kaustade kohta.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Jakinarazi sarrerako ontziko mezu berriak soilik</short>
+        <long>Mezu berrien jakinarazpena sarrerako ontzian soilik erakutsi ala ez.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Huomauta uusista viesteistä vain saapuvien kansiossa.</short>
+        <long>Huomautetaanko uusista viesteistä vain saapuvien kansiossa.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Avertit uniquement de nouveaux messages dans la « Boîte de réception ».</short>
+        <long>Indique s&apos;il faut avertir seulement de la réception de nouveaux messages dans la « Boîte de réception ».</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Notificar as mensaxes novas só para a caixa de entrada.</short>
+        <long>Se notificar as mensaxes só na caixa de entrada ou non.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>માત્ર ઈનબોક્સ માટે જ નવા સંદેશાઓનું સૂચન કરો.</short>
+        <long>શું માત્ર ઈનબોક્સ ફોલ્ડરમાં જ નવા સંદેશાઓ માટે સૂચન કરવું.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Notify new messages for Inbox only.</short>
+        <long>Whether to notify new messages in Inbox folder only.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>सिर्फ इनबाक्स के लिए नया संदेश अधिसूचित करें.</short>
+        <long>क्या नए संदेश को केवल आई डाक फ़ोल्डर में अधिसूचित करता है.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Értesítés csak a Beérkezett üzenetek új üzenetei esetén.</short>
+        <long>Csak a Beérkezett üzenetek mappába érkezett új üzenetekről értesítsen?</long>
+      </locale>
+
+      <locale name="id">
+        <short>Beritahukan pesan baru hanya untuk Inbox.</short>
+        <long>Apakah memberitahukan pesan baru hanya di folder Inbox.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Notificare nuovi messaggi solo per &quot;In arrivo&quot;.</short>
+        <long>Indica se notificare la presenza di nuovi messaggi solo per la cartella &quot;In arrivo&quot;.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>受信箱のみ新着メッセージを通知するかどうか</short>
+        <long>受信箱 (Inbox) フォルダのみ新着メッセージを通知するかどうかです。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಇನ್‌ಬಾಕ್ಸಿಗೆ ಬಂದ ಹೊಸ ಸಂದೇಶಗಳನ್ನು ಮಾತ್ರ ಸೂಚಿಸು.</short>
+        <long>ಕೇವಲ ಇನ್‌ಬಾಕ್ಸ್‍ ಫೋಲ್ಡರಿನಲ್ಲಿ ಮಾತ್ರ ಹೊಸ ಸಂದೇಶವನ್ನು ಸೂಚಿಸಬೇಕೆ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>받은 편지함의 경우에만 새 메시지 알림.</short>
+        <long>받은 편지함 폴더에만 새 메시지를 알릴지 여부.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Pranešti gavus naujų laiškų tik Gautų laiškų aplanke.</short>
+        <long>Ar pranešti apie naujus laiškus tik Gautų laiškų aplanke.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Paziņot par jaunām vēstulēm tikai iesūtnē.</short>
+        <long>Vai ziņot par jaunām vēstulēm tikai iesūtnē.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Известувај за нови пораки само во сандачето</short>
+        <long>Дали да известувам за нови пораки само во папката „Сандаче“.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ഇന്‍ബോക്സില്‍ മാത്രം പുതിയ സന്ദശങ്ങള്‍ വരുമ്പോള്‍ അറിയിക്കുക.</short>
+        <long>ഇന്‍ബോക്സിലുള്ള പുതിയ സന്ദേശങ്ങള്‍ക്കു് മാത്രം അറിയിപ്പു് നല്‍കണമോ.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>फक्त इनबॉक्स करीता नवीन संदेश सूचीत करा.</short>
+        <long>फक्त इंबॉक्स फोल्डर मध्ये नवीन संदेश सूचवायचे का.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Varslingsmelding kun for innboks.</short>
+        <long>Im nye meldinger kun skal varsles i innboksen.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Alleen melden bij nieuwe berichten in de Inbox.</short>
+        <long>Of alleen melding gemaakt wordt bij nieuwe e-mail in de Inbox.</long>
+      </locale>
+
+      <locale name="or">
+        <short>କେବଳ ଇନବକ୍ସ ପାଇଁ ନୂତନ ସନ୍ଦେଶଗୁଡ଼ିକୁ ସୂଚାନ୍ତୁ।</short>
+        <long>କେବଳ ଇନବକ୍ସ ଫୋଲଡରରେ ନୂତନ ସନ୍ଦେଶଗୁଡ଼ିକୁ ସୂଚାଇବା ଉଚିତ କି ନୁହଁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਕੇਵਲ ਇਨ-ਬਾਕਸ ਵਿੱਚ ਆਏ ਸੁਨੇਹਿਆਂ ਲਈ ਨੋਟੀਫਾਈ ਕਰੋ।</short>
+        <long>ਕੀ ਕੇਵਲ ਇਨ-ਬਾਕਸ ਵਿਚਲੇ ਸੁਨੇਹਿਆਂ ਲਈ ਹੀ ਨੋਟੀਫਾਈ ਕਰਨਾ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Powiadamianie tylko dla katalogu Odebrane.</short>
+        <long>Określa, czy powiadamiać o nowych wiadomościach tylko dla katalogu Odebrane.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Apenas notificar sobre mensagens novas na Caixa de Entrada.</short>
+        <long>Se notificar apenas sobre mensagens na Caixa de Entrada ou todas.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Mensagem de notificação apenas na Ca_ixa de Entrada.</short>
+        <long>Para notificar novas mensagens apenas na caixa de entrada.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Înștiințează sosirea mesajelor noi în Inbox</short>
+        <long>Dacă să se anuțe sosirea mesajelor numai pentru dosarul Inbox</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Оповещать о новых сообщениях только во «Входящих»</short>
+        <long>Оповещать ли о новых сообщениях только в папке «Входящие».</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Obvesti o novih sporočilih le v mapi Prejete pošte.</short>
+        <long>Ali naj se prikaže obvestilo le za nova sporočila v mapi prihajajočih sporočil.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Обавештава само за нове поруке у Сандучету.</short>
+        <long>Да ли да обавести о новој поруци само за Сандуче.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Obaveštava samo za nove poruke u Sandučetu.</short>
+        <long>Da li da obavesti o novoj poruci samo za Sanduče.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Notifiera om nya meddelanden endast för inkorgen.</short>
+        <long>Huruvida notifiering av nya meddelanden endast ska göras för Inkorgen.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>உள்பெட்டிக்கு மட்டும்  புதிய செய்திகள் வந்தால் அறிவி.</short>
+        <long>உள்பெட்டிக்கு வரும் புதிய செய்திகளை மட்டுமே அறிவிக்க வேண்டுமா.</long>
+      </locale>
+
+      <locale name="te">
+        <short>ఇన్‌బాక్స్‍‌కు మాత్రమే కొత్త సందేశాల ప్రకటననుయివ్వు.</short>
+        <long>ఇన్‌బాక్స్ సంచయం నందలి కొత్త సందేశాలను మాత్రమే తెలుపాలా.</long>
+      </locale>
+
+      <locale name="th">
+        <short>แจ้งเตือนข้อความใหม่สำหรับกล่องจดหมายเข้าเท่านั้น</short>
+        <long>กำหนดว่าจะแจ้งข้อความใหม่เฉพาะสำหรับกล่องจดหมายเข้าหรือไม่</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Yeni iletileri sadece Gelen kutusu için uyar.</short>
+        <long>Sadece Gelen kutusu&apos;ndaki yeni iletiler için uyarılması.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Сповіщати лише про нові повідомлення лише у теці Вхідні.</short>
+        <long>Чи сповіщати про появу нових повідомлень лише у теці Inbox.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Thông báo về thư mới chỉ trong hộp Thư Đến.</short>
+        <long>Có nên thông báo chỉ về thư mới trong hộp Thư Đến, hay không.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>只通知收件箱中的新信息。</short>
+        <long>是否只通知收件箱文件夹中的新信息。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>只通知收件匣的新郵件。</short>
+        <long>是否只通知收件匣的新郵件。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>只通知收件匣的新郵件。</short>
+        <long>是否只通知收件匣的新郵件。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/dbus-enabled</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/dbus-enabled</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Enable D-Bus messages.</short>
+        <long>Generates a D-Bus message when new mail messages arrive.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>مَكِّنْ رسائل D-Bus.</short>
+        <long>توليد رسالة D-BUS عند وصول رسائل بريد جديدة.</long>
+      </locale>
+
+      <locale name="as">
+        <short>D-Bus বার্তা সক্রিয় করা হবে।</short>
+        <long>বাৰ্তা.</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Activar los mensaxes D-Bus.</short>
+        <long>Xenera un mensax D-BUS cuando aporta un mensax de corréu nuevu.</long>
+      </locale>
+
+      <locale name="be@latin">
+        <short>Uklučy paviedamleńni D-Bus.</short>
+        <long>Hieneruje paviedamleńnie D-Bus pry atrymańni novaj pošty.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Активиране на съобщения по D-Bus.</short>
+        <long>Генерира съобщение за D-Bus при пристигането на ново писмо.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>D-Bus বার্তা সক্রিয় করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে D-BUS বার্তা উৎ‌পন্ন করা হয়।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>D-Bus বার্তা সক্রিয় করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে D-BUS বার্তা উৎ‌পন্ন করা হয়।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Habilita els missatges del D-Bus.</short>
+        <long>Genera un missatge del D-Bus quan arribi correu nou.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Habilita els missatges del D-Bus.</short>
+        <long>Genera un missatge del D-Bus quan arribe correu nou.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Povolit zprávy D-Bus.</short>
+        <long>Vytvoří zprávu D-BUS, když přijde nová pošta.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Galluogi negeseuon D-Bus</short>
+        
+      </locale>
+
+      <locale name="da">
+        <short>Slå D-Bus-beskeder til.</short>
+        <long>Genererer en D-BUS-besked når nye breve ankommer.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Aktiviert D-Bus-Nachrichten.</short>
+        <long>Erzeugung einer D-Bus-Nachricht, wenn eine neue E-Mail eintrifft.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>ཌི-བཱསི་ འཕྲིན་དོན་ཚུ་ ལྕོགས་ཅན་བཟོ། </short>
+        <long>ཡིག་འཕྲིན་གསརཔ་ ཐོབ་པའི་་སྐབས་ལུ་ ཌི་-བརྡ་རྟགས་འགྲུལ་ལམ་ཅིག་ བཟོ་བཏོན་འབདཝ་ཨིན།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Ενεργοποίηση μηνυμάτων D-Bus.</short>
+        <long>Δημιουργεί ένα μήνυμα D-BUS όταν καταφθάνει ένα νέο μήνυμα.</long>
+      </locale>
+
+      <locale name="en@shaw">
+        <short>𐑦𐑯𐑱𐑚𐑩𐑤 D-Bus 𐑥𐑧𐑕𐑦𐑡𐑩𐑟.</short>
+        <long>𐑡𐑧𐑯𐑼𐑱𐑑𐑕 𐑩 D-Bus 𐑥𐑧𐑕𐑦𐑡 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑱𐑤 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Enable D-Bus messages.</short>
+        <long>Generates a D-Bus message when new mail messages arrive.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Activar los mensajes D-Bus.</short>
+        <long>Genera un mensaje D-BUS cuando llega un mensaje de correo nuevo.</long>
+      </locale>
+
+      <locale name="et">
+        <short>D-Bus&apos;i teadete lubamine.</short>
+        <long>D-Bus&apos;i teate genereerimine uue sõnumi saabumisel.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Gaitu D-Bus mezuak.</short>
+        <long>D-BUS mezua sortzen du mezu berri bat jasotzean.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Ota käyttöön D-Bus-viestit.</short>
+        <long>Luo D-BUS-viestin, kun uusia sähköpostiviestejä saapuu.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Activer les messages D-Bus.</short>
+        <long>Génère un message D-Bus à la réception d&apos;un nouveau courriel.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Activar as mensaxes D-Bus.</short>
+        <long>Xera unha mensaxe D-Bus cando chegan mensaxes novas.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>D-Bus સંદેશાઓ સક્રિય કરો.</short>
+        <long>જ્યારે નવા સંદેશાઓ આવે ત્યારે D-Bus સંદેશો પેદા કરે છે.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Enable D-Bus messages.</short>
+        <long>Generates a D-Bus message when new mail messages arrive.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>D-Bus संदेश सक्रिय करें.</short>
+        <long>नई डाक संदेश आने पर D-Bus संदेश उत्पन्न करता है.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>D-Bus üzenetek engedélyezése.</short>
+        <long>D-BUS üzenetet hoz létre, ha új levél érkezik.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Mengaktifkan pesan D-Bus.</short>
+        <long>Buat pesan D-Bus saat pesan mail baru datang.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Abilitare messaggi D-Bus.</short>
+        <long>Genera un messaggio D-Bus all&apos;arrivo di nuovi messaggi di posta.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>D-BUS によるメッセージ送信を有効にするかどうか</short>
+        <long>新しいメールが届いたら D-BUS のメッセージを生成するかどうかです。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಡಿ-ಬಸ್ ಸಂದೇಶಗಳನ್ನು ಶಕ್ತಗೊಳಿಸು.</short>
+        <long>ಹೊಸ ಮೈಲ್‌ ಸಂದೇಶಗಳು ಬಂದಾಗ ಒಂದು ಡಿ-ಬಸ್ ಸಂದೇಶವನ್ನು ನಿರ್ಮಿಸುತ್ತದೆ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>D-Bus 메시지 사용.</short>
+        <long>새 메시지가 도착하면 D-BUS 메시지가 발생합니다.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Įjungti D-Bus pranešimus.</short>
+        <long>Gavus naują paštą sukuria D-BUS žinutę.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Aktivizēt D-Bus ziņojumus.</short>
+        <long>Ģenerē D-Bus ziņu, kad pienāk jaunas pasta vēstules.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Овозможи D-Bus пораки.</short>
+        <long>Генерира D-BUS порака кога пристигнува нова пошта.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>D-Bus സന്ദേശങ്ങള്‍ സജ്ജമാക്കുക.</short>
+        <long>ഒരു പുതിയ മെയില്‍ വന്നാല്‍ ഒരു D-Bus സന്ദേശം ലഭ്യമാക്കുന്നു.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>D-Bus संदेश कार्यान्वीत करा.</short>
+        <long>नवीन मेल संदेश प्राप्त होताच D-Bus संदेश निर्माण करतो.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Aktiver D-Bus-meldinger</short>
+        <long>Genererer en D-BUS-melding når nye meldinger ankommer.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>D-Busberichten gebruiken.</short>
+        <long>Genereert een D-Busbericht bij binnenkomst van nieuwe e-mail.</long>
+      </locale>
+
+      <locale name="nn">
+        
+        <long>Lagar ei D-Bus-melding når nye e-postar kjem.</long>
+      </locale>
+
+      <locale name="or">
+        <short>D-Bus ସନ୍ଦେଶଗୁଡ଼ିକୁ ସକ୍ରିୟ କରନ୍ତୁ।</short>
+        <long>ନୂତନ ମେଲ ସନ୍ଦେଶ ଆସିବା ସମୟରେ D-Bus ସନ୍ଦେଶ ସୃଷ୍ଟିକରନ୍ତୁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਡੀ-ਬੱਸ ਸੁਨੇਹੇ ਯੋਗ।</short>
+        <long>ਜਦੋਂ ਨਵਾਂ ਸੁਨੇਹਾ ਆਵੇ ਤਾਂ D-BUS ਸੁਨੇਹਾ ਬਣਾਓ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Włącza wiadomości D-Bus.</short>
+        <long>Tworzy komunikat D-Bus po otrzymaniu nowych wiadomości.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Activar as mensagens D-Bus.</short>
+        <long>Gera uma notificação D-BUS ao receber uma nova mensagem.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Habilitar mensagens D-Bus.</short>
+        <long>Gera uma mensagem D-Bus quando uma nova mensagem chegar.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Activează mesajele D-Bus.</short>
+        <long>Generează un mesaj D-Bus la primirea de noi mesaje.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Включить сообщения D-Bus.</short>
+        <long>Генерирует сообщение D-BUS при приходе новой почты.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Omogoči sporočila D-Bus.</short>
+        <long>Ustvari sporočilo D-Bus, ko prispejo nova sporočila.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Укључује поруке D-Bus.</short>
+        <long>Ствара D-BUS поруку када стигне нова пошта.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Uključuje poruke D-Bus.</short>
+        <long>Stvara D-BUS poruku kada stigne nova pošta.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Aktivera D-Bus-meddelanden.</short>
+        <long>Genererar ett D-Bus-meddelande när nya meddelanden anländer.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>டி-பஸ் செய்திகளை செயல்படுத்து.</short>
+        <long>புதிய மின்னஞ்சல் வரும்போது D-BUS செய்தியை உருவாக்குகிறது.</long>
+      </locale>
+
+      <locale name="te">
+        <short>D-Bus సందేశాలను చేతనంచేయుము.</short>
+        <long>కొత్త మెయిల్ సందేశం వచ్చినప్పుడు D-Bus సందేశంను సంభవింపచేస్తుంది.</long>
+      </locale>
+
+      <locale name="th">
+        <short>เปิดใช้ข้อความ D-Bus</short>
+        <long>ส่งข้อความ D-BUS เมื่อมีเมลใหม่เข้ามา</long>
+      </locale>
+
+      <locale name="tr">
+        <short>D-Bus iletilerini etkinleştir.</short>
+        <long>Yeni mektup geldiğinde D-Bus iletisi oluşturur.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Увімкнути повідомлення D-Bus.</short>
+        <long>Генерує повідомлення D-BUS при отриманні нової пошти.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Bật thông điệp D-Bus.</short>
+        <long>Tạo ra một thông điệp D-BUS khi nhận thư mới.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>启用 D-Bus 信息。</short>
+        <long>新邮件到达时生成 D-Bus 信息。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>啟用 D-Bus 訊息。</short>
+        <long>當新郵件到達時產生 D-BUS 訊息。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>啟用 D-Bus 訊息。</short>
+        <long>當新郵件到達時產生 D-BUS 訊息。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/status-enabled</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/status-enabled</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Enable icon in notification area.</short>
+        <long>Show new mail icon in notification area when new messages arrive.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>فعِّل الأيقونة في منطقة التبليغ.</short>
+        <long>أظهر أيقونة البريد الجديد في منطقة التبليغ عند مجيء رسائل جديدة.</long>
+      </locale>
+
+      <locale name="as">
+        <short>নতুন বাৰ্তাৰ ক্ষেত্ৰে libnotify সূচনাব্যৱস্থা সক্ৰিয় কৰা হ&apos;ব</short>
+        <long>বাৰ্তা বাৰ্তা.</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Activar l&apos;icon na estaya de notificación.</short>
+        
+      </locale>
+
+      <locale name="be@latin">
+        <short>Uklučy ikonu ŭ abšary nahadvańniaŭ.</short>
+        <long>Pakazvaj ikonu ŭ abšary nahadvańnia pry atrymańni novaj pošty.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Активиране на иконата в областта за уведомяване.</short>
+        <long>Показване на икона в областта за уведомяване при пристигане на нова поща.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>প্রজ্ঞাপনের স্থানে আইকন সক্রিয় করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে, প্রজ্ঞাপনের মধ্যে নতুন মেইলের আইকন প্রদর্শন করা হবে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>সূচনাপ্রদানের স্থানে আইকন সক্রিয় করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে, বিজ্ঞপ্তিস্থলের মধ্যে নতুন মেইলের আইকন প্রদর্শন করা হবে।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Habilita la icona a l&apos;àrea de notificació.</short>
+        <long>Mostra la icona de correu nou a l&apos;àrea de notificació en rebre missatges nous.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Habilita la icona a l&apos;àrea de notificació.</short>
+        <long>Mostra la icona de correu nou a l&apos;àrea de notificació en rebre missatges nous.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Povolit ikonu v oznamovací oblasti.</short>
+        <long>Zobrazit ikonu nové pošty v oznamovací oblasti, když přijde nová zpráva.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Gosod eicon yn y man hysbysu.</short>
+        
+      </locale>
+
+      <locale name="da">
+        <short>Aktivér ikon i påmindelsesområde.</short>
+        <long>Påmind brugeren om at der er ankommet ny post ved hjælp af et ikon i påmindelsesområdet.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Symbol im Benachrichtigungsfeld aktivieren.</short>
+        <long>Symbol im Benachrichtigungsfeld beim Eintreffen neuer E-Mails anzeigen.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>བརྡ་བསྐུལ་མངའ་ཁོངས་ནང་ལུ་ ངོས་དཔར་ ལྕོགས་ཅན་བཟོ། </short>
+        <long>ཕྲིན་དོན་གསརཔ་ལྷོད་པའི་སྐབས་ བརྡ་བསྐུལ་ས་ཁོངས་ནང་ལུ་ ཡིག་འཕྲིན་ ངོས་དཔར་གསརཔ་སྟོན། </long>
+      </locale>
+
+      <locale name="el">
+        <short>Ενεργοποίηση εικονιδίου στην περιοχή ειδοποίησης.</short>
+        <long>Ειδοποιεί τον χρήστη με ένα εικονίδιο νέου μηνύματος στην περιοχή ειδοποίησης κάθε φορά που φθάνει ένα νέο μήνυμα.</long>
+      </locale>
+
+      <locale name="en@shaw">
+        <short>𐑦𐑯𐑱𐑚𐑩𐑤 𐑲𐑒𐑪𐑯 𐑦𐑯 𐑯𐑴𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯 𐑺𐑦𐑩.</short>
+        <long>𐑖𐑴 𐑯𐑿 𐑥𐑱𐑤 𐑲𐑒𐑪𐑯 𐑦𐑯 𐑯𐑴𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯 𐑺𐑦𐑩 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Enable icon in notification area.</short>
+        <long>Show new mail icon in notification area when new messages arrive.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Activar el icono en el área de notificación.</short>
+        <long>Mostrar el icono de correo nuevo en el área de notificación cuando llegan nuevos mensajes.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Teateala ikooni lubamine.</short>
+        <long>Uute sõnumite saabumisel kuvatakse teatealal uue sõnumi ikooni.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Gaitu ikonoa jakinarazpen-arean.</short>
+        <long>Jakinarazpeneko arean mezu berriaren ikonoa erakusten du mezu berri bat iristean.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Ota käyttöön kuvake ilmoitusalueella.</short>
+        <long>Näytä sähköpostikuvake ilmoitusalueella, kun uusia viestejä saapuu.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Activer l&apos;icône dans la zone de notification.</short>
+        <long>Affiche l&apos;icône de nouveau message dans la zone de notification à la réception de nouveaux messages.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Activar a icona da área de notificación.</short>
+        <long>Mostrar a icona de mensaxe nova na área de notificación cando cheguen mensaxes novas.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>સૂચન વિસ્તારમાં ચિહ્ન સક્રિય કરો.</short>
+        <long>જ્યારે નવા સંદેશાઓ આવે ત્યારે સૂચન વિસ્તારમાં નવું મેઈલ ચિહ્ન બતાવો.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Enable icon in notification area.</short>
+        <long>Show new mail icon in notification area when new messages arrive.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>अधिसूचना क्षेत्र में प्रतीक सक्रिय करें.</short>
+        <long>नए संदेश आने पर अधिसूचना में नई डाक प्रतीक दिखाएँ.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Értesítésiterület-ikon engedélyezése.</short>
+        <long>Új üzenet érkezésekor az új üzenet ikon megjelenítése az értesítési területen.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Mengaktifkan ikon pada area notifikasi.</short>
+        <long>Tampilkan ikon surel baru pada area notifikasi ketika pesan baru tiba.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Abilitare icona nell&apos;area di notifica.</short>
+        <long>Mostra l&apos;icona nuova posta nell&apos;area di notifica quando arrivano nuovi messaggi.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>通知領域にアイコンを表示するかどうか</short>
+        <long>新しいメールが届いたらパネルの通知領域にアイコンを表示して通知するかどうかです。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಸೂಚನಾ ಜಾಗದಲ್ಲಿ ಚಿಹ್ನೆಯನ್ನು ಶಕ್ತಗೊಳಿಸು.</short>
+        <long>ಹೊಸ ಸಂದೇಶಗಳು ಬಂದಾಗ ಸೂಚನಾ ಸ್ಥಳದಲ್ಲಿ ಹೊಸ ಮೈಲ್‌ನ ಚಿಹ್ನೆಯನ್ನು ತೋರಿಸು.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>알림 영역에서 아이콘 사용.</short>
+        <long>새 메시지가 도착했을 때 알림 영역에 새 메일 아이콘 표시.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Įjungti mirksinčią piktogramą pranešimų srityje.</short>
+        <long>Rodyti naujų laiškų piktogramą pranešimų srityje kai ateina naujų pranešimų.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Ieslēgt ikonu ziņojumu laukā.</short>
+        <long>Rādīt jauna pasta ikonu ziņojumu laukā, kad ir saņemta jauna vēstule.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Овозможи икона во местото за известување.</short>
+        <long>Покажи икона за нова пошта во местото за известување кога ќе пристигне нова порака.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>അറിയിപ്പിനുള്ള സ്ഥലത്തു് ചിഹ്നം സജ്ജമാക്കു.</short>
+        <long>നോട്ടിഫിക്കേഷന്‍ സ്ഥലത്തു് പുതിയ മെയില്‍ വരുമ്പോള്‍ പുതിയ സന്ദേശത്തിനുള്ള ചിഹ്നം കാണിക്കുക.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>सूचना क्षेत्रातील चिन्ह कार्यान्वीत करा.</short>
+        <long>नवीन संदेश प्राप्त होताच सूचना कक्ष मध्ये नवीन मेल चिन्ह दाखवा.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Aktiver ikon i varslingsområdet.</short>
+        <long>Vis ikon for ny melding i varslingsområdet når nye meldinger ankommer.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Pictogram gebruiken in meldingsvak.</short>
+        <long>E-mailpictogram tonen in het meldingsvak wanneer nieuwe berichten zijn binnengekomen.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ବିଜ୍ଞପ୍ତି କ୍ଷେତ୍ରରେ ଚିତ୍ରସଂକେତକୁ ସକ୍ରିୟ କରନ୍ତୁ।</short>
+        <long>ନୂତନ ସନ୍ଦେଶ ଆସିବା ସମୟରେ ବିଜ୍ଞପ୍ତି କ୍ଷେତ୍ରରେ ନୂତନ ମେଲ ଚିତ୍ରସଂକେତକୁ ଦର୍ଶାନ୍ତୁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਨੋਟੀਫਿਕੇਸ਼ਨ ਏਰੀਏ ਵਿੱਚ ਆਈਕਾਨ ਯੋਗ ਕਰੋ।</short>
+        <long>ਜਦੋਂ ਨਵਾਂ ਸੁਨੇਹਾ ਆਵੇ ਤਾਂ ਨਵਾਂ ਮੇਲ ਆਈਕਾਨ ਨੋਟੀਫਿਕੇਸ਼ਨ ਏਰੀਏ ਵਿੱਚ ਵੇਖੋ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Włącza ikonę w obszarze powiadamiania.</short>
+        <long>Powiadamia o nowych wiadomościach za pomocą ikony w obszarze powiadamiania.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Activar o ícone na área de notificação.</short>
+        <long>Apresentar um ícone de mensagens novas na área de notificação quando chegarem mensagens novas.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Habilitar ícone na área de notificação.</short>
+        <long>Mostrar uma ícone de novo e-mail na área de notificação quando novas mensagens chegarem.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Activeză pictogramă în zona de notificare.</short>
+        <long>Afișează o pictograma de mesaje noi în zona de notificare la primirea de noi mesaje.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Включить значок в области уведомления.</short>
+        <long>Извещает пользователя о появлении новой почты значком в области уведомлений.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Omogoči ikono v obvestilnem področju.</short>
+        <long>Ko prispejo nova sporočila, pokaži ikono nove pošte v obvestilnem področju.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Укључује икону у обавештајну зону.</short>
+        <long>Приказује икону за нову пошту у обавештајној зони када стигне нова порука.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Uključuje ikonu u obaveštajnu zonu.</short>
+        <long>Prikazuje ikonu za novu poštu u obaveštajnoj zoni kada stigne nova poruka.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Aktivera ikon i notifieringsyta.</short>
+        <long>Visa ikon för ny e-post i notifieringsytan när nya meddelanden anländer.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>அறிவிப்பு இடத்தில் சின்னத்தை  செயல்படுத்து.</short>
+        <long>புதிய செய்தி வந்தவுடன் பயனருக்கு ஒரு  சின்னத்தை அறிவிப்பு இடத்தில் காட்டு.</long>
+      </locale>
+
+      <locale name="te">
+        <short>ప్రకటన ప్రదేశంనందు ప్రతిమను చేతనంచేయుము.</short>
+        <long>ప్రకటన ప్రదేశంలో కొత్త సందేశం రాగానే కొత్త మెయిల్ ప్రతిమను చూపుము.</long>
+      </locale>
+
+      <locale name="th">
+        <short>เปิดใช้ไอคอนในพื้นที่แจ้งเหตุ</short>
+        <long>แสดงไอคอนเมลใหม่ในพื้นที่แจ้งเหตุเมื่อมีจดหมายใหม่มาถึง</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Uyarı alanında simgeyi etkinleştir.</short>
+        <long>Yeni iletiler ulaştığında uyarı alanında yeni mektup simgesi göster.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Увімкнути значок у області сповіщення.</short>
+        <long>Сповіщає користувача значком на панелі сповіщень про появу нової пошти.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Hiển thị biểu tượng trong vùng thông báo.</short>
+        <long>Hiển thị biểu tượng thư mới trong vùng thông báo khi nhận thư mớ.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>启用通知区图标。</short>
+        <long>新邮件到达时在通知区显示新邮件图标。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>啟用通知區的圖示。</short>
+        <long>當新郵件到達時在通知區顯示新郵件圖示。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>啟用通知區的圖示。</short>
+        <long>當新郵件到達時在通知區顯示新郵件圖示。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/status-notification</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/status-notification</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Popup message together with the icon.</short>
+        <long>Whether show message over the icon when new messages arrive.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>اجعل الرسالة تنبثق مع الأيقونة.</short>
+        <long>ما إذا كان سيَظهر إشعار فوق الأيقونة عند وصول رسائل جديدة.</long>
+      </locale>
+
+      <locale name="as">
+        <short>বাৰ্তা.</short>
+        <long>বাৰ্তা.</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Mensax emerxente xunto col iconu.</short>
+        
+      </locale>
+
+      <locale name="be@latin">
+        <short>Pakazvaj paviedamleńni dy ikonu.</short>
+        
+      </locale>
+
+      <locale name="bg">
+        <short>Показване на съобщение с иконата.</short>
+        <long>Дали да се показва съобщение над иконата при пристигане на нова поща.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>আইকন সহযোগে বার্তা পপ-আপ করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে, আইকনের উপর বার্তা প্রদর্শন করা হবে কি না।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>আইকন সহযোগে বার্তা পপ-আপ করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে, আইকনের উপর বার্তা প্রদর্শন করা হবে কি না।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Mostra un missatge emergent juntament amb la icona.</short>
+        <long>Si s&apos;ha de mostrar un missatge sobre la icona quan arribin correus nous.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Mostra un missatge emergent juntament amb la icona.</short>
+        <long>Si s&apos;ha de mostrar un missatge sobre la icona quan arriben correus nous.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Vyskakovací zpráva společně s ikonou.</short>
+        <long>Zdali zobrazit zprávu přes ikonu, když dorazí nová zpráva.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Neges naidlen yn ogystal a eicon.</short>
+        <long>A ddylid dangos neges dros yr eicon pan mae neges newydd yn cyrraedd.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Vis pop-op-besked sammen med ikonet.</short>
+        <long>Om der skal vises besked over ikonet når der kommer nye breve.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Popup-Fenster zusammen mit dem Symbol anzeigen.</short>
+        <long>Legt fest, ob eine Popup-Nachricht zusammen mit dem Symbol angezeigt werden soll, wenn neue Nachrichten eintreffen.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>པོཔ་ཨཔ་ འཕྲིན་དོན་ ངོས་དཔར་དང་བཅས།</short>
+        <long>འཕྲིན་དོན་གསརཔ་ཚུ་ལྷོད་པའི་སྐབས་ ངོས་དཔར་གུ་ སྟོན་ནི་ཨིན་ན་མེན་ན། </long>
+      </locale>
+
+      <locale name="el">
+        <short>Αναδυόμενο μήνυμα μαχί με εικονίδιο.</short>
+        <long>Αν θα εμφανίζεται μήνυμα πάνω στο εικονίδιο όταν καταφθάνει ένα νέο μήνυμα.</long>
+      </locale>
+
+      <locale name="en@shaw">
+        <short>𐑐𐑪𐑐𐑳𐑐 𐑥𐑧𐑕𐑦𐑡 𐑑𐑫𐑜𐑧𐑞𐑼 𐑢𐑦𐑞 𐑞 𐑲𐑒𐑪𐑯.</short>
+        <long>𐑢𐑧𐑞𐑼 𐑖𐑴 𐑥𐑧𐑕𐑦𐑡 𐑴𐑝𐑼 𐑞 𐑲𐑒𐑪𐑯 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Popup message together with the icon.</short>
+        <long>Whether show message over the icon when new messages arrive.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Mensaje emergente junto con el icono.</short>
+        <long>Indica si se debe mostrar un mensaje sobre el icono cuando llega un mensaje nuevo.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Hüpiksõnumi kuvamine koos ikooniga.</short>
+        <long>Kas uute sõnumite saabumisel tuleb ikooni juures näidata ka sõnumit või mitte.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Bistaratu mezua ikonoarekin bat.</short>
+        <long>Mezu berria iristean ikonoaren gainean mezua erakutsi ala ez.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Ponnahdusikkuna kuvakkeen kanssa.</short>
+        <long>Näytetäänkö viesti kuvakkeen päällä uuden sähköpostin saapuessa.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Message contextuel associé à l&apos;icône.</short>
+        <long>Indique s&apos;il faut afficher un message sur l&apos;icône à la réception de nouveaux messages.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Facer emerxer a mensaxe xunto coa icona.</short>
+        <long>Se mostrar ou non a mensaxe sobre a icona cando cheguen mensaxes novas.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>ચિહ્ન સાથે જ પોપઅપ સંદેશો કરો.</short>
+        <long>જ્યારે નવા સંદેશાઓ આવે ત્યારે ચિહ્ન ઉપર સંદેશો બતાવવો કે નહિં.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Popup message together with the icon.</short>
+        <long>Whether show message over the icon when new messages arrive.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>इस प्रतीक के साथ पॉपअप संदेश.</short>
+        <long>क्या प्रतीक पर संदेश दिखाना है जब नया संदेश प्रकट होता है.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Felugró üzenet megjelenítése az ikonnal együtt.</short>
+        <long>Új üzenet érkezésekor az üzenet megjelenítése az ikon felett.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Popup pesan bersama dengan ikon.</short>
+        <long>Apakah menampilkan pesan di atas ikon ketika pesan baru tiba.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Fa apparire un messaggio assieme all&apos;icona.</short>
+        <long>Indica se mostrare un messaggio sopra l&apos;icona quando arrivano nuovi messaggi.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>アイコンと共にメッセージもポップアップするかどうか</short>
+        <long>新しいメールが届いたらアイコンの上にメッセージもポップアップして表示するかどうかです。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಸಂದೇಶವನ್ನು ಚಿಹ್ನೆಯೊಂದಿಗೆ ಪುಟಿಸು(ಪಾಪ್ಅಪ್).</short>
+        <long>ಹೊಸ ಸಂದೇಶಗಳು ಬಂದಾಗ ಚಿಹ್ನೆಯಲ್ಲಿ ಸಂದೇಶವನ್ನು ತೋರಿಸಬೇಕೆ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>아이콘과 같이 메시지 팝업 표시.</short>
+        <long>새 메시지가 도착하면 아이콘 위에 메시지를 표시할지 여부.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Rodyti iššokantį pranešimą kartu su piktograma.</short>
+        <long>Ar rodyti pranešimą virš piktogramos gavus naujų laiškų.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Parādīt paziņojumu kopā ar ikonu.</short>
+        <long>Vai rādīt ziņojumu pāri ikonai, kad pienāk jaunas vēstules.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Скокачка порака заедно со иконата.</short>
+        <long>Дали да се прикажува порака над иконата кога ќе пристигне нова порака.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ചിഹ്നത്തിനൊപ്പം സന്ദേശം പോപ്പപ് ചെയ്യുക.</short>
+        <long>പുതിയ സന്ദേശങ്ങള്‍ വരുമ്പോള്‍ ചിഹ്നത്തിനു് പുറത്തു് സന്ദേശം കാണിക്കണമോ എന്നു്.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>पॉपप संदेश सहित चिन्ह.</short>
+        <long>नवीन संदेश प्राप्त होताच चिन्हावर संदेश दर्शवयाचे का.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Vis melding sammen med ikonet.</short>
+        <long>Om en melding skal vises over ikonet når nye meldinger ankommer.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Bericht geven tegelijk met het pictogram.</short>
+        <long>Of een bericht getoond wordt over het pictogram bij binnekomst van nieuwe e-mail.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ଚିତ୍ରସଙ୍କେତ ସହିତ ପପଅପ ସନ୍ଦେଶ।</short>
+        <long>ନୂତନ ସନ୍ଦେଶ ଆସିବା ସମୟରେ ଚିତ୍ରସଂକେତ ଉପରେ ସନ୍ଦେଶକୁ ଦର୍ଶାଇବା ଉଚିତ କି ନୁହଁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਆਈਕਾਨ ਨਾਲ ਪੋਪਅੱਪ ਸੁਨੇਹਾ ਵੀ ਵੇਖੋ।</short>
+        <long>ਜਦੋਂ ਨਵਾਂ ਸੁਨੇਹਾ ਆਵੇ ਤਾਂ ਆਈਕਾਨ ਉੱਤੇ ਸੁਨੇਹਾ ਵੇਖਣਾ</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Okno informacyjne oraz ikona.</short>
+        <long>Określa, czy wyświetlać informacje nad ikoną, gdy nadejdzie nowa wiadomość.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Apresentar um popup da mensagem juntamente com o ícone.</short>
+        <long>Se apresentar ou não a mensagem sobre o ícone quando esta chega.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Mensagem instantânea junto com ícone.</short>
+        <long>Mostrar uma mensagem sobre o ícone quando uma nova mensagem chegar.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Afișează un mesaj împreună cu pictograma.</short>
+        <long>Dacă la primirea mesajelor noi să fie afișat mesajul deasupra pictogramei.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Всплывающие сообщения вместе со значком.</short>
+        <long>Показывать ли сообщение над значком при получении новых сообщений.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Pojavno sporočilo naj se prikaže skupaj z ikono.</short>
+        <long>Ali naj prikaže sporočilo preko ikone ob prejemu novega sporočila.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Искачућа порука са иконом.</short>
+        <long>Да ли да прикаже поруку преко иконе када стигне нова порука.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Iskačuća poruka sa ikonom.</short>
+        <long>Da li da prikaže poruku preko ikone kada stigne nova poruka.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Visa popupmeddelande tillsammans med ikonen.</short>
+        <long>Huruvida meddelande ska visas över ikonen när nya meddelanden anländer.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>வெளித்துள்ளல் செய்திகள் சின்னத்துடன்.</short>
+        <long>புதிய மின்னஞ்சல் வரும் போது  சின்னத்தின் மீது அறிவிப்பை காட்ட வேண்டுமா.</long>
+      </locale>
+
+      <locale name="te">
+        <short>సందేశంను ప్రతిమతో కలిపి పాప్అప్ చేయుము.</short>
+        <long>కొత్త సందేశం వచ్చినప్పుడు ప్రతిమ పై సందేశం చూపాలా.</long>
+      </locale>
+
+      <locale name="th">
+        <short>ผุดข้อความขึ้นพร้อมกับไอคอนด้วย</short>
+        <long>กำหนดว่าจะแสดงข้อความพร้อมกับไอคอนด้วยหรือไม่เมื่อมีข้อความเข้ามาใหม่</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Simge ile birlikte beliren ileti.</short>
+        <long>Bir ileti ulaştığında iletinin üzerinde simge gösterilmesi.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Контекстне повідомлення разом із значком.</short>
+        <long>Чи відображати повідомлення над значком при надходженні нової пошти.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Hiển thị thông điệp cùng với biểu tượng.</short>
+        <long>Có nên hiển thị thông điệp ở trên biểu tượng hay không, khi nhận thư mới.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>同时弹出信息和图标。</short>
+        <long>新邮件到达时是否在图标上显示信息</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>在圖示上彈出新郵件。</short>
+        <long>是否在新郵件抵達時於圖示上彈出訊息。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>在圖示上彈出新郵件。</short>
+        <long>是否在新郵件抵達時於圖示上彈出訊息。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/sound-enabled</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/sound-enabled</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Play sound when new messages arrive.</short>
+        <long>Whether play sound or beep when new messages arrive.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>إعزف صَوْتا عند وصول رسائل جديدة.</short>
+        <long>ما إذا كان سيُعزف صوت أو صفير عند وصول رسائل جديدة.</long>
+      </locale>
+
+      <locale name="as">
+        <short>নতুন মেইল এলে শব্দ কৰবে (_v)</short>
+        <long>নতুন মেইল এলে শব্দ কৰবে (_v)</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Reproducir un soníu cuando aporte corréu nuevu.</short>
+        
+      </locale>
+
+      <locale name="be@latin">
+        <short>Hraj huk pry atrymańni novaj pošty.</short>
+        <long>Ci _hrać huk albo źvinieć pry atrymańni novaha lista.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Изпълнение на звук при пристигане нова поща.</short>
+        <long>Дали да се изпълнява звуков файл или обикновен звук при пристигане на нова поща.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>নতুন মেইল এলে শব্দ করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে শব্দ বাজানো হবে অথবা বিপ শব্দ করা হবে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>নতুন মেইল এলে শব্দ করা হবে।</short>
+        <long>নতুন বার্তা প্রাপ্ত হলে শব্দ বাজানো হবে অথবা বিপ শব্দ করা হবে।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Reprodueix un so quan arribi correu nou.</short>
+        <long>Si s&apos;ha de reproduir un fitxer de so o emetre un to quan arribi correu nou.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Reprodueix un so quan arribe correu nou.</short>
+        <long>Si s&apos;ha de reproduir un fitxer de so o emetre un to quan arribe correu nou.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Přehrát zvuk, když přijde nová pošta.</short>
+        <long>Zda přehrát zvuk nebo pípnutí, když přijde nová pošta.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Afspil lydfil når nye breve ankommer.</short>
+        <long>Om der afspilles lyd eller bip når nyt brev ankommer.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Beim Eintreffen neuer E-Mails Klang abspielen</short>
+        <long>Legt fest, ob eine Klangdatei abgespielt oder ein Signalton ausgegeben wird, wenn neue Nachrichten eintreffen.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>འཕྲིན་དོན་གསརཔ་ཐོབ་་ད་ སྒྲ་སྐད་ཡིག་སྣོད་གཏང་། (_v)</short>
+        <long>འཕྲིན་དོན་གསརཔ་ལྷོདཔ་ད་ སྐད་གཏང་ནི་ཡང་ན་ བརྡ་སྐད་གཏང་ནི། </long>
+      </locale>
+
+      <locale name="el">
+        <short>Αναπαραγωγή ήχου κατά την άφιξη νέου μηνύματος.</short>
+        <long>Αν θα γίνεται αναπαραγωγή ήχου κατά την άφιξη νέου μηνύματος.</long>
+      </locale>
+
+      <locale name="en@shaw">
+        <short>𐑐𐑤𐑱 𐑕𐑬𐑯𐑛 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝.</short>
+        <long>𐑢𐑧𐑞𐑼 𐑐𐑤𐑱 𐑕𐑬𐑯𐑛 𐑹 𐑚𐑰𐑐 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Play sound when new messages arrive.</short>
+        <long>Whether play sound or beep when new messages arrive.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Reproducir un sonido cuando llegue correo nuevo.</short>
+        <long>Indica si se debe reproducir un sonido o pitar cuando llega un mensaje nuevo.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Heli esitamine uute sõnumite saabumisel.</short>
+        <long>Kas uute sõnumite saabumisel tuleb esitada helifaili või piiksuda.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Erreproduzitu soinua mezu berriak iristean.</short>
+        <long>Soinua erreproduzitzea edo soinu-seinalea (biip) jotzea mezu berriak iristean.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Soita äänitiedosto uuden sähköpostin saapuessa.</short>
+        <long>Soitetaanko äänitiedosto vai piipataanko uuden sähköpostin saapuessa.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Joue un fichier à la réception de nouveaux messages.</short>
+        <long>Indique s&apos;il faut jouer un son ou émettre un bip à la réception d&apos;un nouveau message.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Reproducir un son cando cheguen mensaxes novas.</short>
+        <long>Se emitir ou non un son ou un ton de aviso cando cheguen mensaxes novas.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>જ્યારે નવા સંદેશાઓ આવે ત્યારે ધ્વનિ વગાડો.</short>
+        <long>જ્યારે નવા સંદેશાઓ આવે ત્યારે ધ્વનિ વગાડવું કે બીપ વગાડવું.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Play sound when new messages arrive.</short>
+        <long>Whether play sound or beep when new messages arrive.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>जब नया संदेश आए तो आवाज लगाएँ.</short>
+        <long>क्या नई डाक आने पर ध्वनि या बीप बजाना है.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Hangfájl lejátszása új üzenet érkezésekor.</short>
+        <long>Hangfájl lejátszása vagy hangjelzése új üzenet érkezésekor.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Bunyikan suara saat ada pesan baru tiba.</short>
+        <long>Apakah membunyikan suara atau bip ketika ada pesan baru.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Riproduce un suono quando arrivano nuovi messaggi.</short>
+        <long>Indica se riprodurre un suono o emettere un avviso acustico quando arrivano nuovi messaggi.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>新しいメールが届いたら演奏するかどうか</short>
+        <long>新しいメールが届いたらサウンドを演奏したりビープ音を鳴らすかどうかです。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಹೊಸ ಸಂದೇಶಗಳು ಬಂದಾಗ ಶಬ್ಧವನ್ನು ಪ್ಲೇ ಮಾಡು.</short>
+        <long>ಹೊಸ ಸಂದೇಶಗಳು ಬಂದಾಗ ಒಂದು ಶಬ್ಧವನ್ನು ಅಥವ ಬೀಪ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡಬೇಕೆ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>새 메시지가 도착하면 사운드 재생.</short>
+        <long>새 메시지가 도착하면 사운드를 재생할지 삑 소리를 낼지.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Groti garsą, kai ateina naujų laiškų.</short>
+        <long>Ar groti garsinį failą gavus naujų laiškų</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Atskaņot skaņu, kad pienāk jaunas vēstules.</short>
+        <long>Atskaņot skaņu, kad pienāk jaunas vēstules.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Пушти звук кога ќе пристигне нова порака.</short>
+        <long>Дали да се пушти звук или да бипни кога ќе пристигне нова порака.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>പുതിയ സന്ദേശങ്ങള്‍ വരുമ്പോള്‍ ശബ്ദം ഉണ്ടാക്കുക.</short>
+        <long>പുതിയ മെയില്‍ വരുമ്പോള്‍ ശബ്ദം ഉണ്ടാക്കണമോ എന്നു്.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>नवीन मेल संदेश प्राप्त होताच आवाज चालवा.</short>
+        <long>नवीन संदेश प्राप्त होताच नवीन आवाज फाइल चालवायचे.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Spill en lyd når nye meldinger ankommer.</short>
+        <long>Om en lydfil eller et pip skal spilles av når nye meldinger ankommer.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Geluid afspelen bij binnenkomst van nieuwe berichten.</short>
+        <long>Of geluid afgespeeld wordt, of alleen een piepje bij binnenkomst van nieuwe e-mail.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>Spel lydfil når det kjem nye meldingar.</short>
+        <long>Om ei lydfil skal spelast når det kjem nye meldingar.</long>
+      </locale>
+
+      <locale name="oc">
+        <short>Legir un son quand de messatges novèls arriban.</short>
+        
+      </locale>
+
+      <locale name="or">
+        <short>ନୂତନ ସନ୍ଦେଶ ଆସିବା ସମୟରେ ଧ୍ୱନି ଚଲାନ୍ତୁ।</short>
+        <long>ନୂତନ ସନ୍ଦେଶ ଆସିବା ସମୟରେ ଧ୍ୱନି ଅଥବା ଦପଦପ ଚଲାଇବା ଉଚିତ କି ନୁହଁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਨਵਾਂ ਸੁਨੇਹਾ ਆਉਣ ਉੱਤੇ ਸਾਊਂਡ ਚਲਾਓ।</short>
+        <long>ਕੀ ਨਵੇਂ ਸੁਨੇਹੇ ਆਉਣ ਉੱਤੇ ਸਾਊਂਡ ਜਾਂ ਬੀਪ ਚਲਾਈ ਜਾਵੇ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Odtwarzanie dźwięku po otrzymaniu nowej wiadomości.</short>
+        <long>Określa, czy po otrzymaniu nowej wiadomości odegrać dźwięk, czy dzwonek systemowy.</long>
+      </locale>
+
+      <locale name="ps">
+        <short>د نوې استوزې د رسېدو پر مهال غږ غږول</short>
+        
+      </locale>
+
+      <locale name="pt">
+        <short>Reproduzir um som ao chegarem novas mensagens.</short>
+        <long>Se reproduzir um som ou &quot;beep&quot; ao chegarem novas mensagens.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Tocar um som quando uma nova mensagem chegar.</short>
+        <long>Tocar um som ou um beep quando novas mensagens chegarem.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Redă un sunet la primirea de noi mesaje.</short>
+        <long>Dacă se redă un sunet sau un bip atunci când sosește un nou mesaj.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Воспроизводить звуковой файл при приходе новой почты.</short>
+        <long>Воспроизводить ли звук или подавать гудок при получении новых сообщений.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Ob prejemu novih sporočil predvajaj zvok.</short>
+        <long>Ali naj se predvaja zvok ali pisk ob prejemu novega sporočila.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Пушта звук када стигне нова порука.</short>
+        <long>Да ли да пусти звук или свирне када стигне нова порука.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Pušta zvuk kada stigne nova poruka.</short>
+        <long>Da li da pusti zvuk ili svirne kada stigne nova poruka.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Spela upp ljud när nya meddelanden anländer.</short>
+        <long>Huruvida ljud ska spelas upp eller pipa när nya meddelanden anländer.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>புதிய மின்னஞ்சல் வரும் போது ஒலிக்கோப்பை இயக்கு.</short>
+        <long>புதிய மின்னஞ்சல் வரும் போது ஒலிக்கோப்பை இயக்கு அல்லது பீப் ஒலி.</long>
+      </locale>
+
+      <locale name="te">
+        <short>కొత్త సందేశం వచ్చినప్పుడు శబ్దమును ప్లే చేయుము.</short>
+        <long>కొత్తసందేశం వచ్చనప్పుడు శబ్దం ప్లే చేయాలా లేదా బీప్ ప్లే చేయాలా.</long>
+      </locale>
+
+      <locale name="th">
+        <short>ส่งเสียงเมื่อมีข้อความเข้ามาใหม่</short>
+        <long>กำหนดว่าจะเล่นแฟ้มเสียงหรือส่งเสียงบี๊ปเมื่อมีข้อความเข้ามาใหม่</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Yeni mektup geldiğinde ses çal.</short>
+        <long>Yeni iletiler geldiğinde ses çalınması ya da biplenmesi.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Програвати звуковий файл при отриманні нової пошти.</short>
+        <long>Програвати звуковий файл чи подавати звуковий сигнал при отриманні нової пошти.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Phát âm thanh khi nhận thư mới</short>
+        <long>Có nên phát âm thanh hay kêu bíp khi nhận thư mới.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>新邮件到达时播放声音。</short>
+        <long>新邮件到达时是播放声音文件还是哔一下。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>當新郵件到達時播放聲音檔案。</short>
+        <long>當新郵件到達時是否播放聲音檔案或發出嗶聲。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>當新郵件到達時播放聲音檔案。</short>
+        <long>當新郵件到達時是否播放聲音檔案或發出嗶聲。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/sound-beep</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/sound-beep</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Beep or play sound file.</short>
+        <long>If "true", then beep, otherwise will play sound file when new messages arrive.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>صَفِّر أو شَغِّل ملف صوت.</short>
+        <long>إن &quot;صحيح&quot;, صفّر, و إلا سيشغَل ملف صوتي عند وصول رسالة جديدة.</long>
+      </locale>
+
+      <locale name="as">
+        <short>বিপ্‌ শব্দ কৰা হ&apos;ব.</short>
+        <long>মান &quot;true&quot; হলে বিপ করা হবে, অন্যথা নতুন বার্তা প্রাপ্ত হলে শব্দ বাজানো হবে।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Pitar o reproducir un ficheru de soníu.</short>
+        
+      </locale>
+
+      <locale name="be@latin">
+        <short>Praźvini ci vykanaj hukavy fajł.</short>
+        
+      </locale>
+
+      <locale name="bg">
+        <short>Звук или изпълнение на файл.</short>
+        <long>Ако е „true“, изпълнение на звук — в противен случай на звуков файл при пристигане на нова поща.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>বিপ শব্দ করা হবে অথবা শব্দের ফাইল বাজানো হবে।</short>
+        <long>মান &quot;true&quot; হলে বিপ করা হবে, অন্যথা নতুন বার্তা প্রাপ্ত হলে শব্দ বাজানো হবে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>বিপ শব্দ করা হবে অথবা শব্দের ফাইল বাজানো হবে।</short>
+        <long>মান &quot;true&quot; হলে বিপ করা হবে, অন্যথা নতুন বার্তা প্রাপ্ত হলে শব্দ বাজানো হবে।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Emet un to o reprodueix un fitxer de so.</short>
+        <long>Si es defineix com a «true» (cert), s&apos;emetrà un to en rebre correu nou. En cas contrari, es reproduirà un fitxer de so.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Emet un to o reprodueix un fitxer de so.</short>
+        <long>Si es defineix com a «true» (cert), s&apos;emetrà un to en rebre correu nou. En cas contrari, es reproduirà un fitxer de so.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Pípnout nebo přehrát zvukový soubor.</short>
+        <long>Platí-li „true“, potom pípne, jinak bude hrát zvukový soubor, když dorazí nová zpráva.</long>
+      </locale>
+
+      <locale name="cy">
+        
+        <long>Os &quot;true&quot;, yna chwincio, fel arall bydd ffeil sain yn cael ei chwarae pan mae neges newydd yn cyrraedd.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Bip eller spil lydfil.</short>
+        <long>Hvis &quot;true&quot; så bip, ellers vil der spilles en lydfil når der ankommer ny post.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Signalton ausgeben oder Klangdatei abspielen.</short>
+        <long>Legt fest, ob beim Eintreffen neuer Nachrichten ein Signalton ausgegeben wird (»TRUE«) oder eine Klangdatei abgespielt wird (»FALSE«).</long>
+      </locale>
+
+      <locale name="dz">
+        <short>བརྡ་སྐད་སྟོན་ ཡང་ན་ སྒྲ་སྐད་ཡིག་སྣོན་ གཏང་། </short>
+        
+      </locale>
+
+      <locale name="el">
+        <short>Μπιπ ή αναπαραγωγή αρχείου ήχου.</short>
+        <long>Αν &quot;true&quot;, τότε ήχος μπιπ, αλλιώς να γίνεται αναπαραγωγή αρχείου ήχου στην άφιξη νέων μηνυμάτων.</long>
+      </locale>
+
+      <locale name="en@shaw">
+        <short>𐑚𐑰𐑐 𐑹 𐑐𐑤𐑱 𐑕𐑬𐑯𐑛 𐑓𐑲𐑤.</short>
+        <long>𐑦𐑓 &quot;𐑑𐑮𐑵&quot;, 𐑞𐑧𐑯 𐑚𐑰𐑐, 𐑳𐑞𐑼𐑢𐑲𐑟 𐑢𐑦𐑤 𐑐𐑤𐑱 𐑕𐑬𐑯𐑛 𐑓𐑲𐑤 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Beep or play sound file.</short>
+        <long>If &quot;true&quot;, then beep, otherwise will play sound file when new messages arrive.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Pitar o reproducir un archivo de sonido.</short>
+        <long>Si está activado pitará, de otra manera reproducirá un archivo de sonido cuando lleguen mensajes nuevos.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Helifaili esitamine või piiksumine.</short>
+        <long>Kui märgitud, siis tehakse uue sõnumi saabumisel piiks, vastasel juhul esitatakse helifail.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Egin &apos;biip&apos; edo erreproduzitu soinu-fitxategia.</short>
+        <long>&quot;true&quot; (egia) bada, &apos;biip&apos; soinua joko du, bestela soinu-fitxategia erreproduzituko du mezu berria jasotzean.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Piippaa tai soita äänitiedosto.</short>
+        <long>Jos &quot;true&quot;, piipataan, muutoin soitetaan äänitiedosto uusien viestien saapuessa.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Bip ou joue un fichier son.</short>
+        <long>Si « vrai », un bip sera émis, sinon un fichier son sera joué à la réception de nouveaux messages.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Emitir un ton de aviso ou reproducir un ficheiro de son.</short>
+        <long>Se é &quot;true&quot;, entón emitir un ton de aviso, en caso contrario, reproducir un ficheiro de son cando cheguen mensaxes novas.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>ધ્વનિ ફાઈલ અથવા બીપ વગાડો.</short>
+        <long>જો &quot;true&quot; હોય, તો પછી બીપ વગાડો, નહિંતર જ્યારે નવા સંદેશાઓ આવે ત્યારે ધ્વનિ ફાઈલ વગાડો.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Beep or play sound file.</short>
+        <long>If &quot;true&quot;, then beep, otherwise will play sound file when new messages arrive.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>ध्वनि फ़ाइल बीपर करें या बजाएँ</short>
+        <long>यदि &quot;सही&quot; है, तब बीप होगा, अन्यथा ध्वनि फ़ाइल बजाएगा जब कोई नया संदेश आता है.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Hangjelzés vagy hangfájl lejátszása.</short>
+        <long>Ha igazra van állítva, akkor új üzenet érkezésekor hangjelzés, egyébként hang lejátszása történik.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Bunyi bip atau mainkan berkas suara.</short>
+        <long>Bila &quot;true&quot; maka bip, bila tidak akan membunyikan berkas suara ketika pesan baru tiba.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Avviso acustico o riproduzione file audio.</short>
+        <long>Se impostata a VERO, allora emette un avviso acustico all&apos;arrivo di nuovi messaggi, altrimenti riproduce un file audio.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>ビープ音を鳴らすかどうか</short>
+        <long>TRUE にすると新着メッセージがあればビープ音を鳴らし、それ以外は指定したサウンドを演奏します。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಬೀಪ್ ಮಾಡು ಅಥವ ಶಬ್ಧ ಕಡತವನ್ನು ಪ್ಲೇ ಮಾಡು.</short>
+        <long>&quot;true&quot; ಆಗಿದ್ದಲ್ಲಿ, ಹೊಸ ಸಂದೇಶಗಳು ಬಂದಾಗ ಬೀಪ್ ಶಬ್ಧವನ್ನು ಮಾಡುತ್ತದೆ, ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ ಬೇರೆ ಶಬ್ಧ ಕಡತವನ್ನು ಪ್ಲೇ ಮಾಡುತ್ತದೆ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>삑 소리를 내거나 사운드 파일 재생.</short>
+        <long>새 메시지가 도착했을 때 참이면 삑 소리를 내고, 아니면 사운드 파일을 플레이합니다.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Pyptelėti arba groti garso failą.</short>
+        <long>Jei reiškmė teigiama, gavus naujų laiškų pyptelės, priešingu atveju gros garsinį failą.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Pīkstiens vai atskaņot skaņas failu</short>
+        <long>Ja &quot;patiess&quot;, tad pīkstiens, citādi atskaņos skaņas failu, kad pienāk jauna vēstule.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Бипни или пушти звучна датотека.</short>
+        <long>Ако е „true“, тогаш свирни, инаку ќе се пушти звучна датотека кога ќе пристигне нова порака.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ബീപ്പ് ചെയ്യുക അല്ലെങഅകില്‍ ശബ്ദത്തിനുളള ഫയല്‍ പ്രവര്‍ത്തിപ്പിക്കുക.</short>
+        <long>&quot;true&quot; എങ്കില്‍, ബീപ്പ് ചെയ്യുന്നു, അല്ലെങ്കില്‍ പുതിയ സന്ദേശങ്ങള്‍ വരുമ്പോള്‍ ശബ്ദ ഫയല്‍ പ്രവര്‍ത്തിക്കുന്നു.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>बीप किंवा आवाझ पाइल चालवा.</short>
+        <long>&quot;खरे&quot; असल्यास, बीप द्या, किंवा नवीन संदेश प्राप्त झाल्यास आवाज फाइल चालविले जाईल.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Pip eller spill av en lydfil.</short>
+        <long>Pip hvis «true», eller spill en lydfil når nye meldinger ankommer.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Piepen of geluidsbestand afspelen.</short>
+        <long>Indien aangevinkt, piepen. Anders een geluidsbestand afspelen bij binnenkomst van nieuwe berichten.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ଶବ୍ଦ ଫାଇଲକୁ ଦପଦପ କରନ୍ତୁ ଅଥବା ଚଲାନ୍ତୁ। </short>
+        <long>ଯଦି &quot;true&quot;, ତେବେ ଦପଦପ କରନ୍ତୁ, ଅନ୍ୟଥା ନୂତନ ସନ୍ଦେଶ ଆସିଲେ ଧ୍ୱନି ଫାଇଲ ଚଲାନ୍ତୁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਬੀਪ ਜਾਂ ਸਾਊਂਡ ਫਾਈਲ ਚਲਾਓ</short>
+        <long>ਜੇ &quot;ਸਹੀਂ&quot; ਕੀਤਾ ਤਾਂ ਨਵੇਂ ਸੁਨੇਹੇ ਆਉਣ ਉੱਤੇ ਸਾਊਂਡ ਜਾਂ ਬੀਪ ਚਲਾਈ ਜਾਵੇ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Dzwonek lub odegranie pliku dźwiękowego.</short>
+        <long>Jeśli ma wartość &quot;true&quot; to dźwięk systemowy, w innym wypadku odegra plik dźwiękowy, gdy nadejdzie nowa wiadomość.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Emitir um &quot;beep&quot; ou reproduzir um ficheiro de som.</short>
+        <long>Se &quot;true&quot;, emitir um &quot;beep&quot;, caso contrário reproduzir um ficheiro de som ao receber mensagens novas.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Tocar um bip ou arquivo de som.</short>
+        <long>Se &quot;true&quot;, então emitir alerta sonoro, do contrário reproduzirá o arquivo de som quando novas mensagens chegarem.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Bip sau pornește un fișier sunet.</short>
+        <long>Dacă este „true”, se generează bipuri, altfel, la primierea de mesaje, se va reda un fișier sunet.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Подавать звуковой сигнал или воспроизводить звуковой файл.</short>
+        <long>Если этот ключ установлен, то подавать гудок, иначе проигрывать звуковой файл при поступлении новых сообщений.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Predvajaj pisk ali zvočno datoteko.</short>
+        <long>Izbrana možnost omogoča pisk ob prihodu novega sporočila namesto predvajanja zvočne datoteke.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Свира или пушта звучну датотеку.</short>
+        <long>Свирне ако је постављено на „true“ (тачно), а иначе пушта звучну датотеку када стигне нова порука.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Svira ili pušta zvučnu datoteku.</short>
+        <long>Svirne ako je postavljeno na „true“ (tačno), a inače pušta zvučnu datoteku kada stigne nova poruka.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Ljudsignal eller spela upp ljudfil.</short>
+        <long>Om &quot;true&quot;, använd pip, spela annars upp ljudfil när nya meddelanden anländer.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>பீப் அல்லது ஒலி கோப்பை இயக்கு.</short>
+        <long>&quot;true&quot; எனில், பீப் செய், இல்லையெனில் செய்திகள் வரும்போது ஒலி கோப்பை வாசி.</long>
+      </locale>
+
+      <locale name="te">
+        <short>శబ్దపు దస్త్రం ను బీప్ లేదా ప్లే చేయుము</short>
+        <long>నిజమైతే, బీప్ చేయాలి, లేకపోతే సందేశం వచ్చినప్పుడు శబ్దపు దస్త్రంను ప్లేచేయాలి.</long>
+      </locale>
+
+      <locale name="th">
+        <short>ส่งเสียงบี๊ปหรือเล่นแฟ้มเสียง</short>
+        <long>ถ้ากำหนดเป็น &quot;true&quot; จะใช้เสียงบี๊ป มิฉะนั้น ก็จะเล่นแฟ้มเสียงเมื่อมีข้อความใหม่เข้ามา</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Ses dosyası çal ya da biple.</short>
+        <long>Eğer seçiliyse, biple aksi halde yeni iletiler geldiğinde ses çalınacak.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Видавати звуковий сигнал чи відтворювати звуковий файл</short>
+        <long>Якщо встановлено, при надходженні нової пошти подається сигнал, у іншому разі - відтворюється звук.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Kêu bíp hay phát tập tin âm thanh.</short>
+        <long>Đúng (&quot;true&quot;) thì kêu Bíp, không thì phát tập tin âm thanh khi nhận thư mới.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>发出哔的一声或播放声音文件。</short>
+        <long>新信息到达时，此值如果为 true，则响铃，否则播放声音文件。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>發出嗶聲或播放聲音檔案。</short>
+        <long>如果為「true」，則當新郵件抵達時發出嗶聲否則就播放聲音檔。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>發出嗶聲或播放聲音檔案。</short>
+        <long>如果為「true」，則當新郵件抵達時發出嗶聲否則就播放聲音檔。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/sound-file</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/sound-file</applyto>
+      <owner>evolution-mail</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>Sound file name to be played.</short>
+        <long>Sound file to be played when new messages arrive, if not in beep mode.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>اسم ملف الصوت الذي سيُشغل.</short>
+        <long>ملف الصّوت الذي سيُعزف عند وصول رسائل جديدة، إن لم يكن في وضع الصفير.</long>
+      </locale>
+
+      <locale name="as">
+        <short>বাজানোর উদ্দেশ্যে চিহ্নিত শব্দের ফাইল।</short>
+        <long>নতুন মেইল এলে যে শব্ৰ নথিপত্ৰ বাজানো হ&apos;ব।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Nome del ficheru de soníu que reproducir.</short>
+        
+      </locale>
+
+      <locale name="be@latin">
+        <short>Nazva hukavoha fajłu.</short>
+        <long>Hukavy fajł, jaki hrać pry atrymańni novaha lista, kali nie ŭ režymie zvanka.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Звуков файл, който да бъде изпълнен.</short>
+        <long>Звуков файл, който да се изпълнява при пристигане на нова поща, ако не е в режим на обикновен звук.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>বাজানোর উদ্দেশ্যে চিহ্নিত শব্দের ফাইল।</short>
+        <long>নতুন মেইল এলে যে শব্দের ফাইল বাজানো হবে, অন্যথা বিপ মোড প্রয়োগ করা হবে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>বাজানোর উদ্দেশ্যে চিহ্নিত শব্দের ফাইল।</short>
+        <long>নতুন মেইল এলে যে শব্দের ফাইল বাজানো হবে, অন্যথা বিপ মোড প্রয়োগ করা হবে।</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Nom del fitxer de so a reproduir.</short>
+        <long>Fitxer de so que es reproduirà quan arribi correu nou (en cas que el mode d&apos;emissió de to no estigui activat).</long>
+      </locale>
+
+      <locale name="ca@valencia">
+        <short>Nom del fitxer de so a reproduir.</short>
+        <long>Fitxer de so que es reproduirà quan arribe correu nou (en cas que el mode d&apos;emissió de to no estiga activat).</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Název zvukového souboru, který má být přehráván.</short>
+        <long>Soubor zvuku, který chcete přehrát, když přijde nová pošta, není-li režimem pípnutí.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Navn på lydfil som skal spilles.</short>
+        <long>Lydfilen der skal afspilles når nye breve ankommer, hvis ikke i bip-tilstand.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Name der abzuspielenden Klangdatei.</short>
+        <long>Die beim Eintreffen neuer Nachrichten abzuspielende Klangdatei, falls nicht im Signalton-Modus.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>གཏང་ནི་ཨིན་པའི་ སྒྲ་སྐད་ཡིག་སྣོད་ཀྱི་མིང་། </short>
+        <long>ཡིག་འཕྲིན་གསརཔ་ལྷོདཔ་ད་ གཏང་ནིའི་སྒྲ་སྐད་ཡིག་སྣོད་ དེ་མེན་པ་ཅིན་ བརྡ་སྐད་ ཐབས་ལམ་ནང་། </long>
+      </locale>
+
+      <locale name="el">
+        <short>Όνομα αρχείου ήχου για αναπαραγωγή.</short>
+        <long>Αρχείο για αναπαραγωγή ήχου κατά την άφιξη νέου μηνύματος αν δεν είναι ενεργό το beep.</long>
+      </locale>
+
+      <locale name="en@shaw">
+        <short>𐑕𐑬𐑯𐑛 𐑓𐑲𐑤 𐑯𐑱𐑥 𐑑 𐑚𐑰 𐑐𐑤𐑱𐑛.</short>
+        <long>𐑕𐑬𐑯𐑛 𐑓𐑲𐑤 𐑑 𐑚𐑰 𐑐𐑤𐑱𐑛 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝, 𐑦𐑓 𐑯𐑪𐑑 𐑦𐑯 𐑚𐑰𐑐 𐑥𐑴𐑛.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Sound file name to be played.</short>
+        <long>Sound file to be played when new messages arrive, if not in beep mode.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Nombre del archivo de sonido que reproducir.</short>
+        <long>Archivo que reproducir cuando llega un mensaje nuevo, si no se debe reproducir un pitido.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Esitatava helifaili nimi.</short>
+        <long>Uute sõnumite saabumisel esitatava helifaili nimi (kui pole määratud, et helifaili esitamise asemel tuleb piiksuda).</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Soinuaren fitxategia erreproduzitzeko.</short>
+        <long>Mezu berriak iristean jo beharreko soinu-fitxategia, soinu-seinalea (biip) moduan ez badago.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Soitettavan äänitiedoston nimi.</short>
+        <long>Soitettava äänitiedosto, kun uusia viestejä saapuu (jos ei piippaustilassa).</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Nom du fichier son à jouer.</short>
+        <long>Fichier son à jouer à la réception d&apos;un nouveau message si le mode Bip est inactif.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Nome do ficheiro de son que quere reproducir.</short>
+        <long>O ficheiro de son que quere reproducir cando chegue unha mensaxe nova, se non está no modo de ton de aviso.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>વગાડવા માટેની ધ્વનિ ફાઈલનું નામ.</short>
+        <long>જ્યારે નવા સંદેશાઓ આવે ત્યારે વગાડવાની ધ્વનિ ફાઈલ, જો બીપ સ્થિતિમાં નહિં હોય.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Sound file name to be played.</short>
+        <long>Sound file to be played when new messages arrive, if not in beep mode.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>ध्वनि फ़ाइल नाम बजाने के लिए.</short>
+        <long>ध्वनि फ़ाइल जिसे नई डाक आने पर चलाना है, यदि नहीं तो बीप विधि में.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Lejátszandó hangfájl neve.</short>
+        <long>Új üzenet beérkezésekor lejátszandó hangfájl, ha nem a hangjelzés mód van beállítva.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Nama berkas suara yang akan dibunyikan.</short>
+        <long>Berkas suara untuk dimainkan saat surel baru datang, bila tidak dalam mode bip.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Nome del file audio da riprodurre.</short>
+        <long>File audio da riprodurre quando arrivano nuovi messaggi, qualora non in modalità avviso acustico.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>演奏するサウンド・ファイル</short>
+        <long>sound-beep が FALSE の場合、新しいメールが届いたら演奏するサウンド・ファイルです。</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಪ್ಲೇ ಮಾಡಬೇಕಿರುವ ಶಬ್ಧ ಕಡತದ ಹೆಸರು.</short>
+        <long>ಹೊಸ ಸಂದೇಶಗಳು ಬಂದಾಗ, ಬೀಪ್ ಕ್ರಮದಲ್ಲಿ ಇರದೆ ಹೋದಲ್ಲಿ ಪ್ಲೇ ಮಾಡಬೇಕಿರುವ ಶಬ್ಧದ ಕಡತ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>재생할 사운드 파일 이름.</short>
+        <long>새 메시지가 도착하면 재생할 사운드 파일, 삑 소리 모드가 아닐 경우.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Garsinio failo pavadinimas.</short>
+        <long>Garsinis failas, grojamas gavus naujų laiškų, jei neįjunkta pypsėjimo veiksena.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Skaņas fails, kuru atskaņot.</short>
+        <long>Skaņas fails, kuru atskaņot, kad pienāk jaunas vēstules, citādi tiks izmantots pīkstiens.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Звучна датотека која ќе се пушти.</short>
+        <long>Звучна датотека за свирење кога пристигнува нова пошта, ако не ќе бипни.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>പ്രവര്‍ത്തിപ്പിക്കുവാനുള്ള ശബ്ദ ഫയല്‍.</short>
+        <long>പുതിയ മെയില്‍ വരുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കേണ്ട ശബ്ദത്തിനുളള ഫയല്‍, അല്ലെങ്കില്‍ ബീപ്പ് മോഡ്.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>चालवायची ती आवाज फाइल.</short>
+        <long>बीप पद्धतीत नसल्यास, नवीन संदेश प्राप्त होताच नवीन आवाज फाइल चालवा.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Navn på lydfil som skal spilles av.</short>
+        <long>Lydfil som skal spilles av når nye meldinger ankommer hvis pip-modus ikke er aktivert.</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Geluidsbestand om af te spelen.</short>
+        <long>Het geluidsbestand dat afgespeeld wordt wanneer er nieuwe e-mail is binnengekomen, en wanneer niet in piep-modus.</long>
+      </locale>
+
+      <locale name="nn">
+        
+        <long>Lydfil å spela når det kjem nye meldingar, dersom ikkje i pip-modus.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ଚଲାଇବା ପାଇଁ ଧ୍ୱନି ଫାଇଲ ନାମ।</short>
+        <long>ନୂତନ ସନ୍ଦେଶ ଆସିବା ସମୟରେ ଚଲାଇବାକୁ ଥିବା ଧ୍ୱନି ଫାଇଲ ନାମ, ଯଦି ଦପଦପ ଅବସ୍ଥାରେ ନାହିଁ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਚਲਾਉਣ ਲਈ ਸਾਊਂਡ ਫਾਈਲ ਨਾਂ ਹੈ।</short>
+        <long>ਜੇ ਬੀਪ ਮੋਡ ਵਿੱਚ ਨਾ ਹੋਵੇ ਤਾਂ ਨਵਾਂ ਸੁਨੇਹਾ ਆਉਣ ਉੱਤੇ ਚਲਾਉਣ ਉੱਤੇ ਸਾਊਂਡ ਫਾਇਲ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Nazwa pliku dźwiękowego do odtworzenia.</short>
+        <long>Nazwa pliku dźwiękowego do odtworzenia, jeśli nie jest aktywny dzwonek systemowy.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Nome do ficheiro de som a ser reproduzido.</short>
+        <long>Ficheiro de som a ser reproduzido ao chegarem novas mensagens, se não estiver em modo &quot;beep&quot;.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Nome do arquivo de som a ser tocado.</short>
+        <long>Arquivo de som a ser tocado quando novas mensagens chegarem, do contrario será tocado um beep.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Numele fișierului ce va fi redat.</short>
+        <long>Fișierul ce va fi redat la primirea de mesaje noi, dacă nu este în modul bip.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Имя звукового файла, который надо проигрывать.</short>
+        <long>Звуковой файл, воспроизводимый при приходе новой почты, если не включён режим гудка.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Ime zvočne datoteke za predvajanje.</short>
+        <long>Zvočna datoteka, ki se predvaja ob prispetju nove pošte, če ni določen le pisk.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Име датотеке за пуштање.</short>
+        <long>Звучна датотека за пуштање када стигне нова порука, уколико није укључено обавештење сиреном.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Ime datoteke za puštanje.</short>
+        <long>Zvučna datoteka za puštanje kada stigne nova poruka, ukoliko nije uključeno obaveštenje sirenom.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Filnamn för ljud att spela upp.</short>
+        <long>Ljudfil att spela upp när nya meddelanden anländer, om inte i pipläge.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>வாசிக்க வேண்டிய ஒலி கோப்பின் பெயர் .</short>
+        <long>புதிய மின்னஞ்சல் வரும்போது இயக்க வேண்டிய ஒலி கோப்பு, இல்லை எனில் பீப் பாங்கு.</long>
+      </locale>
+
+      <locale name="te">
+        <short>ప్లే చేయుటకు శబ్దపు దస్త్రం నామము.</short>
+        <long>కొత్త సందేశం వచ్చినప్పుడు శబ్దపు దస్త్రం ప్లేకావాలి, బీప్ రీతి నందు లేకపోతే.</long>
+      </locale>
+
+      <locale name="th">
+        <short>ชื่อแฟ้มเสียงที่จะเล่น</short>
+        <long>แฟ้มเสียงที่จะเล่นเมื่อมีข้อความเข้ามาใหม่ ถ้าไม่ได้ใช้โหมดการบี๊ป</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Çalınacak dosya ismi.</short>
+        <long>Yeni iletiler ulaştığında çalınacak ses dosyası, eğer yoksa bip kipindedir.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Звуковий файл, що відтворюється.</short>
+        <long>Звуковий файл, що відтворюється при отриманні нової пошти, якщо не увімкнено режим звукового сигналу.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Tên của tập tin âm thanh cần phát.</short>
+        <long>Tập tin âm thanh cần phát khi nhận thư mới, nếu không phải ở chế độ kêu bíp.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>待播放的声音文件名。</short>
+        <long>不在 beep 模式下时新邮件到达要播放的声音文件。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>要播放的聲音檔案名稱。</short>
+        <long>新郵件送到時要播放的音效檔案，如果不是使用嗶聲模式。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>要播放的聲音檔案名稱。</short>
+        <long>新郵件送到時要播放的音效檔案，如果不是使用嗶聲模式。</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/evolution/eplugin/mail-notification/sound-use-theme</key>
+      <applyto>/apps/evolution/eplugin/mail-notification/sound-use-theme</applyto>
+      <owner>evolution-mail</owner>
+      <type>bool</type>
+      <default>false</default>	
+      <locale name="C">
+        <short>Use sound theme</short>
+        <long>Play themed sound when new messages arrive, if not in beep mode.</long>
+      </locale>
+	
+      <locale name="bg">
+        <short>Използване на звукова тема</short>
+        <long>Просвирване на звук при получени писма, ако не е в режим на обикновен звук.</long>
+      </locale>
+	
+      <locale name="bn">
+        <short>নিম্নরেখাঙ্কন করুন</short>
+        <long>নতুন মেইল এলে যে শব্দের ফাইল বাজানো হবে, অন্যথা বিপ মোড প্রয়োগ করা হবে।</long>
+      </locale>
+	
+      <locale name="ca">
+        <short>Utilitza el tema de sons</short>
+        <long>Reprodueix el so de tema quan arribi correu nou (en cas que el mode d&apos;emissió de to no estigui activat).</long>
+      </locale>
+	
+      <locale name="ca@valencia">
+        <short>Utilitza el tema de sons</short>
+        <long>Reprodueix el so de tema quan arribe correu nou (en cas que el mode d&apos;emissió de to no estiga activat).</long>
+      </locale>
+	
+      <locale name="cs">
+        <short>Používat zvuk motivu</short>
+        <long>Přehrát zvuk motivu, když dorazí nová zpráva, pokud není zapnut režim pípnutí.</long>
+      </locale>
+	
+      <locale name="cy">
+        <short>Defnyddio thema sain</short>
+        
+      </locale>
+	
+      <locale name="da">
+        <short>Brug lydtema</short>
+        <long>Afspil temalyd når nye breve ankommer, hvis ikke i bip-tilstand.</long>
+      </locale>
+	
+      <locale name="de">
+        <short>Klangthema verwenden</short>
+        <long>Das beim Eintreffen neuer Nachrichten zum Abspielen verwendete Klangthema, falls nicht im Signalton-Modus.</long>
+      </locale>
+	
+      <locale name="el">
+        <short>Χρήση ήχου συστήματος</short>
+        <long>Αναπαραγωγή ήχου θέματος κατά την άφιξη νέου μηνύματος αν δεν είναι ενεργό το beep.</long>
+      </locale>
+	
+      <locale name="en@shaw">
+        <short>𐑿𐑟 𐑕𐑬𐑯𐑛 𐑔𐑰𐑥</short>
+        <long>𐑐𐑤𐑱 𐑔𐑰𐑥𐑛 𐑕𐑬𐑯𐑛 𐑢𐑧𐑯 𐑯𐑿 𐑥𐑧𐑕𐑦𐑡𐑩𐑟 𐑼𐑲𐑝, 𐑦𐑓 𐑯𐑪𐑑 𐑦𐑯 𐑚𐑰𐑐 𐑥𐑴𐑛.</long>
+      </locale>
+	
+      <locale name="en_GB">
+        <short>Use sound theme</short>
+        <long>Play themed sound when new messages arrive, if not in beep mode.</long>
+      </locale>
+	
+      <locale name="es">
+        <short>Usar un tema de sonido</short>
+        <long>Reproducir el tema de sonido cuando llega un correo nuevo, si no se está en el modo pitido.</long>
+      </locale>
+	
+      <locale name="et">
+        <short>Heliteema kasutamine</short>
+        <long>Uute sõnumite saabumisel esitatakse heli, kui pole piiksumise režiimis.</long>
+      </locale>
+	
+      <locale name="eu">
+        <short>Erabili soinuaren gaia</short>
+        <long>Erreproduzitu gaiaren soinua mezu berriak iristean, soinu-seinalea (biip) moduan ez badago.</long>
+      </locale>
+	
+      <locale name="fi">
+        <short>Käytä ääniteemaa</short>
+        <long>Soita teeman äänitiedosto viestin saapuessa, jos ei olla piippaustilassa.</long>
+      </locale>
+	
+      <locale name="fr">
+        <short>Utilise le thème sonore</short>
+        <long>Joue un son à thème à la réception d&apos;un nouveau message si le mode Bip est inactif.</long>
+      </locale>
+	
+      <locale name="gl">
+        <short>Usar tema de sons</short>
+        <long>O ficheiro de son que quere reproducir cando chegue unha mensaxe nova, se non está no modo de ton de aviso.</long>
+      </locale>
+	
+      <locale name="he">
+        <short>Use sound theme</short>
+        <long>Play themed sound when new messages arrive, if not in beep mode.</long>
+      </locale>
+	
+      <locale name="hu">
+        <short>Hangtéma használata</short>
+        <long>Új üzenet beérkezésekor hangfájl lejátszása a témából, ha nem a hangjelzés mód van beállítva.</long>
+      </locale>
+	
+      <locale name="id">
+        <short>Gunakan tema suara</short>
+        <long>Bunyikan suara bertema ketika pesan baru tiba, bila tidak dalam mode bip.</long>
+      </locale>
+	
+      <locale name="it">
+        <short>Usa tema audio</short>
+        <long>Riproduce audio da tema all&apos;arrivo di nuovi messaggi, qualora non in modalità avviso acustico.</long>
+      </locale>
+	
+      <locale name="ja">
+        <short>サウンドテーマを使用</short>
+        <long>ビープモードでない場合、新しいメッセージが届いた時にテーマの音を鳴らします。</long>
+      </locale>
+	
+      <locale name="ko">
+        <short>사운드 테마 사용</short>
+        <long>새 메시지가 도착하면 (삑 소리 모드가 아닐 경우) 테마 사운드를 재생합니다.</long>
+      </locale>
+	
+      <locale name="lt">
+        <short>Naudoti garsų temą</short>
+        <long>Garsinis failas, grojamas gavus naujų laiškų, jei neįjungta pypsėjimo veiksena.</long>
+      </locale>
+	
+      <locale name="lv">
+        <short>Lietot skaņas tēmu</short>
+        <long>Atskaņot tēmas skaņu, kad pienāk jaunas vēstules, ja nav pīkstēšanas režīmā.</long>
+      </locale>
+	
+      <locale name="nb">
+        <short>Bruk lydtema</short>
+        <long>Spill av lyd fra lydtema når nye meldinger ankommer hvis ikke pip-modus er aktivert.</long>
+      </locale>
+	
+      <locale name="nds">
+        <short>Tonthema bruken</short>
+        
+      </locale>
+	
+      <locale name="nl">
+        <short>Geluidsthema gebruiken</short>
+        <long>Het geluidsbestand dat afgespeeld wordt wanneer er nieuwe e-mail is binnengekomen, en wanneer niet in piep-modus.</long>
+      </locale>
+	
+      <locale name="pa">
+        <short>ਸਾਊਂਡ ਥੀਮ ਵਰਤੋਂ</short>
+        <long>ਜੇ ਬੀਪ ਮੋਡ ਵਿੱਚ ਨਾ ਹੋਵੇ ਤਾਂ ਨਵਾਂ ਸੁਨੇਹਾ ਆਉਣ ਉੱਤੇ ਚਲਾਉਣ ਉੱਤੇ ਥੀਮ ਸਾਊਂਡ ਫਾਇਲ।</long>
+      </locale>
+	
+      <locale name="pl">
+        <short>Używa motywu dźwiękowego</short>
+        <long>Odtwarza dźwięk z motywu po otrzymaniu nowej wiadomości, jeśli nie jest aktywny dzwonek systemowy.</long>
+      </locale>
+	
+      <locale name="pt">
+        <short>Utilizar tema de som</short>
+        <long>Reproduzir ficheiro áudio ao chegarem novas mensagens, se não estiver em modo &quot;beep&quot;.</long>
+      </locale>
+	
+      <locale name="pt_BR">
+        <short>Usar tema de som</short>
+        <long>Arquivo de som a ser tocado quando novas mensagens chegarem, do contrário será tocado um beep.</long>
+      </locale>
+	
+      <locale name="ro">
+        <short>Folosește teme audio</short>
+        <long>Redă sunet tematic la primirea de mesaje noi, dacă nu este în modul bip.</long>
+      </locale>
+	
+      <locale name="ru">
+        <short>Использовать звуковую тему</short>
+        <long>Воспроизводить звук при получении новой почты, если не включён режим гудка.</long>
+      </locale>
+	
+      <locale name="sl">
+        <short>Uporabi zvočno temo</short>
+        <long>Predvajaj zvok teme ob prejetju novega sporočila, če ni določen le pisk.</long>
+      </locale>
+	
+      <locale name="sr">
+        <short>Користи звук теме</short>
+        <long>Пушта звук теме када стигне нова порука, уколико није укључено обавештење сиреном.</long>
+      </locale>
+	
+      <locale name="sr@latin">
+        <short>Koristi zvuk teme</short>
+        <long>Pušta zvuk teme kada stigne nova poruka, ukoliko nije uključeno obaveštenje sirenom.</long>
+      </locale>
+	
+      <locale name="sv">
+        <short>Använd ljudtema</short>
+        <long>Spela upp temaljud när nya meddelanden anländer, om inte i pipläge.</long>
+      </locale>
+	
+      <locale name="th">
+        <short>ใช้ชุดเสียง</short>
+        <long>เล่นเสียงตามชุดเสียงเมื่อมีข้อความเข้ามาใหม่ ถ้าไม่ได้ใช้โหมดการบี๊ป</long>
+      </locale>
+	
+      <locale name="uk">
+        <short>Використовувати звукову тему</short>
+        <long>Відтворювати звук при отриманні нової пошти, якщо не увімкнено режим гудка.</long>
+      </locale>
+	
+      <locale name="zh_CN">
+        <short>使用声音主题</short>
+        <long>不在 beep 模式下时新邮件到达要播放主题的声音文件。</long>
+      </locale>
+	
+      <locale name="zh_HK">
+        <short>使用音效主題</short>
+        <long>如果不是使用嗶聲模式，在新郵件送到時播放主題的音效。</long>
+      </locale>
+	
+      <locale name="zh_TW">
+        <short>使用音效主題</short>
+        <long>如果不是使用嗶聲模式，在新郵件送到時播放主題的音效。</long>
+      </locale>
+    </schema>	
+  </schemalist>
+</gconfschemafile>
+

@@ -1,0 +1,10 @@
+--- evolution-2.32.3/calendar/importers/icalendar-importer.c	2011-03-29 20:38:46.000000000 +0200
++++ evolution-2.32.3/calendar/importers/icalendar-importer.c	2017-07-18 23:30:30.324151723 +0200
+@@ -39,6 +39,7 @@
+ #include <libecal/e-cal-time-util.h>
+ #include <libedataserverui/e-source-selector.h>
+ #include <libical/icalvcal.h>
++#include <libical/vcc.h>
+ #include "evolution-calendar-importer.h"
+ #include "shell/e-shell.h"
+ #include "common/authentication.h"

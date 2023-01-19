@@ -1,0 +1,17 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+privlibdir=@privsolibdir@
+privincludedir=@privincludedir@
+
+# The requirements list is kind of guesswork at
+# the moment.  Add more requirements as needed.
+
+Name: Evolution Mail
+Description: Mail utilities for Evolution
+Version: @VERSION@
+Requires: @EVOLUTION_SHELL@ camel-1.2
+Libs: -L${privlibdir} -levolution-mail -lcomposer
+Cflags: -I${privincludedir}

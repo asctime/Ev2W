@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EPoolv</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Error-Logging.html" title="Error Logging">
+<link rel="next" href="eshell-Printing.html" title="Printing">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Error-Logging.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Printing.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-EPoolv.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-EPoolv.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="EPoolv">
+<a name="eshell-EPoolv"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-EPoolv.top_of_page"></a>EPoolv</span></h2>
+<p>EPoolv</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-EPoolv.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv">EPoolv</a>;
+<a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="returnvalue">EPoolv</span></a> *            <a class="link" href="eshell-EPoolv.html#e-poolv-new" title="e_poolv_new ()">e_poolv_new</a>                         (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> size</code></em>);
+<a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="returnvalue">EPoolv</span></a> *            <a class="link" href="eshell-EPoolv.html#e-poolv-set" title="e_poolv_set ()">e_poolv_set</a>                         (<em class="parameter"><code><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> *poolv</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> index</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> freeit</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-EPoolv.html#e-poolv-get" title="e_poolv_get ()">e_poolv_get</a>                         (<em class="parameter"><code><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> *poolv</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> index</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-EPoolv.html#e-poolv-destroy" title="e_poolv_destroy ()">e_poolv_destroy</a>                     (<em class="parameter"><code><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> *poolv</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-EPoolv.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-EPoolv.details"></a><h2>Details</h2>
+<div class="refsect2" title="EPoolv">
+<a name="EPoolv"></a><h3>EPoolv</h3>
+<pre class="programlisting">typedef struct _EPoolv EPoolv;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_poolv_new ()">
+<a name="e-poolv-new"></a><h3>e_poolv_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="returnvalue">EPoolv</span></a> *            e_poolv_new                         (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> size</code></em>);</pre>
+<p>
+Create a new <a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a>: a string vector which shares a global string
+pool.  An <a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> can be used to work with arrays of strings which
+save memory by eliminating duplicated allocations of the same string.
+</p>
+<p>
+This is useful when you have a log of read-only strings that do not
+go away and are duplicated a lot, such as email headers.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>The number of elements in the poolv, maximum of 254 elements.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_poolv_set ()">
+<a name="e-poolv-set"></a><h3>e_poolv_set ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="returnvalue">EPoolv</span></a> *            e_poolv_set                         (<em class="parameter"><code><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> *poolv</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> index</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> freeit</code></em>);</pre>
+<p>
+Set a string vector reference.  If the caller will no longer be
+referencing the string, freeit should be TRUE.  Otherwise, this
+will duplicate the string if it is not found in the pool.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>poolv</code></em> :</span></p></td>
+<td>pooled string vector
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>index in vector of string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>string to set
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>freeit</code></em> :</span></p></td>
+<td>whether the caller is releasing its reference to the
+string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>poolv</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_poolv_get ()">
+<a name="e-poolv-get"></a><h3>e_poolv_get ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_poolv_get                         (<em class="parameter"><code><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> *poolv</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> index</code></em>);</pre>
+<p>
+Retrieve a string by index.  This could possibly just be a macro.
+</p>
+<p>
+Since the pool is never freed, this string does not need to be
+duplicated, but should not be modified.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>poolv</code></em> :</span></p></td>
+<td>pooled string vector
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>index in vector of string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> string at that index.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_poolv_destroy ()">
+<a name="e-poolv-destroy"></a><h3>e_poolv_destroy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_poolv_destroy                     (<em class="parameter"><code><a class="link" href="eshell-EPoolv.html#EPoolv" title="EPoolv"><span class="type">EPoolv</span></a> *poolv</code></em>);</pre>
+<p>
+Free a pooled string vector.  This doesn't free the strings from
+the vector, however.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>poolv</code></em> :</span></p></td>
+<td>pooled string vector to free
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

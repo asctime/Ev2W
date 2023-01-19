@@ -1,0 +1,1717 @@
+# Xhosa translation of evolution-exchange
+# Copyright (C) 2005 Canonical Ltd.
+# This file is distributed under the same license as the evolution-exchange package.
+# Translation by Canonical Ltd <translations@canonical.com> with thanks to
+# Translation World CC in South Africa, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-04-01 09:31+0200\n"
+"PO-Revision-Date: 2005-03-30 21:25+0200\n"
+"Last-Translator: Canonical Ltd <translations@canonical.com>\n"
+"Language-Team: Xhosa <xh-translate@ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1834
+#: ../addressbook/e-book-backend-gal.c:1351 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Ukukhangela..."
+
+#: ../addressbook/e-book-backend-gal.c:243
+msgid "Reconnecting to LDAP server..."
+msgstr "Ukuphinda unxulumane neseva ye-LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1225
+msgid "Receiving LDAP search results..."
+msgstr "Ukufumana iziphumo zokukhangela kwi-LDAP..."
+
+#: ../addressbook/e-book-backend-gal.c:1372
+msgid "Error performing search"
+msgstr "Impazamo xa kukhangelwa"
+
+#: ../calendar/e-cal-backend-exchange.c:312
+msgid "Folder not marked for offline support"
+msgstr ""
+"Esi siqulathi seefayili asiphawulelwanga kuxhasa ukusebenza ungekho kwi-"
+"intanethi"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1652
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"Ayinako ukumisela lo vimba '%s' kwintlanganiso eziphindaphindwayo.\n"
+"Kufuneka intlanganiso nganye uyibhukishe ngokwahlukeneyo."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1671
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Lo vimba '%s' usaxakekile ngeli xesha ulichongileyo."
+
+#: ../camel/camel-exchange-folder.c:220
+msgid "Can only expunge in Deleted Items folder"
+msgstr "Ingacima kwisiqulathi seefayili yeZinto Ezicinyiweyo kuphela"
+
+#: ../camel/camel-exchange-folder.c:244
+msgid "No Subject"
+msgstr "AyinaSihloko"
+
+#: ../camel/camel-exchange-folder.c:371
+#, fuzzy
+msgid "This message is not available in offline mode."
+msgstr "Lo msebenzi awungenziwa kungasetyenzwa kwi-intanethi"
+
+#: ../camel/camel-exchange-folder.c:606
+msgid "Moving messages"
+msgstr "Ukushenxisa imiyalezo"
+
+#: ../camel/camel-exchange-folder.c:607
+msgid "Copying messages"
+msgstr "Ukukopa imiyalezo"
+
+#: ../camel/camel-exchange-folder.c:938
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Ayikwazi ukwenza uvimba weefayili %s: %s"
+
+#: ../camel/camel-exchange-folder.c:948
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "Ayikwazanga ukufaka isishwankathelo se %s"
+
+#: ../camel/camel-exchange-folder.c:956
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "Aikwazanga ukwenza uvimba wethutyana we- %s"
+
+#: ../camel/camel-exchange-folder.c:966
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "Ayikwazanga ukwenza ijenali ye- %s"
+
+#: ../camel/camel-exchange-folder.c:1011
+msgid "Scanning for changed messages"
+msgstr "Isaskena imiyalezo eguquliweyo"
+
+#: ../camel/camel-exchange-folder.c:1037
+msgid "Fetching summary information for new messages"
+msgstr "Ukuphuthuma ulwazi lwesishwankathelo semiyalezo emitsha"
+
+#: ../camel/camel-exchange-journal.c:272
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr ""
+"Ayikwazi ukuhlomela umyalezo xa ingekho kwi-intanethi: uvimba wethutyana "
+"akafumaneki"
+
+#: ../camel/camel-exchange-journal.c:288
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Ayikwazi ukuhlomela umyalezo xa ungekho kwi-intanethi: %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:46
+msgid "Windows User_name:"
+msgstr "Ifestile Yegama_lomsebenzisi:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:51
+msgid "Global Address List / Active Directory"
+msgstr "Uluhlu Lwayo Yonke idilesi / I-Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:55
+msgid "Global Catalog server name:"
+msgstr "Igama leseva Ye-Global Catalog:"
+
+#: ../camel/camel-exchange-provider.c:57
+#, c-format
+msgid "Limit number of GAL responses: %s"
+msgstr "Umda wenani leempendulo ze-GAL: %s"
+
+#: ../camel/camel-exchange-provider.c:60
+msgid "Options"
+msgstr "Okukhethwa kuko"
+
+#: ../camel/camel-exchange-provider.c:62
+#, c-format
+msgid "Password Expiry Warning period: %s"
+msgstr "Isilumkiso ngexesha Eza Kuphelelwa Ngayo i-password: %s"
+
+#: ../camel/camel-exchange-provider.c:64
+msgid "Automatically synchronize account locally"
+msgstr "Ukusebenzisa i-akhawunti yangaphakathi ngokuzenzekelayo"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:67
+msgid "Apply filters to new messages in Inbox on this server"
+msgstr "Sebenzisa izihluzi kwimiyalezo emitsha Engena kule seva"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Check new messages for Junk contents"
+msgstr "Khangela ukuba imiyalezo emitsha ayiqulathanga okungasebenziyo na"
+
+#: ../camel/camel-exchange-provider.c:71
+msgid "Only check for Junk messages in the Inbox folder"
+msgstr ""
+"Khangela loo miyalezo ingasebenziyo kuphela Kwibhokisi lezingenayo "
+"kwisiqulathi seefayili"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "Microsoft Exchange"
+msgstr "i-Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:90
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "Ukuphathwa kwe-imeyili (nenye i-data) kwiiseva ze-Microsoft Exchange"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:106
+msgid "Secure Password"
+msgstr "Khusela I-Password"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:109
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"Olu khetho luza kunxulumana kwiseva i-Exchange kusetyenziswa ubungqina be-"
+"password ekhuselekileyo le-(NTLM)."
+
+#: ../camel/camel-exchange-provider.c:117
+msgid "Plaintext Password"
+msgstr "I-Password yombhalo oqhelekileyo"
+
+#: ../camel/camel-exchange-provider.c:119
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"Olu khetho luza kunxulumana kwiseva i-Exchange kusetyenziswa ubungqina "
+"obusemgangathweni be-password yombhalo oqhelekileyo."
+
+#: ../camel/camel-exchange-store.c:267
+#, c-format
+msgid "Exchange server %s"
+msgstr "Iseva ye-Exchange %s"
+
+#: ../camel/camel-exchange-store.c:270
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "I-Akhawunti ye-Exchange ye-%s kwi- %s"
+
+#: ../camel/camel-exchange-store.c:297
+msgid "Evolution Exchange backend process"
+msgstr "Inkqubo ye-data yenkqubo ye-Evolution Exchange"
+
+#: ../camel/camel-exchange-store.c:345
+#, c-format
+msgid "No such folder %s"
+msgstr "Akukho siqulathi seefayili sinjalo %s"
+
+#: ../camel/camel-exchange-store.c:473
+msgid "Cannot get folder info in offline mode."
+msgstr ""
+"Ayikwazi ukufumana ulwazi lwesiqulathi seefayili xa ingasebenzi kwi-"
+"intanethi."
+
+#: ../camel/camel-exchange-store.c:537
+msgid "Cannot create folder in offline mode."
+msgstr "Ayikwazi ukwenza isiqulathi seefayili xa ingasebenzi kwi-intanethi."
+
+#: ../camel/camel-exchange-store.c:564
+msgid "Cannot delete folder in offline mode."
+msgstr "Ayikwazi ukucima isiqulathi seefayili xa ingasebenzi kwi-intanethi."
+
+#: ../camel/camel-exchange-store.c:580
+msgid "Cannot rename folder in offline mode."
+msgstr ""
+"Ayikwazi ukunika isiqulathi seefayili elinye igama xa ingasebenzi kwi-"
+"intanethi."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr ""
+"Uthutho lwenkqubo ye-Exchange lungasetyenziswa nomthombo we-imeyili ye-"
+"Exchange kuphela"
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr ""
+"Ayikwazi ukuthumela umyalezo: umthumeli omnye nangaphezulu akagunyaziswanga"
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr "Ayikwazanga ukufumana u-'From' kwidilesi yomyalezo"
+
+#: ../camel/camel-stub.c:134
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "Ayikwazanga ukwenza isokhethi: %s"
+
+#: ../camel/camel-stub.c:149
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "Ayikwazanga ukunxulumana kwi- %s: %s"
+
+#: ../camel/camel-stub.c:179
+#, c-format
+msgid "Path too long: %s"
+msgstr "Indlela ende kakhulu: %s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "Ayikwazanga ukuqalisa ubume inkqubo enamacandelwana azimeleyo: %s"
+
+#: ../camel/camel-stub.c:457
+#, c-format
+msgid "Lost connection to %s"
+msgstr "Ulahlekene nonxulumano kwi- %s"
+
+#: ../camel/camel-stub.c:461
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "Kwenzeke impazamo xa kunxulumanwa ne- %s: %s"
+
+#: ../lib/e2k-autoconfig.c:1471 ../storage/exchange-autoconfig-wizard.c:224
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Ayikwazanga ukunxulumana neseva i-Exchange.\n"
+"Qinisekisa ukuba i-URL ichanekile (zama i \"%s\" endaweni ye \"%s\"?) ze "
+"uzame kwakhona."
+
+#: ../lib/e2k-autoconfig.c:1480 ../storage/exchange-autoconfig-wizard.c:232
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Ayikwazanga ukufumana iseva i-Exchange.\n"
+"Qinisekisa ukuba igama leseva lipelwe ngokuchanekileyo ze uzame kwakhona."
+
+#: ../lib/e2k-autoconfig.c:1490 ../storage/exchange-autoconfig-wizard.c:241
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Ayikwazanga ukunika ubungqina kwiseva i-Exchange.\n"
+"Qinisekisa ukuba igama lomsebenzisi ne-password zichanekile ze uzame "
+"kwakhona."
+
+#: ../lib/e2k-autoconfig.c:1498 ../storage/exchange-autoconfig-wizard.c:248
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Ayikwazanga ukungqinela iseva i-Exchange.\n"
+"Qinisekisa ukuba igama lomsebenzisi kunye ne-password zichanekileyo ze uzame "
+"kwakhona.\n"
+"\n"
+"Kusenokufuneka ukuba uchaze igama lommandla we-Windows njengenxalenye yegama "
+"lomsebenzisi wakho (umz.\"UMMANDLA-WAM\\%s\")."
+
+#: ../lib/e2k-autoconfig.c:1511 ../storage/exchange-autoconfig-wizard.c:260
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Ayikwazanga ukufumana i-data ye-OWA njengoko kuboniswe kwi-URL.\n"
+"Qinisekisa ukuba i-URL ichanekile ze uzame kwakhona."
+
+#: ../lib/e2k-autoconfig.c:1519
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:\n"
+"http://support.novell.com/cgi-bin/search/searchtid.cgi?/ximian/ximian328."
+"html "
+msgstr ""
+"I-Ximian Connector ifuna ufikelele kokunye okukwiSeva i-Exchange ebonakala "
+"ivaliwe okanye ithintelwe.  (Oku akudli ngakwenzeka ngabom.) Umlawuli wakho "
+"we-Exchange kuza kufuneka avule oku kusebenza ukuze ukwazi ukusebenzisa i-"
+"Ximian Connector.\n"
+"\n"
+"Ukuze ulwazi lunikezele kumlawuli we-Exchange, nceda ulandele olu nxulumano "
+"lulapha ngezantsi:\n"
+"http://support.novell.com/cgi-bin/search/searchtid.cgi?/ximian/ximian328."
+"html "
+
+#: ../lib/e2k-autoconfig.c:1535 ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"Iseva ye-Exchange URL oyinikileyo yeyeSeva ye-Exchange 5.5. I-Ximian "
+"Connector ixhasa i-Microsoft Exchange ka2000 no2003 kuphela."
+
+#: ../lib/e2k-autoconfig.c:1544 ../storage/exchange-autoconfig-wizard.c:301
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Ayikwazanga ukumisela i-akhawunti ye-Exchange kuba kwenzeke impazamo "
+"engaziwayo. Khangela i-URL, igama lomsebenzisi kunye ne-password ze uzame "
+"kwakhona."
+
+#: ../lib/e2k-autoconfig.c:1566
+#, c-format
+msgid "Enter password for %s"
+msgstr "Faka i-password ye- %s"
+
+#: ../lib/e2k-autoconfig.c:1567 ../storage/exchange-account.c:862
+msgid "Enter password"
+msgstr "Faka i-password"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+#: ../lib/e2k-security-descriptor.c:847
+msgid "Owner"
+msgstr "Umnini"
+
+#: ../lib/e2k-security-descriptor.c:857
+msgid "Publishing Editor"
+msgstr "Umhleli Woshicilelo"
+
+#: ../lib/e2k-security-descriptor.c:865
+msgid "Editor"
+msgstr "Umhleli"
+
+#: ../lib/e2k-security-descriptor.c:872
+msgid "Publishing Author"
+msgstr "Umqulunqi Woshicilelo"
+
+#: ../lib/e2k-security-descriptor.c:878
+msgid "Author"
+msgstr "Umqulunqi"
+
+#: ../lib/e2k-security-descriptor.c:883
+msgid "Non-editing Author"
+msgstr "Umqulunqi Ongahleliyo"
+
+#: ../lib/e2k-security-descriptor.c:887
+msgid "Reviewer"
+msgstr "Umhlaziyi"
+
+#: ../lib/e2k-security-descriptor.c:889
+msgid "Contributor"
+msgstr "Umxhasi"
+
+#: ../lib/e2k-security-descriptor.c:891
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Nanye"
+
+#: ../lib/e2k-security-descriptor.c:906
+#: ../storage/exchange-delegates-user.c:144
+msgid "Custom"
+msgstr "Umthengi"
+
+#: ../lib/e2k-user-dialog.c:144
+msgid "Select User"
+msgstr "Khetha Umsebenzisi"
+
+#: ../lib/e2k-user-dialog.c:182
+msgid "Addressbook..."
+msgstr "Incwadi Yedilesi..."
+
+#: ../mail/mail-stub-exchange.c:231
+msgid "No such folder"
+msgstr "Akukho siqulathi seefayili sinjalo"
+
+#: ../mail/mail-stub-exchange.c:248 ../mail/mail-stub-exchange.c:2320
+#: ../mail/mail-stub-exchange.c:2358 ../mail/mail-stub-exchange.c:2418
+#: ../shell/e-storage.c:573 ../storage/xc-commands.c:320
+msgid "Permission denied"
+msgstr "Imvume ayivunywanga"
+
+#: ../mail/mail-stub-exchange.c:546
+msgid "No such folder."
+msgstr "Akukho siqulathi seefayili sinjalo."
+
+#: ../mail/mail-stub-exchange.c:555
+msgid "Could not create folder."
+msgstr "Ayikwazanga ukwenza isiqulathi seefayili."
+
+#: ../mail/mail-stub-exchange.c:603 ../mail/mail-stub-exchange.c:621
+msgid "Could not open folder: Permission denied"
+msgstr "Ayikwazanga ukuvula isiqulathi seefayili: Imvume ayivunywanga"
+
+#: ../mail/mail-stub-exchange.c:607 ../mail/mail-stub-exchange.c:720
+msgid "Could not open folder"
+msgstr "Ayikwazanga ukuvula isiqulathi seefayili"
+
+#: ../mail/mail-stub-exchange.c:775
+msgid "Could not open Deleted Items folder"
+msgstr "Ayikwazanga ukuvula Isiqulathi Seefayili Yezinto Ezicinyiweyo"
+
+#: ../mail/mail-stub-exchange.c:1105 ../mail/mail-stub-exchange.c:1146
+msgid "Could not get new messages"
+msgstr "Ayikwazanga ukufumana imiyalezo emitsha"
+
+#: ../mail/mail-stub-exchange.c:1311
+msgid "Could not empty Deleted Items folder"
+msgstr "Ayikwazanga ukucoca isiqulathi seefayili Yezinto Ezicinyiweyo"
+
+#: ../mail/mail-stub-exchange.c:1383
+msgid "Could not append message; mailbox is over quota"
+msgstr ""
+"Ayikwazanga ukuhlomela umyalezo; ibhokisi le-imeyile lidlule umlinganiselo"
+
+#: ../mail/mail-stub-exchange.c:1384
+msgid "Could not append message"
+msgstr "Ayikwazanga ukuhlomela umyalezo"
+
+#: ../mail/mail-stub-exchange.c:1867
+msgid "No such message"
+msgstr "Akukho myalezo unjalo"
+
+#: ../mail/mail-stub-exchange.c:1920
+msgid "Message has been deleted"
+msgstr "Lo myalezo sele ucinyiwe"
+
+#: ../mail/mail-stub-exchange.c:1922
+msgid "Error retrieving message"
+msgstr "Kwenzeke impazamo xa kuvulwa umyalezo"
+
+#: ../mail/mail-stub-exchange.c:1964
+msgid "Mailbox does not support full-text searching"
+msgstr "Eli bhokisi le-imeyile alikuxhasi ukukhangela umbhalo opheleleyo"
+
+#: ../mail/mail-stub-exchange.c:2062
+msgid "Unable to move/copy messages"
+msgstr "Ayinako ukushenxa/ukukopa imiyalezo"
+
+#: ../mail/mail-stub-exchange.c:2235
+msgid "No mail submission URI for this mailbox"
+msgstr "Akukho imeyili ye-URI ingeniswe kule bhokisi ye-imeyile"
+
+#: ../mail/mail-stub-exchange.c:2271
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Le seva ayiyamkeli i-imeyili edlula kwisithuthi se-Exchange"
+
+#: ../mail/mail-stub-exchange.c:2273
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"I-akhawunti yakho ayinayo imvume yokusebenzisa <%s>\n"
+"njengedilesi Evela."
+
+#: ../mail/mail-stub-exchange.c:2285
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Ayikwazi ukuthumela umyalezo.\n"
+"Oku kungathetha ukuba i-akhawunti yakho idlule umlinganiselo."
+
+#: ../mail/mail-stub-exchange.c:2289
+msgid "Could not send message"
+msgstr "Ayikwazi ukuthumela umyalezo"
+
+#: ../mail/mail-stub-exchange.c:2312 ../mail/mail-stub-exchange.c:2363
+#: ../mail/mail-stub-exchange.c:2422 ../shell/e-storage.c:557
+#: ../storage/xc-commands.c:324
+msgid "Generic error"
+msgstr "Impazamo Eqhelekileyo"
+
+#: ../mail/mail-stub-exchange.c:2316 ../storage/xc-commands.c:314
+msgid "Folder already exists"
+msgstr "Esi siqulathi seefayili sele sikhona"
+
+#: ../mail/mail-stub-exchange.c:2343 ../mail/mail-stub-exchange.c:2385
+#: ../mail/mail-stub-exchange.c:2414
+msgid "Folder doesn't exist"
+msgstr "Asikho esi siqulathi seefayili"
+
+#: ../shell/e-folder-creation-dialog.c:138
+#, c-format
+msgid ""
+"Cannot create the specified folder:\n"
+"%s"
+msgstr ""
+"Ayikwazi ukwenza isiqulathi seefayili esichaziweyo:\n"
+"%s"
+
+#: ../shell/e-folder-creation-dialog.c:179
+#, c-format
+msgid "The specified folder name is not valid: %s"
+msgstr "Eli gama lesiqulathi seefayili ulichazileyo alikho mthethweni: %s"
+
+#: ../shell/e-folder-creation-dialog.c:310
+msgid "Create New Folder"
+msgstr "Yenza Isiqulathi Seefayili Esitsha"
+
+#: ../shell/e-folder-creation-dialog.glade.h:1
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../shell/e-folder-creation-dialog.glade.h:2
+msgid "Folder _name:"
+msgstr "_Igama lesiqulathi seefayili:"
+
+#: ../shell/e-folder-creation-dialog.glade.h:3
+msgid "Folder _type:"
+msgstr "_Uhlobo lwesiqulathi seefayili:"
+
+#: ../shell/e-folder-creation-dialog.glade.h:4
+msgid "Specify where to create the folder:"
+msgstr "Chaza ukuba senziwe phi na esi siqulathi seefayili:"
+
+#: ../shell/e-folder-dnd-bridge.c:52
+#, c-format
+msgid ""
+"Cannot transfer folder:\n"
+"%s"
+msgstr ""
+"Ayikwazi ukutshintshela isiqulathi seefayili:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:62
+#, c-format
+msgid ""
+"Cannot delete folder:\n"
+"%s"
+msgstr ""
+"Ayikwazi ukucima isiqulathi seefayili:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:115
+#, c-format
+msgid "Really delete folder \"%s\"?"
+msgstr "Uqinisekile ukuba singasicima esi siqulathi seefayili \"%s\"?"
+
+#: ../shell/e-folder-misc-dialogs.c:129
+#, c-format
+msgid "Delete \"%s\""
+msgstr "Cima \"%s\""
+
+#: ../shell/e-folder-misc-dialogs.c:154
+#, c-format
+msgid ""
+"Cannot rename folder:\n"
+"%s"
+msgstr ""
+"Ayikwazi ukuphinda inike esi siqulathi seefayili igama:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:188
+#, c-format
+msgid "Rename the \"%s\" folder to:"
+msgstr "Sinike elinye igama esi \"%s\" siqulathi sefayili elingu:"
+
+#: ../shell/e-folder-misc-dialogs.c:191
+msgid "Rename Folder"
+msgstr "Nika Isiqulathi Seefayili Elinye Igama"
+
+#: ../shell/e-folder-misc-dialogs.c:205
+#, c-format
+msgid "A folder named \"%s\" already exists. Please use a different name."
+msgstr ""
+"Esi siqulathi fayili kuthiwa \"%s\" sele sikho. Nceda usebenzise elinye "
+"igama."
+
+#. It would be nice to insensitivize the OK button appropriately
+#. instead of doing this, but unfortunately we can't do this for the
+#. Bonobo control.
+#: ../shell/e-folder-misc-dialogs.c:451
+msgid "Please select a user."
+msgstr "Nceda ukhethe umsebenzisi."
+
+#: ../shell/e-folder-misc-dialogs.c:553
+msgid "Opening Folder"
+msgstr "Ukuvula Isiqulathi Seefayili"
+
+#: ../shell/e-folder-misc-dialogs.c:559
+#, c-format
+msgid "Opening Folder \"%s\""
+msgstr "Ukuvula Isiqulathi Seefayili \"%s\""
+
+#: ../shell/e-folder-misc-dialogs.c:564
+#, c-format
+msgid "in \"%s\" ..."
+msgstr "ikwi- \"%s\" ..."
+
+#: ../shell/e-folder-misc-dialogs.c:631
+#, c-format
+msgid "Could not open other user's folder: %s."
+msgstr "Ayikwazanga ukuvula isiqulathi seefayili yomnye umsebenzisi: %s."
+
+#: ../shell/e-folder-misc-dialogs.c:681
+msgid "Cannot find the specified other user's folder."
+msgstr ""
+"Ayikwazi ukufumana isiqulathi seefayili somnye umsebenzisi osichazileyo."
+
+#: ../shell/e-folder-misc-dialogs.c:713
+#, c-format
+msgid ""
+"Cannot unsubscribe from folder:\n"
+"%s"
+msgstr ""
+"Ayikwazanga ukuzikhupha ekuzibopheleleni kwisiqulathi seefayili:\n"
+"%s"
+
+#: ../shell/e-folder-misc-dialogs.c:766
+#, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "Uqinisekile ufuna ukuzikhupha koku kuzibophelela \"%s\"?"
+
+#: ../shell/e-folder-misc-dialogs.c:780
+#, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "Phuma kwisibophelelo esivela \"%s\""
+
+#: ../shell/e-foreign-folder-dialog.glade.h:1
+msgid "Open Other User's Folder"
+msgstr "Vula Isiqulathi Seefayili Somnye Umsebenzisi"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:2
+msgid "_Account:"
+msgstr "I-_Akhawunti:"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:3
+msgid "_Folder Name:"
+msgstr "_Igama Lesiqulathi Seefayili:"
+
+#: ../shell/e-foreign-folder-dialog.glade.h:4
+msgid "_User:"
+msgstr "_Umsebenzisi:"
+
+#: ../shell/e-storage-set-view.etspec.h:1
+msgid "Checkbox"
+msgstr "Ibhokisi lokutshekisha"
+
+#: ../shell/e-storage-set-view.etspec.h:2
+msgid "Folder"
+msgstr "Isiqulathi Seefayili"
+
+#: ../shell/e-storage.c:555
+msgid "No error"
+msgstr "Akukho mpazamo"
+
+#: ../shell/e-storage.c:559
+msgid "A folder with the same name already exists"
+msgstr "Isiqulathi seefayili esinegama elifanayo neli sele sikho"
+
+#: ../shell/e-storage.c:561
+msgid "The specified folder type is not valid"
+msgstr "Uhlobo lwesiqulathi seefayili aluqinisekiswanga"
+
+#: ../shell/e-storage.c:563
+msgid "I/O error"
+msgstr "Impazamo kwi-I/O"
+
+#: ../shell/e-storage.c:565
+msgid "Not enough space to create the folder"
+msgstr "Akukho sithuba saneleyo sokwenza isiqulathi seefayili"
+
+#: ../shell/e-storage.c:567
+msgid "The folder is not empty"
+msgstr "Esi siqulathi seefayli sinento"
+
+#: ../shell/e-storage.c:569
+msgid "The specified folder was not found"
+msgstr "Isiqulathi seefayili osichazileyo asifumanekanga"
+
+#: ../shell/e-storage.c:571
+msgid "Function not implemented in this storage"
+msgstr "Lo msebenzi awenziwanga kulo vimba"
+
+#: ../shell/e-storage.c:575
+msgid "Operation not supported"
+msgstr "Awuxhaswanga lo msebenzi"
+
+#: ../shell/e-storage.c:577
+msgid "The specified type is not supported in this storage"
+msgstr "Olu hlobo luchaziweyo alixhaswanga kulo vimba"
+
+#: ../shell/e-storage.c:579
+msgid "The specified folder cannot be modified or removed"
+msgstr ""
+"Olu hlobo lwesiqulathi seefayili sichaziweyo asingelungiswa okanye sisuswe"
+
+#: ../shell/e-storage.c:581
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr ""
+"Ayikwazi ukwenza isiqulathi seefayili engumntwana womnye wezizukulwana zayo"
+
+#: ../shell/e-storage.c:583
+msgid "Cannot create a folder with that name"
+msgstr "Ayikwazi ukwenza isiqulathi seefayili ngeli gama"
+
+#: ../shell/e-storage.c:585
+msgid "This operation cannot be performed in off-line mode"
+msgstr "Lo msebenzi awungenziwa kungasetyenzwa kwi-intanethi"
+
+#: ../shell/e-storage.c:587 ../storage/exchange-account.c:1462
+msgid "Unknown error"
+msgstr "Impazamo engaziwayo"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "*Control*F5"
+msgstr "*Control*F5"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Ukuphunyezwa Kwe-data ye-Exchange Yencwadi Yedilesi ye-Evolution"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Evolution Calendar Exchange backend"
+msgstr "I-data Yenkqubo Ye-Evolution Calendar Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:4
+msgid "Evolution Exchange Component"
+msgstr "Icandelo Le-Evolution Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:5
+msgid "Exchange"
+msgstr "Inkqubo ye-Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:6
+msgid "Ximian Connector for Exchange"
+msgstr "I-Ximian Connector ye-Exchange"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:7
+msgid "_Exchange"
+msgstr "Inkqubo ye-_Exchange"
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#: ../storage/exchange-account.c:572
+#, c-format
+msgid "%s's Folders"
+msgstr "I-%s' Yeziqulathi Zeefayili"
+
+#: ../storage/exchange-account.c:857
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%sFaka i-password %s"
+
+#. email id is not proper, we return instead of trying nt_domain
+#: ../storage/exchange-account.c:1057
+msgid "Cannot change password due to configuration problems"
+msgstr "Ayikwazi ukuguqula i-password ngenxa yeengxaki zokumiselwa kwenkqubo"
+
+#: ../storage/exchange-account.c:1080
+msgid ""
+"Server rejected password because it is too weak.\n"
+"Try again with a different password."
+msgstr ""
+"Le seva ayiyamkelanga i-password kuba ibuthathaka kakhulu.\n"
+"Zama kwakhona usebenzisa enye i-password."
+
+#: ../storage/exchange-account.c:1085
+msgid "Could not change password"
+msgstr "Ayikwazanga ukuguqula i-password"
+
+#: ../storage/exchange-account.c:1178
+msgid "Personal Folders"
+msgstr "Iziqulathi Zeefayili Ezizezakho"
+
+#: ../storage/exchange-account.c:1193
+msgid "Favorite Public Folders"
+msgstr "Iziqulathi Zeefayili Ezithandwayo Zikawonkewonke"
+
+#. i18n: Outlookism
+#: ../storage/exchange-account.c:1210
+msgid "All Public Folders"
+msgstr "Zonke Iziqulathi Zeefayili Zikawonkewonke"
+
+#. i18n: Outlookism
+#: ../storage/exchange-account.c:1224
+msgid "Global Address List"
+msgstr "Uluhlu Lwedilesi Zehlabathi"
+
+#: ../storage/exchange-account.c:1315
+msgid "Exchange Account is offline. Cannot display folders\n"
+msgstr ""
+"Inkqubo yoTshintshiselwano ayikho kwi-intanethi. Ayikwazi ukubonisa "
+"iziqulathi zeefayili kwiskrini\n"
+
+#: ../storage/exchange-account.c:1373
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"Ayikwazanga ukunika ubungqina kwiseva. (I-password ayichanekanga?)\n"
+"\n"
+
+#: ../storage/exchange-account.c:1378
+msgid ""
+"Could not authenticate to server.\n"
+"\n"
+"This probably means that your server requires you\n"
+"to specify the Windows domain name as part of your\n"
+"username (eg, \"DOMAIN\\user\").\n"
+"\n"
+"Or you might have just typed your password wrong.\n"
+"\n"
+msgstr ""
+"Ayikwazanga ukunika ubungqina kwiseva.\n"
+"\n"
+"Oku kusenokuthetha ukuba iseva yakho ifuna ukuba\n"
+"uchaze igama lommandla we-Windows njengenxalenye ye-\n"
+"gama lomsebenzisi (umz. \"UMMANDLA\\umsebenzisi\").\n"
+"\n"
+"Okanye kusenokwenzeka ukuba uyichwetheze ngokungachanekanga i-password "
+"yakho.\n"
+"\n"
+
+#: ../storage/exchange-account.c:1420
+#, c-format
+msgid "Mailbox for %s is not on this server."
+msgstr "Ibhokisi le-imeyile ye-%s ayikho kule seva."
+
+#: ../storage/exchange-account.c:1425
+#, c-format
+msgid ""
+"The server '%s' is running Exchange 5.5 and is\n"
+"therefore not compatible with Ximian Connector"
+msgstr ""
+"Le seva '%s' iphumeza inkqubo ye-Exchange 5.5 yaye iyi-\n"
+"ngako oko ayihambelani ne-Ximian Connector"
+
+#: ../storage/exchange-account.c:1432
+#, c-format
+msgid ""
+"Could not find Exchange Web Storage System at %s.\n"
+"If OWA is running on a different path, you must specify that in the\n"
+"account configuration dialog."
+msgstr ""
+"Ayikwazanga ukufumana Isixokelelwano Sovimba we-Exchange ye-Web "
+"yoTshintshiselwano e-%s.\n"
+"Ukuba i-OWA iphumeza inkqubo kwindlela eyahlukileyo, kufuneka uchaze ukuba "
+"kwi-\n"
+"akhawunti yonxibelelwano lokumiselwa kwenkqubo."
+
+#: ../storage/exchange-account.c:1440
+#, c-format
+msgid "No mailbox for user %s on %s.\n"
+msgstr "Akukho bhokisi le-imeyile yalo msebenzisi %s kwi %s.\n"
+
+#: ../storage/exchange-account.c:1446 ../storage/exchange-account.c:1452
+#: ../storage/exchange-account.c:1460
+#, c-format
+msgid "Could not connect to server %s: %s"
+msgstr "Ayikwazanga ukunxulumana neseva %s: %s"
+
+#: ../storage/exchange-account.c:1448
+msgid "Could not resolve hostname"
+msgstr "Ayikwazanga ukusombulula igama lomququzeleli"
+
+#: ../storage/exchange-account.c:1454
+msgid "Network error"
+msgstr "Impazamo kuthungelwano"
+
+#: ../storage/exchange-autoconfig-wizard.c:267
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"I-Ximian Connector ifuna ukufikelela kwimisebenzi ethile yeSeva i-Exchange "
+"nebonakala njengevaliweyo okanye ethintelweyo.  (Oku kudla ngokwenzeka "
+"ngempazamo.) Umlawuli Wakho we-Exchange uza kufuna ukuvula lo msebenzi ukuze "
+"ukwazi ukusebenzisa i-Ximian Connector.\n"
+"\n"
+"Ukufumana ulwazi ongalunika umlawuli we-Exchange, nceda ulandele eli jelo "
+"lilapha ngezantsi:"
+
+#: ../storage/exchange-autoconfig-wizard.c:345
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Ayikwazanga ukunika ubungqina kwiseva yeKhathalokhu Zonke. Kusengafuneka "
+"ukuba ubuyele emva uyokuchaza igama lommandla we-Windows njengenxalenye "
+"yegama lomsebenzisi wakho (umz.\"UMMANDLA-WAM\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:352
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Ayikwazanga ukunxulumana neseva echaziweyo.\n"
+"Nceda ukhangele igama leseva ukuze uzame kwakhona."
+
+#: ../storage/exchange-autoconfig-wizard.c:389
+#: ../storage/exchange-autoconfig-wizard.c:393
+msgid "Unknown"
+msgstr "Ayaziwa"
+
+#: ../storage/exchange-autoconfig-wizard.c:477
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Kwenzeke impazamo ngelixa kumiselwa inkqubo kwisixokelelwano.\n"
+"Ayinako ukwenza i-akhawunti entsha."
+
+#: ../storage/exchange-autoconfig-wizard.c:491
+#: ../storage/exchange-config-listener.c:604
+msgid "You may only configure a single Exchange account"
+msgstr "Ungamisela i-akhawunti enye ye-Exchange kuphela"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Ukumiselwa Kwenkqubo akuphumelelanga"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Yenziwe"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "Idilesi Ye-imeyile:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "Ukumiselwa kwenkqubo ye-Exchange"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "Igama Ngokuzeleyo:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "Iseva i-GC:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "Yenza le ibe yi-akhawunti yam emiselweyo"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "I-Password:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "Khumbula le password"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "Igama lomsebenzisi:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Wamkelekile"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Wamkelekile kwi- Ximian Connector ye-Microsoft Exchange.\n"
+"Izikrini ezimbalwa ezilandelayo ziza kunceda ukuba umisele i-Evolution\n"
+"ukunxulumana ne-akhawunti yakho ye-Exchange.\n"
+"\n"
+"Nceda ucofe iqhosa u\"Dlulisa\" ukuqhubeka."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Ukumisela inkqubo ye-Ximian Connector"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"I-Ximian Connector ingasebenzisa ulwazi lwe-akhawunti evela kwi-akhawunti ye-"
+"Outlook Web Access (OWA) yakho esele ikhoyo ngoku.\n"
+"\n"
+"Faka idilesi yesayithi ye-OWA yakho (i-URL), igama lomsebenzisi kunye ne-"
+"password, ze ucofe u \"Dlulisa\".\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"I-Ximian Connector ayikwazanga ukufumana uphindaphindo lwe-Global Catalog "
+"yesayithi yakho. Nceda ufake igama leseva ye-Global Catalog. Kusengafuneka "
+"ubuze umlawuli wakho wesixokelelwano ukufumana ixabiso elichanekileyo.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+"I-Ximian Connector ifumene ingxaki ngelixa kumiselwa i-akhawunti yakho ye-"
+"Exchange.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"I-akhawunti yakho ye-Connector sele ikulungele ukusetyenziswa. Cofa iqhosha i"
+"\"Yisebenzise\" ukugcina imimiselo\n"
+"yakho."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"Ulwazi lwe-akhawunti yakho lunjengolu lulandelayo. Nceda ulungise impazamo, "
+"ukuze ucofe u \"Dlulisa\".\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Le-password ayihambelani ne-password esele ikho kwi-akhawunti yakho. Nceda "
+"ufake i-password echanekileyo"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Ezi-password zimbini azihambelani. Nceda uphinde ufake ii-passwords."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Guqula i-Password"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Qinisekisa i-Password:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "I-Password Yangoku:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "I-Password Entsha:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"Le-password iphelelwe lixesha. Nceda uyiguqule ngoku le-password yakho."
+
+#: ../storage/exchange-component.c:322
+msgid "Mail"
+msgstr "I-imeyile"
+
+#: ../storage/exchange-component.c:325
+#: ../storage/exchange-hierarchy-foreign.c:251
+msgid "Contacts"
+msgstr "Oqhagamshelana nabo"
+
+#: ../storage/exchange-component.c:329
+#: ../storage/exchange-hierarchy-foreign.c:259
+msgid "Tasks"
+msgstr "Imisebenzi"
+
+#: ../storage/exchange-component.c:332
+#: ../storage/exchange-hierarchy-foreign.c:250
+msgid "Calendar"
+msgstr "Ikhalenda"
+
+#: ../storage/exchange-config-listener.c:781
+msgid ""
+"Changes to Exchange account configuration will take\n"
+"place after you quit and restart Evolution."
+msgstr ""
+"Iinguqu ekumiselweni kwenkqubo kwi-akhawunti ye-Exchange ziza \n"
+"kwenziwa emva kokuba uphumile waza waphinda wangena kwi-Evolution."
+
+#: ../storage/exchange-config-listener.c:827
+msgid "The Exchange account will be removed when you quit Evolution"
+msgstr "I-akhawunti ye-Exchange iza kususwa xa uphuma kwi-Evolution"
+
+#: ../storage/exchange-delegates-user.c:191
+#: ../storage/exchange-permissions-dialog.c:179
+#, c-format
+msgid "Permissions for %s"
+msgstr "Iimvume ka- %s"
+
+#: ../storage/exchange-delegates.c:221
+msgid ""
+"No Global Catalog server configured for this account.\n"
+"Unable to edit delegates."
+msgstr ""
+"Akukho seva yeKhathalokhu Yonke emiselweyo kule akhawunti.\n"
+"Ayinako ukuhlela abathunywa."
+
+#: ../storage/exchange-delegates.c:260
+msgid ""
+"Could not read folder permissions.\n"
+"Unable to edit delegates."
+msgstr ""
+"Ayikwazanga ukufunda iimvume zesiqulathi seefayili.\n"
+"Ayinako ukuhlela abathunywa."
+
+#: ../storage/exchange-delegates.c:267
+msgid ""
+"Could not determine folder permissions for delegates.\n"
+"Unable to edit delegates."
+msgstr ""
+"Ayikwazanga ukumisa iimvume zesiqulathi seefayili yabathunywa.\n"
+"Ayinako ukuhlela abathunywa."
+
+#: ../storage/exchange-delegates.c:419
+msgid "Delegate To:"
+msgstr "Thumela Ku:"
+
+#: ../storage/exchange-delegates.c:419
+msgid "Delegate To"
+msgstr "Thumela Ku"
+
+#: ../storage/exchange-delegates.c:435
+#, c-format
+msgid "Could not make %s a delegate"
+msgstr "Ayikwazanga ukwenza %s umthunywa"
+
+#: ../storage/exchange-delegates.c:445
+msgid "You cannot make yourself your own delegate"
+msgstr "Awukwazi ukuzenza ngokwakho ukuba ube ngumthunywa wakho"
+
+#: ../storage/exchange-delegates.c:454
+#, c-format
+msgid "%s is already a delegate"
+msgstr "I-%s sele sinayo njengomthunywa"
+
+#: ../storage/exchange-delegates.c:563
+#, c-format
+msgid "Remove the delegate %s?"
+msgstr "Sisuse umthunywa %s?"
+
+#: ../storage/exchange-delegates.c:680
+msgid "Could not access Active Directory"
+msgstr "Ayikwazanga ukufikelela Kwi-Active Directory"
+
+#: ../storage/exchange-delegates.c:695
+msgid "Could not find self in Active Directory"
+msgstr "Ayikwazanga ukuzifumanela kwi-Active Directory"
+
+#: ../storage/exchange-delegates.c:708
+#, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr "Ayikwazanga ukufumana lo mthunywa %s kwi-Active Directory"
+
+#: ../storage/exchange-delegates.c:720
+#, c-format
+msgid "Could not remove delegate %s"
+msgstr "Ayikwazanga ukususa umthunywa %s"
+
+#: ../storage/exchange-delegates.c:780
+msgid "Could not update list of delegates."
+msgstr "Ayikwazi ukuhlaziya uluhlu lwabathunywa."
+
+#: ../storage/exchange-delegates.c:798
+#, c-format
+msgid "Could not add delegate %s"
+msgstr "Ayikwazanga ukongeza umthunywa %s"
+
+#: ../storage/exchange-delegates.c:814
+#, c-format
+msgid ""
+"Failed to update delegates:\n"
+"%s"
+msgstr ""
+"Ayiphumelelanga ukuhlaziya abathunywa:\n"
+"%s"
+
+#: ../storage/exchange-delegates.c:938
+#: ../storage/exchange-permissions-dialog.c:706
+msgid "Name"
+msgstr "Igama"
+
+#: ../storage/exchange-delegates.c:967
+msgid "Error reading delegates list."
+msgstr "Kwenzeke impazamo ngelixa kufundwa uluhlu lwabathunywa."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Umqulunqi (funda, yenza)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "Ik_halenda:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "Oqha_gamshelana nabo:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Iimvume Zomthunywa"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Abathunywa"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "Umhleli (funda, yenza, hlela)"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "Iimvume ze"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "Umhloli (funda kuphela)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"Aba basebenzisi baza kuba nako ukuthumela i-imeyile egameni lakho\n"
+"nokufikelela kwiziqulathi zeefayili ngeemvume obanika zona."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_Umthunywa angazibona izinto zabucala"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_Hlela"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_Ezingenayo:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_Imisebenzi:"
+
+#: ../storage/exchange-folder-size.c:322
+msgid "Folder Name"
+msgstr "Igama Lesiqulathi Seefayili"
+
+#: ../storage/exchange-folder-size.c:326
+msgid "Folder Size"
+msgstr "Ubungakanani Besiqulathi Seefayili"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Umthi Wesiqulathi Seefayili Se-Exchange"
+
+#: ../storage/exchange-hierarchy-foreign.c:252
+msgid "Deleted Items"
+msgstr "Izinto Ezicinyiweyo"
+
+#: ../storage/exchange-hierarchy-foreign.c:253
+msgid "Drafts"
+msgstr "Iidrafti"
+
+#: ../storage/exchange-hierarchy-foreign.c:254
+msgid "Inbox"
+msgstr "Ezingenayo"
+
+#: ../storage/exchange-hierarchy-foreign.c:255
+msgid "Journal"
+msgstr "Ijenali"
+
+#: ../storage/exchange-hierarchy-foreign.c:256
+msgid "Notes"
+msgstr "Amanqaku"
+
+#: ../storage/exchange-hierarchy-foreign.c:257
+msgid "Outbox"
+msgstr "Eziphumayo"
+
+#: ../storage/exchange-hierarchy-foreign.c:258
+msgid "Sent Items"
+msgstr "Izinto ezithunyelweyo"
+
+#: ../storage/exchange-migrate.c:57
+msgid "Migrating Exchange Folders..."
+msgstr "Ukufudusa Iziqulathi Zeefayili Ze-Exchange..."
+
+#: ../storage/exchange-migrate.c:65
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Indawo kunye nenqanam leziqulathi zeefayili ze-akhawunti ye-Evolution "
+"exchange ziququlwe emva kwe-Evolution %d.%d.%d.\n"
+"\n"
+"Nceda ube nomonde ngelixa i-Evolution ifudusa iziqulathi zeefayili zakho..."
+
+#: ../storage/exchange-migrate.c:98
+#, c-format
+msgid ""
+"Warning: Evolution Could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Isilumkiso: I-Evolution Ayikwazanga ukufudusa zonke ii-data ze-akhawunti ye-"
+"Exchange ukusuka kuhlobo %d.%d.%d. \n"
+"Le data ayicinywanga kodwa ayinakubonwa lolu hlobo lwe-Evolution"
+
+#: ../storage/exchange-migrate.c:129
+#, c-format
+msgid "Migrating `%s':"
+msgstr "Ukufuduka `%s':"
+
+#: ../storage/exchange-oof.c:199 ../storage/exchange-oof.c:406
+msgid "Could not update out-of-office state"
+msgstr "Ayikwazanga ukuhlaziya isimo sokungabikho e-ofisini"
+
+#: ../storage/exchange-oof.c:424
+msgid "Could not read out-of-office state"
+msgstr "Ayikwazanga ukufuna isimo sokungabikho e-ofisini"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>Ngokwangoku, ubume bakho okuthi \"Awukho e-Ofisini\". </b>\n"
+"\n"
+"Ungathanda ukubuguqula kusini na obu bume ubenze u-\"Ukhona e-Ofisini\"? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>Umyalezo wokungabikho e-Ofisini:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Ubume:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small> Lo myalezo uchazwe apha ngezantsi uza kuthunyelwa ngokuzenzela kuye "
+"ngamnye umntu okuthumelela\n"
+"i-imeyili ngelixa ungekho e-ofisini.<small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "Ndilapha e-ofisini okwangoku"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "Andikho e-ofisini okwangoku"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "Hayi, Musa Ukubuguqula Obu Bume"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "Isincedisi Ngelixa Ungekho E-ofisini"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Ewe, Buguqule Obu Bume"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "Isilumkiso Sokuphelelwa Kwe-password..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "I-password yakho iza kuphelelwa kwiintsuku ezi-7 ezizayo..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Guqula I-Password"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_button"
+
+#: ../storage/exchange-permissions-dialog.c:222
+msgid "Could not read folder permissions"
+msgstr "Ayikwazanga ukufunda iimvume zesiqulathi seefayili"
+
+#: ../storage/exchange-permissions-dialog.c:264
+msgid "Could not update folder permissions."
+msgstr "Ayikwazanga ukuhlaziya iimvume zesiqulathi seefayili."
+
+#: ../storage/exchange-permissions-dialog.c:293
+#, c-format
+msgid "Could not update folder permissions. %s"
+msgstr "Ayikwazanga ukuhlaziya iimvume zesiqulathi seefayili. %s"
+
+#: ../storage/exchange-permissions-dialog.c:295
+msgid "(Permission denied.)"
+msgstr "(Imvume ayivunywangwa.)"
+
+#: ../storage/exchange-permissions-dialog.c:396
+msgid ""
+"Unable to add user to access control list:\n"
+"No Global Catalog server is configured for this account."
+msgstr ""
+"Ayinako ukongeza umsebenzisi ukuba afikelele kuluhlu lokulawula:\n"
+"Akukho seva ye-Global Catalog emiselweyo kule akhawunti."
+
+#: ../storage/exchange-permissions-dialog.c:402
+msgid "Add User:"
+msgstr "Yongeza Umsebenzisi:"
+
+#: ../storage/exchange-permissions-dialog.c:402
+msgid "Add User"
+msgstr "Yongeza Umsebenzisi"
+
+#: ../storage/exchange-permissions-dialog.c:421
+#, c-format
+msgid "No such user %s"
+msgstr "Akukho msebenzisi unjalo %s"
+
+#: ../storage/exchange-permissions-dialog.c:425
+#, c-format
+msgid "%s cannot be added to an access control list"
+msgstr "I-%s ayikwazi ukongezwa kuluhlu olulawula ukufikelela"
+
+#: ../storage/exchange-permissions-dialog.c:430
+#, c-format
+msgid "Unknown error looking up %s"
+msgstr "Kwenzeke impazamo engaziwayo xa kukhangelwa i %s"
+
+#: ../storage/exchange-permissions-dialog.c:447
+#, c-format
+msgid "%s is already in the list"
+msgstr "I-%s sele ikho kuluhlu"
+
+#: ../storage/exchange-permissions-dialog.c:710
+msgid "Role"
+msgstr "Umsebenzi"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>Iimvume</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Ayikwazi Ukucima"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Ayikwazi Ukuhlela"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Yenza izinto"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Yenza Iziqulathi zeefayili ezingaphakathi kwezinye"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "Cima Naziphi na Izinto"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Cima Ezakho Izinto"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "Hlela Naziphi na Izinto"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Hlela Izinto Zakho"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "Uqhagamshelwano lwesiqulathi seefayili"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Umnini wesiqulathi seefayili"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "Isiqulathi seefayili esibonakalayo"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "Ukufunda izinto"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "Umsebenzi: "
+
+#: ../storage/exchange-storage.c:337
+msgid "Connecting..."
+msgstr "Isanxulumana..."
+
+#: ../storage/main.c:166
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "I-Ximian Connector ye-Microsoft Exchange"
+
+#: ../storage/xc-backend-view.c:299
+msgid "Account Name"
+msgstr "Igama le-Akhawunti"
+
+#: ../storage/xc-commands.c:317
+msgid "Folder does not exist"
+msgstr "Asikho esi siqulathi seefayili"
+
+#: ../storage/xc-commands.c:344
+#, c-format
+msgid "Could not add favorite: %s"
+msgstr "Ayikwazanga ukongeza okuthandayo: %s"
+
+#: ../storage/xc-commands.c:360
+#, c-format
+msgid "Could not remove favorite: %s"
+msgstr "Ayikwazi ukususa okuthandayo: %s"
+
+#.
+#. FIXME: See 62440
+#. E_POPUP_ITEM (N_("_Move Folder..."),
+#. G_CALLBACK (do_move_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#. E_POPUP_ITEM (N_("_Copy Folder..."),
+#. G_CALLBACK (do_copy_folder),
+#. XC_FOLDER_COMMAND_MASK_MOVECOPY),
+#.
+#: ../storage/xc-commands.c:386
+msgid "_Rename Folder..."
+msgstr "_Nika Isiqulathi Seefayili Igama Kwakhona..."
+
+#: ../storage/xc-commands.c:392
+msgid "_New Folder..."
+msgstr "Isiqulathi Seefayili _Esitsha..."
+
+#: ../storage/xc-commands.c:395
+msgid "_Delete Folder"
+msgstr "_Cima Isiqulathi Seefayili"
+
+#: ../storage/xc-commands.c:400
+msgid "_Add Other User's Folder..."
+msgstr "_Yongeza Isiqulathi Seefayili Sabanye Abasebenzisi..."
+
+#: ../storage/xc-commands.c:403
+msgid "_Remove Other User's Folder"
+msgstr "_Susa Isiqulathi Seefayili Sabanye Abasebenzisi"
+
+#: ../storage/xc-commands.c:409
+msgid "Add to _Favorites"
+msgstr "Yongeza ko_Zithandayo"
+
+#: ../storage/xc-commands.c:413
+msgid "Remove from Fa_vorites"
+msgstr "Susa Kozi_thandayo"
+
+#: ../storage/xc-commands.c:420
+msgid "_Permissions..."
+msgstr "_Iimvume..."
+
+#: ../storage/xc-commands.c:424
+msgid "_Show Folder Sizes"
+msgstr "_Bonisa Ubungakanani Besiqulathi Seefayili"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "I-Ximian Connector yesiXhobo Sokumisela I-Microsoft Exchange"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Guqula i-password kwiseva yakho ye-Exchange"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Ubungakanani _Besiqulathi Seefayili"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Fumana ubungakanani beziqulathi zeefayili ezizezakho"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "Zibophelele kwi _Isiqulathi Seefayili Somnye Umsebenzisi..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Zibophelele kwisiqulathi seefayili somnye umsebenzisi okwiseva"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"Zikhuphe ekuzibopheleleni kwisiqulathi seefayili ongene kuso nge-"
+"\"Zibophelele Kwisiqulathi Seefayili Somnye Umsebenzisi\""
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr ""
+"Khangela okanye guqula imimiselo yomthunywa kwikhalenda yakho ye-Exchange"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+"Khangela okanye guqula isimo sokungabikho kwakho e-ofisini kunye nomyalezo "
+"ophendulwa ngokuzenzekela"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Guqula I-password Ye-Exchange..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_Isincedisi Sabathunywa"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "_Isincedisi Sokungabikho E-ofisini"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_Zikhuphe ekuzibopheleleni Kwisiqulathi Seefayili Zomnye Umsebenzisi"
+
+#~ msgid "No folder name found\n"
+#~ msgstr "Akukho gama lasiqulathi seefayili elifumanekileyo\n"

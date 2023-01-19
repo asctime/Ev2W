@@ -1,0 +1,232 @@
+CamelStub/MailStub
+------------------
+The bulk of the mail code is in evolution-exchange-storage, for
+reasons that don't make as much sense in 2.0 as they did in earlier
+versions. This should probably be cleaned up eventually. But for now,
+all CamelExchangeProvider does (mostly) is marshal data back and forth
+between camel and evolution-exchange-storage. The API between them
+and the division of labor is designed around the Camel and Exchange
+APIs, plus the constraint that evolution-exchange-storage used to not
+link against Camel (and so couldn't parse rfc822 messages, etc).
+(Connector does link against Camel now, but none of the APIs were ever
+updated to reflect that.)
+
+
+Stub protocol
+-------------
+When evolution-exchange-storage notices a configured exchange account,
+it creates a MailStubListener object, which creates a socket at
+/tmp/.exchange-[local-username]/[exchange-username]@[exchange-hostname].
+CamelExchangeStore and CamelStub then look for that socket and connect
+to it.
+
+Camel actually connects to the socket twice; once to create a "command
+channel" (used for Camel->backend requests, and their responses) and
+then a second time to create a "status channel" (used for async
+notifications from the backend to Camel). The Camel provider spawns a
+separate thread to listen to the status channel. This means that
+unlike IMAP, new messages can arrive without evolution-mail needing to
+call into the provider's code. (It also means that evo-mail backtraces
+from Connector users will basically always have one thread blocking on
+read().)
+
+Marshalling/demarshalling of individual units of data is handled by
+CamelStubMarshal (which is linked into both libcamelexchange and
+evolution-exchange-storage). It originally used camel-file-utils, but
+had to be modified because Solaris does not allow bidirectional stdio
+on sockets.
+
+Messages are sent from Camel to the backend using camel_stub_send or
+(if no return status is desired) camel_stub_send_oneway. The latter is
+used for Camel functions that get called from the main loop and
+therefore can't block (set_message_flags, set_message_user_tag). There
+are two mutexes used to synchronize the command channel; one to lock
+it for reading and one to lock it for writing. camel_stub_send locks
+both, but unlocks the write lock after it finishes sending the
+command. camel_stub_send_oneway only locks the writing lock, so it
+will never have to block waiting for a response to come back from the
+backend.
+
+The backend receives messages in mail-stub.c:connection_handler() and
+invokes class methods defined in mail-stub-exchange.c to handle them.
+If there is a return value, MailStubExchange calls
+mail_stub_return_data(stub, CAMEL_STUB_RETVAL_RESPONSE, ...), followed
+by mail_stub_return_ok(). If something goes wrong, it calls
+mail_stub_return_error(). (The reason it does this rather than just
+returning a value is that the protocol used to be asynchronous.)
+MailStub or MailStubExchange MUST call mail_stub_return_ok() or
+mail_stub_return_error() in response to every request, or the
+connection will hang or get out of sync. (The whole protocol is
+unfortunately fragile like that.) For non-oneway requests,
+connection_handler() automatically adds a ref to the MailStub, and
+mail_stub_return_ok/return_error unref it. (That means you shouldn't
+assume the stub is still valid after returning ok or an error.)
+
+When the MailStub wants to return status data, it calls
+mail_stub_return_data with a retval of something other than RESPONSE.
+In that case, the returned data is sent via the status channel instead
+of the command channel. (The reason it's done that way instead of
+having a separate call is historical: there used to only be a single
+channel.) This is used for anything that *could* happen asynchronously
+(new or removed messages or folders), whether or not it actually
+*does* happen asynchronously. (That is, if you do a REFRESH_FOLDER,
+info about new messages will arrive on the status channel, not the
+command channel, but the final OK won't be returned on the command
+channel until all of the new messages have been returned.)
+
+CamelStubMarshal buffers its data. On the Camel side, camel_stub_send
+handles flushing the command channel after every command. In the
+backend, mail_stub_return_ok and mail_stub_return_error flush both
+channels, and you can call mail_stub_push_changes to flush just the
+status channel.
+
+camel-stub-constants.h contains the values used in the stub
+communications, although some values aren't used any more.
+
+
+Message UIDs
+------------
+Exchange doesn't have a concept of UID that maps exactly the IMAP
+concept. IMAP UIDs are:
+  unique - every message in a folder has a distinct UID which has
+    never been used before
+  constant - the UID associated with a message never changes
+  selectable - you can select messages or message ranges by UID
+  ordered - the UIDs sort in the order the messages were delivered
+
+And here's how some of the available Exchange properties compare:
+
+                             unique   constant   selectable   ordered
+  DAV:href                               X           X
+  DAV:creationdate                       X           X           X
+  PR_INTERNET_ARTICLE_NUMBER   X                     X
+  repl/repl-uid                X         X
+
+DAV:creationdate is used as the "ORDER BY" field when scanning
+messages, to make sure we're seeing them in the order they were
+delivered.
+
+PR_INTERNET_ARTICLE_NUMBER is actually the IMAP UID of the message (if
+you connect to the Exchange server via IMAP), and is what Connector
+1.0.x used for Camel UIDs. Unfortunately, while it remains constant if
+you only use IMAP, it will change if the message headers or body
+change (eg, if you change the flag-for-followup info). Connector
+actually uses this to its advantage; it remembers the highest article
+number it has seen, and when scanning for new messages, asks for
+messages whose article number is greater than that. This gets both new
+messages *and* old messages whose followup flags have changed. (It
+does not catch read/unread flag changes though, which don't seem to
+change any timestamp.)
+
+The tail end of repl/repl-uid is used as the Camel UID, but they do
+not always sort in a consistent order like IMAP UIDs; as long as the
+mailbox stays in the same Exchange storage group, they will be
+ordered, but if it gets moved, there will be multiple discontinous
+groups of UIDs.
+
+
+Mail folder synchronization
+---------------------------
+The GET_FOLDER command takes the folder name, an array of uids, and an
+array of flag values (from the on-disk summary). The backend uses
+those two arrays to initialize its messages array, and then does a
+query for uids, hrefs, and flags of all messages. It fills in the
+hrefs in its messages array, finds the high PR_INTERNET_ARTICLE_NUMBER
+value, and compares the returned data with the data provided by Camel,
+and sends back CHANGED_FLAGS, CHANGED_TAGS, and REMOVED_MESSAGE status
+messages to get Camel in sync with it. (New messages are ignored at
+this point.)
+
+camel_exchange_folder_new then calls REFRESH_FOLDER on the folder. (It
+has to do this; if it doesn't, new messages won't be noticed right
+away.) REFRESH_FOLDER queries for messages with article numbers higher
+than the high_article_num, and returns them to Camel. So
+theoretically, when it returns, Camel has a consistent view of the
+folder.
+
+Later REFRESH_FOLDER calls (when you come back to the folder after
+visiting another folder for instance) do the scan for new/changed
+messages, but also run the "sync_deletions" code, to try and notice
+messages that have been deleted. sync_deletions takes advantage of the
+PR_DELETED_COUNT_TOTAL property, which counts the total number of
+messages that have been deleted from the folder ever; if the server's
+value for PR_DELETED_COUNT_TOTAL is larger than what we think it
+should be, then that means that messages have been deleted from
+another client. In that case, we query for uids and flags of messages,
+starting from the end of the message list, and remove any messages
+from our list that aren't in the server's list, until either our
+deleted_count matches the server's or we've looked at all the
+messages, at which point we stop. The goal is to NOT scan the entire
+message list, since that would be a lot of traffic. So it assumes that
+you are more likely to have deleted new messages than old ones. While
+scanning for deletions, if it notices any read/unread flag changes it
+also updates those.
+
+When connector receives an OBJECT_ADDED notification, it scans for new
+messages. Connector doesn't listen for OBJECT_CHANGED notifications on
+mail folders, because Exchange emits the notifications when
+read/unread flags change, but does not actually change the modified
+time on the message, making the notification essentially useless.
+
+When it receives an OBJECT_REMOVED or OBJECT_MOVED notification, it
+*may* try to synchronize the deleted message count. It assumes that if
+it gets such a notification within 5 seconds of the user having done
+something that the notification must be a side effect of that, and so
+it ignores it. Otherwise, it sets a timeout, which gets reset every
+time it gets another notification, and when the timeout eventually
+expires (or the user does something in Connector), it runs
+sync_deletions. The goal is to not run sync_deletions every time the
+user deletes a message from another client if Connector is idle. (Eg,
+the user is running OWA from another machine).
+
+
+Kinds of items in mail folders
+------------------------------
+1. Normal message/rfc822 messages (delivered by SMTP, or appended with PUT)
+
+   These make us happy. The PR_TRANSPORT_MESSAGE_HEADERS property
+   contains the complete MIME structure of the message with none of
+   the actual content. (Eg, all of the RFC822 and MIME headers, plus
+   multipart boundary delimeters.) We use that as a way to get the
+   RFC822 headers to pass back to Camel (which happens in
+   mail_util_extract_transport_headers) We could use it to construct
+   CamelMessageContentInfos as well, but I haven't figured out how to
+   reliably generate the URLs for individual attachments yet, so we
+   have no way to fetch partial messages yet, so there's no reason to
+   do this.
+
+2. MAPI mail messages (eg, sent by other local users using Outlook)
+
+   These are less happy. They don't have PR_TRANSPORT_MESSAGE_HEADERS.
+   If we GET the message, Exchange will fake up the headers, but we
+   don't want to do that just to generate the summary since the
+   message may be large. So we fetch a bunch of individual properties
+   and fake up the headers ourselves.
+
+   2a. Delegated meeting requests
+
+       When you set up your delegates to get copies of your meeting
+       requests, Exchange mangles the message/rfc822 body in various
+       ways. mail_util_demangle_delegated_meeting() fixes it for us.
+
+   2b. Sticky notes
+
+       Technically, these aren't in mail folders, but they're handled
+       by the mail code. This is a silly hack because I was bored one
+       day. If the folder is a stickynotes folders instead of a mail
+       folder, mail_util_stickynote_to_rfc822 gets called to make an
+       HTML message simulating the stickynote.
+
+3. Documents (eg, files dragged into public folders)
+
+   These have basically no email properties at all, and when you GET
+   the bodies, they're application/x-msword or whatever instead of
+   message/rfc822. Sometimes they have a PR_INTERNET_FREE_DOC_INFO
+   property that contains a Content-Type header, but not always. So we
+   get the DAV:getcontenttype and make Content-* headers ourselves.
+
+4. Non-mail objects
+
+   These include subdirectories, server-side filter rules, and custom
+   outlook folder views. We filter these out of our view with
+   WHERE "DAV:iscollection" = False AND "DAV:ishidden" = False

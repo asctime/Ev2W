@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-mail-threading">
+<refmeta>
+<refentrytitle>Message Threading in Public Folders</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+<application>Outlook</application> lets you view
+<application>Exchange</application> Public Folders in a "Conversation"
+mode similar to <application>Evolution</application>'s "Threaded"
+mode. However, it doesn't do it via <literal>In-Reply-To</literal> or
+<literal>References</literal> headers. <link
+linkend="CamelExchangeFolder">CamelExchangeFolder</link> translates
+<application>Exchange</application>'s system so that the messages
+thread properly in <application>Evolution</application>
+</para>
+
+<para>
+A new post to a folder gets a 27-byte-long "thread index". (The value
+is apparently unique but has no meaning we know of.) Each reply to a
+new post gets a thread index that starts with the original post's
+thread index, followed by 5 additional bytes. (Thus, the reply to a
+new post would have a 32-byte-long thread index, and a reply to that
+post would have a 37-byte-long thread index, etc.)
+</para>
+
+<para>
+The <literal>Thread-Index</literal> header contains a base64
+representation of this value. <link
+linkend="CamelExchangeFolder">CamelExchangeFolder</link> keeps a hash
+table mapping from <literal>Thread-Index</literal> values to
+<literal>Message-ID</literal>s. When it finds a message with a
+<literal>Thread-Index</literal> but no <literal>In-Reply-To</literal>
+or <literal>References</literal>, it looks up the parent thread index
+(ie, all but the last 5 bytes) in the hash, and (assuming it finds
+it), fakes a <literal>References</literal> header pointing to it.
+</para>
+
+</refentry>

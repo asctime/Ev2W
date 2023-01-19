@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NTLM Authentication Overview</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch01.html" title="Exchange Architectural Notes">
+<link rel="prev" href="ximian-connector-mail.html" title="Mail Architecture">
+<link rel="next" href="ch02.html" title="Implementation of Connector Features">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="ximian-connector-mail.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry" title="NTLM Authentication Overview">
+<a name="ximian-connector-ntlm"></a><div class="titlepage"></div>
+<div class="refsect1" title="Basic NTLM Protocol">
+<a name="id2939603"></a><h2>Basic NTLM Protocol</h2>
+<p>
+NTLM auth takes three steps:
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">Client → Server:</span></p></td>
+<td><p>Negotiate message</p></td>
+</tr>
+<tr>
+<td><p><span class="term">Server → Client:</span></p></td>
+<td><p>Challenge message</p></td>
+</tr>
+<tr>
+<td><p><span class="term">Client → Server:</span></p></td>
+<td><p>Authenticate message</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+The message header is the same in each step. The packet starts with
+<code class="literal">"NTLMSSP\0"</code>, followed by the 4-byte message type
+(of which only the first byte is significant: 1 for Negotiate, 2 for
+Challenge, 3 for Authenticate).
+</p>
+<p>
+The structure definitions below assume x86 conventions: all fields are
+little-endian. Also, the "<em class="structfield"><code>max_len</code></em>" fields
+<span class="emphasis"><em>always</em></span> contain the same values as their
+corresponding "<em class="structfield"><code>len</code></em>" fields. The distinction
+is presumably historical.
+</p>
+<div class="refsect2" title="The Negotiate message">
+<a name="id2957866"></a><h3>The Negotiate message</h3>
+<p>
+In <span class="application">Samba</span>, this looks like this:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    protocol</span><span class="symbol">[</span><span class="number">8</span><span class="symbol">];</span><span class="normal">     </span><span class="comment">// 'N', 'T', 'L', 'M', 'S', 'S', 'P', '\0'</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> type</span><span class="symbol">;</span><span class="normal">            </span><span class="comment">// 0x00000001</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> flags</span><span class="symbol">;</span><span class="normal">           </span><span class="comment">// 0x0000b203</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> dom_len</span><span class="symbol">;</span><span class="normal">         </span><span class="comment">// NT domain name length</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> dom_max_len</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// NT domain name max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> dom_off</span><span class="symbol">;</span><span class="normal">         </span><span class="comment">// NT domain name offset</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> host_len</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// local workstation name length</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> host_max_len</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">// local workstation name max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> host_off</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// local workstation offset</span>
+
+<span class="normal">        </span><span class="type">char</span><span class="normal">    host</span><span class="symbol">[];</span><span class="normal">          </span><span class="comment">// local workstation name (ASCII)</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    domain</span><span class="symbol">[];</span><span class="normal">        </span><span class="comment">// NT domain name (ASCII)</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+The request <a class="link" href="evolution-exchange-xntlm.html#xntlm-negotiate" title="xntlm_negotiate ()"><code class="function">xntlm_negotiate()</code></a>
+creates is slightly different from this: we pass
+<code class="constant">0x00008206</code> for the flags, <code class="constant">0</code>
+for all of the domain and hostname lengths and offsets, and two more
+"<em class="structfield"><code>len</code></em>, <em class="structfield"><code>max_len</code></em>,
+<em class="structfield"><code>offset</code></em>" pairs (with lengths
+<code class="constant">0</code> and offset <code class="constant">0x30</code>). I don't
+know exactly what that all means.
+</p>
+<p>
+The meanings of the flags, from
+<a class="ulink" href="http://www.opengroup.org/comsource/techref2/NCH1222X.HTM" target="_top">http://www.opengroup.org/comsource/techref2/NCH1222X.HTM:</a>:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_UNICODE     </span><span class="number">0x0001</span><span class="normal">  </span><span class="comment">// Text strings are in unicode</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_OEM         </span><span class="number">0x0002</span><span class="normal">  </span><span class="comment">// Text strings are in OEM</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_REQUEST_TARGET        </span><span class="number">0x0004</span><span class="normal">  </span><span class="comment">// Server return its auth realm</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_SIGN        </span><span class="number">0x0010</span><span class="normal">  </span><span class="comment">// Request signature capability  </span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_SEAL        </span><span class="number">0x0020</span><span class="normal">  </span><span class="comment">// Request confidentiality</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_LM_KEY      </span><span class="number">0x0080</span><span class="normal">  </span><span class="comment">// Generate session key</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_NTLM        </span><span class="number">0x0200</span><span class="normal">  </span><span class="comment">// NTLM authentication</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_LOCAL_CALL  </span><span class="number">0x4000</span><span class="normal">  </span><span class="comment">// client/server on same machine</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_NEGOTIATE_ALWAYS_SIGN </span><span class="number">0x8000</span><span class="normal">  </span><span class="comment">// Sign for all security levels</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+<code class="literal">NTLMSSP_NEGOTIATE_LOCAL_CALL</code> is a no-op if the
+client sets it (which <span class="application">Samba</span> does). If it's
+set in the server's response it means that the client and server are
+on the same machine. The <code class="constant">0x06</code> at the end of the
+flags says we only support 8-bit ("OEM") encoding (which means we
+don't have to gratuitously convert the username to UTF-16), and we
+want the server to tell us its auth realm, which is very useful to us
+because otherwise we generally don't know it.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="The Challenge message">
+<a name="id2956800"></a><h3>The Challenge message</h3>
+<p>
+The server's response to the negotiate packet looks like:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    protocol</span><span class="symbol">[</span><span class="number">8</span><span class="symbol">];</span><span class="normal">     </span><span class="comment">// 'N', 'T', 'L', 'M', 'S', 'S', 'P', '\0'</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> type</span><span class="symbol">;</span><span class="normal">            </span><span class="comment">// 0x00000002</span>
+
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> dom_len</span><span class="symbol">;</span><span class="normal">         </span><span class="comment">// NT domain name length</span>
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> dom_max_len</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// NT domain name max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> dom_off</span><span class="symbol">;</span><span class="normal">         </span><span class="comment">// NT domain name offset (always 0x0030)</span>
+
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> flags</span><span class="symbol">;</span>
+
+<span class="normal">        </span><span class="type">char</span><span class="normal">    nonce</span><span class="symbol">[</span><span class="number">8</span><span class="symbol">];</span><span class="normal">        </span><span class="comment">// nonce</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    zero</span><span class="symbol">[</span><span class="number">8</span><span class="symbol">];</span>
+
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> data_len</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// length of data following domain</span>
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> data_max_len</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">// length of data following domain</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> data_off</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// offset of data following domain</span>
+
+<span class="normal">    </span><span class="type">char</span><span class="normal">    domain</span><span class="symbol">[];</span><span class="normal">        </span><span class="comment">// NT domain name</span>
+
+<span class="normal">        </span><span class="comment">// The following piece occurs multiple times</span>
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> type</span><span class="symbol">;</span><span class="normal">            </span><span class="comment">// Type of this data item</span>
+<span class="normal">    </span><span class="usertype">guint16</span><span class="normal"> length</span><span class="symbol">;</span><span class="normal">          </span><span class="comment">// Length in bytes of this data item</span>
+<span class="normal">    </span><span class="type">char</span><span class="normal">    data</span><span class="symbol">[];</span><span class="normal">          </span><span class="comment">// Data</span>
+<span class="normal">    </span><span class="symbol">...</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+The flags basically echo the request flags, but may also contain:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="preproc">#define</span><span class="normal"> NTLMSSP_TARGET_TYPE_DOMAIN  </span><span class="number">0x10000</span><span class="normal"> </span><span class="comment">// Server is a DC/AD</span>
+<span class="preproc">#define</span><span class="normal"> NTLMSSP_TARGET_TYPE_SERVER  </span><span class="number">0x20000</span><span class="normal"> </span><span class="comment">// Server is just a server</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+Our server returns <code class="constant">0x00818206</code>. I'm not sure what
+the <code class="constant">0x008000000</code> means.
+</p>
+<p>
+<a class="link" href="evolution-exchange-xntlm.html#xntlm-parse-challenge" title="xntlm_parse_challenge ()"><code class="function">xntlm_parse_challenge()</code></a>
+extracts the <em class="structfield"><code>nonce</code></em>, to be used as described
+below. The <em class="structfield"><code>domain</code></em> field contains the NT
+domain name of the server, which is also needed for the response
+packet.
+</p>
+<p>
+The additional data item types are:
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="constant">0x01</code></span></p></td>
+<td><p>WINS name of server (eg, <code class="literal">SHREWDNESS</code>)</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="constant">0x02</code></span></p></td>
+<td><p>NT domain name (eg, <code class="literal">XCS</code>)</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="constant">0x03</code></span></p></td>
+<td><p>DNS name of server (eg, <code class="literal">shrewdness.xcs.ximian.com</code>)</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="constant">0x04</code></span></p></td>
+<td><p>Windows 2000 domain name (eg, <code class="literal">xcs.ximian.com</code>)</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+However, they may occur in any order. Note that they're returned in
+Unicode (UTF-16LE) even though we said we don't speak Unicode. The
+packet is terminated by an item with type and length
+<code class="constant">0</code>.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="The Authenticate message">
+<a name="id2941276"></a><h3>The Authenticate message</h3>
+<p>
+The final message, generated by
+<a class="link" href="evolution-exchange-xntlm.html#xntlm-authenticate" title="xntlm_authenticate ()"><code class="function">xntlm_authenticate()</code></a>
+looks like:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    protocol</span><span class="symbol">[</span><span class="number">8</span><span class="symbol">];</span><span class="normal">     </span><span class="comment">// 'N', 'T', 'L', 'M', 'S', 'S', 'P', '\0'</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> type</span><span class="symbol">;</span><span class="normal">            </span><span class="comment">// 0x00000003</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> lm_resp_len</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// LanManager response length (always 0x18)</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> lm_resp_max_len</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">// LanManager response max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> lm_resp_off</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// LanManager response offset</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> nt_resp_len</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// NT response length (always 0x18)</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> nt_resp_max_len</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">// NT response max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> nt_resp_off</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// NT response offset</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> dom_len</span><span class="symbol">;</span><span class="normal">         </span><span class="comment">// NT domain name length</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> dom_max_len</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// NT domain name max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> dom_off</span><span class="symbol">;</span><span class="normal">         </span><span class="comment">// NT domain name offset (always 0x0040)</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> user_len</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// username length</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> user_max_len</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">// username max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> user_off</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// username offset</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> host_len</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// local workstation name length</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> host_max_len</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">// local workstation name max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> host_off</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// local workstation name offset</span>
+
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> session_len</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// session key length</span>
+<span class="normal">        </span><span class="usertype">guint16</span><span class="normal"> session_max_len</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">// session key max length</span>
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> session_off</span><span class="symbol">;</span><span class="normal">     </span><span class="comment">// session key offset</span>
+
+<span class="normal">        </span><span class="usertype">guint32</span><span class="normal"> flags</span><span class="symbol">;</span><span class="normal">           </span><span class="comment">// 0x00008201</span>
+
+<span class="normal">        </span><span class="type">char</span><span class="normal">    domain</span><span class="symbol">[];</span><span class="normal">        </span><span class="comment">// NT domain name (UCS-16LE)</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    user</span><span class="symbol">[];</span><span class="normal">          </span><span class="comment">// username (UCS-16LE)</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    host</span><span class="symbol">[];</span><span class="normal">          </span><span class="comment">// local workstation name (UCS-16LE)</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    lm_resp</span><span class="symbol">[];</span><span class="normal">       </span><span class="comment">// LanManager response</span>
+<span class="normal">        </span><span class="type">char</span><span class="normal">    nt_resp</span><span class="symbol">[];</span><span class="normal">       </span><span class="comment">// NT response</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+It seems to always be acceptable to leave
+"<em class="structfield"><code>host</code></em>" blank.
+</p>
+<p>
+The LanManager and NT responses are computed from the user's password
+and the <em class="structfield"><code>nonce</code></em> from the Challenge message
+using an arcane series of computations too dull to get into here.
+UTSL.
+</p>
+</div>
+</div>
+<div class="refsect1" title="NTLM over HTTP">
+<a name="ximian-connector-ntlm-http"></a><h2>NTLM over HTTP</h2>
+<p>
+<span class="application">IIS</span> abuses the HTTP auth mechanism slightly
+for NTLM. The important bits are:
+</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>
+	The HTTP connection must be kept open during the auth
+	exchange.
+    </p></li>
+<li class="listitem"><p>
+	If the connection is closed, you have to start over. You
+	can't just present the reponse packet again.
+    </p></li>
+<li class="listitem"><p>
+	Once you've successfully authenticated, the connection remains
+	authenticated until it's closed, without you needing to keep
+	sending the <code class="literal">Authorization</code> header.
+	(Normally, you authenticate only single requests, not entire
+	connections.)
+    </p></li>
+</ol></div>
+<p>
+Certain HTTP proxies will break NTLM authentication, presumably by not
+allowing persistent connections. In these cases, the user will have to
+use "Plaintext Password" authentication (which uses the HTTP Basic
+auth mechanism).
+</p>
+<p>
+<span class="application">IIS</span> also supports a third auth mechanism,
+"Negotiate", which is based on <a class="ulink" href="" target="_top">RFC 2478</a>. It's basically
+SASL inside GSSAPI. It presumably allows you to use GSSAPI-based
+Kerberos 5 authentication. Since this is standards-based, we could
+theoretically support it. However, GSS is a big mess of ASN1 encoded
+gunk, so it would probably really suck a lot.
+</p>
+<p>
+Each of the three auth mechanisms can be turned on and off
+independently on the server (on a per-user basis even). We know that
+there are sites that don't allow Basic, and sites that only allow
+Basic.
+</p>
+<p>
+It is possible for <code class="literal">/exchange</code> and
+<code class="literal">/public</code> to have different settings. (It's
+theoretically possible for one to allow only Basic and the other to
+allow only NTLM, which Connector would not like very much.)
+</p>
+<p>
+There are a handful of methods for which IIS does not return a 401
+when it should:
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><span class="command"><strong>POLL</strong></span></span></p></td>
+<td><p><span class="errorcode">207</span>
+	<span class="errorname">Multi-Status</span> with a
+	<span class="errorcode">409</span> <span class="errorname">Conflict</span>
+	inside</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="command"><strong>BPROPPATCH</strong></span></span></p></td>
+<td><p><span class="errorcode">207</span>
+	<span class="errorname">Multi-Status</span> with a
+	<span class="errorcode">401</span> <span class="errorname">Unauthorized</span>
+	inside</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="command"><strong>PUT</strong></span> to <code class="literal">sendmsg</code> URI</span></p></td>
+<td><p><span class="errorcode">404</span> <span class="errorname">Not
+	Found</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1" title="NTLM over LDAP">
+<a name="ximian-connector-ntlm-ldap"></a><h2>NTLM over LDAP</h2>
+<p>
+Meanwhile, <span class="application">Active Directory</span> (and presumably
+<span class="application">Exchange 5.5</span> as well) abuses LDAP auth
+somewhat to support NTLM. <a class="ulink" href="" target="_top">RFC 2251</a> says:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">BindRequest </span><span class="symbol">::=</span><span class="normal"> </span><span class="symbol">[</span><span class="normal">APPLICATION </span><span class="number">0</span><span class="symbol">]</span><span class="normal"> SEQUENCE </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="usertype">version</span><span class="normal">                 </span><span class="function">INTEGER</span><span class="normal"> </span><span class="symbol">(</span><span class="number">1</span><span class="normal"> </span><span class="symbol">..</span><span class="normal"> </span><span class="number">127</span><span class="symbol">),</span>
+<span class="normal">        </span><span class="usertype">name</span><span class="normal">                    LDAPDN</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="usertype">authentication</span><span class="normal">          AuthenticationChoice </span><span class="cbracket">}</span>
+
+<span class="normal">AuthenticationChoice </span><span class="symbol">::=</span><span class="normal"> CHOICE </span><span class="cbracket">{</span>
+<span class="normal">        simple                  </span><span class="symbol">[</span><span class="number">0</span><span class="symbol">]</span><span class="normal"> </span><span class="usertype">OCTET</span><span class="normal"> STRING</span><span class="symbol">,</span>
+<span class="normal">                                 </span><span class="symbol">--</span><span class="normal"> </span><span class="number">1</span><span class="normal"> and </span><span class="number">2</span><span class="normal"> reserved</span>
+<span class="normal">        sasl                    </span><span class="symbol">[</span><span class="number">3</span><span class="symbol">]</span><span class="normal"> SaslCredentials </span><span class="cbracket">}</span>
+
+<span class="normal">BindResponse </span><span class="symbol">::=</span><span class="normal"> </span><span class="symbol">[</span><span class="normal">APPLICATION </span><span class="number">1</span><span class="symbol">]</span><span class="normal"> SEQUENCE </span><span class="cbracket">{</span>
+<span class="normal">     COMPONENTS </span><span class="usertype">OF</span><span class="normal"> LDAPResult</span><span class="symbol">,</span>
+<span class="normal">     serverSaslCreds    </span><span class="symbol">[</span><span class="number">7</span><span class="symbol">]</span><span class="normal"> OCTET </span><span class="usertype">STRING</span><span class="normal"> OPTIONAL </span><span class="cbracket">}</span>
+
+<span class="normal">LDAPResult </span><span class="symbol">::=</span><span class="normal"> SEQUENCE </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="usertype">resultCode</span><span class="normal">      ENUMERATED </span><span class="cbracket">{</span>
+<span class="normal">                     </span><span class="function">success</span><span class="normal">                      </span><span class="symbol">(</span><span class="number">0</span><span class="symbol">),</span>
+<span class="normal">                     </span><span class="symbol">...</span>
+<span class="normal">                     </span><span class="function">other</span><span class="normal">                        </span><span class="symbol">(</span><span class="number">80</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">}</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="usertype">matchedDN</span><span class="normal">       LDAPDN</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="usertype">errorMessage</span><span class="normal">    LDAPString</span><span class="symbol">,</span>
+<span class="normal">        referral        </span><span class="symbol">[</span><span class="number">3</span><span class="symbol">]</span><span class="normal"> </span><span class="usertype">Referral</span><span class="normal"> OPTIONAL </span><span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+First, the client sends a <code class="literal">BindRequest</code> with
+"<code class="literal">NTLM</code>" for the name and an
+<code class="literal">AuthenticationChoice</code> with a tag value of
+<code class="constant">10</code> followed by the NTLM request packet in an
+<code class="literal">OCTET STRING</code>. The server responds with a
+<code class="literal">BindResponse</code> containing the challenge packet in the
+<code class="literal">matchedDN</code> field. The client then sends another
+<code class="literal">BindRequest</code> with no name and an
+<code class="literal">AuthenticationChoice</code> of <code class="constant">11</code>
+followed by the response packet, and the server (hopefully) responds
+with a successful <code class="literal">BindResponse</code>.
+</p>
+<p>
+This is implemented in Connector by <a class="link" href="E2kGlobalCatalog.html" title="E2kGlobalCatalog"><code class="classname">E2kGlobalCatalog</code></a>.
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

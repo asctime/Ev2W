@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-other-users">
+<refmeta>
+<refentrytitle>Other Users' Folders</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+Most operations concerning other users' folders are handled by
+<link linkend="ExchangeHierarchyForeign"><classname>ExchangeHierarchyForeign</classname></link>,
+with some help from
+<link linkend="ExchangeAccount"><classname>ExchangeAccount</classname></link>.
+</para>
+
+<para>
+When the user first tries to add another user's folder,
+<link linkend="ExchangeAccount"><classname>ExchangeAccount</classname></link>
+looks up the user in the Global Catalog, passing the
+<link linkend="E2kGlobalCatalogLookupFlags"><constant>E2K_GLOBAL_CATALOG_LOOKUP_EMAIL</constant></link>
+and
+<link linkend="E2kGlobalCatalogLookupFlags"><constant>E2K_GLOBAL_CATALOG_LOOKUP_MAILBOX</constant></link>
+flags to
+<link linkend="e2k-global-catalog-lookup"><function>e2k_global_catalog_lookup()</function></link>.
+The <structfield>exchange_server</structfield> and
+<structfield>mailbox</structfield> fields in the returned
+<link linkend="E2kGlobalCatalogEntry"><classname>E2kGlobalCatalogEntry</classname></link>
+are then used to construct a URL (using the account's SSL settings).
+</para>
+
+<note><para>
+(One problem with this approach is that the returned
+<structfield>exchange_server</structfield> is not guaranteed to be running
+<application>OWA</application>. See <ulink
+url="http://bugzilla.gnome.org/show_bug.cgi?id=258526">Bug
+258526</ulink>.)
+</para></note>
+
+<para>
+<link linkend="ExchangeAccount"><classname>ExchangeAccount</classname></link>
+then creates an
+<link linkend="ExchangeHierarchyForeign"><classname>ExchangeHierarchyForeign</classname></link>
+from that data, and asks it to subscribe to the requested folder.
+<link linkend="ExchangeHierarchyForeign"><classname>ExchangeHierarchyForeign</classname></link>
+looks for the folder in two different ways. First, it tries using the
+literal folder name that the user provided.
+</para>
+
+<para>
+If that fails, and if the folder name is one of the default folder
+names (eg, "Calendar"), then it tries looking up the
+<literal>urn:schemas:httpmail:</literal> property for that folder (eg,
+<literal>urn:schemas:httpmail:calendar</literal>) on the other user's
+mailbox. (Specifically, it looks for the property on the invisible
+<uri>/NON_IPM_SUBTREE</uri> subdirectory of the user's mailbox,
+because the property won't be readable on the top-level directory
+unless the user has permission to read the top-level directory.) This
+allows the folder to be found even if it has a localized name (eg,
+"Calendario").
+</para>
+
+<refsect2>
+<title>Private items</title>
+
+<para>
+<application>Outlook</application> allows the user to mark items in
+folders as "private". (<application>Evolution</application> allows
+this in Calendar and Task folders, but not Contact or Mail folders.)
+Private items are not supposed to show up when other users view the
+folder, unless they have been given explicit permission to view
+private items in the <link
+linkend="ximian-connector-delegation">Delegates</link> dialog.
+However, <application>Exchange</application> does not actually
+enforce this itself, so we have to <link
+linkend="ximian-connector-bug-private">work around</link> this.
+</para>
+
+</refsect2>
+
+</refentry>

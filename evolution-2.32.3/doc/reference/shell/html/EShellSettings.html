@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellSettings</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShellSearchbar.html" title="EShellSearchbar">
+<link rel="next" href="EShellSwitcher.html" title="EShellSwitcher">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShellSearchbar.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="EShellSwitcher.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellSettings.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellSettings.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellSettings.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellSettings">
+<a name="EShellSettings"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellSettings.top_of_page"></a>EShellSettings</span></h2>
+<p>EShellSettings — settings management</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellSettings.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-settings.h&gt;
+
+                    <a class="link" href="EShellSettings.html#EShellSettings-struct" title="EShellSettings">EShellSettings</a>;
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-install-property" title="e_shell_settings_install_property ()">e_shell_settings_install_property</a>   (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-install-property-for-key" title="e_shell_settings_install_property_for_key ()">e_shell_settings_install_property_for_key</a>
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *gconf_key</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-enable-debug" title="e_shell_settings_enable_debug ()">e_shell_settings_enable_debug</a>       (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSettings.html#e-shell-settings-get-boolean" title="e_shell_settings_get_boolean ()">e_shell_settings_get_boolean</a>        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-set-boolean" title="e_shell_settings_set_boolean ()">e_shell_settings_set_boolean</a>        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> v_boolean</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="EShellSettings.html#e-shell-settings-get-int" title="e_shell_settings_get_int ()">e_shell_settings_get_int</a>            (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-set-int" title="e_shell_settings_set_int ()">e_shell_settings_set_int</a>            (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> v_int</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="EShellSettings.html#e-shell-settings-get-string" title="e_shell_settings_get_string ()">e_shell_settings_get_string</a>         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-set-string" title="e_shell_settings_set_string ()">e_shell_settings_set_string</a>         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *v_string</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            <a class="link" href="EShellSettings.html#e-shell-settings-get-object" title="e_shell_settings_get_object ()">e_shell_settings_get_object</a>         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-set-object" title="e_shell_settings_set_object ()">e_shell_settings_set_object</a>         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> v_object</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            <a class="link" href="EShellSettings.html#e-shell-settings-get-pointer" title="e_shell_settings_get_pointer ()">e_shell_settings_get_pointer</a>        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSettings.html#e-shell-settings-set-pointer" title="e_shell_settings_set_pointer ()">e_shell_settings_set_pointer</a>        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> v_pointer</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellSettings.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----EShellSettings
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellSettings.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellSettings.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellSettings">
+<a name="EShellSettings-struct"></a><h3>EShellSettings</h3>
+<pre class="programlisting">typedef struct _EShellSettings EShellSettings;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_install_property ()">
+<a name="e-shell-settings-install-property"></a><h3>e_shell_settings_install_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_install_property   (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
+<p>
+Installs a new <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> class property from <em class="parameter"><code>pspec</code></em>.
+This is usually done during initialization of an <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>
+or other dynamically loaded entity.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pspec</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpec</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_install_property_for_key ()">
+<a name="e-shell-settings-install-property-for-key"></a><h3>e_shell_settings_install_property_for_key ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_install_property_for_key
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *gconf_key</code></em>);</pre>
+<p>
+Installs a new <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> class property by examining the
+GConf schema for <em class="parameter"><code>gconf_key</code></em> to determine the appropriate type and
+default value.  This is usually done during initialization of an
+<a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> of other dynamically loaded entity.
+</p>
+<p>
+After the class property is installed, all <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> instances
+are bound to <em class="parameter"><code>gconf_key</code></em>, causing <em class="parameter"><code>property_name</code></em> and <em class="parameter"><code>gconf_key</code></em> to have
+the same value at all times.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>the name of the property to install
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gconf_key</code></em> :</span></p></td>
+<td>the GConf key to bind the property to
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_enable_debug ()">
+<a name="e-shell-settings-enable-debug"></a><h3>e_shell_settings_enable_debug ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_enable_debug       (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>);</pre>
+<p>
+Print a debug message to standard output when a property value changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_get_boolean ()">
+<a name="e-shell-settings-get-boolean"></a><h3>e_shell_settings_get_boolean ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_settings_get_boolean        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);</pre>
+<p>
+Return the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-BOOLEAN:CAPS"><span class="type">G_TYPE_BOOLEAN</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> boolean contents of <em class="parameter"><code>property_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_set_boolean ()">
+<a name="e-shell-settings-set-boolean"></a><h3>e_shell_settings_set_boolean ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_set_boolean        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> v_boolean</code></em>);</pre>
+<p>
+Sets the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-BOOLEAN:CAPS"><span class="type">G_TYPE_BOOLEAN</span></a>
+to <em class="parameter"><code>v_boolean</code></em>.  If <em class="parameter"><code>property_name</code></em> is bound to a GConf key, the GConf key
+will also be set to <em class="parameter"><code>v_boolean</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_boolean</code></em> :</span></p></td>
+<td>boolean value to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_get_int ()">
+<a name="e-shell-settings-get-int"></a><h3>e_shell_settings_get_int ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_shell_settings_get_int            (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);</pre>
+<p>
+Returns the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT:CAPS"><span class="type">G_TYPE_INT</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> integer contents of <em class="parameter"><code>property_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_set_int ()">
+<a name="e-shell-settings-set-int"></a><h3>e_shell_settings_set_int ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_set_int            (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> v_int</code></em>);</pre>
+<p>
+Sets the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT:CAPS"><span class="type">G_TYPE_INT</span></a>
+to <em class="parameter"><code>v_int</code></em>.  If <em class="parameter"><code>property_name</code></em> is bound to a GConf key, the GConf key
+will also be set to <em class="parameter"><code>v_int</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_int</code></em> :</span></p></td>
+<td>integer value to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_get_string ()">
+<a name="e-shell-settings-get-string"></a><h3>e_shell_settings_get_string ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_shell_settings_get_string         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);</pre>
+<p>
+Returns the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-STRING:CAPS"><span class="type">G_TYPE_STRING</span></a>.  The returned string should be freed using <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> string contents of <em class="parameter"><code>property_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_set_string ()">
+<a name="e-shell-settings-set-string"></a><h3>e_shell_settings_set_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_set_string         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *v_string</code></em>);</pre>
+<p>
+Sets the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-STRING:CAPS"><span class="type">G_TYPE_STRING</span></a>
+to <em class="parameter"><code>v_string</code></em>.  If <em class="parameter"><code>property_name</code></em> is bound to a GConf key, the GConf key
+will also be set to <em class="parameter"><code>v_string</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_string</code></em> :</span></p></td>
+<td>string to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_get_object ()">
+<a name="e-shell-settings-get-object"></a><h3>e_shell_settings_get_object ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            e_shell_settings_get_object         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);</pre>
+<p>
+Returns the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-OBJECT:CAPS"><span class="type">G_TYPE_OBJECT</span></a>.  The caller owns the reference to the returned
+object, and should call <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> when finished with it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new reference to the object under <em class="parameter"><code>property_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_set_object ()">
+<a name="e-shell-settings-set-object"></a><h3>e_shell_settings_set_object ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_set_object         (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> v_object</code></em>);</pre>
+<p>
+Sets the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-OBJECT:CAPS"><span class="type">G_TYPE_OBJECT</span></a>
+to <em class="parameter"><code>v_object</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_object</code></em> :</span></p></td>
+<td>object to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_get_pointer ()">
+<a name="e-shell-settings-get-pointer"></a><h3>e_shell_settings_get_pointer ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            e_shell_settings_get_pointer        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>);</pre>
+<p>
+Returns the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-POINTER:CAPS"><span class="type">G_TYPE_POINTER</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> pointer contents of <em class="parameter"><code>property_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_settings_set_pointer ()">
+<a name="e-shell-settings-set-pointer"></a><h3>e_shell_settings_set_pointer ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_settings_set_pointer        (<em class="parameter"><code><a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> *shell_settings</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> v_pointer</code></em>);</pre>
+<p>
+Sets the contents of an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a> property of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-POINTER:CAPS"><span class="type">G_TYPE_POINTER</span></a>
+to <em class="parameter"><code>v_pointer</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_settings</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSettings.html" title="EShellSettings"><span class="type">EShellSettings</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_name</code></em> :</span></p></td>
+<td>an installed property name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_pointer</code></em> :</span></p></td>
+<td>pointer to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

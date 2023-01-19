@@ -1,0 +1,87 @@
+An entryid is a permanent unique identifier for an object in a MAPI
+provider. The generic format is:
+
+	typdef struct {
+		BYTE abFlags[4];
+		BYTE ab[];
+	} ENTRYID;
+
+Exchange ENTRYIDs returned via WebDAV will always have all the flag
+bytes set to 0. The format of the data after the flags is
+undocumented. But here's what we know...
+
+Following the flags, Exchange ENTRYIDs have a 16-byte UID that tells
+what sort of thing it identifies, then data specific to that type.
+
+EXCHANGE SERVER - 38a1bb1005e5101aa1bb08002b2a56c2
+  I've only ever seen this as the prefix to the lpStoreEntryId in a
+  OP_MOVE/OP_COPY rule action. It is followed by:
+
+		00 00
+		"EMSMDB.DLL"
+		00 00 00 00
+
+
+MAILBOX STORE - 1b55fa20aa6611cd9bc800aa002fc45a
+  Identifies the mailbox. Can be found as the PR_STORE_ENTRYID
+  property on any folder in the mailbox. It is followed by 4
+  apparently constant bytes, the Exchange server name (capitalized and
+  NUL-terminated), and the Exchange 5.5 DN of the mailbox owner (also
+  NUL-terminated)
+
+		0c 00 00 00
+		"SHREWDNESS\0"
+		"/o=XCS/ou=First Administrative Group/cn=Recipients/cn=danw\0"
+
+
+PUBLIC FOLDER STORE - 1c830210aa6611cd9bc800aa002fc45a
+  Identifies the public folder store. The format is the same as for a
+  mailbox store, except that the constant is different and there is no
+  DN.
+
+		06 00 00 00
+		"SHREWDNESS\0"
+
+
+DATABASE OBJECT (FOLDER/MESSAGE) - [UID varies per store]
+  Unique to each folder and message(/contact/appointment/task). For a
+  folder, the UID is followed by "01 00" (in a mailbox store) or "03
+  00" (in a public store), the folder's 22-byte PR_SOURCE_KEY, and 2
+  zero bytes. For a message, the UID is followed by "07 00" (in a
+  mailbox store) or "09 00" (in a public store), the message's parent
+  folder's PR_SOURCE_KEY, 2 zero bytes, the message's PR_SOURCE_KEY,
+  and 2 more zero bytes.
+
+  An object's permanenturl is generated from its ENTRYID (specifically
+  from the PR_SOURCE_KEY part):
+
+     PR_ENTRYID:
+	00 00 00 00 1a 44 73 90 aa 66 11 cd 9b c8 00 aa    .....Ds..f......
+	00 2f c4 5a 03 00 50 2d 6a fd 16 1e f2 43 89 95    ./.Z..P-j....C..
+	e1 d9 29 cf 92 eb 00 00 00 00 00 32 00 00          ..)........2..
+
+     http://schemas.microsoft.com/exchange/permanenturl:
+	http://shrewdness.xcs.ximian.com/public/-FlatUrlSpace-/502d6afd161ef2438995e1d929cf92eb-32
+
+
+ONE-OFF RECIPIENT/DISTLIST MEMBER (812b1fa4bea310199d6e00dd010f5402)
+  Used to identify a "one-off" email address (ie, one that does not
+  correspond to any Contact or GAL entry). See
+  e2k_entryid_generate_oneoff in e2k-utils.c for more information
+
+
+CONTACT FOLDER RECIPIENT (fe42aa0a18c71a10e8850b651c240000)
+  Used to identify a recipient that came from a Contact folder. See
+  e2k_entryid_generate_contact in e2k-utils.c for more information
+
+
+GAL RECIPIENT (dca740c8c042101ab4b908002b2fe182)
+  Used to identify a recipient that came from the GAL. See
+  e2k_entryid_generate_local in e2k-utils.c for more information
+
+
+CONTACT/GAL DISTLIST MEMBER (c091add3519dcf11a4a900aa0047faa4)
+  Used to identify a distlist member that came from a contact folder
+  or the GAL. Followed by "b5" (for a GAL entry) or "c3" (for a
+  Contact folder entry), followed by a contact folder or gal recipient
+  ENTRYID.

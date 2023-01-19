@@ -1,0 +1,1400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellView</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShellWindow.html" title="EShellWindow">
+<link rel="next" href="EShellContent.html" title="EShellContent">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShellWindow.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="EShellContent.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellView.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellView.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellView.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#EShellView.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#EShellView.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#EShellView.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellView">
+<a name="EShellView"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellView.top_of_page"></a>EShellView</span></h2>
+<p>EShellView — views within the main window</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellView.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-view.h&gt;
+
+                    <a class="link" href="EShellView.html#EShellView-struct" title="EShellView">EShellView</a>;
+                    <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass">EShellViewClass</a>;
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellView.html#e-shell-view-get-name" title="e_shell_view_get_name ()">e_shell_view_get_name</a>               (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         <a class="link" href="EShellView.html#e-shell-view-get-action" title="e_shell_view_get_action ()">e_shell_view_get_action</a>             (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellView.html#e-shell-view-get-title" title="e_shell_view_get_title ()">e_shell_view_get_title</a>              (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-set-title" title="e_shell_view_set_title ()">e_shell_view_set_title</a>              (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *title</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellView.html#e-shell-view-get-view-id" title="e_shell_view_get_view_id ()">e_shell_view_get_view_id</a>            (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-set-view-id" title="e_shell_view_set_view_id ()">e_shell_view_set_view_id</a>            (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *view_id</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellView.html#e-shell-view-is-active" title="e_shell_view_is_active ()">e_shell_view_is_active</a>              (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="EShellView.html#e-shell-view-get-page-num" title="e_shell_view_get_page_num ()">e_shell_view_get_page_num</a>           (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-set-page-num" title="e_shell_view_set_page_num ()">e_shell_view_set_page_num</a>           (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> page_num</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="EShellView.html#e-shell-view-get-searchbar" title="e_shell_view_get_searchbar ()">e_shell_view_get_searchbar</a>          (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="EShellView.html#e-shell-view-get-search-name" title="e_shell_view_get_search_name ()">e_shell_view_get_search_name</a>        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">EFilterRule</span> *       <a class="link" href="EShellView.html#e-shell-view-get-search-rule" title="e_shell_view_get_search_rule ()">e_shell_view_get_search_rule</a>        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-set-search-rule" title="e_shell_view_set_search_rule ()">e_shell_view_set_search_rule</a>        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code><span class="type">EFilterRule</span> *search_rule</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="EShellView.html#e-shell-view-get-search-query" title="e_shell_view_get_search_query ()">e_shell_view_get_search_query</a>       (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkSizeGroup.html"><span class="returnvalue">GtkSizeGroup</span></a> *      <a class="link" href="EShellView.html#e-shell-view-get-size-group" title="e_shell_view_get_size_group ()">e_shell_view_get_size_group</a>         (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a class="link" href="EShellBackend.html" title="EShellBackend"><span class="returnvalue">EShellBackend</span></a> *     <a class="link" href="EShellView.html#e-shell-view-get-shell-backend" title="e_shell_view_get_shell_backend ()">e_shell_view_get_shell_backend</a>      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a class="link" href="EShellContent.html" title="EShellContent"><span class="returnvalue">EShellContent</span></a> *     <a class="link" href="EShellView.html#e-shell-view-get-shell-content" title="e_shell_view_get_shell_content ()">e_shell_view_get_shell_content</a>      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="returnvalue">EShellSidebar</span></a> *     <a class="link" href="EShellView.html#e-shell-view-get-shell-sidebar" title="e_shell_view_get_shell_sidebar ()">e_shell_view_get_shell_sidebar</a>      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="returnvalue">EShellTaskbar</span></a> *     <a class="link" href="EShellView.html#e-shell-view-get-shell-taskbar" title="e_shell_view_get_shell_taskbar ()">e_shell_view_get_shell_taskbar</a>      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a class="link" href="EShellWindow.html" title="EShellWindow"><span class="returnvalue">EShellWindow</span></a> *      <a class="link" href="EShellView.html#e-shell-view-get-shell-window" title="e_shell_view_get_shell_window ()">e_shell_view_get_shell_window</a>       (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="returnvalue">GKeyFile</span></a> *          <a class="link" href="EShellView.html#e-shell-view-get-state-key-file" title="e_shell_view_get_state_key_file ()">e_shell_view_get_state_key_file</a>     (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-set-state-dirty" title="e_shell_view_set_state_dirty ()">e_shell_view_set_state_dirty</a>        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-clear-search" title="e_shell_view_clear_search ()">e_shell_view_clear_search</a>           (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-custom-search" title="e_shell_view_custom_search ()">e_shell_view_custom_search</a>          (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code><span class="type">EFilterRule</span> *custom_rule</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-execute-search" title="e_shell_view_execute_search ()">e_shell_view_execute_search</a>         (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-block-execute-search" title="e_shell_view_block_execute_search ()">e_shell_view_block_execute_search</a>   (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-unblock-execute-search" title="e_shell_view_unblock_execute_search ()">e_shell_view_unblock_execute_search</a> (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-update-actions" title="e_shell_view_update_actions ()">e_shell_view_update_actions</a>         (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-block-update-actions" title="e_shell_view_block_update_actions ()">e_shell_view_block_update_actions</a>   (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellView.html#e-shell-view-unblock-update-actions" title="e_shell_view_unblock_update_actions ()">e_shell_view_unblock_update_actions</a> (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="EShellView.html#e-shell-view-show-popup-menu" title="e_shell_view_show_popup_menu ()">e_shell_view_show_popup_menu</a>        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *widget_path</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> *event</code></em>);
+<span class="returnvalue">GalViewInstance</span> *   <a class="link" href="EShellView.html#e-shell-view-new-view-instance" title="e_shell_view_new_view_instance ()">e_shell_view_new_view_instance</a>      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *instance_id</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellView.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----EShellView
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="EShellView.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+EShellView implements
+ <a class="link" href="EExtensible.html" title="EExtensible">EExtensible</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EShellView.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellView.html#EShellView--action" title='The "action" property'>action</a>"                   <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a>*       : Read / Write / Construct Only
+  "<a class="link" href="EShellView.html#EShellView--page-num" title='The "page-num" property'>page-num</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'>search-rule</a>"              <span class="type">EFilterRule</span>*          : Read / Write
+  "<a class="link" href="EShellView.html#EShellView--shell-backend" title='The "shell-backend" property'>shell-backend</a>"            <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>*        : Read
+  "<a class="link" href="EShellView.html#EShellView--shell-content" title='The "shell-content" property'>shell-content</a>"            <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>*        : Read
+  "<a class="link" href="EShellView.html#EShellView--shell-sidebar" title='The "shell-sidebar" property'>shell-sidebar</a>"            <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a>*        : Read
+  "<a class="link" href="EShellView.html#EShellView--shell-taskbar" title='The "shell-taskbar" property'>shell-taskbar</a>"            <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>*        : Read
+  "<a class="link" href="EShellView.html#EShellView--shell-window" title='The "shell-window" property'>shell-window</a>"             <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>*         : Read / Write / Construct Only
+  "<a class="link" href="EShellView.html#EShellView--state-key-file" title='The "state-key-file" property'>state-key-file</a>"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>              : Read
+  "<a class="link" href="EShellView.html#EShellView--title" title='The "title" property'>title</a>"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="EShellView.html#EShellView--view-id" title='The "view-id" property'>view-id</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="EShellView.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellView.html#EShellView-clear-search" title='The "clear-search" signal'>clear-search</a>"                                   : Run Last
+  "<a class="link" href="EShellView.html#EShellView-custom-search" title='The "custom-search" signal'>custom-search</a>"                                  : Run Last
+  "<a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'>execute-search</a>"                                 : Run First
+  "<a class="link" href="EShellView.html#EShellView-toggled" title='The "toggled" signal'>toggled</a>"                                        : Run First
+  "<a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'>update-actions</a>"                                 : Run First
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellView.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellView.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellView">
+<a name="EShellView-struct"></a><h3>EShellView</h3>
+<pre class="programlisting">typedef struct _EShellView EShellView;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="EShellViewClass">
+<a name="EShellViewClass"></a><h3>EShellViewClass</h3>
+<pre class="programlisting">typedef struct {
+	GObjectClass parent_class;
+
+	/* Initial switcher action values. */
+	const gchar *label;
+	const gchar *icon_name;
+
+	/* Base name of the UI definition file. */
+	const gchar *ui_definition;
+
+	/* GtkUIManager identifier for use with EPluginUI.
+	 * Usually "org.gnome.evolution.$(VIEW_NAME)". */
+	const gchar *ui_manager_id;
+
+	/* Search context.  Subclasses may override the type.
+	 * A unique instance is created for each subclass. */
+	GType search_context_type;
+	ERuleContext *search_context;
+
+	/* Widget path to the search options popup menu. */
+	const gchar *search_options;
+
+	/* Base name of the search rule definition file. */
+	const gchar *search_rules;
+
+	/* A unique instance is created for each subclass. */
+	GalViewCollection *view_collection;
+
+	/* This is set by the corresponding EShellBackend. */
+	EShellBackend *shell_backend;
+
+	/* Factory Methods */
+	GtkWidget * (*new_shell_content) (EShellView *shell_view);
+	GtkWidget * (*new_shell_sidebar) (EShellView *shell_view);
+	GtkWidget * (*new_shell_taskbar) (EShellView *shell_view);
+
+	/* Create, configure and pack a search bar widget. */
+	GtkWidget * (*construct_searchbar) (EShellView *shell_view);
+	gchar *		(*get_search_name) (EShellView *shell_view);
+
+	/* Signals */
+	void		(*toggled)		(EShellView *shell_view);
+	void		(*clear_search)		(EShellView *shell_view);
+	void		(*custom_search) (EShellView *shell_view,
+						 EFilterRule *custom_rule);
+	void		(*execute_search) (EShellView *shell_view);
+	void		(*update_actions) (EShellView *shell_view);
+} EShellViewClass;
+</pre>
+<p>
+<a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> contains a number of important settings for subclasses.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="EShellViewClass.parent-class"></a>parent_class</code></em>;</span></p></td>
+<td>The parent class structure.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="EShellViewClass.label"></a>label</code></em>;</span></p></td>
+<td>The initial value for the switcher action's
+		<a href="http://library.gnome.org/devel/gtk/GtkAction.html#GtkAction--label"><span class="type">"label"</span></a> property.  See
+		<a class="link" href="EShellView.html#e-shell-view-get-action" title="e_shell_view_get_action ()"><code class="function">e_shell_view_get_action()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="EShellViewClass.icon-name"></a>icon_name</code></em>;</span></p></td>
+<td>The initial value for the switcher action's
+		<a href="http://library.gnome.org/devel/gtk/GtkAction.html#GtkAction--icon-name"><span class="type">"icon-name"</span></a> property.  See
+		<a class="link" href="EShellView.html#e-shell-view-get-action" title="e_shell_view_get_action ()"><code class="function">e_shell_view_get_action()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="EShellViewClass.ui-definition"></a>ui_definition</code></em>;</span></p></td>
+<td>Base name of the UI definintion file to add
+		when the shell view is activated.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="EShellViewClass.ui-manager-id"></a>ui_manager_id</code></em>;</span></p></td>
+<td>The <a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a> ID for <span class="type">EPluginUI</span>.  Plugins
+		should use to this ID in their "eplug" files to
+		add menu and toolbar items to the shell view.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> <em class="structfield"><code><a name="EShellViewClass.search-context-type"></a>search_context_type</code></em>;</span></p></td>
+<td>GType of the search context, which should be an
+		instance of ERuleContextClass or a custom subclass.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="type">ERuleContext</span> *<em class="structfield"><code><a name="EShellViewClass.search-context"></a>search_context</code></em>;</span></p></td>
+<td>A unique <em class="parameter"><code>search_context_type</code></em> instance is created
+		automatically for each subclass and shared across
+		all instances of that subclass.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="EShellViewClass.search-options"></a>search_options</code></em>;</span></p></td>
+<td>Widget path in the UI definition to the search
+		options popup menu.  The menu gets shown when the
+		user clicks the "find" icon in the search entry.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="EShellViewClass.search-rules"></a>search_rules</code></em>;</span></p></td>
+<td>Base name of the XML file containing predefined
+		search rules for this shell view.  The XML files
+		are usually named something like <code class="filename">
+		<span class="emphasis"><em>view</em></span>types.xml</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="type">GalViewCollection</span> *<em class="structfield"><code><a name="EShellViewClass.view-collection"></a>view_collection</code></em>;</span></p></td>
+<td>A unique <span class="type">GalViewCollection</span> instance is created
+		for each subclass and shared across all instances
+		of that subclass.  That much is done automatically
+		for subclasses, but subclasses are still responsible
+		for adding the appropriate <span class="type">GalView</span> factories to the
+		view collection.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> *<em class="structfield"><code><a name="EShellViewClass.shell-backend"></a>shell_backend</code></em>;</span></p></td>
+<td>The corresponding <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> for the shell view.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.new-shell-content"></a>new_shell_content</code></em> ()</span></p></td>
+<td>Factory method for the shell view's <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>.
+		See <a class="link" href="EShellView.html#e-shell-view-get-shell-content" title="e_shell_view_get_shell_content ()"><code class="function">e_shell_view_get_shell_content()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.new-shell-sidebar"></a>new_shell_sidebar</code></em> ()</span></p></td>
+<td>Factory method for the shell view's <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a>.
+		See <a class="link" href="EShellView.html#e-shell-view-get-shell-sidebar" title="e_shell_view_get_shell_sidebar ()"><code class="function">e_shell_view_get_shell_sidebar()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.new-shell-taskbar"></a>new_shell_taskbar</code></em> ()</span></p></td>
+<td>Factory method for the shell view's <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>.
+		See <a class="link" href="EShellView.html#e-shell-view-get-shell-taskbar" title="e_shell_view_get_shell_taskbar ()"><code class="function">e_shell_view_get_shell_taskbar()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.construct-searchbar"></a>construct_searchbar</code></em> ()</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.get-search-name"></a>get_search_name</code></em> ()</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.toggled"></a>toggled</code></em> ()</span></p></td>
+<td>Class method for the <a class="link" href="EShellView.html#EShellView-toggled" title='The "toggled" signal'><span class="type">"toggled"</span></a> signal.
+		Subclasses should rarely need to override the
+		default behavior.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.clear-search"></a>clear_search</code></em> ()</span></p></td>
+<td>Class method for the <a class="link" href="EShellView.html#EShellView-clear-search" title='The "clear-search" signal'><span class="type">"clear-search"</span></a>
+		signal.  The default method sets the
+		<a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'><span class="type">"search-rule"</span></a> to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and then emits
+		the <a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'><span class="type">"execute-search"</span></a> signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.custom-search"></a>custom_search</code></em> ()</span></p></td>
+<td>Class method for the <a class="link" href="EShellView.html#EShellView-custom-search" title='The "custom-search" signal'><span class="type">"custom-search"</span></a>
+		signal.  This is emitted prior to executing an
+		advanced or saved search.  The default method sets
+		the <a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'><span class="type">"search-rule"</span></a> property and then emits
+		the <a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'><span class="type">"execute-search"</span></a> signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.execute-search"></a>execute_search</code></em> ()</span></p></td>
+<td>Class method for the <a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'><span class="type">"execute-search"</span></a>
+		signal.  There is no default behavior; subclasses
+		should override this.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="EShellViewClass.update-actions"></a>update_actions</code></em> ()</span></p></td>
+<td>Class method for the <a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'><span class="type">"update-actions"</span></a>
+		signal.  There is no default behavior; subclasses
+		should override this.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_name ()">
+<a name="e-shell-view-get-name"></a><h3>e_shell_view_get_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_view_get_name               (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the view name for <em class="parameter"><code>shell_view</code></em>, which is also the name of
+the corresponding <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> (see the <em class="structfield"><code>name</code></em>
+field in <span class="type">EShellBackendInfo</span>).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the view name for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_action ()">
+<a name="e-shell-view-get-action"></a><h3>e_shell_view_get_action ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         e_shell_view_get_action             (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the switcher action for <em class="parameter"><code>shell_view</code></em>.
+</p>
+<p>
+An <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> creates a <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a> for each registered subclass
+of <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>.  This action gets passed to the <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>, which
+displays a button that proxies the action.  The icon at the top of the
+sidebar also proxies the action.  When <em class="parameter"><code>shell_view</code></em> is active, the
+action's icon becomes the <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> icon.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the switcher action for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_title ()">
+<a name="e-shell-view-get-title"></a><h3>e_shell_view_get_title ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_view_get_title              (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the title for <em class="parameter"><code>shell_view</code></em>.  When <em class="parameter"><code>shell_view</code></em> is active, the
+shell view's title becomes the <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> title.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the title for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_set_title ()">
+<a name="e-shell-view-set-title"></a><h3>e_shell_view_set_title ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_set_title              (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *title</code></em>);</pre>
+<p>
+Sets the title for <em class="parameter"><code>shell_view</code></em>.  When <em class="parameter"><code>shell_view</code></em> is active, the
+shell view's title becomes the <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> title.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>a title for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_view_id ()">
+<a name="e-shell-view-get-view-id"></a><h3>e_shell_view_get_view_id ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_view_get_view_id            (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the ID of the currently selected <span class="type">GalView</span>.
+</p>
+<p>
+<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses are responsible for keeping this property in
+sync with their <span class="type">GalViewInstance</span>.  <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> itself just provides
+a place to store the view ID, and emits a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-notify"><span class="type">"notify"</span></a> signal
+when the property changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the ID of the current <span class="type">GalView</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_set_view_id ()">
+<a name="e-shell-view-set-view-id"></a><h3>e_shell_view_set_view_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_set_view_id            (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *view_id</code></em>);</pre>
+<p>
+Selects the <span class="type">GalView</span> whose ID is equal to <em class="parameter"><code>view_id</code></em>.
+</p>
+<p>
+<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses are responsible for keeping this property in
+sync with their <span class="type">GalViewInstance</span>.  <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> itself just provides
+a place to store the view ID, and emits a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-notify"><span class="type">"notify"</span></a> signal
+when the property changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>view_id</code></em> :</span></p></td>
+<td>a <span class="type">GalView</span> ID
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_is_active ()">
+<a name="e-shell-view-is-active"></a><h3>e_shell_view_is_active ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_view_is_active              (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>shell_view</code></em> is active.  That is, if it's currently
+visible in its <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>.  An <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> can only display one
+shell view at a time.
+</p>
+<p>
+Technically this just checks the <a href="http://library.gnome.org/devel/gtk/GtkToggleAction.html#GtkToggleAction--active"><span class="type">"active"</span></a> property of
+the shell view's switcher action.  See <a class="link" href="EShellView.html#e-shell-view-get-action" title="e_shell_view_get_action ()"><code class="function">e_shell_view_get_action()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>shell_view</code></em> is active
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_page_num ()">
+<a name="e-shell-view-get-page-num"></a><h3>e_shell_view_get_page_num ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_shell_view_get_page_num           (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+This function is only interesting to <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>.  It returns the
+<a href="http://library.gnome.org/devel/gtk/GtkNotebook.html"><span class="type">GtkNotebook</span></a> page number for <em class="parameter"><code>shell_view</code></em>.  The rest of the application
+should have no need for this.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the notebook page number for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_set_page_num ()">
+<a name="e-shell-view-set-page-num"></a><h3>e_shell_view_set_page_num ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_set_page_num           (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> page_num</code></em>);</pre>
+<p>
+This function is only interesting to <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>.  It sets the
+<a href="http://library.gnome.org/devel/gtk/GtkNotebook.html"><span class="type">GtkNotebook</span></a> page number for <em class="parameter"><code>shell_view</code></em>.  The rest of the application
+must never call this because it could mess up shell view switching.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>page_num</code></em> :</span></p></td>
+<td>a notebook page number
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_searchbar ()">
+<a name="e-shell-view-get-searchbar"></a><h3>e_shell_view_get_searchbar ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_shell_view_get_searchbar          (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the searchbar widget for <em class="parameter"><code>shell_view</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_search_name ()">
+<a name="e-shell-view-get-search-name"></a><h3>e_shell_view_get_search_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_shell_view_get_search_name        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns a newly-allocated string containing a suitable name for the
+current search criteria.  This is used as the suggested name in the
+Save Search dialog.  Free the returned string with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a name for the current search criteria
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_search_rule ()">
+<a name="e-shell-view-get-search-rule"></a><h3>e_shell_view_get_search_rule ()</h3>
+<pre class="programlisting"><span class="returnvalue">EFilterRule</span> *       e_shell_view_get_search_rule        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the search criteria used to generate the current search results.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the current search criteria
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_set_search_rule ()">
+<a name="e-shell-view-set-search-rule"></a><h3>e_shell_view_set_search_rule ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_set_search_rule        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code><span class="type">EFilterRule</span> *search_rule</code></em>);</pre>
+<p>
+Sets the search criteria used to generate the current search results.
+Note that this will not trigger a search.  <a class="link" href="EShellView.html#e-shell-view-execute-search" title="e_shell_view_execute_search ()"><code class="function">e_shell_view_execute_search()</code></a>
+must be called explicitly.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search_rule</code></em> :</span></p></td>
+<td>an <span class="type">EFilterRule</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_search_query ()">
+<a name="e-shell-view-get-search-query"></a><h3>e_shell_view_get_search_query ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_shell_view_get_search_query       (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Converts the <a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'><span class="type">"search-rule"</span></a> property to a newly-allocated
+S-expression string.  If the <a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'><span class="type">"search-rule"</span></a> property is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+the function returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an S-expression string, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_size_group ()">
+<a name="e-shell-view-get-size-group"></a><h3>e_shell_view_get_size_group ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkSizeGroup.html"><span class="returnvalue">GtkSizeGroup</span></a> *      e_shell_view_get_size_group         (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns a <a href="http://library.gnome.org/devel/gtk/GtkSizeGroup.html"><span class="type">GtkSizeGroup</span></a> that <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> and <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a> use
+to keep the search bar and sidebar banner vertically aligned.  The
+rest of the application should have no need for this.
+</p>
+<p>
+Note, this is only available during <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> construction.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a href="http://library.gnome.org/devel/gtk/GtkSizeGroup.html"><span class="type">GtkSizeGroup</span></a> for internal use
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_shell_backend ()">
+<a name="e-shell-view-get-shell-backend"></a><h3>e_shell_view_get_shell_backend ()</h3>
+<pre class="programlisting"><a class="link" href="EShellBackend.html" title="EShellBackend"><span class="returnvalue">EShellBackend</span></a> *     e_shell_view_get_shell_backend      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the corresponding <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> for <em class="parameter"><code>shell_view</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the corresponding <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_shell_content ()">
+<a name="e-shell-view-get-shell-content"></a><h3>e_shell_view_get_shell_content ()</h3>
+<pre class="programlisting"><a class="link" href="EShellContent.html" title="EShellContent"><span class="returnvalue">EShellContent</span></a> *     e_shell_view_get_shell_content      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> instance for <em class="parameter"><code>shell_view</code></em>.
+</p>
+<p>
+By default, <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> creates a plain <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> during
+initialization.  But <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses can override the
+<em class="structfield"><code>new_shell_content</code></em> factory method
+in <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> to create a custom <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> instance for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_shell_sidebar ()">
+<a name="e-shell-view-get-shell-sidebar"></a><h3>e_shell_view_get_shell_sidebar ()</h3>
+<pre class="programlisting"><a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="returnvalue">EShellSidebar</span></a> *     e_shell_view_get_shell_sidebar      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a> instance for <em class="parameter"><code>shell_view</code></em>.
+</p>
+<p>
+By default, <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> creates a plain <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a> during
+initialization.  But <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses can override the
+<em class="structfield"><code>new_shell_sidebar</code></em> factory method
+in <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> to create a custom <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a> instance for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_shell_taskbar ()">
+<a name="e-shell-view-get-shell-taskbar"></a><h3>e_shell_view_get_shell_taskbar ()</h3>
+<pre class="programlisting"><a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="returnvalue">EShellTaskbar</span></a> *     e_shell_view_get_shell_taskbar      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> instance for <em class="parameter"><code>shell_view</code></em>.
+</p>
+<p>
+By default, <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> creates a plain <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> during
+initialization.  But <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses can override the
+<em class="structfield"><code>new_shell_taskbar</code></em> factory method
+in <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> to create a custom <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a> instance for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_shell_window ()">
+<a name="e-shell-view-get-shell-window"></a><h3>e_shell_view_get_shell_window ()</h3>
+<pre class="programlisting"><a class="link" href="EShellWindow.html" title="EShellWindow"><span class="returnvalue">EShellWindow</span></a> *      e_shell_view_get_shell_window       (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> to which <em class="parameter"><code>shell_view</code></em> belongs.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> to which <em class="parameter"><code>shell_view</code></em> belongs
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_get_state_key_file ()">
+<a name="e-shell-view-get-state-key-file"></a><h3>e_shell_view_get_state_key_file ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="returnvalue">GKeyFile</span></a> *          e_shell_view_get_state_key_file     (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Returns the <a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a> holding widget state data for <em class="parameter"><code>shell_view</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a> for <em class="parameter"><code>shell_view</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_set_state_dirty ()">
+<a name="e-shell-view-set-state-dirty"></a><h3>e_shell_view_set_state_dirty ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_set_state_dirty        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Marks the widget state data as modified (or "dirty") and schedules it
+to be saved to disk after a short delay.  The delay caps the frequency
+of saving to disk.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_clear_search ()">
+<a name="e-shell-view-clear-search"></a><h3>e_shell_view_clear_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_clear_search           (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Emits the <a class="link" href="EShellView.html#EShellView-clear-search" title='The "clear-search" signal'><span class="type">"clear-search"</span></a> signal.
+</p>
+<p>
+The default method sets the <a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'><span class="type">"search-rule"</span></a> property to
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and then emits the <a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'><span class="type">"execute-search"</span></a> signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_custom_search ()">
+<a name="e-shell-view-custom-search"></a><h3>e_shell_view_custom_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_custom_search          (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code><span class="type">EFilterRule</span> *custom_rule</code></em>);</pre>
+<p>
+Emits the <a class="link" href="EShellView.html#EShellView-custom-search" title='The "custom-search" signal'><span class="type">"custom-search"</span></a> signal to indicate an advanced
+or saved search is about to be executed.
+</p>
+<p>
+The default method sets the <a class="link" href="EShellView.html#EShellView--search-rule" title='The "search-rule" property'><span class="type">"search-rule"</span></a> property to
+<em class="parameter"><code>custom_rule</code></em> and then emits the <a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'><span class="type">"execute-search"</span></a> signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>custom_rule</code></em> :</span></p></td>
+<td>an <span class="type">EFilterRule</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_execute_search ()">
+<a name="e-shell-view-execute-search"></a><h3>e_shell_view_execute_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_execute_search         (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Emits the <a class="link" href="EShellView.html#EShellView-execute-search" title='The "execute-search" signal'><span class="type">"execute-search"</span></a> signal.
+</p>
+<p>
+<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses should implement the
+<em class="structfield"><code>execute_search</code></em> method in <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a>
+to execute a search based on the current search conditions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_block_execute_search ()">
+<a name="e-shell-view-block-execute-search"></a><h3>e_shell_view_block_execute_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_block_execute_search   (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Blocks <a class="link" href="EShellView.html#e-shell-view-execute-search" title="e_shell_view_execute_search ()"><code class="function">e_shell_view_execute_search()</code></a> in a way it does nothing.
+Pair function for this is <a class="link" href="EShellView.html#e-shell-view-unblock-execute-search" title="e_shell_view_unblock_execute_search ()"><code class="function">e_shell_view_unblock_execute_search()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_unblock_execute_search ()">
+<a name="e-shell-view-unblock-execute-search"></a><h3>e_shell_view_unblock_execute_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_unblock_execute_search (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Unblocks previously blocked <a class="link" href="EShellView.html#e-shell-view-execute-search" title="e_shell_view_execute_search ()"><code class="function">e_shell_view_execute_search()</code></a> with
+function <a class="link" href="EShellView.html#e-shell-view-block-execute-search" title="e_shell_view_block_execute_search ()"><code class="function">e_shell_view_block_execute_search()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_update_actions ()">
+<a name="e-shell-view-update-actions"></a><h3>e_shell_view_update_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_update_actions         (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Emits the <a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'><span class="type">"update-actions"</span></a> signal.
+</p>
+<p>
+<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses should implement the
+<em class="structfield"><code>update_actions</code></em> method in <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a>
+to update the various <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>s based on the current
+<a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a> and <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a> selections.  The
+<a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'><span class="type">"update-actions"</span></a> signal is typically emitted just before
+showing a popup menu or just after the user selects an item in the
+shell view.
+</p>
+<p>
+Emission can be blocked by <a class="link" href="EShellView.html#e-shell-view-block-update-actions" title="e_shell_view_block_update_actions ()"><code class="function">e_shell_view_block_update_actions()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_block_update_actions ()">
+<a name="e-shell-view-block-update-actions"></a><h3>e_shell_view_block_update_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_block_update_actions   (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Block emission of <a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'><span class="type">"update-actions"</span></a> signal through
+<a class="link" href="EShellView.html#e-shell-view-update-actions" title="e_shell_view_update_actions ()"><code class="function">e_shell_view_update_actions()</code></a>. The emission si blocked until
+<a class="link" href="EShellView.html#e-shell-view-unblock-update-actions" title="e_shell_view_unblock_update_actions ()"><code class="function">e_shell_view_unblock_update_actions()</code></a> is called same times as
+this function.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_unblock_update_actions ()">
+<a name="e-shell-view-unblock-update-actions"></a><h3>e_shell_view_unblock_update_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_view_unblock_update_actions (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Unblock emission of <a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'><span class="type">"update-actions"</span></a> signal through
+<a class="link" href="EShellView.html#e-shell-view-update-actions" title="e_shell_view_update_actions ()"><code class="function">e_shell_view_update_actions()</code></a>, previously blocked by function
+<a class="link" href="EShellView.html#e-shell-view-block-update-actions" title="e_shell_view_block_update_actions ()"><code class="function">e_shell_view_block_update_actions()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_show_popup_menu ()">
+<a name="e-shell-view-show-popup-menu"></a><h3>e_shell_view_show_popup_menu ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_shell_view_show_popup_menu        (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *widget_path</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> *event</code></em>);</pre>
+<p>
+Displays a context-sensitive (or "popup") menu that is described in
+the UI definition loaded into <em class="parameter"><code>shell_view</code></em>'s user interface
+manager.  The menu will be shown at the current mouse cursor position.
+</p>
+<p>
+The <a class="link" href="EShellView.html#EShellView-update-actions" title='The "update-actions" signal'><span class="type">"update-actions"</span></a> signal is emitted just prior to
+showing the menu to give <em class="parameter"><code>shell_view</code></em> and any plugins that extend
+<em class="parameter"><code>shell_view</code></em> a chance to update the menu's actions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget_path</code></em> :</span></p></td>
+<td>path in the UI definition
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>event</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gdk/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the popup menu being displayed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_view_new_view_instance ()">
+<a name="e-shell-view-new-view-instance"></a><h3>e_shell_view_new_view_instance ()</h3>
+<pre class="programlisting"><span class="returnvalue">GalViewInstance</span> *   e_shell_view_new_view_instance      (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *instance_id</code></em>);</pre>
+<p>
+Creates a new <span class="type">GalViewInstance</span> and configures it to keep
+<em class="parameter"><code>shell_view</code></em>'s <a class="link" href="EShellView.html#EShellView--view-id" title='The "view-id" property'><span class="type">"view-id"</span></a> property up-to-date.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance_id</code></em> :</span></p></td>
+<td>a name for the <span class="type">GalViewInstance</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <span class="type">GalViewInstance</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EShellView.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "action" property'>
+<a name="EShellView--action"></a><h3>The <code class="literal">"action"</code> property</h3>
+<pre class="programlisting">  "action"                   <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a>*       : Read / Write / Construct Only</pre>
+<p>
+The <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a> registered with <a class="link" href="EShellSwitcher.html" title="EShellSwitcher"><span class="type">EShellSwitcher</span></a>.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "page-num" property'>
+<a name="EShellView--page-num"></a><h3>The <code class="literal">"page-num"</code> property</h3>
+<pre class="programlisting">  "page-num"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>
+The <a href="http://library.gnome.org/devel/gtk/GtkNotebook.html"><span class="type">GtkNotebook</span></a> page number of the shell view.
+</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2" title='The "search-rule" property'>
+<a name="EShellView--search-rule"></a><h3>The <code class="literal">"search-rule"</code> property</h3>
+<pre class="programlisting">  "search-rule"              <span class="type">EFilterRule</span>*          : Read / Write</pre>
+<p>
+Criteria for the current search results.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-backend" property'>
+<a name="EShellView--shell-backend"></a><h3>The <code class="literal">"shell-backend"</code> property</h3>
+<pre class="programlisting">  "shell-backend"            <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a>*        : Read</pre>
+<p>
+The <a class="link" href="EShellBackend.html" title="EShellBackend"><span class="type">EShellBackend</span></a> for this shell view.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-content" property'>
+<a name="EShellView--shell-content"></a><h3>The <code class="literal">"shell-content"</code> property</h3>
+<pre class="programlisting">  "shell-content"            <a class="link" href="EShellContent.html" title="EShellContent"><span class="type">EShellContent</span></a>*        : Read</pre>
+<p>
+The content widget appears in an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>'s
+right pane.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-sidebar" property'>
+<a name="EShellView--shell-sidebar"></a><h3>The <code class="literal">"shell-sidebar"</code> property</h3>
+<pre class="programlisting">  "shell-sidebar"            <a class="link" href="EShellSidebar.html" title="EShellSidebar"><span class="type">EShellSidebar</span></a>*        : Read</pre>
+<p>
+The sidebar widget appears in an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>'s
+left pane.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-taskbar" property'>
+<a name="EShellView--shell-taskbar"></a><h3>The <code class="literal">"shell-taskbar"</code> property</h3>
+<pre class="programlisting">  "shell-taskbar"            <a class="link" href="EShellTaskbar.html" title="EShellTaskbar"><span class="type">EShellTaskbar</span></a>*        : Read</pre>
+<p>
+The taskbar widget appears at the bottom of an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-window" property'>
+<a name="EShellView--shell-window"></a><h3>The <code class="literal">"shell-window"</code> property</h3>
+<pre class="programlisting">  "shell-window"             <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>*         : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a> to which the shell view belongs.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "state-key-file" property'>
+<a name="EShellView--state-key-file"></a><h3>The <code class="literal">"state-key-file"</code> property</h3>
+<pre class="programlisting">  "state-key-file"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>              : Read</pre>
+<p>
+The <a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a> holding widget state data.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "title" property'>
+<a name="EShellView--title"></a><h3>The <code class="literal">"title"</code> property</h3>
+<pre class="programlisting">  "title"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The title of the shell view.  Also serves as the <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+title when the shell view is active.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "view-id" property'>
+<a name="EShellView--view-id"></a><h3>The <code class="literal">"view-id"</code> property</h3>
+<pre class="programlisting">  "view-id"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The current <span class="type">GalView</span> ID.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="EShellView.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "clear-search" signal'>
+<a name="EShellView-clear-search"></a><h3>The <code class="literal">"clear-search"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run Last</pre>
+<p>
+Clears the current search.  See <a class="link" href="EShellView.html#e-shell-view-clear-search" title="e_shell_view_clear_search ()"><code class="function">e_shell_view_clear_search()</code></a> for
+details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> which emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "custom-search" signal'>
+<a name="EShellView-custom-search"></a><h3>The <code class="literal">"custom-search"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>  *shell_view,
+                                                        <span class="type">EFilterRule</span> *custom_rule,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)        : Run Last</pre>
+<p>
+Emitted when an advanced or saved search is about to be executed.
+See <a class="link" href="EShellView.html#e-shell-view-custom-search" title="e_shell_view_custom_search ()"><code class="function">e_shell_view_custom_search()</code></a> for details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> which emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>custom_rule</code></em> :</span></p></td>
+<td>criteria for the custom search
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "execute-search" signal'>
+<a name="EShellView-execute-search"></a><h3>The <code class="literal">"execute-search"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses should override the
+<em class="structfield"><code>execute_search</code></em> method in
+<a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> to execute the current search conditions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> which emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "toggled" signal'>
+<a name="EShellView-toggled"></a><h3>The <code class="literal">"toggled"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+Emitted when <em class="parameter"><code>shell_view</code></em> is activated or deactivated.
+Use <a class="link" href="EShellView.html#e-shell-view-is-active" title="e_shell_view_is_active ()"><code class="function">e_shell_view_is_active()</code></a> to find out which event has
+occurred.  The shell view being deactivated is always
+notified before the shell view being activated.
+</p>
+<p>
+By default, <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> adds the UI definition file
+given in the <em class="structfield"><code>ui_definition</code></em>
+field of <a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> on activation, and removes the
+UI definition on deactivation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> which emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "update-actions" signal'>
+<a name="EShellView-update-actions"></a><h3>The <code class="literal">"update-actions"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>    user_data)       : Run First</pre>
+<p>
+<a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> subclasses should override the
+<em class="structfield"><code>update_actions</code></em> method in
+<a class="link" href="EShellView.html#EShellViewClass" title="EShellViewClass"><span class="type">EShellViewClass</span></a> to update sensitivities, labels, or any
+other aspect of the <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>s they have registered.
+</p>
+<p>
+Plugins can also connect to this signal to be notified
+when to update their own <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>s.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> which emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

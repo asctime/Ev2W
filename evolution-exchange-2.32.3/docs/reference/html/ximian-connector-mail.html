@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mail Architecture</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch01.html" title="Exchange Architectural Notes">
+<link rel="prev" href="ximian-connector-calendar.html" title="Calendar Architecture">
+<link rel="next" href="ximian-connector-ntlm.html" title="NTLM Authentication Overview">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="ximian-connector-calendar.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="ximian-connector-ntlm.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry" title="Mail Architecture">
+<a name="ximian-connector-mail"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">Mail Architecture</span></h2>
+<p></p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect3" title="Mail-related WebDAV properties">
+<a name="id2918936"></a><h4>Mail-related WebDAV properties</h4>
+<p>
+    Most mail-related WebDAV properties are in either the
+    <code class="literal">urn:schemas:mailheader:</code> or
+    <code class="literal">urn:schemas:httpmail:</code> namespaces. In fact, many
+    properties are available in <span class="emphasis"><em>both</em></span> of those
+    namespaces. Every RFC 822 header in the message is copied
+    literally to a property in the 
+    <code class="literal">urn:schemas:mailheader:</code> namespace with the same
+    name. <code class="literal">urn:schemas:httpmail:</code> on the other hand
+    has only a subset of headers, but in a more processed form. (For
+    example, if there are non-ASCII characters in the subject of a
+    message, <code class="literal">urn:schemas:httpmail:subject</code> will have
+    a UTF-8 representation of the subject, while
+    <code class="literal">urn:schemas:mailheader:subject</code> will have the
+    MIME-encoded ASCII representation.)
+</p>
+<p>
+    A few important mail-related WebDAV properties are:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+	    <code class="literal">urn:schemas:httpmail:read</code> (aka
+	    <code class="literal">E2K_PR_HTTPMAIL_READ</code>),
+	    <code class="literal">urn:schemas:httpmail:hasattachment</code> (aka
+	    <code class="literal">E2K_PR_HTTPMAIL_HAS_ATTACHMENT</code>), and
+	    <code class="literal">PR_ACTION_FLAG</code>, which are used to
+	    generate the Camel message flags.
+	</p></li>
+<li class="listitem"><p>
+	    <code class="literal">urn:schemas:httpmail:messageflag</code> (aka
+	    <code class="literal">E2K_PR_HTTPMAIL_MESSAGE_FLAG</code>),
+	    <code class="literal">urn:schemas:mailheader:reply-by</code> (aka
+	    <code class="literal">E2K_PR_MAILHEADER_REPLY_BY</code>), and
+	    <code class="literal">urn:schemas:mailheader:completed</code> (aka
+	    <code class="literal">E2K_PR_MAILHEADER_COMPLETED</code>),
+	    to determine "flag for followup" information.
+	</p></li>
+<li class="listitem"><p>
+	    <code class="literal">DAV:getcontentlength</code> (aka
+	    <code class="literal">E2K_PR_DAV_CONTENT_LENGTH</code>), which tells
+	    the message size.
+	</p></li>
+</ul></div>
+</div>
+<div class="refsect3" title="MIME messages">
+<a name="id2910194"></a><h4>MIME messages</h4>
+<p>
+    Normal <code class="literal">message/rfc822</code> messages delivered by
+    SMTP, or copied into the folder with a <span class="command"><strong>PUT</strong></span> (eg,
+    by Connector) are the easiest type of mail item to deal with.
+</p>
+<p>
+    The <code class="literal">PR_TRANSPORT_MESSAGE_HEADERS</code> property of a
+    real MIME message contains the complete MIME structure of the
+    message with none of the actual content. (Eg, all of the RFC822
+    and MIME headers, plus multipart boundary delimeters.) This can be
+    used to create most of the summary information for a message.
+</p>
+</div>
+<div class="refsect3" title="MAPI messages">
+<a name="id2910233"></a><h4>MAPI messages</h4>
+<p>
+    Messages sent by other local users using
+    <span class="application">Outlook</span>, and some messages generated by
+    <span class="application">Exchange</span> itself, are not represented as
+    MIME messages internally. While
+    <span class="application">Exchange</span> will fake up MIME headers if
+    you <span class="command"><strong>GET</strong></span> the message, these messages don't have
+    a <code class="literal">PR_TRANSPORT_MESSAGE_HEADERS</code> property, so to
+    create summary information, we have to fetch
+    <code class="literal">urn:schemas:mailheader:</code> properties and fake up
+    the headers from there.
+</p>
+<p>
+    A few types of MAPI messages get additional special handling:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem">
+<p>
+	    Delegated meeting requests
+	</p>
+<p>
+	    When you set up your delegates to get copies of your
+	    meeting requests, Exchange mangles the
+	    <code class="literal">message/rfc822</code> body in various ways.
+	    (In Connector, <code class="function">mail_util_demangle_delegated_meeting</code>
+	    fixes things for us.)
+	</p>
+</li>
+<li class="listitem">
+<p>
+	    Sticky notes
+	</p>
+<p>
+	    Technically, these aren't in mail folders, but they're
+	    handled by the mail code. This is a silly hack because I
+	    was bored one day. If the folder is a stickynotes folders
+	    instead of a mail folder, Connector fetches some
+	    additional properties and uses <code class="function">mail_util_stickynote_to_rfc822</code>
+	    to make an HTML message simulating the stickynote.
+		</p>
+</li>
+</ul></div>
+</div>
+<div class="refsect3" title="Non-mail Documents">
+<a name="id2948177"></a><h4>Non-mail Documents</h4>
+<p>
+    Public folders that are not calendar, contact, or task folders are
+    treated as mail folders by default, but are sometimes used for
+    things other than mail, such as storing
+    <span class="application">Word</span> documents.
+</p>
+<p>
+    These objects have basically no email properties at all, and when
+    you <span class="command"><strong>GET</strong></span> the bodies, they're
+    <code class="literal">application/x-msword</code> or whatever instead of
+    <code class="literal">message/rfc822</code>.
+</p>
+<p>
+    Sometimes these items will have a
+    <code class="literal">PR_INTERNET_FREE_DOC_INFO</code> property that
+    contains a <code class="literal">Content-Type</code> header, but not always.
+    So in that case, we get the
+    <code class="literal">E2K_PR_DAV_CONTENT_TYPE</code> and make
+    <code class="literal">Content-*</code> headers ourselves. Then we fake up
+    the rest of the headers to make the document look like an email
+    message with an attached document.
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

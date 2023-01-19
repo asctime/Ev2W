@@ -1,0 +1,243 @@
+<!-- ##### SECTION Title ##### -->
+E2kSecurityDescriptor
+
+<!-- ##### SECTION Short_Description ##### -->
+Windows Security Descriptor
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+Every object in the Exchange database has a security descriptor that
+controls access to it. (This includes both folders and items, but
+security descriptors for items are virtually always inherited from
+their parent folders in well-defined ways, so we don&rsquo;t bother
+thinking about them.)
+</para>
+
+<para>
+The Exchange 2000 Web Storage System has a nifty sytem for translating
+Windows security descriptors into XML and back, which unfortunately we
+cannot use, because it's buggy. So we have to generate binary format
+security descriptors, as described below.
+</para>
+
+<para>
+When considering folder permissions, it is important to remember that
+while the Exchange database <emphasis>looks</emphasis> like a file
+system when accessed via WebDAV, it does not behave like a filesystem
+internally. In particular, access to an object is controlled only by
+its <emphasis>own</emphasis> security descriptor; you do not need to
+have &ldquo;folder visible&rdquo; permission on an object&rsquo;s
+parent in order to be able to access the object.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#E2kSid
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT E2kSecurityDescriptor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_new ##### -->
+<para>
+
+</para>
+
+@xml_form: 
+@binary_form: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_to_binary ##### -->
+<para>
+
+</para>
+
+@sd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_get_sids ##### -->
+<para>
+
+</para>
+
+@sd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_get_default ##### -->
+<para>
+
+</para>
+
+@sd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_remove_sid ##### -->
+<para>
+
+</para>
+
+@sd: 
+@sid: 
+
+
+<!-- ##### ENUM E2kPermissionsRole ##### -->
+<para>
+
+</para>
+
+@E2K_PERMISSIONS_ROLE_OWNER: 
+@E2K_PERMISSIONS_ROLE_PUBLISHING_EDITOR: 
+@E2K_PERMISSIONS_ROLE_EDITOR: 
+@E2K_PERMISSIONS_ROLE_PUBLISHING_AUTHOR: 
+@E2K_PERMISSIONS_ROLE_AUTHOR: 
+@E2K_PERMISSIONS_ROLE_NON_EDITING_AUTHOR: 
+@E2K_PERMISSIONS_ROLE_REVIEWER: 
+@E2K_PERMISSIONS_ROLE_CONTRIBUTOR: 
+@E2K_PERMISSIONS_ROLE_NONE: 
+@E2K_PERMISSIONS_ROLE_NUM_ROLES: 
+@E2K_PERMISSIONS_ROLE_CUSTOM: 
+
+<!-- ##### FUNCTION e2k_permissions_role_get_name ##### -->
+<para>
+
+</para>
+
+@role: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_permissions_role_get_perms ##### -->
+<para>
+
+</para>
+
+@role: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_permissions_role_find ##### -->
+<para>
+
+</para>
+
+@perms: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_get_permissions ##### -->
+<para>
+
+</para>
+
+@sd: 
+@sid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_security_descriptor_set_permissions ##### -->
+<para>
+
+</para>
+
+@sd: 
+@sid: 
+@perms: 
+
+
+<!-- ##### MACRO E2K_PERMISSION_READ_ANY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_CREATE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_EDIT_OWNED ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_DELETE_OWNED ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_EDIT_ANY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_DELETE_ANY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_CREATE_SUBFOLDER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_OWNER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_CONTACT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_FOLDER_VISIBLE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_EDIT_MASK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO E2K_PERMISSION_DELETE_MASK ##### -->
+<para>
+
+</para>
+
+
+

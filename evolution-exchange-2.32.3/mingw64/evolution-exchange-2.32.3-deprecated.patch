@@ -1,0 +1,16 @@
+diff -Naur evolution-exchange-2.32.3/configure.ac evolution-exchange-2.32.3-deprecated/configure.ac
+--- evolution-exchange-2.32.3/configure.ac	2011-04-21 22:28:44.000000000 +0200
++++ evolution-exchange-2.32.3-deprecated/configure.ac	2013-04-11 07:40:20.928824228 +0200
+@@ -60,11 +60,9 @@
+ dnl Compiler Warning Flags
+ dnl **********************
+ AS_COMPILER_FLAGS(WARNING_FLAGS,
+-	"-DG_DISABLE_DEPRECATED
+-	-DPANGO_DISABLE_DEPRECATED
++	"-DPANGO_DISABLE_DEPRECATED
+ 	-DGDK_DISABLE_DEPRECATED
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED
+-	-DGTK_DISABLE_DEPRECATED
+ 	-DE_BOOK_DISABLE_DEPRECATED
+ 	-DE_CAL_DISABLE_DEPRECATED
+ 	-DG_DISABLE_SINGLE_INCLUDES

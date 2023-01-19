@@ -1,0 +1,782 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EShellSearchbar</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch01.html" title="The Shell">
+<link rel="prev" href="EShellTaskbar.html" title="EShellTaskbar">
+<link rel="next" href="EShellSettings.html" title="EShellSettings">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EShellTaskbar.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="EShellSettings.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EShellSearchbar.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#EShellSearchbar.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#EShellSearchbar.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#EShellSearchbar.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#EShellSearchbar.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EShellSearchbar">
+<a name="EShellSearchbar"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EShellSearchbar.top_of_page"></a>EShellSearchbar</span></h2>
+<p>EShellSearchbar — quick search interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EShellSearchbar.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;shell/e-shell-searchbar.h&gt;
+
+                    <a class="link" href="EShellSearchbar.html#EShellSearchbar-struct" title="EShellSearchbar">EShellSearchbar</a>;
+<a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         <a class="link" href="EShellSearchbar.html#e-shell-searchbar-new" title="e_shell_searchbar_new ()">e_shell_searchbar_new</a>               (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);
+<a class="link" href="EShellView.html" title="EShellView"><span class="returnvalue">EShellView</span></a> *        <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-shell-view" title="e_shell_searchbar_get_shell_view ()">e_shell_searchbar_get_shell_view</a>    (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-express-mode" title="e_shell_searchbar_get_express_mode ()">e_shell_searchbar_get_express_mode</a>  (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-express-mode" title="e_shell_searchbar_set_express_mode ()">e_shell_searchbar_set_express_mode</a>  (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> express_mode</code></em>);
+<span class="returnvalue">EActionComboBox</span> *   <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-filter-combo-box" title="e_shell_searchbar_get_filter_combo_box ()">e_shell_searchbar_get_filter_combo_box</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-filter-visible" title="e_shell_searchbar_get_filter_visible ()">e_shell_searchbar_get_filter_visible</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-filter-visible" title="e_shell_searchbar_set_filter_visible ()">e_shell_searchbar_set_filter_visible</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> filter_visible</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-labels-visible" title="e_shell_searchbar_get_labels_visible ()">e_shell_searchbar_get_labels_visible</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-labels-visible" title="e_shell_searchbar_set_labels_visible ()">e_shell_searchbar_set_labels_visible</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> labels_visible</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-search-hint" title="e_shell_searchbar_get_search_hint ()">e_shell_searchbar_get_search_hint</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-search-hint" title="e_shell_searchbar_set_search_hint ()">e_shell_searchbar_set_search_hint</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *search_hint</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="returnvalue">GtkRadioAction</span></a> *    <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-search-option" title="e_shell_searchbar_get_search_option ()">e_shell_searchbar_get_search_option</a> (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-search-option" title="e_shell_searchbar_set_search_option ()">e_shell_searchbar_set_search_option</a> (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a> *search_option</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-search-text" title="e_shell_searchbar_get_search_text ()">e_shell_searchbar_get_search_text</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-search-text" title="e_shell_searchbar_set_search_text ()">e_shell_searchbar_set_search_text</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *search_text</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-search-visible" title="e_shell_searchbar_get_search_visible ()">e_shell_searchbar_get_search_visible</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-search-visible" title="e_shell_searchbar_set_search_visible ()">e_shell_searchbar_set_search_visible</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> search_visible</code></em>);
+<span class="returnvalue">EActionComboBox</span> *   <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-scope-combo-box" title="e_shell_searchbar_get_scope_combo_box ()">e_shell_searchbar_get_scope_combo_box</a>
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-scope-visible" title="e_shell_searchbar_get_scope_visible ()">e_shell_searchbar_get_scope_visible</a> (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-scope-visible" title="e_shell_searchbar_set_scope_visible ()">e_shell_searchbar_set_scope_visible</a> (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> scope_visible</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-state-dirty" title="e_shell_searchbar_set_state_dirty ()">e_shell_searchbar_set_state_dirty</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="EShellSearchbar.html#e-shell-searchbar-get-state-group" title="e_shell_searchbar_get_state_group ()">e_shell_searchbar_get_state_group</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-set-state-group" title="e_shell_searchbar_set_state_group ()">e_shell_searchbar_set_state_group</a>   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *state_group</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-load-state" title="e_shell_searchbar_load_state ()">e_shell_searchbar_load_state</a>        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="EShellSearchbar.html#e-shell-searchbar-save-state" title="e_shell_searchbar_save_state ()">e_shell_searchbar_save_state</a>        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EShellSearchbar.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a href="http://library.gnome.org/devel/gtk/unstable/GtkObject.html">GtkObject</a>
+               +----<a href="http://library.gnome.org/devel/gtk/GtkWidget.html">GtkWidget</a>
+                     +----<a href="http://library.gnome.org/devel/gtk/GtkContainer.html">GtkContainer</a>
+                           +----<a href="http://library.gnome.org/devel/gtk/GtkBox.html">GtkBox</a>
+                                 +----EShellSearchbar
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="EShellSearchbar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+EShellSearchbar implements
+ AtkImplementorIface,  <a href="http://library.gnome.org/devel/gtk/GtkBuildable.html">GtkBuildable</a>,  <a href="http://library.gnome.org/devel/gtk/gtk3-Orientable.html#GtkOrientable">GtkOrientable</a> and  <a class="link" href="EExtensible.html" title="EExtensible">EExtensible</a>.</p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EShellSearchbar.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--express-mode" title='The "express-mode" property'>express-mode</a>"             <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--filter-combo-box" title='The "filter-combo-box" property'>filter-combo-box</a>"         <span class="type">EActionComboBox</span>*      : Read
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--filter-visible" title='The "filter-visible" property'>filter-visible</a>"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--labels-visible" title='The "labels-visible" property'>labels-visible</a>"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--scope-combo-box" title='The "scope-combo-box" property'>scope-combo-box</a>"          <span class="type">EActionComboBox</span>*      : Read
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--scope-visible" title='The "scope-visible" property'>scope-visible</a>"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--search-hint" title='The "search-hint" property'>search-hint</a>"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--search-option" title='The "search-option" property'>search-option</a>"            <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a>*       : Read / Write
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--search-text" title='The "search-text" property'>search-text</a>"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--search-visible" title='The "search-visible" property'>search-visible</a>"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--shell-view" title='The "shell-view" property'>shell-view</a>"               <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>*           : Read / Write / Construct Only
+  "<a class="link" href="EShellSearchbar.html#EShellSearchbar--state-group" title='The "state-group" property'>state-group</a>"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EShellSearchbar.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="EShellSearchbar.details"></a><h2>Details</h2>
+<div class="refsect2" title="EShellSearchbar">
+<a name="EShellSearchbar-struct"></a><h3>EShellSearchbar</h3>
+<pre class="programlisting">typedef struct _EShellSearchbar EShellSearchbar;</pre>
+<p>
+Contains only private data that should be read and manipulated using the
+functions below.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_new ()">
+<a name="e-shell-searchbar-new"></a><h3>e_shell_searchbar_new ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="returnvalue">GtkWidget</span></a> *         e_shell_searchbar_new               (<em class="parameter"><code><a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> *shell_view</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell_view</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> instance
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_shell_view ()">
+<a name="e-shell-searchbar-get-shell-view"></a><h3>e_shell_searchbar_get_shell_view ()</h3>
+<pre class="programlisting"><a class="link" href="EShellView.html" title="EShellView"><span class="returnvalue">EShellView</span></a> *        e_shell_searchbar_get_shell_view    (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+Returns the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> that was passed to <a class="link" href="EShellSearchbar.html#e-shell-searchbar-new" title="e_shell_searchbar_new ()"><code class="function">e_shell_searchbar_new()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> to which <em class="parameter"><code>searchbar</code></em> belongs
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_express_mode ()">
+<a name="e-shell-searchbar-get-express-mode"></a><h3>e_shell_searchbar_get_express_mode ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_searchbar_get_express_mode  (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_express_mode ()">
+<a name="e-shell-searchbar-set-express-mode"></a><h3>e_shell_searchbar_set_express_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_express_mode  (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> express_mode</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>express_mode</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_filter_combo_box ()">
+<a name="e-shell-searchbar-get-filter-combo-box"></a><h3>e_shell_searchbar_get_filter_combo_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">EActionComboBox</span> *   e_shell_searchbar_get_filter_combo_box
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_filter_visible ()">
+<a name="e-shell-searchbar-get-filter-visible"></a><h3>e_shell_searchbar_get_filter_visible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_searchbar_get_filter_visible
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_filter_visible ()">
+<a name="e-shell-searchbar-set-filter-visible"></a><h3>e_shell_searchbar_set_filter_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_filter_visible
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> filter_visible</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filter_visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_labels_visible ()">
+<a name="e-shell-searchbar-get-labels-visible"></a><h3>e_shell_searchbar_get_labels_visible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_searchbar_get_labels_visible
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_labels_visible ()">
+<a name="e-shell-searchbar-set-labels-visible"></a><h3>e_shell_searchbar_set_labels_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_labels_visible
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> labels_visible</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>labels_visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_search_hint ()">
+<a name="e-shell-searchbar-get-search-hint"></a><h3>e_shell_searchbar_get_search_hint ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_searchbar_get_search_hint   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_search_hint ()">
+<a name="e-shell-searchbar-set-search-hint"></a><h3>e_shell_searchbar_set_search_hint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_search_hint   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *search_hint</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search_hint</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_search_option ()">
+<a name="e-shell-searchbar-get-search-option"></a><h3>e_shell_searchbar_get_search_option ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="returnvalue">GtkRadioAction</span></a> *    e_shell_searchbar_get_search_option (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_search_option ()">
+<a name="e-shell-searchbar-set-search-option"></a><h3>e_shell_searchbar_set_search_option ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_search_option (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a> *search_option</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search_option</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_search_text ()">
+<a name="e-shell-searchbar-get-search-text"></a><h3>e_shell_searchbar_get_search_text ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_searchbar_get_search_text   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_search_text ()">
+<a name="e-shell-searchbar-set-search-text"></a><h3>e_shell_searchbar_set_search_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_search_text   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *search_text</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search_text</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_search_visible ()">
+<a name="e-shell-searchbar-get-search-visible"></a><h3>e_shell_searchbar_get_search_visible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_searchbar_get_search_visible
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_search_visible ()">
+<a name="e-shell-searchbar-set-search-visible"></a><h3>e_shell_searchbar_set_search_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_search_visible
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> search_visible</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search_visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_scope_combo_box ()">
+<a name="e-shell-searchbar-get-scope-combo-box"></a><h3>e_shell_searchbar_get_scope_combo_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">EActionComboBox</span> *   e_shell_searchbar_get_scope_combo_box
+                                                        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_scope_visible ()">
+<a name="e-shell-searchbar-get-scope-visible"></a><h3>e_shell_searchbar_get_scope_visible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_shell_searchbar_get_scope_visible (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_scope_visible ()">
+<a name="e-shell-searchbar-set-scope-visible"></a><h3>e_shell_searchbar_set_scope_visible ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_scope_visible (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> scope_visible</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>scope_visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_state_dirty ()">
+<a name="e-shell-searchbar-set-state-dirty"></a><h3>e_shell_searchbar_set_state_dirty ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_state_dirty   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_get_state_group ()">
+<a name="e-shell-searchbar-get-state-group"></a><h3>e_shell_searchbar_get_state_group ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_shell_searchbar_get_state_group   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_set_state_group ()">
+<a name="e-shell-searchbar-set-state-group"></a><h3>e_shell_searchbar_set_state_group ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_set_state_group   (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *state_group</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>state_group</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_load_state ()">
+<a name="e-shell-searchbar-load-state"></a><h3>e_shell_searchbar_load_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_load_state        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_shell_searchbar_save_state ()">
+<a name="e-shell-searchbar-save-state"></a><h3>e_shell_searchbar_save_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_shell_searchbar_save_state        (<em class="parameter"><code><a class="link" href="EShellSearchbar.html" title="EShellSearchbar"><span class="type">EShellSearchbar</span></a> *searchbar</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>searchbar</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EShellSearchbar.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "express-mode" property'>
+<a name="EShellSearchbar--express-mode"></a><h3>The <code class="literal">"express-mode"</code> property</h3>
+<pre class="programlisting">  "express-mode"             <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "filter-combo-box" property'>
+<a name="EShellSearchbar--filter-combo-box"></a><h3>The <code class="literal">"filter-combo-box"</code> property</h3>
+<pre class="programlisting">  "filter-combo-box"         <span class="type">EActionComboBox</span>*      : Read</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2" title='The "filter-visible" property'>
+<a name="EShellSearchbar--filter-visible"></a><h3>The <code class="literal">"filter-visible"</code> property</h3>
+<pre class="programlisting">  "filter-visible"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "labels-visible" property'>
+<a name="EShellSearchbar--labels-visible"></a><h3>The <code class="literal">"labels-visible"</code> property</h3>
+<pre class="programlisting">  "labels-visible"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "scope-combo-box" property'>
+<a name="EShellSearchbar--scope-combo-box"></a><h3>The <code class="literal">"scope-combo-box"</code> property</h3>
+<pre class="programlisting">  "scope-combo-box"          <span class="type">EActionComboBox</span>*      : Read</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2" title='The "scope-visible" property'>
+<a name="EShellSearchbar--scope-visible"></a><h3>The <code class="literal">"scope-visible"</code> property</h3>
+<pre class="programlisting">  "scope-visible"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "search-hint" property'>
+<a name="EShellSearchbar--search-hint"></a><h3>The <code class="literal">"search-hint"</code> property</h3>
+<pre class="programlisting">  "search-hint"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "search-option" property'>
+<a name="EShellSearchbar--search-option"></a><h3>The <code class="literal">"search-option"</code> property</h3>
+<pre class="programlisting">  "search-option"            <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a>*       : Read / Write</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2" title='The "search-text" property'>
+<a name="EShellSearchbar--search-text"></a><h3>The <code class="literal">"search-text"</code> property</h3>
+<pre class="programlisting">  "search-text"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "search-visible" property'>
+<a name="EShellSearchbar--search-visible"></a><h3>The <code class="literal">"search-visible"</code> property</h3>
+<pre class="programlisting">  "search-visible"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "shell-view" property'>
+<a name="EShellSearchbar--shell-view"></a><h3>The <code class="literal">"shell-view"</code> property</h3>
+<pre class="programlisting">  "shell-view"               <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a>*           : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="EShellView.html" title="EShellView"><span class="type">EShellView</span></a> to which the searchbar widget belongs.
+</p>
+</div>
+<hr>
+<div class="refsect2" title='The "state-group" property'>
+<a name="EShellSearchbar--state-group"></a><h3>The <code class="literal">"state-group"</code> property</h3>
+<pre class="programlisting">  "state-group"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct</pre>
+<p>
+Key file group name to read and write search bar state.
+</p>
+<p>Default value: "Search Bar"</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Connector base version */
+#undef BASE_VERSION
+
+/* Used to prevent clock-setting attacks against pilot licenses */
+#undef E2K_APPROX_BUILD_TIME
+
+/* Define if you want E2K_DEBUG to be available */
+#undef E2K_DEBUG
+
+/* Enabling GAL Caching */
+#undef ENABLE_CACHE
+
+/* always defined to indicate that i18n is enabled */
+#undef ENABLE_NLS
+
+/* Package name for gettext */
+#undef GETTEXT_PACKAGE
+
+/* Define it once memory returned by libical is free'ed properly */
+#undef HANDLE_LIBICAL_MEMORY
+
+/* Define to 1 if you have the `bind_textdomain_codeset' function. */
+#undef HAVE_BIND_TEXTDOMAIN_CODESET
+
+/* Have <comm_err.h> */
+#undef HAVE_COM_ERR_H
+
+/* Define to 1 if you have the `dcgettext' function. */
+#undef HAVE_DCGETTEXT
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Have <et/comm_err.h> */
+#undef HAVE_ET_COM_ERR_H
+
+/* Define if the GNU gettext() function is already present or preinstalled. */
+#undef HAVE_GETTEXT
+
+/* Define if you have Heimdal */
+#undef HAVE_HEIMDAL_KRB5
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define if you have Krb5 */
+#undef HAVE_KRB5
+
+/* Define if your <locale.h> file defines LC_MESSAGES. */
+#undef HAVE_LC_MESSAGES
+
+/* Define if you have LDAP support */
+#undef HAVE_LDAP
+
+/* Define to 1 if you have the `ldap_ntlm_bind' function. */
+#undef HAVE_LDAP_NTLM_BIND
+
+/* Supports Paged results */
+#undef HAVE_LDAP_PAGED
+
+/* Define to 1 if you have the <locale.h> header file. */
+#undef HAVE_LOCALE_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define if you have MIT Krb5 */
+#undef HAVE_MIT_KRB5
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define if you have Sun Kerberosv5 */
+#undef HAVE_SUN_KRB5
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* Define to 1 if your C compiler doesn't accept -c and -o together. */
+#undef NO_MINUS_C_MINUS_O
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define if you use SunLDAP */
+#undef SUNLDAP
+
+/* Version number of package */
+#undef VERSION
+
+/* Define to "int" if socklen_t is not defined */
+#undef socklen_t

@@ -1,0 +1,17 @@
+http://schemas.microsoft.com/mapi/proptag/x36e5001f (PR_DEF_MSG_CLASS)
+if set, shows the default form to use. (Eg, IPM.Post, IPM.Appointment)
+
+http://schemas.microsoft.com/mapi/proptag/x3fe20003 (PR_FOLDER_DESIGN_FLAGS)
+is 1 if you can't post with the standard form
+
+
+http://schemas.microsoft.com/mapi/proptag/x36df0102 (PR_WEBPAGE)
+homepage info: 02 00 00 00 01 00 00 00 VV 00 00 00
+               00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               00 00 00 00 00 00 00 00 00 00 00 00
+               LL LL LL LL
+               URL
+VV = 0x02 for non-default, 0x03 for default view
+LL = LE32 length of URL including NUL
+URL = NUL-terminated UTF16-LE URL
+if URL gets erased, URL is replaced by just "00 00" (UTF16 NUL)

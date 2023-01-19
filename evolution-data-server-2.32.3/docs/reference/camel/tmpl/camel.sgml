@@ -1,0 +1,40 @@
+<!-- ##### SECTION Title ##### -->
+camel
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION camel_init ##### -->
+<para>
+
+</para>
+
+@certdb_dir: 
+@nss_init: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_shutdown ##### -->
+<para>
+
+</para>
+
+@void: 
+
+

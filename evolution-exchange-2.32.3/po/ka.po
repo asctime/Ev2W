@@ -1,0 +1,1194 @@
+# translation of evolution-exchange.HEAD.po to Georgian
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Malkhaz Barkalaya მალხაზ ბარკალაია <maxo127@mail.ru>
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-29 00:15+0200\n"
+"PO-Revision-Date: 2006-09-26 02:42+0200\n"
+"Last-Translator: Vladimer Sichinava <vsichi@gnome.org>\n"
+"Language-Team: Georgian <www.gia.ge>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1882
+#: ../addressbook/e-book-backend-gal.c:1499 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "ვეძებ..."
+
+#: ../addressbook/e-book-backend-gal.c:267
+msgid "Reconnecting to LDAP server..."
+msgstr ""
+"LDAP-სერვერთან ხელახლა "
+"შეერთება..."
+
+#: ../addressbook/e-book-backend-gal.c:1363
+msgid "Receiving LDAP search results..."
+msgstr ""
+"ვღებულობ LDAP-ში ძიების შედეგებს..."
+""
+#: ../addressbook/e-book-backend-gal.c:1522
+msgid "Error performing search"
+msgstr "შეცდომა ძებნის დროს"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2004
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"არ ხერხდება რესურს '%s'-ის "
+"ჩაყენება პერიოდული "
+"შეკრებების რიგში. \n"
+"განაწესეთ ყოველი შეკრება "
+"ცალ-ცალკე."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2022
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr ""
+"მითითებულ პერიოდში რესურსი "
+"'%s' დაკავებულია."
+
+#: ../camel/camel-exchange-folder.c:222
+msgid "You cannot expunge in offline mode."
+msgstr ""
+"ავტონომიურ რეჟიმში "
+"გასუფთავება ვერ მოხდება."
+
+#: ../camel/camel-exchange-folder.c:253
+msgid "No Subject"
+msgstr "არავითარი თემა"
+
+#: ../camel/camel-exchange-folder.c:407
+msgid "This message is not available in offline mode."
+msgstr "ავტონომიურ რეჟიმში მოცემული შეტყობინება დაუშვებელია."
+
+#: ../camel/camel-exchange-folder.c:642
+msgid "Moving messages"
+msgstr ""
+"მიმდენარეობს წერილების "
+"გადატანა"
+
+#: ../camel/camel-exchange-folder.c:643
+msgid "Copying messages"
+msgstr ""
+"მიმდინარეობს წერილების "
+"კოპირება"
+
+#: ../camel/camel-exchange-folder.c:1014
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "ვერ ვქმნი დირექტორიას %s: %s"
+
+#: ../camel/camel-exchange-folder.c:1024
+#, c-format
+msgid "Could not load summary for %s"
+msgstr ""
+"ინფორმაცია %s-ის შესახებ არ "
+"იტვირთება"
+
+#: ../camel/camel-exchange-folder.c:1032
+#, c-format
+msgid "Could not create cache for %s"
+msgstr ""
+"შეუძლებელია %s-თვის კეშის "
+"შექმნა"
+
+#: ../camel/camel-exchange-folder.c:1042
+#, c-format
+msgid "Could not create journal for %s"
+msgstr ""
+"შეუძლებელია %s-თვის ჟურნალის "
+"შექმნა"
+
+#: ../camel/camel-exchange-folder.c:1087
+msgid "Scanning for changed messages"
+msgstr ""
+"შეცვლილი შეტყობინებების "
+"სკანირება"
+
+#: ../camel/camel-exchange-folder.c:1113
+msgid "Fetching summary information for new messages"
+msgstr ""
+"ახალი შეტყობინებების "
+"შესახებ ინფორმაციის მიღება"
+
+#: ../camel/camel-exchange-journal.c:339
+msgid "No folder name found\n"
+msgstr ""
+"საქაღალდის სახელი ვერ "
+"მოიძებნა\n"
+
+#: ../camel/camel-exchange-journal.c:372 ../mail/mail-stub-exchange.c:2549
+#: ../mail/mail-stub-exchange.c:2593 ../mail/mail-stub-exchange.c:2628
+#: ../mail/mail-stub-exchange.c:2655 ../mail/mail-stub-exchange.c:2708
+#: ../mail/mail-stub-exchange.c:2730
+msgid "Folder doesn't exist"
+msgstr "საქაღალდე არ არსებობს"
+
+#: ../camel/camel-exchange-journal.c:436
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr ""
+"ავტონომიურ რეჟიმში "
+"შეტყობინება ვერ დაემატება: "
+"კეში ხელმიუწვდომელია"
+
+#: ../camel/camel-exchange-journal.c:452
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr ""
+"ავტონომიურ რეჟიმში "
+"შეტყობინება ვერ დაემატება : %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:44
+msgid "Windows User_name:"
+msgstr "Windows მომხმარებლის სახელი:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:49
+msgid "Global Address List / Active Directory"
+msgstr ""
+"მისამართების გლობალური სია / "
+"Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:53
+msgid "_Global Catalog server name:"
+msgstr ""
+"_გლობალური კატალოგის "
+"სერვერის სახელი:"
+
+#: ../camel/camel-exchange-provider.c:55
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr ""
+"_GAL-ის პასუხების რიცხვის "
+"შემოსაზღვრა: %s"
+
+#: ../camel/camel-exchange-provider.c:58
+msgid "Options"
+msgstr "ოფციები"
+
+#: ../camel/camel-exchange-provider.c:60
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "_პაროლის ვადა: %s"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "Automatically synchroni_ze account locally"
+msgstr ""
+"_ანგარიშის ავტომატური "
+"ლოკალური სინქრონიზება"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:65
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr ""
+"_სერვერის შემოსული "
+"წერილების საქაღალდეზე "
+"ფილტრების დაყენება"
+
+#: ../camel/camel-exchange-provider.c:67
+msgid "Check new messages for _Junk contents"
+msgstr ""
+"ახალ შეტყობინებებში "
+"არასასურველი (სპამის სახის) "
+"შემადგენლობის შემოწმება "
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr ""
+"_შემოსული წერილების "
+"საქაღალდეში სპამის ნახვა"
+
+#: ../camel/camel-exchange-provider.c:79
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange "
+
+#: ../camel/camel-exchange-provider.c:81
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr ""
+"Microsoft Exchange სერვერებზე ფოსტის (და "
+"სხვა ინფორმაციის) "
+"დამუშავებისათვის"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:97
+msgid "Secure Password"
+msgstr "დაცული პაროლი"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:100
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"ეს პარამეტრი განსაზღვრავს "
+"Exchange-სერვერზე დაცული პაროლით "
+"ავტორიზებას (NTLM)."
+
+#: ../camel/camel-exchange-provider.c:108
+msgid "Plaintext Password"
+msgstr "ღია პაროლი"
+
+#: ../camel/camel-exchange-provider.c:110
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"ეს პარამეტრი განსაზღვრავს "
+"Exchange-სერვერზე სტანდარტული "
+"დაუცველი პაროლით "
+"ავტორიზებას."
+
+#: ../camel/camel-exchange-store.c:309
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange-სერვერი %s "
+
+#: ../camel/camel-exchange-store.c:312
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Exchange-ანგარიში %s-სათვის %s-ზე"
+
+#: ../camel/camel-exchange-store.c:353
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%sშეიყვანეთ პაროლი %s-სათვის"
+
+#: ../camel/camel-exchange-store.c:404
+msgid "Evolution Exchange backend process"
+msgstr ""
+"Evolution Exchange-ის კომპონენტის "
+"პროცესი"
+
+#: ../camel/camel-exchange-store.c:445
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"ვერ ხერხდება ავტორიზება სერვერზე. (შეამოწმეთ პაროლი)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:487
+#, c-format
+msgid "No such folder %s"
+msgstr ""
+"ამდაგვარი საქაღალდე არ "
+"არსებობს %s"
+
+#: ../camel/camel-exchange-store.c:564
+msgid "Cannot subscribe folder in offline mode."
+msgstr ""
+"საქაღალდეზე ხელმოწერა "
+"ავტონომიურ რეჟიმში ვერ "
+"მოხდება."
+
+#: ../camel/camel-exchange-store.c:581
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr ""
+"საქაღალდეზე ხელმოწერის "
+"გაუქმება ავტონომიურ "
+"რეჟიმში ვერ მოხდება."
+
+#: ../camel/camel-exchange-store.c:696
+msgid "Cannot get folder info in offline mode."
+msgstr ""
+"საქაღალდის შესახებ "
+"ინფორმაციის მიღება "
+"ავტონომიურ რეჟიმში ვერ "
+"მოხდება."
+
+#: ../camel/camel-exchange-store.c:767
+msgid "Cannot create folder in offline mode."
+msgstr ""
+"საქაღალდის გახსნა "
+"ავტონომიურ რეჟიმში ვერ "
+"მოხდება."
+
+#: ../camel/camel-exchange-store.c:794
+msgid "Cannot delete folder in offline mode."
+msgstr ""
+"საქაღალდის წაშლა "
+"ავტონომიურ რეჟიმში ვერ "
+"მოხდება."
+
+#: ../camel/camel-exchange-store.c:810
+msgid "Cannot rename folder in offline mode."
+msgstr ""
+"საქაღალდისათვის სახელის "
+"შეცვლა ავტონომიურ რეჟიმში "
+"ვერ მოხდება."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr ""
+"Exchange-ტრანსპორტი გამოიყენება "
+"მხოლოდ Exchange-ფოსტასთან"
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr ""
+"შეტყობინებას ერთი ან "
+"რამდენიმე მცდარი ადრესატი "
+"ჰყავს და ამის გამო არ "
+"გაიგზავნება"
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr ""
+"შეტყობინებაში ვერ მოინახა "
+"გამომგზავნის მისამართი"
+
+#: ../camel/camel-stub.c:152
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "ვერ იხსნება სოკეტი: %s"
+
+#: ../camel/camel-stub.c:170
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr ""
+"ვერ ვუკავშირდები %s. გთხოვთ "
+"გადატვირთოთ Evolution"
+
+#: ../camel/camel-stub.c:175
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "ვერ ვუკავშირდები %s: %s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Path too long: %s"
+msgstr "გეზი ძალიან გრძელია: %s"
+
+#: ../camel/camel-stub.c:231
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "ვერ გაიშვა სტატუს-ნაკადი: %s"
+
+#: ../camel/camel-stub.c:485
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s-სთან კავშირი გაწყდა"
+
+#: ../camel/camel-stub.c:489
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr ""
+"შეცდომა %s-სთან "
+"დაკავშირებისას: %s"
+
+#: ../mail/mail-stub-exchange.c:257 ../mail/mail-stub-exchange.c:755
+msgid "No such folder"
+msgstr "არ არსებობს ასეთი საქაღალდე"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:280 ../mail/mail-stub-exchange.c:1390
+#: ../mail/mail-stub-exchange.c:2526 ../mail/mail-stub-exchange.c:2566
+#: ../mail/mail-stub-exchange.c:2632 ../mail/mail-stub-exchange.c:2682
+#: ../mail/mail-stub-exchange.c:2745
+msgid "Permission denied"
+msgstr "დაშვება აკრძალულია"
+
+#: ../mail/mail-stub-exchange.c:578 ../mail/mail-stub-exchange.c:600
+msgid "Could not open folder: Permission denied"
+msgstr ""
+"ვერ ვხსნ საქაღალდეს:მისი "
+"ნახვა არ არის ნებადართული"
+
+#: ../mail/mail-stub-exchange.c:584 ../mail/mail-stub-exchange.c:707
+msgid "Could not open folder"
+msgstr "საქაღალდე ვერ გაიხსნა"
+
+#: ../mail/mail-stub-exchange.c:764
+msgid "Could not create folder."
+msgstr "საქაღალდე ვერ იქმნება."
+
+#: ../mail/mail-stub-exchange.c:844
+msgid "Could not open Deleted Items folder"
+msgstr ""
+"არ იხსნება წაშლილების "
+"საქაღალდე"
+
+#: ../mail/mail-stub-exchange.c:1175 ../mail/mail-stub-exchange.c:1216
+msgid "Could not get new messages"
+msgstr ""
+"ახალი შეტყობინებების "
+"მიღება ვერ ხერხდება"
+
+#: ../mail/mail-stub-exchange.c:1386
+msgid "Could not empty Deleted Items folder"
+msgstr ""
+"წაშლილების საქაღალდის "
+"გასუფთავება ვერ ხერხდება"
+
+#: ../mail/mail-stub-exchange.c:1463
+msgid "Could not append message; mailbox is over quota"
+msgstr ""
+"გადავსებულია საფოსტო ყუთი, "
+"შეტყობინებები არ მიიღება"
+
+#: ../mail/mail-stub-exchange.c:1464
+msgid "Could not append message"
+msgstr "შეტყობინებები არ მიიღება"
+
+#: ../mail/mail-stub-exchange.c:2016
+msgid "No such message"
+msgstr ""
+"არავითარი მაგდაგვარი "
+"შეტყობინება"
+
+#: ../mail/mail-stub-exchange.c:2069
+msgid "Message has been deleted"
+msgstr "შეტყობინება წაშლილია"
+
+#: ../mail/mail-stub-exchange.c:2071
+msgid "Error retrieving message"
+msgstr ""
+"შეტყობინების მიღებისას "
+"დაიშვა შეცდომა"
+
+#: ../mail/mail-stub-exchange.c:2113
+msgid "Mailbox does not support full-text searching"
+msgstr ""
+"საფოსტო ყუთში მთელ ტექსტში "
+"ძიება არ არის მხარდაჭერილი"
+
+#: ../mail/mail-stub-exchange.c:2211
+msgid "Unable to move/copy messages"
+msgstr ""
+"შეტყობინების "
+"გადატანა/კოპირება "
+"შეუძლებელია"
+
+#: ../mail/mail-stub-exchange.c:2441
+msgid "No mail submission URI for this mailbox"
+msgstr ""
+"საფოსტო ყუთში ფოსტის "
+"გადაცემის URI არ არის"
+
+#: ../mail/mail-stub-exchange.c:2477
+msgid "Server won't accept mail via Exchange transport"
+msgstr ""
+"სერვერი არ ღებულობს ფოსტას "
+"Exchange-ტრანსპორტით"
+
+#: ../mail/mail-stub-exchange.c:2479
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"თქვენს ანგარიშში დაუშვებელია გამოყენოს <%s>\n"
+"ველში 'ვისგან'."
+
+#: ../mail/mail-stub-exchange.c:2491
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"შეტყობინება არ გაგზავნილა. \n"
+"შეიძლება ამოწურულია თქვენი "
+"ანგარიშის ქვოთა(დისკზე "
+"თავისუფალი ადგილის "
+"რაოდენობა). "
+
+#: ../mail/mail-stub-exchange.c:2495
+msgid "Could not send message"
+msgstr "შეტყობინება არ იგზავნება"
+
+#: ../mail/mail-stub-exchange.c:2518 ../mail/mail-stub-exchange.c:2571
+#: ../mail/mail-stub-exchange.c:2636 ../mail/mail-stub-exchange.c:2687
+#: ../mail/mail-stub-exchange.c:2751
+msgid "Generic error"
+msgstr "ზოგადი შეცდომა"
+
+#: ../mail/mail-stub-exchange.c:2522
+msgid "Folder already exists"
+msgstr "საქაღალდე უკვე არსებობს"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr ""
+"Exchange-ის მისამართების წიგნის "
+"Evolution-კომპონენტა "
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr ""
+"Exchange-ის კალენდრის "
+"Evolution-კომპონენტა "
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Ximian Connector for Exchange"
+msgstr "Exchange-ს Ximian Connector"
+
+#: ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"ვერ ხერხდება Exchange-სერვერთან "
+"დაკავშირება. \n"
+"შეამოწმეთ URL (სცადეთ \"%s\" \"%s\"-ს "
+"ნაცვლად)."
+
+#: ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"ვერ ხერხდება Exchange-სერვერთან "
+"დაკავშირება. \n"
+"შეამოწმეთ სერვერის სახელი."
+
+#: ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"ვერ ხერხდება Exchange-სერვერზე "
+"ავტორიზება. \n"
+"შეამოწმეთ სახელი და პაროლი."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"ვერ ხერხდება Exchange-სერვერზე "
+"ავტორიზება. \n"
+"შეამოწმეთ სახელი და პაროლი.n\n"
+"შეიძლება დაგჭირდეთ "
+"Windows-დომენის სახელის ჩართვა "
+"თქვენს სახელში (მაგ. \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"მითითებულ URL-ზე OWA-მონაცემები "
+"არ მოიძებნა.\n"
+"შეამოწმეთ URL."
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Ximian Connector მოითხოვს გარკვეულ "
+"ფუნქციონირებას "
+"Exchange-სერვერისაგან, რომელიც, "
+"როგორც ჩანს, გამორთულია ან "
+"ბლოკირებული. (როგორც წესი, "
+"არა სპეციალურად) თქვენმა "
+"Exchange-ადმინისტრატორმა ეს უნდა "
+"უზრუნველყოს, რათა თქვენ "
+"შეძლოთ Ximian Connector-ის გამოყენება. \n"
+"\n"
+"ადმინისტრატორისათვის "
+"გადასაცემი ინფორმაცია "
+"შემდეგ ბმულზეა:"
+
+#: ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"თქვენს მიერ მითითებულ URL-ზე "
+"არის Exchange 5.5 Server. Ximian Connector მუშაობს "
+"მხოლოდ  Microsoft Exchange 2000 ან 2003-თან."
+
+#: ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"გაურკვეველი შეცდომის "
+"შედეგად Exchange-ანგარიშის "
+"კონფიგურირება შეუძლებელია. "
+"შეამოწმეთ URL, სახელი და "
+"პაროლი."
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, "
+"\"MY-DOMAIN\\%s\")."
+msgstr ""
+"ვერ მოხერხდა ავტორიზება Global "
+"Catalog server-ზე. საჭიროა თქვენს "
+"სახელში Windows-დომენის სახელის "
+"ჩართვა (მაგ.: \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"არ ხერხდება მითითებულ "
+"სერვერთან დაკავშირება.\n"
+"შეამოწმეთ სერვერის სახელი."
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "უცნობი"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"კონფიგურირების სისტემის "
+"შეცდომა.\n"
+"ახალი ანგარიშის გახსნა "
+"შეუძლებელია."
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr ""
+"თქვენ შეგიძლიათ მხოლოდ ერთი "
+"Exchange-ანგარიშის კონფიგურირება"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr ""
+"დაიშვა შეცდომა "
+"კონფიგურირებისას"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "მზადაა"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "ელფოსტა:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "Exchange პარამეტრები"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "სრული სახელი:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "GC სერვერი:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr ""
+"გახადე ჩემი ნაგულისხმები "
+"ანგარიში"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "პაროლი:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "დავიმახსოვროთ პაროლი"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "მომხმარებლის სახელი:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "მოგესალმებით"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"მოგესალმებათ Microsoft Exchange-ს Ximian "
+"Connector.\n"
+"მომდევნო ეკრანები თქვენ "
+"დაგეხმარებათ Evolution-ის "
+"კონფიგურირებაში\n"
+"თქვენი Exchange-ანგარიშის "
+"გამოსაყენებლად.\n"
+"\n"
+"გადადით შემდეგ გვერდზე."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Ximian Connector-ის კონფიგურირება"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Ximian Connector-ს შეუძლია გამოიყენოს "
+"თქვენი Outlook Web Access (OWA)-ანგარიში.\n"
+"\n"
+"შეიყვანეთ თქვენი "
+"OWA-მისამართი (URL), სახელი, "
+"პაროლი და გადადით შემდეგ "
+"გვერდზე.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"Ximian Connector-მა ვერ მიიღო პასუხი Global "
+"Catalog-საგან. მიუთითეთ თქვენი  Global "
+"Catalog-სერვერი. მიმართეთ სწორი "
+"მნიშვნელობისათვის სისტემის "
+"ადმინისტრატორს.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr ""
+"Ximian Connector ვერ ახერხებს თქვენი "
+"Exchange ანგარიშის "
+"კონფიგურირებას.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"თქვენი ანგარიში მზადაა. "
+"დააჭირეთ ღილაკს "
+"კონფიგურაციის შესანახად და "
+"დასასრულებლად."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr ""
+"გადახედეთ თქვენი ანგარიშის "
+"მონაცემებს, თუ საჭიროა "
+"შეასწორეთ და გადადით შემდეგ "
+"გვერდზე.\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"მიმდინარე პაროლი არ "
+"ემთხვევა თქვენი ანგარიშის "
+"პაროლს. გთხოვთ შეიყვანეთ "
+"სწორი პაროლი."
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr ""
+"პაროლები არ ემთხვევიან "
+"ერთმანეთს. გთხოვთ გაიმეოროთ."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "პაროლის შეცვლა"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "პაროლის დადასტურება:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "ახლანდელი პაროლი:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "ახალი პაროლი:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"თქვენ პაროლს გაუვიდა ვადა. "
+"გთხოვთ ახლავე შეცვალოთ "
+"თქვენი პაროლი."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "ავტორი (წაიკითხე,შექმენი)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "_კალენდარი:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "კონტაქტები:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "უფლებების დელეგირება"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "წარმომადგენლები"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "რედაქტორი (აკითხვა,შექმნა,რედაქტირება)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "არა"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "უფლებები"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr ""
+"დამთვალიერებელი (მხოლოდ "
+"კითხვა)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"მოცემულ მომხმარებლებს "
+"შეეძლებათ თქვენი სახელის "
+"გამოყენებით ფოსტის "
+"გაგზავნა \n"
+"და თქვენი ფაილების "
+"გამოყენება თქვენს მიერ "
+"გაცემული უფლებების "
+"ფარგლებში."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr ""
+"_წარმომადგენელს შეუძლია "
+"პირადი დეტალების ნახვა"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_დამუშავება"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "შემოსულ_ი:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "და_ვალებანი:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Exchange-ს კატალოგთა სტრუქტურა"
+
+#: ../storage/exchange-migrate.c:58
+msgid "Migrating Exchange Folders..."
+msgstr ""
+"Exchange-ს საქაღალდეების "
+"მიგრაცია..."
+
+#: ../storage/exchange-migrate.c:66
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Evolution %d.%d.%d.-ს შემდეგ Evolution-ის "
+"საქაღალდეების მდებარეობა "
+"და იერარქია შეიცვალა. \n"
+"\n"
+"მოითმინეთ, სანამ  Evolution "
+"დაამთავრებს საქაღალდეების "
+"მიგრაციას..."
+
+#: ../storage/exchange-migrate.c:99
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"ყურადღება: Evolution ვერ ახერხებს "
+"ყველა მონაცემის მიგრაციას "
+"%d.%d.%d. ვერსიის ანგარიშიდან.\n"
+"მონაცემები არ არის წაშლილი, "
+"მაგრამ ეს ვერსია ვერ ხედავს "
+"მათ."
+
+#: ../storage/exchange-migrate.c:130
+#, c-format
+msgid "Migrating `%s':"
+msgstr "მიმდინარეობს მიგრაცია `%s':"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>ამჟამად თქვენი "
+"სტატუსია,\"ოფისიდან გასული\". "
+"</b>\n"
+"\n"
+"გსურთ სტატუსის შეცვლა "
+"\"ოფისში მყოფ\"-ად?"
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr ""
+"<b>ოფისიდან გასული "
+"შეტყობინება:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>სტატუსი:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>აქ ჩაწერილი შეტყობინება "
+"გაეგზავნება ყველას თქვენს "
+"არყოფნაში მიღებული წერილის "
+"პასუხად</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr ""
+"მომენტალურად ოფისში "
+"ვიმყოფები"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr ""
+"მომენტალურად გასული ვარ "
+"ოფისიდან"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "არა,არ შეცვალო სტატუსი"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "ოფისის ასისტენტს გარეთ ვარ"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "კი, შეცვალე სტატუსი"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "გაფრთხილება პაროლის ვადის ამოწურვის შესახებ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr ""
+"თქვენს პაროლს 7 დღეში გასდის "
+"ვადა ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "პაროლის _შეცვლა"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_button"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "     "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>უფლებები</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "შეუძლებელია წაშლა"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "ვერ ვარედაქტირებ"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "ელემენტების შექმნა"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "ქვედასტების შექმნა"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "ნებისმიერი ელემენტების წაშლა "
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "საკუთარი ელემენტების წაშლა"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr ""
+"ნებისმიერი ელემენტის "
+"რედაქტირება"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr ""
+"საკუთარი ელემენტების "
+"რედაქტირება"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "კავშირის საქაღალდე"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "საქაღალდის პატრონი"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "ხილული საქაღალდე"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "ელემენტების წაკითხვა"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "როლი:"
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "დაკავშირება..."
+
+#: ../storage/main.c:183
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "Microsoft Exchange-ს Ximian Connector"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr ""
+"Microsoft Exchange-ს Ximian Connector-ის "
+"კონფიგურირების ინსტრუმენტი"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "შეცვალეთ Exchange-სერვერის პაროლი"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "_საქაღალდის ზომა"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr ""
+"პირადი საქაღალდის ზომის "
+"მიღება"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr ""
+"_ხელმოწერა სხვა "
+"მომხმარებლების "
+"საქაღალდეებზე..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr ""
+"ხელმოწერა ამ სერვერის სხვა "
+"მომხმარებლის საქაღალდეზე"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid "Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"პუნქტის \"სხვა მომხმარებლის "
+"საქაღალდეზე ხელმოწერა\" "
+"საშუალებით შექმნილი "
+"ხელმოწერის გაუქმება"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr ""
+"Exchange-კალენდრის "
+"წარმომადგენლობის "
+"პარამეტრების ნახვა და "
+"შეცვლა"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+"თქვენი სტატუსის 'სამსახურში ვარ/არა ვარ სამსახურში' და ავტომოპასუხის "
+"შეტყობინების ნახვა და შეცვლა"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Exchange-ს პაროლის შეცვლა..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_წარმომადგენლის ასისტენტი"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "_ავტომოპასუხე"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr ""
+"_სხვების საქაღალდეებზე "
+"ხელმოწერის გაუქმება"
+

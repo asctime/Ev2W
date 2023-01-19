@@ -1,0 +1,109 @@
+<!-- ##### SECTION Title ##### -->
+E2kResult (private)
+
+<!-- ##### SECTION Short_Description ##### -->
+private #E2kResult methods
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+These are the #E2kOperation methods used internally by #E2kContext.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#E2kResult, #E2kContext
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION e2k_results_array_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_results_array_add_from_multistatus ##### -->
+<para>
+
+</para>
+
+@results_array: 
+@msg: 
+
+
+<!-- ##### FUNCTION e2k_results_array_free ##### -->
+<para>
+
+</para>
+
+@results_array: 
+@free_results: 
+
+
+<!-- ##### FUNCTION e2k_results_from_multistatus ##### -->
+<para>
+
+</para>
+
+@msg: 
+@results: 
+@nresults: 
+
+
+<!-- ##### FUNCTION e2k_results_copy ##### -->
+<para>
+
+</para>
+
+@results: 
+@nresults: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION E2kResultIterFetchFunc ##### -->
+<para>
+
+</para>
+
+@iter: 
+@ctx: 
+@op: 
+@results: 
+@nresults: 
+@first: 
+@total: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION E2kResultIterFreeFunc ##### -->
+<para>
+
+</para>
+
+@iter: 
+@user_data: 
+
+
+<!-- ##### FUNCTION e2k_result_iter_new ##### -->
+<para>
+
+</para>
+
+@ctx: 
+@op: 
+@ascending: 
+@total: 
+@fetch_func: 
+@free_func: 
+@user_data: 
+@Returns: 
+
+

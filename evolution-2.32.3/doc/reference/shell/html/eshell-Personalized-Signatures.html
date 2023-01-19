@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Personalized Signatures</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Selections.html" title="Selections">
+<link rel="next" href="eshell-Container-for-Signatures.html" title="Container for Signatures">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Selections.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Container-for-Signatures.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Personalized-Signatures.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Personalized-Signatures.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#eshell-Personalized-Signatures.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#eshell-Personalized-Signatures.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="Personalized Signatures">
+<a name="eshell-Personalized-Signatures"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Personalized-Signatures.top_of_page"></a>Personalized Signatures</span></h2>
+<p>Personalized Signatures</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Personalized-Signatures.synopsis"></a><h2>Synopsis</h2>
+<a name="ESignature"></a><pre class="synopsis">                    <a class="link" href="eshell-Personalized-Signatures.html#ESignature-struct" title="ESignature">ESignature</a>;
+<a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="returnvalue">ESignature</span></a> *        <a class="link" href="eshell-Personalized-Signatures.html#e-signature-new" title="e_signature_new ()">e_signature_new</a>                     (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="returnvalue">ESignature</span></a> *        <a class="link" href="eshell-Personalized-Signatures.html#e-signature-new-from-xml" title="e_signature_new_from_xml ()">e_signature_new_from_xml</a>            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Personalized-Signatures.html#e-signature-uid-from-xml" title="e_signature_uid_from_xml ()">e_signature_uid_from_xml</a>            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-from-xml" title="e_signature_set_from_xml ()">e_signature_set_from_xml</a>            (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Personalized-Signatures.html#e-signature-to-xml" title="e_signature_to_xml ()">e_signature_to_xml</a>                  (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Personalized-Signatures.html#e-signature-is-equal" title="e_signature_is_equal ()">e_signature_is_equal</a>                (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature1</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature2</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Personalized-Signatures.html#e-signature-get-autogenerated" title="e_signature_get_autogenerated ()">e_signature_get_autogenerated</a>       (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-autogenerated" title="e_signature_set_autogenerated ()">e_signature_set_autogenerated</a>       (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> autogenerated</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Personalized-Signatures.html#e-signature-get-filename" title="e_signature_get_filename ()">e_signature_get_filename</a>            (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-filename" title="e_signature_set_filename ()">e_signature_set_filename</a>            (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Personalized-Signatures.html#e-signature-get-is-html" title="e_signature_get_is_html ()">e_signature_get_is_html</a>             (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-is-html" title="e_signature_set_is_html ()">e_signature_set_is_html</a>             (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_html</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Personalized-Signatures.html#e-signature-get-is-script" title="e_signature_get_is_script ()">e_signature_get_is_script</a>           (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-is-script" title="e_signature_set_is_script ()">e_signature_set_is_script</a>           (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_script</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Personalized-Signatures.html#e-signature-get-name" title="e_signature_get_name ()">e_signature_get_name</a>                (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-name" title="e_signature_set_name ()">e_signature_set_name</a>                (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Personalized-Signatures.html#e-signature-get-uid" title="e_signature_get_uid ()">e_signature_get_uid</a>                 (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Personalized-Signatures.html#e-signature-set-uid" title="e_signature_set_uid ()">e_signature_set_uid</a>                 (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uid</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="eshell-Personalized-Signatures.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----ESignature
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="eshell-Personalized-Signatures.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="eshell-Personalized-Signatures.html#ESignature--autogenerated" title='The "autogenerated" property'>autogenerated</a>"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="eshell-Personalized-Signatures.html#ESignature--filename" title='The "filename" property'>filename</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct
+  "<a class="link" href="eshell-Personalized-Signatures.html#ESignature--is-html" title='The "is-html" property'>is-html</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="eshell-Personalized-Signatures.html#ESignature--is-script" title='The "is-script" property'>is-script</a>"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="eshell-Personalized-Signatures.html#ESignature--name" title='The "name" property'>name</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct
+  "<a class="link" href="eshell-Personalized-Signatures.html#ESignature--uid" title='The "uid" property'>uid</a>"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Personalized-Signatures.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Personalized-Signatures.details"></a><h2>Details</h2>
+<div class="refsect2" title="ESignature">
+<a name="ESignature-struct"></a><h3>ESignature</h3>
+<pre class="programlisting">typedef struct _ESignature ESignature;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_new ()">
+<a name="e-signature-new"></a><h3>e_signature_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="returnvalue">ESignature</span></a> *        e_signature_new                     (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns a new signature which can be filled in and
+added to an <a class="link" href="eshell-Container-for-Signatures.html#ESignatureList"><span class="type">ESignatureList</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_new_from_xml ()">
+<a name="e-signature-new-from-xml"></a><h3>e_signature_new_from_xml ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="returnvalue">ESignature</span></a> *        e_signature_new_from_xml            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xml</code></em> :</span></p></td>
+<td>an XML signature description
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> based on the data in <em class="parameter"><code>xml</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+if <em class="parameter"><code>xml</code></em> could not be parsed as valid signature data.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_uid_from_xml ()">
+<a name="e-signature-uid-from-xml"></a><h3>e_signature_uid_from_xml ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_signature_uid_from_xml            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xml</code></em> :</span></p></td>
+<td>an XML signature description
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the permanent UID of the signature described by <em class="parameter"><code>xml</code></em>
+(or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>xml</code></em> could not be parsed or did not contain a uid).
+The caller must free this string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_from_xml ()">
+<a name="e-signature-set-from-xml"></a><h3>e_signature_set_from_xml ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_signature_set_from_xml            (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>);</pre>
+<p>
+Changes <em class="parameter"><code>signature</code></em> to match <em class="parameter"><code>xml</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>an <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xml</code></em> :</span></p></td>
+<td>an XML signature description.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the signature was loaded or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_to_xml ()">
+<a name="e-signature-to-xml"></a><h3>e_signature_to_xml ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_signature_to_xml                  (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>an <a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an XML representation of <em class="parameter"><code>signature</code></em>, which the caller
+must free.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_is_equal ()">
+<a name="e-signature-is-equal"></a><h3>e_signature_is_equal ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_signature_is_equal                (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature1</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature2</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_get_autogenerated ()">
+<a name="e-signature-get-autogenerated"></a><h3>e_signature_get_autogenerated ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_signature_get_autogenerated       (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_autogenerated ()">
+<a name="e-signature-set-autogenerated"></a><h3>e_signature_set_autogenerated ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_set_autogenerated       (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> autogenerated</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>autogenerated</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_get_filename ()">
+<a name="e-signature-get-filename"></a><h3>e_signature_get_filename ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_signature_get_filename            (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_filename ()">
+<a name="e-signature-set-filename"></a><h3>e_signature_set_filename ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_set_filename            (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_get_is_html ()">
+<a name="e-signature-get-is-html"></a><h3>e_signature_get_is_html ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_signature_get_is_html             (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_is_html ()">
+<a name="e-signature-set-is-html"></a><h3>e_signature_set_is_html ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_set_is_html             (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_html</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_html</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_get_is_script ()">
+<a name="e-signature-get-is-script"></a><h3>e_signature_get_is_script ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_signature_get_is_script           (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_is_script ()">
+<a name="e-signature-set-is-script"></a><h3>e_signature_set_is_script ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_set_is_script           (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_script</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_script</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_get_name ()">
+<a name="e-signature-get-name"></a><h3>e_signature_get_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_signature_get_name                (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_name ()">
+<a name="e-signature-set-name"></a><h3>e_signature_set_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_set_name                (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_get_uid ()">
+<a name="e-signature-get-uid"></a><h3>e_signature_get_uid ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_signature_get_uid                 (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_signature_set_uid ()">
+<a name="e-signature-set-uid"></a><h3>e_signature_set_uid ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_signature_set_uid                 (<em class="parameter"><code><a class="link" href="eshell-Personalized-Signatures.html#ESignature"><span class="type">ESignature</span></a> *signature</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uid</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="eshell-Personalized-Signatures.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "autogenerated" property'>
+<a name="ESignature--autogenerated"></a><h3>The <code class="literal">"autogenerated"</code> property</h3>
+<pre class="programlisting">  "autogenerated"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "filename" property'>
+<a name="ESignature--filename"></a><h3>The <code class="literal">"filename"</code> property</h3>
+<pre class="programlisting">  "filename"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "is-html" property'>
+<a name="ESignature--is-html"></a><h3>The <code class="literal">"is-html"</code> property</h3>
+<pre class="programlisting">  "is-html"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "is-script" property'>
+<a name="ESignature--is-script"></a><h3>The <code class="literal">"is-script"</code> property</h3>
+<pre class="programlisting">  "is-script"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "name" property'>
+<a name="ESignature--name"></a><h3>The <code class="literal">"name"</code> property</h3>
+<pre class="programlisting">  "name"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "uid" property'>
+<a name="ESignature--uid"></a><h3>The <code class="literal">"uid"</code> property</h3>
+<pre class="programlisting">  "uid"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct</pre>
+<p></p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

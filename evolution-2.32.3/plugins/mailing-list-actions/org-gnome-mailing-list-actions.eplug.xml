@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<e-plugin-list>
+  <e-plugin
+    type="shlib"
+    id="org.gnome.plugin.mailing-list.actions"
+    domain="@GETTEXT_PACKAGE@"
+    location="@PLUGINDIR@/liborg-gnome-mailing-list-actions@SOEXT@"
+    _name="Mailing List Actions">
+        <author name="Meilof Veeningen" email="meilof@wanadoo.nl"/>
+    <_description>Perform common mailing list actions (subscribe, unsubscribe, etc.).</_description>
+
+    <hook class="org.gnome.evolution.ui:1.0">
+      <ui-manager id="org.gnome.evolution.mail"
+                  callback="mail_shell_view_init">
+        <menubar name='main-menu'>
+          <placeholder name='custom-menus'>
+            <menu action='mail-message-menu'>
+              <placeholder name='mail-message-custom-menus'>
+                <menu action='mailing-list-menu'>
+                  <menuitem action='mailing-list-help'/>
+                  <menuitem action='mailing-list-subscribe'/>
+                  <menuitem action='mailing-list-unsubscribe'/>
+                  <menuitem action='mailing-list-post'/>
+                  <menuitem action='mailing-list-owner'/>
+                  <menuitem action='mailing-list-archive'/>
+                </menu>
+              </placeholder>
+            </menu>
+          </placeholder>
+        </menubar>
+      </ui-manager>
+      <ui-manager id="org.gnome.evolution.mail.browser"
+                  callback="mail_browser_init">
+        <menubar name='main-menu'>
+          <placeholder name='custom-menus'>
+            <menu action='mail-message-menu'>
+              <placeholder name='mail-message-custom-menus'>
+                <menu action='mailing-list-menu'>
+                  <menuitem action='mailing-list-help'/>
+                  <menuitem action='mailing-list-subscribe'/>
+                  <menuitem action='mailing-list-unsubscribe'/>
+                  <menuitem action='mailing-list-post'/>
+                  <menuitem action='mailing-list-owner'/>
+                  <menuitem action='mailing-list-archive'/>
+                </menu>
+              </placeholder>
+            </menu>
+          </placeholder>
+        </menubar>
+      </ui-manager>
+    </hook>
+
+  </e-plugin>
+</e-plugin-list>

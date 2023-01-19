@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Evolution-Data-Server Manual: Backend Utilities (libebackend)" link="index.html" author="" name="libebackend" version="2" language="c">
+  <chapters>
+    <sub name="Evolution-Data-Server Manual: Backend Utilities (libebackend)" link="ch01.html">
+      <sub name="EFileCache" link="libebackend-e-file-cache.html"/>
+      <sub name="e-dbhash" link="libebackend-e-dbhash.html"/>
+      <sub name="e-data-server-module" link="libebackend-e-data-server-module.html"/>
+      <sub name="e-db3-utils" link="libebackend-e-db3-utils.html"/>
+      <sub name="EOfflineListener" link="libebackend-EOfflineListener.html"/>
+    </sub>
+    <sub name="Index" link="ix01.html"/>
+    <sub name="Index of deprecated symbols" link="api-index-deprecated.html"/>
+    <sub name="Index of new symbols in 2.30" link="api-index-2.30.html"/>
+    <sub name="Index of new symbols in 2.28" link="api-index-2.28.html"/>
+    <sub name="Index of new symbols in 2.26" link="api-index-2.26.html"/>
+    <sub name="Index of new symbols in 2.24" link="api-index-2.24.html"/>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="EFileCachePrivate" link="libebackend-e-file-cache.html#EFileCachePrivate"/>
+    <keyword type="struct" name="EFileCache" link="libebackend-e-file-cache.html#EFileCache-struct"/>
+    <keyword type="function" name="e_file_cache_new ()" link="libebackend-e-file-cache.html#e-file-cache-new"/>
+    <keyword type="function" name="e_file_cache_remove ()" link="libebackend-e-file-cache.html#e-file-cache-remove"/>
+    <keyword type="function" name="e_file_cache_clean ()" link="libebackend-e-file-cache.html#e-file-cache-clean"/>
+    <keyword type="function" name="e_file_cache_get_object ()" link="libebackend-e-file-cache.html#e-file-cache-get-object"/>
+    <keyword type="function" name="e_file_cache_get_objects ()" link="libebackend-e-file-cache.html#e-file-cache-get-objects"/>
+    <keyword type="function" name="e_file_cache_get_keys ()" link="libebackend-e-file-cache.html#e-file-cache-get-keys"/>
+    <keyword type="function" name="e_file_cache_add_object ()" link="libebackend-e-file-cache.html#e-file-cache-add-object"/>
+    <keyword type="function" name="e_file_cache_replace_object ()" link="libebackend-e-file-cache.html#e-file-cache-replace-object"/>
+    <keyword type="function" name="e_file_cache_remove_object ()" link="libebackend-e-file-cache.html#e-file-cache-remove-object"/>
+    <keyword type="function" name="e_file_cache_freeze_changes ()" link="libebackend-e-file-cache.html#e-file-cache-freeze-changes"/>
+    <keyword type="function" name="e_file_cache_thaw_changes ()" link="libebackend-e-file-cache.html#e-file-cache-thaw-changes"/>
+    <keyword type="function" name="e_file_cache_get_filename ()" link="libebackend-e-file-cache.html#e-file-cache-get-filename"/>
+    <keyword type="property" name="The &quot;filename&quot; property" link="libebackend-e-file-cache.html#EFileCache--filename"/>
+    <keyword type="enum" name="enum EDbHashStatus" link="libebackend-e-dbhash.html#EDbHashStatus"/>
+    <keyword type="struct" name="EDbHash" link="libebackend-e-dbhash.html#EDbHash"/>
+    <keyword type="struct" name="EDbHashPrivate" link="libebackend-e-dbhash.html#EDbHashPrivate"/>
+    <keyword type="function" name="EDbHashFunc ()" link="libebackend-e-dbhash.html#EDbHashFunc"/>
+    <keyword type="function" name="e_dbhash_new ()" link="libebackend-e-dbhash.html#e-dbhash-new"/>
+    <keyword type="function" name="e_dbhash_add ()" link="libebackend-e-dbhash.html#e-dbhash-add"/>
+    <keyword type="function" name="e_dbhash_remove ()" link="libebackend-e-dbhash.html#e-dbhash-remove"/>
+    <keyword type="function" name="e_dbhash_compare ()" link="libebackend-e-dbhash.html#e-dbhash-compare"/>
+    <keyword type="function" name="e_dbhash_foreach_key ()" link="libebackend-e-dbhash.html#e-dbhash-foreach-key"/>
+    <keyword type="function" name="e_dbhash_write ()" link="libebackend-e-dbhash.html#e-dbhash-write"/>
+    <keyword type="function" name="e_dbhash_destroy ()" link="libebackend-e-dbhash.html#e-dbhash-destroy"/>
+    <keyword type="function" name="e_data_server_module_init ()" link="libebackend-e-data-server-module.html#e-data-server-module-init"/>
+    <keyword type="function" name="e_data_server_get_extensions_for_type ()" link="libebackend-e-data-server-module.html#e-data-server-get-extensions-for-type"/>
+    <keyword type="function" name="e_data_server_extension_list_free ()" link="libebackend-e-data-server-module.html#e-data-server-extension-list-free"/>
+    <keyword type="function" name="e_data_server_module_remove_unused ()" link="libebackend-e-data-server-module.html#e-data-server-module-remove-unused"/>
+    <keyword type="function" name="e_data_server_module_add_type ()" link="libebackend-e-data-server-module.html#e-data-server-module-add-type"/>
+    <keyword type="function" name="eds_module_initialize ()" link="libebackend-e-data-server-module.html#eds-module-initialize"/>
+    <keyword type="function" name="eds_module_shutdown ()" link="libebackend-e-data-server-module.html#eds-module-shutdown"/>
+    <keyword type="function" name="eds_module_list_types ()" link="libebackend-e-data-server-module.html#eds-module-list-types"/>
+    <keyword type="function" name="e_db3_utils_maybe_recover ()" link="libebackend-e-db3-utils.html#e-db3-utils-maybe-recover"/>
+    <keyword type="function" name="e_db3_utils_upgrade_format ()" link="libebackend-e-db3-utils.html#e-db3-utils-upgrade-format"/>
+    <keyword type="enum" name="enum EOfflineListenerState" link="libebackend-EOfflineListener.html#EOfflineListenerState" since="2.30"/>
+    <keyword type="struct" name="EOfflineListener" link="libebackend-EOfflineListener.html#EOfflineListener" since="2.30"/>
+    <keyword type="function" name="e_offline_listener_new ()" link="libebackend-EOfflineListener.html#e-offline-listener-new" since="2.30"/>
+    <keyword type="function" name="e_offline_listener_get_state ()" link="libebackend-EOfflineListener.html#e-offline-listener-get-state" since="2.30"/>
+  </functions>
+</book>

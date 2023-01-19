@@ -1,0 +1,196 @@
+E2K_DEBUG
+---------
+You can run evolution-exchange-storage with E2K_DEBUG set to a value
+from 1 to 4:
+
+	1 - Print each request and response
+	2 - #1 plus all request and response headers
+	3 - #2 plus bodies (except text/html)
+	4 - #3 plus global catalog debug too
+	5 - #4 plus text/html bodies too
+
+The request headers and body are printed when the request is queued
+and the response headers and body are printed when the complete body
+has been received. Each request and response is tagged with a unix
+time_t (for timing purposes) and the hex value of the SoupMessage * in
+question (so it's easier to match up requests and responses when
+multiple requests are queued at once). (This info is shown in the
+"E2k-Debug" header, which is not actually sent to the server, despite
+what it might look like in the output.) E2K_DEBUG output doesn't show
+some headers added by soup. (In particular, Content-Length.)
+
+You can also append 'm' to E2K_DEBUG to see mail stub debugging: it
+will print out everything read to or written from the stub socket.
+camel-stub-constants.h is useful in understanding this. (You can set
+E2K_DEBUG=m on evolution itself as well, to see the conversation from
+the other side.)
+
+
+ebrowse
+-------
+ebrowse is a command-line utility for poking the Exchange server. It's
+built in the lib/ subdir, but not installed.
+
+ebrowse will look up "exchange://$USER@HOSTNAME" (your local username
+and the hostname specified in the URL) in Evolution's password
+database, so if you have it remember your password, you don't need to
+provide it to ebrowse. If you don't, or if you need to connect as
+someone else, you can specify both username and password in the URL.
+(Eg, "http://geoff:whatever@shrewdness/..."). Failing that, it will
+just ask you for a password.
+
+Usage:
+	ebrowse -t URL
+		display a single level of the folder tree under URL
+
+	ebrowse -l URL
+		list the (non-subfolder) contents of the folder at
+		URL. Exchange generally seems to return things newest
+		first, so "ebrowse -l URL | head 5" is good for
+		finding the URL of something you just created.
+
+	ebrowse -b URL
+		fetch the body of URL
+
+	ebrowse -q FILE URL
+		PUT the contents of FILE to URL
+
+	ebrowse -d URL
+		delete URL
+
+	ebrowse -p URL
+		fetch "all" properties of URL (not really all)
+
+	ebrowse -P PROPNAME URL
+		fetch a specific property of URL (for when you don't
+		want to see all, or to see a property that -p doesn't
+		fetch). PROPNAME can be either a WebDAV property name
+		or a MAPI property name starting with "PR_"
+
+	ebrowse -S URL
+		display and parse the security descriptor for URL
+
+	ebrowse [-m | -c] SRC DEST
+		move/copy a message (SRC is a file, DEST is a folder)
+
+	ebrowse -s URL
+		subscribe to "modify" notifications on URL and sit
+		around printing out a message each time a notification
+		comes in.
+
+	ebrowse -n ALIAS URL
+		Have Exchange look up ALIAS in the GAL. Uses an OWA
+		interface.
+
+Note that the URL is always the last argument.
+
+You can use E2K_DEBUG with ebrowse.
+
+Example :
+=========
+
+	To view the folders of a user for checking the message files in his Inbox
+
+	First, get a list of all folders for the user.
+
+	ebrowse -t http://userid@machine-ip/exchange/userid
+
+	Select the folder under which you wish to view the list of messages.
+	Assuming you want to view the list of messages under Inbox
+
+	ebrowse -l http://userid@machine-ip/exchange/userid/Inbox
+
+	Now to see the properties of this message
+
+	ebrowse -p http://userid@machine-ip/exchange/userid/Inbox/somename.EML
+
+gctest
+------
+gctest is the corresponding client for global catalog debugging. It's
+much simpler. As with ebrowse, it will try to find a password in
+Evolution's database, and ask for one if it can't find it.
+
+	gctest [USER@]SERVER KEY
+		looks up info about KEY on SERVER. KEY can be an email
+		address (danw@xcs.ximian.com), an Exchange 5.5 DN
+		(/o=Ximian XCS/ou=XCS/cn=Recipients/cn=danw), or an
+		Active Directory DN (CN=Dan Winship,OU=Ximian,DC=xcs,
+		DC=ximian,DC=com).
+
+	gctest [USER@]SERVER KEY +DN
+		Adds DN (an Active Directory DN) as a delegate for the
+		user identified by KEY. Note that there are other
+		steps needed to make them a full delegate, as
+		described in the "delegates" document.
+
+	gctest [USER@]SERVER KEY -DN
+		Removes DN as a delegate for KEY
+
+gctest returns "all properties evolution-exchange-storage currently
+cares about". If you need to fetch other properties from AD, you can
+use ldapsearch:
+
+	ldapsearch -x -LLL -h shrewdness -p 3268 -D XCS\\danw -W
+		'(mail=danw@xcs.ximian.com)' [property names]
+
+where "(mail=danw@xcs.ximian.com)" is the search filter and "[property
+names]" is an optional space-separated list of property names to
+fetch. (If you don't specify any properties, it fetches all
+properties.)
+
+Example :
+---------
+Exchange server : nld-exchange.blr.novell.com
+Exchange mail-id : surf@blr.novell.com
+
+./gctest surf@nld-exchange.blr.novell.com surf@blr.novell.com
+
+
+davcat
+------
+davcat can be used to perform WebDAV requests that ebrowse doesn't
+support. Eg:
+
+	[danw@twelve-monkeys lib]$ ./davcat http://shrewdness
+	PROPPATCH /exchange/danw/Inbox/foo.EML HTTP/1.1
+	
+	<?xml version="1.0" encoding="utf-8" ?>
+	<propertyupdate xmlns="DAV:" xmlns:h="urn:schemas:httpmail:">
+	  <set>
+	    <prop>
+	      <h:read>1</h:read>
+	    </prop>
+	  </set>
+	</propertyupdate>
+	^D
+
+davcat handles a number of annoying bits for you, such as SSL (if
+requested), Authorization (using the same mechanisms as ebrowse), and
+the Host and Content-Length headers (as well as Content-Type, which
+defaults to "text/xml" if not specified). You can also specify
+HTTP/1.1 or HTTP/1.0 (or in fact, leave off the HTTP specification if
+you want 1.1), and if the server's response is in XML, davcat will
+automatically indent it.
+
+(In cases where davcat's preprocessing messes something up, you *can*
+just telnet to hostname:80 (or do "openssl s_client -connect
+hostname:443") and paste in a full HTTP request. The output from
+E2K_DEBUG should generally be directly pastable, except for needing
+Authorization and Content-Length.)
+
+
+Other test programs
+-------------------
+actest tests the autoconfig code. You pass at least a username,
+usually an OWA URI as well, and sometimes a GC server (if it can't be
+autodetected from the OWA URI).
+
+fbtest fetches the current public freebusy data for a user and
+displays it as an ASCII chart. Note that this directly accesses their
+freebusy data file, rather than using the OWA interface like Connector
+does. (In other words, this program tests code that Connector does not
+use yet.)
+
+ruletest takes the URI of a folder (generally someone's inbox) and
+outputs a filters.xml-style description of the server-side rules in
+that folder.

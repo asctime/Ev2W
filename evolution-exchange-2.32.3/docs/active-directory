@@ -1,0 +1,55 @@
+Background
+----------
+A Windows 2000 domain has at least one, and possibly several, Active
+Directory servers. AD servers contain all information about user
+accounts, passwords, groups, mailboxes, mailing lists, etc, etc, etc.
+
+AD domains can be arranged in trees:
+
+                             rupertcorp.com
+                         /         |         \
+  boston.rupertcorp.com    sf.rupertcorp.com    mexico.rupertcorp.com
+
+with hierarchical trust relationships. You can also have a "forest" of
+trees which are not hierarchically related, either for the case where
+the root domain is not a Windows domain (Eg, xcs.ximian.com and
+rupertcorp.ximian.com are both Windows domains, but ximian.com is not)
+or for when you have multiple domain names. (Eg, rupertcorp.com and
+rupertcorp.net). The forest as a whole has the same name as the root
+domain of the first tree created in it.
+
+The two primary open protocol interfaces to AD are Kerberos and LDAP.
+(There are other MS-only protocols, such as ADSI.) We only use LDAP.
+
+
+Global Catalog
+--------------
+You want users from the sf.rupertcorp.com domain to be able to log in
+when they're in Boston, even if the network between Boston and SF is
+down. So certain critical user information from sf.rupertcorp.com's AD
+servers should be available from boston.rupertcorp.com's AD servers
+too. This is the function of the Global Catalog. Each domain should
+have at least one of its AD servers be declared a Global Catalog
+replica. GC replicas have all the important information from every AD
+domain in the forest.
+
+Although primarily intended for login-type info, the GC servers also
+contain contact info--as MS's docs explain, it's useful to be able to
+get a remote user's phone number when the network between you and them
+is down. Thus, the GC is also used for the Global Address List.
+
+The GC is available via LDAP on port 3268 (or 3269 with SSL).
+
+
+Indexed Attributes
+------------------
+These attributes are indexed by AD, and so can be searched
+efficiently. (These are the ones we're likely to ever use: see MSDN
+for others.)
+
+Identifying: name, cn, objectCategory, objectGuid, objectSid
+Naming: displayName, givenName, sn
+Mail: mail, proxyAddresses, legacyExchangeDN
+Authenticating: flatName, sAMAccountName, sAMAccountType,
+                servicePrincipalName, userPrincipalName
+

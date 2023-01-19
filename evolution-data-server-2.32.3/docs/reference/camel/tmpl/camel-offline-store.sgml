@@ -1,0 +1,59 @@
+<!-- ##### SECTION Title ##### -->
+CamelOfflineStore
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT CamelOfflineStore ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION camel_offline_store_set_network_state ##### -->
+<para>
+
+</para>
+
+@store: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_offline_store_get_network_state ##### -->
+<para>
+
+</para>
+
+@store: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_offline_store_prepare_for_offline ##### -->
+<para>
+
+</para>
+
+@store: 
+@error: 
+@Returns: 
+
+

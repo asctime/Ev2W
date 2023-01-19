@@ -1,0 +1,7 @@
+#include "e2k-context.h"
+#include "e2k-global-catalog.h"
+#include "e2k-security-descriptor.h"
+
+e2k_context_get_type
+e2k_global_catalog_get_type
+e2k_security_descriptor_get_type

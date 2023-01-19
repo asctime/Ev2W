@@ -1,0 +1,715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Shell Actions</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch04.html" title="Actions">
+<link rel="prev" href="ch04.html" title="Actions">
+<link rel="next" href="eshell-Action-Groups.html" title="Action Groups">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch04.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Action-Groups.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Shell-Actions.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Shell-Actions.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Shell Actions">
+<a name="eshell-Shell-Actions"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Shell-Actions.top_of_page"></a>Shell Actions</span></h2>
+<p>Shell Actions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Shell-Actions.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-ABOUT:CAPS" title="E_SHELL_WINDOW_ACTION_ABOUT()">E_SHELL_WINDOW_ACTION_ABOUT</a>         (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-CLOSE:CAPS" title="E_SHELL_WINDOW_ACTION_CLOSE()">E_SHELL_WINDOW_ACTION_CLOSE</a>         (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-CONTENTS:CAPS" title="E_SHELL_WINDOW_ACTION_CONTENTS()">E_SHELL_WINDOW_ACTION_CONTENTS</a>      (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-FAQ:CAPS" title="E_SHELL_WINDOW_ACTION_FAQ()">E_SHELL_WINDOW_ACTION_FAQ</a>           (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-FORGET-PASSWORDS:CAPS" title="E_SHELL_WINDOW_ACTION_FORGET_PASSWORDS()">E_SHELL_WINDOW_ACTION_FORGET_PASSWORDS</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-GAL-CUSTOM-VIEW:CAPS" title="E_SHELL_WINDOW_ACTION_GAL_CUSTOM_VIEW()">E_SHELL_WINDOW_ACTION_GAL_CUSTOM_VIEW</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-GAL-DEFINE-VIEWS:CAPS" title="E_SHELL_WINDOW_ACTION_GAL_DEFINE_VIEWS()">E_SHELL_WINDOW_ACTION_GAL_DEFINE_VIEWS</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-GAL-SAVE-CUSTOM-VIEW:CAPS" title="E_SHELL_WINDOW_ACTION_GAL_SAVE_CUSTOM_VIEW()">E_SHELL_WINDOW_ACTION_GAL_SAVE_CUSTOM_VIEW</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-IMPORT:CAPS" title="E_SHELL_WINDOW_ACTION_IMPORT()">E_SHELL_WINDOW_ACTION_IMPORT</a>        (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-NEW-WINDOW:CAPS" title="E_SHELL_WINDOW_ACTION_NEW_WINDOW()">E_SHELL_WINDOW_ACTION_NEW_WINDOW</a>    (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-PAGE-SETUP:CAPS" title="E_SHELL_WINDOW_ACTION_PAGE_SETUP()">E_SHELL_WINDOW_ACTION_PAGE_SETUP</a>    (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-PREFERENCES:CAPS" title="E_SHELL_WINDOW_ACTION_PREFERENCES()">E_SHELL_WINDOW_ACTION_PREFERENCES</a>   (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-QUICK-REFERENCE:CAPS" title="E_SHELL_WINDOW_ACTION_QUICK_REFERENCE()">E_SHELL_WINDOW_ACTION_QUICK_REFERENCE</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-QUIT:CAPS" title="E_SHELL_WINDOW_ACTION_QUIT()">E_SHELL_WINDOW_ACTION_QUIT</a>          (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-ADVANCED:CAPS" title="E_SHELL_WINDOW_ACTION_SEARCH_ADVANCED()">E_SHELL_WINDOW_ACTION_SEARCH_ADVANCED</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-CLEAR:CAPS" title="E_SHELL_WINDOW_ACTION_SEARCH_CLEAR()">E_SHELL_WINDOW_ACTION_SEARCH_CLEAR</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-EDIT:CAPS" title="E_SHELL_WINDOW_ACTION_SEARCH_EDIT()">E_SHELL_WINDOW_ACTION_SEARCH_EDIT</a>   (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-OPTIONS:CAPS" title="E_SHELL_WINDOW_ACTION_SEARCH_OPTIONS()">E_SHELL_WINDOW_ACTION_SEARCH_OPTIONS</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-QUICK:CAPS" title="E_SHELL_WINDOW_ACTION_SEARCH_QUICK()">E_SHELL_WINDOW_ACTION_SEARCH_QUICK</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-SAVE:CAPS" title="E_SHELL_WINDOW_ACTION_SEARCH_SAVE()">E_SHELL_WINDOW_ACTION_SEARCH_SAVE</a>   (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEND-RECEIVE:CAPS" title="E_SHELL_WINDOW_ACTION_SEND_RECEIVE()">E_SHELL_WINDOW_ACTION_SEND_RECEIVE</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-SIDEBAR:CAPS" title="E_SHELL_WINDOW_ACTION_SHOW_SIDEBAR()">E_SHELL_WINDOW_ACTION_SHOW_SIDEBAR</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-SWITCHER:CAPS" title="E_SHELL_WINDOW_ACTION_SHOW_SWITCHER()">E_SHELL_WINDOW_ACTION_SHOW_SWITCHER</a> (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-TASKBAR:CAPS" title="E_SHELL_WINDOW_ACTION_SHOW_TASKBAR()">E_SHELL_WINDOW_ACTION_SHOW_TASKBAR</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-TOOLBAR:CAPS" title="E_SHELL_WINDOW_ACTION_SHOW_TOOLBAR()">E_SHELL_WINDOW_ACTION_SHOW_TOOLBAR</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SUBMIT-BUG:CAPS" title="E_SHELL_WINDOW_ACTION_SUBMIT_BUG()">E_SHELL_WINDOW_ACTION_SUBMIT_BUG</a>    (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-INITIAL:CAPS" title="E_SHELL_WINDOW_ACTION_SWITCHER_INITIAL()">E_SHELL_WINDOW_ACTION_SWITCHER_INITIAL</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-BOTH:CAPS" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_BOTH()">E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_BOTH</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-ICONS:CAPS" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_ICONS()">E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_ICONS</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-TEXT:CAPS" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_TEXT()">E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_TEXT</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-USER:CAPS" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_USER()">E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_USER</a>(window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-WORK-OFFLINE:CAPS" title="E_SHELL_WINDOW_ACTION_WORK_OFFLINE()">E_SHELL_WINDOW_ACTION_WORK_OFFLINE</a>  (window)
+#define             <a class="link" href="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-WORK-ONLINE:CAPS" title="E_SHELL_WINDOW_ACTION_WORK_ONLINE()">E_SHELL_WINDOW_ACTION_WORK_ONLINE</a>   (window)
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Shell-Actions.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Shell-Actions.details"></a><h2>Details</h2>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_ABOUT()">
+<a name="E-SHELL-WINDOW-ACTION-ABOUT:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_ABOUT()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_ABOUT(window)</pre>
+<p>
+Activation of this action displays the application's About dialog.
+</p>
+<p>
+Main menu item: Help -&gt; About
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_CLOSE()">
+<a name="E-SHELL-WINDOW-ACTION-CLOSE:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_CLOSE()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_CLOSE(window)</pre>
+<p>
+Activation of this action closes <em class="parameter"><code>window</code></em>.  If this is the last window,
+the application initiates shutdown.
+</p>
+<p>
+Main menu item: File -&gt; Close
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_CONTENTS()">
+<a name="E-SHELL-WINDOW-ACTION-CONTENTS:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_CONTENTS()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_CONTENTS(window)</pre>
+<p>
+Activation of this action opens the application's user manual.
+</p>
+<p>
+Main menu item: Help -&gt; Contents
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_FAQ()">
+<a name="E-SHELL-WINDOW-ACTION-FAQ:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_FAQ()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_FAQ(window)</pre>
+<p>
+Activation of this action opens a web page with answers to frequently
+asked questions about this application.
+</p>
+<p>
+Main menu item: Help -&gt; Evolution FAQ
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_FORGET_PASSWORDS()">
+<a name="E-SHELL-WINDOW-ACTION-FORGET-PASSWORDS:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_FORGET_PASSWORDS()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_FORGET_PASSWORDS(window)</pre>
+<p>
+Activation of this action deletes all stored passwords.
+</p>
+<p>
+Main menu item: File -&gt; Forget Passwords
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_GAL_CUSTOM_VIEW()">
+<a name="E-SHELL-WINDOW-ACTION-GAL-CUSTOM-VIEW:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_GAL_CUSTOM_VIEW()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_GAL_CUSTOM_VIEW(window)</pre>
+<p>
+This radio action is selected when using a custom GAL view that has
+not been saved.
+</p>
+<p>
+Main menu item: View -&gt; Current View -&gt; Custom View
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_GAL_DEFINE_VIEWS()">
+<a name="E-SHELL-WINDOW-ACTION-GAL-DEFINE-VIEWS:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_GAL_DEFINE_VIEWS()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_GAL_DEFINE_VIEWS(window)</pre>
+<p>
+Activation of this action opens a dialog for editing GAL views for
+the current shell view.
+</p>
+<p>
+Main menu item: View -&gt; Current View -&gt; Define Views...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_GAL_SAVE_CUSTOM_VIEW()">
+<a name="E-SHELL-WINDOW-ACTION-GAL-SAVE-CUSTOM-VIEW:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_GAL_SAVE_CUSTOM_VIEW()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_GAL_SAVE_CUSTOM_VIEW(window)</pre>
+<p>
+Activation of this action saves a custom GAL view.
+</p>
+<p>
+Main menu item: View -&gt; Current View -&gt; Save Custom View...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_IMPORT()">
+<a name="E-SHELL-WINDOW-ACTION-IMPORT:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_IMPORT()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_IMPORT(window)</pre>
+<p>
+Activation of this action opens the Evolution Import Assistant.
+</p>
+<p>
+Main menu item: File -&gt; Import...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_NEW_WINDOW()">
+<a name="E-SHELL-WINDOW-ACTION-NEW-WINDOW:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_NEW_WINDOW()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_NEW_WINDOW(window)</pre>
+<p>
+Activation of this action opens a new shell window.
+</p>
+<p>
+Main menu item: File -&gt; New Window
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_PAGE_SETUP()">
+<a name="E-SHELL-WINDOW-ACTION-PAGE-SETUP:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_PAGE_SETUP()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_PAGE_SETUP(window)</pre>
+<p>
+Activation of this action opens the application's Page Setup dialog.
+</p>
+<p>
+Main menu item: File -&gt; Page Setup...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_PREFERENCES()">
+<a name="E-SHELL-WINDOW-ACTION-PREFERENCES:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_PREFERENCES()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_PREFERENCES(window)</pre>
+<p>
+Activation of this action opens the application's Preferences window.
+</p>
+<p>
+Main menu item: Edit -&gt; Preferences
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_QUICK_REFERENCE()">
+<a name="E-SHELL-WINDOW-ACTION-QUICK-REFERENCE:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_QUICK_REFERENCE()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_QUICK_REFERENCE(window)</pre>
+<p>
+Activation of this action opens a printable table of useful shortcut
+keys for this application.
+</p>
+<p>
+Main menu item: Help -&gt; Quick Reference
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_QUIT()">
+<a name="E-SHELL-WINDOW-ACTION-QUIT:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_QUIT()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_QUIT(window)</pre>
+<p>
+Activation of this action initiates application shutdown.
+</p>
+<p>
+Main menu item: File -&gt; Quit
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEARCH_ADVANCED()">
+<a name="E-SHELL-WINDOW-ACTION-SEARCH-ADVANCED:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEARCH_ADVANCED()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEARCH_ADVANCED(window)</pre>
+<p>
+Activation of this action opens an Advanced Search dialog.
+</p>
+<p>
+Main menu item: Search -&gt; Advanced Search...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEARCH_CLEAR()">
+<a name="E-SHELL-WINDOW-ACTION-SEARCH-CLEAR:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEARCH_CLEAR()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEARCH_CLEAR(window)</pre>
+<p>
+Activation of this action clears the most recent search results.
+</p>
+<p>
+Main menu item: Search -&gt; Clear
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEARCH_EDIT()">
+<a name="E-SHELL-WINDOW-ACTION-SEARCH-EDIT:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEARCH_EDIT()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEARCH_EDIT(window)</pre>
+<p>
+Activation of this action opens a dialog for editing saved searches.
+</p>
+<p>
+Main menu item: Search -&gt; Edit Saved Searches...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEARCH_OPTIONS()">
+<a name="E-SHELL-WINDOW-ACTION-SEARCH-OPTIONS:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEARCH_OPTIONS()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEARCH_OPTIONS(window)</pre>
+<p>
+Activation of this action displays a menu of search options.
+This appears as a "find" icon in the window's search entry.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEARCH_QUICK()">
+<a name="E-SHELL-WINDOW-ACTION-SEARCH-QUICK:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEARCH_QUICK()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEARCH_QUICK(window)</pre>
+<p>
+Activation of this action executes the current search conditions.
+</p>
+<p>
+Main menu item: Search -&gt; Find Now
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEARCH_SAVE()">
+<a name="E-SHELL-WINDOW-ACTION-SEARCH-SAVE:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEARCH_SAVE()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEARCH_SAVE(window)</pre>
+<p>
+Activation of this action saves the current search conditions.
+</p>
+<p>
+Main menu item: Search -&gt; Save Search...
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SEND_RECEIVE()">
+<a name="E-SHELL-WINDOW-ACTION-SEND-RECEIVE:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SEND_RECEIVE()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SEND_RECEIVE(window)</pre>
+<p>
+Activation of this action opens the Send &amp; Receive Mail dialog.
+</p>
+<p>
+Main menu item: File -&gt; Send / Receive
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SHOW_SIDEBAR()">
+<a name="E-SHELL-WINDOW-ACTION-SHOW-SIDEBAR:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SHOW_SIDEBAR()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SHOW_SIDEBAR(window)</pre>
+<p>
+This toggle action controls whether the side bar is visible.
+</p>
+<p>
+Main menu item: View -&gt; Layout -&gt; Show Side Bar
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SHOW_SWITCHER()">
+<a name="E-SHELL-WINDOW-ACTION-SHOW-SWITCHER:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SHOW_SWITCHER()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SHOW_SWITCHER(window)</pre>
+<p>
+This toggle action controls whether the switcher buttons are visible.
+</p>
+<p>
+Main menu item: View -&gt; Switcher Appearance -&gt; Show Buttons
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SHOW_TASKBAR()">
+<a name="E-SHELL-WINDOW-ACTION-SHOW-TASKBAR:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SHOW_TASKBAR()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SHOW_TASKBAR(window)</pre>
+<p>
+This toggle action controls whether the task bar is visible.
+</p>
+<p>
+Main menu item: View -&gt; Layout -&gt; Show Status Bar
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SHOW_TOOLBAR()">
+<a name="E-SHELL-WINDOW-ACTION-SHOW-TOOLBAR:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SHOW_TOOLBAR()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SHOW_TOOLBAR(window)</pre>
+<p>
+This toggle action controls whether the tool bar is visible.
+</p>
+<p>
+Main menu item: View -&gt; Layout -&gt; Show Tool Bar
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SUBMIT_BUG()">
+<a name="E-SHELL-WINDOW-ACTION-SUBMIT-BUG:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SUBMIT_BUG()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SUBMIT_BUG(window)</pre>
+<p>
+Activation of this action allows users to report a bug using
+Bug Buddy.
+</p>
+<p>
+Main menu item: Help -&gt; Submit Bug Report
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SWITCHER_INITIAL()">
+<a name="E-SHELL-WINDOW-ACTION-SWITCHER-INITIAL:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SWITCHER_INITIAL()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SWITCHER_INITIAL(window)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_BOTH()">
+<a name="E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-BOTH:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_BOTH()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_BOTH(window)</pre>
+<p>
+This radio action displays switcher buttons with icons and text.
+</p>
+<p>
+Main menu item: View -&gt; Switcher Appearance -&gt; Icons and Text
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_ICONS()">
+<a name="E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-ICONS:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_ICONS()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_ICONS(window)</pre>
+<p>
+This radio action displays switcher buttons with icons only.
+</p>
+<p>
+Main menu item: View -&gt; Switcher Appearance -&gt; Icons Only
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_TEXT()">
+<a name="E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-TEXT:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_TEXT()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_TEXT(window)</pre>
+<p>
+This radio action displays switcher buttons with text only.
+</p>
+<p>
+Main menu item: View -&gt; Switcher Appearance -&gt; Text Only
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_USER()">
+<a name="E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-USER:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_USER()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_USER(window)</pre>
+<p>
+This radio action displays switcher buttons according to the desktop
+toolbar setting.
+</p>
+<p>
+Main menu item: View -&gt; Switcher Appearance -&gt; Toolbar Style
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_WORK_OFFLINE()">
+<a name="E-SHELL-WINDOW-ACTION-WORK-OFFLINE:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_WORK_OFFLINE()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_WORK_OFFLINE(window)</pre>
+<p>
+Activation of this action puts the application into offline mode.
+</p>
+<p>
+Main menu item: File -&gt; Work Offline
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E_SHELL_WINDOW_ACTION_WORK_ONLINE()">
+<a name="E-SHELL-WINDOW-ACTION-WORK-ONLINE:CAPS"></a><h3>E_SHELL_WINDOW_ACTION_WORK_ONLINE()</h3>
+<pre class="programlisting">#define             E_SHELL_WINDOW_ACTION_WORK_ONLINE(window)</pre>
+<p>
+Activation of this action puts the application into online mode.
+</p>
+<p>
+Main menu item: File -&gt; Work Online
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td>an <a class="link" href="EShellWindow.html" title="EShellWindow"><span class="type">EShellWindow</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

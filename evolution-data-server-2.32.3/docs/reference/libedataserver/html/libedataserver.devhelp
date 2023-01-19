@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Evolution-Data-Server Manual: Utilities (libedataserver)" link="index.html" author="" name="libedataserver">
+  <chapters>
+    <sub name="Evolution-Data-Server Manual: Utilities (libedataserver)" link="ch01.html">
+      <sub name="EAccount" link="EAccount.html"/>
+      <sub name="EAccountList" link="EAccountList.html"/>
+      <sub name="e-categories" link="libedataserver-e-categories.html"/>
+      <sub name="e-debug-log" link="libedataserver-e-debug-log.html"/>
+      <sub name="EFlag" link="libedataserver-EFlag.html"/>
+      <sub name="EIterator" link="EIterator.html"/>
+      <sub name="EList" link="EList.html"/>
+      <sub name="EListIterator" link="EListIterator.html"/>
+      <sub name="e-memory" link="libedataserver-e-memory.html"/>
+      <sub name="EProxy" link="libedataserver-EProxy.html"/>
+      <sub name="ESExp" link="libedataserver-ESExp.html"/>
+      <sub name="ESource" link="ESource.html"/>
+      <sub name="ESourceGroup" link="ESourceGroup.html"/>
+      <sub name="ESourceList" link="ESourceList.html"/>
+      <sub name="Time-Related Utility Functions" link="libedataserver-e-time-utils.html"/>
+      <sub name="User ID Generation" link="libedataserver-e-uid.html"/>
+      <sub name="Utility Functions" link="libedataserver-e-util.html"/>
+      <sub name="EUrl" link="libedataserver-e-url.html"/>
+      <sub name="EXMLHash" link="libedataserver-e-xml-hash-utils.html"/>
+      <sub name="Version Information" link="libedataserver-Version-Information.html"/>
+    </sub>
+    <sub name="Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated symbols" link="api-index-deprecated.html"/>
+    <sub name="Index of new symbols in 2.32" link="api-index-2.32.html"/>
+    <sub name="Index of new symbols in 2.30" link="api-index-2.30.html"/>
+    <sub name="Index of new symbols in 2.28" link="api-index-2.28.html"/>
+    <sub name="Index of new symbols in 2.26" link="api-index-2.26.html"/>
+    <sub name="Index of new symbols in 2.24" link="api-index-2.24.html"/>
+    <sub name="Index of new symbols in 2.22" link="api-index-2.22.html"/>
+    <sub name="Index of new symbols in 1.12" link="api-index-1.12.html"/>
+  </chapters>
+  <functions>
+    <function name="enum e_account_item_t" link="EAccount.html#e-account-item-t"/>
+    <function name="enum e_account_access_t" link="EAccount.html#e-account-access-t"/>
+    <function name="EAccount" link="EAccount.html#EAccount-struct"/>
+    <function name="EAccountIdentity" link="EAccount.html#EAccountIdentity"/>
+    <function name="enum EAccountReceiptPolicy" link="EAccount.html#EAccountReceiptPolicy"/>
+    <function name="EAccountService" link="EAccount.html#EAccountService"/>
+    <function name="e_account_new ()" link="EAccount.html#e-account-new"/>
+    <function name="e_account_new_from_xml ()" link="EAccount.html#e-account-new-from-xml"/>
+    <function name="e_account_set_from_xml ()" link="EAccount.html#e-account-set-from-xml"/>
+    <function name="e_account_import ()" link="EAccount.html#e-account-import"/>
+    <function name="e_account_to_xml ()" link="EAccount.html#e-account-to-xml"/>
+    <function name="e_account_uid_from_xml ()" link="EAccount.html#e-account-uid-from-xml"/>
+    <function name="e_account_get_string ()" link="EAccount.html#e-account-get-string"/>
+    <function name="e_account_get_int ()" link="EAccount.html#e-account-get-int"/>
+    <function name="e_account_get_bool ()" link="EAccount.html#e-account-get-bool"/>
+    <function name="e_account_set_string ()" link="EAccount.html#e-account-set-string"/>
+    <function name="e_account_set_int ()" link="EAccount.html#e-account-set-int"/>
+    <function name="e_account_set_bool ()" link="EAccount.html#e-account-set-bool"/>
+    <function name="e_account_writable ()" link="EAccount.html#e-account-writable"/>
+    <function name="e_account_writable_option ()" link="EAccount.html#e-account-writable-option"/>
+    <function name="The &quot;changed&quot; signal" link="EAccount.html#EAccount-changed"/>
+    <function name="EAccountList" link="EAccountList.html#EAccountList-struct"/>
+    <function name="enum e_account_find_t" link="EAccountList.html#e-account-find-t"/>
+    <function name="e_account_list_new ()" link="EAccountList.html#e-account-list-new"/>
+    <function name="e_account_list_construct ()" link="EAccountList.html#e-account-list-construct"/>
+    <function name="e_account_list_save ()" link="EAccountList.html#e-account-list-save"/>
+    <function name="e_account_list_add ()" link="EAccountList.html#e-account-list-add"/>
+    <function name="e_account_list_change ()" link="EAccountList.html#e-account-list-change"/>
+    <function name="e_account_list_remove ()" link="EAccountList.html#e-account-list-remove"/>
+    <function name="e_account_list_get_default ()" link="EAccountList.html#e-account-list-get-default"/>
+    <function name="e_account_list_set_default ()" link="EAccountList.html#e-account-list-set-default"/>
+    <function name="e_account_list_find ()" link="EAccountList.html#e-account-list-find"/>
+    <function name="e_account_list_prune_proxies ()" link="EAccountList.html#e-account-list-prune-proxies"/>
+    <function name="e_account_list_remove_account_proxies ()" link="EAccountList.html#e-account-list-remove-account-proxies"/>
+    <function name="e_account_list_account_has_proxies ()" link="EAccountList.html#e-account-list-account-has-proxies"/>
+    <function name="The &quot;account-added&quot; signal" link="EAccountList.html#EAccountList-account-added"/>
+    <function name="The &quot;account-changed&quot; signal" link="EAccountList.html#EAccountList-account-changed"/>
+    <function name="The &quot;account-removed&quot; signal" link="EAccountList.html#EAccountList-account-removed"/>
+    <function name="e_categories_get_list ()" link="libedataserver-e-categories.html#e-categories-get-list"/>
+    <function name="e_categories_add ()" link="libedataserver-e-categories.html#e-categories-add"/>
+    <function name="e_categories_remove ()" link="libedataserver-e-categories.html#e-categories-remove"/>
+    <function name="e_categories_exist ()" link="libedataserver-e-categories.html#e-categories-exist"/>
+    <function name="e_categories_get_icon_file_for ()" link="libedataserver-e-categories.html#e-categories-get-icon-file-for"/>
+    <function name="e_categories_set_icon_file_for ()" link="libedataserver-e-categories.html#e-categories-set-icon-file-for"/>
+    <function name="e_categories_is_searchable ()" link="libedataserver-e-categories.html#e-categories-is-searchable"/>
+    <function name="e_categories_register_change_listener ()" link="libedataserver-e-categories.html#e-categories-register-change-listener"/>
+    <function name="e_categories_unregister_change_listener ()" link="libedataserver-e-categories.html#e-categories-unregister-change-listener"/>
+    <function name="E_DEBUG_LOG_DOMAIN_USER" link="libedataserver-e-debug-log.html#E-DEBUG-LOG-DOMAIN-USER:CAPS"/>
+    <function name="E_DEBUG_LOG_DOMAIN_GLOG" link="libedataserver-e-debug-log.html#E-DEBUG-LOG-DOMAIN-GLOG:CAPS"/>
+    <function name="E_DEBUG_LOG_DOMAIN_CAL_QUERIES" link="libedataserver-e-debug-log.html#E-DEBUG-LOG-DOMAIN-CAL-QUERIES:CAPS"/>
+    <function name="e_debug_log ()" link="libedataserver-e-debug-log.html#e-debug-log"/>
+    <function name="e_debug_logv ()" link="libedataserver-e-debug-log.html#e-debug-logv"/>
+    <function name="e_debug_log_load_configuration ()" link="libedataserver-e-debug-log.html#e-debug-log-load-configuration"/>
+    <function name="e_debug_log_enable_domains ()" link="libedataserver-e-debug-log.html#e-debug-log-enable-domains"/>
+    <function name="e_debug_log_disable_domains ()" link="libedataserver-e-debug-log.html#e-debug-log-disable-domains"/>
+    <function name="e_debug_log_is_domain_enabled ()" link="libedataserver-e-debug-log.html#e-debug-log-is-domain-enabled"/>
+    <function name="e_debug_log_dump ()" link="libedataserver-e-debug-log.html#e-debug-log-dump"/>
+    <function name="e_debug_log_dump_to_dated_file ()" link="libedataserver-e-debug-log.html#e-debug-log-dump-to-dated-file"/>
+    <function name="e_debug_log_set_max_lines ()" link="libedataserver-e-debug-log.html#e-debug-log-set-max-lines"/>
+    <function name="e_debug_log_get_max_lines ()" link="libedataserver-e-debug-log.html#e-debug-log-get-max-lines"/>
+    <function name="e_debug_log_clear ()" link="libedataserver-e-debug-log.html#e-debug-log-clear"/>
+    <function name="EFlag" link="libedataserver-EFlag.html#EFlag"/>
+    <function name="e_flag_new ()" link="libedataserver-EFlag.html#e-flag-new"/>
+    <function name="e_flag_is_set ()" link="libedataserver-EFlag.html#e-flag-is-set"/>
+    <function name="e_flag_set ()" link="libedataserver-EFlag.html#e-flag-set"/>
+    <function name="e_flag_clear ()" link="libedataserver-EFlag.html#e-flag-clear"/>
+    <function name="e_flag_wait ()" link="libedataserver-EFlag.html#e-flag-wait"/>
+    <function name="e_flag_timed_wait ()" link="libedataserver-EFlag.html#e-flag-timed-wait"/>
+    <function name="e_flag_free ()" link="libedataserver-EFlag.html#e-flag-free"/>
+    <function name="EIterator" link="EIterator.html#EIterator-struct"/>
+    <function name="e_iterator_get ()" link="EIterator.html#e-iterator-get"/>
+    <function name="e_iterator_reset ()" link="EIterator.html#e-iterator-reset"/>
+    <function name="e_iterator_last ()" link="EIterator.html#e-iterator-last"/>
+    <function name="e_iterator_next ()" link="EIterator.html#e-iterator-next"/>
+    <function name="e_iterator_prev ()" link="EIterator.html#e-iterator-prev"/>
+    <function name="e_iterator_delete ()" link="EIterator.html#e-iterator-delete"/>
+    <function name="e_iterator_insert ()" link="EIterator.html#e-iterator-insert"/>
+    <function name="e_iterator_set ()" link="EIterator.html#e-iterator-set"/>
+    <function name="e_iterator_is_valid ()" link="EIterator.html#e-iterator-is-valid"/>
+    <function name="e_iterator_invalidate ()" link="EIterator.html#e-iterator-invalidate"/>
+    <function name="The &quot;invalidate&quot; signal" link="EIterator.html#EIterator-invalidate"/>
+    <function name="EList" link="EList.html#EList-struct"/>
+    <function name="EListCopyFunc ()" link="EList.html#EListCopyFunc"/>
+    <function name="EListFreeFunc ()" link="EList.html#EListFreeFunc"/>
+    <function name="e_list_new ()" link="EList.html#e-list-new"/>
+    <function name="e_list_construct ()" link="EList.html#e-list-construct"/>
+    <function name="e_list_duplicate ()" link="EList.html#e-list-duplicate"/>
+    <function name="e_list_get_iterator ()" link="EList.html#e-list-get-iterator"/>
+    <function name="e_list_append ()" link="EList.html#e-list-append"/>
+    <function name="e_list_remove ()" link="EList.html#e-list-remove"/>
+    <function name="e_list_length ()" link="EList.html#e-list-length"/>
+    <function name="e_list_remove_link ()" link="EList.html#e-list-remove-link"/>
+    <function name="e_list_remove_iterator ()" link="EList.html#e-list-remove-iterator"/>
+    <function name="e_list_invalidate_iterators ()" link="EList.html#e-list-invalidate-iterators"/>
+    <function name="EListIterator" link="EListIterator.html#EListIterator-struct"/>
+    <function name="e_list_iterator_new ()" link="EListIterator.html#e-list-iterator-new"/>
+    <function name="EMemChunk" link="libedataserver-e-memory.html#EMemChunk"/>
+    <function name="e_memchunk_new ()" link="libedataserver-e-memory.html#e-memchunk-new"/>
+    <function name="e_memchunk_alloc ()" link="libedataserver-e-memory.html#e-memchunk-alloc"/>
+    <function name="e_memchunk_alloc0 ()" link="libedataserver-e-memory.html#e-memchunk-alloc0"/>
+    <function name="e_memchunk_free ()" link="libedataserver-e-memory.html#e-memchunk-free"/>
+    <function name="e_memchunk_empty ()" link="libedataserver-e-memory.html#e-memchunk-empty"/>
+    <function name="e_memchunk_clean ()" link="libedataserver-e-memory.html#e-memchunk-clean"/>
+    <function name="e_memchunk_destroy ()" link="libedataserver-e-memory.html#e-memchunk-destroy"/>
+    <function name="EProxy" link="libedataserver-EProxy.html#EProxy"/>
+    <function name="e_proxy_new ()" link="libedataserver-EProxy.html#e-proxy-new"/>
+    <function name="e_proxy_peek_uri_for ()" link="libedataserver-EProxy.html#e-proxy-peek-uri-for"/>
+    <function name="e_proxy_setup_proxy ()" link="libedataserver-EProxy.html#e-proxy-setup-proxy"/>
+    <function name="e_proxy_require_proxy_for_uri ()" link="libedataserver-EProxy.html#e-proxy-require-proxy-for-uri"/>
+    <function name="enum ESExpResultType" link="libedataserver-ESExp.html#ESExpResultType"/>
+    <function name="ESExpResult" link="libedataserver-ESExp.html#ESExpResult"/>
+    <function name="enum ESExpTermType" link="libedataserver-ESExp.html#ESExpTermType"/>
+    <function name="ESExpSymbol" link="libedataserver-ESExp.html#ESExpSymbol"/>
+    <function name="ESExpTerm" link="libedataserver-ESExp.html#ESExpTerm"/>
+    <function name="ESExp" link="libedataserver-ESExp.html#ESExp"/>
+    <function name="e_sexp_new ()" link="libedataserver-ESExp.html#e-sexp-new"/>
+    <function name="e_sexp_ref ()" link="libedataserver-ESExp.html#e-sexp-ref"/>
+    <function name="e_sexp_unref ()" link="libedataserver-ESExp.html#e-sexp-unref"/>
+    <function name="e_sexp_add_function ()" link="libedataserver-ESExp.html#e-sexp-add-function"/>
+    <function name="e_sexp_add_ifunction ()" link="libedataserver-ESExp.html#e-sexp-add-ifunction"/>
+    <function name="e_sexp_add_variable ()" link="libedataserver-ESExp.html#e-sexp-add-variable"/>
+    <function name="e_sexp_remove_symbol ()" link="libedataserver-ESExp.html#e-sexp-remove-symbol"/>
+    <function name="e_sexp_set_scope ()" link="libedataserver-ESExp.html#e-sexp-set-scope"/>
+    <function name="e_sexp_input_text ()" link="libedataserver-ESExp.html#e-sexp-input-text"/>
+    <function name="e_sexp_input_file ()" link="libedataserver-ESExp.html#e-sexp-input-file"/>
+    <function name="e_sexp_parse ()" link="libedataserver-ESExp.html#e-sexp-parse"/>
+    <function name="e_sexp_eval ()" link="libedataserver-ESExp.html#e-sexp-eval"/>
+    <function name="e_sexp_term_eval ()" link="libedataserver-ESExp.html#e-sexp-term-eval"/>
+    <function name="e_sexp_result_new ()" link="libedataserver-ESExp.html#e-sexp-result-new"/>
+    <function name="e_sexp_result_free ()" link="libedataserver-ESExp.html#e-sexp-result-free"/>
+    <function name="e_sexp_resultv_free ()" link="libedataserver-ESExp.html#e-sexp-resultv-free"/>
+    <function name="e_sexp_encode_bool ()" link="libedataserver-ESExp.html#e-sexp-encode-bool"/>
+    <function name="e_sexp_encode_string ()" link="libedataserver-ESExp.html#e-sexp-encode-string"/>
+    <function name="e_sexp_fatal_error ()" link="libedataserver-ESExp.html#e-sexp-fatal-error"/>
+    <function name="e_sexp_error ()" link="libedataserver-ESExp.html#e-sexp-error"/>
+    <function name="e_sexp_parse_value ()" link="libedataserver-ESExp.html#e-sexp-parse-value"/>
+    <function name="e_sexp_evaluate_occur_times ()" link="libedataserver-ESExp.html#e-sexp-evaluate-occur-times"/>
+    <function name="ESource" link="ESource.html#ESource-struct"/>
+    <function name="e_source_new ()" link="ESource.html#e-source-new"/>
+    <function name="e_source_new_with_absolute_uri ()" link="ESource.html#e-source-new-with-absolute-uri"/>
+    <function name="e_source_new_from_xml_node ()" link="ESource.html#e-source-new-from-xml-node"/>
+    <function name="e_source_new_from_standalone_xml ()" link="ESource.html#e-source-new-from-standalone-xml"/>
+    <function name="e_source_copy ()" link="ESource.html#e-source-copy"/>
+    <function name="e_source_update_from_xml_node ()" link="ESource.html#e-source-update-from-xml-node"/>
+    <function name="e_source_uid_from_xml_node ()" link="ESource.html#e-source-uid-from-xml-node"/>
+    <function name="e_source_set_group ()" link="ESource.html#e-source-set-group"/>
+    <function name="e_source_set_name ()" link="ESource.html#e-source-set-name"/>
+    <function name="e_source_set_relative_uri ()" link="ESource.html#e-source-set-relative-uri"/>
+    <function name="e_source_set_absolute_uri ()" link="ESource.html#e-source-set-absolute-uri"/>
+    <function name="e_source_set_color_spec ()" link="ESource.html#e-source-set-color-spec"/>
+    <function name="e_source_set_readonly ()" link="ESource.html#e-source-set-readonly"/>
+    <function name="e_source_peek_group ()" link="ESource.html#e-source-peek-group"/>
+    <function name="e_source_peek_uid ()" link="ESource.html#e-source-peek-uid"/>
+    <function name="e_source_peek_name ()" link="ESource.html#e-source-peek-name"/>
+    <function name="e_source_peek_relative_uri ()" link="ESource.html#e-source-peek-relative-uri"/>
+    <function name="e_source_peek_absolute_uri ()" link="ESource.html#e-source-peek-absolute-uri"/>
+    <function name="e_source_peek_color_spec ()" link="ESource.html#e-source-peek-color-spec"/>
+    <function name="e_source_get_readonly ()" link="ESource.html#e-source-get-readonly"/>
+    <function name="e_source_get_uri ()" link="ESource.html#e-source-get-uri"/>
+    <function name="e_source_dump_to_xml_node ()" link="ESource.html#e-source-dump-to-xml-node"/>
+    <function name="e_source_to_standalone_xml ()" link="ESource.html#e-source-to-standalone-xml"/>
+    <function name="e_source_get_property ()" link="ESource.html#e-source-get-property"/>
+    <function name="e_source_set_property ()" link="ESource.html#e-source-set-property"/>
+    <function name="e_source_foreach_property ()" link="ESource.html#e-source-foreach-property"/>
+    <function name="e_source_get_duped_property ()" link="ESource.html#e-source-get-duped-property"/>
+    <function name="e_source_build_absolute_uri ()" link="ESource.html#e-source-build-absolute-uri"/>
+    <function name="e_source_equal ()" link="ESource.html#e-source-equal"/>
+    <function name="e_source_xmlstr_equal ()" link="ESource.html#e-source-xmlstr-equal"/>
+    <function name="The &quot;changed&quot; signal" link="ESource.html#ESource-changed"/>
+    <function name="ESourceGroup" link="ESourceGroup.html#ESourceGroup-struct"/>
+    <function name="e_source_group_new ()" link="ESourceGroup.html#e-source-group-new"/>
+    <function name="e_source_group_new_from_xml ()" link="ESourceGroup.html#e-source-group-new-from-xml"/>
+    <function name="e_source_group_new_from_xmldoc ()" link="ESourceGroup.html#e-source-group-new-from-xmldoc"/>
+    <function name="e_source_group_update_from_xml ()" link="ESourceGroup.html#e-source-group-update-from-xml"/>
+    <function name="e_source_group_update_from_xmldoc ()" link="ESourceGroup.html#e-source-group-update-from-xmldoc"/>
+    <function name="e_source_group_uid_from_xmldoc ()" link="ESourceGroup.html#e-source-group-uid-from-xmldoc"/>
+    <function name="e_source_group_set_name ()" link="ESourceGroup.html#e-source-group-set-name"/>
+    <function name="e_source_group_set_base_uri ()" link="ESourceGroup.html#e-source-group-set-base-uri"/>
+    <function name="e_source_group_set_readonly ()" link="ESourceGroup.html#e-source-group-set-readonly"/>
+    <function name="e_source_group_peek_uid ()" link="ESourceGroup.html#e-source-group-peek-uid"/>
+    <function name="e_source_group_peek_name ()" link="ESourceGroup.html#e-source-group-peek-name"/>
+    <function name="e_source_group_peek_base_uri ()" link="ESourceGroup.html#e-source-group-peek-base-uri"/>
+    <function name="e_source_group_get_readonly ()" link="ESourceGroup.html#e-source-group-get-readonly"/>
+    <function name="e_source_group_peek_sources ()" link="ESourceGroup.html#e-source-group-peek-sources"/>
+    <function name="e_source_group_peek_source_by_uid ()" link="ESourceGroup.html#e-source-group-peek-source-by-uid"/>
+    <function name="e_source_group_peek_source_by_name ()" link="ESourceGroup.html#e-source-group-peek-source-by-name"/>
+    <function name="e_source_group_add_source ()" link="ESourceGroup.html#e-source-group-add-source"/>
+    <function name="e_source_group_remove_source ()" link="ESourceGroup.html#e-source-group-remove-source"/>
+    <function name="e_source_group_remove_source_by_uid ()" link="ESourceGroup.html#e-source-group-remove-source-by-uid"/>
+    <function name="e_source_group_get_property ()" link="ESourceGroup.html#e-source-group-get-property"/>
+    <function name="e_source_group_set_property ()" link="ESourceGroup.html#e-source-group-set-property"/>
+    <function name="e_source_group_foreach_property ()" link="ESourceGroup.html#e-source-group-foreach-property"/>
+    <function name="e_source_group_to_xml ()" link="ESourceGroup.html#e-source-group-to-xml"/>
+    <function name="e_source_group_equal ()" link="ESourceGroup.html#e-source-group-equal"/>
+    <function name="e_source_group_xmlstr_equal ()" link="ESourceGroup.html#e-source-group-xmlstr-equal"/>
+    <function name="The &quot;changed&quot; signal" link="ESourceGroup.html#ESourceGroup-changed"/>
+    <function name="The &quot;source-added&quot; signal" link="ESourceGroup.html#ESourceGroup-source-added"/>
+    <function name="The &quot;source-removed&quot; signal" link="ESourceGroup.html#ESourceGroup-source-removed"/>
+    <function name="ESourceList" link="ESourceList.html#ESourceList-struct"/>
+    <function name="e_source_list_new ()" link="ESourceList.html#e-source-list-new"/>
+    <function name="e_source_list_new_for_gconf ()" link="ESourceList.html#e-source-list-new-for-gconf"/>
+    <function name="e_source_list_new_for_gconf_default ()" link="ESourceList.html#e-source-list-new-for-gconf-default"/>
+    <function name="e_source_list_peek_groups ()" link="ESourceList.html#e-source-list-peek-groups"/>
+    <function name="e_source_list_peek_group_by_uid ()" link="ESourceList.html#e-source-list-peek-group-by-uid"/>
+    <function name="e_source_list_peek_group_by_base_uri ()" link="ESourceList.html#e-source-list-peek-group-by-base-uri"/>
+    <function name="e_source_list_peek_group_by_properties ()" link="ESourceList.html#e-source-list-peek-group-by-properties"/>
+    <function name="e_source_list_peek_source_by_uid ()" link="ESourceList.html#e-source-list-peek-source-by-uid"/>
+    <function name="e_source_list_peek_source_any ()" link="ESourceList.html#e-source-list-peek-source-any"/>
+    <function name="e_source_list_peek_default_source ()" link="ESourceList.html#e-source-list-peek-default-source"/>
+    <function name="e_source_list_add_group ()" link="ESourceList.html#e-source-list-add-group"/>
+    <function name="e_source_list_remove_group ()" link="ESourceList.html#e-source-list-remove-group"/>
+    <function name="e_source_list_remove_group_by_uid ()" link="ESourceList.html#e-source-list-remove-group-by-uid"/>
+    <function name="e_source_list_ensure_group ()" link="ESourceList.html#e-source-list-ensure-group"/>
+    <function name="e_source_list_remove_group_by_base_uri ()" link="ESourceList.html#e-source-list-remove-group-by-base-uri"/>
+    <function name="e_source_list_remove_source_by_uid ()" link="ESourceList.html#e-source-list-remove-source-by-uid"/>
+    <function name="e_source_list_sync ()" link="ESourceList.html#e-source-list-sync"/>
+    <function name="e_source_list_is_gconf_updated ()" link="ESourceList.html#e-source-list-is-gconf-updated"/>
+    <function name="The &quot;changed&quot; signal" link="ESourceList.html#ESourceList-changed"/>
+    <function name="The &quot;group-added&quot; signal" link="ESourceList.html#ESourceList-group-added"/>
+    <function name="The &quot;group-removed&quot; signal" link="ESourceList.html#ESourceList-group-removed"/>
+    <function name="enum ETimeParseStatus" link="libedataserver-e-time-utils.html#ETimeParseStatus"/>
+    <function name="e_time_parse_date_and_time ()" link="libedataserver-e-time-utils.html#e-time-parse-date-and-time"/>
+    <function name="e_time_parse_date ()" link="libedataserver-e-time-utils.html#e-time-parse-date"/>
+    <function name="e_time_parse_date_and_time_ex ()" link="libedataserver-e-time-utils.html#e-time-parse-date-and-time-ex"/>
+    <function name="e_time_parse_date_ex ()" link="libedataserver-e-time-utils.html#e-time-parse-date-ex"/>
+    <function name="e_time_parse_time ()" link="libedataserver-e-time-utils.html#e-time-parse-time"/>
+    <function name="e_time_format_date_and_time ()" link="libedataserver-e-time-utils.html#e-time-format-date-and-time"/>
+    <function name="e_time_format_time ()" link="libedataserver-e-time-utils.html#e-time-format-time"/>
+    <function name="e_mktime_utc ()" link="libedataserver-e-time-utils.html#e-mktime-utc"/>
+    <function name="e_localtime_with_offset ()" link="libedataserver-e-time-utils.html#e-localtime-with-offset"/>
+    <function name="e_time_get_d_fmt_with_4digit_year ()" link="libedataserver-e-time-utils.html#e-time-get-d-fmt-with-4digit-year"/>
+    <function name="e_uid_new ()" link="libedataserver-e-uid.html#e-uid-new"/>
+    <function name="struct tm" link="libedataserver-e-util.html#tm"/>
+    <function name="e_get_user_cache_dir ()" link="libedataserver-e-util.html#e-get-user-cache-dir"/>
+    <function name="e_get_user_config_dir ()" link="libedataserver-e-util.html#e-get-user-config-dir"/>
+    <function name="e_get_user_data_dir ()" link="libedataserver-e-util.html#e-get-user-data-dir"/>
+    <function name="e_util_strstrcase ()" link="libedataserver-e-util.html#e-util-strstrcase"/>
+    <function name="e_util_unicode_get_utf8 ()" link="libedataserver-e-util.html#e-util-unicode-get-utf8"/>
+    <function name="e_util_utf8_strstrcase ()" link="libedataserver-e-util.html#e-util-utf8-strstrcase"/>
+    <function name="e_util_utf8_strstrcasedecomp ()" link="libedataserver-e-util.html#e-util-utf8-strstrcasedecomp"/>
+    <function name="e_util_utf8_strcasecmp ()" link="libedataserver-e-util.html#e-util-utf8-strcasecmp"/>
+    <function name="e_util_utf8_remove_accents ()" link="libedataserver-e-util.html#e-util-utf8-remove-accents"/>
+    <function name="e_util_gthread_id ()" link="libedataserver-e-util.html#e-util-gthread-id"/>
+    <function name="e_filename_make_safe ()" link="libedataserver-e-util.html#e-filename-make-safe"/>
+    <function name="e_utf8_strftime ()" link="libedataserver-e-util.html#e-utf8-strftime"/>
+    <function name="e_strftime ()" link="libedataserver-e-util.html#e-strftime"/>
+    <function name="e_util_get_prefix ()" link="libedataserver-e-util.html#e-util-get-prefix"/>
+    <function name="e_util_get_cp_prefix ()" link="libedataserver-e-util.html#e-util-get-cp-prefix"/>
+    <function name="e_util_get_localedir ()" link="libedataserver-e-util.html#e-util-get-localedir"/>
+    <function name="e_util_replace_prefix ()" link="libedataserver-e-util.html#e-util-replace-prefix"/>
+    <function name="e_url_shroud ()" link="libedataserver-e-url.html#e-url-shroud"/>
+    <function name="e_url_equal ()" link="libedataserver-e-url.html#e-url-equal"/>
+    <function name="EUri" link="libedataserver-e-url.html#EUri"/>
+    <function name="e_uri_new ()" link="libedataserver-e-url.html#e-uri-new"/>
+    <function name="e_uri_free ()" link="libedataserver-e-url.html#e-uri-free"/>
+    <function name="e_uri_get_param ()" link="libedataserver-e-url.html#e-uri-get-param"/>
+    <function name="e_uri_copy ()" link="libedataserver-e-url.html#e-uri-copy"/>
+    <function name="e_uri_to_string ()" link="libedataserver-e-url.html#e-uri-to-string"/>
+    <function name="enum EXmlHashType" link="libedataserver-e-xml-hash-utils.html#EXmlHashType"/>
+    <function name="e_xml_to_hash ()" link="libedataserver-e-xml-hash-utils.html#e-xml-to-hash"/>
+    <function name="e_xml_from_hash ()" link="libedataserver-e-xml-hash-utils.html#e-xml-from-hash"/>
+    <function name="e_xml_destroy_hash ()" link="libedataserver-e-xml-hash-utils.html#e-xml-destroy-hash"/>
+    <function name="enum EXmlHashStatus" link="libedataserver-e-xml-hash-utils.html#EXmlHashStatus"/>
+    <function name="EXmlHashFunc ()" link="libedataserver-e-xml-hash-utils.html#EXmlHashFunc"/>
+    <function name="EXmlHashRemoveFunc ()" link="libedataserver-e-xml-hash-utils.html#EXmlHashRemoveFunc"/>
+    <function name="EXmlHash" link="libedataserver-e-xml-hash-utils.html#EXmlHash"/>
+    <function name="e_xmlhash_new ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-new"/>
+    <function name="e_xmlhash_add ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-add"/>
+    <function name="e_xmlhash_remove ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-remove"/>
+    <function name="e_xmlhash_compare ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-compare"/>
+    <function name="e_xmlhash_foreach_key ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-foreach-key"/>
+    <function name="e_xmlhash_foreach_key_remove ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-foreach-key-remove"/>
+    <function name="e_xmlhash_write ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-write"/>
+    <function name="e_xmlhash_destroy ()" link="libedataserver-e-xml-hash-utils.html#e-xmlhash-destroy"/>
+    <function name="eds_major_version" link="libedataserver-Version-Information.html#eds-major-version"/>
+    <function name="eds_minor_version" link="libedataserver-Version-Information.html#eds-minor-version"/>
+    <function name="eds_micro_version" link="libedataserver-Version-Information.html#eds-micro-version"/>
+    <function name="eds_check_version ()" link="libedataserver-Version-Information.html#eds-check-version"/>
+    <function name="EDS_MAJOR_VERSION" link="libedataserver-Version-Information.html#EDS-MAJOR-VERSION:CAPS"/>
+    <function name="EDS_MINOR_VERSION" link="libedataserver-Version-Information.html#EDS-MINOR-VERSION:CAPS"/>
+    <function name="EDS_MICRO_VERSION" link="libedataserver-Version-Information.html#EDS-MICRO-VERSION:CAPS"/>
+    <function name="EDS_CHECK_VERSION()" link="libedataserver-Version-Information.html#EDS-CHECK-VERSION:CAPS"/>
+  </functions>
+</book>

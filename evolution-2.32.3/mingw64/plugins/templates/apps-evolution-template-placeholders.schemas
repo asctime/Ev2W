@@ -1,0 +1,296 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/evolution/mail/template_placeholders</key>
+      <applyto>/apps/evolution/mail/template_placeholders</applyto>
+      <owner>evolution-mail</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+
+      <!-- The following are the keyword/value pairs used by the plugin to 
+      substitute the messages stored under the Templates folder. The list can 
+      have any number of such pairs.-->
+
+      <default>[myphone=012345,myplace=Abcd,myname=Alice]</default>
+      <locale name="C">
+         <short>List of keyword/value pairs for the Templates plugin to 
+		substitute in a message body.</short>
+         <long>
+	       List of keyword/value pairs for the Templates plugin to 
+	       substitute in a message body.
+         </long>
+      </locale>
+
+      <locale name="ar">
+         <short>قائمة من أزواج الكلمات المفتاحية/القيم لملحق القوالب ليبدلها في متن الرسالة.</short>
+         <long>قائمة من أزواج الكلمات المفتاحية/القيم لملحق القوالب ليبدلها في متن الرسالة.</long>
+      </locale>
+
+      <locale name="as">
+         <short>তালিকা উল্লেখিত সময় অবধি সংযুক্ত বস্তু উল্লেখিত সময় অবধি বাৰ্তা</short>
+         <long>তালিকা উল্লেখিত সময় অবধি সংযুক্ত বস্তু উল্লেখিত সময় অবধি বাৰ্তা</long>
+      </locale>
+
+      <locale name="bg">
+         <short>Списък с двойки от ключови думи и стойности, които да се заменят в тялото на писмото чрез приставката за шаблони.</short>
+         <long>Списък с двойки от ключови думи и стойности, които да се заменят в тялото на писмото чрез приставката за шаблони.</long>
+      </locale>
+
+      <locale name="bn">
+         <short>ফর্মা প্লাগ-ইন দ্বারা বার্তার প্রধান অংশে প্রতিস্থাপের জন্য অভিব্যক্তি/মান সম্বলিত জুটিগুলির তালিকা।</short>
+         <long>ফর্মা প্লাগ-ইন দ্বারা বার্তার প্রধান অংশে প্রতিস্থাপের জন্য অভিব্যক্তি/মান সম্বলিত জুটিগুলির তালিকা।</long>
+      </locale>
+
+      <locale name="bn_IN">
+         <short>Templates প্লাগ-ইন দ্বারা বার্তার প্রধান অংশে প্রতিস্থাপের জন্য অভিব্যক্তি/মান সম্বলিত জুটিগুলির তালিকা।</short>
+         <long>Templates প্লাগ-ইন দ্বারা বার্তার প্রধান অংশে প্রতিস্থাপের জন্য অভিব্যক্তি/মান সম্বলিত জুটিগুলির তালিকা।</long>
+      </locale>
+
+      <locale name="ca">
+         <short>Llista de parells de clau/valor que el connector de plantilles substituirà en el cos d&apos;un missatge.</short>
+         <long>Llista de parells de clau/valor que el connector de plantilles substituirà en el cos d&apos;un missatge.</long>
+      </locale>
+
+      <locale name="ca@valencia">
+         <short>Llista de parells de clau/valor que el connector de plantilles substituirà en el cos d&apos;un missatge.</short>
+         <long>Llista de parells de clau/valor que el connector de plantilles substituirà en el cos d&apos;un missatge.</long>
+      </locale>
+
+      <locale name="cs">
+         <short>Seznam dvojic klíčových slov/hodnot pro zásuvný modul Šablony k nahrazování v těle zprávy.</short>
+         <long>Seznam dvojic klíčových slov/hodnot pro zásuvný modul Šablony k nahrazování v těle zprávy.</long>
+      </locale>
+
+      <locale name="da">
+         <short>Liste af nøgleord/værdi-par som skabelonudvidelsesmodulet kan substituere ind i en brevkrop.</short>
+         <long>Liste af nøgleord/værdi-par som skabelonudvidelsesmodulet kan substituere ind i en brevkrop.</long>
+      </locale>
+
+      <locale name="de">
+         <short>Liste der Schlüsselwort/Wert-Paare, die das Vorlagen-Plugin im Nachrichtentext ersetzen soll.</short>
+         <long>Liste der Schlüsselwort/Wert-Paare, die das Vorlagen-Plugin im Nachrichtentext ersetzen soll.</long>
+      </locale>
+
+      <locale name="el">
+         <short>Λίστα από στοιχεία για την πρόσθετη λειτουργία Templates, για αντικατάσταση κειμένου στο κυρίως κείμενο.</short>
+         <long>Λίστα από στοιχεία για την πρόσθετη λειτουργία Templates, για αντικατάσταση κειμένου στο κυρίως κείμενο.</long>
+      </locale>
+
+      <locale name="en@shaw">
+         <short>𐑤𐑦𐑕𐑑 𐑝 𐑒𐑰𐑢𐑻𐑛/𐑝𐑨𐑤𐑿 𐑐𐑺𐑟 𐑓𐑹 𐑞 𐑑𐑧𐑥𐑐𐑤𐑱𐑑𐑕 𐑐𐑤𐑳𐑜𐑦𐑯 𐑑 𐑕𐑳𐑚𐑕𐑑𐑦𐑑𐑿𐑑 𐑦𐑯 𐑩 𐑥𐑧𐑕𐑦𐑡 𐑚𐑪𐑛𐑦.</short>
+         <long>𐑤𐑦𐑕𐑑 𐑝 𐑒𐑰𐑢𐑻𐑛/𐑝𐑨𐑤𐑿 𐑐𐑺𐑟 𐑓𐑹 𐑞 𐑑𐑧𐑥𐑐𐑤𐑱𐑑𐑕 𐑐𐑤𐑳𐑜𐑦𐑯 𐑑 𐑕𐑳𐑚𐑕𐑑𐑦𐑑𐑿𐑑 𐑦𐑯 𐑩 𐑥𐑧𐑕𐑦𐑡 𐑚𐑪𐑛𐑦.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>List of keyword/value pairs for the Templates plugin to substitute in a message body.</short>
+         <long>List of keyword/value pairs for the Templates plugin to substitute in a message body.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Lista de pares de palabras clave y valores para que el complemento de plantillas sustituya en el cuerpo del mensaje.</short>
+         <long>Lista de pares de palabras clave y valores para que el complemento de plantillas sustituya en el cuerpo del mensaje.</long>
+      </locale>
+
+      <locale name="et">
+         <short>Võtmesõna/väärtus paaride loend mallide pluginale sõnumi keha asendamiseks.</short>
+         <long>Võtmesõna/väärtus paaride loend mallide pluginale sõnumi keha asendamiseks.</long>
+      </locale>
+
+      <locale name="eu">
+         <short>Gakoa/balioa tuplen zerrenda txantiloien pluginarentzako mezuaren gorputzean ordezteko.</short>
+         <long>Gakoa/balioa tuplen zerrenda txantiloien pluginarentzako mezuaren gorputzean ordezteko.</long>
+      </locale>
+
+      <locale name="fi">
+         <short>Luettelo avainsana- ja arvopareista, joita pohjat-lisäosa käyttää viestin rungon osien korvaamiseen.</short>
+         <long>Luettelo avainsana- ja arvopareista, joita pohjat-lisäosa käyttää viestin rungon osien korvaamiseen.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Liste de paires mot-clé/valeur pour le greffon Modèles en vue de leur substitution dans le corps des messages.</short>
+         <long>Liste de paires mot-clé/valeur pour le greffon Modèles en vue de leur substitution dans le corps des messages.</long>
+      </locale>
+
+      <locale name="gl">
+         <short>Lista dos pares de valor e palabra chave para que o engadido Modelos substitúa nun corpo de mensaxe.</short>
+         <long>Lista dos pares de valor e palabra chave para que o engadido Modelos substitúa nun corpo de mensaxe.</long>
+      </locale>
+
+      <locale name="gu">
+         <short>સંદેશા ભાગમાં ટેમ્પલેટો પ્લગઈન માટે બદલવાના મુખ્ય શબ્દ/કિંમત જોડીઓની યાદી.</short>
+         <long>સંદેશા ભાગમાં ટેમ્પલેટો પ્લગઈન માટે બદલવાના મુખ્ય શબ્દ/કિંમત જોડીઓની યાદી.</long>
+      </locale>
+
+      <locale name="he">
+         <short>List of keyword/value pairs for the Templates plugin to substitute in a message body.</short>
+         <long>List of keyword/value pairs for the Templates plugin to substitute in a message body.</long>
+      </locale>
+
+      <locale name="hi">
+         <short>किसी संदेश शरीर में स्थानापन्न के लिए नमूना ख़ाका प्लगइन के लिए बीजशब्द/मान युग्म की सूची.</short>
+         <long>किसी संदेश शरीर में स्थानापन्न के लिए नमूना ख़ाका प्लगइन के लिए बीजशब्द/मान युग्म की सूची.</long>
+      </locale>
+
+      <locale name="hu">
+         <short>A Sablonok bővítmény által az üzenettörzsben helyettesítésre használandó kulcsszó/érték párok listája.</short>
+         <long>A Sablonok bővítmény által az üzenettörzsben helyettesítésre használandó kulcsszó/érték párok listája.</long>
+      </locale>
+
+      <locale name="id">
+         <short>Daftar pasangan kata kunci/nilai bagi plugin Templat untuk pergantian di dalam tubuh pesan.</short>
+         <long>Daftar pasangan kata kunci/nilai bagi plugin Templat untuk pergantian di dalam tubuh pesan.</long>
+      </locale>
+
+      <locale name="it">
+         <short>Elenco delle coppie parola chiave/valore da sostituire nel corpo di un messaggio per il plugin Modelli.</short>
+         <long>Elenco delle coppie parola chiave/valore da sostituire nel corpo di un messaggio per il plugin Modelli.</long>
+      </locale>
+
+      <locale name="ja">
+         <short>テンプレート・プラグインがメッセージの本文を代用するために使用するキーと値のペアを要素とするリストです。</short>
+         <long>テンプレート・プラグインがメッセージの本文を代用するために使用するキーと値のペアを要素とするリストです。</long>
+      </locale>
+
+      <locale name="kn">
+         <short>ಸಂದೇಶದ ಮುಖ್ಯಭಾಗದಲ್ಲಿ ಬದಲಾಯಿಸಲು ಅಗತ್ಯವಿರುವ ನಮೂನೆಯ ಪ್ಲಗ್ಇನ್‌ಗಳಿಗಾಗಿನ ಮುಖ್ಯಪದ/ಮೌಲ್ಯದ ಜೋಡಿಗಳ ಪಟ್ಟಿ.</short>
+         <long>ಸಂದೇಶದ ಮುಖ್ಯಭಾಗದಲ್ಲಿ ಬದಲಾಯಿಸಲು ಅಗತ್ಯವಿರುವ ನಮೂನೆಯ ಪ್ಲಗ್ಇನ್‌ಗಳಿಗಾಗಿನ ಮುಖ್ಯಪದ/ಮೌಲ್ಯದ ಜೋಡಿಗಳ ಪಟ್ಟಿ.</long>
+      </locale>
+
+      <locale name="ko">
+         <short>서식 플러그인에서 메시지 본문 대신 사용할 키/값 쌍의 목록.</short>
+         <long>서식 플러그인에서 메시지 본문 대신 사용할 키/값 쌍의 목록.</long>
+      </locale>
+
+      <locale name="lt">
+         <short>Raktažodžių / reikšmių porų, pakeistinų laiške, sąrašas Šablonų įskiepiui.</short>
+         <long>Raktažodžių / reikšmių porų, pakeistinų laiške, sąrašas Šablonų įskiepiui.</long>
+      </locale>
+
+      <locale name="lv">
+         <short>Saraksts ar atslēgas vārdu/vērtību pāriem sagatavju spraudnim, lai aizvietotu vēstules ķermenī.</short>
+         <long>Saraksts ar atslēgas vārdu/vērtību pāriem sagatavju spraudnim, lai aizvietotu vēstules ķermenī.</long>
+      </locale>
+
+      <locale name="mk">
+         <short>Листа на парови клучен збор/вредност за приклучокот за скици за заменување во телото на пораката</short>
+         <long>Листа на парови клучен збор/вредност за приклучокот за скици за заменување во телото на пораката</long>
+      </locale>
+
+      <locale name="mr">
+         <short>संदेश भाग अंतर्गत बदलविण्याजोगी प्रारूप प्लगइन करीता मुख्य/मुल्य जोडीची यादी.</short>
+         <long>संदेश भाग अंतर्गत बदलविण्याजोगी प्रारूप प्लगइन करीता मुख्य/मुल्य जोडीची यादी.</long>
+      </locale>
+
+      <locale name="nb">
+         <short>Liste med nøkkelord-/verdi-par for mal-tillegg for å sette inn i en meldingskropp.</short>
+         <long>Liste med nøkkelord-/verdi-par for mal-tillegg for å sette inn i en meldingskropp.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Lijst met trefwoord/waarde-combinaties voor de Sjabloonplugin waarmee de tekstinhoud van het bericht wordt omgezet.</short>
+         <long>Lijst met trefwoord/waarde-combinaties voor de Sjabloonplugin waarmee de tekstinhoud van het bericht wordt omgezet.</long>
+      </locale>
+
+      <locale name="or">
+         <short>ଗୋଟିଏ ସନ୍ଦେଶ ଭିତରେ ନମୁନା ପ୍ଲଗଇନକୁ ବଦଳାଇବା ପାଇଁ ସୂଚକ ଶବ୍ଦ/ମୂଲ୍ୟର ତାଲିକା।</short>
+         <long>ଗୋଟିଏ ସନ୍ଦେଶ ଭିତରେ ନମୁନା ପ୍ଲଗଇନକୁ ବଦଳାଇବା ପାଇଁ ସୂଚକ ଶବ୍ଦ/ମୂଲ୍ୟର ତାଲିକା।</long>
+      </locale>
+
+      <locale name="pa">
+         <short>ਸੁਨੇਹਾ ਮੁੱਖ ਭਾਗ ਵਿੱਚ ਟੈਪਲੇਟ ਪਲੱਗਇਨ ਸਬ-ਟਾਈਟਲ ਲਈ ਸ਼ਬਦ/ਮੁੱਲ ਜੋੜ ਦੀ ਲਿਸਟ ਹੈ।</short>
+         <long>ਸੁਨੇਹਾ ਮੁੱਖ ਭਾਗ ਵਿੱਚ ਟੈਪਲੇਟ ਪਲੱਗਇਨ ਸਬ-ਟਾਈਟਲ ਲਈ ਸ਼ਬਦ/ਮੁੱਲ ਜੋੜ ਦੀ ਲਿਸਟ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+         <short>Lista kluczy/wartości dla wtyczki szablonów do zamiany w wiadomości.</short>
+         <long>Lista kluczy/wartości dla wtyczki szablonów do zamiany w wiadomości.</long>
+      </locale>
+
+      <locale name="pt">
+         <short>Lista de pares chave/valor para o plugin de modelos substituir no corpo de uma mensagem.</short>
+         <long>Lista de pares chave/valor para o plugin de modelos substituir no corpo de uma mensagem.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Lista de pares teclado/valores para o plug-in de modelo para substituir no corpo de uma mensagem.</short>
+         <long>Lista de pares teclado/valores para o plug-in de modelo para substituir no corpo de uma mensagem.</long>
+      </locale>
+
+      <locale name="ro">
+         <short>Listă de perechi de cuvinte cheie/valori pentru modulul Șabloane pentru înlocuit în corpul mesajului.</short>
+         <long>Listă de perechi de cuvinte cheie/valori pentru modulul Șabloane pentru înlocuit în corpul mesajului.</long>
+      </locale>
+
+      <locale name="ru">
+         <short>Список пар ключевое слово/значение модуля шаблонов для замены в теле сообщения.</short>
+         <long>Список пар ключевое слово/значение модуля шаблонов для замены в теле сообщения.</long>
+      </locale>
+
+      <locale name="sl">
+         <short>Seznam ključnih besed in vrednosti za vstavek predlog kot zamenjavo v telesu sporočila.</short>
+         <long>Seznam ključnih besed in vrednosti za vstavek predlog kot zamenjavo v telesu sporočila.</long>
+      </locale>
+
+      <locale name="sr">
+         <short>Списак парова кључна-реч/вредност које прикључак Шаблона предмета замењује у телу поруке.</short>
+         <long>Списак парова кључна-реч/вредност које прикључак Шаблона предмета замењује у телу поруке.</long>
+      </locale>
+
+      <locale name="sr@latin">
+         <short>Spisak parova ključna-reč/vrednost koje priključak Šablona predmeta zamenjuje u telu poruke.</short>
+         <long>Spisak parova ključna-reč/vrednost koje priključak Šablona predmeta zamenjuje u telu poruke.</long>
+      </locale>
+
+      <locale name="sv">
+         <short>Lista över nyckelord/värdepar för insticksmodulen Mallar att ersätta i meddelandetexten.</short>
+         <long>Lista över nyckelord/värdepar för insticksmodulen Mallar att ersätta i meddelandetexten.</long>
+      </locale>
+
+      <locale name="ta">
+         <short>இணைப்பு நினைவுறுத்தி சொருகிக்கு செய்தியின் உடலில் தேட சாடைகளின் பட்டியல்.</short>
+         <long>இணைப்பு நினைவுறுத்தி சொருகிக்கு செய்தியின் உடலில் தேட சாடைகளின் பட்டியல்.</long>
+      </locale>
+
+      <locale name="te">
+         <short>సందేశం బాడీనందు ప్రతిక్షేపించుటకు టెంప్లేట్స్‍ ప్లగ్ఇన్ కొరకు కీబోర్డ్‍/విలువ జో‍డీల జాబితా.</short>
+         <long>సందేశం బాడీనందు ప్రతిక్షేపించుటకు టెంప్లేట్స్‍ ప్లగ్ఇన్ కొరకు కీబోర్డ్‍/విలువ జో‍డీల జాబితా.</long>
+      </locale>
+
+      <locale name="th">
+         <short>รายการคู่ คำหลัก/ค่า สำหรับปลั๊กอิน &quot;แม่แบบ&quot; ที่จะใช้แทนที่ข้อความในตัวเนื้อความ</short>
+         <long>รายการคู่ คำหลัก/ค่า สำหรับปลั๊กอิน &quot;แม่แบบ&quot; ที่จะใช้แทนที่ข้อความในตัวเนื้อความ</long>
+      </locale>
+
+      <locale name="tr">
+         <short>İleti içerisinde Şablomlar eklentisinin yerine koyacağı anahtar kelime/değer eşlerinin listesi.</short>
+         <long>İleti içerisinde Şablomlar eklentisinin yerine koyacağı anahtar kelime/değer eşlerinin listesi.</long>
+      </locale>
+
+      <locale name="uk">
+         <short>Список пар ключове слово/значення для модулів шаблонів для заміни у тілі повідомлень.</short>
+         <long>Список пар ключове слово/значення для модулів шаблонів для заміни у тілі повідомлень.</long>
+      </locale>
+
+      <locale name="vi">
+         <short>Danh sách các cặp từ-khoá/giá-trị cho phần bổ sung Mẫu thay thế trong thân thư.</short>
+         <long>Danh sách các cặp từ-khoá/giá-trị cho phần bổ sung Mẫu thay thế trong thân thư.</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>用于模板插件以替换邮件内容的键/值对列表。</short>
+         <long>用于模板插件以替换邮件内容的键/值对列表。</long>
+      </locale>
+
+      <locale name="zh_HK">
+         <short>使用郵件內文的範本外掛程式可用的關鍵字/數值組清單。</short>
+         <long>使用郵件內文的範本外掛程式可用的關鍵字/數值組清單。</long>
+      </locale>
+
+      <locale name="zh_TW">
+         <short>使用郵件內文的範本外掛程式可用的關鍵字/數值組清單。</short>
+         <long>使用郵件內文的範本外掛程式可用的關鍵字/數值組清單。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>
+

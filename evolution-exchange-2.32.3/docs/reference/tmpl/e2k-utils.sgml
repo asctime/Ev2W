@@ -1,0 +1,208 @@
+<!-- ##### SECTION Title ##### -->
+e2k-utils
+
+<!-- ##### SECTION Short_Description ##### -->
+Random utility functions
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION e2k_parse_timestamp ##### -->
+<para>
+
+</para>
+
+@timestamp: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_make_timestamp ##### -->
+<para>
+
+</para>
+
+@when: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_make_timestamp_rfc822 ##### -->
+<para>
+
+</para>
+
+@when: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_systime_to_time_t ##### -->
+<para>
+
+</para>
+
+@systime: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_systime_from_time_t ##### -->
+<para>
+
+</para>
+
+@tt: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_filetime_to_time_t ##### -->
+<para>
+
+</para>
+
+@filetime: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_filetime_from_time_t ##### -->
+<para>
+
+</para>
+
+@tt: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_lf_to_crlf ##### -->
+<para>
+
+</para>
+
+@in: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_crlf_to_lf ##### -->
+<para>
+
+</para>
+
+@in: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_strdup_with_trailing_slash ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_entryid_to_dn ##### -->
+<para>
+
+</para>
+
+@entryid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_ascii_strcase_equal ##### -->
+<para>
+
+</para>
+
+@v: 
+@v2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_ascii_strcase_hash ##### -->
+<para>
+
+</para>
+
+@v: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_restriction_folders_only ##### -->
+<para>
+
+</para>
+
+@rn: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_entryid_generate_oneoff ##### -->
+<para>
+
+</para>
+
+@display_name: 
+@email: 
+@unicode: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_entryid_generate_local ##### -->
+<para>
+
+</para>
+
+@exchange_dn: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_entryid_generate_contact ##### -->
+<para>
+
+</para>
+
+@contact_entryid: 
+@nth_address: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_search_key_generate ##### -->
+<para>
+
+</para>
+
+@addrtype: 
+@address: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_entryid_to_permanenturl ##### -->
+<para>
+
+</para>
+
+@entryid: 
+@base_uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_permanenturl_to_entryid ##### -->
+<para>
+
+</para>
+
+@permanenturl: 
+@Returns: 
+
+

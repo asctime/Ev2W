@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<book id="index" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <bookinfo>
+    <title>Evolution Connector for Microsoft Exchange Programmer&rsquo;s Reference Manual</title>
+  </bookinfo>
+
+  <chapter>
+    <title>Exchange Architectural Notes</title>
+    <xi:include href="arch/bug-private.xml"/>
+    <xi:include href="arch/bug-xml.xml"/>
+    <xi:include href="arch/calendar.xml"/>
+    <xi:include href="arch/mail.xml"/>
+    <xi:include href="arch/ntlm.xml"/>
+  </chapter>
+
+  <chapter>
+    <title>Implementation of Connector Features</title>
+    <xi:include href="features/autoconfig.xml"/>
+    <xi:include href="features/booking.xml"/>
+    <xi:include href="features/delegation.xml"/>
+    <xi:include href="features/favorites.xml"/>
+    <xi:include href="features/fba.xml"/>
+    <xi:include href="features/freebusy.xml"/>
+    <xi:include href="features/oof.xml"/>
+    <xi:include href="features/other-users.xml"/>
+    <xi:include href="features/permissions.xml"/>
+    <xi:include href="features/threading.xml"/>
+  </chapter>
+
+  <chapter>
+    <title>libexchange public API reference</title>
+    <xi:include href="xml/e2k-autoconfig.xml"/>
+    <xi:include href="xml/e2k-context.xml"/>
+    <xi:include href="xml/e2k-global-catalog.xml"/>
+    <xi:include href="xml/e2k-operation.xml"/>
+    <xi:include href="xml/e2k-properties.xml"/>
+    <xi:include href="xml/e2k-restriction.xml"/>
+    <xi:include href="xml/e2k-result.xml"/>
+    <xi:include href="xml/e2k-security-descriptor.xml"/>
+    <xi:include href="xml/e2k-sid.xml"/>
+    <xi:include href="xml/e2k-uri.xml"/>
+    <xi:include href="xml/e2k-user-dialog.xml"/>
+    <xi:include href="xml/e2k-http-utils.xml"/>
+    <xi:include href="xml/e2k-kerberos.xml"/>
+    <xi:include href="xml/e2k-utils.xml"/>
+    <xi:include href="xml/e2k-xml-utils.xml"/>
+    <xi:include href="xml/mapi.xml"/>
+  </chapter>
+
+  <chapter>
+    <title>libexchange private API reference</title>
+    <xi:include href="xml/e2k-context-private.xml"/>
+    <xi:include href="xml/e2k-operation-private.xml"/>
+    <xi:include href="xml/e2k-result-private.xml"/>
+    <xi:include href="xml/test-utils.xml"/>
+  </chapter>
+
+  <chapter>
+    <title>libxntlm API reference</title>
+    <xi:include href="xml/xntlm.xml"/>
+    <xi:include href="xml/xntlm-des.xml"/>
+    <xi:include href="xml/xntlm-md4.xml"/>
+  </chapter>
+
+  <chapter>
+    <title>libexchange vaporware API reference</title>
+    <xi:include href="xml/e2k-action.xml"/>
+    <xi:include href="xml/e2k-freebusy.xml"/>
+    <xi:include href="xml/e2k-restriction-vapor.xml"/>
+    <xi:include href="xml/e2k-rule.xml"/>
+  </chapter>
+
+</book>

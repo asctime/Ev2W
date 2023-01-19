@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>E2kSid</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Connector for Microsoft Exchange Programmer’s Reference Manual">
+<link rel="up" href="ch03.html" title="libexchange public API reference">
+<link rel="prev" href="E2kSecurityDescriptor.html" title="E2kSecurityDescriptor">
+<link rel="next" href="evolution-exchange-e2k-uri.html" title="E2kUri">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="E2kSecurityDescriptor.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Connector for Microsoft Exchange Programmer’s Reference Manual</th>
+<td><a accesskey="n" href="evolution-exchange-e2k-uri.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#evolution-exchange-E2kSid.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#evolution-exchange-E2kSid.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="E2kSid">
+<a name="evolution-exchange-E2kSid"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="evolution-exchange-E2kSid.top_of_page"></a>E2kSid</span></h2>
+<p>E2kSid — Windows Security Identifiers</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="evolution-exchange-E2kSid.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid">E2kSid</a>;
+enum                <a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType">E2kSidType</a>;
+
+<a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="returnvalue">E2kSid</span></a> *            <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-new-from-string-sid" title="e2k_sid_new_from_string_sid ()">e2k_sid_new_from_string_sid</a>         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><span class="type">E2kSidType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string_sid</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *display_name</code></em>);
+<a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="returnvalue">E2kSid</span></a> *            <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-new-from-binary-sid" title="e2k_sid_new_from_binary_sid ()">e2k_sid_new_from_binary_sid</a>         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><span class="type">E2kSidType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *binary_sid</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *display_name</code></em>);
+#define             <a class="link" href="evolution-exchange-E2kSid.html#E2K-SID-WKS-EVERYONE:CAPS" title="E2K_SID_WKS_EVERYONE">E2K_SID_WKS_EVERYONE</a>
+#define             <a class="link" href="evolution-exchange-E2kSid.html#E2K-SID-WKS-ANONYMOUS:CAPS" title="E2K_SID_WKS_ANONYMOUS">E2K_SID_WKS_ANONYMOUS</a>
+
+<a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><span class="returnvalue">E2kSidType</span></a>          <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-get-sid-type" title="e2k_sid_get_sid_type ()">e2k_sid_get_sid_type</a>                (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-get-string-sid" title="e2k_sid_get_string_sid ()">e2k_sid_get_string_sid</a>              (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *      <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-get-binary-sid" title="e2k_sid_get_binary_sid ()">e2k_sid_get_binary_sid</a>              (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-get-display-name" title="e2k_sid_get_display_name ()">e2k_sid_get_display_name</a>            (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);
+
+#define             <a class="link" href="evolution-exchange-E2kSid.html#E2K-SID-BINARY-SID-LEN:CAPS" title="E2K_SID_BINARY_SID_LEN()">E2K_SID_BINARY_SID_LEN</a>              (bsid)
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-binary-sid-hash" title="e2k_sid_binary_sid_hash ()">e2k_sid_binary_sid_hash</a>             (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> key</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="evolution-exchange-E2kSid.html#e2k-sid-binary-sid-equal" title="e2k_sid_binary_sid_equal ()">e2k_sid_binary_sid_equal</a>            (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> b</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="evolution-exchange-E2kSid.description"></a><h2>Description</h2>
+<p>
+Every user in a Windows domain has a list of Security Identifiers, or
+SIDs, associated with them. This includes:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>their own personal SID</p></li>
+<li class="listitem"><p>the SID representing “all users in the local domain”</p></li>
+<li class="listitem"><p>the SID representing “Default”</p></li>
+<li class="listitem"><p>the SIDs for any Windows security groups that they are members of</p></li>
+</ul></div>
+<p>
+The user’s personal SID is stored in the
+<code class="literal">objectSid</code> property of their Active Directory entry.
+Unfortunately, we have no way of retrieving the complete list of SIDs
+associated with a user.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="evolution-exchange-E2kSid.details"></a><h2>Details</h2>
+<div class="refsect2" title="struct E2kSid">
+<a name="E2kSid"></a><h3>struct E2kSid</h3>
+<pre class="programlisting">struct E2kSid {
+	GObject parent;
+
+	E2kSidPrivate *priv;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum E2kSidType">
+<a name="E2kSidType"></a><h3>enum E2kSidType</h3>
+<pre class="programlisting">typedef enum {
+	E2K_SID_TYPE_INVALID,
+	E2K_SID_TYPE_USER,
+	E2K_SID_TYPE_ALIAS,
+	E2K_SID_TYPE_GROUP,
+	E2K_SID_TYPE_WELL_KNOWN_GROUP,
+	E2K_SID_TYPE_DOMAIN,
+	E2K_SID_TYPE_DELETED_ACCOUNT,
+	E2K_SID_TYPE_UNKNOWN,
+	E2K_SID_TYPE_COMPUTER
+} E2kSidType;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_new_from_string_sid ()">
+<a name="e2k-sid-new-from-string-sid"></a><h3>e2k_sid_new_from_string_sid ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="returnvalue">E2kSid</span></a> *            e2k_sid_new_from_string_sid         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><span class="type">E2kSidType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string_sid</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *display_name</code></em>);</pre>
+<p>
+Creates an <a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><code class="literal">E2kSid</code></a> from the given information
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type of SID that <em class="parameter"><code>string_sid</code></em> is
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string_sid</code></em> :</span></p></td>
+<td>the string form of a Windows Security Identifier
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>display_name</code></em> :</span></p></td>
+<td>UTF-8 display name of the user/group/etc identified
+by <em class="parameter"><code>string_sid</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new SID
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_new_from_binary_sid ()">
+<a name="e2k-sid-new-from-binary-sid"></a><h3>e2k_sid_new_from_binary_sid ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="returnvalue">E2kSid</span></a> *            e2k_sid_new_from_binary_sid         (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><span class="type">E2kSidType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *binary_sid</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *display_name</code></em>);</pre>
+<p>
+Creates an <a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><code class="literal">E2kSid</code></a> from the given information
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type of SID that <em class="parameter"><code>binary_sid</code></em> is
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>binary_sid</code></em> :</span></p></td>
+<td>the binary form of a Windows Security Identifier
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>display_name</code></em> :</span></p></td>
+<td>UTF-8 display name of the user/group/etc identified
+by <em class="parameter"><code>string_sid</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the new SID
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_SID_WKS_EVERYONE">
+<a name="E2K-SID-WKS-EVERYONE:CAPS"></a><h3>E2K_SID_WKS_EVERYONE</h3>
+<pre class="programlisting">#define E2K_SID_WKS_EVERYONE       "S-1-1-0"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E2K_SID_WKS_ANONYMOUS">
+<a name="E2K-SID-WKS-ANONYMOUS:CAPS"></a><h3>E2K_SID_WKS_ANONYMOUS</h3>
+<pre class="programlisting">#define E2K_SID_WKS_ANONYMOUS      "S-1-5-7"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_get_sid_type ()">
+<a name="e2k-sid-get-sid-type"></a><h3>e2k_sid_get_sid_type ()</h3>
+<pre class="programlisting"><a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><span class="returnvalue">E2kSidType</span></a>          e2k_sid_get_sid_type                (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);</pre>
+<p>
+Returns the type of <em class="parameter"><code>sid</code></em> (user, group, etc)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sid</code></em> :</span></p></td>
+<td>a SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a class="link" href="evolution-exchange-E2kSid.html#E2kSidType" title="enum E2kSidType"><code class="literal">E2kSidType</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_get_string_sid ()">
+<a name="e2k-sid-get-string-sid"></a><h3>e2k_sid_get_string_sid ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e2k_sid_get_string_sid              (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);</pre>
+<p>
+Returns the string form of <em class="parameter"><code>sid</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sid</code></em> :</span></p></td>
+<td>a SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the string SID
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_get_binary_sid ()">
+<a name="e2k-sid-get-binary-sid"></a><h3>e2k_sid_get_binary_sid ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *      e2k_sid_get_binary_sid              (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);</pre>
+<p>
+Returns the binary form of <em class="parameter"><code>sid</code></em>. Since the SID data is self-delimiting,
+no length value is needed. Use <a class="link" href="evolution-exchange-E2kSid.html#E2K-SID-BINARY-SID-LEN:CAPS" title="E2K_SID_BINARY_SID_LEN()"><code class="function">E2K_SID_BINARY_SID_LEN()</code></a> if you need to
+know the size of the binary data.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sid</code></em> :</span></p></td>
+<td>a SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the binary SID
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_get_display_name ()">
+<a name="e2k-sid-get-display-name"></a><h3>e2k_sid_get_display_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e2k_sid_get_display_name            (<em class="parameter"><code><a class="link" href="evolution-exchange-E2kSid.html#E2kSid" title="struct E2kSid"><span class="type">E2kSid</span></a> *sid</code></em>);</pre>
+<p>
+Returns the display name of the entity identified by <em class="parameter"><code>sid</code></em>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sid</code></em> :</span></p></td>
+<td>a SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the UTF-8 display name
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="E2K_SID_BINARY_SID_LEN()">
+<a name="E2K-SID-BINARY-SID-LEN:CAPS"></a><h3>E2K_SID_BINARY_SID_LEN()</h3>
+<pre class="programlisting">#define E2K_SID_BINARY_SID_LEN(bsid) (8 + ((guint8 *)bsid)[1] * 4)
+</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>bsid</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_binary_sid_hash ()">
+<a name="e2k-sid-binary-sid-hash"></a><h3>e2k_sid_binary_sid_hash ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               e2k_sid_binary_sid_hash             (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> key</code></em>);</pre>
+<p>
+Hashes <em class="parameter"><code>key</code></em>, a binary SID. For use with <a href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>pointer to a binary SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the hash value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e2k_sid_binary_sid_equal ()">
+<a name="e2k-sid-binary-sid-equal"></a><h3>e2k_sid_binary_sid_equal ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e2k_sid_binary_sid_equal            (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> b</code></em>);</pre>
+<p>
+Determines if <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em> contain the same SID data. For use
+with <a href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>pointer to a binary SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>pointer to another binary SID
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="evolution-exchange-E2kSid.see-also"></a><h2>See Also</h2>
+<p>
+<a class="link" href="E2kGlobalCatalog.html#e2k-global-catalog-lookup" title="e2k_global_catalog_lookup ()"><code class="function">e2k_global_catalog_lookup()</code></a>, <a class="link" href="E2kSecurityDescriptor.html" title="E2kSecurityDescriptor"><span class="type">E2kSecurityDescriptor</span></a>
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

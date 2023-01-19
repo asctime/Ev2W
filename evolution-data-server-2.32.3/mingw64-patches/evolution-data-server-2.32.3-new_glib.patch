@@ -1,0 +1,132 @@
+--- evolution-data-server-2.32.3/addressbook/libedata-book/e-data-book-factory.c	2011-04-21 21:36:35.000000000 +0200
++++ evolution-data-server-2.32.3/addressbook/libedata-book/e-data-book-factory.c	2012-04-04 11:17:58.365641045 +0200
+@@ -602,7 +602,6 @@
+ 
+ 	g_type_init ();
+ 	g_set_prgname (E_PRGNAME);
+-	if (!g_thread_supported ()) g_thread_init (NULL);
+ 
+ 	factory = g_object_new (E_TYPE_DATA_BOOK_FACTORY, NULL);
+ 
+--- evolution-data-server-2.32.3/calendar/backends/file/e-cal-backend-file.c	2011-04-21 21:35:36.000000000 +0200
++++ evolution-data-server-2.32.3/calendar/backends/file/e-cal-backend-file.c	2012-04-04 11:18:05.801454639 +0200
+@@ -3644,7 +3644,6 @@
+ 	FILE* fin = NULL;
+ 
+ 	g_type_init ();
+-	g_thread_init (NULL);
+ 
+ 	context = g_option_context_new ("- test utility for e-d-s file backend");
+ 	g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
+--- evolution-data-server-2.32.3/calendar/libedata-cal/e-data-cal-factory.c	2011-04-21 21:36:35.000000000 +0200
++++ evolution-data-server-2.32.3/calendar/libedata-cal/e-data-cal-factory.c	2012-04-04 11:18:13.463262568 +0200
+@@ -900,7 +900,6 @@
+ 
+ 	g_type_init ();
+ 	g_set_prgname (E_PRGNAME);
+-	if (!g_thread_supported ()) g_thread_init (NULL);
+ 
+ 	#ifdef HAVE_ICAL_UNKNOWN_TOKEN_HANDLING
+ 	ical_set_unknown_token_handling_setting (ICAL_DISCARD_TOKEN);
+--- evolution-data-server-2.32.3/camel/camel-index-control.c	2011-04-21 21:35:36.000000000 +0200
++++ evolution-data-server-2.32.3/camel/camel-index-control.c	2012-04-04 11:18:27.793903316 +0200
+@@ -124,7 +124,6 @@
+ 	if (argc<2)
+ 		do_usage(argv[0]);
+ 
+-	g_thread_init(NULL);
+ 	camel_init(NULL, 0);
+ 
+ 	if (!strcmp(argv[1], "compress"))
+--- evolution-data-server-2.32.3/camel/camel-text-index.c	2011-04-21 21:35:36.000000000 +0200
++++ evolution-data-server-2.32.3/camel/camel-text-index.c	2012-04-04 11:18:21.154069768 +0200
+@@ -1851,7 +1851,6 @@
+ 
+ 	printf ("Camel text index tester!\n");
+ 
+-	g_thread_init (NULL);
+ 	camel_init (NULL, 0);
+ 
+ 	idx = (CamelIndex *)camel_text_index_new ("textindex", O_CREAT|O_RDWR|O_TRUNC);
+--- evolution-data-server-2.32.3/camel/Makefile.am	2011-04-21 21:35:36.000000000 +0200
++++ evolution-data-server-2.32.3/camel/Makefile.am	2012-04-04 11:16:11.348323647 +0200
+@@ -141,6 +141,7 @@
+ 	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la 	\
+ 	libcamel-1.2.la				\
+ 	$(CAMEL_LIBS)				\
++	$(GNOME_PLATFORM_LIBS) \
+ 	$(SOCKET_LIBS)				\
+ 	$(REGEX_LIBS)
+ 
+--- evolution-data-server-2.32.3/camel/providers/imapx/test-imapx.c	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/camel/providers/imapx/test-imapx.c	2012-04-04 11:18:46.967422653 +0200
+@@ -36,7 +36,6 @@
+ 	}
+ 
+ 	uri = argv[1];
+-	g_thread_init (NULL);
+ 	system ("rm -rf /tmp/test-camel-imapx");
+ 	camel_init ("/tmp/test-camel-imapx", TRUE);
+ 	camel_provider_init ();
+--- evolution-data-server-2.32.3/camel/tests/lib/camel-test.c	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/camel/tests/lib/camel-test.c	2012-04-04 11:18:37.775653082 +0200
+@@ -99,8 +99,6 @@
+ 	setup = 1;
+ 
+ 	g_type_init ();
+-	/* yeah, we do need ot thread init, even though camel isn't compiled with enable threads */
+-	g_thread_init (NULL);
+ 
+ 	path = g_strdup_printf ("/tmp/camel-test");
+ 	if (mkdir (path, 0700) == -1 && errno != EEXIST)
+--- evolution-data-server-2.32.3/configure.ac	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/configure.ac	2012-04-04 11:06:42.568618891 +0200
+@@ -319,6 +319,7 @@
+ dnl ***********************************
+ PKG_CHECK_MODULES(GNOME_PLATFORM,
+ 	[gio-2.0 >= glib_minimum_version
++	 gmodule-2.0 >= glib_minimum_version
+ 	$GTK_MODULE
+ 	gconf-2.0 >= gconf_minimum_version
+ 	libxml-2.0 >= libxml_minimum_version
+--- evolution-data-server-2.32.3/libebackend/Makefile.am	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/libebackend/Makefile.am	2012-04-04 11:12:47.990420400 +0200
+@@ -18,6 +18,7 @@
+ libebackend_1_2_la_LIBADD = 				\
+ 	$(top_builddir)/libedataserver/libedataserver-1.2.la \
+ 	$(E_BACKEND_LIBS)				\
++	$(GNOME_PLATFORM_LIBS) \
+ 	$(DB_LIBS)
+ 
+ libebackend_1_2_la_LDFLAGS = \
+--- evolution-data-server-2.32.3/libedataserver/e-categories.c	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/libedataserver/e-categories.c	2012-04-04 11:04:20.203205953 +0200
+@@ -526,7 +526,7 @@
+ 
+ 	listeners = g_object_new (e_changed_listener_get_type (), NULL);
+ 
+-	g_atexit (finalize_categories);
++	atexit (finalize_categories);
+ 
+ 	n_added = load_categories ();
+ 	if (n_added > 0) {
+--- evolution-data-server-2.32.3/libedataserverui/test-name-selector.c	2011-04-21 21:35:37.000000000 +0200
++++ evolution-data-server-2.32.3/libedataserverui/test-name-selector.c	2012-04-04 11:18:55.449210012 +0200
+@@ -83,7 +83,6 @@
+ main (gint argc, gchar **argv)
+ {
+ 	gtk_init (&argc, &argv);
+-	g_thread_init (NULL);
+ 
+ 	camel_init (NULL, 0);
+ 
+--- evolution-data-server-2.32.3/servers/groupwise/soap-test.c	2011-04-21 21:35:38.000000000 +0200
++++ evolution-data-server-2.32.3/servers/groupwise/soap-test.c	2012-04-04 11:14:16.970190438 +0200
+@@ -49,7 +49,6 @@
+ main (gint argc, gchar *argv[])
+ {
+ 	g_type_init ();
+-	g_thread_init (NULL);
+ 
+ 	/* Hostname Eg: http(s)://domain_name:/port_number/soap */
+ 	if (argc != 3 && argc != 4) {

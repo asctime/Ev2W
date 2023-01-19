@@ -1,0 +1,97 @@
+The request:
+  http://schemas.microsoft.com/mapi/verbstream:
+    02 01 07 00 00 00 00 00 00 00 05 52 65 70 6c 79    ...........Reply
+    08 49 50 4d 2e 4e 6f 74 65 07 4d 65 73 73 61 67    .IPM.Note.Messag
+    65 02 52 45 05 00 00 00 00 00 00 00 00 01 00 00    e.RE............
+    00 00 00 00 00 02 00 00 00 66 00 00 00 02 00 00    .........f......
+    00 01 00 00 00 0c 52 65 70 6c 79 20 74 6f 20 41    ......Reply to A
+    6c 6c 08 49 50 4d 2e 4e 6f 74 65 07 4d 65 73 73    ll.IPM.Note.Mess
+    61 67 65 02 52 45 05 00 00 00 00 00 00 00 00 01    age.RE..........
+    00 00 00 00 00 00 00 02 00 00 00 67 00 00 00 03    ...........g....
+    00 00 00 02 00 00 00 07 46 6f 72 77 61 72 64 08    ........Forward.
+    49 50 4d 2e 4e 6f 74 65 07 4d 65 73 73 61 67 65    IPM.Note.Message
+    02 46 57 05 00 00 00 00 00 00 00 00 01 00 00 00    .FW.............
+    00 00 00 00 02 00 00 00 68 00 00 00 04 00 00 00    ........h.......
+    03 00 00 00 0f 52 65 70 6c 79 20 74 6f 20 46 6f    .....Reply to Fo
+    6c 64 65 72 08 49 50 4d 2e 50 6f 73 74 04 50 6f    lder.IPM.Post.Po
+    73 74 00 05 00 00 00 00 00 00 00 00 01 00 00 00    st..............
+    00 00 00 00 02 00 00 00 6c 00 00 00 08 00 00 00    ........l.......
+    04 00 00 00 03 59 65 73 08 49 50 4d 2e 4e 6f 74    .....Yes.IPM.Not
+    65 00 03 59 65 73 00 00 00 00 00 00 00 00 00 01    e..Yes..........
+    00 00 00 02 00 00 00 02 00 00 00 01 00 00 00 ff    ................
+    ff ff ff 04 00 00 00 02 4e 6f 08 49 50 4d 2e 4e    ........No.IPM.N
+    6f 74 65 00 02 4e 6f 00 00 00 00 00 00 00 00 00    ote..No.........
+    01 00 00 00 02 00 00 00 02 00 00 00 02 00 00 00    ................
+    ff ff ff ff 04 00 00 00 05 4d 61 79 62 65 08 49    .........Maybe.I
+    50 4d 2e 4e 6f 74 65 00 05 4d 61 79 62 65 00 00    PM.Note..Maybe..
+    00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 02    ................
+    00 00 00 03 00 00 00 ff ff ff ff                   ...........
+
+02 01
+07 00 00 00  is the number of options
+00 00 00 00
+05 Reply     length + label
+08 IPM.Note  length + response class
+07 Message   length + ? (rule for filling in reply body?)
+02 RE        length + reply prefix
+...
+66           PR_ACTION_FLAG value
+...
+
+  http://schemas.microsoft.com/mapi/proptag/x00310102 (PR_REPORT_TAG):
+    50 43 44 46 45 42 30 39 00 01 00 02 00 72 00 00    PCDFEB09.....r..
+    00 00 00 00 00 38 a1 bb 10 05 e5 10 1a a1 bb 08    .....8..........
+    00 2b 2a 56 c2 00 00 45 4d 53 4d 44 42 2e 44 4c    .+*V...EMSMDB.DL
+    4c 00 00 00 00 00 00 00 00 1b 55 fa 20 aa 66 11    L.........U. .f.
+    cd 9b c8 00 aa 00 2f c4 5a 0c 00 00 00 53 48 52    ....../.Z....SHR
+    45 57 44 4e 45 53 53 00 2f 6f 3d 58 69 6d 69 61    EWDNESS./o=Ximia
+    6e 20 58 43 53 2f 6f 75 3d 58 43 53 2f 63 6e 3d    n XCS/ou=XCS/cn=
+    52 65 63 69 70 69 65 6e 74 73 2f 63 6e 3d 64 61    Recipients/cn=da
+    6e 77 00 2e 00 00 00 00 00 00 00 c7 10 bb b8 33    nw.............3
+    b7 7d 43 b5 f8 9b 3a da c2 a2 69 01 00 0e 51 7f    .}C...:...i...Q.
+    65 8e 91 59 4f 93 7d c1 fa 57 8c df 2b 00 00 00    e..YO.}..W..+...
+    00 17 2e 00 00 00 00 00 00 2e 00 00 00 00 00 00    ................
+    00 c7 10 bb b8 33 b7 7d 43 b5 f8 9b 3a da c2 a2    .....3.}C...:...
+    69 01 00 0e 51 7f 65 8e 91 59 4f 93 7d c1 fa 57    i...Q.e..YO.}..W
+    8c df 2b 00 00 00 00 17 2f 00 00 10 00 00 00 8c    ..+...../.......
+    09 70 85 68 a2 8d 4a b0 00 5b ae 35 46 4e f1 06    .p.h..J..[.5FN..
+    00 00 00 74 65 73 74 33 00                         ...test3.
+
+(0x35 - 0x82 is the PR_STORE_ENTRYID)
+
+After voting:
+   http://schemas.microsoft.com/mapi/proptag/x10800003 (PR_ACTION):
+-    -1
++    261
++  http://schemas.microsoft.com/mapi/proptag/x10810003 (PR_ACTION_FLAG):
++    3
++  http://schemas.microsoft.com/mapi/proptag/x10820040 (PR_ACTION_DATE):
++    2002-08-10T21:18:00.000Z
+
+
+The vote message:
+  urn:schemas:mailheader:subject:
+    Maybe: test3
+  http://schemas.microsoft.com/mapi/verbresponse:
+    Maybe
+  http://schemas.microsoft.com/mapi/proptag/x00310102 (PR_REPORT_TAG):
+    (copied from request)
+
+
+The Sent message, after reading the first vote:
+   http://schemas.microsoft.com/mapi/proptag/x0e070003 (PR_MESSAGE_FLAGS):
+-    35
++    33    (lost MSGFLAG_UNMODIFIED)
+   DAV:getcontentlength:
+-    1105
++    1162
+   http://schemas.microsoft.com/mapi/proptag/x10800003 (PR_ACTION):
+-    -1
++    270
++  http://schemas.microsoft.com/mapi/id/{0006200B-0000-0000-C000-000000000046}/x00008809:
++    7
++  http://schemas.microsoft.com/mapi/id/{0006200B-0000-0000-C000-000000000046}/x00008808:
++    1
+
+OutlookSpy shows that the recipient table is modified to show the
+responses.

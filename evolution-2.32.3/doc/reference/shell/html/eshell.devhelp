@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Evolution Shell Reference Manual" link="index.html" author="" name="eshell">
+  <chapters>
+    <sub name="The Shell" link="ch01.html">
+      <sub name="EShell" link="EShell.html"/>
+      <sub name="EShellBackend" link="EShellBackend.html"/>
+      <sub name="EShellWindow" link="EShellWindow.html"/>
+      <sub name="EShellView" link="EShellView.html"/>
+      <sub name="EShellContent" link="EShellContent.html"/>
+      <sub name="EShellSidebar" link="EShellSidebar.html"/>
+      <sub name="EShellTaskbar" link="EShellTaskbar.html"/>
+      <sub name="EShellSearchbar" link="EShellSearchbar.html"/>
+      <sub name="EShellSettings" link="EShellSettings.html"/>
+      <sub name="EShellSwitcher" link="EShellSwitcher.html"/>
+      <sub name="Shell Utilities" link="eshell-Shell-Utilities.html"/>
+    </sub>
+    <sub name="Basic Utility Functions" link="ch02.html">
+      <sub name="Mail Accounts" link="eshell-Mail-Accounts.html"/>
+      <sub name="User Alert Handling" link="eshell-User-Alert-Handling.html"/>
+      <sub name="Bit Arrays (Legacy)" link="eshell-Bit-Arrays-(Legacy).html"/>
+      <sub name="GObject Property Bindings" link="eshell-GObject-Property-Bindings.html"/>
+      <sub name="Categories" link="eshell-Categories.html"/>
+      <sub name="Date and Time Formatting" link="eshell-Date-and-Time-Formatting.html"/>
+      <sub name="Dialog Utilities (Legacy)" link="eshell-Dialog-Utilities-(Legacy).html"/>
+      <sub name="Text to HTML Conversion" link="eshell-Text-to-HTML-Conversion.html"/>
+      <sub name="Icon Utilities (Legacy)" link="eshell-Icon-Utilities-(Legacy).html"/>
+      <sub name="Error Logging" link="eshell-Error-Logging.html"/>
+      <sub name="EPoolv" link="eshell-EPoolv.html"/>
+      <sub name="Printing" link="eshell-Printing.html"/>
+      <sub name="Selections" link="eshell-Selections.html"/>
+      <sub name="Personalized Signatures" link="eshell-Personalized-Signatures.html"/>
+      <sub name="Container for Signatures" link="eshell-Container-for-Signatures.html"/>
+      <sub name="More Signature Utilities" link="eshell-e-signature-utils.html"/>
+      <sub name="Miscellaneous Utilities" link="eshell-Miscellaneous-Utilities.html"/>
+      <sub name="Reading and Writing XML" link="eshell-Reading-and-Writing-XML.html"/>
+      <sub name="GConf Bridge" link="eshell-GConf-Bridge.html"/>
+    </sub>
+    <sub name="Extending Evolution" link="ch03.html">
+      <sub name="EModule" link="EModule.html"/>
+      <sub name="EExtension" link="EExtension.html"/>
+      <sub name="EExtensible" link="EExtensible.html"/>
+    </sub>
+    <sub name="Actions" link="ch04.html">
+      <sub name="Shell Actions" link="eshell-Shell-Actions.html"/>
+      <sub name="Action Groups" link="eshell-Action-Groups.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="ch05.html"/>
+    <sub name="Index" link="ix01.html"/>
+  </chapters>
+  <functions>
+    <function name="EShell" link="EShell.html#EShell-struct"/>
+    <function name="e_shell_get_default ()" link="EShell.html#e-shell-get-default"/>
+    <function name="e_shell_load_modules ()" link="EShell.html#e-shell-load-modules"/>
+    <function name="e_shell_get_shell_backends ()" link="EShell.html#e-shell-get-shell-backends"/>
+    <function name="e_shell_get_canonical_name ()" link="EShell.html#e-shell-get-canonical-name"/>
+    <function name="e_shell_get_backend_by_name ()" link="EShell.html#e-shell-get-backend-by-name"/>
+    <function name="e_shell_get_backend_by_scheme ()" link="EShell.html#e-shell-get-backend-by-scheme"/>
+    <function name="e_shell_get_shell_settings ()" link="EShell.html#e-shell-get-shell-settings"/>
+    <function name="e_shell_get_gconf_client ()" link="EShell.html#e-shell-get-gconf-client"/>
+    <function name="e_shell_create_shell_window ()" link="EShell.html#e-shell-create-shell-window"/>
+    <function name="e_shell_handle_uris ()" link="EShell.html#e-shell-handle-uris"/>
+    <function name="e_shell_watch_window ()" link="EShell.html#e-shell-watch-window"/>
+    <function name="e_shell_get_watched_windows ()" link="EShell.html#e-shell-get-watched-windows"/>
+    <function name="e_shell_get_active_window ()" link="EShell.html#e-shell-get-active-window"/>
+    <function name="e_shell_send_receive ()" link="EShell.html#e-shell-send-receive"/>
+    <function name="e_shell_get_meego_mode ()" link="EShell.html#e-shell-get-meego-mode"/>
+    <function name="e_shell_get_express_mode ()" link="EShell.html#e-shell-get-express-mode"/>
+    <function name="e_shell_get_small_screen_mode ()" link="EShell.html#e-shell-get-small-screen-mode"/>
+    <function name="e_shell_get_module_directory ()" link="EShell.html#e-shell-get-module-directory"/>
+    <function name="e_shell_get_network_available ()" link="EShell.html#e-shell-get-network-available"/>
+    <function name="e_shell_set_network_available ()" link="EShell.html#e-shell-set-network-available"/>
+    <function name="e_shell_get_online ()" link="EShell.html#e-shell-get-online"/>
+    <function name="e_shell_set_online ()" link="EShell.html#e-shell-set-online"/>
+    <function name="e_shell_get_preferences_window ()" link="EShell.html#e-shell-get-preferences-window"/>
+    <function name="e_shell_event ()" link="EShell.html#e-shell-event"/>
+    <function name="enum EShellQuitReason" link="EShell.html#EShellQuitReason"/>
+    <function name="e_shell_quit ()" link="EShell.html#e-shell-quit"/>
+    <function name="e_shell_cancel_quit ()" link="EShell.html#e-shell-cancel-quit"/>
+    <function name="e_shell_adapt_window_size ()" link="EShell.html#e-shell-adapt-window-size"/>
+    <function name="e_shell_set_startup_view ()" link="EShell.html#e-shell-set-startup-view"/>
+    <function name="e_shell_get_startup_view ()" link="EShell.html#e-shell-get-startup-view"/>
+    <function name="E_SHELL_MIGRATE_ERROR" link="EShell.html#E-SHELL-MIGRATE-ERROR:CAPS"/>
+    <function name="enum EShellMigrateError" link="EShell.html#EShellMigrateError"/>
+    <function name="e_shell_migrate_attempt ()" link="EShell.html#e-shell-migrate-attempt"/>
+    <function name="e_shell_detect_meego ()" link="EShell.html#e-shell-detect-meego"/>
+    <function name="The &quot;express-mode&quot; property" link="EShell.html#EShell--express-mode"/>
+    <function name="The &quot;geometry&quot; property" link="EShell.html#EShell--geometry"/>
+    <function name="The &quot;meego-mode&quot; property" link="EShell.html#EShell--meego-mode"/>
+    <function name="The &quot;module-directory&quot; property" link="EShell.html#EShell--module-directory"/>
+    <function name="The &quot;network-available&quot; property" link="EShell.html#EShell--network-available"/>
+    <function name="The &quot;online&quot; property" link="EShell.html#EShell--online"/>
+    <function name="The &quot;shell-settings&quot; property" link="EShell.html#EShell--shell-settings"/>
+    <function name="The &quot;small-screen-mode&quot; property" link="EShell.html#EShell--small-screen-mode"/>
+    <function name="The &quot;event&quot; signal" link="EShell.html#EShell-event"/>
+    <function name="The &quot;handle-uri&quot; signal" link="EShell.html#EShell-handle-uri"/>
+    <function name="The &quot;prepare-for-offline&quot; signal" link="EShell.html#EShell-prepare-for-offline"/>
+    <function name="The &quot;prepare-for-online&quot; signal" link="EShell.html#EShell-prepare-for-online"/>
+    <function name="The &quot;prepare-for-quit&quot; signal" link="EShell.html#EShell-prepare-for-quit"/>
+    <function name="The &quot;quit-requested&quot; signal" link="EShell.html#EShell-quit-requested"/>
+    <function name="The &quot;send-receive&quot; signal" link="EShell.html#EShell-send-receive"/>
+    <function name="The &quot;window-created&quot; signal" link="EShell.html#EShell-window-created"/>
+    <function name="The &quot;window-destroyed&quot; signal" link="EShell.html#EShell-window-destroyed"/>
+    <function name="EShellBackend" link="EShellBackend.html#EShellBackend-struct"/>
+    <function name="e_shell_backend_compare ()" link="EShellBackend.html#e-shell-backend-compare"/>
+    <function name="e_shell_backend_get_config_dir ()" link="EShellBackend.html#e-shell-backend-get-config-dir"/>
+    <function name="e_shell_backend_get_data_dir ()" link="EShellBackend.html#e-shell-backend-get-data-dir"/>
+    <function name="e_shell_backend_get_shell ()" link="EShellBackend.html#e-shell-backend-get-shell"/>
+    <function name="e_shell_backend_add_activity ()" link="EShellBackend.html#e-shell-backend-add-activity"/>
+    <function name="e_shell_backend_start ()" link="EShellBackend.html#e-shell-backend-start"/>
+    <function name="e_shell_backend_migrate ()" link="EShellBackend.html#e-shell-backend-migrate"/>
+    <function name="The &quot;activity-added&quot; signal" link="EShellBackend.html#EShellBackend-activity-added"/>
+    <function name="EShellWindow" link="EShellWindow.html#EShellWindow-struct"/>
+    <function name="e_shell_window_new ()" link="EShellWindow.html#e-shell-window-new"/>
+    <function name="e_shell_window_get_shell ()" link="EShellWindow.html#e-shell-window-get-shell"/>
+    <function name="e_shell_window_get_shell_view ()" link="EShellWindow.html#e-shell-window-get-shell-view"/>
+    <function name="e_shell_window_peek_shell_view ()" link="EShellWindow.html#e-shell-window-peek-shell-view"/>
+    <function name="e_shell_window_get_shell_view_action ()" link="EShellWindow.html#e-shell-window-get-shell-view-action"/>
+    <function name="e_shell_window_get_focus_tracker ()" link="EShellWindow.html#e-shell-window-get-focus-tracker"/>
+    <function name="e_shell_window_get_ui_manager ()" link="EShellWindow.html#e-shell-window-get-ui-manager"/>
+    <function name="e_shell_window_get_action ()" link="EShellWindow.html#e-shell-window-get-action"/>
+    <function name="e_shell_window_get_action_group ()" link="EShellWindow.html#e-shell-window-get-action-group"/>
+    <function name="e_shell_window_get_managed_widget ()" link="EShellWindow.html#e-shell-window-get-managed-widget"/>
+    <function name="e_shell_window_get_active_view ()" link="EShellWindow.html#e-shell-window-get-active-view"/>
+    <function name="e_shell_window_set_active_view ()" link="EShellWindow.html#e-shell-window-set-active-view"/>
+    <function name="e_shell_window_get_safe_mode ()" link="EShellWindow.html#e-shell-window-get-safe-mode"/>
+    <function name="e_shell_window_set_safe_mode ()" link="EShellWindow.html#e-shell-window-set-safe-mode"/>
+    <function name="e_shell_window_add_action_group ()" link="EShellWindow.html#e-shell-window-add-action-group"/>
+    <function name="e_shell_window_get_sidebar_visible ()" link="EShellWindow.html#e-shell-window-get-sidebar-visible"/>
+    <function name="e_shell_window_set_sidebar_visible ()" link="EShellWindow.html#e-shell-window-set-sidebar-visible"/>
+    <function name="e_shell_window_get_switcher_visible ()" link="EShellWindow.html#e-shell-window-get-switcher-visible"/>
+    <function name="e_shell_window_set_switcher_visible ()" link="EShellWindow.html#e-shell-window-set-switcher-visible"/>
+    <function name="e_shell_window_get_taskbar_visible ()" link="EShellWindow.html#e-shell-window-get-taskbar-visible"/>
+    <function name="e_shell_window_set_taskbar_visible ()" link="EShellWindow.html#e-shell-window-set-taskbar-visible"/>
+    <function name="e_shell_window_get_toolbar_visible ()" link="EShellWindow.html#e-shell-window-get-toolbar-visible"/>
+    <function name="e_shell_window_set_toolbar_visible ()" link="EShellWindow.html#e-shell-window-set-toolbar-visible"/>
+    <function name="e_shell_window_register_new_item_actions ()" link="EShellWindow.html#e-shell-window-register-new-item-actions"/>
+    <function name="e_shell_window_register_new_source_actions ()" link="EShellWindow.html#e-shell-window-register-new-source-actions"/>
+    <function name="e_shell_window_get_menu_bar_box ()" link="EShellWindow.html#e-shell-window-get-menu-bar-box"/>
+    <function name="The &quot;active-view&quot; property" link="EShellWindow.html#EShellWindow--active-view"/>
+    <function name="The &quot;focus-tracker&quot; property" link="EShellWindow.html#EShellWindow--focus-tracker"/>
+    <function name="The &quot;geometry&quot; property" link="EShellWindow.html#EShellWindow--geometry"/>
+    <function name="The &quot;safe-mode&quot; property" link="EShellWindow.html#EShellWindow--safe-mode"/>
+    <function name="The &quot;shell&quot; property" link="EShellWindow.html#EShellWindow--shell"/>
+    <function name="The &quot;sidebar-visible&quot; property" link="EShellWindow.html#EShellWindow--sidebar-visible"/>
+    <function name="The &quot;switcher-visible&quot; property" link="EShellWindow.html#EShellWindow--switcher-visible"/>
+    <function name="The &quot;taskbar-visible&quot; property" link="EShellWindow.html#EShellWindow--taskbar-visible"/>
+    <function name="The &quot;toolbar-visible&quot; property" link="EShellWindow.html#EShellWindow--toolbar-visible"/>
+    <function name="The &quot;ui-manager&quot; property" link="EShellWindow.html#EShellWindow--ui-manager"/>
+    <function name="The &quot;shell-view-created&quot; signal" link="EShellWindow.html#EShellWindow-shell-view-created"/>
+    <function name="EShellView" link="EShellView.html#EShellView-struct"/>
+    <function name="EShellViewClass" link="EShellView.html#EShellViewClass"/>
+    <function name="e_shell_view_get_name ()" link="EShellView.html#e-shell-view-get-name"/>
+    <function name="e_shell_view_get_action ()" link="EShellView.html#e-shell-view-get-action"/>
+    <function name="e_shell_view_get_title ()" link="EShellView.html#e-shell-view-get-title"/>
+    <function name="e_shell_view_set_title ()" link="EShellView.html#e-shell-view-set-title"/>
+    <function name="e_shell_view_get_view_id ()" link="EShellView.html#e-shell-view-get-view-id"/>
+    <function name="e_shell_view_set_view_id ()" link="EShellView.html#e-shell-view-set-view-id"/>
+    <function name="e_shell_view_is_active ()" link="EShellView.html#e-shell-view-is-active"/>
+    <function name="e_shell_view_get_page_num ()" link="EShellView.html#e-shell-view-get-page-num"/>
+    <function name="e_shell_view_set_page_num ()" link="EShellView.html#e-shell-view-set-page-num"/>
+    <function name="e_shell_view_get_searchbar ()" link="EShellView.html#e-shell-view-get-searchbar"/>
+    <function name="e_shell_view_get_search_name ()" link="EShellView.html#e-shell-view-get-search-name"/>
+    <function name="e_shell_view_get_search_rule ()" link="EShellView.html#e-shell-view-get-search-rule"/>
+    <function name="e_shell_view_set_search_rule ()" link="EShellView.html#e-shell-view-set-search-rule"/>
+    <function name="e_shell_view_get_search_query ()" link="EShellView.html#e-shell-view-get-search-query"/>
+    <function name="e_shell_view_get_size_group ()" link="EShellView.html#e-shell-view-get-size-group"/>
+    <function name="e_shell_view_get_shell_backend ()" link="EShellView.html#e-shell-view-get-shell-backend"/>
+    <function name="e_shell_view_get_shell_content ()" link="EShellView.html#e-shell-view-get-shell-content"/>
+    <function name="e_shell_view_get_shell_sidebar ()" link="EShellView.html#e-shell-view-get-shell-sidebar"/>
+    <function name="e_shell_view_get_shell_taskbar ()" link="EShellView.html#e-shell-view-get-shell-taskbar"/>
+    <function name="e_shell_view_get_shell_window ()" link="EShellView.html#e-shell-view-get-shell-window"/>
+    <function name="e_shell_view_get_state_key_file ()" link="EShellView.html#e-shell-view-get-state-key-file"/>
+    <function name="e_shell_view_set_state_dirty ()" link="EShellView.html#e-shell-view-set-state-dirty"/>
+    <function name="e_shell_view_clear_search ()" link="EShellView.html#e-shell-view-clear-search"/>
+    <function name="e_shell_view_custom_search ()" link="EShellView.html#e-shell-view-custom-search"/>
+    <function name="e_shell_view_execute_search ()" link="EShellView.html#e-shell-view-execute-search"/>
+    <function name="e_shell_view_block_execute_search ()" link="EShellView.html#e-shell-view-block-execute-search"/>
+    <function name="e_shell_view_unblock_execute_search ()" link="EShellView.html#e-shell-view-unblock-execute-search"/>
+    <function name="e_shell_view_update_actions ()" link="EShellView.html#e-shell-view-update-actions"/>
+    <function name="e_shell_view_block_update_actions ()" link="EShellView.html#e-shell-view-block-update-actions"/>
+    <function name="e_shell_view_unblock_update_actions ()" link="EShellView.html#e-shell-view-unblock-update-actions"/>
+    <function name="e_shell_view_show_popup_menu ()" link="EShellView.html#e-shell-view-show-popup-menu"/>
+    <function name="e_shell_view_new_view_instance ()" link="EShellView.html#e-shell-view-new-view-instance"/>
+    <function name="The &quot;action&quot; property" link="EShellView.html#EShellView--action"/>
+    <function name="The &quot;page-num&quot; property" link="EShellView.html#EShellView--page-num"/>
+    <function name="The &quot;search-rule&quot; property" link="EShellView.html#EShellView--search-rule"/>
+    <function name="The &quot;shell-backend&quot; property" link="EShellView.html#EShellView--shell-backend"/>
+    <function name="The &quot;shell-content&quot; property" link="EShellView.html#EShellView--shell-content"/>
+    <function name="The &quot;shell-sidebar&quot; property" link="EShellView.html#EShellView--shell-sidebar"/>
+    <function name="The &quot;shell-taskbar&quot; property" link="EShellView.html#EShellView--shell-taskbar"/>
+    <function name="The &quot;shell-window&quot; property" link="EShellView.html#EShellView--shell-window"/>
+    <function name="The &quot;state-key-file&quot; property" link="EShellView.html#EShellView--state-key-file"/>
+    <function name="The &quot;title&quot; property" link="EShellView.html#EShellView--title"/>
+    <function name="The &quot;view-id&quot; property" link="EShellView.html#EShellView--view-id"/>
+    <function name="The &quot;clear-search&quot; signal" link="EShellView.html#EShellView-clear-search"/>
+    <function name="The &quot;custom-search&quot; signal" link="EShellView.html#EShellView-custom-search"/>
+    <function name="The &quot;execute-search&quot; signal" link="EShellView.html#EShellView-execute-search"/>
+    <function name="The &quot;toggled&quot; signal" link="EShellView.html#EShellView-toggled"/>
+    <function name="The &quot;update-actions&quot; signal" link="EShellView.html#EShellView-update-actions"/>
+    <function name="EShellContent" link="EShellContent.html#EShellContent-struct"/>
+    <function name="e_shell_content_new ()" link="EShellContent.html#e-shell-content-new"/>
+    <function name="e_shell_content_set_searchbar ()" link="EShellContent.html#e-shell-content-set-searchbar"/>
+    <function name="e_shell_content_check_state ()" link="EShellContent.html#e-shell-content-check-state"/>
+    <function name="e_shell_content_focus_search_results ()" link="EShellContent.html#e-shell-content-focus-search-results"/>
+    <function name="e_shell_content_get_shell_view ()" link="EShellContent.html#e-shell-content-get-shell-view"/>
+    <function name="e_shell_content_get_view_id ()" link="EShellContent.html#e-shell-content-get-view-id"/>
+    <function name="e_shell_content_set_view_id ()" link="EShellContent.html#e-shell-content-set-view-id"/>
+    <function name="e_shell_content_run_advanced_search_dialog ()" link="EShellContent.html#e-shell-content-run-advanced-search-dialog"/>
+    <function name="e_shell_content_run_edit_searches_dialog ()" link="EShellContent.html#e-shell-content-run-edit-searches-dialog"/>
+    <function name="e_shell_content_run_save_search_dialog ()" link="EShellContent.html#e-shell-content-run-save-search-dialog"/>
+    <function name="The &quot;shell-view&quot; property" link="EShellContent.html#EShellContent--shell-view"/>
+    <function name="EShellSidebar" link="EShellSidebar.html#EShellSidebar-struct"/>
+    <function name="e_shell_sidebar_new ()" link="EShellSidebar.html#e-shell-sidebar-new"/>
+    <function name="e_shell_sidebar_check_state ()" link="EShellSidebar.html#e-shell-sidebar-check-state"/>
+    <function name="e_shell_sidebar_get_shell_view ()" link="EShellSidebar.html#e-shell-sidebar-get-shell-view"/>
+    <function name="e_shell_sidebar_get_icon_name ()" link="EShellSidebar.html#e-shell-sidebar-get-icon-name"/>
+    <function name="e_shell_sidebar_set_icon_name ()" link="EShellSidebar.html#e-shell-sidebar-set-icon-name"/>
+    <function name="e_shell_sidebar_get_primary_text ()" link="EShellSidebar.html#e-shell-sidebar-get-primary-text"/>
+    <function name="e_shell_sidebar_set_primary_text ()" link="EShellSidebar.html#e-shell-sidebar-set-primary-text"/>
+    <function name="e_shell_sidebar_get_secondary_text ()" link="EShellSidebar.html#e-shell-sidebar-get-secondary-text"/>
+    <function name="e_shell_sidebar_set_secondary_text ()" link="EShellSidebar.html#e-shell-sidebar-set-secondary-text"/>
+    <function name="The &quot;icon-name&quot; property" link="EShellSidebar.html#EShellSidebar--icon-name"/>
+    <function name="The &quot;primary-text&quot; property" link="EShellSidebar.html#EShellSidebar--primary-text"/>
+    <function name="The &quot;secondary-text&quot; property" link="EShellSidebar.html#EShellSidebar--secondary-text"/>
+    <function name="The &quot;shell-view&quot; property" link="EShellSidebar.html#EShellSidebar--shell-view"/>
+    <function name="EShellTaskbar" link="EShellTaskbar.html#EShellTaskbar-struct"/>
+    <function name="e_shell_taskbar_new ()" link="EShellTaskbar.html#e-shell-taskbar-new"/>
+    <function name="e_shell_taskbar_get_shell_view ()" link="EShellTaskbar.html#e-shell-taskbar-get-shell-view"/>
+    <function name="e_shell_taskbar_get_message ()" link="EShellTaskbar.html#e-shell-taskbar-get-message"/>
+    <function name="e_shell_taskbar_set_message ()" link="EShellTaskbar.html#e-shell-taskbar-set-message"/>
+    <function name="e_shell_taskbar_unset_message ()" link="EShellTaskbar.html#e-shell-taskbar-unset-message"/>
+    <function name="e_shell_taskbar_get_activity_count ()" link="EShellTaskbar.html#e-shell-taskbar-get-activity-count"/>
+    <function name="The &quot;message&quot; property" link="EShellTaskbar.html#EShellTaskbar--message"/>
+    <function name="The &quot;shell-view&quot; property" link="EShellTaskbar.html#EShellTaskbar--shell-view"/>
+    <function name="EShellSearchbar" link="EShellSearchbar.html#EShellSearchbar-struct"/>
+    <function name="e_shell_searchbar_new ()" link="EShellSearchbar.html#e-shell-searchbar-new"/>
+    <function name="e_shell_searchbar_get_shell_view ()" link="EShellSearchbar.html#e-shell-searchbar-get-shell-view"/>
+    <function name="e_shell_searchbar_get_express_mode ()" link="EShellSearchbar.html#e-shell-searchbar-get-express-mode"/>
+    <function name="e_shell_searchbar_set_express_mode ()" link="EShellSearchbar.html#e-shell-searchbar-set-express-mode"/>
+    <function name="e_shell_searchbar_get_filter_combo_box ()" link="EShellSearchbar.html#e-shell-searchbar-get-filter-combo-box"/>
+    <function name="e_shell_searchbar_get_filter_visible ()" link="EShellSearchbar.html#e-shell-searchbar-get-filter-visible"/>
+    <function name="e_shell_searchbar_set_filter_visible ()" link="EShellSearchbar.html#e-shell-searchbar-set-filter-visible"/>
+    <function name="e_shell_searchbar_get_labels_visible ()" link="EShellSearchbar.html#e-shell-searchbar-get-labels-visible"/>
+    <function name="e_shell_searchbar_set_labels_visible ()" link="EShellSearchbar.html#e-shell-searchbar-set-labels-visible"/>
+    <function name="e_shell_searchbar_get_search_hint ()" link="EShellSearchbar.html#e-shell-searchbar-get-search-hint"/>
+    <function name="e_shell_searchbar_set_search_hint ()" link="EShellSearchbar.html#e-shell-searchbar-set-search-hint"/>
+    <function name="e_shell_searchbar_get_search_option ()" link="EShellSearchbar.html#e-shell-searchbar-get-search-option"/>
+    <function name="e_shell_searchbar_set_search_option ()" link="EShellSearchbar.html#e-shell-searchbar-set-search-option"/>
+    <function name="e_shell_searchbar_get_search_text ()" link="EShellSearchbar.html#e-shell-searchbar-get-search-text"/>
+    <function name="e_shell_searchbar_set_search_text ()" link="EShellSearchbar.html#e-shell-searchbar-set-search-text"/>
+    <function name="e_shell_searchbar_get_search_visible ()" link="EShellSearchbar.html#e-shell-searchbar-get-search-visible"/>
+    <function name="e_shell_searchbar_set_search_visible ()" link="EShellSearchbar.html#e-shell-searchbar-set-search-visible"/>
+    <function name="e_shell_searchbar_get_scope_combo_box ()" link="EShellSearchbar.html#e-shell-searchbar-get-scope-combo-box"/>
+    <function name="e_shell_searchbar_get_scope_visible ()" link="EShellSearchbar.html#e-shell-searchbar-get-scope-visible"/>
+    <function name="e_shell_searchbar_set_scope_visible ()" link="EShellSearchbar.html#e-shell-searchbar-set-scope-visible"/>
+    <function name="e_shell_searchbar_set_state_dirty ()" link="EShellSearchbar.html#e-shell-searchbar-set-state-dirty"/>
+    <function name="e_shell_searchbar_get_state_group ()" link="EShellSearchbar.html#e-shell-searchbar-get-state-group"/>
+    <function name="e_shell_searchbar_set_state_group ()" link="EShellSearchbar.html#e-shell-searchbar-set-state-group"/>
+    <function name="e_shell_searchbar_load_state ()" link="EShellSearchbar.html#e-shell-searchbar-load-state"/>
+    <function name="e_shell_searchbar_save_state ()" link="EShellSearchbar.html#e-shell-searchbar-save-state"/>
+    <function name="The &quot;express-mode&quot; property" link="EShellSearchbar.html#EShellSearchbar--express-mode"/>
+    <function name="The &quot;filter-combo-box&quot; property" link="EShellSearchbar.html#EShellSearchbar--filter-combo-box"/>
+    <function name="The &quot;filter-visible&quot; property" link="EShellSearchbar.html#EShellSearchbar--filter-visible"/>
+    <function name="The &quot;labels-visible&quot; property" link="EShellSearchbar.html#EShellSearchbar--labels-visible"/>
+    <function name="The &quot;scope-combo-box&quot; property" link="EShellSearchbar.html#EShellSearchbar--scope-combo-box"/>
+    <function name="The &quot;scope-visible&quot; property" link="EShellSearchbar.html#EShellSearchbar--scope-visible"/>
+    <function name="The &quot;search-hint&quot; property" link="EShellSearchbar.html#EShellSearchbar--search-hint"/>
+    <function name="The &quot;search-option&quot; property" link="EShellSearchbar.html#EShellSearchbar--search-option"/>
+    <function name="The &quot;search-text&quot; property" link="EShellSearchbar.html#EShellSearchbar--search-text"/>
+    <function name="The &quot;search-visible&quot; property" link="EShellSearchbar.html#EShellSearchbar--search-visible"/>
+    <function name="The &quot;shell-view&quot; property" link="EShellSearchbar.html#EShellSearchbar--shell-view"/>
+    <function name="The &quot;state-group&quot; property" link="EShellSearchbar.html#EShellSearchbar--state-group"/>
+    <function name="EShellSettings" link="EShellSettings.html#EShellSettings-struct"/>
+    <function name="e_shell_settings_install_property ()" link="EShellSettings.html#e-shell-settings-install-property"/>
+    <function name="e_shell_settings_install_property_for_key ()" link="EShellSettings.html#e-shell-settings-install-property-for-key"/>
+    <function name="e_shell_settings_enable_debug ()" link="EShellSettings.html#e-shell-settings-enable-debug"/>
+    <function name="e_shell_settings_get_boolean ()" link="EShellSettings.html#e-shell-settings-get-boolean"/>
+    <function name="e_shell_settings_set_boolean ()" link="EShellSettings.html#e-shell-settings-set-boolean"/>
+    <function name="e_shell_settings_get_int ()" link="EShellSettings.html#e-shell-settings-get-int"/>
+    <function name="e_shell_settings_set_int ()" link="EShellSettings.html#e-shell-settings-set-int"/>
+    <function name="e_shell_settings_get_string ()" link="EShellSettings.html#e-shell-settings-get-string"/>
+    <function name="e_shell_settings_set_string ()" link="EShellSettings.html#e-shell-settings-set-string"/>
+    <function name="e_shell_settings_get_object ()" link="EShellSettings.html#e-shell-settings-get-object"/>
+    <function name="e_shell_settings_set_object ()" link="EShellSettings.html#e-shell-settings-set-object"/>
+    <function name="e_shell_settings_get_pointer ()" link="EShellSettings.html#e-shell-settings-get-pointer"/>
+    <function name="e_shell_settings_set_pointer ()" link="EShellSettings.html#e-shell-settings-set-pointer"/>
+    <function name="EShellSwitcher" link="EShellSwitcher.html#EShellSwitcher-struct"/>
+    <function name="e_shell_switcher_new ()" link="EShellSwitcher.html#e-shell-switcher-new"/>
+    <function name="e_shell_switcher_add_action ()" link="EShellSwitcher.html#e-shell-switcher-add-action"/>
+    <function name="e_shell_switcher_get_style ()" link="EShellSwitcher.html#e-shell-switcher-get-style"/>
+    <function name="e_shell_switcher_set_style ()" link="EShellSwitcher.html#e-shell-switcher-set-style"/>
+    <function name="e_shell_switcher_unset_style ()" link="EShellSwitcher.html#e-shell-switcher-unset-style"/>
+    <function name="e_shell_switcher_get_visible ()" link="EShellSwitcher.html#e-shell-switcher-get-visible"/>
+    <function name="e_shell_switcher_set_visible ()" link="EShellSwitcher.html#e-shell-switcher-set-visible"/>
+    <function name="The &quot;toolbar-style&quot; property" link="EShellSwitcher.html#EShellSwitcher--toolbar-style"/>
+    <function name="The &quot;toolbar-visible&quot; property" link="EShellSwitcher.html#EShellSwitcher--toolbar-visible"/>
+    <function name="The &quot;style-changed&quot; signal" link="EShellSwitcher.html#EShellSwitcher-style-changed"/>
+    <function name="e_shell_configure_ui_manager ()" link="eshell-Shell-Utilities.html#e-shell-configure-ui-manager"/>
+    <function name="e_shell_configure_web_view ()" link="eshell-Shell-Utilities.html#e-shell-configure-web-view"/>
+    <function name="e_shell_run_open_dialog ()" link="eshell-Shell-Utilities.html#e-shell-run-open-dialog"/>
+    <function name="e_shell_run_save_dialog ()" link="eshell-Shell-Utilities.html#e-shell-run-save-dialog"/>
+    <function name="e_shell_utils_import_uris ()" link="eshell-Shell-Utilities.html#e-shell-utils-import-uris"/>
+    <function name="e_shell_hide_widgets_for_express_mode ()" link="eshell-Shell-Utilities.html#e-shell-hide-widgets-for-express-mode"/>
+    <function name="e_get_account_list ()" link="eshell-Mail-Accounts.html#e-get-account-list"/>
+    <function name="e_get_default_account ()" link="eshell-Mail-Accounts.html#e-get-default-account"/>
+    <function name="e_set_default_account ()" link="eshell-Mail-Accounts.html#e-set-default-account"/>
+    <function name="e_get_account_by_name ()" link="eshell-Mail-Accounts.html#e-get-account-by-name"/>
+    <function name="e_get_account_by_uid ()" link="eshell-Mail-Accounts.html#e-get-account-by-uid"/>
+    <function name="E_ALERT_INFO" link="eshell-User-Alert-Handling.html#E-ALERT-INFO:CAPS"/>
+    <function name="E_ALERT_INFO_PRIMARY" link="eshell-User-Alert-Handling.html#E-ALERT-INFO-PRIMARY:CAPS"/>
+    <function name="E_ALERT_WARNING" link="eshell-User-Alert-Handling.html#E-ALERT-WARNING:CAPS"/>
+    <function name="E_ALERT_WARNING_PRIMARY" link="eshell-User-Alert-Handling.html#E-ALERT-WARNING-PRIMARY:CAPS"/>
+    <function name="E_ALERT_ERROR" link="eshell-User-Alert-Handling.html#E-ALERT-ERROR:CAPS"/>
+    <function name="E_ALERT_ERROR_PRIMARY" link="eshell-User-Alert-Handling.html#E-ALERT-ERROR-PRIMARY:CAPS"/>
+    <function name="E_ALERT_ASK_FILE_EXISTS_OVERWRITE" link="eshell-User-Alert-Handling.html#E-ALERT-ASK-FILE-EXISTS-OVERWRITE:CAPS"/>
+    <function name="E_ALERT_NO_SAVE_FILE" link="eshell-User-Alert-Handling.html#E-ALERT-NO-SAVE-FILE:CAPS"/>
+    <function name="E_ALERT_NO_LOAD_FILE" link="eshell-User-Alert-Handling.html#E-ALERT-NO-LOAD-FILE:CAPS"/>
+    <function name="EAlert" link="eshell-User-Alert-Handling.html#EAlert"/>
+    <function name="e_alert_new ()" link="eshell-User-Alert-Handling.html#e-alert-new"/>
+    <function name="e_alert_run_dialog ()" link="eshell-User-Alert-Handling.html#e-alert-run-dialog"/>
+    <function name="e_alert_run_dialog_for_args ()" link="eshell-User-Alert-Handling.html#e-alert-run-dialog-for-args"/>
+    <function name="e_alert_dialog_count_buttons ()" link="eshell-User-Alert-Handling.html#e-alert-dialog-count-buttons"/>
+    <function name="EBitArray" link="eshell-Bit-Arrays-(Legacy).html#EBitArray-struct"/>
+    <function name="e_bit_array_new ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-new"/>
+    <function name="e_bit_array_value_at ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-value-at"/>
+    <function name="e_bit_array_foreach ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-foreach"/>
+    <function name="e_bit_array_selected_count ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-selected-count"/>
+    <function name="e_bit_array_select_all ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-select-all"/>
+    <function name="e_bit_array_invert_selection ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-invert-selection"/>
+    <function name="e_bit_array_bit_count ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-bit-count"/>
+    <function name="e_bit_array_change_one_row ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-change-one-row"/>
+    <function name="e_bit_array_change_range ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-change-range"/>
+    <function name="e_bit_array_select_single_row ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-select-single-row"/>
+    <function name="e_bit_array_toggle_single_row ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-toggle-single-row"/>
+    <function name="e_bit_array_insert ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-insert"/>
+    <function name="e_bit_array_delete ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-delete"/>
+    <function name="e_bit_array_delete_single_mode ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-delete-single-mode"/>
+    <function name="e_bit_array_move_row ()" link="eshell-Bit-Arrays-(Legacy).html#e-bit-array-move-row"/>
+    <function name="EBinding" link="eshell-GObject-Property-Bindings.html#EBinding"/>
+    <function name="EMutualBinding" link="eshell-GObject-Property-Bindings.html#EMutualBinding"/>
+    <function name="EBindingTransform ()" link="eshell-GObject-Property-Bindings.html#EBindingTransform"/>
+    <function name="e_binding_new ()" link="eshell-GObject-Property-Bindings.html#e-binding-new"/>
+    <function name="e_binding_new_full ()" link="eshell-GObject-Property-Bindings.html#e-binding-new-full"/>
+    <function name="e_binding_new_with_negation ()" link="eshell-GObject-Property-Bindings.html#e-binding-new-with-negation"/>
+    <function name="e_binding_unbind ()" link="eshell-GObject-Property-Bindings.html#e-binding-unbind"/>
+    <function name="e_mutual_binding_new ()" link="eshell-GObject-Property-Bindings.html#e-mutual-binding-new"/>
+    <function name="e_mutual_binding_new_full ()" link="eshell-GObject-Property-Bindings.html#e-mutual-binding-new-full"/>
+    <function name="e_mutual_binding_new_with_negation ()" link="eshell-GObject-Property-Bindings.html#e-mutual-binding-new-with-negation"/>
+    <function name="e_mutual_binding_unbind ()" link="eshell-GObject-Property-Bindings.html#e-mutual-binding-unbind"/>
+    <function name="e_binding_transform_color_to_string ()" link="eshell-GObject-Property-Bindings.html#e-binding-transform-color-to-string"/>
+    <function name="e_binding_transform_string_to_color ()" link="eshell-GObject-Property-Bindings.html#e-binding-transform-string-to-color"/>
+    <function name="e_categories_config_get_icon_for ()" link="eshell-Categories.html#e-categories-config-get-icon-for"/>
+    <function name="e_categories_config_open_dialog_for_entry ()" link="eshell-Categories.html#e-categories-config-open-dialog-for-entry"/>
+    <function name="enum DTFormatKind" link="eshell-Date-and-Time-Formatting.html#DTFormatKind"/>
+    <function name="e_datetime_format_add_setup_widget ()" link="eshell-Date-and-Time-Formatting.html#e-datetime-format-add-setup-widget"/>
+    <function name="e_datetime_format_format ()" link="eshell-Date-and-Time-Formatting.html#e-datetime-format-format"/>
+    <function name="e_datetime_format_format_tm ()" link="eshell-Date-and-Time-Formatting.html#e-datetime-format-format-tm"/>
+    <function name="e_notice ()" link="eshell-Dialog-Utilities-(Legacy).html#e-notice"/>
+    <function name="e_dialog_editable_set ()" link="eshell-Dialog-Utilities-(Legacy).html#e-dialog-editable-set"/>
+    <function name="e_dialog_editable_get ()" link="eshell-Dialog-Utilities-(Legacy).html#e-dialog-editable-get"/>
+    <function name="e_dialog_combo_box_set ()" link="eshell-Dialog-Utilities-(Legacy).html#e-dialog-combo-box-set"/>
+    <function name="e_dialog_combo_box_get ()" link="eshell-Dialog-Utilities-(Legacy).html#e-dialog-combo-box-get"/>
+    <function name="E_TEXT_TO_HTML_PRE" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-PRE:CAPS"/>
+    <function name="E_TEXT_TO_HTML_CONVERT_NL" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-CONVERT-NL:CAPS"/>
+    <function name="E_TEXT_TO_HTML_CONVERT_SPACES" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-CONVERT-SPACES:CAPS"/>
+    <function name="E_TEXT_TO_HTML_CONVERT_URLS" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-CONVERT-URLS:CAPS"/>
+    <function name="E_TEXT_TO_HTML_MARK_CITATION" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-MARK-CITATION:CAPS"/>
+    <function name="E_TEXT_TO_HTML_CONVERT_ADDRESSES" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-CONVERT-ADDRESSES:CAPS"/>
+    <function name="E_TEXT_TO_HTML_ESCAPE_8BIT" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-ESCAPE-8BIT:CAPS"/>
+    <function name="E_TEXT_TO_HTML_CITE" link="eshell-Text-to-HTML-Conversion.html#E-TEXT-TO-HTML-CITE:CAPS"/>
+    <function name="e_text_to_html_full ()" link="eshell-Text-to-HTML-Conversion.html#e-text-to-html-full"/>
+    <function name="e_text_to_html ()" link="eshell-Text-to-HTML-Conversion.html#e-text-to-html"/>
+    <function name="e_icon_factory_get_icon_filename ()" link="eshell-Icon-Utilities-(Legacy).html#e-icon-factory-get-icon-filename"/>
+    <function name="e_icon_factory_get_icon ()" link="eshell-Icon-Utilities-(Legacy).html#e-icon-factory-get-icon"/>
+    <function name="e_icon_factory_pixbuf_scale ()" link="eshell-Icon-Utilities-(Legacy).html#e-icon-factory-pixbuf-scale"/>
+    <function name="e_icon_factory_create_thumbnail ()" link="eshell-Icon-Utilities-(Legacy).html#e-icon-factory-create-thumbnail"/>
+    <function name="ELogger" link="eshell-Error-Logging.html#ELogger-struct"/>
+    <function name="ELogFunction ()" link="eshell-Error-Logging.html#ELogFunction"/>
+    <function name="enum ELogLevel" link="eshell-Error-Logging.html#ELogLevel"/>
+    <function name="e_logger_new ()" link="eshell-Error-Logging.html#e-logger-new"/>
+    <function name="e_logger_get_name ()" link="eshell-Error-Logging.html#e-logger-get-name"/>
+    <function name="e_logger_log ()" link="eshell-Error-Logging.html#e-logger-log"/>
+    <function name="e_logger_get_logs ()" link="eshell-Error-Logging.html#e-logger-get-logs"/>
+    <function name="The &quot;name&quot; property" link="eshell-Error-Logging.html#ELogger--name"/>
+    <function name="EPoolv" link="eshell-EPoolv.html#EPoolv"/>
+    <function name="e_poolv_new ()" link="eshell-EPoolv.html#e-poolv-new"/>
+    <function name="e_poolv_set ()" link="eshell-EPoolv.html#e-poolv-set"/>
+    <function name="e_poolv_get ()" link="eshell-EPoolv.html#e-poolv-get"/>
+    <function name="e_poolv_destroy ()" link="eshell-EPoolv.html#e-poolv-destroy"/>
+    <function name="e_print_operation_new ()" link="eshell-Printing.html#e-print-operation-new"/>
+    <function name="e_print_run_page_setup_dialog ()" link="eshell-Printing.html#e-print-run-page-setup-dialog"/>
+    <function name="e_target_list_add_calendar_targets ()" link="eshell-Selections.html#e-target-list-add-calendar-targets"/>
+    <function name="e_target_list_add_directory_targets ()" link="eshell-Selections.html#e-target-list-add-directory-targets"/>
+    <function name="e_selection_data_set_calendar ()" link="eshell-Selections.html#e-selection-data-set-calendar"/>
+    <function name="e_selection_data_set_directory ()" link="eshell-Selections.html#e-selection-data-set-directory"/>
+    <function name="e_selection_data_get_calendar ()" link="eshell-Selections.html#e-selection-data-get-calendar"/>
+    <function name="e_selection_data_get_directory ()" link="eshell-Selections.html#e-selection-data-get-directory"/>
+    <function name="e_selection_data_targets_include_calendar ()" link="eshell-Selections.html#e-selection-data-targets-include-calendar"/>
+    <function name="e_selection_data_targets_include_directory ()" link="eshell-Selections.html#e-selection-data-targets-include-directory"/>
+    <function name="e_targets_include_calendar ()" link="eshell-Selections.html#e-targets-include-calendar"/>
+    <function name="e_targets_include_directory ()" link="eshell-Selections.html#e-targets-include-directory"/>
+    <function name="e_clipboard_set_calendar ()" link="eshell-Selections.html#e-clipboard-set-calendar"/>
+    <function name="e_clipboard_set_directory ()" link="eshell-Selections.html#e-clipboard-set-directory"/>
+    <function name="e_clipboard_request_calendar ()" link="eshell-Selections.html#e-clipboard-request-calendar"/>
+    <function name="e_clipboard_request_directory ()" link="eshell-Selections.html#e-clipboard-request-directory"/>
+    <function name="e_clipboard_wait_for_calendar ()" link="eshell-Selections.html#e-clipboard-wait-for-calendar"/>
+    <function name="e_clipboard_wait_for_directory ()" link="eshell-Selections.html#e-clipboard-wait-for-directory"/>
+    <function name="e_clipboard_wait_is_calendar_available ()" link="eshell-Selections.html#e-clipboard-wait-is-calendar-available"/>
+    <function name="e_clipboard_wait_is_directory_available ()" link="eshell-Selections.html#e-clipboard-wait-is-directory-available"/>
+    <function name="ESignature" link="eshell-Personalized-Signatures.html#ESignature-struct"/>
+    <function name="e_signature_new ()" link="eshell-Personalized-Signatures.html#e-signature-new"/>
+    <function name="e_signature_new_from_xml ()" link="eshell-Personalized-Signatures.html#e-signature-new-from-xml"/>
+    <function name="e_signature_uid_from_xml ()" link="eshell-Personalized-Signatures.html#e-signature-uid-from-xml"/>
+    <function name="e_signature_set_from_xml ()" link="eshell-Personalized-Signatures.html#e-signature-set-from-xml"/>
+    <function name="e_signature_to_xml ()" link="eshell-Personalized-Signatures.html#e-signature-to-xml"/>
+    <function name="e_signature_is_equal ()" link="eshell-Personalized-Signatures.html#e-signature-is-equal"/>
+    <function name="e_signature_get_autogenerated ()" link="eshell-Personalized-Signatures.html#e-signature-get-autogenerated"/>
+    <function name="e_signature_set_autogenerated ()" link="eshell-Personalized-Signatures.html#e-signature-set-autogenerated"/>
+    <function name="e_signature_get_filename ()" link="eshell-Personalized-Signatures.html#e-signature-get-filename"/>
+    <function name="e_signature_set_filename ()" link="eshell-Personalized-Signatures.html#e-signature-set-filename"/>
+    <function name="e_signature_get_is_html ()" link="eshell-Personalized-Signatures.html#e-signature-get-is-html"/>
+    <function name="e_signature_set_is_html ()" link="eshell-Personalized-Signatures.html#e-signature-set-is-html"/>
+    <function name="e_signature_get_is_script ()" link="eshell-Personalized-Signatures.html#e-signature-get-is-script"/>
+    <function name="e_signature_set_is_script ()" link="eshell-Personalized-Signatures.html#e-signature-set-is-script"/>
+    <function name="e_signature_get_name ()" link="eshell-Personalized-Signatures.html#e-signature-get-name"/>
+    <function name="e_signature_set_name ()" link="eshell-Personalized-Signatures.html#e-signature-set-name"/>
+    <function name="e_signature_get_uid ()" link="eshell-Personalized-Signatures.html#e-signature-get-uid"/>
+    <function name="e_signature_set_uid ()" link="eshell-Personalized-Signatures.html#e-signature-set-uid"/>
+    <function name="The &quot;autogenerated&quot; property" link="eshell-Personalized-Signatures.html#ESignature--autogenerated"/>
+    <function name="The &quot;filename&quot; property" link="eshell-Personalized-Signatures.html#ESignature--filename"/>
+    <function name="The &quot;is-html&quot; property" link="eshell-Personalized-Signatures.html#ESignature--is-html"/>
+    <function name="The &quot;is-script&quot; property" link="eshell-Personalized-Signatures.html#ESignature--is-script"/>
+    <function name="The &quot;name&quot; property" link="eshell-Personalized-Signatures.html#ESignature--name"/>
+    <function name="The &quot;uid&quot; property" link="eshell-Personalized-Signatures.html#ESignature--uid"/>
+    <function name="ESignatureList" link="eshell-Container-for-Signatures.html#ESignatureList-struct"/>
+    <function name="e_signature_list_new ()" link="eshell-Container-for-Signatures.html#e-signature-list-new"/>
+    <function name="e_signature_list_construct ()" link="eshell-Container-for-Signatures.html#e-signature-list-construct"/>
+    <function name="e_signature_list_save ()" link="eshell-Container-for-Signatures.html#e-signature-list-save"/>
+    <function name="e_signature_list_add ()" link="eshell-Container-for-Signatures.html#e-signature-list-add"/>
+    <function name="e_signature_list_change ()" link="eshell-Container-for-Signatures.html#e-signature-list-change"/>
+    <function name="e_signature_list_remove ()" link="eshell-Container-for-Signatures.html#e-signature-list-remove"/>
+    <function name="e_signature_list_find ()" link="eshell-Container-for-Signatures.html#e-signature-list-find"/>
+    <function name="The &quot;signature-added&quot; signal" link="eshell-Container-for-Signatures.html#ESignatureList-signature-added"/>
+    <function name="The &quot;signature-changed&quot; signal" link="eshell-Container-for-Signatures.html#ESignatureList-signature-changed"/>
+    <function name="The &quot;signature-removed&quot; signal" link="eshell-Container-for-Signatures.html#ESignatureList-signature-removed"/>
+    <function name="EWebView" link="eshell-e-signature-utils.html#EWebView"/>
+    <function name="e_web_view_new ()" link="eshell-e-signature-utils.html#e-web-view-new"/>
+    <function name="e_web_view_clear ()" link="eshell-e-signature-utils.html#e-web-view-clear"/>
+    <function name="e_web_view_load_string ()" link="eshell-e-signature-utils.html#e-web-view-load-string"/>
+    <function name="e_web_view_get_animate ()" link="eshell-e-signature-utils.html#e-web-view-get-animate"/>
+    <function name="e_web_view_set_animate ()" link="eshell-e-signature-utils.html#e-web-view-set-animate"/>
+    <function name="e_web_view_get_caret_mode ()" link="eshell-e-signature-utils.html#e-web-view-get-caret-mode"/>
+    <function name="e_web_view_set_caret_mode ()" link="eshell-e-signature-utils.html#e-web-view-set-caret-mode"/>
+    <function name="e_web_view_get_copy_target_list ()" link="eshell-e-signature-utils.html#e-web-view-get-copy-target-list"/>
+    <function name="e_web_view_get_disable_printing ()" link="eshell-e-signature-utils.html#e-web-view-get-disable-printing"/>
+    <function name="e_web_view_set_disable_printing ()" link="eshell-e-signature-utils.html#e-web-view-set-disable-printing"/>
+    <function name="e_web_view_get_disable_save_to_disk ()" link="eshell-e-signature-utils.html#e-web-view-get-disable-save-to-disk"/>
+    <function name="e_web_view_set_disable_save_to_disk ()" link="eshell-e-signature-utils.html#e-web-view-set-disable-save-to-disk"/>
+    <function name="e_web_view_get_editable ()" link="eshell-e-signature-utils.html#e-web-view-get-editable"/>
+    <function name="e_web_view_set_editable ()" link="eshell-e-signature-utils.html#e-web-view-set-editable"/>
+    <function name="e_web_view_get_inline_spelling ()" link="eshell-e-signature-utils.html#e-web-view-get-inline-spelling"/>
+    <function name="e_web_view_set_inline_spelling ()" link="eshell-e-signature-utils.html#e-web-view-set-inline-spelling"/>
+    <function name="e_web_view_get_magic_links ()" link="eshell-e-signature-utils.html#e-web-view-get-magic-links"/>
+    <function name="e_web_view_set_magic_links ()" link="eshell-e-signature-utils.html#e-web-view-set-magic-links"/>
+    <function name="e_web_view_get_magic_smileys ()" link="eshell-e-signature-utils.html#e-web-view-get-magic-smileys"/>
+    <function name="e_web_view_set_magic_smileys ()" link="eshell-e-signature-utils.html#e-web-view-set-magic-smileys"/>
+    <function name="e_web_view_get_selected_uri ()" link="eshell-e-signature-utils.html#e-web-view-get-selected-uri"/>
+    <function name="e_web_view_set_selected_uri ()" link="eshell-e-signature-utils.html#e-web-view-set-selected-uri"/>
+    <function name="e_web_view_get_open_proxy ()" link="eshell-e-signature-utils.html#e-web-view-get-open-proxy"/>
+    <function name="e_web_view_set_open_proxy ()" link="eshell-e-signature-utils.html#e-web-view-set-open-proxy"/>
+    <function name="e_web_view_get_paste_target_list ()" link="eshell-e-signature-utils.html#e-web-view-get-paste-target-list"/>
+    <function name="e_web_view_get_print_proxy ()" link="eshell-e-signature-utils.html#e-web-view-get-print-proxy"/>
+    <function name="e_web_view_set_print_proxy ()" link="eshell-e-signature-utils.html#e-web-view-set-print-proxy"/>
+    <function name="e_web_view_get_save_as_proxy ()" link="eshell-e-signature-utils.html#e-web-view-get-save-as-proxy"/>
+    <function name="e_web_view_set_save_as_proxy ()" link="eshell-e-signature-utils.html#e-web-view-set-save-as-proxy"/>
+    <function name="e_web_view_get_action ()" link="eshell-e-signature-utils.html#e-web-view-get-action"/>
+    <function name="e_web_view_get_action_group ()" link="eshell-e-signature-utils.html#e-web-view-get-action-group"/>
+    <function name="e_web_view_extract_uri ()" link="eshell-e-signature-utils.html#e-web-view-extract-uri"/>
+    <function name="e_web_view_copy_clipboard ()" link="eshell-e-signature-utils.html#e-web-view-copy-clipboard"/>
+    <function name="e_web_view_cut_clipboard ()" link="eshell-e-signature-utils.html#e-web-view-cut-clipboard"/>
+    <function name="e_web_view_is_selection_active ()" link="eshell-e-signature-utils.html#e-web-view-is-selection-active"/>
+    <function name="e_web_view_paste_clipboard ()" link="eshell-e-signature-utils.html#e-web-view-paste-clipboard"/>
+    <function name="e_web_view_scroll_forward ()" link="eshell-e-signature-utils.html#e-web-view-scroll-forward"/>
+    <function name="e_web_view_scroll_backward ()" link="eshell-e-signature-utils.html#e-web-view-scroll-backward"/>
+    <function name="e_web_view_select_all ()" link="eshell-e-signature-utils.html#e-web-view-select-all"/>
+    <function name="e_web_view_unselect_all ()" link="eshell-e-signature-utils.html#e-web-view-unselect-all"/>
+    <function name="e_web_view_zoom_100 ()" link="eshell-e-signature-utils.html#e-web-view-zoom-100"/>
+    <function name="e_web_view_zoom_in ()" link="eshell-e-signature-utils.html#e-web-view-zoom-in"/>
+    <function name="e_web_view_zoom_out ()" link="eshell-e-signature-utils.html#e-web-view-zoom-out"/>
+    <function name="e_web_view_get_ui_manager ()" link="eshell-e-signature-utils.html#e-web-view-get-ui-manager"/>
+    <function name="e_web_view_get_popup_menu ()" link="eshell-e-signature-utils.html#e-web-view-get-popup-menu"/>
+    <function name="e_web_view_show_popup_menu ()" link="eshell-e-signature-utils.html#e-web-view-show-popup-menu"/>
+    <function name="e_web_view_status_message ()" link="eshell-e-signature-utils.html#e-web-view-status-message"/>
+    <function name="e_web_view_stop_loading ()" link="eshell-e-signature-utils.html#e-web-view-stop-loading"/>
+    <function name="e_web_view_update_actions ()" link="eshell-e-signature-utils.html#e-web-view-update-actions"/>
+    <function name="e_get_gnome2_user_dir ()" link="eshell-Miscellaneous-Utilities.html#e-get-gnome2-user-dir"/>
+    <function name="e_get_accels_filename ()" link="eshell-Miscellaneous-Utilities.html#e-get-accels-filename"/>
+    <function name="e_show_uri ()" link="eshell-Miscellaneous-Utilities.html#e-show-uri"/>
+    <function name="e_display_help ()" link="eshell-Miscellaneous-Utilities.html#e-display-help"/>
+    <function name="e_lookup_action ()" link="eshell-Miscellaneous-Utilities.html#e-lookup-action"/>
+    <function name="e_lookup_action_group ()" link="eshell-Miscellaneous-Utilities.html#e-lookup-action-group"/>
+    <function name="e_action_compare_by_label ()" link="eshell-Miscellaneous-Utilities.html#e-action-compare-by-label"/>
+    <function name="e_action_group_remove_all_actions ()" link="eshell-Miscellaneous-Utilities.html#e-action-group-remove-all-actions"/>
+    <function name="e_radio_action_get_current_action ()" link="eshell-Miscellaneous-Utilities.html#e-radio-action-get-current-action"/>
+    <function name="e_categories_add_change_hook ()" link="eshell-Miscellaneous-Utilities.html#e-categories-add-change-hook"/>
+    <function name="e_type_traverse ()" link="eshell-Miscellaneous-Utilities.html#e-type-traverse"/>
+    <function name="e_str_without_underscores ()" link="eshell-Miscellaneous-Utilities.html#e-str-without-underscores"/>
+    <function name="e_str_compare ()" link="eshell-Miscellaneous-Utilities.html#e-str-compare"/>
+    <function name="e_str_case_compare ()" link="eshell-Miscellaneous-Utilities.html#e-str-case-compare"/>
+    <function name="e_collate_compare ()" link="eshell-Miscellaneous-Utilities.html#e-collate-compare"/>
+    <function name="e_int_compare ()" link="eshell-Miscellaneous-Utilities.html#e-int-compare"/>
+    <function name="e_color_to_value ()" link="eshell-Miscellaneous-Utilities.html#e-color-to-value"/>
+    <function name="e_format_number ()" link="eshell-Miscellaneous-Utilities.html#e-format-number"/>
+    <function name="ESortCompareFunc ()" link="eshell-Miscellaneous-Utilities.html#ESortCompareFunc"/>
+    <function name="e_bsearch ()" link="eshell-Miscellaneous-Utilities.html#e-bsearch"/>
+    <function name="e_strftime_fix_am_pm ()" link="eshell-Miscellaneous-Utilities.html#e-strftime-fix-am-pm"/>
+    <function name="e_utf8_strftime_fix_am_pm ()" link="eshell-Miscellaneous-Utilities.html#e-utf8-strftime-fix-am-pm"/>
+    <function name="e_get_month_name ()" link="eshell-Miscellaneous-Utilities.html#e-get-month-name"/>
+    <function name="e_get_weekday_name ()" link="eshell-Miscellaneous-Utilities.html#e-get-weekday-name"/>
+    <function name="e_flexible_strtod ()" link="eshell-Miscellaneous-Utilities.html#e-flexible-strtod"/>
+    <function name="e_ascii_dtostr ()" link="eshell-Miscellaneous-Utilities.html#e-ascii-dtostr"/>
+    <function name="get_font_options ()" link="eshell-Miscellaneous-Utilities.html#get-font-options"/>
+    <function name="e_file_lock_create ()" link="eshell-Miscellaneous-Utilities.html#e-file-lock-create"/>
+    <function name="e_file_lock_destroy ()" link="eshell-Miscellaneous-Utilities.html#e-file-lock-destroy"/>
+    <function name="e_file_lock_exists ()" link="eshell-Miscellaneous-Utilities.html#e-file-lock-exists"/>
+    <function name="e_util_guess_mime_type ()" link="eshell-Miscellaneous-Utilities.html#e-util-guess-mime-type"/>
+    <function name="e_util_get_category_filter_options ()" link="eshell-Miscellaneous-Utilities.html#e-util-get-category-filter-options"/>
+    <function name="e_charset_add_radio_actions ()" link="eshell-Miscellaneous-Utilities.html#e-charset-add-radio-actions"/>
+    <function name="e_file_replace_contents_async ()" link="eshell-Miscellaneous-Utilities.html#e-file-replace-contents-async"/>
+    <function name="e_file_replace_contents_finish ()" link="eshell-Miscellaneous-Utilities.html#e-file-replace-contents-finish"/>
+    <function name="e_mktemp ()" link="eshell-Miscellaneous-Utilities.html#e-mktemp"/>
+    <function name="e_mkstemp ()" link="eshell-Miscellaneous-Utilities.html#e-mkstemp"/>
+    <function name="e_mkdtemp ()" link="eshell-Miscellaneous-Utilities.html#e-mkdtemp"/>
+    <function name="e_xml_get_child_by_name_by_lang ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-child-by-name-by-lang"/>
+    <function name="e_xml_get_child_by_name_by_lang_list ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-child-by-name-by-lang-list"/>
+    <function name="e_xml_get_child_by_name_no_lang ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-child-by-name-no-lang"/>
+    <function name="e_xml_get_integer_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-integer-prop-by-name"/>
+    <function name="e_xml_get_integer_prop_by_name_with_default ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-integer-prop-by-name-with-default"/>
+    <function name="e_xml_set_integer_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-set-integer-prop-by-name"/>
+    <function name="e_xml_get_uint_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-uint-prop-by-name"/>
+    <function name="e_xml_get_uint_prop_by_name_with_default ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-uint-prop-by-name-with-default"/>
+    <function name="e_xml_set_uint_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-set-uint-prop-by-name"/>
+    <function name="e_xml_get_bool_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-bool-prop-by-name"/>
+    <function name="e_xml_get_bool_prop_by_name_with_default ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-bool-prop-by-name-with-default"/>
+    <function name="e_xml_set_bool_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-set-bool-prop-by-name"/>
+    <function name="e_xml_get_double_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-double-prop-by-name"/>
+    <function name="e_xml_get_double_prop_by_name_with_default ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-double-prop-by-name-with-default"/>
+    <function name="e_xml_set_double_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-set-double-prop-by-name"/>
+    <function name="e_xml_get_string_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-string-prop-by-name"/>
+    <function name="e_xml_get_string_prop_by_name_with_default ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-string-prop-by-name-with-default"/>
+    <function name="e_xml_set_string_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-set-string-prop-by-name"/>
+    <function name="e_xml_get_translated_string_prop_by_name ()" link="eshell-Reading-and-Writing-XML.html#e-xml-get-translated-string-prop-by-name"/>
+    <function name="GConfBridge" link="eshell-GConf-Bridge.html#GConfBridge"/>
+    <function name="gconf_bridge_install_default_error_handler ()" link="eshell-GConf-Bridge.html#gconf-bridge-install-default-error-handler"/>
+    <function name="gconf_bridge_get ()" link="eshell-GConf-Bridge.html#gconf-bridge-get"/>
+    <function name="gconf_bridge_get_client ()" link="eshell-GConf-Bridge.html#gconf-bridge-get-client"/>
+    <function name="gconf_bridge_bind_property_full ()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-property-full"/>
+    <function name="gconf_bridge_bind_property()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-property"/>
+    <function name="gconf_bridge_bind_property_delayed()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-property-delayed"/>
+    <function name="gconf_bridge_bind_window ()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-window"/>
+    <function name="gconf_bridge_bind_window_size()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-window-size"/>
+    <function name="gconf_bridge_bind_window_pos()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-window-pos"/>
+    <function name="gconf_bridge_bind_string_list_store ()" link="eshell-GConf-Bridge.html#gconf-bridge-bind-string-list-store"/>
+    <function name="gconf_bridge_unbind ()" link="eshell-GConf-Bridge.html#gconf-bridge-unbind"/>
+    <function name="EModule" link="EModule.html#EModule-struct"/>
+    <function name="e_module_new ()" link="EModule.html#e-module-new"/>
+    <function name="e_module_get_filename ()" link="EModule.html#e-module-get-filename"/>
+    <function name="e_module_load_all_in_directory ()" link="EModule.html#e-module-load-all-in-directory"/>
+    <function name="The &quot;filename&quot; property" link="EModule.html#EModule--filename"/>
+    <function name="EExtension" link="EExtension.html#EExtension-struct"/>
+    <function name="e_extension_get_extensible ()" link="EExtension.html#e-extension-get-extensible"/>
+    <function name="The &quot;extensible&quot; property" link="EExtension.html#EExtension--extensible"/>
+    <function name="EExtensible" link="EExtensible.html#EExtensible-struct"/>
+    <function name="e_extensible_load_extensions ()" link="EExtensible.html#e-extensible-load-extensions"/>
+    <function name="e_extensible_list_extensions ()" link="EExtensible.html#e-extensible-list-extensions"/>
+    <function name="E_SHELL_WINDOW_ACTION_ABOUT()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-ABOUT:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_CLOSE()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-CLOSE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_CONTENTS()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-CONTENTS:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_FAQ()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-FAQ:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_FORGET_PASSWORDS()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-FORGET-PASSWORDS:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GAL_CUSTOM_VIEW()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-GAL-CUSTOM-VIEW:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GAL_DEFINE_VIEWS()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-GAL-DEFINE-VIEWS:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GAL_SAVE_CUSTOM_VIEW()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-GAL-SAVE-CUSTOM-VIEW:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_IMPORT()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-IMPORT:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_NEW_WINDOW()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-NEW-WINDOW:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_PAGE_SETUP()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-PAGE-SETUP:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_PREFERENCES()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-PREFERENCES:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_QUICK_REFERENCE()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-QUICK-REFERENCE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_QUIT()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-QUIT:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEARCH_ADVANCED()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-ADVANCED:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEARCH_CLEAR()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-CLEAR:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEARCH_EDIT()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-EDIT:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEARCH_OPTIONS()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-OPTIONS:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEARCH_QUICK()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-QUICK:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEARCH_SAVE()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEARCH-SAVE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SEND_RECEIVE()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SEND-RECEIVE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SHOW_SIDEBAR()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-SIDEBAR:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SHOW_SWITCHER()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-SWITCHER:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SHOW_TASKBAR()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-TASKBAR:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SHOW_TOOLBAR()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SHOW-TOOLBAR:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SUBMIT_BUG()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SUBMIT-BUG:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SWITCHER_INITIAL()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-INITIAL:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_BOTH()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-BOTH:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_ICONS()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-ICONS:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_TEXT()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-TEXT:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_SWITCHER_STYLE_USER()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-SWITCHER-STYLE-USER:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_WORK_OFFLINE()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-WORK-OFFLINE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_WORK_ONLINE()" link="eshell-Shell-Actions.html#E-SHELL-WINDOW-ACTION-WORK-ONLINE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_SHELL()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-SHELL:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_SWITCHER()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-SWITCHER:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_NEW_ITEM()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-NEW-ITEM:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_NEW_SOURCE()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-NEW-SOURCE:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_CUSTOM_RULES()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-CUSTOM-RULES:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_GAL_VIEW()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-GAL-VIEW:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_LOCKDOWN_APPLICATION_HANDLERS()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-LOCKDOWN-APPLICATION-HANDLERS:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_LOCKDOWN_PRINTING()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-LOCKDOWN-PRINTING:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_LOCKDOWN_PRINT_SETUP()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-LOCKDOWN-PRINT-SETUP:CAPS"/>
+    <function name="E_SHELL_WINDOW_ACTION_GROUP_LOCKDOWN_SAVE_TO_DISK()" link="eshell-Action-Groups.html#E-SHELL-WINDOW-ACTION-GROUP-LOCKDOWN-SAVE-TO-DISK:CAPS"/>
+  </functions>
+</book>

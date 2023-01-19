@@ -1,0 +1,47 @@
+diff --git a/smime/lib/e-cert-db.c b/smime/lib/e-cert-db.c
+index f8982ed..062e26c 100644
+--- a/smime/lib/e-cert-db.c
++++ b/smime/lib/e-cert-db.c
+@@ -496,37 +496,11 @@ install_loadable_roots (void)
+ 
+ 	if (!RootsModule) {
+ #ifndef G_OS_WIN32
+-		/* grovel in various places for mozilla's built-in
+-		   cert module.
+-
+-		   XXX yes this is gross.  *sigh*
+-		*/
+-		const gchar *paths_to_check[] = {
+-#ifdef MOZILLA_NSS_LIB_DIR
+-			MOZILLA_NSS_LIB_DIR,
+-#endif
+-			"/usr/lib",
+-			"/usr/lib/mozilla",
+-			"/opt/mozilla/lib",
+-			"/opt/mozilla/lib/mozilla"
+-		};
+-
+-		for (i = 0; i < G_N_ELEMENTS (paths_to_check); i++) {
+-			gchar *dll_path = g_module_build_path (paths_to_check [i], "nssckbi");
+-
+-			if (g_file_test (dll_path, G_FILE_TEST_EXISTS)) {
+-				PRInt32 modType;
+-
+-				/* Delete the existing module */
+-				SECMOD_DeleteModule ("Mozilla Root Certs", &modType);
+-
+-				SECMOD_AddNewModule("Mozilla Root Certs",dll_path, 0, 0);
+-				g_free (dll_path);
+-				break;
+-			}
+-
+-			g_free (dll_path);
+-		}
++		PRInt32 modType;
++		gchar *dll_name = g_module_build_path(NULL, "nssckbi");
++		SECMOD_DeleteModule ("Mozilla Root Certs", &modType);
++		SECMOD_AddNewModule("Mozilla Root Certs",dll_name, 0, 0);
++		g_free(dll_name);
+ #else
+ 		/* FIXME: Might be useful to look up if there is a
+ 		 * Mozilla installation on the machine and use the

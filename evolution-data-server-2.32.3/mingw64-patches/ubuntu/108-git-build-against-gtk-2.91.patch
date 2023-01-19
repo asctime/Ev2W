@@ -1,0 +1,45 @@
+From 268f7c75c180eede4ac631b90fd489da93d399da Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Wed, 20 Oct 2010 14:50:46 +0000
+Subject: Bug 632687 - Doesn't build against gtk+ 2.91.1
+
+---
+Index: evolution-data-server-2.32.0/libedataserverui/e-name-selector-dialog.c
+===================================================================
+--- evolution-data-server-2.32.0.orig/libedataserverui/e-name-selector-dialog.c	2010-09-13 08:16:52.000000000 -0400
++++ evolution-data-server-2.32.0/libedataserverui/e-name-selector-dialog.c	2010-11-23 09:46:27.514594000 -0500
+@@ -116,7 +116,7 @@
+ 	/* Categories are already sorted. */
+ 	category_list = e_categories_get_list ();
+ 	for (iter = category_list; iter != NULL; iter = iter->next)
+-		gtk_combo_box_append_text (
++		gtk_combo_box_text_append_text (
+ 			GTK_COMBO_BOX (combo_box), iter->data);
+ 	g_list_free (category_list);
+ 
+@@ -881,7 +881,7 @@
+ 	if (gtk_combo_box_get_active (GTK_COMBO_BOX (combo_box)) == -1)
+ 		gtk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
+ 
+-	category = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combo_box));
++	category = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX (combo_box));
+ 	category_escaped = escape_sexp_string (category);
+ 
+ 	text = gtk_entry_get_text (name_selector_dialog->priv->search_entry);
+Index: evolution-data-server-2.32.0/libedataserverui/gtk-compat.h
+===================================================================
+--- evolution-data-server-2.32.0.orig/libedataserverui/gtk-compat.h	2010-09-13 08:16:52.000000000 -0400
++++ evolution-data-server-2.32.0/libedataserverui/gtk-compat.h	2010-11-23 09:46:27.524594000 -0500
+@@ -21,6 +21,12 @@
+ #define gdk_drag_context_get_selected_action(context)  gdk_drag_context_get_action(context)
+ #endif
+ 
++#if !GTK_CHECK_VERSION (2,23,0)
++#define gtk_combo_box_text_new			gtk_combo_box_new_text
++#define gtk_combo_box_text_append_text		gtk_combo_box_append_text
++#define gtk_combo_box_text_get_active_text	gtk_combo_box_get_active_text
++#endif
++
+ #if GTK_CHECK_VERSION (2,90,5)
+ 
+ /* Recreate GdkRegion until we drop GTK2 compatibility. */

@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Selections</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Printing.html" title="Printing">
+<link rel="next" href="eshell-Personalized-Signatures.html" title="Personalized Signatures">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Printing.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Personalized-Signatures.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Selections.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Selections.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Selections">
+<a name="eshell-Selections"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Selections.top_of_page"></a>Selections</span></h2>
+<p>Selections — selection and clipboard utilities</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Selections.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;e-util/e-selection.h&gt;
+
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Selections.html#e-target-list-add-calendar-targets" title="e_target_list_add_calendar_targets ()">e_target_list_add_calendar_targets</a>  (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a> *list</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> info</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Selections.html#e-target-list-add-directory-targets" title="e_target_list_add_directory_targets ()">e_target_list_add_directory_targets</a> (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a> *list</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> info</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-selection-data-set-calendar" title="e_selection_data_set_calendar ()">e_selection_data_set_calendar</a>       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-selection-data-set-directory" title="e_selection_data_set_directory ()">e_selection_data_set_directory</a>      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Selections.html#e-selection-data-get-calendar" title="e_selection_data_get_calendar ()">e_selection_data_get_calendar</a>       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Selections.html#e-selection-data-get-directory" title="e_selection_data_get_directory ()">e_selection_data_get_directory</a>      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-selection-data-targets-include-calendar" title="e_selection_data_targets_include_calendar ()">e_selection_data_targets_include_calendar</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-selection-data-targets-include-directory" title="e_selection_data_targets_include_directory ()">e_selection_data_targets_include_directory</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-targets-include-calendar" title="e_targets_include_calendar ()">e_targets_include_calendar</a>          (<em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Properties-and-Atoms.html#GdkAtom"><span class="type">GdkAtom</span></a> *targets</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_targets</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-targets-include-directory" title="e_targets_include_directory ()">e_targets_include_directory</a>         (<em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Properties-and-Atoms.html#GdkAtom"><span class="type">GdkAtom</span></a> *targets</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_targets</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Selections.html#e-clipboard-set-calendar" title="e_clipboard_set_calendar ()">e_clipboard_set_calendar</a>            (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Selections.html#e-clipboard-set-directory" title="e_clipboard_set_directory ()">e_clipboard_set_directory</a>           (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Selections.html#e-clipboard-request-calendar" title="e_clipboard_request_calendar ()">e_clipboard_request_calendar</a>        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboardTextReceivedFunc"><span class="type">GtkClipboardTextReceivedFunc</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Selections.html#e-clipboard-request-directory" title="e_clipboard_request_directory ()">e_clipboard_request_directory</a>       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboardTextReceivedFunc"><span class="type">GtkClipboardTextReceivedFunc</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Selections.html#e-clipboard-wait-for-calendar" title="e_clipboard_wait_for_calendar ()">e_clipboard_wait_for_calendar</a>       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Selections.html#e-clipboard-wait-for-directory" title="e_clipboard_wait_for_directory ()">e_clipboard_wait_for_directory</a>      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-clipboard-wait-is-calendar-available" title="e_clipboard_wait_is_calendar_available ()">e_clipboard_wait_is_calendar_available</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Selections.html#e-clipboard-wait-is-directory-available" title="e_clipboard_wait_is_directory_available ()">e_clipboard_wait_is_directory_available</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Selections.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Selections.details"></a><h2>Details</h2>
+<div class="refsect2" title="e_target_list_add_calendar_targets ()">
+<a name="e-target-list-add-calendar-targets"></a><h3>e_target_list_add_calendar_targets ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_target_list_add_calendar_targets  (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a> *list</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> info</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_target_list_add_directory_targets ()">
+<a name="e-target-list-add-directory-targets"></a><h3>e_target_list_add_directory_targets ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_target_list_add_directory_targets (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Selections.html#GtkTargetList"><span class="type">GtkTargetList</span></a> *list</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> info</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_selection_data_set_calendar ()">
+<a name="e-selection-data-set-calendar"></a><h3>e_selection_data_set_calendar ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_selection_data_set_calendar       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_selection_data_set_directory ()">
+<a name="e-selection-data-set-directory"></a><h3>e_selection_data_set_directory ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_selection_data_set_directory      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_selection_data_get_calendar ()">
+<a name="e-selection-data-get-calendar"></a><h3>e_selection_data_get_calendar ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_selection_data_get_calendar       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_selection_data_get_directory ()">
+<a name="e-selection-data-get-directory"></a><h3>e_selection_data_get_directory ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_selection_data_get_directory      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_selection_data_targets_include_calendar ()">
+<a name="e-selection-data-targets-include-calendar"></a><h3>e_selection_data_targets_include_calendar ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_selection_data_targets_include_calendar
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_selection_data_targets_include_directory ()">
+<a name="e-selection-data-targets-include-directory"></a><h3>e_selection_data_targets_include_directory ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_selection_data_targets_include_directory
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html#GtkSelectionData"><span class="type">GtkSelectionData</span></a> *selection_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_targets_include_calendar ()">
+<a name="e-targets-include-calendar"></a><h3>e_targets_include_calendar ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_targets_include_calendar          (<em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Properties-and-Atoms.html#GdkAtom"><span class="type">GdkAtom</span></a> *targets</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_targets</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>targets</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_targets</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_targets_include_directory ()">
+<a name="e-targets-include-directory"></a><h3>e_targets_include_directory ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_targets_include_directory         (<em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Properties-and-Atoms.html#GdkAtom"><span class="type">GdkAtom</span></a> *targets</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_targets</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>targets</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_targets</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_set_calendar ()">
+<a name="e-clipboard-set-calendar"></a><h3>e_clipboard_set_calendar ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_clipboard_set_calendar            (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_set_directory ()">
+<a name="e-clipboard-set-directory"></a><h3>e_clipboard_set_directory ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_clipboard_set_directory           (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> length</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_request_calendar ()">
+<a name="e-clipboard-request-calendar"></a><h3>e_clipboard_request_calendar ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_clipboard_request_calendar        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboardTextReceivedFunc"><span class="type">GtkClipboardTextReceivedFunc</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_request_directory ()">
+<a name="e-clipboard-request-directory"></a><h3>e_clipboard_request_directory ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_clipboard_request_directory       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboardTextReceivedFunc"><span class="type">GtkClipboardTextReceivedFunc</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_wait_for_calendar ()">
+<a name="e-clipboard-wait-for-calendar"></a><h3>e_clipboard_wait_for_calendar ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_clipboard_wait_for_calendar       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_wait_for_directory ()">
+<a name="e-clipboard-wait-for-directory"></a><h3>e_clipboard_wait_for_directory ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_clipboard_wait_for_directory      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_wait_is_calendar_available ()">
+<a name="e-clipboard-wait-is-calendar-available"></a><h3>e_clipboard_wait_is_calendar_available ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_clipboard_wait_is_calendar_available
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_clipboard_wait_is_directory_available ()">
+<a name="e-clipboard-wait-is-directory-available"></a><h3>e_clipboard_wait_is_directory_available ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_clipboard_wait_is_directory_available
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/gtk3-Clipboards.html#GtkClipboard"><span class="type">GtkClipboard</span></a> *clipboard</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

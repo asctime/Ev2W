@@ -1,0 +1,255 @@
+<!-- ##### SECTION Title ##### -->
+E2kAction
+
+<!-- ##### SECTION Short_Description ##### -->
+Server-side rule actions
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+#E2kAction represents a single action taken by a server-side rule.
+</para>
+
+<note><para>
+This code is not heavily tested. It is possible that some of the
+information in this file about how server-side rules work is wrong.
+</para></note>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#E2kRule, #E2kRestriction
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT E2kAction ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ENUM E2kActionType ##### -->
+<para>
+
+</para>
+
+@E2K_ACTION_MOVE: 
+@E2K_ACTION_COPY: 
+@E2K_ACTION_REPLY: 
+@E2K_ACTION_OOF_REPLY: 
+@E2K_ACTION_DEFER: 
+@E2K_ACTION_BOUNCE: 
+@E2K_ACTION_FORWARD: 
+@E2K_ACTION_DELEGATE: 
+@E2K_ACTION_TAG: 
+@E2K_ACTION_DELETE: 
+@E2K_ACTION_MARK_AS_READ: 
+
+<!-- ##### FUNCTION e2k_action_move ##### -->
+<para>
+
+</para>
+
+@store_entryid: 
+@folder_source_key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_action_copy ##### -->
+<para>
+
+</para>
+
+@store_entryid: 
+@folder_source_key: 
+@Returns: 
+
+
+<!-- ##### ENUM E2kActionReplyFlavor ##### -->
+<para>
+
+</para>
+
+@E2K_ACTION_REPLY_FLAVOR_NOT_ORIGINATOR: 
+@E2K_ACTION_REPLY_FLAVOR_STOCK_TEMPLATE: 
+
+<!-- ##### FUNCTION e2k_action_reply ##### -->
+<para>
+
+</para>
+
+@template_entryid: 
+@template_guid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_action_oof_reply ##### -->
+<para>
+
+</para>
+
+@template_entryid: 
+@template_guid: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_action_defer ##### -->
+<para>
+
+</para>
+
+@data: 
+@Returns: 
+
+
+<!-- ##### ENUM E2kActionBounceCode ##### -->
+<para>
+
+</para>
+
+@E2K_ACTION_BOUNCE_CODE_TOO_LARGE: 
+@E2K_ACTION_BOUNCE_CODE_FORM_MISMATCH: 
+@E2K_ACTION_BOUNCE_CODE_ACCESS_DENIED: 
+
+<!-- ##### FUNCTION e2k_action_bounce ##### -->
+<para>
+
+</para>
+
+@bounce_code: 
+@Returns: 
+
+
+<!-- ##### STRUCT E2kAddrList ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ENUM E2kActionForwardFlavor ##### -->
+<para>
+
+</para>
+
+@E2K_ACTION_FORWARD_FLAVOR_PRESERVE_SENDER: 
+@E2K_ACTION_FORWARD_FLAVOR_DO_NOT_MUNGE: 
+@E2K_ACTION_FORWARD_FLAVOR_REDIRECT: 
+@E2K_ACTION_FORWARD_FLAVOR_AS_ATTACHMENT: 
+
+<!-- ##### FUNCTION e2k_action_forward ##### -->
+<para>
+
+</para>
+
+@list: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_action_delegate ##### -->
+<para>
+
+</para>
+
+@list: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_action_tag ##### -->
+<para>
+
+</para>
+
+@propname: 
+@type: 
+@value: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_action_delete ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_actions_extract ##### -->
+<para>
+
+</para>
+
+@data: 
+@len: 
+@actions: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_actions_append ##### -->
+<para>
+
+</para>
+
+@ba: 
+@actions: 
+
+
+<!-- ##### FUNCTION e2k_actions_free ##### -->
+<para>
+
+</para>
+
+@actions: 
+
+
+<!-- ##### FUNCTION e2k_action_free ##### -->
+<para>
+
+</para>
+
+@act: 
+
+
+<!-- ##### FUNCTION e2k_addr_list_new ##### -->
+<para>
+
+</para>
+
+@nentries: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_addr_list_set_local ##### -->
+<para>
+
+</para>
+
+@list: 
+@entry_num: 
+@display_name: 
+@exchange_dn: 
+@email: 
+
+
+<!-- ##### FUNCTION e2k_addr_list_set_oneoff ##### -->
+<para>
+
+</para>
+
+@list: 
+@entry_num: 
+@display_name: 
+@email: 
+
+
+<!-- ##### FUNCTION e2k_addr_list_free ##### -->
+<para>
+
+</para>
+
+@list: 
+
+

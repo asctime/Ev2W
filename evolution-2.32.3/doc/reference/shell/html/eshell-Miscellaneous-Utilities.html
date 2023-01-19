@@ -1,0 +1,1272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Miscellaneous Utilities</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-e-signature-utils.html" title="More Signature Utilities">
+<link rel="next" href="eshell-Reading-and-Writing-XML.html" title="Reading and Writing XML">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-e-signature-utils.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Reading-and-Writing-XML.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Miscellaneous-Utilities.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Miscellaneous-Utilities.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Miscellaneous Utilities">
+<a name="eshell-Miscellaneous-Utilities"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Miscellaneous-Utilities.top_of_page"></a>Miscellaneous Utilities</span></h2>
+<p>Miscellaneous Utilities</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Miscellaneous-Utilities.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;e-util/e-util.h&gt;
+
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Miscellaneous-Utilities.html#e-get-gnome2-user-dir" title="e_get_gnome2_user_dir ()">e_get_gnome2_user_dir</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Miscellaneous-Utilities.html#e-get-accels-filename" title="e_get_accels_filename ()">e_get_accels_filename</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-show-uri" title="e_show_uri ()">e_show_uri</a>                          (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-display-help" title="e_display_help ()">e_display_help</a>                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *link_id</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         <a class="link" href="eshell-Miscellaneous-Utilities.html#e-lookup-action" title="e_lookup_action ()">e_lookup_action</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a> *ui_manager</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="returnvalue">GtkActionGroup</span></a> *    <a class="link" href="eshell-Miscellaneous-Utilities.html#e-lookup-action-group" title="e_lookup_action_group ()">e_lookup_action_group</a>               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a> *ui_manager</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group_name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-action-compare-by-label" title="e_action_compare_by_label ()">e_action_compare_by_label</a>           (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *action1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *action2</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-action-group-remove-all-actions" title="e_action_group_remove_all_actions ()">e_action_group_remove_all_actions</a>   (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a> *action_group</code></em>);
+<a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="returnvalue">GtkRadioAction</span></a> *    <a class="link" href="eshell-Miscellaneous-Utilities.html#e-radio-action-get-current-action" title="e_radio_action_get_current_action ()">e_radio_action_get_current_action</a>   (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a> *radio_action</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-categories-add-change-hook" title="e_categories_add_change_hook ()">e_categories_add_change_hook</a>        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Hook-Functions.html#GHookFunc"><span class="type">GHookFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-type-traverse" title="e_type_traverse ()">e_type_traverse</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> parent_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">ETypeFunc</span> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-str-without-underscores" title="e_str_without_underscores ()">e_str_without_underscores</a>           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-str-compare" title="e_str_compare ()">e_str_compare</a>                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-str-case-compare" title="e_str_case_compare ()">e_str_case_compare</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-collate-compare" title="e_collate_compare ()">e_collate_compare</a>                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-int-compare" title="e_int_compare ()">e_int_compare</a>                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-color-to-value" title="e_color_to_value ()">e_color_to_value</a>                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *color</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-format-number" title="e_format_number ()">e_format_number</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> number</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                (<a class="link" href="eshell-Miscellaneous-Utilities.html#ESortCompareFunc" title="ESortCompareFunc ()">*ESortCompareFunc</a>)                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> first</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> second</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> closure</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-bsearch" title="e_bsearch ()">e_bsearch</a>                           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> key</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> base</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> nmemb</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> size</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Miscellaneous-Utilities.html#ESortCompareFunc" title="ESortCompareFunc ()"><span class="type">ESortCompareFunc</span></a> compare</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> closure</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *end</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>               <a class="link" href="eshell-Miscellaneous-Utilities.html#e-strftime-fix-am-pm" title="e_strftime_fix_am_pm ()">e_strftime_fix_am_pm</a>                (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> max</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *fmt</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">struct tm</span> *tm</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>               <a class="link" href="eshell-Miscellaneous-Utilities.html#e-utf8-strftime-fix-am-pm" title="e_utf8_strftime_fix_am_pm ()">e_utf8_strftime_fix_am_pm</a>           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> max</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *fmt</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">struct tm</span> *tm</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Miscellaneous-Utilities.html#e-get-month-name" title="e_get_month_name ()">e_get_month_name</a>                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Date-and-Time-Functions.html#GDateMonth"><span class="type">GDateMonth</span></a> month</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> abbreviated</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="eshell-Miscellaneous-Utilities.html#e-get-weekday-name" title="e_get_weekday_name ()">e_get_weekday_name</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Date-and-Time-Functions.html#GDateWeekday"><span class="type">GDateWeekday</span></a> weekday</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> abbreviated</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-flexible-strtod" title="e_flexible_strtod ()">e_flexible_strtod</a>                   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *nptr</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **endptr</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-ascii-dtostr" title="e_ascii_dtostr ()">e_ascii_dtostr</a>                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *buffer</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> buf_len</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> d</code></em>);
+<a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-font-options-t.html#cairo-font-options-t"><span class="returnvalue">cairo_font_options_t</span></a> * <a class="link" href="eshell-Miscellaneous-Utilities.html#get-font-options" title="get_font_options ()">get_font_options</a>                 (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Miscellaneous-Utilities.html#e-file-lock-create" title="e_file_lock_create ()">e_file_lock_create</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-file-lock-destroy" title="e_file_lock_destroy ()">e_file_lock_destroy</a>                 (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Miscellaneous-Utilities.html#e-file-lock-exists" title="e_file_lock_exists ()">e_file_lock_exists</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-util-guess-mime-type" title="e_util_guess_mime_type ()">e_util_guess_mime_type</a>              (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> localfile</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            <a class="link" href="eshell-Miscellaneous-Utilities.html#e-util-get-category-filter-options" title="e_util_get_category_filter_options ()">e_util_get_category_filter_options</a>  (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            <a class="link" href="eshell-Miscellaneous-Utilities.html#e-charset-add-radio-actions" title="e_charset_add_radio_actions ()">e_charset_add_radio_actions</a>         (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a> *action_group</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_prefix</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *default_charset</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Closures.html#GCallback"><span class="type">GCallback</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<span class="returnvalue">EActivity</span> *         <a class="link" href="eshell-Miscellaneous-Utilities.html#e-file-replace-contents-async" title="e_file_replace_contents_async ()">e_file_replace_contents_async</a>       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a> *file</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *contents</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> length</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *etag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> make_backup</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GFile.html#GFileCreateFlags"><span class="type">GFileCreateFlags</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="eshell-Miscellaneous-Utilities.html#e-file-replace-contents-finish" title="e_file_replace_contents_finish ()">e_file_replace_contents_finish</a>      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a> *file</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **new_etag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-mktemp" title="e_mktemp ()">e_mktemp</a>                            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *template</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Miscellaneous-Utilities.html#e-mkstemp" title="e_mkstemp ()">e_mkstemp</a>                           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *template</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Miscellaneous-Utilities.html#e-mkdtemp" title="e_mkdtemp ()">e_mkdtemp</a>                           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *template</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Miscellaneous-Utilities.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Miscellaneous-Utilities.details"></a><h2>Details</h2>
+<div class="refsect2" title="e_get_gnome2_user_dir ()">
+<a name="e-get-gnome2-user-dir"></a><h3>e_get_gnome2_user_dir ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_get_gnome2_user_dir               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns the base directory for user data, according to libgnome.
+The directory can be overridden by setting the GNOME22_USER_DIR
+environment variable.  The string is owned by Evolution and must
+not be modified or freed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> base directory for GNOME user data
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_get_accels_filename ()">
+<a name="e-get-accels-filename"></a><h3>e_get_accels_filename ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_get_accels_filename               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Returns the name of the user data file containing custom keyboard
+accelerator specifications.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> filename for accelerator specifications
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_show_uri ()">
+<a name="e-show-uri"></a><h3>e_show_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_show_uri                          (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>);</pre>
+<p>
+Launches the default application to show the given URI.  The URI must
+be of a form understood by GIO.  If the URI cannot be shown, it presents
+a dialog describing the error.  The dialog is set as transient to <em class="parameter"><code>parent</code></em>
+if <em class="parameter"><code>parent</code></em> is non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>a parent <a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to show
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_display_help ()">
+<a name="e-display-help"></a><h3>e_display_help ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_display_help                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *link_id</code></em>);</pre>
+<p>
+Opens the user documentation to the section given by <em class="parameter"><code>link_id</code></em>, or to the
+table of contents if <em class="parameter"><code>link_id</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.  If the user documentation cannot
+be opened, it presents a dialog describing the error.  The dialog is set
+as transient to <em class="parameter"><code>parent</code></em> if <em class="parameter"><code>parent</code></em> is non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>a parent <a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>link_id</code></em> :</span></p></td>
+<td>help section to present or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_lookup_action ()">
+<a name="e-lookup-action"></a><h3>e_lookup_action ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="returnvalue">GtkAction</span></a> *         e_lookup_action                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a> *ui_manager</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
+<p>
+Returns the first <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> named <em class="parameter"><code>action_name</code></em> by traversing the
+list of action groups in <em class="parameter"><code>ui_manager</code></em>.  If no such action exists, the
+function emits a critical warning before returning <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, since this
+probably indicates a programming error and most code is not prepared
+to deal with lookup failures.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ui_manager</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action_name</code></em> :</span></p></td>
+<td>the name of an action
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the first <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> named <em class="parameter"><code>action_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_lookup_action_group ()">
+<a name="e-lookup-action-group"></a><h3>e_lookup_action_group ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="returnvalue">GtkActionGroup</span></a> *    e_lookup_action_group               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a> *ui_manager</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *group_name</code></em>);</pre>
+<p>
+Returns the <a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a> in <em class="parameter"><code>ui_manager</code></em> named <em class="parameter"><code>group_name</code></em>.  If no
+such action group exists, the function emits a critical warnings before
+returning <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, since this probably indicates a programming error and
+most code is not prepared to deal with lookup failures.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ui_manager</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkUIManager.html"><span class="type">GtkUIManager</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>group_name</code></em> :</span></p></td>
+<td>the name of an action group
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a> named <em class="parameter"><code>group_name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_action_compare_by_label ()">
+<a name="e-action-compare-by-label"></a><h3>e_action_compare_by_label ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_action_compare_by_label           (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *action1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a> *action2</code></em>);</pre>
+<p>
+Compares the labels for <em class="parameter"><code>action1</code></em> and <em class="parameter"><code>action2</code></em> using <a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#g-utf8-collate"><code class="function">g_utf8_collate()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action1</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action2</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkAction.html"><span class="type">GtkAction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> &lt; 0 if <em class="parameter"><code>action1</code></em> compares before <em class="parameter"><code>action2</code></em>, 0 if they
+         compare equal, &gt; 0 if <em class="parameter"><code>action1</code></em> compares after <em class="parameter"><code>action2</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_action_group_remove_all_actions ()">
+<a name="e-action-group-remove-all-actions"></a><h3>e_action_group_remove_all_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_action_group_remove_all_actions   (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a> *action_group</code></em>);</pre>
+<p>
+Removes all actions from the action group.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>action_group</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_radio_action_get_current_action ()">
+<a name="e-radio-action-get-current-action"></a><h3>e_radio_action_get_current_action ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="returnvalue">GtkRadioAction</span></a> *    e_radio_action_get_current_action   (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a> *radio_action</code></em>);</pre>
+<p>
+Returns the currently active member of the group to which <em class="parameter"><code>radio_action</code></em>
+belongs.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>radio_action</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioAction</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the currently active group member
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_categories_add_change_hook ()">
+<a name="e-categories-add-change-hook"></a><h3>e_categories_add_change_hook ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_categories_add_change_hook        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Hook-Functions.html#GHookFunc"><span class="type">GHookFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> object</code></em>);</pre>
+<p>
+A saner alternative to <a href="/usr/share/gtk-doc/html/libedataserver/libedataserver-e-categories.html#e-categories-register-change-listener"><code class="function">e_categories_register_change_listener()</code></a>.
+</p>
+<p>
+Adds a hook function to be called when a category is added, removed or
+modified.  If <em class="parameter"><code>object</code></em> is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the hook function is automatically
+removed when <em class="parameter"><code>object</code></em> is finalized.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>a hook function
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> to be passed to <em class="parameter"><code>func</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_type_traverse ()">
+<a name="e-type-traverse"></a><h3>e_type_traverse ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_type_traverse                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> parent_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">ETypeFunc</span> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Calls <em class="parameter"><code>func</code></em> for all instantiable subtypes of <em class="parameter"><code>parent_type</code></em>.
+</p>
+<p>
+This is often useful for extending functionality by way of <a class="link" href="EModule.html" title="EModule"><span class="type">EModule</span></a>.
+A module may register a subtype of <em class="parameter"><code>parent_type</code></em> in its <code class="function">e_module_load()</code>
+function.  Then later on the application will call <a class="link" href="eshell-Miscellaneous-Utilities.html#e-type-traverse" title="e_type_traverse ()"><code class="function">e_type_traverse()</code></a>
+to instantiate all registered subtypes of <em class="parameter"><code>parent_type</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_type</code></em> :</span></p></td>
+<td>the root <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> to traverse from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>the function to call for each visited <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data to pass to the function
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_str_without_underscores ()">
+<a name="e-str-without-underscores"></a><h3>e_str_without_underscores ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_str_without_underscores           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
+<p>
+Strips underscores from a string in the same way
+<em class="parameter"><code>gtk_label_new_with_mnemonics</code></em> does.  The returned string should be freed
+using <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
+<td>the string to strip underscores from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly-allocated string without underscores
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_str_compare ()">
+<a name="e-str-compare"></a><h3>e_str_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_str_compare                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_str_case_compare ()">
+<a name="e-str-case-compare"></a><h3>e_str_case_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_str_case_compare                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_collate_compare ()">
+<a name="e-collate-compare"></a><h3>e_collate_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_collate_compare                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_int_compare ()">
+<a name="e-int-compare"></a><h3>e_int_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_int_compare                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> y</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_color_to_value ()">
+<a name="e-color-to-value"></a><h3>e_color_to_value ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             e_color_to_value                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/gdk/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> *color</code></em>);</pre>
+<p>
+Converts a <a href="http://library.gnome.org/devel/gdk/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a> to a 24-bit RGB color value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gdk/gdk3-Colors.html#GdkColor"><span class="type">GdkColor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a 24-bit color value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_format_number ()">
+<a name="e-format-number"></a><h3>e_format_number ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_format_number                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> number</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>number</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ESortCompareFunc ()">
+<a name="ESortCompareFunc"></a><h3>ESortCompareFunc ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                (*ESortCompareFunc)                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> first</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> second</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> closure</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>first</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>second</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_bsearch ()">
+<a name="e-bsearch"></a><h3>e_bsearch ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_bsearch                           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> key</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> base</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> nmemb</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> size</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-Miscellaneous-Utilities.html#ESortCompareFunc" title="ESortCompareFunc ()"><span class="type">ESortCompareFunc</span></a> compare</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> closure</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *end</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>base</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nmemb</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>compare</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_strftime_fix_am_pm ()">
+<a name="e-strftime-fix-am-pm"></a><h3>e_strftime_fix_am_pm ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>               e_strftime_fix_am_pm                (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> max</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *fmt</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">struct tm</span> *tm</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_utf8_strftime_fix_am_pm ()">
+<a name="e-utf8-strftime-fix-am-pm"></a><h3>e_utf8_strftime_fix_am_pm ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>               e_utf8_strftime_fix_am_pm           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> max</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *fmt</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">struct tm</span> *tm</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_get_month_name ()">
+<a name="e-get-month-name"></a><h3>e_get_month_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_get_month_name                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Date-and-Time-Functions.html#GDateMonth"><span class="type">GDateMonth</span></a> month</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> abbreviated</code></em>);</pre>
+<p>
+Returns the localized name for <em class="parameter"><code>month</code></em>.  If <em class="parameter"><code>abbreviated</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>,
+returns the locale's abbreviated month name.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>month</code></em> :</span></p></td>
+<td>month index
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>abbreviated</code></em> :</span></p></td>
+<td>if <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, abbreviate the month name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> localized month name
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_get_weekday_name ()">
+<a name="e-get-weekday-name"></a><h3>e_get_weekday_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       e_get_weekday_name                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Date-and-Time-Functions.html#GDateWeekday"><span class="type">GDateWeekday</span></a> weekday</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> abbreviated</code></em>);</pre>
+<p>
+Returns the localized name for <em class="parameter"><code>weekday</code></em>.  If <em class="parameter"><code>abbreviated</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>,
+returns the locale's abbreviated weekday name.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>weekday</code></em> :</span></p></td>
+<td>weekday index
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>abbreviated</code></em> :</span></p></td>
+<td>if <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, abbreviate the weekday name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> localized weekday name
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_flexible_strtod ()">
+<a name="e-flexible-strtod"></a><h3>e_flexible_strtod ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             e_flexible_strtod                   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *nptr</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **endptr</code></em>);</pre>
+<p>
+Converts a string to a gdouble value.  This function detects
+strings either in the standard C locale or in the current locale.
+</p>
+<p>
+This function is typically used when reading configuration files or
+other non-user input that should not be locale dependent, but may
+have been in the past.  To handle input from the user you should
+normally use the locale-sensitive system strtod function.
+</p>
+<p>
+To convert from a double to a string in a locale-insensitive way, use
+<em class="parameter"><code>g_ascii_dtostr</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nptr</code></em> :</span></p></td>
+<td>the string to convert to a numeric value.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>endptr</code></em> :</span></p></td>
+<td>if non-NULL, it returns the character after
+          the last character used in the conversion.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the gdouble value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_ascii_dtostr ()">
+<a name="e-ascii-dtostr"></a><h3>e_ascii_dtostr ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_ascii_dtostr                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *buffer</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> buf_len</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> d</code></em>);</pre>
+<p>
+Converts a double to a string, using the '.' as
+decimal_point. To format the number you pass in
+a printf-style formating string. Allowed conversion
+specifiers are eEfFgG.
+</p>
+<p>
+If you want to generates enough precision that converting
+the string back using <em class="parameter"><code>g_strtod</code></em> gives the same machine-number
+(on machines with IEEE compatible 64bit doubles) use the format
+string "%.17g". If you do this it is guaranteed that the size
+of the resulting string will never be larger than
+<em class="parameter"><code>G_ASCII_DTOSTR_BUF_SIZE</code></em> bytes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buffer</code></em> :</span></p></td>
+<td>A buffer to place the resulting string in
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf_len</code></em> :</span></p></td>
+<td>The length of the buffer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td>The printf-style format to use for the
+         code to use for converting.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>d</code></em> :</span></p></td>
+<td>The double to convert
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the pointer to the buffer with the converted string
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="get_font_options ()">
+<a name="get-font-options"></a><h3>get_font_options ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-font-options-t.html#cairo-font-options-t"><span class="returnvalue">cairo_font_options_t</span></a> * get_font_options                 (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_file_lock_create ()">
+<a name="e-file-lock-create"></a><h3>e_file_lock_create ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_file_lock_create                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_file_lock_destroy ()">
+<a name="e-file-lock-destroy"></a><h3>e_file_lock_destroy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_file_lock_destroy                 (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_file_lock_exists ()">
+<a name="e-file-lock-exists"></a><h3>e_file_lock_exists ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_file_lock_exists                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_util_guess_mime_type ()">
+<a name="e-util-guess-mime-type"></a><h3>e_util_guess_mime_type ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_util_guess_mime_type              (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> localfile</code></em>);</pre>
+<p>
+Tries to determine the MIME type for <em class="parameter"><code>filename</code></em>.  Free the returned
+string with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>a local file name, or URI
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>localfile</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to check the file content, FALSE to check only the name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the MIME type of <em class="parameter"><code>filename</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the the MIME type could
+         not be determined
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_util_get_category_filter_options ()">
+<a name="e-util-get-category-filter-options"></a><h3>e_util_get_category_filter_options ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            e_util_get_category_filter_options  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_charset_add_radio_actions ()">
+<a name="e-charset-add-radio-actions"></a><h3>e_charset_add_radio_actions ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            e_charset_add_radio_actions         (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a> *action_group</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_prefix</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *default_charset</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Closures.html#GCallback"><span class="type">GCallback</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Adds a set of <a href="http://library.gnome.org/devel/gtk/GtkRadioAction.html"><span class="type">GtkRadioActions</span></a> for available character sets to
+<em class="parameter"><code>action_group</code></em>.  The <em class="parameter"><code>default_charset</code></em> (or locale character set if
+<em class="parameter"><code>default_charset</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) will be added first, and selected by
+default (except that ISO-8859-1 will always be used instead of
+US-ASCII).  Any other character sets of the same language class as
+the default will be added next, followed by the remaining character
+sets.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action_group</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gtk/GtkActionGroup.html"><span class="type">GtkActionGroup</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action_prefix</code></em> :</span></p></td>
+<td>a prefix for action names, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_charset</code></em> :</span></p></td>
+<td>the default character set, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to use the
+                  locale character set
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>a callback function for actions in the group, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data to be passed to <em class="parameter"><code>callback</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the radio action group
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_file_replace_contents_async ()">
+<a name="e-file-replace-contents-async"></a><h3>e_file_replace_contents_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">EActivity</span> *         e_file_replace_contents_async       (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a> *file</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *contents</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> length</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *etag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> make_backup</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GFile.html#GFileCreateFlags"><span class="type">GFileCreateFlags</span></a> flags</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+This is a wrapper for <a href="http://library.gnome.org/devel/gio/unstable/GFile.html#g-file-replace-contents-async"><code class="function">g_file_replace_contents_async()</code></a> that also returns
+an <span class="type">EActivity</span> to track the file operation.  Cancelling the activity will
+cancel the file operation.  See <a href="http://library.gnome.org/devel/gio/unstable/GFile.html#g-file-replace-contents-async"><code class="function">g_file_replace_contents_async()</code></a> for more
+details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file</code></em> :</span></p></td>
+<td>input <a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>contents</code></em> :</span></p></td>
+<td>string of contents to replace the file with
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>the length of <em class="parameter"><code>contents</code></em> in bytes
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>etag</code></em> :</span></p></td>
+<td>a new entity tag for the <em class="parameter"><code>file</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>make_backup</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a backup should be created
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>a set of <a href="http://library.gnome.org/devel/gio/unstable/GFile.html#GFileCreateFlags"><span class="type">GFileCreateFlags</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> to call when the request is satisfied
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>the data to pass to the callback function
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> an <span class="type">EActivity</span> for the file operation
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_file_replace_contents_finish ()">
+<a name="e-file-replace-contents-finish"></a><h3>e_file_replace_contents_finish ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            e_file_replace_contents_finish      (<em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a> *file</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **new_etag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Finishes an asynchronous replace of the given <em class="parameter"><code>file</code></em>.  See
+<a class="link" href="eshell-Miscellaneous-Utilities.html#e-file-replace-contents-async" title="e_file_replace_contents_async ()"><code class="function">e_file_replace_contents_async()</code></a>.  Sets <em class="parameter"><code>new_etag</code></em> to the new entity
+tag for the document, if present.  Free it with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> when it is
+no longer needed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file</code></em> :</span></p></td>
+<td>input <a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_etag</code></em> :</span></p></td>
+<td>return location for a new entity tag
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>return location for a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> on failure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mktemp ()">
+<a name="e-mktemp"></a><h3>e_mktemp ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_mktemp                            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *template</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mkstemp ()">
+<a name="e-mkstemp"></a><h3>e_mkstemp ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_mkstemp                           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *template</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_mkdtemp ()">
+<a name="e-mkdtemp"></a><h3>e_mkdtemp ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_mkdtemp                           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *template</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

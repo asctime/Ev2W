@@ -1,0 +1,341 @@
+<!-- ##### SECTION Title ##### -->
+E2kProperties
+
+<!-- ##### SECTION Short_Description ##### -->
+WebDAV properties
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### TYPEDEF E2kProperties ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION e2k_properties_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_properties_copy ##### -->
+<para>
+
+</para>
+
+@props: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_properties_empty ##### -->
+<para>
+
+</para>
+
+@props: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_properties_free ##### -->
+<para>
+
+</para>
+
+@props: 
+
+
+<!-- ##### FUNCTION e2k_properties_get_prop ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_properties_remove ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+
+
+<!-- ##### ENUM E2kPropType ##### -->
+<para>
+
+</para>
+
+@E2K_PROP_TYPE_UNKNOWN: 
+@E2K_PROP_TYPE_STRING: 
+@E2K_PROP_TYPE_BINARY: 
+@E2K_PROP_TYPE_STRING_ARRAY: 
+@E2K_PROP_TYPE_BINARY_ARRAY: 
+@E2K_PROP_TYPE_XML: 
+@E2K_PROP_TYPE_INT: 
+@E2K_PROP_TYPE_INT_ARRAY: 
+@E2K_PROP_TYPE_BOOL: 
+@E2K_PROP_TYPE_FLOAT: 
+@E2K_PROP_TYPE_DATE: 
+
+<!-- ##### MACRO E2K_PROP_TYPE_IS_ARRAY ##### -->
+<para>
+
+</para>
+
+@type: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_string ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_string_array ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_binary ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_binary_array ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_int ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_int_array ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_xml ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_bool ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_float ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_date ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_type_as_string ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@type: 
+@value: 
+
+
+<!-- ##### FUNCTION e2k_properties_set_type_as_string_array ##### -->
+<para>
+
+</para>
+
+@props: 
+@propname: 
+@type: 
+@value: 
+
+
+<!-- ##### USER_FUNCTION E2kPropertiesForeachFunc ##### -->
+<para>
+
+</para>
+
+@propname: 
+@type: 
+@value: 
+@user_data: 
+
+
+<!-- ##### FUNCTION e2k_properties_foreach ##### -->
+<para>
+
+</para>
+
+@props: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION e2k_properties_foreach_removed ##### -->
+<para>
+
+</para>
+
+@props: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION E2kPropertiesForeachNamespaceFunc ##### -->
+<para>
+
+</para>
+
+@namespace: 
+@abbrev: 
+@user_data: 
+
+
+<!-- ##### FUNCTION e2k_properties_foreach_namespace ##### -->
+<para>
+
+</para>
+
+@props: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION e2k_prop_namespace_name ##### -->
+<para>
+
+</para>
+
+@prop: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_prop_namespace_abbrev ##### -->
+<para>
+
+</para>
+
+@prop: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_prop_property_name ##### -->
+<para>
+
+</para>
+
+@prop: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_prop_proptag ##### -->
+<para>
+
+</para>
+
+@prop: 
+@Returns: 
+
+
+<!-- ##### FUNCTION e2k_proptag_prop ##### -->
+<para>
+
+</para>
+
+@proptag: 
+@Returns: 
+
+
+<!-- ##### MACRO E2K_PROPTAG_TYPE ##### -->
+<para>
+
+</para>
+
+@proptag: 
+
+
+<!-- ##### MACRO E2K_PROPTAG_ID ##### -->
+<para>
+
+</para>
+
+@proptag: 
+
+

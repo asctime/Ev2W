@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CamelSeekableSubstream</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Camel Reference Manual">
+<link rel="up" href="Streams.html" title="Streams">
+<link rel="prev" href="CamelSeekableStream.html" title="CamelSeekableStream">
+<link rel="next" href="CamelStreamBuffer.html" title="CamelStreamBuffer">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="CamelSeekableStream.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="Streams.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Camel Reference Manual</th>
+<td><a accesskey="n" href="CamelStreamBuffer.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#CamelSeekableSubstream.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#CamelSeekableSubstream.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#CamelSeekableSubstream.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="CamelSeekableSubstream">
+<a name="CamelSeekableSubstream"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="CamelSeekableSubstream.top_of_page"></a>CamelSeekableSubstream</span></h2>
+<p>CamelSeekableSubstream</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="CamelSeekableSubstream.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="CamelSeekableSubstream.html#CamelSeekableSubstream-struct" title="CamelSeekableSubstream">CamelSeekableSubstream</a>;
+<a class="link" href="CamelStream.html" title="CamelStream"><span class="returnvalue">CamelStream</span></a> *       <a class="link" href="CamelSeekableSubstream.html#camel-seekable-substream-new" title="camel_seekable_substream_new ()">camel_seekable_substream_new</a>        (<em class="parameter"><code><a class="link" href="CamelSeekableStream.html" title="CamelSeekableStream"><span class="type">CamelSeekableStream</span></a> *parent_stream</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#goffset"><span class="type">goffset</span></a> start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#goffset"><span class="type">goffset</span></a> end</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="CamelSeekableSubstream.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="CamelObject.html" title="CamelObject">CamelObject</a>
+         +----<a class="link" href="CamelStream.html" title="CamelStream">CamelStream</a>
+               +----<a class="link" href="CamelSeekableStream.html" title="CamelSeekableStream">CamelSeekableStream</a>
+                     +----CamelSeekableSubstream
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="CamelSeekableSubstream.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="CamelSeekableSubstream.details"></a><h2>Details</h2>
+<div class="refsect2" title="CamelSeekableSubstream">
+<a name="CamelSeekableSubstream-struct"></a><h3>CamelSeekableSubstream</h3>
+<pre class="programlisting">typedef struct _CamelSeekableSubstream CamelSeekableSubstream;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="camel_seekable_substream_new ()">
+<a name="camel-seekable-substream-new"></a><h3>camel_seekable_substream_new ()</h3>
+<pre class="programlisting"><a class="link" href="CamelStream.html" title="CamelStream"><span class="returnvalue">CamelStream</span></a> *       camel_seekable_substream_new        (<em class="parameter"><code><a class="link" href="CamelSeekableStream.html" title="CamelSeekableStream"><span class="type">CamelSeekableStream</span></a> *parent_stream</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#goffset"><span class="type">goffset</span></a> start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#goffset"><span class="type">goffset</span></a> end</code></em>);</pre>
+<p>
+Creates a new CamelSeekableSubstream that references the portion
+of <em class="parameter"><code>parent_stream</code></em> from <em class="parameter"><code>inf_bound</code></em> to <em class="parameter"><code>sup_bound</code></em>. (If <em class="parameter"><code>sup_bound</code></em> is
+<a class="link" href="CamelSeekableStream.html#CAMEL-STREAM-UNBOUND:CAPS" title="CAMEL_STREAM_UNBOUND"><span class="type">CAMEL_STREAM_UNBOUND</span></a>, it references to the end of stream, even if
+the stream grows.)
+</p>
+<p>
+While the substream is open, the caller cannot assume anything about
+the current position of <em class="parameter"><code>parent_stream</code></em>. After the substream has been
+closed, <em class="parameter"><code>parent_stream</code></em> will stabilize again.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_stream</code></em> :</span></p></td>
+<td>a <a class="link" href="CamelSeekableStream.html" title="CamelSeekableStream"><span class="type">CamelSeekableStream</span></a> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td>a lower bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>an upper bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the substream
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

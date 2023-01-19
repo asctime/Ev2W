@@ -1,0 +1,162 @@
+From: Mathieu Trudel-Lapierre <mathieu.trudel-lapierre@canonical.com>
+Subject: Correctly populate and retrieve category name for the name selector.
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/690178
+
+This is related to LP 690178: in e-d-s 2.32.1-0ubuntu2, opening evolution and
+clicking on the To/Cc/Bcc buttons in a message composer, or trying most of
+the calendar edition tools triggers a crash due to the category not being
+properly retrieved from the Category combo, and thus impossible to compare
+with strcmp.
+
+Here, backport some of the UI changes to use a GtkComboBoxText for categories
+from the e-d-s master git branch (2.91...), which actually allow using the
+gtk_combo_box_text_* API successfully. (Using an actual GtkComboBoxText rather
+than a GtkComboBox that happens to contain a text cellrenderer and just one 
+column).
+
+This of course means that piece from the .ui definition file needs to be
+taken out.
+
+Note, without this patch, file 199-git-backport-2.32.1-to-b08a6a1.patch seems
+to do the right thing and allow the name selector to not fail, but this patch
+actually correctly fixes the selector when used alone.
+
+Index: evolution-data-server-2.32.1/libedataserverui/e-name-selector-dialog.c
+===================================================================
+--- evolution-data-server-2.32.1.orig/libedataserverui/e-name-selector-dialog.c	2010-12-15 14:06:51.237087002 -0500
++++ evolution-data-server-2.32.1/libedataserverui/e-name-selector-dialog.c	2010-12-15 14:06:51.267087002 -0500
+@@ -69,6 +69,8 @@
+ 	GtkEntry *search_entry;
+ 	GtkSizeGroup *button_size_group;
+ 
++	GtkWidget *combobox_category;
++
+ 	GArray *sections;
+ 
+ 	guint destination_index;
+@@ -104,12 +106,12 @@
+ static void
+ e_name_selector_dialog_populate_categories (ENameSelectorDialog *name_selector_dialog)
+ {
++	ENameSelectorDialogPrivate *priv = E_NAME_SELECTOR_DIALOG_GET_PRIVATE (name_selector_dialog);
+ 	GtkWidget *combo_box;
+ 	GList *category_list, *iter;
+ 
+ 	/* "Any Category" is preloaded. */
+-	combo_box = GTK_WIDGET (gtk_builder_get_object (
+-		name_selector_dialog->priv->gui, "combobox-category"));
++	combo_box = priv->combobox_category;
+ 	if (gtk_combo_box_get_active (GTK_COMBO_BOX (combo_box)) == -1)
+ 		gtk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
+ 
+@@ -117,7 +119,7 @@
+ 	category_list = e_categories_get_list ();
+ 	for (iter = category_list; iter != NULL; iter = iter->next)
+ 		gtk_combo_box_text_append_text (
+-			GTK_COMBO_BOX (combo_box), iter->data);
++			GTK_COMBO_BOX_TEXT (combo_box), iter->data);
+ 	g_list_free (category_list);
+ 
+ 	g_signal_connect_swapped (
+@@ -136,6 +138,8 @@
+ 	GtkWidget         *content_area;
+ 	GtkWidget	  *label;
+ 	GtkWidget         *parent;
++	GtkWidget         *show_contacts_table;
++	GtkWidget         *combobox_category;
+ 	GtkTreeSelection  *selection;
+ 	ESourceList       *source_list;
+ 	gchar             *uifile;
+@@ -179,6 +183,19 @@
+ 		return;
+ 	}
+ 
++	/* Need access to the container table to be able to drop the new combo box in it */
++	show_contacts_table = GTK_WIDGET (gtk_builder_get_object (
++				name_selector_dialog->priv->gui, "show_contacts_table"));
++
++	/* Build the category dropdown independently, it's easier for GtkComboBoxText types */
++	combobox_category = gtk_combo_box_text_new ();
++	gtk_widget_show (combobox_category);
++	gtk_table_attach (GTK_TABLE (show_contacts_table), combobox_category, 1, 2, 1, 2,
++				(GtkAttachOptions) (GTK_FILL),
++				(GtkAttachOptions) (GTK_FILL), 0, 0);
++	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combobox_category),
++					_("Any Category"));
++
+ 	/* Get addressbook sources */
+ 
+ 	if (!e_book_get_addressbooks (&source_list, NULL)) {
+@@ -212,6 +229,7 @@
+ 	name_selector_dialog->priv->search_entry = GTK_ENTRY (
+ 		gtk_builder_get_object (
+ 		name_selector_dialog->priv->gui, "search"));
++	name_selector_dialog->priv->combobox_category = combobox_category;
+ 
+ 	/* Create size group for transfer buttons */
+ 
+@@ -876,12 +894,11 @@
+ 	gchar         *category_escaped;
+ 	gchar         *user_fields_str;
+ 
+-	combo_box = GTK_WIDGET (gtk_builder_get_object (
+-		name_selector_dialog->priv->gui, "combobox-category"));
++	combo_box = priv->combobox_category;
+ 	if (gtk_combo_box_get_active (GTK_COMBO_BOX (combo_box)) == -1)
+ 		gtk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
+ 
+-	category = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX (combo_box));
++	category = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (combo_box));
+ 	category_escaped = escape_sexp_string (category);
+ 
+ 	text = gtk_entry_get_text (name_selector_dialog->priv->search_entry);
+Index: evolution-data-server-2.32.1/libedataserverui/e-name-selector-dialog.ui
+===================================================================
+--- evolution-data-server-2.32.1.orig/libedataserverui/e-name-selector-dialog.ui	2010-12-15 14:07:13.827087002 -0500
++++ evolution-data-server-2.32.1/libedataserverui/e-name-selector-dialog.ui	2010-12-15 14:07:41.707087002 -0500
+@@ -1,16 +1,6 @@
+ <?xml version="1.0"?>
+ <!--*- mode: xml -*-->
+ <interface>
+-  <object class="GtkListStore" id="model1">
+-    <columns>
+-      <column type="gchararray"/>
+-    </columns>
+-    <data>
+-      <row>
+-        <col id="0" translatable="yes">Any Category</col>
+-      </row>
+-    </data>
+-  </object>
+   <object class="GtkWindow" id="wrapper">
+     <property name="title" translatable="yes">window1</property>
+     <property name="type">GTK_WINDOW_TOPLEVEL</property>
+@@ -222,28 +212,6 @@
+                     <property name="x_options">fill</property>
+                     <property name="y_options">fill</property>
+                   </packing>
+-                </child>
+-                <child>
+-                  <object class="GtkComboBox" id="combobox-category">
+-                    <property name="visible">True</property>
+-                    <property name="add_tearoffs">False</property>
+-                    <property name="focus_on_click">True</property>
+-                    <property name="model">model1</property>
+-                    <child>
+-                      <object class="GtkCellRendererText" id="renderer1"/>
+-                      <attributes>
+-                        <attribute name="text">0</attribute>
+-                      </attributes>
+-                    </child>
+-                  </object>
+-                  <packing>
+-                    <property name="left_attach">1</property>
+-                    <property name="right_attach">2</property>
+-                    <property name="top_attach">1</property>
+-                    <property name="bottom_attach">2</property>
+-                    <property name="x_options">fill</property>
+-                    <property name="y_options">fill</property>
+-                  </packing>
+                 </child>
+               </object>
+               <packing>

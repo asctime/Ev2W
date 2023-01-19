@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="ximian-connector-oof">
+<refmeta>
+<refentrytitle>Out of Office</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>XIMIAN-CONNECTOR Library</refmiscinfo>
+</refmeta>
+
+<refnamediv></refnamediv>
+
+<para>
+<application>Exchange</application> allows you to automatically send
+"Out of Office" notifications to anyone who sends you mail. There are
+two parts to this.
+</para>
+
+<para>
+The first part is creating the <link
+linkend="ximian-connector-rules">server-side rule</link> to be run
+when you are out of the office. The simple case (which is all that
+Connector supports) is to have a single rule that sends a simple reply
+to all "out-of-officeable" messages. (I don't know Exchange's exact
+rule, but I think it won't send a reply to any message that doesn't
+include you as an explicit recipient, and it won't send the message
+more than once to any recipient in any given out-of-office period.)
+</para>
+
+<para>
+Connector doesn't currently support creating server-side rules at all,
+so we handle the out-of-office rule by using
+<application>OWA</application>'s Options page. This is pretty much a
+kludge, but it works for simple out-of-office messages, and we haven't
+gotten any bug reports against it yet...
+</para>
+
+<para>
+The second part is turning the out-of-office state on or off. This is
+controlled by a MAPI property on the message store itself, which we
+can't access via WebDAV. (The message store is not the same as the
+root folder of the message store.) So again, we use
+<application>OWA</application> to do this.
+</para>
+
+<para>
+Connector (like <application>Outlook</application>) checks the
+out-of-office state at startup time, and offers to turn it off if it
+is on.
+</para>
+
+</refentry>

@@ -1,0 +1,2008 @@
+# translation of el.po to Greek
+# Grek translation of evolution-exchange.
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Kostas Papadimas <pkst@gnome.org>, 2004, 2005, 2006.
+# Simos Xenitellis <simos@gnome.org>, 2005.
+# Simos Xenitellis <simos.lists@googlemail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: el\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-31 23:20+0300\n"
+"PO-Revision-Date: 2010-08-27 13:47+0200\n"
+"Last-Translator: Michael Kotsarinis <mk73628@hotmail.com>\n"
+"Language-Team: Greek <team@lists.gnome.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.2\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr ""
+"Καθορίζει το χρονικό διάστημα μέχρι την ανανέωση της προσωρινής μνήμης GAL."
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days' interval between GAL cache refreshes. "
+"Set this value to zero if you don't want to update GAL and use the current "
+"cache forever. This will work only if you have enabled offline caching for "
+"GAL."
+msgstr ""
+"Αυτό το κλειδί καθορίζει τον αριθμό ημερών του διαστήματος μεταξύ των "
+"ανανεώσεων της προσωρινής μνήμης GAL. Καθορίστε αυτή την τιμή στο μηδέν, αν "
+"δεν επιθυμείτε να ανανεώσετε τη GAL και να χρησιμοποιείτε την τρέχουσα "
+"προσωρινή μνήμη για πάντα. Αυτό θα λειτουργήσει μόνο εάν έχετε ενεργοποιήσει "
+"την εκτός σύνδεσης αποθήκευση στη προσωρινή μνήμη για τη GAL."
+
+#: ../addressbook/e-book-backend-exchange.c:135
+#, c-format
+msgid "Operation failed with status %d"
+msgstr "Η εργασία απέτυχε με τιμή κατάστασης %d"
+
+#: ../addressbook/e-book-backend-exchange.c:1797
+#: ../addressbook/e-book-backend-exchange.c:2642
+msgid "Cancelled"
+msgstr "Ακυρώθηκε"
+
+#: ../addressbook/e-book-backend-exchange.c:2319
+#: ../addressbook/e-book-backend-gal.c:1931
+msgid "Searching..."
+msgstr "Αναζήτηση…"
+
+#: ../addressbook/e-book-backend-gal.c:330
+#: ../addressbook/e-book-backend-gal.c:351
+msgid "Reconnecting to LDAP server..."
+msgstr "Επανασύνδεση με το διακομιστή LDAP…"
+
+#: ../addressbook/e-book-backend-gal.c:1671
+msgid "Receiving LDAP search results..."
+msgstr "Λήψη αποτελεσμάτων αναζήτησης από LDAP…"
+
+#: ../addressbook/e-book-backend-gal.c:1962
+msgid "Error performing search"
+msgstr "Σφάλμα εκτέλεσης αναζήτησης"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2145
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Η πηγή '%s' είναι απασχολημένη κατά την επιλεγμένη χρονική περίοδο."
+
+#: ../camel/camel-exchange-folder.c:75
+msgid "No Subject"
+msgstr "Χωρίς θέμα"
+
+#: ../camel/camel-exchange-folder.c:137
+#, c-format
+msgid "This message is not available in offline mode."
+msgstr "Αυτό το μήνυμα δεν είναι διαθέσιμο σε κατάσταση χωρίς σύνδεση."
+
+#: ../camel/camel-exchange-folder.c:386
+#, c-format
+msgid "You cannot expunge in offline mode."
+msgstr "Δεν ήταν δυνατή η εξάλειψη φακέλου σε λειτουργία χωρίς σύνδεση."
+
+#: ../camel/camel-exchange-folder.c:626
+msgid "Moving messages"
+msgstr "Μετακίνηση μηνυμάτων"
+
+#: ../camel/camel-exchange-folder.c:627
+msgid "Copying messages"
+msgstr "Αντιγραφή μηνυμάτων"
+
+#: ../camel/camel-exchange-folder.c:1070
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "Δεν ήταν δυνατή η δημιουργία του καταλόγου %s: %s"
+
+#: ../camel/camel-exchange-folder.c:1081
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "Δεν ήταν δυνατή η φόρτωση της περίληψης για  %s"
+
+#: ../camel/camel-exchange-folder.c:1088
+#, c-format
+msgid "Could not create cache for %s: "
+msgstr "Αδυναμία δημιουργίας cache για %s"
+
+#: ../camel/camel-exchange-folder.c:1099
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "Αδυναμία δημιουργίας journal για %s"
+
+#: ../camel/camel-exchange-folder.c:1146
+msgid "Scanning for changed messages"
+msgstr "Γίνεται σάρωση για αλλαγμένα μηνύματα"
+
+#: ../camel/camel-exchange-folder.c:1173
+msgid "Fetching summary information for new messages"
+msgstr "Λήψη πληροφορίες περίληψης για νέα μηνύματα"
+
+#: ../camel/camel-exchange-journal.c:144
+#, c-format
+msgid "No folder name found"
+msgstr "Δεν βρέθηκε όνομα φακέλου"
+
+#: ../camel/camel-exchange-journal.c:185 ../camel/camel-exchange-utils.c:3139
+#: ../camel/camel-exchange-utils.c:3203 ../camel/camel-exchange-utils.c:3321
+#: ../camel/camel-exchange-utils.c:3352 ../camel/camel-exchange-utils.c:3404
+#: ../camel/camel-exchange-utils.c:3425
+#, c-format
+msgid "Folder doesn't exist"
+msgstr "Ο Φάκελος δεν υπάρχει"
+
+#: ../camel/camel-exchange-journal.c:417
+#, c-format
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr ""
+"Αδυναμία προσθήκης μηνύματος σε λειτουργία χωρίς σύνδεση: cache unavailable"
+
+#: ../camel/camel-exchange-journal.c:437
+msgid "Cannot append message in offline mode: "
+msgstr "Αδυναμία πρόσθεσης μηνύματος σε λειτουργία χωρίς σύνδεση:"
+
+#: ../camel/camel-exchange-provider.c:52
+msgid "Secure or Plaintext Password"
+msgstr "Ασφαλής ή απλού κειμένου κωδικός πρόσβασης"
+
+#: ../camel/camel-exchange-provider.c:53
+#: ../camel/camel-exchange-provider.c:140
+#: ../eplugin/exchange-account-setup.c:69
+msgid "Plaintext Password"
+msgstr "Κωδικός απλού κειμένου"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:54
+#: ../camel/camel-exchange-provider.c:129
+#: ../eplugin/exchange-account-setup.c:58
+msgid "Secure Password"
+msgstr "Ασφαλής κωδικός"
+
+#: ../camel/camel-exchange-provider.c:60
+msgid "Checking for New Mail"
+msgstr "Έλεγχος για νέα αλληλογραφία"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "C_heck for new messages in all folders"
+msgstr "Έ_λεγχος για νέα αλληλογραφία σε όλους τους φακέλους"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:70
+msgid "Windows User_name:"
+msgstr "Ό_νομα χρήστη Windows"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:75
+msgid "Global Address List/Active Directory"
+msgstr "Καθολικό διευθυνσιολόγιο / Active Directory"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:79
+msgid "_Global Catalog server name:"
+msgstr "Όνομα κα_θολικού διακομιστή καταλόγου:"
+
+#: ../camel/camel-exchange-provider.c:81
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "Ο_ριοθέτηση αριθμού αποκρίσεων GAL: %s"
+
+#: ../camel/camel-exchange-provider.c:83
+msgid "Authentication _Type:"
+msgstr "_Τύπος πιστοποίησης"
+
+#: ../camel/camel-exchange-provider.c:85
+msgid "Allow _browsing of the GAL until download limit is reached"
+msgstr "Ενεργοποίηση _περιήγησης της GAL μέχρι το όριο μεταφόρτωσης"
+
+#: ../camel/camel-exchange-provider.c:87
+msgid "_Expand groups of contacts in GAL to contact lists"
+msgstr "Ανάπτ_υξη των ομάδων επαφών του GAL στις λίστες επαφών"
+
+#: ../camel/camel-exchange-provider.c:90
+msgid "Options"
+msgstr "Επιλογές"
+
+#: ../camel/camel-exchange-provider.c:92
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "Προει_δοποίηση περιόδου λήξης κωδικού: %s"
+
+#: ../camel/camel-exchange-provider.c:94
+msgid "Automatically synchroni_ze account locally"
+msgstr "Αυτόματος συγ_χρονισμός λογαριασμού τοπικά"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:97
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr ""
+"Ε_φαρμογή φίλτρων στα νέα μηνύματα στα Εισερχόμενα αυτού του διακομιστή"
+
+#: ../camel/camel-exchange-provider.c:99
+msgid "Check new messages for _Junk contents"
+msgstr "Έλεγχος νέων μηνυμάτων για ανεπι_θύμητη αλληλογραφία"
+
+#: ../camel/camel-exchange-provider.c:101
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Να γίνεται έλεγχος μόνο στα Εισεχόμενα για ανε_πιθύμητη αλληλογραφία"
+
+#: ../camel/camel-exchange-provider.c:111
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:113
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr ""
+"Για το χειρισμό αλληλογραφίας (και άλλων δεδομένων) σε διακομιστή Microsoft "
+"Exchange"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:132
+#: ../eplugin/exchange-account-setup.c:61
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"Με αυτή την επιλογή θα συνδεθείτε με το διακομιστή Exchange με τη χρήση "
+"ασφαλούς πιστοποποίησης κωδικού (NTLM)."
+
+#: ../camel/camel-exchange-provider.c:142
+#: ../eplugin/exchange-account-setup.c:71
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"Με αυτή την επιλογή θα συνδεθείτε με το διακομιστή Exchange με τη χρήση "
+"απλής πιστοποποίησης κωδικού απλού κειμένου."
+
+#: ../camel/camel-exchange-store.c:300
+#, c-format
+msgid "Exchange server %s"
+msgstr "Εξυπηρετητής Exchange %s"
+
+#: ../camel/camel-exchange-store.c:304
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "Λογαριασμός Exchange για %s σε %s"
+
+#: ../camel/camel-exchange-store.c:378
+#, c-format
+msgid "Could not authenticate to server. (Password incorrect?)"
+msgstr ""
+"Αδυναμία πιστοποποίησης στο διακομιστή. (Λανθασμένος κωδικός πρόσβασης;)"
+
+#: ../camel/camel-exchange-store.c:441
+#, c-format
+msgid "No such folder %s"
+msgstr "Δεν υπάρχει τέτοιος φάκελος  %s"
+
+#: ../camel/camel-exchange-store.c:574
+#, c-format
+msgid "Cannot create folder in offline mode."
+msgstr "Δεν ήταν δυνατή η δημιουργία φακέλου σε λειτουργία χωρίς σύνδεση"
+
+#: ../camel/camel-exchange-store.c:604
+#, c-format
+msgid "Cannot delete folder in offline mode."
+msgstr "Δεν ήταν δυνατή η διαγραφήφακέλου σε λειτουργία χωρίς σύνδεση."
+
+#: ../camel/camel-exchange-store.c:630
+#, c-format
+msgid "Cannot rename folder in offline mode."
+msgstr "Δεν ήταν δυνατή η μετονομασία φακέλου σε λειτουργία χωρίς σύνδεση."
+
+#: ../camel/camel-exchange-store.c:711
+#, c-format
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Δεν ήταν δυνατή η συνδρομή σε φάκελο σε λειτουργία χωρίς σύνδεση"
+
+#: ../camel/camel-exchange-store.c:730
+#, c-format
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Δεν ήταν δυνατή η αποχώρηση από φάκελο σε λειτουργία χωρίς σύνδεση"
+
+#: ../camel/camel-exchange-transport.c:65
+#, c-format
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr ""
+"Το Exchange transport μπορεί μονο να χρησιμοποιηθεί με  Exchange mail source"
+
+#: ../camel/camel-exchange-transport.c:79
+#, c-format
+msgid "Cannot send message: one or more invalid recipients"
+msgstr ""
+"Δεν είναι δυνατή η αποστολή του μηνύματος: ένας ή περισσότεροι μη έγκυροι "
+"παραλήπτες"
+
+#: ../camel/camel-exchange-transport.c:90
+#, c-format
+msgid "Could not find 'From' address in message"
+msgstr "Αδυναμία εύρεσης διεύθυνσης \"Από\" στο μήνυμα"
+
+#: ../camel/camel-exchange-utils.c:529 ../camel/camel-exchange-utils.c:568
+msgid "Could not get new messages"
+msgstr "Αδυναμία λήψης νέων μηνυμάτων"
+
+#: ../camel/camel-exchange-utils.c:1056 ../camel/camel-exchange-utils.c:1207
+msgid "Could not open folder"
+msgstr "Αδυναμία ανοίγματος φακέλου"
+
+#: ../camel/camel-exchange-utils.c:1203 ../camel/camel-exchange-utils.c:1221
+msgid "Could not open folder: Permission denied"
+msgstr "Αδυναμία ανοίγματος φακέλου. Άρνηση πρόσβασης"
+
+#: ../camel/camel-exchange-utils.c:1270 ../camel/camel-exchange-utils.c:2199
+msgid "No such folder"
+msgstr "Δεν υπάρχει τέτοιος φάκελος"
+
+#: ../camel/camel-exchange-utils.c:1292 ../camel/camel-exchange-utils.c:3113
+#: ../camel/camel-exchange-utils.c:3156 ../camel/camel-exchange-utils.c:3325
+#: ../camel/camel-exchange-utils.c:3378 ../camel/camel-exchange-utils.c:3440
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:51
+#: ../server/storage/e-storage.c:573
+msgid "Permission denied"
+msgstr "Δεν επιτρέπεται η πρόσβαση"
+
+#: ../camel/camel-exchange-utils.c:2208
+msgid "Could not create folder."
+msgstr "Αδυναμία δημιουργίας φακέλου."
+
+#: ../camel/camel-exchange-utils.c:2296
+msgid "Could not open Deleted Items folder"
+msgstr "Αδυναμία ανοίγματος φακέλου διαγραμμένων αντικειμένων"
+
+#: ../camel/camel-exchange-utils.c:2422
+msgid "Could not empty Deleted Items folder"
+msgstr "Αδυναμία αδειάσματος φακέλου διαγραμμένων αντικειμένων"
+
+#: ../camel/camel-exchange-utils.c:2424
+msgid "Permission denied. Could not delete certain messages."
+msgstr "Άρνηση αδείας. Αδυναμία διαγραφής ορισμένων μηνυμάτων."
+
+#: ../camel/camel-exchange-utils.c:2468
+msgid "Could not append message; mailbox is over quota"
+msgstr ""
+"Αδυναμία πρόσθεσης μηνύματος, το γραμματοκιβώτιο έχει εξαντλήσει το όριο "
+"χώρου"
+
+#: ../camel/camel-exchange-utils.c:2469
+msgid "Could not append message"
+msgstr "Αδυναμία πρόσθεσης μηνύματος"
+
+#: ../camel/camel-exchange-utils.c:2655
+msgid "No such message"
+msgstr "Δεν υπάρχει τέτοιο μήνυμα"
+
+#: ../camel/camel-exchange-utils.c:2727
+msgid "Message has been deleted"
+msgstr "Το μήνυμα έχει διαγραφεί"
+
+#: ../camel/camel-exchange-utils.c:2729
+msgid "Error retrieving message"
+msgstr "Σφάλμα ανάκτησης μηνύματος"
+
+#: ../camel/camel-exchange-utils.c:2778
+msgid "Mailbox does not support full-text searching"
+msgstr "Το γραμματοκιβώτιο δεν υποστηρίζει αναζήτηση πλήρους κειμένου"
+
+#: ../camel/camel-exchange-utils.c:2890
+msgid "Unable to move/copy messages"
+msgstr "Αδυναμία μετακίνησης/αντιγραφής μηνυμάτων"
+
+#: ../camel/camel-exchange-utils.c:3018
+msgid "No mail submission URI for this mailbox"
+msgstr "Δεν υπάρχει URI υποβολής αλληλογραφίας για αυτό το γραμματοκιβώτιο"
+
+#: ../camel/camel-exchange-utils.c:3051
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Ο διακομιστής δεν θα δεχθεί αλληλογραφία μέσω  Exchange transport"
+
+#: ../camel/camel-exchange-utils.c:3053
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"Ο λογαριασμός σας δεν έχει το δικαιώμα να χρησιμοποιήσει το <%s>\n"
+"ως διεύθυνση Από."
+
+#: ../camel/camel-exchange-utils.c:3065
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Αδυναμία αποστολής μηνύματος.\n"
+"Αυτό μπορεί να σημαίνει ότι ο λογαριασμός σας έχει υπερβεί το όριο."
+
+#: ../camel/camel-exchange-utils.c:3069
+msgid "Could not send message"
+msgstr "Αδυναμία αποστολής μηνύματος"
+
+#: ../camel/camel-exchange-utils.c:3105 ../camel/camel-exchange-utils.c:3161
+#: ../camel/camel-exchange-utils.c:3329 ../camel/camel-exchange-utils.c:3382
+#: ../camel/camel-exchange-utils.c:3446
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:40
+#: ../server/storage/e-storage.c:557
+msgid "Generic error"
+msgstr "Γενικό σφάλμα"
+
+#: ../camel/camel-exchange-utils.c:3109
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:37
+msgid "Folder already exists"
+msgstr "Ο Φάκελος υπάρχει ήδη"
+
+#: ../eplugin/exchange-account-setup.c:266
+msgid "Out of Office"
+msgstr "Εκτός Γραφείου"
+
+#: ../eplugin/exchange-account-setup.c:273
+msgid ""
+"The message specified below will be automatically sent to \n"
+"each person who sends mail to you while you are out of the office."
+msgstr ""
+"Το παρακάτω μήνυμα θα σταλεί αυτόματα σε όποιον σας στέλνει\n"
+"μήνυμα όταν εσείς βρίσκεστε εκτός γραφείου."
+
+#: ../eplugin/exchange-account-setup.c:278
+msgid "Status:"
+msgstr "Κατάσταση:"
+
+#: ../eplugin/exchange-account-setup.c:285
+#: ../eplugin/exchange-account-setup.c:290
+msgid "I am out of the office"
+msgstr "Ααπουσιάζω από το γραφείο"
+
+#: ../eplugin/exchange-account-setup.c:286
+#: ../eplugin/exchange-account-setup.c:289
+msgid "I am in the office"
+msgstr "Είμαι στο γραφείο"
+
+#. Security settings
+#: ../eplugin/exchange-account-setup.c:325
+msgid "Security"
+msgstr "Ασφάλεια"
+
+#. Change Password
+#: ../eplugin/exchange-account-setup.c:336
+msgid "Change the password for Exchange account"
+msgstr "Αλλάξτε τον κωδικό πρόσβασης για τον λογαριασμό Exchange"
+
+#: ../eplugin/exchange-account-setup.c:338
+#: ../eplugin/exchange-change-password.c:85
+msgid "Change Password"
+msgstr "Αλλαγή Κωδικού"
+
+#. Delegation Assistant
+#: ../eplugin/exchange-account-setup.c:343
+msgid "Manage the delegate settings for Exchange account"
+msgstr ""
+"Διαχειριστείτε τις ρυθμίσεις εκπροσώπων για τον λογαριασμό του Exchange"
+
+#: ../eplugin/exchange-account-setup.c:345
+msgid "Delegation Assistant"
+msgstr "Βοηθός Εκ_προσώπου"
+
+#. Miscelleneous settings
+#: ../eplugin/exchange-account-setup.c:357
+msgid "Miscellaneous"
+msgstr "Διάφορα"
+
+#. Folder Size
+#: ../eplugin/exchange-account-setup.c:367
+msgid "View the size of all Exchange folders"
+msgstr "Προβολή του μεγέθους των φακέλων του Exchange"
+
+#: ../eplugin/exchange-account-setup.c:369
+#: ../eplugin/exchange-folder-size-display.c:183
+msgid "Folder Size"
+msgstr "Μέ_γεθος φακέλου"
+
+#: ../eplugin/exchange-account-setup.c:376
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:3
+msgid "Exchange Settings"
+msgstr "Ρυθμίσεις του Exchange"
+
+#: ../eplugin/exchange-account-setup.c:735
+msgid "_OWA URL:"
+msgstr "_OWA URL:"
+
+#: ../eplugin/exchange-account-setup.c:761
+msgid "A_uthenticate"
+msgstr "Πισ_τοποίηση"
+
+#: ../eplugin/exchange-account-setup.c:783
+msgid "Mailbox name is _different from username"
+msgstr ""
+"Το όνομα στην ταχυδρομική θυρίδα είναι _διαφορετικό από το όνομα χρήστη"
+
+#: ../eplugin/exchange-account-setup.c:796
+msgid "_Mailbox:"
+msgstr "_Ταχυδρομική θυρίδα:"
+
+#: ../eplugin/exchange-account-setup.c:1011
+msgid "_Authentication Type"
+msgstr "_Τύπος πιστοποίησης"
+
+#: ../eplugin/exchange-account-setup.c:1025
+msgid "Ch_eck for Supported Types"
+msgstr "Έλε_γχος για Υποστηριζόμενους τύπους"
+
+#: ../eplugin/exchange-account-setup.c:1140 ../eplugin/exchange-contacts.c:217
+#, c-format
+msgid "%s KB"
+msgstr "%s KB"
+
+#: ../eplugin/exchange-account-setup.c:1142 ../eplugin/exchange-contacts.c:219
+#, c-format
+msgid "0 KB"
+msgstr "0 KB"
+
+#. FIXME: Take care of i18n
+#: ../eplugin/exchange-account-setup.c:1147 ../eplugin/exchange-calendar.c:236
+#: ../eplugin/exchange-contacts.c:222
+msgid "Size:"
+msgstr "Μέγεθος:"
+
+#: ../eplugin/exchange-calendar.c:196 ../eplugin/exchange-contacts.c:170
+msgid ""
+"Evolution is in offline mode. You cannot create or modify folders now.\n"
+"Please switch to online mode for such operations."
+msgstr ""
+"Ο Evolution λειτουργεί χωρίς σύνδεση. Δεν μπορείτε να δημιουργήσετε ή να "
+"τροποποιήσετε τους φακέλους.\n"
+"Παρακαλώ μεταπηδήστε σε λειτουργία απευθείας σύνδεσης για να εκτελέσετε "
+"τέτοιες διαδικασίες."
+
+#: ../eplugin/exchange-calendar.c:247 ../eplugin/exchange-contacts.c:239
+msgid "_Location:"
+msgstr "_Θέση:"
+
+#: ../eplugin/exchange-change-password.c:95
+msgid "Your current password has expired. Please change your password now."
+msgstr "Ο κωδικός σας έχει λήξει. Παρακαλώ αλλάξτε τον κωδικό σας τώρα."
+
+#: ../eplugin/exchange-change-password.c:110
+msgid "Current _Password:"
+msgstr "Τρέ_χων κωδικός:"
+
+#: ../eplugin/exchange-change-password.c:117
+msgid "_New Password:"
+msgstr "_Νέος κωδικός:"
+
+#: ../eplugin/exchange-change-password.c:124
+msgid "_Confirm Password:"
+msgstr "Επιβεβαίωση _κωδικού:"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../eplugin/exchange-change-password.c:175
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Ο τρέχων κωδικός δεν ταιριάζει με τον υπάρχοντα κωδικό για το λογαριασμό "
+"σας. Παρακαλώ εισάγετε το σωστό κωδικό"
+
+#: ../eplugin/exchange-change-password.c:182
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Οι δύο κωδικοί δεν ταιριάζουν. Παρακαλώ εισάγετε ξανά τους κωδικούς."
+
+#. Translators: The %d is replaced with the actual number of days
+#: ../eplugin/exchange-config-listener.c:662
+#, c-format
+msgid "Your password will expire in the next %d day"
+msgid_plural "Your password will expire in the next %d days"
+msgstr[0] "Ο κωδικός σας θα λήξει σε %d ημέρα"
+msgstr[1] "Ο κωδικός σας θα λήξει σε %d ημέρες"
+
+#: ../eplugin/exchange-config-listener.c:665
+msgid "Password Expiry Warning..."
+msgstr "Προειδοποίηση λήξης κωδικού…"
+
+#: ../eplugin/exchange-config-listener.c:682
+msgid "_Change Password"
+msgstr "Αλ_λαγή κωδικού"
+
+#: ../eplugin/exchange-config-listener.c:735
+msgid "Out of Office Assistant"
+msgstr "Βοηθός 'Εκτός Γραφείου'"
+
+#: ../eplugin/exchange-config-listener.c:752
+msgid "Currently, your status is \"Out of the Office\"."
+msgstr "Αυτή τη στιγμή η κατάσταση σας είναι \"Εκτός Γραφείου\"."
+
+#: ../eplugin/exchange-config-listener.c:752
+msgid "Would you like to change your status to \"In the Office\"?"
+msgstr "Θέλετε να αλλάξει την κατάσταση σας σε \"Στο γραφείο\"; "
+
+#: ../eplugin/exchange-config-listener.c:781
+msgid "_No, Don't Change Status"
+msgstr "Ό_χι, να μη γίνει αλλαγή κατάστασης"
+
+#: ../eplugin/exchange-config-listener.c:802
+msgid "_Yes, Change Status"
+msgstr "Ναι, αλλαγή κατάστασης"
+
+#: ../eplugin/exchange-config-listener.c:834
+#, c-format
+msgid "Enter Password for %s"
+msgstr "Εισάγετε κωδικό για %s"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:435
+#: ../server/storage/exchange-hierarchy-foreign.c:260
+msgid "Calendar"
+msgstr "Η_μερολόγιο"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:438
+#: ../server/storage/exchange-hierarchy-foreign.c:269
+msgid "Tasks"
+msgstr "Ερ_γασίες"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:433
+#: ../server/storage/exchange-hierarchy-foreign.c:264
+msgid "Inbox"
+msgstr "Ε_ισερχόμενα"
+
+#: ../eplugin/exchange-delegates-user.c:69 ../eplugin/exchange-folder.c:441
+#: ../server/storage/exchange-hierarchy-foreign.c:261
+msgid "Contacts"
+msgstr "Επα_φές"
+
+#: ../eplugin/exchange-delegates-user.c:132
+#: ../eplugin/exchange-permissions-dialog.c:545
+#: ../server/lib/e2k-security-descriptor.c:901
+msgid "Custom"
+msgstr "Προσαρμοσμένα"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+#: ../eplugin/exchange-delegates-user.c:155
+#: ../eplugin/exchange-delegates-user.c:298
+#: ../eplugin/exchange-delegates-user.c:308
+#: ../eplugin/exchange-delegates-user.c:318
+#: ../eplugin/exchange-delegates-user.c:328
+msgid "Editor (read, create, edit)"
+msgstr "Επιμελητής (ανάγνωση, δημιουργία, επεξεργασία)"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+#: ../eplugin/exchange-delegates-user.c:160
+#: ../eplugin/exchange-delegates-user.c:297
+#: ../eplugin/exchange-delegates-user.c:307
+#: ../eplugin/exchange-delegates-user.c:317
+#: ../eplugin/exchange-delegates-user.c:327
+msgid "Author (read, create)"
+msgstr "Δημιουργός (ανάγνωση,δημιουργία)"
+
+#. To Translators: The following is a type of permissions that can be assigned by a user to his/her folders.
+#: ../eplugin/exchange-delegates-user.c:165
+#: ../eplugin/exchange-delegates-user.c:296
+#: ../eplugin/exchange-delegates-user.c:306
+#: ../eplugin/exchange-delegates-user.c:316
+#: ../eplugin/exchange-delegates-user.c:326
+msgid "Reviewer (read-only)"
+msgstr "Επιμελητής (ανάγνωση - μόνο)"
+
+#: ../eplugin/exchange-delegates-user.c:168
+#: ../eplugin/exchange-delegates-user.c:295
+#: ../eplugin/exchange-delegates-user.c:305
+#: ../eplugin/exchange-delegates-user.c:315
+#: ../eplugin/exchange-delegates-user.c:325
+#: ../server/lib/e2k-security-descriptor.c:886
+msgid "None"
+msgstr "Κανένα"
+
+#. Translators: "Delegate Permissions" refers to the permissions on the delegator's folders
+#. that the delegatee would receive
+#: ../eplugin/exchange-delegates-user.c:225
+msgid "Delegate Permissions"
+msgstr "Δικαιώματα εκπροσώπου"
+
+#: ../eplugin/exchange-delegates-user.c:243
+msgid "Permissions for"
+msgstr "Δικαιώματα για"
+
+#. Translators: This is used for permissions for <user> for the folder Calendar.
+#: ../eplugin/exchange-delegates-user.c:255
+msgid "C_alendar:"
+msgstr "Η_μερολόγιο:"
+
+#. Translators: This is used for permissions for <user> for the folder Tasks.
+#: ../eplugin/exchange-delegates-user.c:264
+msgid "_Tasks:"
+msgstr "Ερ_γασίες:"
+
+#. Translators: This is used for permissions for <user> for the folder Inbox.
+#: ../eplugin/exchange-delegates-user.c:273
+msgid "_Inbox:"
+msgstr "Ε_ισερχόμενα:"
+
+#. Translators: This is used for permissions for <user> for the folder Contacts.
+#: ../eplugin/exchange-delegates-user.c:282
+msgid "Co_ntacts:"
+msgstr "Επα_φές:"
+
+#: ../eplugin/exchange-delegates-user.c:330
+msgid "_Summarize permissions"
+msgstr "Σύνο_ψη δικαιωμάτων"
+
+#: ../eplugin/exchange-delegates-user.c:334
+msgid "_Delegate can see private items"
+msgstr "Εκ_πρόσωπος που μπορεί να δεί τα ιδιωτικά σας αντικείμενα"
+
+#: ../eplugin/exchange-delegates-user.c:340
+#: ../eplugin/exchange-permissions-dialog.c:168
+#, c-format
+msgid "Permissions for %s"
+msgstr "Δικαιώματα για %s"
+
+#. To translators: This is a part of the message to be sent to the delegatee
+#. summarizing the permissions assigned to him.
+#.
+#: ../eplugin/exchange-delegates-user.c:433
+msgid ""
+"This message was sent automatically by Evolution to inform you that you have "
+"been designated as a delegate. You can now send messages on my behalf."
+msgstr ""
+"Αυτό το μήνυμα εστάλη αυτόματα από το Evolution για να σας ενημερώσει ότι "
+"έχετε επιλεχτεί ως εκπρόσωπος μου.  Μπορείτε τώρα να στείλετε μηνύματα εξ "
+"ονόματός μου."
+
+#. To translators: Another chunk of the same message.
+#.
+#: ../eplugin/exchange-delegates-user.c:438
+msgid "You have been given the following permissions on my folders:"
+msgstr "Σας έχουν δοθεί τα ακόλουθα δικαιώματα στους φακέλους μου:"
+
+#. To translators: This message is included if the delegatee has been given access
+#. to the private items.
+#.
+#: ../eplugin/exchange-delegates-user.c:458
+msgid "You are also permitted to see my private items."
+msgstr "Επιτρέπεστε επίσης για να δείτε και τα ιδιωτικά μου στοιχεία. "
+
+#. To translators: This message is included if the delegatee has not been given access
+#. to the private items.
+#.
+#: ../eplugin/exchange-delegates-user.c:465
+msgid "However, you are not permitted to see my private items."
+msgstr "Εντούτοις, δεν επιτρέπετε να δείτε τα ιδιωτικά μου στοιχεία."
+
+#: ../eplugin/exchange-delegates-user.c:497
+#, c-format
+msgid "You have been designated as a delegate for %s"
+msgstr "Οριστήκατε ως εκπρόσωπος για τον/την %s"
+
+#: ../eplugin/exchange-delegates.c:413
+msgid "Delegate To:"
+msgstr "Εκπρόσωπος του:"
+
+#: ../eplugin/exchange-delegates.c:413
+msgid "Delegate To"
+msgstr "Εκπρόσωπος του"
+
+#: ../eplugin/exchange-delegates.c:578
+#, c-format
+msgid "Remove the delegate %s?"
+msgstr "Αφαίρεση του εκπροσώπου %s;"
+
+#: ../eplugin/exchange-delegates.c:695
+msgid "Could not access Active Directory"
+msgstr "Αδύνατη η προσπέλαση στο Active Directory"
+
+#: ../eplugin/exchange-delegates.c:707
+msgid "Could not find self in Active Directory"
+msgstr "Αδυναμία εντοπισμού σας στο Active Directory"
+
+#: ../eplugin/exchange-delegates.c:720
+#, c-format
+msgid "Could not find delegate %s in Active Directory"
+msgstr "Αδυναμία εντοπισμού του εκπροσώπου %s στο Active Directory"
+
+#: ../eplugin/exchange-delegates.c:732
+#, c-format
+msgid "Could not remove delegate %s"
+msgstr "Αδυναμία αφαίρεσης του εκπροσώπου %s"
+
+#: ../eplugin/exchange-delegates.c:792
+msgid "Could not update list of delegates."
+msgstr "Αδυναμία ανανέωσης της λίστας των εκπροσώπων."
+
+#: ../eplugin/exchange-delegates.c:810
+#, c-format
+msgid "Could not add delegate %s"
+msgstr "Αδυναμία εισαγωγής του εκπροσώπου %s"
+
+#: ../eplugin/exchange-delegates.c:926
+msgid "Delegates"
+msgstr "Εκπρόσωποι"
+
+#: ../eplugin/exchange-delegates.c:941
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"Αυτοί οι χρήστες θα μπορούν να στέλνουν αλληλογραφία εκ μέρους \n"
+"σας και να έχουν πρόσβαση στους φακέλους σας με τα δικαιώματα που θα τους "
+"δώσετε."
+
+#: ../eplugin/exchange-delegates.c:965
+msgid "_Edit"
+msgstr "_Επεξεργασία"
+
+#: ../eplugin/exchange-delegates.c:995
+#: ../eplugin/exchange-permissions-dialog.c:920
+msgid "Name"
+msgstr "Όνομα"
+
+#: ../eplugin/exchange-delegates.c:1021
+msgid "Error reading delegates list."
+msgstr "Σφάλμα στην ανάγνωση της λίστας εκπροσώπων."
+
+#: ../eplugin/exchange-folder-permission.c:241
+#: ../eplugin/exchange-folder-permission.c:520
+#: ../eplugin/exchange-folder-permission.c:554
+#: ../eplugin/exchange-folder-permission.c:588
+msgid "Permissions..."
+msgstr "Δικαιώματα…"
+
+#: ../eplugin/exchange-folder-permission.c:243
+msgid "Check folder permissions"
+msgstr "Έλεγχος δικαιωμάτων φακέλου"
+
+#: ../eplugin/exchange-folder-permission.c:248
+#: ../eplugin/exchange-folder-permission.c:527
+#: ../eplugin/exchange-folder-permission.c:561
+#: ../eplugin/exchange-folder-permission.c:595
+msgid "Subscribe to Other User's Folder..."
+msgstr "Συνδρομή σε φάκελο ά_λλου χρήστη…"
+
+#: ../eplugin/exchange-folder-permission.c:250
+#: ../eplugin/exchange-folder-permission.c:529
+#: ../eplugin/exchange-folder-permission.c:563
+#: ../eplugin/exchange-folder-permission.c:597
+#: ../eplugin/exchange-folder-subscription.c:306
+msgid "Subscribe to Other User's Folder"
+msgstr "Συνδρομή σε φάκελο ά_λλου χρήστη…"
+
+#: ../eplugin/exchange-folder-permission.c:255
+#: ../eplugin/exchange-folder-permission.c:534
+#: ../eplugin/exchange-folder-permission.c:568
+#: ../eplugin/exchange-folder-permission.c:602
+msgid "Unsubscribe Folder..."
+msgstr "Αφαίρεση συνδρομής στον φάκελο…"
+
+#: ../eplugin/exchange-folder-permission.c:522
+msgid "Check calendar permissions"
+msgstr "Έλεγχος δικαιωμάτων του ημερολογίου"
+
+#: ../eplugin/exchange-folder-permission.c:556
+msgid "Check tasks permissions"
+msgstr "Έλεγχος δικαιωμάτων εργασιών"
+
+#: ../eplugin/exchange-folder-permission.c:590
+msgid "Check address book permissions"
+msgstr "Έλεγχος δικαιωμάτων του βιβλίου διευθύνσεων"
+
+#: ../eplugin/exchange-folder-size-display.c:136
+msgid "Exchange Folder Tree"
+msgstr "Φάκελοι του Exchange"
+
+#: ../eplugin/exchange-folder-size-display.c:151
+#, c-format
+msgid "Total size: %.2f KB"
+msgstr "Συνολικό μέγεθος: %.2f KB"
+
+#: ../eplugin/exchange-folder-size-display.c:179
+msgid "Folder Name"
+msgstr "Όνομα φακέλου"
+
+#. FIXME Limit to one user
+#: ../eplugin/exchange-folder-subscription.c:72
+msgid "User"
+msgstr "Χρήστης"
+
+#: ../eplugin/exchange-folder-subscription.c:322
+msgid "_Account:"
+msgstr "_Λογαριασμός:"
+
+#: ../eplugin/exchange-folder-subscription.c:329
+msgid "_Folder Name:"
+msgstr "_Όνομα φακέλου:"
+
+#: ../eplugin/exchange-folder-subscription.c:342
+msgid "_User:"
+msgstr "Ό_νομα χρήστη:"
+
+#: ../eplugin/exchange-folder.c:320 ../eplugin/exchange-folder.c:376
+#, c-format
+msgid "Really unsubscribe from folder \"%s\"?"
+msgstr "Πραγματικά θέλετε να ακυρώσετε την συνδρομή στο φάκελο \"%s\";"
+
+#: ../eplugin/exchange-folder.c:333 ../eplugin/exchange-folder.c:389
+#, c-format
+msgid "Unsubscribe from \"%s\""
+msgstr "Κατάργηση συ_νδρομής από \"%s\""
+
+#: ../eplugin/exchange-mail-send-options.c:220
+msgid "_Send Options"
+msgstr "Επι_λογές αποστολής"
+
+#: ../eplugin/exchange-mail-send-options.c:222
+msgid "Insert Send options"
+msgstr "Εισαγωγή ρυθμίσεων αποστολής"
+
+#. FIXME: Don't hardcode this
+#: ../eplugin/exchange-operations.c:122 ../eplugin/exchange-operations.c:167
+#: ../server/storage/exchange-account.c:1260
+msgid "Personal Folders"
+msgstr "Προσωπικοί φάκελοι"
+
+#: ../eplugin/exchange-permissions-dialog.c:278
+msgid "(Permission denied.)"
+msgstr "(Απαγόρευση δικαιωμάτων.)"
+
+#: ../eplugin/exchange-permissions-dialog.c:384
+msgid "Add User:"
+msgstr "Προσθήκη χρήστη:"
+
+#: ../eplugin/exchange-permissions-dialog.c:384
+#: ../eplugin/exchange-send-options.c:469
+msgid "Add User"
+msgstr "Προσθήκη χρήστη"
+
+#: ../eplugin/exchange-permissions-dialog.c:796
+msgid "Permissions"
+msgstr "Δικαιώματα"
+
+#: ../eplugin/exchange-permissions-dialog.c:813
+msgid "Role: "
+msgstr "Ρόλος:"
+
+#: ../eplugin/exchange-permissions-dialog.c:839
+msgid "Create items"
+msgstr "Δημιουργία αντικειμένων"
+
+#: ../eplugin/exchange-permissions-dialog.c:843
+msgid "Read items"
+msgstr "Αναγνωσμένα αντικείμενα"
+
+#: ../eplugin/exchange-permissions-dialog.c:847
+msgid "Create subfolders"
+msgstr "Δημιουργία υποφακέλων"
+
+#: ../eplugin/exchange-permissions-dialog.c:855
+msgid "Cannot Edit"
+msgstr "Αδυναμία επεξεργασίας"
+
+#: ../eplugin/exchange-permissions-dialog.c:861
+msgid "Edit Own Items"
+msgstr "Επεξεργασία των αντικειμένων σας"
+
+#: ../eplugin/exchange-permissions-dialog.c:867
+msgid "Edit Any Items"
+msgstr "Επεξεργασία οποιουδήποτε αντικείμενου"
+
+#: ../eplugin/exchange-permissions-dialog.c:881
+msgid "Folder owner"
+msgstr "Ιδιοκτήτης φακέλου"
+
+#: ../eplugin/exchange-permissions-dialog.c:885
+msgid "Folder contact"
+msgstr "Επαφή φακέλου"
+
+#: ../eplugin/exchange-permissions-dialog.c:889
+msgid "Folder visible"
+msgstr "Ορατός Φάκελος"
+
+#: ../eplugin/exchange-permissions-dialog.c:897
+msgid "Cannot Delete"
+msgstr "Αδυναμία διαγραφής"
+
+#: ../eplugin/exchange-permissions-dialog.c:904
+msgid "Delete Own Items"
+msgstr "Διαγραφή των αντικειμένων σας"
+
+#: ../eplugin/exchange-permissions-dialog.c:910
+msgid "Delete Any Items"
+msgstr "Διαγραφή οποιουδήποτε αντικείμενου"
+
+#: ../eplugin/exchange-permissions-dialog.c:924
+msgid "Role"
+msgstr "Ρόλος"
+
+#: ../eplugin/exchange-send-options.c:337
+msgid "Exchange - Send Options"
+msgstr "Exchange - Επιλογές αποστολής"
+
+#: ../eplugin/exchange-send-options.c:358
+msgid "Message Settings"
+msgstr "Ρυθμίσεις μηνύματος"
+
+#: ../eplugin/exchange-send-options.c:372
+msgid "I_mportance: "
+msgstr "Π_ροτεραιότητα: "
+
+#. Translators: Here's set a message sensitivity, which means for exchange
+#. one of Normal, Personal, Private, Confidential.
+#: ../eplugin/exchange-send-options.c:381
+msgid "_Sensitivity: "
+msgstr "_Ευαισθησία:"
+
+#: ../eplugin/exchange-send-options.c:393
+#: ../eplugin/exchange-send-options.c:403
+msgid "Normal"
+msgstr "Κανονικά"
+
+#: ../eplugin/exchange-send-options.c:394
+msgid "Personal"
+msgstr "Προσωπικά"
+
+#: ../eplugin/exchange-send-options.c:395
+msgid "Private"
+msgstr "Ιδιωτικά"
+
+#: ../eplugin/exchange-send-options.c:396
+msgid "Confidential"
+msgstr "Εμπιστευτικά"
+
+#: ../eplugin/exchange-send-options.c:404
+msgid "High"
+msgstr "Υψηλή"
+
+#: ../eplugin/exchange-send-options.c:405
+msgid "Low"
+msgstr "Χαμηλή"
+
+#: ../eplugin/exchange-send-options.c:407
+msgid "Send as Delegate"
+msgstr "Αποστολή ως εκπρόσωπος"
+
+#: ../eplugin/exchange-send-options.c:424
+msgid "_User"
+msgstr "Χ_ρήστης"
+
+#: ../eplugin/exchange-send-options.c:432
+msgid "Tracking Options"
+msgstr "Επιλογές εντοπισμού"
+
+#: ../eplugin/exchange-send-options.c:440
+msgid "Request a _delivery receipt for this message"
+msgstr "Ζητήστε μια _βεβαίωση παραλαβής για αυτό το μήνυμα"
+
+#: ../eplugin/exchange-send-options.c:445
+msgid "Request a _read receipt for this message"
+msgstr "Ζητήστε μια βεβαίωση ανάγνωσης για αυτό το μήνυμα"
+
+#: ../eplugin/exchange-user-dialog.c:135
+msgid "Select User"
+msgstr "Επιλογή χρήστη "
+
+#: ../eplugin/exchange-user-dialog.c:174
+msgid "Address Book..."
+msgstr "Βιβλίο Διευθύνσεων…"
+
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:1
+msgid "Activates the Evolution-Exchange extension package."
+msgstr "Ενεργοποιεί το πακέτο επέκτασης Evolution-Exchange."
+
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:2
+msgid "Exchange Operations"
+msgstr "Εργασίες του Exchange"
+
+#: ../eplugin/org-gnome-exchange-operations.eplug.xml.h:4
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:1
+msgid "Cannot access the \"Exchange settings\" tab in offline mode."
+msgstr ""
+"Αδυναμία πρόσβασης στην καρτέλα \"Ρυθμίσεις του Exchange\" σε λειτουργία "
+"χωρίς σύνδεση."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:2
+msgid "Cannot change password due to configuration problems."
+msgstr ""
+"Αδυναμία αλλαγής του κωδικού πρόσβασης λόγω προβλημάτων στης ρυθμίσεις "
+"παραμέτρων."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:3
+msgid "Cannot display folders."
+msgstr "Αδυναμία εμφάνισης φακέλων."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:4
+msgid "Cannot perform the operation."
+msgstr "Αδυναμία εκτέλεσης της λειτουργίας."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:5
+msgid ""
+"Changes to options for Exchange account \"{0}\" will only take effect after "
+"restarting Evolution."
+msgstr ""
+"Οι αλλαγές στις επιλογές για τον λογαριασμό του Exchange \"{0}\" θα "
+"εφαρμοστούν μόνο μετά από επανεκκίνηση του Evolution."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:6
+msgid "Could not authenticate to server."
+msgstr "Αδυναμία πιστοποποίησης στο διακομιστή. (λανθασμένος κωδικός;)"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:7
+msgid "Could not change password."
+msgstr "Αδυναμία αλλαγής κωδικού."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:8
+msgid ""
+"Could not configure Exchange account because \n"
+"an unknown error occurred. Check the URL, \n"
+"username and password, and try again."
+msgstr ""
+"Αδυναμία ρύθμισης λογαριασμού Exchange λόγω\n"
+" ενός άγνωστου σφάλματος. Ελέγξτε την URL, \n"
+"το όνομα χρήστη και κωδικό και προσπαθείστε ξανά."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:11
+msgid "Could not connect to Exchange server."
+msgstr "Αδυναμία σύνδεσης στον διακομιστή του Exchange."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:12
+msgid "Could not connect to server {0}."
+msgstr "Αδυναμία σύνδεσης στον διακομιστή {0}."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:13
+msgid "Could not determine folder permissions for delegates."
+msgstr "Αδυναμία καθορισμού δικαιωμάτων για τους φακέλους των εκπροσώπων."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:14
+msgid "Could not find Exchange Web Storage System."
+msgstr "Αδυναμία εντοπισμού του Exchange Web Storage System."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:15
+msgid "Could not locate server {0}."
+msgstr "Αδυναμία εντοπισμού του διακομιστή {0}."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:16
+msgid "Could not make {0} a delegate"
+msgstr "Αδυναμία ορισμού του {0} ως εκπροσώπου"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:17
+msgid "Could not read folder permissions"
+msgstr "Αδυναμία ανάγνωσης δικαιωμάτων φακέλου."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:18
+msgid "Could not read folder permissions."
+msgstr "Αδυναμία ανάγνωσης δικαιωμάτων φακέλου."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:19
+msgid "Could not read out-of-office state"
+msgstr "Αδυναμία ανάγνωσης κατάστασης εκτός-γραφείου"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:20
+msgid "Could not update folder permissions."
+msgstr "Αδυναμία ανανέωσης δικαιωμάτων φακέλου."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:21
+msgid "Could not update out-of-office state"
+msgstr "Αδυναμία ανανέωσης της κατάστασης εκτός-γραφείου"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:22
+msgid "Evolution requires a restart to load the subscribed user's mailbox"
+msgstr ""
+"Ο Evolution απαιτεί επανεκκίνηση για να φορτώσει την επιλεγμένη ταχυδρομική "
+"θυρίδα του χρήστη"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:23
+msgid "Exchange Account is offline."
+msgstr "Ο λογαριασμός Exchange είναι εκτός σύνδεσης"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:24
+msgid ""
+"Exchange Connector requires access to certain\n"
+"functionality on the Exchange Server that appears\n"
+"to be disabled or blocked. (This is usually \n"
+"unintentional.) Your Exchange Administrator will \n"
+"need to enable this functionality in order for \n"
+"you to be able to use Evolution Exchange Connector.\n"
+"\n"
+"For information to provide to your Exchange \n"
+"administrator, please follow the link below:\n"
+"\n"
+"{0}\n"
+"  "
+msgstr ""
+"Ο Evolution Connector απαιτεί πρόσβαση σε μια ορισμένη\n"
+"λειτουργία στον διακομιστή Exchange που φαίνεται να είναι\n"
+"ανενεργή ή μπλοκαρισμένη. (Αυτό γίνεται συνήθως κατά λάθος.)\n"
+"Ο διαχειριστής του Exchange θα πρέπει να ενεργοποιήσει\n"
+"αυτήν τη λειτουργία για να μπορέσετε να χρησιμοποιήσετε τον Evolution "
+"Connector.\n"
+"\n"
+"Για πληροφορίες που μπορείτε να δώσετε στο διαχειριστή του Exchange, "
+"ακολουθείστε\n"
+"την παρακάτω υπερσύνδεση:\n"
+"\n"
+"{0}\n"
+"  "
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:36
+msgid "Failed to update delegates:"
+msgstr "Αποτυχία στην ενημερώση των εκπροσώπων:"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:38
+msgid "Folder does not exist"
+msgstr "Ο φάκελος δεν υπάρχει"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:39
+msgid "Folder offline"
+msgstr "Φάκελος εκτός σύνδεσης"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:41
+msgid "Global Catalog Server is not reachable"
+msgstr "Δεν είναι εφικτή η σύνδεση στο Διακομιστή καθολικού καταλόγου"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:42
+msgid ""
+"If OWA is running on a different path, you must specify that in the account "
+"configuration dialog."
+msgstr ""
+"Αν ο OWA τρέχει σε διαφορετική διαδρομή, πρέπει να το δηλώσετε στο παράθυρο "
+"ρυθμίσεων του λογαριασμού σας."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:43
+msgid "Mailbox for {0} is not on this server."
+msgstr "Η ταχυδρομική θυρίδα για {0} δεν βρίσκετε σε αυτόν τον διακομιστή."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:44
+msgid "Make sure the URL is correct and try again."
+msgstr "Βεβαιωθείτε ότι το URL είναι σωστό και προσπαθείστε ξανά."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:45
+msgid "Make sure the server name is spelled correctly and try again."
+msgstr "Βεβαιωθείτε ότι το όνομα διακομιστή είναι σωστό και προσπαθείστε ξανά."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:46
+msgid "Make sure the username and password are correct and try again."
+msgstr ""
+"Βεβαιωθείτε ότι το όνομα χρήστη και ο κωδικός είναι σωστά και προσπαθείστε "
+"ξανά."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:47
+msgid "No Global Catalog server configured for this account."
+msgstr "Δεν υπάρχει διακομιστής καταλόγων ρυθμισμένος για αυτόν το λογαριασμό"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:48
+msgid "No mailbox for user {0} on {1}."
+msgstr "Δεν υπάρχει ταχυδρομική θυρίδα για το χρήστη {0} στο {1}."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:49
+msgid "No such user {0}"
+msgstr "Δεν υπάρχει ο χρήστης {0}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:50
+msgid "Password successfully changed."
+msgstr "Ο κωδικός πρόσβασης άλλαξε επιτυχώς."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:52
+msgid "Please enter a Delegate's ID or deselect the Send as a Delegate option."
+msgstr ""
+"Παρακαλώ, εισάγετε την ταυτότητα του εκπροσώπου ή από-επιλέξτε την Αποστολή "
+"ως δυνατότητα για τους Εκπροσώπους."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:53
+msgid "Please make sure the Global Catalog Server name is correct."
+msgstr ""
+"Παρακαλώ σιγουρευτείτε ότι το όνομα του Διακομιστή Καθολικού Καταλόγου είναι "
+"σωστό."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:54
+msgid "Please restart Evolution for changes to take effect"
+msgstr ""
+"Παρακαλώ κάντε επανεκκίνηση στον Evolution για να εφαρμοστούν οι αλλαγές"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:55
+msgid "Please select a user."
+msgstr "Παρακαλώ επιλέξτε έναν χρήστη."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:56
+msgid "Server rejected password because it is too weak."
+msgstr ""
+"Ο διακομιστής απέρριψε τον κωδικό πρόσβασης επειδή είναι πάρα πολύ αδύναμος."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:57
+msgid "The Exchange account will be disabled when you quit Evolution"
+msgstr ""
+"Ο λογαριασμός του Exchange θα τεθεί εκτός λειτουργίας όταν κλείσετε τον "
+"Evolution"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:58
+msgid "The Exchange account will be removed when you quit Evolution"
+msgstr "Ο λογαριασμός του Exchange θα αφαιρεθεί όταν κλείσετε τον Evolution"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:59
+msgid "The Exchange server is not compatible with Exchange Connector."
+msgstr ""
+"Ο διακομιστής του Exchange δεν είναι συμβατός με τον Exchange Connector."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:60
+msgid ""
+"The server is running Exchange 5.5. Exchange Connector \n"
+"supports Microsoft Exchange 2000 and 2003 only."
+msgstr ""
+"Το URL του διακομιστή Exchange που εισάγατε αφορά ένα διακομιστή Exchange "
+"5.5. \n"
+"Ο Exchange Connector υποστηρίζει μόνο Microsoft Exchange 2000 και 2003."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:62
+msgid ""
+"This probably means that your server requires \n"
+"you to specify the Windows domain name \n"
+"as part of your username (eg, &quot;DOMAIN\\user&quot;).\n"
+"\n"
+"Also, you may have typed your password incorrectly."
+msgstr ""
+"Αυτό πιθανώς σημαίνει ότι ο διακομιστής σας απαιτεί από εσάς\n"
+"να διευκρινίσετε το όνομα τομέα των Windows \n"
+"ως τμήμα του ονόματος χρήστη (πχ, &quot;DOMAIN\\user&quot;).\n"
+"\n"
+"Επίσης, μπορεί να είχατε πληκτρολογήσει τον κωδικό πρόσβασής σας λανθασμένα."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:67
+msgid "Try again with a different password."
+msgstr "Προσπαθήστε πάλι με έναν διαφορετικό κωδικό πρόσβασης."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:68
+msgid "Unable to add user to access control list:"
+msgstr "Αδύνατο να προστεθεί ο χρήστης στον κατάλογο ελέγχου πρόσβασης:"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:69
+msgid "Unable to edit delegates."
+msgstr "Αδυναμία επεξεργασίας των εκπροσώπων."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:70
+msgid "Unknown error looking up {0}"
+msgstr "Αναζήτηση άγνωστου σφάλματος {0}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:71
+msgid "Unknown error."
+msgstr "Άγνωστο σφάλμα "
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:72
+msgid "Unknown type"
+msgstr "Άγνωστος τύπος"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:73
+msgid "Unsupported operation"
+msgstr "Μη υποστηριζόμενη λειτουργία"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:74
+msgid "You are nearing your quota available for storing mail on this server."
+msgstr ""
+"Πλησιάζει το όριο χώρου που έχετε για την αποθήκευση του ταχυδρομείου σας σε "
+"αυτόν τον διακομιστή."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:75
+msgid ""
+"You are permitted to send a message on behalf of only one delegator at a "
+"time."
+msgstr ""
+"Σας επιτρέπετε να στείλετε ένα μήνυμα εξ ονόματος μόνο ενός εκπροσώπου τη "
+"φορά."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:76
+msgid "You cannot make yourself your own delegate"
+msgstr "Δεν μπορείτε να γίνετε εκπρόσωπος του εαυτού σας"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:77
+msgid "You have exceeded your quota for storing mail on this server."
+msgstr ""
+"Έχετε υπερβεί τη διαθέσιμη ποσόστωση για την αποθήκευση του ταχυδρομείου σας "
+"σε αυτόν τον διακομιστή."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:78
+msgid "You may only configure a single Exchange account."
+msgstr "Μπορείτε να ρυθμίσετε μόνο ένα λογαριασμό Exchange."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:79
+msgid ""
+"Your current usage is: {0} KB. Try to clear up some space by deleting some "
+"mail."
+msgstr ""
+"Η τρέχουσα χρήση σας είναι: {0} KB. Προσπαθήστε να κερδίσετε χώρο με τη "
+"διαγραφή κάποιων μηνυμάτων."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:80
+msgid ""
+"Your current usage is: {0} KB. You will not be able to either send or "
+"receive mail now."
+msgstr ""
+"Η τρέχουσα χρήση σας είναι: {0} KB. Τώρα δεν θα μπορείτε ούτε να στείλετε "
+"ούτε να λάβετε το ταχυδρομείο σας."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:81
+msgid ""
+"Your current usage is: {0} KB. You will not be able to send mail until you "
+"clear up some space by deleting some mail."
+msgstr ""
+"Η τρέχουσα χρήση σας είναι: {0} KB. Δεν θα είστε σε θέση να στείλετε "
+"μηνύματα έως ότου ελευθερώσετε χώρο με τη διαγραφή κάποιων μηνυμάτων. "
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:82
+msgid "Your password has expired."
+msgstr "Ο κωδικός σας έληξε."
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:83
+msgid "{0}"
+msgstr "{0}"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:84
+msgid "{0} cannot be added to an access control list"
+msgstr "{0} δεν μπορει να προστεθείτε σε έναν κατάλογο ελέγχου πρόσβασης"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:85
+msgid "{0} is already a delegate"
+msgstr "{0} είναι ήδη εκπρόσωπος"
+
+#: ../eplugin/org-gnome-exchange-operations.error.xml.h:86
+msgid "{0} is already in the list"
+msgstr "{0} είναι ήδη στον λίστα"
+
+#: ../server/lib/e2k-autoconfig.c:1692
+#: ../server/storage/exchange-account.c:955
+#, c-format
+msgid "Enter password for %s"
+msgstr "Εισάγετε κωδικό για %s"
+
+#: ../server/lib/e2k-autoconfig.c:1693
+#: ../server/storage/exchange-account.c:960
+msgid "Enter password"
+msgstr "Εισάγετε κωδικό"
+
+#. i18n: These are Outlook's words for the default roles in
+#. the folder permissions dialog.
+#: ../server/lib/e2k-security-descriptor.c:842
+msgid "Owner"
+msgstr "Ιδιοκτήτης"
+
+#: ../server/lib/e2k-security-descriptor.c:852
+msgid "Publishing Editor"
+msgstr "Επεξεργαστής δημοσιεύσεων"
+
+#: ../server/lib/e2k-security-descriptor.c:860
+msgid "Editor"
+msgstr "_Συντάκτης"
+
+#: ../server/lib/e2k-security-descriptor.c:867
+msgid "Publishing Author"
+msgstr "Συντάκτης δημοσιεύσεων"
+
+#: ../server/lib/e2k-security-descriptor.c:873
+msgid "Author"
+msgstr "Συντάκτης"
+
+#: ../server/lib/e2k-security-descriptor.c:878
+msgid "Non-editing Author"
+msgstr "Συντάκτης χωρίς δικαιώματα επεξεργασίας"
+
+#: ../server/lib/e2k-security-descriptor.c:882
+msgid "Reviewer"
+msgstr "Διορθωτής"
+
+#: ../server/lib/e2k-security-descriptor.c:884
+msgid "Contributor"
+msgstr "Συνεισφέρων"
+
+#: ../server/storage/e-storage.c:555
+msgid "No error"
+msgstr "Κανένα λάθος"
+
+#: ../server/storage/e-storage.c:559
+msgid "A folder with the same name already exists"
+msgstr "Ο φάκελος με το ίδιο όνομα υπάρχει ήδη"
+
+#: ../server/storage/e-storage.c:561
+msgid "The specified folder type is not valid"
+msgstr "Ο επιλεγμένος τύπος φακέλου δεν είναι αποδεκτός"
+
+#: ../server/storage/e-storage.c:563
+msgid "I/O error"
+msgstr "Σφάλμα εισόδου/εξόδου"
+
+#: ../server/storage/e-storage.c:565
+msgid "Not enough space to create the folder"
+msgstr "Αδυναμία δημιουργίας φακέλου λόγο περιορισμένου χώρου."
+
+#: ../server/storage/e-storage.c:567
+msgid "The folder is not empty"
+msgstr "Ο φάκελος δεν είναι άδειος"
+
+#: ../server/storage/e-storage.c:569
+msgid "The specified folder was not found"
+msgstr "Ο επιλεγμένος φάκελος δε βρέθηκε"
+
+#: ../server/storage/e-storage.c:571
+msgid "Function not implemented in this storage"
+msgstr "Η λειτουργία δεν υλοποιείται σε αυτήν την μονάδα αποθήκευσης"
+
+#: ../server/storage/e-storage.c:575
+msgid "Operation not supported"
+msgstr "Η λειτουργία δεν υποστηρίζεται"
+
+#: ../server/storage/e-storage.c:577
+msgid "The specified type is not supported in this storage"
+msgstr "Ο επιλεγμένος τύπος δεν υποστηρίζεται σε αυτήν την μονάδα αποθήκευσης"
+
+#: ../server/storage/e-storage.c:579
+msgid "The specified folder cannot be modified or removed"
+msgstr "Ο επιλεγμένος  φάκελος δεν μπορεί να τροποποιηθεί ή να αφαιρεθεί"
+
+#: ../server/storage/e-storage.c:581
+msgid "Cannot make a folder a child of one of its descendants"
+msgstr ""
+"Δεν μπορείτε να κάνετε υποφάκελο έναν φάκελο στους γονικούς του φακέλους"
+
+#: ../server/storage/e-storage.c:583
+msgid "Cannot create a folder with that name"
+msgstr "Δεν ήταν δυνατή η δημιουργία φακέλου με αυτό το όνομα"
+
+#: ../server/storage/e-storage.c:585
+msgid "This operation cannot be performed in offline mode"
+msgstr "Δεν ήταν δυνατή η εκτέλεση της ενέργιας σε λειτουργία χωρίς σύνδεση."
+
+#: ../server/storage/e-storage.c:587
+msgid "Unknown error"
+msgstr "Άγνωστο σφάλμα"
+
+#. i18n: This is the title of an "other user's folders"
+#. hierarchy. Eg, "John Doe's Folders".
+#: ../server/storage/exchange-account.c:640
+#, c-format
+msgid "%s's Folders"
+msgstr "Οι φάκελοι του/της %s"
+
+#: ../server/storage/exchange-account.c:1275
+msgid "Favorite Public Folders"
+msgstr "Αγαπημένοι κοινόχρηστοι φάκελοι"
+
+#. i18n: Outlookism
+#: ../server/storage/exchange-account.c:1292
+msgid "All Public Folders"
+msgstr "Δημόσιοι φάκελοι"
+
+#. i18n: Outlookism
+#: ../server/storage/exchange-account.c:1306
+msgid "Global Address List"
+msgstr "Καθολική λίστα διευθύνσεων"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:262
+msgid "Deleted Items"
+msgstr "Διαγραμμένα"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:263
+msgid "Drafts"
+msgstr "Πρόχειρα"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:265
+msgid "Journal"
+msgstr "Ημερολόγιο"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:266
+msgid "Notes"
+msgstr "Σημειώσεις"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:267
+msgid "Outbox"
+msgstr "Εξερχόμενα"
+
+#: ../server/storage/exchange-hierarchy-foreign.c:268
+msgid "Sent Items"
+msgstr "Απεσταλμένα"
+
+#: ../tools/exchange-autoconfig-wizard.c:176
+msgid "Welcome"
+msgstr "Καλώς ήλθατε"
+
+#: ../tools/exchange-autoconfig-wizard.c:176
+msgid ""
+"Welcome to Evolution Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Καλώς ήλθατε στο Evolution Connector για Microsoft Exchange.\n"
+"Οι επόμενες οθόνες θα σας βοηθήσουν να ρυθμίσετε το Evolution\n"
+"για να συνδεθεί στο Exchange λογαριασμό σας.\n"
+"\n"
+"Παρακαλώ κάντε κλικ στο κουμπί \"Επόμενο\" για συνέχεια."
+
+#: ../tools/exchange-autoconfig-wizard.c:188
+#: ../tools/exchange-autoconfig-wizard.c:361
+#: ../tools/exchange-autoconfig-wizard.c:448
+msgid "Exchange Configuration"
+msgstr "Ρύθμιση Exchange"
+
+#: ../tools/exchange-autoconfig-wizard.c:188
+msgid ""
+"Evolution Connector for Microsoft Exchange can use account information from "
+"your existing Outlook Web Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Ο Evolution Connector για Microsoft Exchange μπορεί να χρησιμοποιήσει τις "
+"πληροφορίες λογαριασμού από ένα υπάρχοντα λογαριασμό Outlook Web Access "
+"(OWA).\n"
+"\n"
+"Εισάγετε τη διεύθυνση της ιστοσελίδας OWA (URL), το όνομα χρήστη και τον "
+"κωδικό πρόσβασης και κάντε κλικ στο \"Επόμενο\".\n"
+
+#: ../tools/exchange-autoconfig-wizard.c:196
+msgid "OWA _URL:"
+msgstr "OWA _URL:"
+
+#: ../tools/exchange-autoconfig-wizard.c:200
+msgid "User_name:"
+msgstr "Όνομα _χρήστη:"
+
+#: ../tools/exchange-autoconfig-wizard.c:204
+msgid "_Password:"
+msgstr "_Κωδικός:"
+
+#: ../tools/exchange-autoconfig-wizard.c:209
+msgid "_Remember this password"
+msgstr "Α_πομνημόνευση αυτού του κωδικού"
+
+#: ../tools/exchange-autoconfig-wizard.c:282
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Αδυναμία σύνδεσης στο διακομιστή Exchange.\n"
+"Βεβαιωθείτε ότι το URL είναι σωστό (δώστε \"%s\" αντί για \"%s\";) "
+"προσπαθείστε ξανά."
+
+#: ../tools/exchange-autoconfig-wizard.c:290
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Αδυναμία εντοπισμού διακομιστή Exchange.\n"
+"Βεβαιωθείτε ότι το όνομα διακομιστή είναι σωστό και προσπαθείστε ξανά."
+
+#: ../tools/exchange-autoconfig-wizard.c:299
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Αδυναμία πιστοποίησης στο διακομιστή Exchange.\n"
+"Βεβαιωθείτε ότι το όνομα χρήστη και ο κωδικός είναι σωστά και προσπαθείστε "
+"ξανά."
+
+#: ../tools/exchange-autoconfig-wizard.c:306
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Αδυναμία πιστοποίησης στο διακομιστή Exchange.\n"
+"Βεβαιωθείτε ότι το όνομα χρήστη και ο κωδικός είναι σωστά και προσπαθείστε "
+"ξανά.\n"
+"\n"
+"Ίσως θα χρειαστεί να βάλετε το Windows domain name ως μέρος του ονόματος "
+"χρήστη (πχ, \"MY-DOMAIN\\%s\")."
+
+#: ../tools/exchange-autoconfig-wizard.c:318
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Αδυναμία εύρεσης δεδομένων OWA στο καθορισμένο URL.\n"
+"Βεβαιωθείτε ότι το URL είναι σωστό και προσπαθείστε ξανά."
+
+#: ../tools/exchange-autoconfig-wizard.c:324
+msgid ""
+"Evolution Connector for Microsoft Exchange requires access to certain "
+"functionality on the Exchange server that appears to be disabled or "
+"blocked.  (This is usually unintentional.)  Your Exchange administrator will "
+"need to enable this functionality in order for you to be able to use the "
+"Evolution Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Ο Evolution Connector για Microsoft Exchange απαιτεί πρόσβαση σε μια "
+"ορισμένη λειτουργία στον Exchange διακομιστή που φαίνεται να είναι ανενεργή "
+"ή μπλοκαρισμένη. (Αυτό γίνεται συνήθως κατά λάθος.) Ο διαχειριστής του "
+"Exchange θα πρέπει να ενεργοποιήσει αυτήν τη λειτουργία για να μπορέσετε να "
+"χρησιμοποιήσετε τον Evolution Connector.\n"
+"\n"
+"Για πληροφορίες που μπορείτε να δώσετε στο διαχειριστή του Exchange, "
+"ακολουθείστε τον παρακάτω δεσμό:"
+
+#: ../tools/exchange-autoconfig-wizard.c:337
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 server. "
+"Evolution Connector for Microsoft Exchange supports Microsoft Exchange 2000 "
+"and 2003 only."
+msgstr ""
+"Το URL του διακομιστή Exchange που εισάγατε αφορά ένα διακομιστή Exchange "
+"5.5. Ο Evolution Connector υποστηρίζει μόνο Microsoft Exchange 2000 και 2003."
+
+#: ../tools/exchange-autoconfig-wizard.c:345
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Αδυναμία ρύθμισης λογαριασμού Exchange λόγω ενός άγνωστου σφάλματος. Ελέγξτε "
+"το URL, όνομα χρήστη και κωδικό και προσπαθείστε ξανά."
+
+#: ../tools/exchange-autoconfig-wizard.c:361
+msgid ""
+"Evolution Connector for Microsoft Exchange could not find the Global Catalog "
+"replica for your site. Please enter the name of your Global Catalog server. "
+"You may need to ask your system administrator for the correct value."
+msgstr ""
+"Ο Evolution Connector για Microsoft Exchange δεν μπόρεσε να βρεί το "
+"αντίγραφο καθολικού καταλόγου για την ιστοσελίδα σας. Παρακαλώ εισάγετε το "
+"όνομα του εξυπηρετητή καθολικού καταλόγου σας. Ίσως θα χρειατεί να ρωτήσετε "
+"το διαχειριστή του συστήματός σας για τη σωστή τιμή."
+
+#: ../tools/exchange-autoconfig-wizard.c:369
+msgid "GC _Server:"
+msgstr "_Διακομιστής GC:"
+
+#: ../tools/exchange-autoconfig-wizard.c:402
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"Αδυναμία πιστοποίησης στον εξυπηρετητή Καθολικού καταλόγου. Ισως θα "
+"χρειαστεί να πάτε πίσω και να καθορίσετε το Windows domain name ως μέρος του "
+"ονόματος χρήστη ) (eg, \"MY-DOMAIN\\%s\")."
+
+#: ../tools/exchange-autoconfig-wizard.c:409
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Αδυναμία σύνδεσης στον καθορσιμένο διακομιστή.\n"
+"Ελέγξτε το όνομα διακομιστή και προσπαθείστε ξανά."
+
+#: ../tools/exchange-autoconfig-wizard.c:421
+msgid "Configuration Failed"
+msgstr "Αποτυχία ρύθμισης"
+
+#: ../tools/exchange-autoconfig-wizard.c:421
+msgid ""
+"Evolution Connector for Microsoft Exchange has encountered a problem "
+"configuring your Exchange account."
+msgstr ""
+"Ο Evolution Connector για Microsoft Exchange αντιμετώπισε ένα πρόβλημα στη "
+"ρύθμιση του λογαριασμού Exchange."
+
+#: ../tools/exchange-autoconfig-wizard.c:448
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\"."
+msgstr ""
+"Οι πληροφορίες του λογαριασμού σας είναι οι ακόλουθες. Παρακαλώ διορθώστε τα "
+"όποια σφάλματα, και μετά πατήστε \"Μπροστά\"."
+
+#: ../tools/exchange-autoconfig-wizard.c:456
+msgid "Full _Name:"
+msgstr "Πλήρες _Όνομα:"
+
+#: ../tools/exchange-autoconfig-wizard.c:460
+msgid "_Email Address:"
+msgstr "_Διεύθυνση ηλ. αλληλογραφίας:"
+
+#: ../tools/exchange-autoconfig-wizard.c:464
+msgid "Make this my _default account"
+msgstr "Κα_θορισμος αυτού του λογαριασμού ως προεπιλεγμένο"
+
+#: ../tools/exchange-autoconfig-wizard.c:481
+#: ../tools/exchange-autoconfig-wizard.c:485
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: ../tools/exchange-autoconfig-wizard.c:508
+msgid "Done"
+msgstr "Έγινε"
+
+#: ../tools/exchange-autoconfig-wizard.c:508
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your settings."
+msgstr ""
+"Ο λογαριασμός Connector είναι έτοιμος για χρήση. Πατήστε το κουμπί \"Εφαρμογή"
+"\" για να αποθηκεύσετε \n"
+" τις ρυθμίσεις σας"
+
+#: ../tools/exchange-autoconfig-wizard.c:557
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Σφάλμα ρύθμισης συστήματος.\n"
+"Αδυναμία δημιουργίας νέου λογαριασμού."
+
+#: ../tools/exchange-autoconfig-wizard.c:572
+msgid "You may only configure a single Exchange account"
+msgstr "Μπορείτε να ρυθμίσετε μόνο ένα λογαριασμό Exchange"
+
+#: ../tools/exchange-autoconfig-wizard.c:747
+msgid "Evolution Connector for Microsoft Exchange Configuration"
+msgstr "Ρύθμιση του Evolution Connector για Microsoft Exchange"
+
+#: ../tools/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Αλλαγή του κωδικού για το διακομιστή Exchange"
+
+#: ../tools/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Μέ_γεθος φακέλου"
+
+#: ../tools/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Λήψη του μεγέθους των προσωπικών φακέλων"
+
+#: ../tools/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "Συνδρομή σε φάκελο ά_λλου χρήστη…"
+
+#: ../tools/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Συνδρομή σε φάκελο που ανήκει σε κάποιον άλλο χρήστη στο διακομιστή"
+
+#: ../tools/ximian-connector.xml.h:6
+msgid ""
+"Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr ""
+"Κατάργηση Συνδρομής από φάκελο που έχει προστεθεί μέσω \"Συνδρομή σε φάκελλο "
+"άλλου χρήστη\""
+
+#: ../tools/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Προβολή η αλλαγή των ρυθμίσεων εκπροσώπων ημερολογίου Exchange "
+
+#: ../tools/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr ""
+"Δείτε ή αλλάξτε την κατάσταση του Εκτός Γραφείου και το μήνυμα αυτόματης "
+"απάντησης"
+
+#: ../tools/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "Α_λλαγή κωδικού Exchange…"
+
+#: ../tools/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "Βοηθός εκ_προσώπου"
+
+#: ../tools/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "Βοηθός Εκ_τός γραφείου"
+
+#: ../tools/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "Κατάργηση συ_νδρομής από φάκελο άλλου χρήστη"
+
+#~ msgid "Authentication failed"
+#~ msgstr "Αποτυχία πιστοποίησης"
+
+#~ msgid "Could not find the calendar"
+#~ msgstr "Αδυναμία εύρεσης του ημερολογίου"
+
+#~ msgid "Cannot get folder info in offline mode."
+#~ msgstr "Αδυναμία λήψης πληροφοριών φακέλου σε λειτουργία χωρίς σύνδεση"
+
+#~ msgid "Folders Size"
+#~ msgstr "Μέ_γεθος Φακέλου"
+
+#~ msgid ""
+#~ "Unable to schedule resource '%s' for recurring meetings.\n"
+#~ "You must book each meeting separately."
+#~ msgstr ""
+#~ "Αδυναμία προγραμματισμού πηγής '%s' για επαναλαμβανόμενες συναντήσεις.\n"
+#~ " Θα πρέπει να προγραμματίσετε κάθε συνάντηση ξεχωριστά."
+
+#~ msgid "Always check for new mail in this folder"
+#~ msgstr "Να γίνεται πάντα έλεγχος για νέα αλληλογραφία σε αυτό τον φάκελο"
+
+#~ msgid "Evolution Exchange backend process"
+#~ msgstr "Διεργασία backend για Evolution Exchange"
+
+#~ msgid "Could not connect to %s: Please restart Evolution"
+#~ msgstr "Αδυναμία σύνδεσης σε %s: Παρακαλώ επανεκκινήστε το Evolution"
+
+#~ msgid "Count not read file '%s': %s"
+#~ msgstr "Αδυναμία ανάγνωσης του αρχείου '%s': %s"
+
+#~ msgid "Wrong size file '%s'"
+#~ msgstr "Λανθασμένο μέγεθος αρχείου '%s'"
+
+#~ msgid "Path too long: %s"
+#~ msgstr "Η διαδρομή είναι πολύ μεγάλη: %s"
+
+#~ msgid "Could not start status thread: %s"
+#~ msgstr "Αδυναμία έναρξης αλληλουχίας κατάστασης: %s"
+
+#~ msgid "Lost connection to %s"
+#~ msgstr "Χάθηκε η σύνδεση σε  %s"
+
+#~ msgid "Error communicating with %s: %s"
+#~ msgstr "Σφάλμα επικοινωνίας με  %s: %s"
+
+#~ msgid "Evolution Addressbook Exchange backend"
+#~ msgstr "Evolution Addressbook Exchange backend"
+
+#~ msgid "Evolution Calendar Exchange backend"
+#~ msgstr "Evolution Calendar Exchange backend"
+
+#~ msgid "Evolution Connector for Microsoft Exchange"
+#~ msgstr "Evolution Connector για Microsoft Exchange"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "Migrating Exchange Folders..."
+#~ msgstr "Εισαγωγή φακέλων Exchange…"
+
+#~ msgid ""
+#~ "The location and hierarchy of the Evolution exchange account folders are "
+#~ "changed since Evolution %d.%d.%d.\n"
+#~ "\n"
+#~ "Please be patient while Evolution migrates your folders..."
+#~ msgstr ""
+#~ "Η τοποθεσία και η ιεραρχία των φακέλων λογαριασμού  Evolution exchange "
+#~ "έχουν αλλάξει από το Evolution %d.%d.%d.\n"
+#~ "\n"
+#~ "Παρακαλώ περιμένετε μέχρι το Evolution εισάγει τους φακέλους σας..."
+
+#~ msgid ""
+#~ "Warning: Evolution could not migrate all the Exchange account data from "
+#~ "the version %d.%d.%d. \n"
+#~ "The data hasn't been deleted, but will not be seen by this version of "
+#~ "Evolution"
+#~ msgstr ""
+#~ "Προειδοποίηση: Το Evolution δεν μπόρεσε να εισάγει όλα τα δεδομένα "
+#~ "λογαριασμού Exchange  από την έκδοση %d.%d.%d. \n"
+#~ "Τα δεδομένα δεν διαγράφηκαν, αλλά δεν θα είναι ορατά από αυτή την έκδοση "
+#~ "του Evolution"
+
+#~ msgid "Migrating `%s':"
+#~ msgstr "Εισαγωγή `%s':"
+
+#~ msgid "<b>Out of Office Message:</b>"
+#~ msgstr "<b>Μήνυμα Εκτός Γραφείου:</b>"
+
+#~ msgid "ok_button"
+#~ msgstr "ok_button"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "<b>Permissions</b>"
+#~ msgstr "<b> Δικαιώματα</b>"
+
+#~ msgid "Connecting..."
+#~ msgstr "Γίνεται σύνδεση..."
+
+#~ msgid "Evolution Connector for Microsoft Exchange Setup Tool"
+#~ msgstr ""
+#~ "Εργαλείο εγκατάστασης του Evolution Connector για Microsoft Exchange "
+
+#~ msgid "Ximian Connector for Exchange"
+#~ msgstr "Ximian Connector for Exchange"
+
+#~ msgid "Ximian Connector Configuration"
+#~ msgstr "Ρύθμιση Ximian Connector "

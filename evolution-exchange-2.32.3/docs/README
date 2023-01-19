@@ -1,0 +1,43 @@
+active-directory	Background on Active Directory and Global
+			Catalog
+
+debug			Info on debugging Connector and poking at the
+			Exchange server by hand
+
+entryids		Notes on Exchange ENTRYIDs and permanenturls
+
+forms			Very minimal notes on Outlook forms
+
+http			Notes on Connector/OWA's use of HTTP/WebDAV
+
+ietf/			Relevant RFCs and (expired) Internet Drafts.
+			Exchange's implementation of the drafts may
+			not completely match the specifications.
+
+mail			Notes on communication between the Camel
+			Exchange provider and the backend process.
+			Discussion of Exchange UIDs vs IMAP UIDs.
+			Different kinds of objects in Exchange mail
+			folders.
+
+mapi-properties		List of documented MAPI/CDO properties from
+			the SDK docs, plus many more from MSDN,
+			CDOLive, OutlookSpy, etc.
+
+non-ipm-subtree		Info about the invisible folder hierarchy in
+			each mailbox
+
+openldap-ntlm.diff	A patch against OpenLDAP to allow us to do
+			NTLM authentication
+
+rules                   Notes on Exchange server-side rules
+
+sending-mail		Sending mail, WebDAV and otherwise
+
+service-packs		Mapping from Exchange version/build numbers to
+			service pack numbers
+
+subscriptions		MS's WebDAV extensions for subscribing to
+			change notifications.
+
+voting			How voting buttons work

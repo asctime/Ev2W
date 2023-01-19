@@ -1,0 +1,682 @@
+<!-- ##### SECTION Title ##### -->
+CamelStore
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT CamelStore ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL CamelStore::folder-created ##### -->
+<para>
+
+</para>
+
+@camelstore: the object which received the signal.
+@Param2: 
+
+<!-- ##### SIGNAL CamelStore::folder-deleted ##### -->
+<para>
+
+</para>
+
+@camelstore: the object which received the signal.
+@Param2: 
+
+<!-- ##### SIGNAL CamelStore::folder-opened ##### -->
+<para>
+
+</para>
+
+@camelstore: the object which received the signal.
+@Param2: 
+
+<!-- ##### SIGNAL CamelStore::folder-renamed ##### -->
+<para>
+
+</para>
+
+@camelstore: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL CamelStore::folder-subscribed ##### -->
+<para>
+
+</para>
+
+@camelstore: the object which received the signal.
+@Param2: 
+
+<!-- ##### SIGNAL CamelStore::folder-unsubscribed ##### -->
+<para>
+
+</para>
+
+@camelstore: the object which received the signal.
+@Param2: 
+
+<!-- ##### MACRO CAMEL_STORE_ERROR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### ENUM CamelStoreError ##### -->
+<para>
+
+</para>
+
+@CAMEL_STORE_ERROR_INVALID: 
+@CAMEL_STORE_ERROR_NO_FOLDER: 
+
+<!-- ##### STRUCT CamelFolderInfo ##### -->
+<para>
+
+</para>
+
+@next: 
+@parent: 
+@child: 
+@uri: 
+@name: 
+@full_name: 
+@flags: 
+@unread: 
+@total: 
+
+<!-- ##### MACRO CAMEL_FOLDER_NOSELECT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_NOINFERIORS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_CHILDREN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_NOCHILDREN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_SUBSCRIBED ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_VIRTUAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_SYSTEM ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_VTRASH ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_SHARED_TO_ME ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_SHARED_BY_ME ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_MASK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_BIT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_NORMAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_INBOX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_OUTBOX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_TRASH ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_JUNK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_FOLDER_TYPE_SENT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_READ ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_WRITE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_SUBSCRIPTIONS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_VTRASH ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FILTER_INBOX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_VJUNK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_PROXY ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_IS_MIGRATING ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_ASYNC ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_REAL_JUNK_FOLDER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_CREATE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_EXCL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_BODY_INDEX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_PRIVATE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_CREATE_EXCL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_INFO_FAST ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_INFO_RECURSIVE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_INFO_SUBSCRIBED ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_INFO_NO_VIRTUAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO CAMEL_STORE_FOLDER_INFO_SUBSCRIPTION_LIST ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION camel_store_get_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@folder_name: 
+@flags: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_get_inbox ##### -->
+<para>
+
+</para>
+
+@store: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_get_trash ##### -->
+<para>
+
+</para>
+
+@store: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_get_junk ##### -->
+<para>
+
+</para>
+
+@store: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_create_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@parent_name: 
+@folder_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_delete_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@folder_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_rename_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@old_namein: 
+@new_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_folder_created ##### -->
+<para>
+
+</para>
+
+@store: 
+@info: 
+
+
+<!-- ##### FUNCTION camel_store_folder_deleted ##### -->
+<para>
+
+</para>
+
+@store: 
+@info: 
+
+
+<!-- ##### FUNCTION camel_store_folder_renamed ##### -->
+<para>
+
+</para>
+
+@store: 
+@old_name: 
+@info: 
+
+
+<!-- ##### FUNCTION camel_store_folder_subscribed ##### -->
+<para>
+
+</para>
+
+@store: 
+@info: 
+
+
+<!-- ##### FUNCTION camel_store_folder_unsubscribed ##### -->
+<para>
+
+</para>
+
+@store: 
+@info: 
+
+
+<!-- ##### FUNCTION camel_store_sync ##### -->
+<para>
+
+</para>
+
+@store: 
+@expunge: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_get_folder_info ##### -->
+<para>
+
+</para>
+
+@store: 
+@top: 
+@flags: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_free_folder_info ##### -->
+<para>
+
+</para>
+
+@store: 
+@fi: 
+
+
+<!-- ##### FUNCTION camel_store_free_folder_info_full ##### -->
+<para>
+
+</para>
+
+@store: 
+@fi: 
+
+
+<!-- ##### FUNCTION camel_store_free_folder_info_nop ##### -->
+<para>
+
+</para>
+
+@store: 
+@fi: 
+
+
+<!-- ##### FUNCTION camel_folder_info_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_folder_info_free ##### -->
+<para>
+
+</para>
+
+@fi: 
+
+
+<!-- ##### FUNCTION camel_folder_info_build ##### -->
+<para>
+
+</para>
+
+@folders: 
+@namespace: 
+@separator: 
+@short_names: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_folder_info_clone ##### -->
+<para>
+
+</para>
+
+@fi: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_supports_subscriptions ##### -->
+<para>
+
+</para>
+
+@store: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_folder_is_subscribed ##### -->
+<para>
+
+</para>
+
+@store: 
+@folder_name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_subscribe_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@folder_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_unsubscribe_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@folder_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_noop ##### -->
+<para>
+
+</para>
+
+@store: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_folder_uri_equal ##### -->
+<para>
+
+</para>
+
+@store: 
+@uri0: 
+@uri1: 
+@Returns: 
+
+
+<!-- ##### FUNCTION camel_store_can_refresh_folder ##### -->
+<para>
+
+</para>
+
+@store: 
+@info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### ENUM CamelStoreLock ##### -->
+<para>
+
+</para>
+
+@CAMEL_STORE_FOLDER_LOCK: 
+
+<!-- ##### FUNCTION camel_store_lock ##### -->
+<para>
+
+</para>
+
+@store: 
+@lock: 
+
+
+<!-- ##### FUNCTION camel_store_unlock ##### -->
+<para>
+
+</para>
+
+@store: 
+@lock: 
+
+

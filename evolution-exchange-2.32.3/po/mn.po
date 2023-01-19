@@ -1,0 +1,948 @@
+# translation of evolution-exchange.gnome-2-14.po to Mongolian
+# translation of PACKAGE.
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# <>, 2006.
+# Munkhtugs <munkhtugs@newcomsystems.mn>
+# Badral <badral@openmn.org>, 2006.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange.gnome-2-14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-04-12 04:58+0200\n"
+"PO-Revision-Date: 2006-08-14 18:57+0200\n"
+"Last-Translator: Badral <badral@openmn.org>\n"
+"Language-Team: Mongolian <openmn-translation@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: ../addressbook/e-book-backend-exchange.c:1867
+#: ../addressbook/e-book-backend-gal.c:1499 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "Хайж байна..."
+
+#: ../addressbook/e-book-backend-gal.c:267
+msgid "Reconnecting to LDAP server..."
+msgstr "LDAP серверт дахин холбогдож байна..."
+
+#: ../addressbook/e-book-backend-gal.c:1363
+msgid "Receiving LDAP search results..."
+msgstr "Хайлтын үр дүнг LDAP хүлээн авч байна..."
+
+#: ../addressbook/e-book-backend-gal.c:1522
+msgid "Error performing search"
+msgstr "Хайлтыг гүйцэтгэх үеийн алдаа"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1934
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"Дахин давтагдах уулзалтанд зориулагдсан '%s' нөөцийг хуваарилах боломжгүй.\n"
+"Уулзалт бүрийг тус тусад нь бүртгэх хэрэгтэй."
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:1952
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "Сонгогдсон хугацааны туршид '%s' нөөц ашиглалтанд байна."
+
+#: ../camel/camel-exchange-folder.c:222
+msgid "You cannot expunge in offline mode."
+msgstr "Та холбогдоогүй горимд хасч чадахгүй байна."
+
+#: ../camel/camel-exchange-folder.c:253
+msgid "No Subject"
+msgstr "Агуулгагүй байна"
+
+#: ../camel/camel-exchange-folder.c:407
+msgid "This message is not available in offline mode."
+msgstr "Холбогдоогүй горимд мессэж явах боломжгүй байна."
+
+#: ../camel/camel-exchange-folder.c:642
+msgid "Moving messages"
+msgstr "Мессежүүдийг шилжүүлэх"
+
+#: ../camel/camel-exchange-folder.c:643
+msgid "Copying messages"
+msgstr "Мессэжүүдийг хуулах"
+
+#: ../camel/camel-exchange-folder.c:1014
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "%s директор үүсч чадахгүй байна:%s"
+
+#: ../camel/camel-exchange-folder.c:1024
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%s-д зориулагдсан нэгдсэн дүгнэлт ачаалагдаж чадсангүй"
+
+#: ../camel/camel-exchange-folder.c:1032
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "%s-д зориулагдсан нөөц үүсгэж чадсангүй"
+
+#: ../camel/camel-exchange-folder.c:1042
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s-д зориулагдсан тэмдэглэл үүсгэж чадсангүй"
+
+#: ../camel/camel-exchange-folder.c:1087
+msgid "Scanning for changed messages"
+msgstr "Өөрчлөгдсөн мессэжүүдийг шалгаж байна"
+
+#: ../camel/camel-exchange-folder.c:1113
+msgid "Fetching summary information for new messages"
+msgstr "Шинэ мессэжүүдийн нэгдсэн мэдээллийг дуудаж байна"
+
+#: ../camel/camel-exchange-journal.c:339
+msgid "No folder name found\n"
+msgstr "Хавтасын нэр  олдсонгүй\n"
+
+#: ../camel/camel-exchange-journal.c:372 ../mail/mail-stub-exchange.c:2549
+#: ../mail/mail-stub-exchange.c:2593 ../mail/mail-stub-exchange.c:2628
+#: ../mail/mail-stub-exchange.c:2655 ../mail/mail-stub-exchange.c:2702
+#: ../mail/mail-stub-exchange.c:2724
+msgid "Folder doesn't exist"
+msgstr "Хавтас байхгүй байна"
+
+#: ../camel/camel-exchange-journal.c:436
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "Холбогдоогүй горимд мессэж нэмэгдэхгүй байна: нөөцлөх боломжгүй"
+
+#: ../camel/camel-exchange-journal.c:452
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "Холбогдоогүй горимд мессэж нэмэгдэж чаддаггүй: %s"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:44
+msgid "Windows User_name:"
+msgstr "Хэрэглэгчийн_нэр харуулах"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:49
+msgid "Global Address List / Active Directory"
+msgstr "Глобал хаягийн жагсаалт / Идэвхитэй Директор"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:53
+msgid "_Global Catalog server name:"
+msgstr "_Глобал Каталог серверийн нэр:"
+
+#: ../camel/camel-exchange-provider.c:55
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "_GAL хариултын тооны хязгаар:%s"
+
+#: ../camel/camel-exchange-provider.c:58
+msgid "Options"
+msgstr "Сонголтууд"
+
+#: ../camel/camel-exchange-provider.c:60
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "_Нэвтрэх үгний хугацаа дуусах үеийн сануулгын үе:%s"
+
+#: ../camel/camel-exchange-provider.c:62
+msgid "Automatically synchroni_ze account locally"
+msgstr "Тухайн газрын хувийн бүртгэл автоматаар давхцах"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:65
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "_Энэ сервер дахь мессэж хадгалах хайрцганд байгаа шинэ мессэжүүдэд шүүлтүүрийг ашиглана уу."
+
+#: ../camel/camel-exchange-provider.c:67
+msgid "Check new messages for _Junk contents"
+msgstr "_Хаягдал утгуудын хувьд шинэ мессэжүүдийг шалгана"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "Зөвхөн электрон мэйл мессэжийг хадгалах хавтсан дахь хаягдал мессэжүүдийг шалгана"
+
+#: ../camel/camel-exchange-provider.c:79
+msgid "Microsoft Exchange"
+msgstr "Microsoft Exchange"
+
+#: ../camel/camel-exchange-provider.c:81
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "Microsoft Exchange серверийн мэйл (ба бусад өгөгдөл)-д ажиллаж байна"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:97
+msgid "Secure Password"
+msgstr "Хамгаалалтын Нэвтрэх үг"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:100
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr "Энэ сонголт нь хамгаалах нэвтрэх үгийг (NTLM) ашиглаж байгаа Exchange серверт холбогдоно."
+
+#: ../camel/camel-exchange-provider.c:108
+msgid "Plaintext Password"
+msgstr "Тодорхой текстэн Нэвтрэх үг"
+
+#: ../camel/camel-exchange-provider.c:110
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr "Энэ сонголт нь стандартын тодорхой текстэн нэвтрэх үг ашигладаг Exchange серверт холбогддог."
+
+#: ../camel/camel-exchange-store.c:308
+#, c-format
+msgid "Exchange server %s"
+msgstr "Exchange сервер %s"
+
+#: ../camel/camel-exchange-store.c:311
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "%s-д байгаа бүртэлийг %s-д солих"
+
+#: ../camel/camel-exchange-store.c:352
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%s-ийн %s нэвтрэх үгийг оруулах"
+
+#: ../camel/camel-exchange-store.c:403
+msgid "Evolution Exchange backend process"
+msgstr "Evolution Exchange-ийн далд процесс"
+
+#: ../camel/camel-exchange-store.c:444
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"Серверт батлах боломжгүй байна. (Нэвтрэх үг буруу байна?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:486
+#, c-format
+msgid "No such folder %s"
+msgstr "%s тийм хавтас байхгүй "
+
+#: ../camel/camel-exchange-store.c:563
+msgid "Cannot subscribe folder in offline mode."
+msgstr "Холбогдоогүй горим дахь хавтсыг зөвшөөрч чадахгүй."
+
+#: ../camel/camel-exchange-store.c:580
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "Холбогдоогүй горим дахь хавтсыг зөвшөөрч чадна."
+
+#: ../camel/camel-exchange-store.c:695
+msgid "Cannot get folder info in offline mode."
+msgstr "Холбогдоогүй горим дахь хавтасын мэдээллийг авах боломжгүй."
+
+#: ../camel/camel-exchange-store.c:766
+msgid "Cannot create folder in offline mode."
+msgstr "Холбогдоогүй горимд хавтас үүсгэж чадахгүй."
+
+#: ../camel/camel-exchange-store.c:793
+msgid "Cannot delete folder in offline mode."
+msgstr "Холбогдоогүй горимд хавтсыг устгаж чадахгүй."
+
+#: ../camel/camel-exchange-store.c:809
+msgid "Cannot rename folder in offline mode."
+msgstr "Холбогдоогүй горимд хавтасын нэрийг өөрчлөх боломжгүй."
+
+#: ../camel/camel-exchange-transport.c:110
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "Exchange transport нь зөвхөн Exchange мэйлийн эх үүсвэрээр ашиглагдана"
+
+#: ../camel/camel-exchange-transport.c:121
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "Мессэж илгээх боломжгүй: нэг ба олон хүлээн авагчид хүчингүй байна."
+
+#: ../camel/camel-exchange-transport.c:131
+msgid "Could not find 'From' address in message"
+msgstr "Мессэжид хаягнаас хайх боломжгүй"
+
+#: ../camel/camel-stub.c:134
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "Socket үүсгэж чадсангүй:%s"
+
+#: ../camel/camel-stub.c:149
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "%s руу холбогдож чадсангүй:%s"
+
+#: ../camel/camel-stub.c:179
+#, c-format
+msgid "Path too long: %s"
+msgstr "Зам хэтэрхий урт:%s"
+
+#: ../camel/camel-stub.c:205
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "Холболтын мэдээлэл эхлэхгүй байна: %s"
+
+#: ../camel/camel-stub.c:457
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s руу холболт тасарсан."
+
+#: ../camel/camel-stub.c:461
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "%s-тэй холбогдох үеийн алдаа:%s"
+
+#: ../mail/mail-stub-exchange.c:257
+msgid "No such folder"
+msgstr "Тийм хавтас байхгүй"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:280 ../mail/mail-stub-exchange.c:1390
+#: ../mail/mail-stub-exchange.c:2526 ../mail/mail-stub-exchange.c:2566
+#: ../mail/mail-stub-exchange.c:2632 ../mail/mail-stub-exchange.c:2676
+#: ../mail/mail-stub-exchange.c:2739
+msgid "Permission denied"
+msgstr "Хандах эрх зөвшөөрөгдсөнгүй"
+
+#: ../mail/mail-stub-exchange.c:578 ../mail/mail-stub-exchange.c:600
+msgid "Could not open folder: Permission denied"
+msgstr "Хавтасыг нээж чадсангүй:Хандах эрхгүй байна"
+
+#: ../mail/mail-stub-exchange.c:584 ../mail/mail-stub-exchange.c:707
+msgid "Could not open folder"
+msgstr "Хавтасыг нээж чадсангүй"
+
+#: ../mail/mail-stub-exchange.c:755
+msgid "No such folder."
+msgstr "Тийм хавтас байхгүй."
+
+#: ../mail/mail-stub-exchange.c:764
+msgid "Could not create folder."
+msgstr "Хавтас үүсгэж чадсангүй."
+
+#: ../mail/mail-stub-exchange.c:844
+msgid "Could not open Deleted Items folder"
+msgstr "Устгагдсан хавтасын тэмдэглэлийг нээх боломжгүй байна"
+
+#: ../mail/mail-stub-exchange.c:1175 ../mail/mail-stub-exchange.c:1216
+msgid "Could not get new messages"
+msgstr "Шинэ мессэжүүдийг авч чадсангүй"
+
+#: ../mail/mail-stub-exchange.c:1386
+msgid "Could not empty Deleted Items folder"
+msgstr "Устгагдсан хавтасын тэмдэглэл хоосон байж болохгүй"
+
+#: ../mail/mail-stub-exchange.c:1463
+msgid "Could not append message; mailbox is over quota"
+msgstr "Мэйлийн хайрцаг дүүрсэн учраас мессэж нэмэх боломжгүй"
+
+#: ../mail/mail-stub-exchange.c:1464
+msgid "Could not append message"
+msgstr "Мессэжийг нэмэх боломжгүй"
+
+#: ../mail/mail-stub-exchange.c:2016
+msgid "No such message"
+msgstr "Тийм мессэж байхгүй"
+
+#: ../mail/mail-stub-exchange.c:2069
+msgid "Message has been deleted"
+msgstr "Мессэж устгагдсан байна"
+
+#: ../mail/mail-stub-exchange.c:2071
+msgid "Error retrieving message"
+msgstr "Буцааж хүлээн авсан мессэжийн алдаа"
+
+#: ../mail/mail-stub-exchange.c:2113
+msgid "Mailbox does not support full-text searching"
+msgstr "Мэйлийн хайрцаг нь бүтэн текст хайхыг дэмждэггүй"
+
+#: ../mail/mail-stub-exchange.c:2211
+msgid "Unable to move/copy messages"
+msgstr "Мессэжүүдийг шилжүүлэх/хуулах боломжгүй байна"
+
+#: ../mail/mail-stub-exchange.c:2441
+msgid "No mail submission URI for this mailbox"
+msgstr "Энэ мэйлийн хайрцганд зориулагдсан URI мэйлийн дэд өгөгдөл байхгүй."
+
+#: ../mail/mail-stub-exchange.c:2477
+msgid "Server won't accept mail via Exchange transport"
+msgstr "Сервер нь Exchange transport-аар дамжуулж мэйлийг хүлээн авдаггүй."
+
+#: ../mail/mail-stub-exchange.c:2479
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr "Таны бүртгэлд явах мэйлийн хаягаар <%s>\n-ийг хэрэглэх зөвшөөрөл байхгүй байна."
+
+#: ../mail/mail-stub-exchange.c:2491
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"Мессэж илгээх боломжгүй.\n"
+"Таны хувийн бүртгэл хэмжээнээс хэтэрсэн байна."
+
+#: ../mail/mail-stub-exchange.c:2495
+msgid "Could not send message"
+msgstr "Мессэж илгээх боломжгүй байна"
+
+#: ../mail/mail-stub-exchange.c:2518 ../mail/mail-stub-exchange.c:2571
+#: ../mail/mail-stub-exchange.c:2636 ../mail/mail-stub-exchange.c:2681
+#: ../mail/mail-stub-exchange.c:2745
+msgid "Generic error"
+msgstr "Ерөнхий алдаа"
+
+#: ../mail/mail-stub-exchange.c:2522
+msgid "Folder already exists"
+msgstr "Хавтас аль хэдийн ажиллаж байна"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "Evolution Exchange-ийн далд хаягийн жагсаалт"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "Evolution Exchange-ийн далд хуанли"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Ximian Connector for Exchange"
+msgstr "Exchange-д зориулагдсан Ximian Connector"
+
+#: ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"Exchange серверт холбогдсонгүй.\n"
+"URL нь зөв эсэхийг шалгаад (\"%s\"?-ний оронд \"%s\"-г оруулаад үзнэ үү) дахин оролдоно уу"
+
+#: ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"Exchange серверийг байрлуулж чадсангүй.\n"
+"Серверийн нэр зөв бичигдсэн эсэхийг шалгаад дахин оролдоно уу."
+
+#: ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"Exchange серверт шалгах боломжгүй байна.\n"
+"Хэрэглэгчийн нэр болон нэвтрэх үгийг шалгаад дахин оролдоно уу."
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"Exchange серверт шалгах боломжгүй байна.\n"
+"Хэрэглэгчийн нэр болон нууц үг зөв эсэхийг шалгаад дахин оролдоно уу.\n"
+"\n"
+"Магадгүй тодорхой Windows домайн нэрийг та өөрийнхөө хэрэглэгчийн нэрний хэсэг болгох хэрэгтэй (жишээ нь \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"Заасан URL-д OWA өгөгдлийг олж чадахгүй байна.\n"
+"URL зөв эсэхийг шалгаад дахин оролдоно уу"
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Ximian Connector нь нээгдэх боломжгүй юмуу эсвэл түгжигдсэн Exchange"
+"Server-ийн тодорхой үйлдэлд оролцох нөхцөлийг шаарддаг. (Энэ нь дандаа санаандгүй байдаг.)  Таны Exchange Administrator нь Ximian Connector-ийг ашигласанаараа энэ үйл ажиллагааг хялбар болгодог.\n"
+"\n"
+"Таны Exchange administrator-луу оруулах мэдээллийг, доорхи холбоосоос харна уу:"
+
+#: ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr "Таны санал болгосон Exchange серверийн URL нь Exchange 5.5 серверт бас тохирно. Ximian Connector нь зөвхөн Microsoft Exchange 2000, 2003-ийг дэмждэг."
+
+#: ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr ""
+"Exchange бүртгэлийг тохируулах боломжгүй учраас гарсан алдаа тодорхой бус байна."
+"URL, хэрэглэгчийн нэр, нэвтрэх үгийг шалгаад дахин оролдоно уу."
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr "Глобал каталог серверийг шалгах боломжгүй. Магадгүй та тодорхой Windows домайн нэрийг өөрийн хэрэглэгчийн нэрний хэсэг болгох хэрэгтэй (жишээ нь \"MY-DOMAIN\\%s\")."
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"Тусгайлан заасан серверт холбогдох боломжгүй байна.\n"
+"Серверийн нэрийг шалгаад дахин оролдоно уу."
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "Тодорхой бус"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"Системийн тохиргооны алдаа.\n"
+"Шинэ бүртгэл үүсгэж чадахгүй байна."
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr "Та зөвхөн энгийн Exchange бүртгэлийг тохируулж болно"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "Тохиргоо буруу байна"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "Гүйцэтгэх"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "Электрон шуудангийн хаяг:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "Exchange Тохиргоо"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "Овог нэр:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "GC Сервер:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "Үүнийг миний анхны бүртгэлээр хийнэ үү"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "OWA URL:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "Нэвтрэх үг:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "Энэ нэвтрэх үгийг сануулах"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "Хэрэглэгчийн нэр:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "Тавтай морил уу"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"Microsoft Exchange-ийн Ximian Connector-д тавтай морилно уу.\n"
+"Дараагийн жижиг дэлгэц нь таны Exchange бүртгэлтэй холбогдох Evolution-ий тохиргоонд тусална.\n"
+"\n"
+"Үргэлжлүүлэхийн тулд \"урагшлах\" товчийг дарна уу."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Ximian холбогчийн тохиргоо"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Ximian Connector нь одоо ажиллаж байгаа Outlook Web Access (OWA)-ийн "
+"бүртгэлээс дансны мэдээллийг ашиглаж чадна.\n"
+"\n"
+"OWA сайтын хаяг (URL), хэрэглэгчийн нэр, нууц үгийг оруулсаны дараа \"урагшлах\"-ийг дарна.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr ""
+"Ximmian Connector таны хуудсанд зориулагдсан Глобал каталогны хуулбарыг олсонгүй."
+"Та өөрийнхөө Глобал каталог серверийн нэрийг оруулна уу. Магадгүй үнэн зөв үнэлгээний тулд та систем administrator-ийнхаа нэрийг асуух хэрэгтэй.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr "Ximian Connector таны Exchange тохиргооны асуудалтай тулгарлаа.\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr "Одоо таны холбогчын бүртгэл ажиллахад бэлэн боллоо. Та орчноо хадгалахын тулд \"ашиглах\" товчлуурыг дарна уу."
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr "Таны бүртгэлийн мэдээлэл доор өгөгдсөн байна. Алдаануудыг засаад \"урагшлах\" товчлуурыг дарна уу.\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr ""
+"Таны мэдээлэлд зориулагдсан нууц үг одоогийн нэвтрэх үгтэй тохирохгүй байна."
+"Зөв нэвтрэх үгээ оруулна уу"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "Хоёр нууц үг тохирсонгүй. Нэвтрэх үгээ дахин оруулна уу."
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "Нэвтрэх үгээ солих"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "Нэвтрэх үгээ батлах:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "Одоогийн нэвтрэх үг:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "Шинэ нэвтрэх үг:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr "Таны одоогийн нэвтрэх үгний хугацаа дууссан байна. Одоо нэвтрэх үгээ өөрчилнө үү."
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "Зохиогч (унших, үүсгэх)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "Х_уанли"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "Хо_лбоо барих"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "Хандах эрхүүдийг төлөөлөх"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "Төлөөлөгчүүд"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "Засварлагч (унших, үүсгэх, засварлах)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "Аль нь ч биш"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "Хандах эрхүүдийн хувьд"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "Шүүмжлэгч (зөвхөн унших)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr "Эдгээр хэрэглэгчид таны нэр дээр мэйл илгээх боломжтой\n ба тэдэнд өгсөн зөвшөөрлөөр орох боломжтойгоор хавтсаа тохируулна уу."
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "_Төлөөлөгч хувийн тэмдэглэлийг харж чадахгүй"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "_Засварлах"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "_Мэйл хадгалах хайрцаг:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "_Үүргүүд:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "Exchange хавтасны мод хэлбэр"
+
+#: ../storage/exchange-migrate.c:58
+msgid "Migrating Exchange Folders..."
+msgstr "Exchange Хавтас шилжиж байна..."
+
+#: ../storage/exchange-migrate.c:66
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"Evolution %d.%d.%d.- ээс хойш Evolution exchange бүртгэлийн хавтаснуудын байрлал ба давуу эрх өөрчлөгдсөн.\n"
+"\n"
+"Evolution-ий явцад таны хавтаснууд шилжиж байгаа тул түр хүлээнэ үү..."
+
+#: ../storage/exchange-migrate.c:99
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"Сануулга: Evolution нь %d.%d.%d.-хэлбэрээс бүх Exchange бүртгэлийн мэдээллийг шилжүүлж чадахгүй байна. \n"
+"Өгөгдөл устаагүй боловч Evolution- ий энэ хэлбэрийн үед харагдах боломжгүй байна."
+
+#: ../storage/exchange-migrate.c:130
+#, c-format
+msgid "Migrating `%s':"
+msgstr "`%s' шилжиж байна:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>Таны одоогийн зэрэглэл бол \"Out of the Office\". </b>\n"
+"\n"
+"Та\"оффис дахь\" зэрэглэлээ өөрчлөхийг хүсч байна уу? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>Оффисоос гарах мессэж:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>Зэрэглэл:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>Энэ мессэж нь явуулсан хүндээ автоматаар очих болно\n"
+"Таныг оффисдоо байхгүй үед таньд мэйл илгээнэ.</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "Би одоогоор оффисдоо байна"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "Би одоогоор оффис дээрээ байхгүй байна"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "Үгүй, Зэрэглэлээ өөрчлөхгүй"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "Оффисийн туслагчаас гарсан байна"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "Тийм, Зэрэглэлээ өөрчлөнө"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "Нэвтрэх үгийн хугацаа дуусах Сануулга..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "Таны нэвтрэх үг 7 хоногийн дараа хугацаа нь дуусна..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "_Нэвтрэх үгээ өөрчлөх"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ok_товчлуур"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "...."
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>Хандах эрхүүд</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "Устгаж чадахгүй байна"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "Засварлаж чадахгүй байна"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "Тэмдэглэлүүдийг үүсгэх"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "Дэд хавтасуудыг үүсгэх"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "Ямар нэг тэмдэглэлийг устгах"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "Өөрийн тэмдэглэлийг устгах"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "Ямар нэг тэмдэглэлийг засварлах"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "Өөрийн тэмдэглэлийг засварлах"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "Хавтас хоорондын хамаарал"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "Хавтас эзэмшигч"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "Хавтас харагдахаар байна."
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "Тэмдэглэлүүдийг унших"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "Үүрэг: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "Холбогдож байна..."
+
+#: ../storage/main.c:183
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "Microsoft Exchange-ийн Ximian Connector"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "Microsoft Exchange тохиргооны программын Ximian Connector"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "Exchange серверийн нэвтрэх үгээ өөрчилнө үү"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "Хавтасын _Хэмжээ"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "Хувийн хавтаснуудын хэмжээг шаардах"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "_Өөр Хэрэглэгчийн Хавтаст бүртгүүлэх..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "Сервер дахь зарим өөр хэрэглэгчид хамаарагдах хавтаст бүртгүүлэх"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid "Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "\"Өөр Хэрэглэгчийн хавтаст бүртгүүлэх\" гэсэнтэй хамт бүртгэлээс ыхасах"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "Exchange хуанли төлөөлөх орчныг харах буюу өөрчлөх."
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "Оффисээс гарах нөхцөлийг харах буюу өөрчлөөд мессэжийг автоматаар хариулна уу."
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "_Exchange нэвтрэх үгийг өөрчлөх..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "_Төлөөлөгчийн Туслагч"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "_Оффисийн туслагчаас гарах"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "_Өөр Хэрэглэгчийн Хавтаснаас захиалахгүй"
+

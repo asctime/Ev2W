@@ -1,0 +1,42 @@
+--- plugins/caldav/caldav-browse-server.c
++++ plugins/caldav/caldav-browse-server.c
+@@ -945,6 +945,19 @@ poll_for_message_sent_cb (gpointer data)
+ 	return again;
+ }
+ 
++static gconstpointer
++compat_libxml_output_buffer_get_content (xmlOutputBufferPtr buf,
++                                         gsize *out_len)
++{
++#ifdef LIBXML2_NEW_BUFFER
++       *out_len = xmlOutputBufferGetSize (buf);
++       return xmlOutputBufferGetContent (buf);
++#else
++       *out_len = buf->buffer->use;
++       return buf->buffer->content;
++#endif
++}
++
+ static void
+ send_xml_message (xmlDocPtr doc, gboolean depth_1, const gchar *url, GObject *dialog, process_message_cb cb, gpointer cb_user_data, const gchar *info)
+ {
+@@ -953,6 +966,9 @@ send_xml_message (xmlDocPtr doc, gboolean depth_1, const gchar *url, GObject *di
+ 	SoupSession *session;
+ 	SoupMessage *message;
+ 	xmlOutputBufferPtr buf;
++	gconstpointer content;
++	gsize length;
++
+ 	guint poll_id;
+ 	struct poll_data *pd;
+ 
+@@ -979,7 +995,8 @@ send_xml_message (xmlDocPtr doc, gboolean depth_1, const gchar *url, GObject *di
+ 
+ 	soup_message_headers_append (message->request_headers, "User-Agent", "Evolution/" VERSION);
+ 	soup_message_headers_append (message->request_headers, "Depth", depth_1 ? "1" : "0");
+-	soup_message_set_request (message, "application/xml", SOUP_MEMORY_COPY, (const gchar *) buf->buffer->content, buf->buffer->use);
++	content = compat_libxml_output_buffer_get_content (buf, &length);
++	soup_message_set_request (message, "application/xml", SOUP_MEMORY_COPY, content, length);
+ 
+ 	/* Clean up the memory */
+ 	xmlOutputBufferClose (buf);

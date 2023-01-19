@@ -1,0 +1,79 @@
+Autoconfiguration
+-----------------
+This document explains how system administrators at sites with large
+numbers of Connector users can customize the details of Connector
+account autoconfiguration. (The basic details about how and when
+autoconfiguration happens are in the Evolution user documentation.)
+
+
+The general idea is that you can provide certain autoconfiguration
+hints by creating a file /etc/ximian/connector.conf or
+${PREFIX}/etc/connector.conf with information like:
+
+    OWA-URL: https://exchange.rupertcorp.com/exchange/
+    Global-Catalog: ad1.rupertcorp.com
+
+
+Basic Autoconfiguration
+-----------------------
+When autoconfiguring, Connector asks the user for the OWA URL, plus
+the user's username and password. If the Exchange server supports NTLM
+("secure password") authentication, Connector will be able to find the
+NT and Windows 2000 domain names, eg "RUPERTCORP" and "rupertcorp.com"
+respectively. If DNS is set up correctly, Connector can then find the
+name of a Global Catalog server for that domain:
+
+    $ host -t srv _gc._tcp.rupertcorp.com
+    _gc._tcp.rupertcorp.com SRV 0 100 3268 ad1.rupertcorp.com.
+
+And given the global catalog, and certain information stored in the
+Exchange mailbox, Connector can then find the user's full name, email
+address, etc, to complete autoconfiguration.
+
+
+Explicitly specifying the OWA URL
+---------------------------------
+You can specify a default OWA URL to use with the "OWA-URL" hint. Eg:
+
+    OWA-URL: https://exchange.rupertcorp.com/exchange/
+
+
+Explicitly specifying the Global Catalog server
+-----------------------------------------------
+If the Exchange server has been configured to not allow NTLM
+authentication, or if there is an intercepting HTTP proxy on your
+network that unintentionally interferes with NTLM authentication, then
+Connector will have to use Plaintext Password authentication. In this
+case, Connector will not be able to autodetect the global catalog
+name. Similarly, if the user is trying to configure Connector from
+outside the firewall, it is possible that the DNS pointer to the GC
+server will not be visible.
+
+In either case, you can add a "Global-Catalog" hint to the config
+file:
+
+    Global-Catalog: ad1.rupertcorp.com
+
+If autoconfiguration cannot determine the global catalog name (either
+automatically or by looking in the config file) then the user will
+need to enter it manually.
+
+
+Explicitly specifying domain information
+----------------------------------------
+You can also add:
+
+    NT-Domain: RUPERTCORP
+
+This is useful if Plaintext Password authentication will be required
+and the Exchange server does not automatically assume that domain.
+
+
+Other config hints
+------------------
+GAL-Limit: 500
+    Default search size limit for GAL searches.
+
+Disable-Plaintext: True
+    Makes autoconfiguration refuse to fall back to Plaintext Password
+    if NTLM doesn't work.

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dialog Utilities (Legacy)</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Date-and-Time-Formatting.html" title="Date and Time Formatting">
+<link rel="next" href="eshell-Text-to-HTML-Conversion.html" title="Text to HTML Conversion">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Date-and-Time-Formatting.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Text-to-HTML-Conversion.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-Dialog-Utilities-(Legacy).synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-Dialog-Utilities-(Legacy).description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Dialog Utilities (Legacy)">
+<a name="eshell-Dialog-Utilities-(Legacy)"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-Dialog-Utilities-(Legacy).top_of_page"></a>Dialog Utilities (Legacy)</span></h2>
+<p>Dialog Utilities (Legacy)</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-Dialog-Utilities-(Legacy).synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">void</span>                <a class="link" href="eshell-Dialog-Utilities-(Legacy).html#e-notice" title="e_notice ()">e_notice</a>                            (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> parent</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkMessageDialog.html#GtkMessageType"><span class="type">GtkMessageType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Dialog-Utilities-(Legacy).html#e-dialog-editable-set" title="e_dialog_editable_set ()">e_dialog_editable_set</a>               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="eshell-Dialog-Utilities-(Legacy).html#e-dialog-editable-get" title="e_dialog_editable_get ()">e_dialog_editable_get</a>               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="eshell-Dialog-Utilities-(Legacy).html#e-dialog-combo-box-set" title="e_dialog_combo_box_set ()">e_dialog_combo_box_set</a>              (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *value_map</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-Dialog-Utilities-(Legacy).html#e-dialog-combo-box-get" title="e_dialog_combo_box_get ()">e_dialog_combo_box_get</a>              (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *value_map</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-Dialog-Utilities-(Legacy).description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-Dialog-Utilities-(Legacy).details"></a><h2>Details</h2>
+<div class="refsect2" title="e_notice ()">
+<a name="e-notice"></a><h3>e_notice ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_notice                            (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> parent</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkMessageDialog.html#GtkMessageType"><span class="type">GtkMessageType</span></a> type</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *format</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+Convenience function to show a dialog with a message and an "OK"
+button.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>the dialog's parent window, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type of dialog (<a href="http://library.gnome.org/devel/gtk/GtkMessageDialog.html#GTK-MESSAGE-INFO:CAPS"><code class="literal">GTK_MESSAGE_INFO</code></a>, <a href="http://library.gnome.org/devel/gtk/GtkMessageDialog.html#GTK-MESSAGE-WARNING:CAPS"><code class="literal">GTK_MESSAGE_WARNING</code></a>,
+or <a href="http://library.gnome.org/devel/gtk/GtkMessageDialog.html#GTK-MESSAGE-ERROR:CAPS"><code class="literal">GTK_MESSAGE_ERROR</code></a>)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td>printf-style format string, followed by arguments
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_dialog_editable_set ()">
+<a name="e-dialog-editable-set"></a><h3>e_dialog_editable_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_dialog_editable_set               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>
+Sets the string value inside a <span class="type">GtkEditable-derived</span> widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkEditable.html"><span class="type">GtkEditable</span></a> widget.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>String value.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_dialog_editable_get ()">
+<a name="e-dialog-editable-get"></a><h3>e_dialog_editable_get ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             e_dialog_editable_get               (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>);</pre>
+<p>
+Queries the string value inside a <span class="type">GtkEditable-derived</span> widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkEditable.html"><span class="type">GtkEditable</span></a> widget.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> String value.  You should free it when you are done with it.
+This function can return NULL if the string could not be converted from
+GTK+'s encoding into UTF8.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_dialog_combo_box_set ()">
+<a name="e-dialog-combo-box-set"></a><h3>e_dialog_combo_box_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                e_dialog_combo_box_set              (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> value</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *value_map</code></em>);</pre>
+<p>
+Sets the selected item in a <a href="http://library.gnome.org/devel/gtk/GtkComboBox.html"><span class="type">GtkComboBox</span></a>.  Please read the description of
+<code class="function">e_dialog_radio_set()</code> to see how <em class="parameter"><code>value_map</code></em> maps enumeration values to item
+indices.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkComboBox.html"><span class="type">GtkComboBox</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>Enumerated value.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_map</code></em> :</span></p></td>
+<td>Map from enumeration values to array indices.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_dialog_combo_box_get ()">
+<a name="e-dialog-combo-box-get"></a><h3>e_dialog_combo_box_get ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_dialog_combo_box_get              (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWidget.html"><span class="type">GtkWidget</span></a> *widget</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *value_map</code></em>);</pre>
+<p>
+Queries the selected item in a <a href="http://library.gnome.org/devel/gtk/GtkComboBox.html"><span class="type">GtkComboBox</span></a>.  Please read the description
+of <code class="function">e_dialog_radio_set()</code> to see how <em class="parameter"><code>value_map</code></em> maps enumeration values to item
+indices.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>A <a href="http://library.gnome.org/devel/gtk/GtkComboBox.html"><span class="type">GtkComboBox</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_map</code></em> :</span></p></td>
+<td>Map from enumeration values to array indices.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Enumeration value which corresponds to the selected item in the
+combo box.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

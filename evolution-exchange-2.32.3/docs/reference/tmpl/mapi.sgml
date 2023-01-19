@@ -1,0 +1,166 @@
+<!-- ##### SECTION Title ##### -->
+MAPI
+
+<!-- ##### SECTION Short_Description ##### -->
+MAPI and CDO constants
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM MapiAccess ##### -->
+<para>
+
+</para>
+
+@MAPI_ACCESS_MODIFY: 
+@MAPI_ACCESS_READ: 
+@MAPI_ACCESS_DELETE: 
+@MAPI_ACCESS_CREATE_HIERARCHY: 
+@MAPI_ACCESS_CREATE_CONTENTS: 
+@MAPI_ACCESS_CREATE_ASSOCIATED: 
+
+<!-- ##### ENUM CdoInstanceTypes ##### -->
+<para>
+
+</para>
+
+@cdoSingle: 
+@cdoMaster: 
+@cdoInstance: 
+@cdoException: 
+
+<!-- ##### ENUM MapiObjectType ##### -->
+<para>
+
+</para>
+
+@MAPI_STORE: 
+@MAPI_ADDRBOOK: 
+@MAPI_FOLDER: 
+@MAPI_ABCONT: 
+@MAPI_MESSAGE: 
+@MAPI_MAILUSER: 
+@MAPI_ATTACH: 
+@MAPI_DISTLIST: 
+@MAPI_PROFSECT: 
+@MAPI_STATUS: 
+@MAPI_SESSION: 
+@MAPI_FORMINFO: 
+
+<!-- ##### ENUM MapiPrDisplayType ##### -->
+<para>
+
+</para>
+
+@DT_MAILUSER: 
+@DT_DISTLIST: 
+@DT_FORUM: 
+@DT_AGENT: 
+@DT_ORGANIZATION: 
+@DT_PRIVATE_DISTLIST: 
+@DT_REMOTE_MAILUSER: 
+@DT_MODIFIABLE: 
+@DT_GLOBAL: 
+@DT_LOCAL: 
+@DT_WAN: 
+@DT_NOT_SPECIFIC: 
+@DT_FOLDER: 
+@DT_FOLDER_LINK: 
+@DT_FOLDER_SPECIAL: 
+
+<!-- ##### ENUM MapiPrRecipientType ##### -->
+<para>
+
+</para>
+
+@MAPI_ORIG: 
+@MAPI_TO: 
+@MAPI_CC: 
+@MAPI_BCC: 
+
+<!-- ##### ENUM MapiPrMessageFlags ##### -->
+<para>
+
+</para>
+
+@MAPI_MSGFLAG_READ: 
+@MAPI_MSGFLAG_UNMODIFIED: 
+@MAPI_MSGFLAG_SUBMIT: 
+@MAPI_MSGFLAG_UNSENT: 
+@MAPI_MSGFLAG_HASATTACH: 
+@MAPI_MSGFLAG_FROMME: 
+@MAPI_MSGFLAG_ASSOCIATED: 
+@MAPI_MSGFLAG_RESEND: 
+@MAPI_MSGFLAG_RN_PENDING: 
+@MAPI_MSGFLAG_NRN_PENDING: 
+@MAPI_MSGFLAG_ORIGIN_X400: 
+@MAPI_MSGFLAG_ORIGIN_INTERNET: 
+@MAPI_MSGFLAG_ORIGIN_MISC_EXT: 
+
+<!-- ##### ENUM MapiPrAction ##### -->
+<para>
+
+</para>
+
+@MAPI_ACTION_REPLIED: 
+@MAPI_ACTION_FORWARDED: 
+
+<!-- ##### ENUM MapiPrActionFlag ##### -->
+<para>
+
+</para>
+
+@MAPI_ACTION_FLAG_REPLIED_TO_SENDER: 
+@MAPI_ACTION_FLAG_REPLIED_TO_ALL: 
+@MAPI_ACTION_FLAG_FORWARDED: 
+
+<!-- ##### ENUM MapiPrFlagStatus ##### -->
+<para>
+
+</para>
+
+@MAPI_FOLLOWUP_UNFLAGGED: 
+@MAPI_FOLLOWUP_COMPLETED: 
+@MAPI_FOLLOWUP_FLAGGED: 
+
+<!-- ##### ENUM MapiPrPriority ##### -->
+<para>
+
+</para>
+
+@MAPI_PRIO_URGENT: 
+@MAPI_PRIO_NORMAL: 
+@MAPI_PRIO_NONURGENT: 
+
+<!-- ##### ENUM MapiPrSensitivity ##### -->
+<para>
+
+</para>
+
+@MAPI_SENSITIVITY_NONE: 
+@MAPI_SENSITIVITY_PERSONAL: 
+@MAPI_SENSITIVITY_PRIVATE: 
+@MAPI_SENSITIVITY_COMPANY_CONFIDENTIAL: 
+
+<!-- ##### ENUM MapiPrImportance ##### -->
+<para>
+
+</para>
+
+@MAPI_IMPORTANCE_LOW: 
+@MAPI_IMPORTANCE_NORMAL: 
+@MAPI_IMPORTANCE_HIGH: 
+

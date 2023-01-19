@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Alert Handling</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Evolution Shell Reference Manual">
+<link rel="up" href="ch02.html" title="Basic Utility Functions">
+<link rel="prev" href="eshell-Mail-Accounts.html" title="Mail Accounts">
+<link rel="next" href="eshell-Bit-Arrays-(Legacy).html" title="Bit Arrays (Legacy)">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eshell-Mail-Accounts.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Evolution Shell Reference Manual</th>
+<td><a accesskey="n" href="eshell-Bit-Arrays-(Legacy).html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eshell-User-Alert-Handling.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#eshell-User-Alert-Handling.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="User Alert Handling">
+<a name="eshell-User-Alert-Handling"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eshell-User-Alert-Handling.top_of_page"></a>User Alert Handling</span></h2>
+<p>User Alert Handling</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eshell-User-Alert-Handling.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-INFO:CAPS" title="E_ALERT_INFO">E_ALERT_INFO</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-INFO-PRIMARY:CAPS" title="E_ALERT_INFO_PRIMARY">E_ALERT_INFO_PRIMARY</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-WARNING:CAPS" title="E_ALERT_WARNING">E_ALERT_WARNING</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-WARNING-PRIMARY:CAPS" title="E_ALERT_WARNING_PRIMARY">E_ALERT_WARNING_PRIMARY</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-ERROR:CAPS" title="E_ALERT_ERROR">E_ALERT_ERROR</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-ERROR-PRIMARY:CAPS" title="E_ALERT_ERROR_PRIMARY">E_ALERT_ERROR_PRIMARY</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-ASK-FILE-EXISTS-OVERWRITE:CAPS" title="E_ALERT_ASK_FILE_EXISTS_OVERWRITE">E_ALERT_ASK_FILE_EXISTS_OVERWRITE</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-NO-SAVE-FILE:CAPS" title="E_ALERT_NO_SAVE_FILE">E_ALERT_NO_SAVE_FILE</a>
+#define             <a class="link" href="eshell-User-Alert-Handling.html#E-ALERT-NO-LOAD-FILE:CAPS" title="E_ALERT_NO_LOAD_FILE">E_ALERT_NO_LOAD_FILE</a>
+                    <a class="link" href="eshell-User-Alert-Handling.html#EAlert" title="EAlert">EAlert</a>;
+<a class="link" href="eshell-User-Alert-Handling.html#EAlert" title="EAlert"><span class="returnvalue">EAlert</span></a> *            <a class="link" href="eshell-User-Alert-Handling.html#e-alert-new" title="e_alert_new ()">e_alert_new</a>                         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tag</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-User-Alert-Handling.html#e-alert-run-dialog" title="e_alert_run_dialog ()">e_alert_run_dialog</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-User-Alert-Handling.html#EAlert" title="EAlert"><span class="type">EAlert</span></a> *alert</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="eshell-User-Alert-Handling.html#e-alert-run-dialog-for-args" title="e_alert_run_dialog_for_args ()">e_alert_run_dialog_for_args</a>         (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tag</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="eshell-User-Alert-Handling.html#e-alert-dialog-count-buttons" title="e_alert_dialog_count_buttons ()">e_alert_dialog_count_buttons</a>        (<em class="parameter"><code><span class="type">EAlertDialog</span> *dialog</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eshell-User-Alert-Handling.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eshell-User-Alert-Handling.details"></a><h2>Details</h2>
+<div class="refsect2" title="E_ALERT_INFO">
+<a name="E-ALERT-INFO:CAPS"></a><h3>E_ALERT_INFO</h3>
+<pre class="programlisting">#define E_ALERT_INFO "builtin:info"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_INFO_PRIMARY">
+<a name="E-ALERT-INFO-PRIMARY:CAPS"></a><h3>E_ALERT_INFO_PRIMARY</h3>
+<pre class="programlisting">#define E_ALERT_INFO_PRIMARY "builtin:info-primary"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_WARNING">
+<a name="E-ALERT-WARNING:CAPS"></a><h3>E_ALERT_WARNING</h3>
+<pre class="programlisting">#define E_ALERT_WARNING "builtin:warning"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_WARNING_PRIMARY">
+<a name="E-ALERT-WARNING-PRIMARY:CAPS"></a><h3>E_ALERT_WARNING_PRIMARY</h3>
+<pre class="programlisting">#define E_ALERT_WARNING_PRIMARY "builtin:warning-primary"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_ERROR">
+<a name="E-ALERT-ERROR:CAPS"></a><h3>E_ALERT_ERROR</h3>
+<pre class="programlisting">#define E_ALERT_ERROR "builtin:error"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_ERROR_PRIMARY">
+<a name="E-ALERT-ERROR-PRIMARY:CAPS"></a><h3>E_ALERT_ERROR_PRIMARY</h3>
+<pre class="programlisting">#define E_ALERT_ERROR_PRIMARY "builtin:error-primary"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_ASK_FILE_EXISTS_OVERWRITE">
+<a name="E-ALERT-ASK-FILE-EXISTS-OVERWRITE:CAPS"></a><h3>E_ALERT_ASK_FILE_EXISTS_OVERWRITE</h3>
+<pre class="programlisting">#define E_ALERT_ASK_FILE_EXISTS_OVERWRITE "system:ask-save-file-exists-overwrite"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_NO_SAVE_FILE">
+<a name="E-ALERT-NO-SAVE-FILE:CAPS"></a><h3>E_ALERT_NO_SAVE_FILE</h3>
+<pre class="programlisting">#define E_ALERT_NO_SAVE_FILE "system:no-save-file"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="E_ALERT_NO_LOAD_FILE">
+<a name="E-ALERT-NO-LOAD-FILE:CAPS"></a><h3>E_ALERT_NO_LOAD_FILE</h3>
+<pre class="programlisting">#define E_ALERT_NO_LOAD_FILE "system:no-save-file"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="EAlert">
+<a name="EAlert"></a><h3>EAlert</h3>
+<pre class="programlisting">typedef struct {
+  GObject parent;
+  EAlertPrivate *priv;
+} EAlert;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="e_alert_new ()">
+<a name="e-alert-new"></a><h3>e_alert_new ()</h3>
+<pre class="programlisting"><a class="link" href="eshell-User-Alert-Handling.html#EAlert" title="EAlert"><span class="returnvalue">EAlert</span></a> *            e_alert_new                         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tag</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+Creates a new EAlert.  The <em class="parameter"><code>tag</code></em> argument is used to determine
+which alert to use, it is in the format domain:alert-id.  The NULL
+terminated list of arguments, starting with <em class="parameter"><code>arg0</code></em> is used to fill
+out the alert definition.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>alert identifier
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="eshell-User-Alert-Handling.html#EAlert" title="EAlert"><span class="type">EAlert</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_alert_run_dialog ()">
+<a name="e-alert-run-dialog"></a><h3>e_alert_run_dialog ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_alert_run_dialog                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="eshell-User-Alert-Handling.html#EAlert" title="EAlert"><span class="type">EAlert</span></a> *alert</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alert</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_alert_run_dialog_for_args ()">
+<a name="e-alert-run-dialog-for-args"></a><h3>e_alert_run_dialog_for_args ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                e_alert_run_dialog_for_args         (<em class="parameter"><code><a href="http://library.gnome.org/devel/gtk/GtkWindow.html"><span class="type">GtkWindow</span></a> *parent</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *tag</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="e_alert_dialog_count_buttons ()">
+<a name="e-alert-dialog-count-buttons"></a><h3>e_alert_dialog_count_buttons ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               e_alert_dialog_count_buttons        (<em class="parameter"><code><span class="type">EAlertDialog</span> *dialog</code></em>);</pre>
+<p>
+Counts the number of buttons in <em class="parameter"><code>dialog</code></em>'s action area.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dialog</code></em> :</span></p></td>
+<td>a <span class="type">EAlertDialog</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> number of action area buttons
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

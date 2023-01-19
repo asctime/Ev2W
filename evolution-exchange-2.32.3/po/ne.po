@@ -1,0 +1,984 @@
+# translation of evolution-exchange.gnome-2-20.ne.po to Nepali
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Sushma Khanal <suskhanal100@yahoo.com>, 2005.
+# Narayan Kumar Magar <narayan@mpp.org.np>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-exchange.gnome-2-20.ne\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-12 03:18+0100\n"
+"PO-Revision-Date: 2007-10-17 13:56+0545\n"
+"Last-Translator: Narayan Kumar Magar <narayan@mpp.org.np>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:1
+msgid "Specifies the time interval to refresh the GAL Cache."
+msgstr "GAL क्यास ताजा पार्न समय अन्तराल निर्दिष्‍‌ट गर्दछ ।"
+
+#: ../addressbook/apps_exchange_addressbook.schemas.in.in.h:2
+msgid ""
+"This key specifies the number of days interval between the GAL cache "
+"refresh. Set this value to zero, if you don't want to update GAL and use the "
+"current cache forever. This will work only if you have enabled offline "
+"caching for GAL."
+msgstr "यो कुञ्जीले GAL क्यास ताजा बीचको अन्तराल दिनहरूको सङ्ख्या निर्दिष्‍‌ट गर्दछ । यदि तपाईँ GAL अद्यावधिक गर्न चहानुहुन्न र हालको क्यास सधैँको लागि प्रयोग गर्नुहुन्छ भने यो मान शुन्यमा सेट गर्नुहोस् । यदि तपाईँले GAL का लागि अफलाइन क्यास सक्षम पार्नुभएमा मात्र यसले कार्य गर्नेछ ।"
+
+#: ../addressbook/e-book-backend-exchange.c:1917
+#: ../addressbook/e-book-backend-gal.c:1799 ../storage/exchange-storage.c:135
+msgid "Searching..."
+msgstr "खोजी गर्दै..."
+
+#: ../addressbook/e-book-backend-gal.c:301
+#: ../addressbook/e-book-backend-gal.c:322
+msgid "Reconnecting to LDAP server..."
+msgstr "एलडीएपी सर्भरमा पुन: जडान गर्दै..."
+
+#: ../addressbook/e-book-backend-gal.c:1583
+msgid "Receiving LDAP search results..."
+msgstr "एलडीएपी खोजी परिणामहरु प्राप्त गर्दै..."
+
+#: ../addressbook/e-book-backend-gal.c:1828
+msgid "Error performing search"
+msgstr "खोजी कार्यसम्पादन गर्दा त्रुटि"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2091
+#, c-format
+msgid ""
+"Unable to schedule resource '%s' for recurring meetings.\n"
+"You must book each meeting separately."
+msgstr ""
+"'%s' संसाधनलाई पुरनरावर्ती बैठक लागि कार्यतालिका बनाउन असक्षम ।\n"
+"तपाइँले प्रत्येक बैठकको लागि छुट्टै बुक गर्नुपर्नेछ ।"
+
+#: ../calendar/e-cal-backend-exchange-calendar.c:2109
+#, c-format
+msgid "The resource '%s' is busy during the selected time period."
+msgstr "'%s' संसाधन चयन गरिएको समयावधि भरि व्यस्त छ ।"
+
+#: ../calendar/e-cal-backend-exchange.c:390
+#: ../calendar/e-cal-backend-exchange.c:400
+msgid "Authentication failed"
+msgstr "प्रमाणिकरण असफल भयो"
+
+#: ../calendar/e-cal-backend-exchange.c:441
+msgid "Could not find the calendar"
+msgstr "पात्रो फेला पार्न सकेन"
+
+#: ../camel/camel-exchange-folder.c:222
+msgid "You cannot expunge in offline mode."
+msgstr "तपाईँले अफलाइन मोडमा मेट्न सक्नुहुन्न ।"
+
+#: ../camel/camel-exchange-folder.c:253
+msgid "No Subject"
+msgstr "विषय छैन"
+
+#: ../camel/camel-exchange-folder.c:408
+msgid "This message is not available in offline mode."
+msgstr "यो सन्देश अफलाइन मोडमा उपलब्ध छैन ।"
+
+#: ../camel/camel-exchange-folder.c:665
+msgid "Moving messages"
+msgstr "सन्देशहरू सार्दै"
+
+#: ../camel/camel-exchange-folder.c:666
+msgid "Copying messages"
+msgstr "सन्देशहरू प्रतिलिपि गर्दै"
+
+#: ../camel/camel-exchange-folder.c:1039
+#, c-format
+msgid "Could not create directory %s: %s"
+msgstr "%s डाइरेक्टरी सिर्जना गर्न सकेन: %s"
+
+#: ../camel/camel-exchange-folder.c:1049
+#, c-format
+msgid "Could not load summary for %s"
+msgstr "%s को लागि सारांश लोड गर्न सकेन"
+
+#: ../camel/camel-exchange-folder.c:1057
+#, c-format
+msgid "Could not create cache for %s"
+msgstr "%s को लागि क्यास सिर्जना गर्न सकेन"
+
+#: ../camel/camel-exchange-folder.c:1067
+#, c-format
+msgid "Could not create journal for %s"
+msgstr "%s को लागि जर्नल सिर्जना गर्न सकेन"
+
+#: ../camel/camel-exchange-folder.c:1115
+msgid "Scanning for changed messages"
+msgstr "परिवर्तित सन्देशहरू स्क्यान गर्दै"
+
+#: ../camel/camel-exchange-folder.c:1148
+msgid "Fetching summary information for new messages"
+msgstr "नयाँ सन्देशहरूको लागि सारांश जानकारी तान्दै"
+
+#: ../camel/camel-exchange-journal.c:341
+msgid "No folder name found\n"
+msgstr "फोल्डर नाम फेला परेन\n"
+
+#: ../camel/camel-exchange-journal.c:374 ../mail/mail-stub-exchange.c:2874
+#: ../mail/mail-stub-exchange.c:2918 ../mail/mail-stub-exchange.c:2953
+#: ../mail/mail-stub-exchange.c:2980 ../mail/mail-stub-exchange.c:3033
+#: ../mail/mail-stub-exchange.c:3055
+msgid "Folder doesn't exist"
+msgstr "फोल्डर अवस्थित छैन"
+
+#: ../camel/camel-exchange-journal.c:438
+msgid "Cannot append message in offline mode: cache unavailable"
+msgstr "अफलाइन मोडमा सन्देश थप्न सकिँदैन: केस उपलब्ध छैन"
+
+#: ../camel/camel-exchange-journal.c:454
+#, c-format
+msgid "Cannot append message in offline mode: %s"
+msgstr "अफलाइन मोडमा सन्देश थप्न सकिँदैन: %s"
+
+#: ../camel/camel-exchange-provider.c:41
+msgid "Checking for New Mail"
+msgstr "नयाँ पत्रको लागि जाँच गर्दै"
+
+#: ../camel/camel-exchange-provider.c:43
+msgid "C_heck for new messages in all folders"
+msgstr "सबै फोल्डरहरूमा नयाँ सन्देशहरू का लागि जाँच गर्नुहोस्"
+
+#. i18n: the '_' should appear before the same letter it
+#. does in the evolution:mail-config.glade "User_name"
+#. translation (or not at all)
+#: ../camel/camel-exchange-provider.c:51
+msgid "Windows User_name:"
+msgstr "सञ्झ्याल प्रयोगकर्ता नाम:"
+
+#. i18n: GAL is an Outlookism, AD is a Windowsism
+#: ../camel/camel-exchange-provider.c:56
+msgid "Global Address List / Active Directory"
+msgstr "विश्वव्यापी ठेगाना सूची सक्रिय डाइरेक्टरी"
+
+#. i18n: "Global Catalog" is a Windowsism, but it's a
+#. technical term and may not have translations?
+#: ../camel/camel-exchange-provider.c:60
+msgid "_Global Catalog server name:"
+msgstr "विश्वव्यापी विवरणिका सर्भर नाम:"
+
+#: ../camel/camel-exchange-provider.c:62
+#, c-format
+msgid "_Limit number of GAL responses: %s"
+msgstr "जिएएल प्रतिक्रियाहरूको सिमित सङ्ख्या: %s"
+
+#: ../camel/camel-exchange-provider.c:65
+msgid "Options"
+msgstr "विकल्पहरु"
+
+#: ../camel/camel-exchange-provider.c:67
+#, c-format
+msgid "_Password Expiry Warning period: %s"
+msgstr "पासवर्ड म्याद समाप्ति चेतावनि अवधि: %s"
+
+#: ../camel/camel-exchange-provider.c:69
+msgid "Automatically synchroni_ze account locally"
+msgstr "स्वाचालित रुपमा खातालाई स्थानीय रुपमा समक्रमण गर्नुहोस्"
+
+#. i18n: copy from evolution:camel-imap-provider.c
+#: ../camel/camel-exchange-provider.c:72
+msgid "_Apply filters to new messages in Inbox on this server"
+msgstr "यो सर्भरमा प्राप्ति मञ्जूषा भित्र नयाँ सन्देशहरूको लागि फिल्टर लागू गर्नुहोस्"
+
+#: ../camel/camel-exchange-provider.c:74
+msgid "Check new messages for _Junk contents"
+msgstr "जङ्क सामाग्रीहरूको लागि नयाँ सन्देशहरू जाँच गर्नुहोस्"
+
+#: ../camel/camel-exchange-provider.c:76
+msgid "Only check for Junk messag_es in the Inbox folder"
+msgstr "प्राप्तिमञ्जूषा फोल्डर भित्र जङ्क सन्देशहरूलाई जाँच मात्र गर्नुहोस्"
+
+#: ../camel/camel-exchange-provider.c:86
+msgid "Microsoft Exchange"
+msgstr "माइक्रोसफ्ट एक्सचेन्ज"
+
+#: ../camel/camel-exchange-provider.c:88
+msgid "For handling mail (and other data) on Microsoft Exchange servers"
+msgstr "माइक्रोसफ्ट एक्सचेन्ज सर्भरहरूमा पत्र (र अरु डेटा) ह्यान्डल गर्नका लागि"
+
+#. i18n: "Secure Password Authentication" is an Outlookism
+#: ../camel/camel-exchange-provider.c:104
+msgid "Secure Password"
+msgstr "सुरक्षित पासवर्ड"
+
+#. i18n: "NTLM" probably doesn't translate
+#: ../camel/camel-exchange-provider.c:107
+msgid ""
+"This option will connect to the Exchange server using secure password (NTLM) "
+"authentication."
+msgstr ""
+"यो विकल्पले सुरक्षित पासवर्ड (एनटीएलएम) प्रमाणिकरण प्रयोग गरेर एक्सचेन्ज "
+"सर्भरमा जडान गर्नेछ ।"
+
+#: ../camel/camel-exchange-provider.c:115
+msgid "Plaintext Password"
+msgstr "समतल पाठ पासवर्ड"
+
+#: ../camel/camel-exchange-provider.c:117
+msgid ""
+"This option will connect to the Exchange server using standard plaintext "
+"password authentication."
+msgstr ""
+"यो विकल्पले मानक खालीपाठ पासवर्ड प्रमाणिकरण प्रयोग गरेर एक्सचेन्ज "
+"सर्भरमा जडान गर्नेछ ।"
+
+#: ../camel/camel-exchange-store.c:310
+#, c-format
+msgid "Exchange server %s"
+msgstr "%s सर्भर अदल-बदल गर्नुहोस्"
+
+#: ../camel/camel-exchange-store.c:313
+#, c-format
+msgid "Exchange account for %s on %s"
+msgstr "%s मा %s को लागि खाता अदल-बदल गर्नुहोस्"
+
+#: ../camel/camel-exchange-store.c:354
+#, c-format
+msgid "%sEnter password for %s"
+msgstr "%s को लागि %s पासवर्ड प्रविष्टि गर्नुहोस्"
+
+#: ../camel/camel-exchange-store.c:405
+msgid "Evolution Exchange backend process"
+msgstr "इभोल्युसन एक्सचेन्ज ब्याकइन्ड प्रक्रिया"
+
+#: ../camel/camel-exchange-store.c:446
+msgid ""
+"Could not authenticate to server. (Password incorrect?)\n"
+"\n"
+msgstr ""
+"सर्भरमा प्रमाणिकरण गर्न सकेन ।(पासवर्ड गलत?)\n"
+"\n"
+
+#: ../camel/camel-exchange-store.c:488
+#, c-format
+msgid "No such folder %s"
+msgstr "%s जस्तो फोल्डर छैन"
+
+#: ../camel/camel-exchange-store.c:565
+msgid "Cannot subscribe folder in offline mode."
+msgstr "अफलाइन मोडमा फोल्डर राख्न सकिँदैन ।"
+
+#: ../camel/camel-exchange-store.c:582
+msgid "Cannot unsubscribe folder in offline mode."
+msgstr "अफलाइन मोडमा फोल्डर हटाउन सकिँदैन ।"
+
+#: ../camel/camel-exchange-store.c:714
+msgid "Cannot get folder info in offline mode."
+msgstr "अफलाइन मोडमा फोल्डर सूचना प्राप्त गर्न सकिँदैन ।"
+
+#: ../camel/camel-exchange-store.c:787
+msgid "Cannot create folder in offline mode."
+msgstr "अफलाइन मोडमा फोल्डर सिर्जना गर्न सकिँदैन ।"
+
+#: ../camel/camel-exchange-store.c:814
+msgid "Cannot delete folder in offline mode."
+msgstr "अफलाइन मोडमा फोल्डर मेट्न सकिँदैन ।"
+
+#: ../camel/camel-exchange-store.c:830
+msgid "Cannot rename folder in offline mode."
+msgstr "अफलाइन मोडमा फोल्डर पुन: नामाकरण गर्न सकिँदैन ।"
+
+#: ../camel/camel-exchange-transport.c:111
+msgid "Exchange transport can only be used with Exchange mail source"
+msgstr "एक्सचेन्ज ट्रान्स्पोर्टलाई एक्चेन्ज मेल स्रोतसँग मात्र प्रयोग गर्न सकिन्छ"
+
+#: ../camel/camel-exchange-transport.c:122
+msgid "Cannot send message: one or more invalid recipients"
+msgstr "सन्देश पठाउन सकिँदैन: एक वा अरु बढी अवैध प्रापकहरू"
+
+#: ../camel/camel-exchange-transport.c:132
+msgid "Could not find 'From' address in message"
+msgstr "सन्देशमा 'From' ठेगाना फेला पार्न सकेन"
+
+#: ../camel/camel-stub.c:153
+#, c-format
+msgid "Could not create socket: %s"
+msgstr "सकेट सिर्जना गर्न सकेन: %s"
+
+#: ../camel/camel-stub.c:171
+#, c-format
+msgid "Could not connect to %s: Please restart Evolution"
+msgstr "%s मा जडान गर्न सकेन: कृपया विस्तार पुन: सुरु गर्नुहोस्"
+
+#: ../camel/camel-stub.c:176
+#, c-format
+msgid "Could not connect to %s: %s"
+msgstr "%s मा जडान गर्न सकेन: %s"
+
+#: ../camel/camel-stub.c:206
+#, c-format
+msgid "Path too long: %s"
+msgstr "धेरै लामो मार्ग: %s"
+
+#: ../camel/camel-stub.c:232
+#, c-format
+msgid "Could not start status thread: %s"
+msgstr "वस्तुस्थिति थ्रेड शुरु गर्न सकेन: %s"
+
+#: ../camel/camel-stub.c:486
+#, c-format
+msgid "Lost connection to %s"
+msgstr "%s मा जडान हरायो"
+
+#: ../camel/camel-stub.c:490
+#, c-format
+msgid "Error communicating with %s: %s"
+msgstr "%s सँग सञ्चार सम्पर्क गर्दा त्रुटि: %s"
+
+#: ../mail/mail-stub-exchange.c:264 ../mail/mail-stub-exchange.c:946
+msgid "No such folder"
+msgstr "त्यस्तो फोल्डर छैन"
+
+#. FIXME: should be this, but string freeze freezes me to do so.
+#. mail_stub_return_error (stub, _("Permission denied. Could not delete certain mails."));
+#: ../mail/mail-stub-exchange.c:287 ../mail/mail-stub-exchange.c:1595
+#: ../mail/mail-stub-exchange.c:2851 ../mail/mail-stub-exchange.c:2891
+#: ../mail/mail-stub-exchange.c:2957 ../mail/mail-stub-exchange.c:3007
+#: ../mail/mail-stub-exchange.c:3070
+msgid "Permission denied"
+msgstr "अनुमति अस्वीकार गरियो"
+
+#: ../mail/mail-stub-exchange.c:768 ../mail/mail-stub-exchange.c:860
+msgid "Could not open folder"
+msgstr "फोल्डर खोल्न सकेन"
+
+#: ../mail/mail-stub-exchange.c:854 ../mail/mail-stub-exchange.c:876
+msgid "Could not open folder: Permission denied"
+msgstr "फोल्डर खोल्न सकेन: अनुमति अस्वीकार गरियो"
+
+#: ../mail/mail-stub-exchange.c:955
+msgid "Could not create folder."
+msgstr "फोल्डर सिर्जना गर्न सकेन ।"
+
+#: ../mail/mail-stub-exchange.c:1043
+msgid "Could not open Deleted Items folder"
+msgstr "मेटिएका वस्तुहरूको फोल्डर खोल्न सकेन"
+
+#: ../mail/mail-stub-exchange.c:1374 ../mail/mail-stub-exchange.c:1415
+msgid "Could not get new messages"
+msgstr "नयाँ सन्देशहरू प्राप्त गर्न सकेन"
+
+#: ../mail/mail-stub-exchange.c:1591
+msgid "Could not empty Deleted Items folder"
+msgstr "मेटिएका वस्तुहरूको फोल्डरलाई खाली गर्न सकेन"
+
+#: ../mail/mail-stub-exchange.c:1668
+msgid "Could not append message; mailbox is over quota"
+msgstr "सन्देश थप्न सकेन; पत्रमञ्जूषा बाकस कोटा भन्दा बढी छ"
+
+#: ../mail/mail-stub-exchange.c:1669
+msgid "Could not append message"
+msgstr "सन्देश थप्न सकेन"
+
+#: ../mail/mail-stub-exchange.c:2324
+msgid "No such message"
+msgstr "त्यस्तो सन्देश छैन"
+
+#: ../mail/mail-stub-exchange.c:2386
+msgid "Message has been deleted"
+msgstr "सन्देश मेटाइएको छ"
+
+#: ../mail/mail-stub-exchange.c:2388
+msgid "Error retrieving message"
+msgstr "सन्देश पुन: प्राप्ति गर्दा त्रुटि"
+
+#: ../mail/mail-stub-exchange.c:2430
+msgid "Mailbox does not support full-text searching"
+msgstr "पूरा-पाठ खोजीलाई पत्र मञ्जूषा बाकसले समर्थन गर्दैन"
+
+#: ../mail/mail-stub-exchange.c:2528
+msgid "Unable to move/copy messages"
+msgstr "सन्देशहरूलाई सार्न/प्रतिलिपि गर्न असक्षम"
+
+#: ../mail/mail-stub-exchange.c:2766
+msgid "No mail submission URI for this mailbox"
+msgstr "यो पत्रमञ्‍‌जुषाको लागि कुनै पत्र अधीनता युआरआइ छैन"
+
+#: ../mail/mail-stub-exchange.c:2802
+msgid "Server won't accept mail via Exchange transport"
+msgstr "एक्सचेन्ज ट्रान्सपोर्ट मार्फत सर्भरले पत्र स्वीकार गर्नेछैन"
+
+#: ../mail/mail-stub-exchange.c:2804
+#, c-format
+msgid ""
+"Your account does not have permission to use <%s>\n"
+"as a From address."
+msgstr ""
+"तपाइँको खातालाई <%s>\n"
+"एउटा ठेगाना बाट जस्तै प्रयोग गर्न अनुमति छैन ।"
+
+#: ../mail/mail-stub-exchange.c:2816
+msgid ""
+"Could not send message.\n"
+"This might mean that your account is over quota."
+msgstr ""
+"सन्देश पठाउन सकेन ।\n"
+"यसले तपाइँको खाता कोटा भन्दा बढि भएको भन्ने अर्थ हुन सक्दछ ।"
+
+#: ../mail/mail-stub-exchange.c:2820
+msgid "Could not send message"
+msgstr "सन्देश पठाउन सकेन"
+
+#: ../mail/mail-stub-exchange.c:2843 ../mail/mail-stub-exchange.c:2896
+#: ../mail/mail-stub-exchange.c:2961 ../mail/mail-stub-exchange.c:3012
+#: ../mail/mail-stub-exchange.c:3076
+msgid "Generic error"
+msgstr "जेनेरिक त्रुटि"
+
+#: ../mail/mail-stub-exchange.c:2847
+msgid "Folder already exists"
+msgstr "फोल्डर पहिले नै अवस्थित छ"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:1
+msgid "Evolution Addressbook Exchange backend"
+msgstr "इभोल्युसन ठेगानापुस्तक एक्सचेन्ज ब्याकइन्ड"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:2
+msgid "Evolution Calendar Exchange backend"
+msgstr "इभोल्युसन पात्रो एक्सचेन्ज ब्याकइन्ड"
+
+#: ../storage/GNOME_Evolution_Exchange_Storage.server.in.in.h:3
+msgid "Ximian Connector for Exchange"
+msgstr "एक्सचेन्जका लागि जिमिआन जडानकर्ता"
+
+#: ../storage/exchange-autoconfig-wizard.c:211
+#, c-format
+msgid ""
+"Could not connect to the Exchange server.\n"
+"Make sure the URL is correct (try \"%s\" instead of \"%s\"?) and try again."
+msgstr ""
+"एक्सचेन्ज सर्भरमा जडान गर्न सकेन ।\n"
+"यूआरएल ठीक भएको निश्चित गर्नुहोस् ( \"%s\"को सट्टामा \"%s\" प्रयास गर्नुहुन्छ?) र फेरि प्रयास गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:219
+msgid ""
+"Could not locate Exchange server.\n"
+"Make sure the server name is spelled correctly and try again."
+msgstr ""
+"एक्सचेन्ज सर्भर अवस्थित गर्न सकेन ।\n"
+"सर्भरको नाम सही रूपले लेखिएको निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:228
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again."
+msgstr ""
+"एक्सचेन्ज सर्भरमा प्रमाणिकरण गर्न सकेन ।\n"
+"प्रयोगकर्ता नाम र पासवर्ड सही भएको निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:235
+#, c-format
+msgid ""
+"Could not authenticate to the Exchange server.\n"
+"Make sure the username and password are correct and try again.\n"
+"\n"
+"You may need to specify the Windows domain name as part of your username "
+"(eg, \"MY-DOMAIN\\%s\")."
+msgstr ""
+"एक्सचेन्ज सर्भरमा प्रमाणिकरण गर्न सकेन ।\n"
+"प्रयोगकर्ता नाम र पासवर्ड सही भएको निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।\n"
+"\n"
+"तपाइँको प्रयोगकर्ता नामको रुपमा तपाइँले सञ्झ्याल डोमेन नाम निर्दिष्‍‌ट गर्न आवश्यक पर्न सक्दछ (जस्तै: \"मेरो-डोमेन\\%s\") ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:247
+msgid ""
+"Could not find OWA data at the indicated URL.\n"
+"Make sure the URL is correct and try again."
+msgstr ""
+"इङ्गित गरिएको यूआरएल मा ओडब्लूए डेटा फेला पार्न सकेन ।\n"
+"यूआरएल सही भएको निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:254
+msgid ""
+"Ximian Connector requires access to certain functionality on the Exchange "
+"Server that appears to be disabled or blocked.  (This is usually "
+"unintentional.)  Your Exchange Administrator will need to enable this "
+"functionality in order for you to be able to use Ximian Connector.\n"
+"\n"
+"For information to provide to your Exchange administrator, please follow the "
+"link below:"
+msgstr ""
+"Ximian जडानकर्तालाई एक्सचेन्ज सर्भरमा प्रकार्यात्मकता निश्चित गर्न पहुँच आवश्यक पर्दछ जुन अक्षम पारिएका वा रोकिएका रूपमा देखिन्छन् । (यो प्रायजसो उद्देश्यमुलक हुँदैन ।) तपाइँको एक्सचेन्ज प्रशासकलाई  तपाइँलाई Ximian जडानकर्ता प्रयोग गर्नको निम्ति यो प्रकार्यात्मकतालाई सक्षम पार्न आवश्यक हुनेछ ।\n"
+"\n"
+"तपाइँको एक्सचेन्ज प्रशासकलाई सूचना उपलब्ध गराउनको लागि, तलको लिङ्क पछ्याउनुहोस्:"
+
+#: ../storage/exchange-autoconfig-wizard.c:275
+msgid ""
+"The Exchange server URL you provided is for an Exchange 5.5 Server. Ximian "
+"Connector supports Microsoft Exchange 2000 and 2003 only."
+msgstr "तपाइँले उपलब्ध गराउनुभएको एक्सचेन्ज सर्भर यूआरएल एक्सचेन्ज 5.5 सर्भरको लागि हो । Ximian जडाकर्ताले माइक्रोसफ्ट एक्सचेन्ज २००० र २००३ लाई मात्र समर्थन गर्दछ ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:288
+msgid ""
+"Could not configure Exchange account because an unknown error occurred. "
+"Check the URL, username, and password, and try again."
+msgstr "एउटा अज्ञात त्रुटि देखा पर्नाको कारणले एक्सचेन्ज खाता कन्फिगर गर्न सकेन । यूआरएल, प्रयोगकर्ता नाम,र पासवर्ड जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:332
+#, c-format
+msgid ""
+"Could not authenticate to the Global Catalog server. You may need to go back "
+"and specify the Windows domain name as part of your username (eg, \"MY-DOMAIN"
+"\\%s\")."
+msgstr ""
+"विश्वव्यापी विवरणिका सर्भरमा प्रमाणिकरण गर्न सकेन । तपाइँले पछाडी जान र सञझ्याल "
+"डोमेन नामलाई तपाइँको प्रयोगकर्ता नामको भागको रूपमा निर्दिष्‍‌ट गर्नुपर्ने आवश्यक हुन सक्दछ (जस्तै, \"MY-DOMAIN\\%s\") ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:339
+msgid ""
+"Could not connect to specified server.\n"
+"Please check the server name and try again."
+msgstr ""
+"निर्दिष्‍‌ट गरिएको सर्भरमा जडान गर्न सकेन ।\n"
+"कृपया सर्भर नाम जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:376
+#: ../storage/exchange-autoconfig-wizard.c:380
+msgid "Unknown"
+msgstr "अज्ञात"
+
+#: ../storage/exchange-autoconfig-wizard.c:445
+msgid ""
+"Configuration system error.\n"
+"Unable to create new account."
+msgstr ""
+"कन्फिग्रेसन प्रणाली त्रुटि ।\n"
+"नयाँ खाता सिर्जना गर्न अक्षम ।"
+
+#: ../storage/exchange-autoconfig-wizard.c:459
+msgid "You may only configure a single Exchange account"
+msgstr "तपाइँले एउटा एकल एक्सचेन्ज खातालाई मात्र कन्फिगर गर्नुपर्ने हुन्छ"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:1
+#: ../storage/exchange-change-password.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:2
+msgid "Configuration Failed"
+msgstr "कन्फिगरेसन असफल भयो"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:3
+msgid "Done"
+msgstr "गरियो"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:4
+msgid "Email Address:"
+msgstr "इमेल ठेगाना:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:5
+msgid "Exchange Configuration"
+msgstr "एक्सचेन्ज कन्फिगरेसन"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:6
+msgid "Full Name:"
+msgstr "पूरा नाम:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:7
+msgid "GC Server:"
+msgstr "जी सी सर्भर:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:8
+msgid "Make this my default account"
+msgstr "यसलाई मेरो पूर्वनिर्धारित खाता बनाउनुहोस्"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:9
+msgid "OWA URL:"
+msgstr "ओडब्लूए यूआरएल:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:10
+msgid "Password:"
+msgstr "पासवर्ड:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:11
+msgid "Remember this password"
+msgstr "यो पासवर्ड सम्झनुहोस्"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:12
+msgid "Username:"
+msgstr "प्रयोगकर्ता नाम:"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:13
+msgid "Welcome"
+msgstr "स्वागत"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:14
+msgid ""
+"Welcome to Ximian Connector for Microsoft Exchange.\n"
+"The next few screens will help you configure Evolution\n"
+"to connect to your Exchange account.\n"
+"\n"
+"Please click the \"Forward\" button to continue."
+msgstr ""
+"माइक्रोसफ्ट एक्सचेन्जको लागि Ximian जडानकर्तालाई स्वगत छ ।\n"
+"पछिल्लो केही पर्दाहरुले तपाईँको एक्चेसन्ज खातामा जडान गर्न इभोलयुसन कन्फिगर गर्न मद्दत गर्नेछ ।\n"
+"\n"
+"कृपया जारी राख्न \"फरवार्ड\" बटनमा क्लिक गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:19
+msgid "Ximian Connector Configuration"
+msgstr "Ximian जडानकर्ता कन्फिगरेसन"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:20
+msgid ""
+"Ximian Connector can use account information from your existing Outlook Web "
+"Access (OWA) account.\n"
+"\n"
+"Enter your OWA site address (URL), username, and password, then click "
+"\"Forward\".\n"
+msgstr ""
+"Ximian जडानकर्ताले तपाइँको अवस्थित आउटलुक वेब एक्सेस (ओडब्लूए) खाताबाट खाता जानकारी लिन सक्दछ ।\n"
+"\n"
+"तपाइँको ओडब्लूए साइट ठेगाना (यूआरएल), प्रयोगकर्ता नाम र पासवर्ड प्रविष्टि गर्नुहोस्, र त्यसपछि "
+"\"फरवार्ड\" मा क्लिक गर्नुहोस् ।\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:24
+msgid ""
+"Ximian Connector could not find the Global Catalog replica for your site. "
+"Please enter the name of your Global Catalog server. You may need to ask "
+"your system administrator for the correct value.\n"
+msgstr "Ximian जडानकर्ताले तपाइँको साइटको लागि विश्वव्यापी विवरणिका रेप्लिका फेला पार्न सकेन । कृपया तपाइँको विश्व्यापी विवरणिका सर्भरको नाम प्रविष्टि गर्नुहोस् । तपाइँलाई सही मानको लागि आफ्नो प्रणाली प्रशासकसँग सोध्न आवश्यक हुन सक्दछ ।\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:26
+msgid ""
+"Ximian Connector has encountered a problem configuring your Exchange "
+"account.\n"
+msgstr "Ximian जडानकर्ताले तपाइँको एक्सचेन्ज खातालाई कन्फिगर गर्दा एउटा समस्या देखा पर्यो ।\n"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:28
+msgid ""
+"Your Connector account is now ready to use. Click the \"Apply\" button to "
+"save your\n"
+"settings."
+msgstr ""
+"तपाइँको जडानकर्ता खाता प्रयोग गर्नलाई अहिले तयारी अवस्थामा छ । तपाइँका सेटिङहरू बचत गर्न \n"
+" \"लागू गर्नुहोस्\" बटनमा क्लिक गर्नुहोस् ।"
+
+#: ../storage/exchange-autoconfig-wizard.glade.h:30
+msgid ""
+"Your account information is as follows. Please correct any errors, then "
+"click \"Forward\".\n"
+msgstr "तपाइँको खाता जानकारी निम्न प्रकार छ । कृपया कुनै त्रुटि सँच्याउनुहोस्, त्यसपछि \"फरवार्ड\"मा क्लिक गर्नुहोस् ।\n"
+
+#. User entered a wrong existing
+#. * password. Prompt him again.
+#.
+#: ../storage/exchange-change-password.c:114
+msgid ""
+"The current password does not match the existing password for your account. "
+"Please enter the correct password"
+msgstr "हालको पासवर्ड तपाइँको खाताको लागि अवस्थित पासवर्डसँग मिल्दैन । कृपया सही पासवर्ड प्रविष्टि गर्नुहोस्"
+
+#: ../storage/exchange-change-password.c:121
+msgid "The two passwords do not match. Please re-enter the passwords."
+msgstr "दुईवटा पासवर्डहरू मिल्दैनन् । कृपया पासवर्डहरू पुन: प्रविष्टि गर्नुहोस् ।"
+
+#: ../storage/exchange-change-password.glade.h:2
+msgid "Change Password"
+msgstr "पासवर्ड परिवर्तन गर्नुहोस्"
+
+#: ../storage/exchange-change-password.glade.h:3
+msgid "Confirm Password:"
+msgstr "पासवर्ड यकिन गर्नुहोस्:"
+
+#: ../storage/exchange-change-password.glade.h:4
+msgid "Current Password:"
+msgstr "हालको पासवर्ड:"
+
+#: ../storage/exchange-change-password.glade.h:5
+msgid "New Password:"
+msgstr "नयाँ पासवर्ड:"
+
+#: ../storage/exchange-change-password.glade.h:6
+msgid "Your current password has expired. Please change your password now."
+msgstr ""
+"तपाइँको हालको पासवर्डको म्याद समाप्ति भएको छ ।कृपया तपाइँको पासवर्ड अब परिवर्तन "
+"गर्नुहोस् ।"
+
+#: ../storage/exchange-delegates.glade.h:1
+msgid "Author (read, create)"
+msgstr "लेखक (पढ्नुहोस्, सिर्जना गर्नुहोस्)"
+
+#: ../storage/exchange-delegates.glade.h:2
+msgid "C_alendar:"
+msgstr "पात्रो:"
+
+#: ../storage/exchange-delegates.glade.h:3
+msgid "Co_ntacts:"
+msgstr "सम्पर्कहरू:"
+
+#: ../storage/exchange-delegates.glade.h:4
+msgid "Delegate Permissions"
+msgstr "अनुमतिहरू प्रत्यायोजन गर्नुहोस्"
+
+#: ../storage/exchange-delegates.glade.h:5
+msgid "Delegates"
+msgstr "प्रत्यायोजन गर्दछ"
+
+#: ../storage/exchange-delegates.glade.h:6
+msgid "Editor (read, create, edit)"
+msgstr "सम्पादक (पढ्नुहोस्, सिर्जना गर्नुहोस्, सम्पादन गर्नुहोस्)"
+
+#: ../storage/exchange-delegates.glade.h:7
+msgid "None"
+msgstr "कुनै पनि होइन"
+
+#: ../storage/exchange-delegates.glade.h:8
+msgid "Permissions for"
+msgstr "यसका लागि अनुमतिहरू"
+
+#: ../storage/exchange-delegates.glade.h:9
+msgid "Reviewer (read-only)"
+msgstr "समीक्षक (पढ्ने-मात्र)"
+
+#: ../storage/exchange-delegates.glade.h:10
+msgid ""
+"These users will be able to send mail on your behalf\n"
+"and access your folders with the permissions you give them."
+msgstr ""
+"यी प्रयोगकर्ताहरूले तपाइँको पक्षमा पत्र पठाउन सक्षम हुनेछ\n"
+"र तपाइँले दिएका अनुमतिहरुसँग फोल्डरहरू पहुँच प्राप्त गर्नेछ ।"
+
+#: ../storage/exchange-delegates.glade.h:12
+msgid "_Delegate can see private items"
+msgstr "प्रत्यायोजनले व्यक्तिगत वस्तुहरु देख्न सक्दछ"
+
+#: ../storage/exchange-delegates.glade.h:13
+msgid "_Edit"
+msgstr "सम्पादन गर्नुहोस्"
+
+#: ../storage/exchange-delegates.glade.h:14
+msgid "_Inbox:"
+msgstr "प्राप्तिमञ्जूषा:"
+
+#: ../storage/exchange-delegates.glade.h:15
+msgid "_Tasks:"
+msgstr "कार्यहरु:"
+
+#: ../storage/exchange-folder-tree.glade.h:1
+msgid "Exchange Folder Tree"
+msgstr "फोल्डर ट्री अदल-बदल गर्नुहोस्"
+
+#: ../storage/exchange-migrate.c:58
+msgid "Migrating Exchange Folders..."
+msgstr "एक्सचेन्ज फोल्डरहरू स्थानान्तरण गर्दै..."
+
+#: ../storage/exchange-migrate.c:66
+#, c-format
+msgid ""
+"The location and hierarchy of the Evolution exchange account folders are "
+"changed since Evolution %d.%d.%d.\n"
+"\n"
+"Please be patient while Evolution migrates your folders..."
+msgstr ""
+"इभोल्युसन %d.%d.%d देखि इभोल्युसन एक्सचेन्ज खाताको फोल्डरहरूको स्थान र सोपानक्रम परिवर्तन भएका छन् ।\n"
+"\n"
+"कृपया इभोल्युसनले तपाइँका फोल्डरहरु स?तानान्तरण गर्दा धैर्य गर्नुहोस्...."
+
+#: ../storage/exchange-migrate.c:99
+#, c-format
+msgid ""
+"Warning: Evolution could not migrate all the Exchange account data from the "
+"version %d.%d.%d. \n"
+"The data hasn't been deleted, but will not be seen by this version of "
+"Evolution"
+msgstr ""
+"चेतावनी: इभोल्युसनले संस्करण %d.%d.%d बाट सबै एक्सचेन्ज खाता डेटालाई स्थानान्तरण गर्न सकेन ।\n"
+"डेटा मेटिएको छैन,तर इभोल्युसनको यो संस्करणद्वारा देखिने छैन"
+
+#: ../storage/exchange-migrate.c:130
+#, c-format
+msgid "Migrating `%s':"
+msgstr "`%s' लाई स्थानान्तरण गर्दै:"
+
+#: ../storage/exchange-oof.glade.h:1
+msgid ""
+"<b>Currently, your status is \"Out of the Office\". </b>\n"
+"\n"
+"Would you like to change your status to \"In the Office\"? "
+msgstr ""
+"<b>हाल तपाइँको वस्तुस्थिति \"कार्यालयदेखि बाहिर\" छ ।</b><\n"
+"\n"
+"तपाइँ आफ्नो वस्तुस्थितिलाई \"कार्यालयभित्र\" मा परिवर्तन गर्न चाहनुहुन्छ? "
+
+#: ../storage/exchange-oof.glade.h:4
+msgid "<b>Out of Office Message:</b>"
+msgstr "<b>कार्यालय सन्देश बाहिर:</b>"
+
+#: ../storage/exchange-oof.glade.h:5
+msgid "<b>Status:</b>"
+msgstr "<b>वस्तुस्थिति:</b>"
+
+#: ../storage/exchange-oof.glade.h:6
+msgid ""
+"<small>The message specified below will be automatically sent to each person "
+"who sends\n"
+"mail to you while you are out of the office.</small>"
+msgstr ""
+"<small>तल निर्दिष्‍‌ट गरिएको सन्देश स्वाचालित रूपमा तपाईँ कार्यालय बाहिर हुँदा तपाइँलाई पत्र पठाउने\n"
+"प्रत्येक व्यक्तिलाई पठाइनेछ ।</small>"
+
+#: ../storage/exchange-oof.glade.h:8
+msgid "I am currently in the office"
+msgstr "म हाल कार्यालयमा छु"
+
+#: ../storage/exchange-oof.glade.h:9
+msgid "I am currently out of the office"
+msgstr "म हाल कार्यालयदेखि बाहिर छु"
+
+#: ../storage/exchange-oof.glade.h:10
+msgid "No, Don't Change Status"
+msgstr "होइन, वस्तुस्थिति परिवर्तन नगर्नुहोस्"
+
+#: ../storage/exchange-oof.glade.h:11
+msgid "Out of Office Assistant"
+msgstr "कार्यालय सहायकदेखि बाहिर"
+
+#: ../storage/exchange-oof.glade.h:12
+msgid "Yes, Change Status"
+msgstr "हो, वस्तुस्थिति परिवर्तन गर्नुहोस्"
+
+#: ../storage/exchange-passwd-expiry.glade.h:1
+msgid "Password Expiry Warning..."
+msgstr "पासवर्ड समाप्तिको चेतावनी..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:2
+msgid "Your password will expire in 7 days..."
+msgstr "तपाइँको पासवर्ड ७ दिनभित्र म्याद समाप्त हुनेछ..."
+
+#: ../storage/exchange-passwd-expiry.glade.h:3
+msgid "_Change Password"
+msgstr "पासवर्ड परिवर्तन गर्नुहोस्"
+
+#: ../storage/exchange-passwd-expiry.glade.h:4
+msgid "ok_button"
+msgstr "ठिक छ बटन"
+
+#: ../storage/exchange-permissions-dialog.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../storage/exchange-permissions-dialog.glade.h:2
+msgid "<b>Permissions</b>"
+msgstr "<b>अनुमतिहरू</b>"
+
+#: ../storage/exchange-permissions-dialog.glade.h:3
+msgid "Cannot Delete"
+msgstr "मेट्न सकिँदैन"
+
+#: ../storage/exchange-permissions-dialog.glade.h:4
+msgid "Cannot Edit"
+msgstr "सम्पादन गर्न सकिँदैन"
+
+#: ../storage/exchange-permissions-dialog.glade.h:5
+msgid "Create items"
+msgstr "वस्तुहरू सिर्जना गर्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:6
+msgid "Create subfolders"
+msgstr "सहायक फोल्डरहरू सिर्जना गर्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:7
+msgid "Delete Any Items"
+msgstr "कुनै पनि वस्तुहरू मेट्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:8
+msgid "Delete Own Items"
+msgstr "आफ्नै वस्तुहरू मेट्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:9
+msgid "Edit Any Items"
+msgstr "कुनै पनि वस्तुहरू सम्पादन गर्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:10
+msgid "Edit Own Items"
+msgstr "आफ्नै वस्तुहरू सम्पादन गर्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:11
+msgid "Folder contact"
+msgstr "फोल्डर सम्पर्क"
+
+#: ../storage/exchange-permissions-dialog.glade.h:12
+msgid "Folder owner"
+msgstr "फोल्डर मालिक"
+
+#: ../storage/exchange-permissions-dialog.glade.h:13
+msgid "Folder visible"
+msgstr "फोल्डर पारदर्शीता"
+
+#: ../storage/exchange-permissions-dialog.glade.h:14
+msgid "Read items"
+msgstr "वस्तुहरू पढ्नुहोस्"
+
+#: ../storage/exchange-permissions-dialog.glade.h:15
+msgid "Role: "
+msgstr "भूमिका: "
+
+#: ../storage/exchange-storage.c:338
+msgid "Connecting..."
+msgstr "सम्पर्क गर्दै..."
+
+#: ../storage/main.c:183
+msgid "Ximian Connector for Microsoft Exchange"
+msgstr "माइक्रोसफ्ट एक्सचेन्जको लागि Ximian जडानकर्ता"
+
+#: ../storage/ximian-connector-setup.c:44
+msgid "Ximian Connector for Microsoft Exchange Setup Tool"
+msgstr "माइक्रोसफ्ट एक्सचेन्ज सेट अप उपकरणका लागि Ximian जडानकर्ता"
+
+#: ../storage/ximian-connector.xml.h:1
+msgid "Change your Exchange server password"
+msgstr "तपाइँको एक्सचेन्ज सर्भर पासवर्ड परिवर्तन गर्नुहोस्"
+
+#: ../storage/ximian-connector.xml.h:2
+msgid "Folder _Size"
+msgstr "फोल्डर साइज"
+
+#: ../storage/ximian-connector.xml.h:3
+msgid "Get the size of personal folders"
+msgstr "व्यक्तिगत फोल्डरहरूका लागि साइज प्राप्त गर्नुहोस्"
+
+#: ../storage/ximian-connector.xml.h:4
+msgid "Subscribe to _Other User's Folder..."
+msgstr "अन्य प्रयोगकर्ताहरूको फोल्डरमा सदस्यता लिनुहोस्..."
+
+#: ../storage/ximian-connector.xml.h:5
+msgid "Subscribe to a folder belonging to some other user on the server"
+msgstr "सर्भरमा केहि अन्य प्रयोगकर्ताको अधिनमा रहेको एउटा फोल्डरमा सदस्यता लिनुहोस्"
+
+#: ../storage/ximian-connector.xml.h:6
+msgid "Unsubscribe from a folder added with \"Subscribe to Other User's Folder\""
+msgstr "\"अन्य प्रयोगकर्ताको फोल्डरमा सदस्यता लिनुहोस्\" मा थपिएको एउटा फोल्डरबाट सदस्यता हटाउनुहोस्"
+
+#: ../storage/ximian-connector.xml.h:7
+msgid "View or change your Exchange calendar delegation settings"
+msgstr "तपाईँको एक्सचेन्ज क्यालेन्डर प्रत्यायोजन सेटिङ्गहरूलाई हेर्नुहोस् वा परिवर्तन गर्नुहोस्"
+
+#: ../storage/ximian-connector.xml.h:8
+msgid "View or change your Out-of-Office status and autoreply message"
+msgstr "तपाइँको कार्यालय-देखि-बाहिर वस्तुस्थितिलाई हेर्नुहोस् वा परिवर्तन गर्नुहोस् र सन्देशलाई स्वत: जवाफ दिनुहोस्"
+
+#: ../storage/ximian-connector.xml.h:9
+msgid "_Change Exchange Password..."
+msgstr "एक्सचेन्ज पासवर्ड परिवर्तन गर्नुहोस्..."
+
+#: ../storage/ximian-connector.xml.h:10
+msgid "_Delegation Assistant"
+msgstr "प्रत्यायोजन सहायक"
+
+#: ../storage/ximian-connector.xml.h:11
+msgid "_Out of Office Assistant"
+msgstr "कार्यालय सहायक बाहिर"
+
+#: ../storage/ximian-connector.xml.h:12
+msgid "_Unsubscribe from Other User's Folder"
+msgstr "अन्य प्रयोगकर्ताको फोल्डरबाट सदस्यता हटाउनुहोस्"
+
