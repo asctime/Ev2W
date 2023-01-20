@@ -1,6 +1,6 @@
 # Evo2W
 <strong>Evo2W (Evolution 2.x email address book and calendar client, for Windows) based on MSYS2/MinGW64 and GTK2</strong><br><br>
-Update and refresh of original work courtesy Novell, Inc., The GNOME Foundation, SUSE and Debian Linux groups, the MSYS2 team and possible others. Evolution is licensed under the GNU Lesser General Public License (LGPL). <br><br>
+Update and refresh of original work courtesy Novell, Inc., The GNOME Foundation, SUSE and Debian Linux groups, the MSYS2 team and possible others. <a href="https://en.wikipedia.org/wiki/GNOME_Evolution">Evolution</a> is licensed under the GNU Lesser General Public License (LGPL). <br><br>
 <strong>What is working?</strong>
 Many email functions like IMAP and SMTP, CalDAV, LDAP/LDAPS and more.<br>
 <strong>What is not working yet?</strong>
