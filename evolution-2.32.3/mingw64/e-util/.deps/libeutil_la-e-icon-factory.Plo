@@ -24,7 +24,8 @@ libeutil_la-e-icon-factory.lo: ../../e-util/e-icon-factory.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/stat.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
- D:/MSYS2/mingw64/include/gnome-desktop-2.0/libgnomeui/gnome-desktop-thumbnail.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib/gstdio.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -126,6 +127,12 @@ libeutil_la-e-icon-factory.lo: ../../e-util/e-icon-factory.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/deprecated/grel.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/deprecated/gthread.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gioenums.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gobject.h \
@@ -148,13 +155,6 @@ libeutil_la-e-icon-factory.lo: ../../e-util/e-icon-factory.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluearray.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluetypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gobject-autocleanups.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-macros.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h \
- D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
- D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \
- D:/MSYS2/mingw64/include/glib-2.0/gio/gioenums.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gaction.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gactiongroup.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gactiongroupexporter.h \
@@ -307,18 +307,6 @@ libeutil_la-e-icon-factory.lo: ../../e-util/e-icon-factory.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gzlibcompressor.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gzlibdecompressor.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio-autocleanups.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-transform.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-io.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-loader.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h \
- D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h \
- D:/MSYS2/mingw64/include/glib-2.0/glib/gstdio.h \
- D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h \
- D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
- D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
- D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkscreen.h \
  D:/MSYS2/mingw64/include/cairo/cairo.h \
  D:/MSYS2/mingw64/include/cairo/cairo-version.h \
@@ -375,6 +363,17 @@ libeutil_la-e-icon-factory.lo: ../../e-util/e-icon-factory.c ../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkcairo.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkpixbuf.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkrgb.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-macros.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-transform.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-io.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-loader.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h \
+ D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pangocairo.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkcursor.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkdisplaymanager.h \
@@ -693,7 +692,9 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
 
-D:/MSYS2/mingw64/include/gnome-desktop-2.0/libgnomeui/gnome-desktop-thumbnail.h:
+D:/MSYS2/mingw64/include/glib-2.0/glib/gstdio.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib.h:
 
@@ -897,6 +898,18 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/deprecated/gthread.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/glib-autocleanups.h:
 
+D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h:
+
+D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h:
+
+D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/gioenums.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/glib-object.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h:
@@ -940,20 +953,6 @@ D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluearray.h:
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluetypes.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gobject-autocleanups.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-macros.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h:
-
-D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h:
-
-D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h:
-
-D:/MSYS2/mingw64/include/glib-2.0/gio/gioenums.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gaction.h:
 
@@ -1259,30 +1258,6 @@ D:/MSYS2/mingw64/include/glib-2.0/gio/gzlibdecompressor.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gio-autocleanups.h:
 
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-transform.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-io.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-loader.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h:
-
-D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h:
-
-D:/MSYS2/mingw64/include/glib-2.0/glib/gstdio.h:
-
-D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h:
-
-D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h:
-
-D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h:
-
-D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h:
-
 D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkscreen.h:
 
 D:/MSYS2/mingw64/include/cairo/cairo.h:
@@ -1394,6 +1369,28 @@ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkcairo.h:
 D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkpixbuf.h:
 
 D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkrgb.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-macros.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-transform.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-io.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-loader.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h:
+
+D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h:
 
 D:/MSYS2/mingw64/include/pango-1.0/pango/pangocairo.h:
 

@@ -106,9 +106,6 @@ else
 	UNIQUE="unique-1.0"
 	unique_minimum_version="1.1.2"
 
-	GNOME_DESKTOP="gnome-desktop-2.0"
-	gnome_desktop_minimum_version="2.26.0"
-
 	CANBERRA_GTK="libcanberra-gtk"
 	libcanberra_gtk_minimum_version="0"
 
@@ -132,7 +129,6 @@ AC_SUBST(GTKHTML_EDITOR)
 AC_SUBST(GTK)
 AC_SUBST(GTKHTML)
 AC_SUBST(UNIQUE)
-AC_SUBST(GNOME_DESKTOP)
 AC_SUBST(LIBEDATASERVERUI)
 AC_SUBST(EVOLUTION_SHELL)
 AM_CONDITIONAL([ENABLE_GTK3], [test "$enable_gtk3" = yes])
@@ -258,7 +254,7 @@ dnl Win32
 dnl ******************************
 AC_MSG_CHECKING([for Win32])
 case "$host" in
-*-mingw*)
+*-mingw* | MSYS* | *MSYS* )
 	os_win32=yes
 	NO_UNDEFINED='-no-undefined'
 	SOEXT='.dll'
@@ -309,7 +305,6 @@ PKG_CHECK_MODULES([GNOME_PLATFORM],
 	 libxml-2.0 >= libxml_minimum_version
 	 pangoft2 >= pangoft2_minimum_version
 	 shared-mime-info >= shared_mime_info_minimum_version
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version])
 AC_SUBST(GNOME_PLATFORM_CFLAGS)
 AC_SUBST(GNOME_PLATFORM_LIBS)
