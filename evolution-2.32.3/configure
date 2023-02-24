@@ -937,7 +937,6 @@ ENABLE_GTK3_FALSE
 ENABLE_GTK3_TRUE
 EVOLUTION_SHELL
 LIBEDATASERVERUI
-GNOME_DESKTOP
 UNIQUE
 GTKHTML
 GTK
@@ -3428,9 +3427,6 @@ else
 	UNIQUE="unique-1.0"
 	unique_minimum_version="1.1.2"
 
-	GNOME_DESKTOP="gnome-desktop-2.0"
-	gnome_desktop_minimum_version="2.26.0"
-
 	CANBERRA_GTK="libcanberra-gtk"
 	libcanberra_gtk_minimum_version="0"
 
@@ -3449,7 +3445,6 @@ else
 
 	EVOLUTION_SHELL="evolution-shell"
 fi
-
 
 
 
@@ -15972,7 +15967,7 @@ fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Win32" >&5
 $as_echo_n "checking for Win32... " >&6; }
 case "$host" in
-*-mingw*)
+*-mingw* | MSYS* | *MSYS* )
 	os_win32=yes
 	NO_UNDEFINED='-no-undefined'
 	SOEXT='.dll'
@@ -16134,7 +16129,6 @@ if test -n "$GNOME_PLATFORM_CFLAGS"; then
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 \$GNOME_DESKTOP >= \$gnome_desktop_minimum_version
 	 \$UNIQUE >= \$unique_minimum_version\""; } >&5
   ($PKG_CONFIG --exists --print-errors "gio-2.0 >= 2.25.12
 	 gmodule-2.0 >= 2.25.12
@@ -16144,7 +16138,6 @@ if test -n "$GNOME_PLATFORM_CFLAGS"; then
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
@@ -16157,7 +16150,6 @@ if test -n "$GNOME_PLATFORM_CFLAGS"; then
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
@@ -16178,7 +16170,6 @@ if test -n "$GNOME_PLATFORM_LIBS"; then
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 \$GNOME_DESKTOP >= \$gnome_desktop_minimum_version
 	 \$UNIQUE >= \$unique_minimum_version\""; } >&5
   ($PKG_CONFIG --exists --print-errors "gio-2.0 >= 2.25.12
 	 gmodule-2.0 >= 2.25.12
@@ -16188,7 +16179,6 @@ if test -n "$GNOME_PLATFORM_LIBS"; then
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
@@ -16201,7 +16191,6 @@ if test -n "$GNOME_PLATFORM_LIBS"; then
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
@@ -16231,7 +16220,6 @@ fi
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version" 2>&1`
         else
 	        GNOME_PLATFORM_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gio-2.0 >= 2.25.12
@@ -16242,7 +16230,6 @@ fi
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
@@ -16256,7 +16243,6 @@ fi
 	 libxml-2.0 >= 2.7.3
 	 pangoft2 >= 1.0.1
 	 shared-mime-info >= 0.22
-	 $GNOME_DESKTOP >= $gnome_desktop_minimum_version
 	 $UNIQUE >= $unique_minimum_version) were not met:
 
 $GNOME_PLATFORM_PKG_ERRORS

@@ -56,7 +56,11 @@ expire_dir_rec (const gchar *base, time_t now)
 	const gchar *d;
 	GString *path;
 	gsize len;
+#ifdef __MINGW64__
+	struct _stat64 st;
+#else
 	struct stat st;
+#endif
 	gint count = 0;
 
 	d(printf("expire dir '%s'\n", base));
