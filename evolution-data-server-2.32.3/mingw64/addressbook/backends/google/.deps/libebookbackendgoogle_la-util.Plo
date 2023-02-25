@@ -42,6 +42,7 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gasyncqueue.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gthread.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gatomic.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib/glib-typeof.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gerror.h \
  D:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0/include/stdarg.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdarg.h \
@@ -105,6 +106,7 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gspawn.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gstrfuncs.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gstringchunk.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib/gstrvbuilder.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtestutils.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gthreadpool.h \
@@ -131,9 +133,11 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gmarshal.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gboxed.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-types.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gobject/gbindinggroup.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/genums.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-enumtypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gparamspecs.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gobject/gsignalgroup.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gsourceclosure.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gtypemodule.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gtypeplugin.h \
@@ -190,6 +194,8 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusproxy.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusserver.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusutils.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontroller.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontrollerdbus.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdrive.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdtlsclientconnection.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdtlsconnection.h \
@@ -239,6 +245,7 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableinputstream.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableoutputstream.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableutils.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gpowerprofilemonitor.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpropertyaction.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gproxy.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gproxyaddress.h \
@@ -375,12 +382,28 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/xmlmemory.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/threads.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-glib.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-types.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-version-macros.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-version.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-builder.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-generator.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-parser.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-path.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-reader.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-utils.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-version.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-enum-types.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-gobject.h \
+ D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-gvariant.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-category.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-link.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-author.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-feed.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-generator.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-service.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-authorizer.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-authorization-domain.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-query.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-types.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-enums.h \
@@ -391,6 +414,13 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-comparable.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-batchable.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gdata-batch-operation.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-client-login-authorizer.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-authorizer.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-oauth1-authorizer.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-oauth2-authorizer.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-commentable.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-comment.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-version.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/app/gdata-app-categories.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gd/gdata-gd-email-address.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/gd/gdata-gd-im-address.h \
@@ -419,14 +449,17 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-content.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-credit.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-state.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-feed.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-query.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-enums.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-category.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-comment.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-service.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-calendar.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-event.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-feed.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-access-rule.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-service.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-album.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-user.h \
@@ -434,6 +467,7 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-file.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-feed.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-enums.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-comment.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/contacts/gdata-contacts-service.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/contacts/gdata-contacts-contact.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/contacts/gdata-contacts-group.h \
@@ -444,10 +478,32 @@ libebookbackendgoogle_la-util.lo: \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-query.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-feed.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-folder.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-upload-query.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-text.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-presentation.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-drawing.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-pdf.h \
  D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-enums.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-access-rule.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-service.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-tasklist.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-task.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-service.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-result.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-result.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-result.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-result.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-result.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-query.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-result.h \
+ D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-enums.h \
  ../../../../addressbook/backends/google/util.h \
  ../../../../addressbook/libebook/e-vcard.h \
  ../../../../addressbook/libebook/e-contact.h
@@ -537,6 +593,8 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/gasyncqueue.h:
 D:/MSYS2/mingw64/include/glib-2.0/glib/gthread.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gatomic.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/glib/glib-typeof.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gerror.h:
 
@@ -664,6 +722,8 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/gstrfuncs.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gstringchunk.h:
 
+D:/MSYS2/mingw64/include/glib-2.0/glib/gstrvbuilder.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/glib/gtestutils.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h:
@@ -716,11 +776,15 @@ D:/MSYS2/mingw64/include/glib-2.0/gobject/gboxed.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-types.h:
 
+D:/MSYS2/mingw64/include/glib-2.0/gobject/gbindinggroup.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/gobject/genums.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-enumtypes.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gparamspecs.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gobject/gsignalgroup.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gsourceclosure.h:
 
@@ -834,6 +898,10 @@ D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusserver.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusutils.h:
 
+D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontroller.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontrollerdbus.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/gio/gdrive.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gdtlsclientconnection.h:
@@ -931,6 +999,8 @@ D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableinputstream.h:
 D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableoutputstream.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableutils.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/gpowerprofilemonitor.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gpropertyaction.h:
 
@@ -1204,6 +1274,34 @@ D:/MSYS2/mingw64/include/libxml2/libxml/xmlmemory.h:
 
 D:/MSYS2/mingw64/include/libxml2/libxml/threads.h:
 
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-glib.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-types.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-version-macros.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-version.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-builder.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-generator.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-parser.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-path.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-reader.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-utils.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-version.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-enum-types.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-gobject.h:
+
+D:/MSYS2/mingw64/include/json-glib-1.0/json-glib/json-gvariant.h:
+
 D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-category.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-link.h:
@@ -1215,6 +1313,10 @@ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-feed.h:
 D:/MSYS2/mingw64/include/libgdata/gdata/atom/gdata-generator.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/gdata-service.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-authorizer.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-authorization-domain.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/gdata-query.h:
 
@@ -1235,6 +1337,20 @@ D:/MSYS2/mingw64/include/libgdata/gdata/gdata-comparable.h:
 D:/MSYS2/mingw64/include/libgdata/gdata/gdata-batchable.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/gdata-batch-operation.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-client-login-authorizer.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-authorizer.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-oauth1-authorizer.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-oauth2-authorizer.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-commentable.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-comment.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/gdata-version.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/app/gdata-app-categories.h:
 
@@ -1292,11 +1408,15 @@ D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-credit.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-state.h:
 
+D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-feed.h:
+
 D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-query.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-enums.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-category.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/youtube/gdata-youtube-comment.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-service.h:
 
@@ -1307,6 +1427,8 @@ D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-event.h
 D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-feed.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/calendar/gdata-calendar-access-rule.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-service.h:
 
@@ -1321,6 +1443,8 @@ D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-file.
 D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-feed.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-enums.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/picasaweb/gdata-picasaweb-comment.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/contacts/gdata-contacts-service.h:
 
@@ -1342,13 +1466,57 @@ D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-feed.
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-folder.h:
 
+D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-upload-query.h:
+
 D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-text.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h:
 
 D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-presentation.h:
 
+D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-drawing.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-pdf.h:
+
 D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-enums.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/documents/gdata-documents-access-rule.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-service.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-tasklist.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-task.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/tasks/gdata-tasks-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-service.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-result.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-result.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-result.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-result.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-search-result.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-query.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-topic-result.h:
+
+D:/MSYS2/mingw64/include/libgdata/gdata/services/freebase/gdata-freebase-enums.h:
 
 ../../../../addressbook/backends/google/util.h:
 

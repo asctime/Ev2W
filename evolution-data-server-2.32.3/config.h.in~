@@ -73,6 +73,14 @@
    Content-Length format */
 #undef HAVE_BROKEN_SPOOL
 
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
+   CoreFoundation framework. */
+#undef HAVE_CFLOCALECOPYCURRENT
+
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
+   the CoreFoundation framework. */
+#undef HAVE_CFPREFERENCESCOPYAPPVALUE
+
 /* Have nl_langinfo (CODESET) */
 #undef HAVE_CODESET
 
@@ -90,6 +98,9 @@
 
 /* Define to 1 if you have the `fsync' function. */
 #undef HAVE_FSYNC
+
+/* libgdata is 0.7 or higher */
+#undef HAVE_GDATA_07
 
 /* Define to 1 if you have the `gethostbyaddr_r' function. */
 #undef HAVE_GETHOSTBYADDR_R
@@ -214,8 +225,10 @@
 /* IDL interface version (Major.Minor) */
 #undef INTERFACE_VERSION
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define if running the test suite so that test #27 works on MinGW. */
+#undef LT_MINGW_STATIC_TESTSUITE_HACK
+
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
 
 /* Enable getaddrinfo emulation */
@@ -287,6 +300,11 @@
    `char[]'. */
 #undef YYTEXT_POINTER
 
+/* Enable large inode numbers on Mac OS X 10.5.  */
+#ifndef _DARWIN_USE_64_BIT_INODE
+# define _DARWIN_USE_64_BIT_INODE 1
+#endif
+
 /* Number of bits in a file offset, on hosts where this is settable. */
 #undef _FILE_OFFSET_BITS
 
@@ -301,3 +319,6 @@
 #ifndef __cplusplus
 #undef inline
 #endif
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+#undef size_t

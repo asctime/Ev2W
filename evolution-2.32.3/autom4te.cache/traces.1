@@ -4719,208 +4719,197 @@ m4trace:configure.ac:1348: -1- PKG_CHECK_EXISTS([libsoup-2.4 >= 2.4.0], [pkg_cv_
 m4trace:configure.ac:1348: -1- _PKG_SHORT_ERRORS_SUPPORTED
 m4trace:configure.ac:1349: -1- m4_pattern_allow([^LIBSOUP_CFLAGS$])
 m4trace:configure.ac:1350: -1- m4_pattern_allow([^LIBSOUP_LIBS$])
-m4trace:configure.ac:1352: -1- EVO_SET_COMPILE_FLAGS([GDATA], [libgdata >= 0.4.0])
-m4trace:configure.ac:1352: -1- PKG_CHECK_MODULES([GDATA], [libgdata >= 0.4.0])
-m4trace:configure.ac:1352: -1- m4_pattern_allow([^GDATA_CFLAGS$])
-m4trace:configure.ac:1352: -1- m4_pattern_allow([^GDATA_LIBS$])
-m4trace:configure.ac:1352: -1- PKG_CHECK_EXISTS([libgdata >= 0.4.0], [pkg_cv_[]GDATA_CFLAGS=`$PKG_CONFIG --[]cflags "libgdata >= 0.4.0" 2>/dev/null`
+m4trace:configure.ac:1352: -1- EVO_SET_COMPILE_FLAGS([EVOLUTION_CALENDAR], [$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR])
+m4trace:configure.ac:1352: -1- PKG_CHECK_MODULES([EVOLUTION_CALENDAR], [$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR])
+m4trace:configure.ac:1352: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_CFLAGS$])
+m4trace:configure.ac:1352: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_LIBS$])
+m4trace:configure.ac:1352: -1- PKG_CHECK_EXISTS([$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR], [pkg_cv_[]EVOLUTION_CALENDAR_CFLAGS=`$PKG_CONFIG --[]cflags "$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1352: -1- PKG_CHECK_EXISTS([libgdata >= 0.4.0], [pkg_cv_[]GDATA_LIBS=`$PKG_CONFIG --[]libs "libgdata >= 0.4.0" 2>/dev/null`
+m4trace:configure.ac:1352: -1- PKG_CHECK_EXISTS([$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR], [pkg_cv_[]EVOLUTION_CALENDAR_LIBS=`$PKG_CONFIG --[]libs "$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
 m4trace:configure.ac:1352: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1353: -1- m4_pattern_allow([^GDATA_CFLAGS$])
-m4trace:configure.ac:1354: -1- m4_pattern_allow([^GDATA_LIBS$])
-m4trace:configure.ac:1356: -1- EVO_SET_COMPILE_FLAGS([EVOLUTION_CALENDAR], [$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR])
-m4trace:configure.ac:1356: -1- PKG_CHECK_MODULES([EVOLUTION_CALENDAR], [$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR])
-m4trace:configure.ac:1356: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_CFLAGS$])
-m4trace:configure.ac:1356: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_LIBS$])
-m4trace:configure.ac:1356: -1- PKG_CHECK_EXISTS([$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR], [pkg_cv_[]EVOLUTION_CALENDAR_CFLAGS=`$PKG_CONFIG --[]cflags "$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR" 2>/dev/null`
+m4trace:configure.ac:1353: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_CFLAGS$])
+m4trace:configure.ac:1354: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_LIBS$])
+m4trace:configure.ac:1362: -1- m4_pattern_allow([^HAVE_ICAL_UNKNOWN_TOKEN_HANDLING$])
+m4trace:configure.ac:1373: -1- EVO_SET_COMPILE_FLAGS([EVOLUTION_MAIL], [camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI])
+m4trace:configure.ac:1373: -1- PKG_CHECK_MODULES([EVOLUTION_MAIL], [camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI])
+m4trace:configure.ac:1373: -1- m4_pattern_allow([^EVOLUTION_MAIL_CFLAGS$])
+m4trace:configure.ac:1373: -1- m4_pattern_allow([^EVOLUTION_MAIL_LIBS$])
+m4trace:configure.ac:1373: -1- PKG_CHECK_EXISTS([camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI], [pkg_cv_[]EVOLUTION_MAIL_CFLAGS=`$PKG_CONFIG --[]cflags "camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1356: -1- PKG_CHECK_EXISTS([$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR], [pkg_cv_[]EVOLUTION_CALENDAR_LIBS=`$PKG_CONFIG --[]libs "$GTKHTML libebook-1.2 libecal-1.2 $LIBEDATASERVERUI libebackend-1.2 $libnotify $GTKHTML_EDITOR" 2>/dev/null`
+m4trace:configure.ac:1373: -1- PKG_CHECK_EXISTS([camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI], [pkg_cv_[]EVOLUTION_MAIL_LIBS=`$PKG_CONFIG --[]libs "camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1356: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1357: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_CFLAGS$])
-m4trace:configure.ac:1358: -1- m4_pattern_allow([^EVOLUTION_CALENDAR_LIBS$])
-m4trace:configure.ac:1366: -1- m4_pattern_allow([^HAVE_ICAL_UNKNOWN_TOKEN_HANDLING$])
-m4trace:configure.ac:1377: -1- EVO_SET_COMPILE_FLAGS([EVOLUTION_MAIL], [camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI])
-m4trace:configure.ac:1377: -1- PKG_CHECK_MODULES([EVOLUTION_MAIL], [camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI])
-m4trace:configure.ac:1377: -1- m4_pattern_allow([^EVOLUTION_MAIL_CFLAGS$])
-m4trace:configure.ac:1377: -1- m4_pattern_allow([^EVOLUTION_MAIL_LIBS$])
-m4trace:configure.ac:1377: -1- PKG_CHECK_EXISTS([camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI], [pkg_cv_[]EVOLUTION_MAIL_CFLAGS=`$PKG_CONFIG --[]cflags "camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI" 2>/dev/null`
+m4trace:configure.ac:1373: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1374: -1- m4_pattern_allow([^EVOLUTION_MAIL_CFLAGS$])
+m4trace:configure.ac:1375: -1- m4_pattern_allow([^EVOLUTION_MAIL_LIBS$])
+m4trace:configure.ac:1381: -1- m4_pattern_allow([^DATASERVER_EXEC_VERSION$])
+m4trace:configure.ac:1387: -1- EVO_SET_COMPILE_FLAGS([EGG_SMCLIENT], [$GTK])
+m4trace:configure.ac:1387: -1- PKG_CHECK_MODULES([EGG_SMCLIENT], [$GTK])
+m4trace:configure.ac:1387: -1- m4_pattern_allow([^EGG_SMCLIENT_CFLAGS$])
+m4trace:configure.ac:1387: -1- m4_pattern_allow([^EGG_SMCLIENT_LIBS$])
+m4trace:configure.ac:1387: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_CFLAGS=`$PKG_CONFIG --[]cflags "$GTK" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1377: -1- PKG_CHECK_EXISTS([camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI], [pkg_cv_[]EVOLUTION_MAIL_LIBS=`$PKG_CONFIG --[]libs "camel-provider-1.2 $GTKHTML $GTKHTML_EDITOR $mozilla_nss libebook-1.2 $LIBEDATASERVERUI" 2>/dev/null`
+m4trace:configure.ac:1387: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_LIBS=`$PKG_CONFIG --[]libs "$GTK" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1377: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1378: -1- m4_pattern_allow([^EVOLUTION_MAIL_CFLAGS$])
-m4trace:configure.ac:1379: -1- m4_pattern_allow([^EVOLUTION_MAIL_LIBS$])
-m4trace:configure.ac:1385: -1- m4_pattern_allow([^DATASERVER_EXEC_VERSION$])
-m4trace:configure.ac:1391: -1- EVO_SET_COMPILE_FLAGS([EGG_SMCLIENT], [$GTK])
-m4trace:configure.ac:1391: -1- PKG_CHECK_MODULES([EGG_SMCLIENT], [$GTK])
+m4trace:configure.ac:1387: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1389: -1- EVO_SET_COMPILE_FLAGS([EGG_SMCLIENT], [$GTK], [], [-lSM -lICE])
+m4trace:configure.ac:1389: -1- PKG_CHECK_MODULES([EGG_SMCLIENT], [$GTK])
+m4trace:configure.ac:1389: -1- m4_pattern_allow([^EGG_SMCLIENT_CFLAGS$])
+m4trace:configure.ac:1389: -1- m4_pattern_allow([^EGG_SMCLIENT_LIBS$])
+m4trace:configure.ac:1389: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_CFLAGS=`$PKG_CONFIG --[]cflags "$GTK" 2>/dev/null`
+		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
+m4trace:configure.ac:1389: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_LIBS=`$PKG_CONFIG --[]libs "$GTK" 2>/dev/null`
+		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
+m4trace:configure.ac:1389: -1- _PKG_SHORT_ERRORS_SUPPORTED
 m4trace:configure.ac:1391: -1- m4_pattern_allow([^EGG_SMCLIENT_CFLAGS$])
-m4trace:configure.ac:1391: -1- m4_pattern_allow([^EGG_SMCLIENT_LIBS$])
-m4trace:configure.ac:1391: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_CFLAGS=`$PKG_CONFIG --[]cflags "$GTK" 2>/dev/null`
+m4trace:configure.ac:1392: -1- m4_pattern_allow([^EGG_SMCLIENT_LIBS$])
+m4trace:configure.ac:1402: -1- m4_pattern_allow([^privlibdir$])
+m4trace:configure.ac:1405: -1- m4_pattern_allow([^privlibexecdir$])
+m4trace:configure.ac:1408: -1- m4_pattern_allow([^privdatadir$])
+m4trace:configure.ac:1411: -1- m4_pattern_allow([^privincludedir$])
+m4trace:configure.ac:1414: -1- m4_pattern_allow([^moduledir$])
+m4trace:configure.ac:1417: -1- m4_pattern_allow([^uidir$])
+m4trace:configure.ac:1420: -1- m4_pattern_allow([^evolutionhelpdir$])
+m4trace:configure.ac:1423: -1- m4_pattern_allow([^icondir$])
+m4trace:configure.ac:1426: -1- m4_pattern_allow([^imagesdir$])
+m4trace:configure.ac:1438: -1- m4_pattern_allow([^privsolibdir$])
+m4trace:configure.ac:1441: -1- m4_pattern_allow([^soundsdir$])
+m4trace:configure.ac:1444: -1- m4_pattern_allow([^etspecdir$])
+m4trace:configure.ac:1447: -1- m4_pattern_allow([^viewsdir$])
+m4trace:configure.ac:1450: -1- AS_AC_EXPAND([PRIVLIBEXECDIR], ["$privlibexecdir"])
+m4trace:configure.ac:1450: -1- m4_pattern_allow([^PRIVLIBEXECDIR$])
+m4trace:configure.ac:1457: -1- m4_pattern_allow([^plugindir$])
+m4trace:configure.ac:1460: -1- m4_pattern_allow([^EVO_PLUGIN_RULE$])
+m4trace:configure.ac:1494: -1- m4_pattern_allow([^ENABLE_PROFILING$])
+m4trace:configure.ac:1512: -1- PKG_CHECK_MODULES([GSTREAMER], [gstreamer-0.10], [have_gst=yes], [have_gst=no])
+m4trace:configure.ac:1512: -1- m4_pattern_allow([^GSTREAMER_CFLAGS$])
+m4trace:configure.ac:1512: -1- m4_pattern_allow([^GSTREAMER_LIBS$])
+m4trace:configure.ac:1512: -1- PKG_CHECK_EXISTS([gstreamer-0.10], [pkg_cv_[]GSTREAMER_CFLAGS=`$PKG_CONFIG --[]cflags "gstreamer-0.10" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1391: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_LIBS=`$PKG_CONFIG --[]libs "$GTK" 2>/dev/null`
+m4trace:configure.ac:1512: -1- PKG_CHECK_EXISTS([gstreamer-0.10], [pkg_cv_[]GSTREAMER_LIBS=`$PKG_CONFIG --[]libs "gstreamer-0.10" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1391: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1393: -1- EVO_SET_COMPILE_FLAGS([EGG_SMCLIENT], [$GTK], [], [-lSM -lICE])
-m4trace:configure.ac:1393: -1- PKG_CHECK_MODULES([EGG_SMCLIENT], [$GTK])
-m4trace:configure.ac:1393: -1- m4_pattern_allow([^EGG_SMCLIENT_CFLAGS$])
-m4trace:configure.ac:1393: -1- m4_pattern_allow([^EGG_SMCLIENT_LIBS$])
-m4trace:configure.ac:1393: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_CFLAGS=`$PKG_CONFIG --[]cflags "$GTK" 2>/dev/null`
+m4trace:configure.ac:1512: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1513: -1- m4_pattern_allow([^GSTREAMER_CFLAGS$])
+m4trace:configure.ac:1514: -1- m4_pattern_allow([^GSTREAMER_LIBS$])
+m4trace:configure.ac:1532: -1- PKG_CHECK_MODULES([LIBGWEATHER], [$GWEATHER >= $gweather_minimum_version], [have_weather="yes"], [have_weather="no"])
+m4trace:configure.ac:1532: -1- m4_pattern_allow([^LIBGWEATHER_CFLAGS$])
+m4trace:configure.ac:1532: -1- m4_pattern_allow([^LIBGWEATHER_LIBS$])
+m4trace:configure.ac:1532: -1- PKG_CHECK_EXISTS([$GWEATHER >= $gweather_minimum_version], [pkg_cv_[]LIBGWEATHER_CFLAGS=`$PKG_CONFIG --[]cflags "$GWEATHER >= $gweather_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1393: -1- PKG_CHECK_EXISTS([$GTK], [pkg_cv_[]EGG_SMCLIENT_LIBS=`$PKG_CONFIG --[]libs "$GTK" 2>/dev/null`
+m4trace:configure.ac:1532: -1- PKG_CHECK_EXISTS([$GWEATHER >= $gweather_minimum_version], [pkg_cv_[]LIBGWEATHER_LIBS=`$PKG_CONFIG --[]libs "$GWEATHER >= $gweather_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1393: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1395: -1- m4_pattern_allow([^EGG_SMCLIENT_CFLAGS$])
-m4trace:configure.ac:1396: -1- m4_pattern_allow([^EGG_SMCLIENT_LIBS$])
-m4trace:configure.ac:1406: -1- m4_pattern_allow([^privlibdir$])
-m4trace:configure.ac:1409: -1- m4_pattern_allow([^privlibexecdir$])
-m4trace:configure.ac:1412: -1- m4_pattern_allow([^privdatadir$])
-m4trace:configure.ac:1415: -1- m4_pattern_allow([^privincludedir$])
-m4trace:configure.ac:1418: -1- m4_pattern_allow([^moduledir$])
-m4trace:configure.ac:1421: -1- m4_pattern_allow([^uidir$])
-m4trace:configure.ac:1424: -1- m4_pattern_allow([^evolutionhelpdir$])
-m4trace:configure.ac:1427: -1- m4_pattern_allow([^icondir$])
-m4trace:configure.ac:1430: -1- m4_pattern_allow([^imagesdir$])
-m4trace:configure.ac:1442: -1- m4_pattern_allow([^privsolibdir$])
-m4trace:configure.ac:1445: -1- m4_pattern_allow([^soundsdir$])
-m4trace:configure.ac:1448: -1- m4_pattern_allow([^etspecdir$])
-m4trace:configure.ac:1451: -1- m4_pattern_allow([^viewsdir$])
-m4trace:configure.ac:1454: -1- AS_AC_EXPAND([PRIVLIBEXECDIR], ["$privlibexecdir"])
-m4trace:configure.ac:1454: -1- m4_pattern_allow([^PRIVLIBEXECDIR$])
-m4trace:configure.ac:1461: -1- m4_pattern_allow([^plugindir$])
-m4trace:configure.ac:1464: -1- m4_pattern_allow([^EVO_PLUGIN_RULE$])
-m4trace:configure.ac:1498: -1- m4_pattern_allow([^ENABLE_PROFILING$])
-m4trace:configure.ac:1516: -1- PKG_CHECK_MODULES([GSTREAMER], [gstreamer-0.10], [have_gst=yes], [have_gst=no])
-m4trace:configure.ac:1516: -1- m4_pattern_allow([^GSTREAMER_CFLAGS$])
-m4trace:configure.ac:1516: -1- m4_pattern_allow([^GSTREAMER_LIBS$])
-m4trace:configure.ac:1516: -1- PKG_CHECK_EXISTS([gstreamer-0.10], [pkg_cv_[]GSTREAMER_CFLAGS=`$PKG_CONFIG --[]cflags "gstreamer-0.10" 2>/dev/null`
+m4trace:configure.ac:1532: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1534: -1- m4_pattern_allow([^GWEATHER_CFLAGS$])
+m4trace:configure.ac:1535: -1- m4_pattern_allow([^GWEATHER_LIBS$])
+m4trace:configure.ac:1556: -1- PKG_CHECK_MODULES([CHAMPLAIN], [champlain-gtk-0.5 >= $champlain_minimum_version], [have_champlain=yes], [have_champlain=no])
+m4trace:configure.ac:1556: -1- m4_pattern_allow([^CHAMPLAIN_CFLAGS$])
+m4trace:configure.ac:1556: -1- m4_pattern_allow([^CHAMPLAIN_LIBS$])
+m4trace:configure.ac:1556: -1- PKG_CHECK_EXISTS([champlain-gtk-0.5 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_CFLAGS=`$PKG_CONFIG --[]cflags "champlain-gtk-0.5 >= $champlain_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1516: -1- PKG_CHECK_EXISTS([gstreamer-0.10], [pkg_cv_[]GSTREAMER_LIBS=`$PKG_CONFIG --[]libs "gstreamer-0.10" 2>/dev/null`
+m4trace:configure.ac:1556: -1- PKG_CHECK_EXISTS([champlain-gtk-0.5 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_LIBS=`$PKG_CONFIG --[]libs "champlain-gtk-0.5 >= $champlain_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1516: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1517: -1- m4_pattern_allow([^GSTREAMER_CFLAGS$])
-m4trace:configure.ac:1518: -1- m4_pattern_allow([^GSTREAMER_LIBS$])
-m4trace:configure.ac:1536: -1- PKG_CHECK_MODULES([LIBGWEATHER], [$GWEATHER >= $gweather_minimum_version], [have_weather="yes"], [have_weather="no"])
-m4trace:configure.ac:1536: -1- m4_pattern_allow([^LIBGWEATHER_CFLAGS$])
-m4trace:configure.ac:1536: -1- m4_pattern_allow([^LIBGWEATHER_LIBS$])
-m4trace:configure.ac:1536: -1- PKG_CHECK_EXISTS([$GWEATHER >= $gweather_minimum_version], [pkg_cv_[]LIBGWEATHER_CFLAGS=`$PKG_CONFIG --[]cflags "$GWEATHER >= $gweather_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1556: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1558: -1- PKG_CHECK_MODULES([CHAMPLAIN], [champlain-gtk-0.4 >= $champlain_minimum_version], [have_champlain=yes], [have_champlain=no])
+m4trace:configure.ac:1558: -1- m4_pattern_allow([^CHAMPLAIN_CFLAGS$])
+m4trace:configure.ac:1558: -1- m4_pattern_allow([^CHAMPLAIN_LIBS$])
+m4trace:configure.ac:1558: -1- PKG_CHECK_EXISTS([champlain-gtk-0.4 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_CFLAGS=`$PKG_CONFIG --[]cflags "champlain-gtk-0.4 >= $champlain_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1536: -1- PKG_CHECK_EXISTS([$GWEATHER >= $gweather_minimum_version], [pkg_cv_[]LIBGWEATHER_LIBS=`$PKG_CONFIG --[]libs "$GWEATHER >= $gweather_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1558: -1- PKG_CHECK_EXISTS([champlain-gtk-0.4 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_LIBS=`$PKG_CONFIG --[]libs "champlain-gtk-0.4 >= $champlain_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1536: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1538: -1- m4_pattern_allow([^GWEATHER_CFLAGS$])
-m4trace:configure.ac:1539: -1- m4_pattern_allow([^GWEATHER_LIBS$])
-m4trace:configure.ac:1560: -1- PKG_CHECK_MODULES([CHAMPLAIN], [champlain-gtk-0.5 >= $champlain_minimum_version], [have_champlain=yes], [have_champlain=no])
+m4trace:configure.ac:1558: -1- _PKG_SHORT_ERRORS_SUPPORTED
 m4trace:configure.ac:1560: -1- m4_pattern_allow([^CHAMPLAIN_CFLAGS$])
-m4trace:configure.ac:1560: -1- m4_pattern_allow([^CHAMPLAIN_LIBS$])
-m4trace:configure.ac:1560: -1- PKG_CHECK_EXISTS([champlain-gtk-0.5 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_CFLAGS=`$PKG_CONFIG --[]cflags "champlain-gtk-0.5 >= $champlain_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1561: -1- m4_pattern_allow([^CHAMPLAIN_LIBS$])
+m4trace:configure.ac:1567: -1- PKG_CHECK_MODULES([GEOCLUE], [geoclue >= geoclue_minimum_version], [have_geoclue=yes], [have_geoclue=no])
+m4trace:configure.ac:1567: -1- m4_pattern_allow([^GEOCLUE_CFLAGS$])
+m4trace:configure.ac:1567: -1- m4_pattern_allow([^GEOCLUE_LIBS$])
+m4trace:configure.ac:1567: -1- PKG_CHECK_EXISTS([geoclue >= geoclue_minimum_version], [pkg_cv_[]GEOCLUE_CFLAGS=`$PKG_CONFIG --[]cflags "geoclue >= geoclue_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1560: -1- PKG_CHECK_EXISTS([champlain-gtk-0.5 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_LIBS=`$PKG_CONFIG --[]libs "champlain-gtk-0.5 >= $champlain_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1567: -1- PKG_CHECK_EXISTS([geoclue >= geoclue_minimum_version], [pkg_cv_[]GEOCLUE_LIBS=`$PKG_CONFIG --[]libs "geoclue >= geoclue_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1560: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1562: -1- PKG_CHECK_MODULES([CHAMPLAIN], [champlain-gtk-0.4 >= $champlain_minimum_version], [have_champlain=yes], [have_champlain=no])
-m4trace:configure.ac:1562: -1- m4_pattern_allow([^CHAMPLAIN_CFLAGS$])
-m4trace:configure.ac:1562: -1- m4_pattern_allow([^CHAMPLAIN_LIBS$])
-m4trace:configure.ac:1562: -1- PKG_CHECK_EXISTS([champlain-gtk-0.4 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_CFLAGS=`$PKG_CONFIG --[]cflags "champlain-gtk-0.4 >= $champlain_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1567: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1568: -1- m4_pattern_allow([^GEOCLUE_CFLAGS$])
+m4trace:configure.ac:1569: -1- m4_pattern_allow([^GEOCLUE_LIBS$])
+m4trace:configure.ac:1575: -1- PKG_CHECK_MODULES([CLUTTER_GTK], [$CLUTTER_GTK >= $clutter_gtk_minimum_version], [have_clutter_gtk="yes"], [have_clutter_gtk="no" ])
+m4trace:configure.ac:1575: -1- m4_pattern_allow([^CLUTTER_GTK_CFLAGS$])
+m4trace:configure.ac:1575: -1- m4_pattern_allow([^CLUTTER_GTK_LIBS$])
+m4trace:configure.ac:1575: -1- PKG_CHECK_EXISTS([$CLUTTER_GTK >= $clutter_gtk_minimum_version], [pkg_cv_[]CLUTTER_GTK_CFLAGS=`$PKG_CONFIG --[]cflags "$CLUTTER_GTK >= $clutter_gtk_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1562: -1- PKG_CHECK_EXISTS([champlain-gtk-0.4 >= $champlain_minimum_version], [pkg_cv_[]CHAMPLAIN_LIBS=`$PKG_CONFIG --[]libs "champlain-gtk-0.4 >= $champlain_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1575: -1- PKG_CHECK_EXISTS([$CLUTTER_GTK >= $clutter_gtk_minimum_version], [pkg_cv_[]CLUTTER_GTK_LIBS=`$PKG_CONFIG --[]libs "$CLUTTER_GTK >= $clutter_gtk_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1562: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1564: -1- m4_pattern_allow([^CHAMPLAIN_CFLAGS$])
-m4trace:configure.ac:1565: -1- m4_pattern_allow([^CHAMPLAIN_LIBS$])
-m4trace:configure.ac:1571: -1- PKG_CHECK_MODULES([GEOCLUE], [geoclue >= geoclue_minimum_version], [have_geoclue=yes], [have_geoclue=no])
-m4trace:configure.ac:1571: -1- m4_pattern_allow([^GEOCLUE_CFLAGS$])
-m4trace:configure.ac:1571: -1- m4_pattern_allow([^GEOCLUE_LIBS$])
-m4trace:configure.ac:1571: -1- PKG_CHECK_EXISTS([geoclue >= geoclue_minimum_version], [pkg_cv_[]GEOCLUE_CFLAGS=`$PKG_CONFIG --[]cflags "geoclue >= geoclue_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1575: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1594: -1- PKG_CHECK_MODULES([GTKIMAGEVIEW], [gtkimageview >= $gtkimageview_minimum_version], [have_imageview=yes], [have_imageview=no])
+m4trace:configure.ac:1594: -1- m4_pattern_allow([^GTKIMAGEVIEW_CFLAGS$])
+m4trace:configure.ac:1594: -1- m4_pattern_allow([^GTKIMAGEVIEW_LIBS$])
+m4trace:configure.ac:1594: -1- PKG_CHECK_EXISTS([gtkimageview >= $gtkimageview_minimum_version], [pkg_cv_[]GTKIMAGEVIEW_CFLAGS=`$PKG_CONFIG --[]cflags "gtkimageview >= $gtkimageview_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1571: -1- PKG_CHECK_EXISTS([geoclue >= geoclue_minimum_version], [pkg_cv_[]GEOCLUE_LIBS=`$PKG_CONFIG --[]libs "geoclue >= geoclue_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1594: -1- PKG_CHECK_EXISTS([gtkimageview >= $gtkimageview_minimum_version], [pkg_cv_[]GTKIMAGEVIEW_LIBS=`$PKG_CONFIG --[]libs "gtkimageview >= $gtkimageview_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1571: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1572: -1- m4_pattern_allow([^GEOCLUE_CFLAGS$])
-m4trace:configure.ac:1573: -1- m4_pattern_allow([^GEOCLUE_LIBS$])
-m4trace:configure.ac:1579: -1- PKG_CHECK_MODULES([CLUTTER_GTK], [$CLUTTER_GTK >= $clutter_gtk_minimum_version], [have_clutter_gtk="yes"], [have_clutter_gtk="no" ])
-m4trace:configure.ac:1579: -1- m4_pattern_allow([^CLUTTER_GTK_CFLAGS$])
-m4trace:configure.ac:1579: -1- m4_pattern_allow([^CLUTTER_GTK_LIBS$])
-m4trace:configure.ac:1579: -1- PKG_CHECK_EXISTS([$CLUTTER_GTK >= $clutter_gtk_minimum_version], [pkg_cv_[]CLUTTER_GTK_CFLAGS=`$PKG_CONFIG --[]cflags "$CLUTTER_GTK >= $clutter_gtk_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1594: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1595: -1- m4_pattern_allow([^GTKIMAGEVIEW_CFLAGS$])
+m4trace:configure.ac:1596: -1- m4_pattern_allow([^GTKIMAGEVIEW_LIBS$])
+m4trace:configure.ac:1614: -1- PKG_CHECK_MODULES([LIBPST], [libpst], [have_pst=yes], [have_pst=no])
+m4trace:configure.ac:1614: -1- m4_pattern_allow([^LIBPST_CFLAGS$])
+m4trace:configure.ac:1614: -1- m4_pattern_allow([^LIBPST_LIBS$])
+m4trace:configure.ac:1614: -1- PKG_CHECK_EXISTS([libpst], [pkg_cv_[]LIBPST_CFLAGS=`$PKG_CONFIG --[]cflags "libpst" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1579: -1- PKG_CHECK_EXISTS([$CLUTTER_GTK >= $clutter_gtk_minimum_version], [pkg_cv_[]CLUTTER_GTK_LIBS=`$PKG_CONFIG --[]libs "$CLUTTER_GTK >= $clutter_gtk_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1614: -1- PKG_CHECK_EXISTS([libpst], [pkg_cv_[]LIBPST_LIBS=`$PKG_CONFIG --[]libs "libpst" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1579: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1598: -1- PKG_CHECK_MODULES([GTKIMAGEVIEW], [gtkimageview >= $gtkimageview_minimum_version], [have_imageview=yes], [have_imageview=no])
-m4trace:configure.ac:1598: -1- m4_pattern_allow([^GTKIMAGEVIEW_CFLAGS$])
-m4trace:configure.ac:1598: -1- m4_pattern_allow([^GTKIMAGEVIEW_LIBS$])
-m4trace:configure.ac:1598: -1- PKG_CHECK_EXISTS([gtkimageview >= $gtkimageview_minimum_version], [pkg_cv_[]GTKIMAGEVIEW_CFLAGS=`$PKG_CONFIG --[]cflags "gtkimageview >= $gtkimageview_minimum_version" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1598: -1- PKG_CHECK_EXISTS([gtkimageview >= $gtkimageview_minimum_version], [pkg_cv_[]GTKIMAGEVIEW_LIBS=`$PKG_CONFIG --[]libs "gtkimageview >= $gtkimageview_minimum_version" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1598: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1599: -1- m4_pattern_allow([^GTKIMAGEVIEW_CFLAGS$])
-m4trace:configure.ac:1600: -1- m4_pattern_allow([^GTKIMAGEVIEW_LIBS$])
-m4trace:configure.ac:1618: -1- PKG_CHECK_MODULES([LIBPST], [libpst], [have_pst=yes], [have_pst=no])
-m4trace:configure.ac:1618: -1- m4_pattern_allow([^LIBPST_CFLAGS$])
-m4trace:configure.ac:1618: -1- m4_pattern_allow([^LIBPST_LIBS$])
-m4trace:configure.ac:1618: -1- PKG_CHECK_EXISTS([libpst], [pkg_cv_[]LIBPST_CFLAGS=`$PKG_CONFIG --[]cflags "libpst" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1618: -1- PKG_CHECK_EXISTS([libpst], [pkg_cv_[]LIBPST_LIBS=`$PKG_CONFIG --[]libs "libpst" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1618: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1619: -1- m4_pattern_allow([^LIBPST_CFLAGS$])
-m4trace:configure.ac:1620: -1- m4_pattern_allow([^LIBPST_LIBS$])
-m4trace:configure.ac:1652: -1- m4_pattern_allow([^plugins_enabled$])
-m4trace:configure.ac:1653: -1- m4_pattern_allow([^dist_plugins_base$])
-m4trace:configure.ac:1654: -1- m4_pattern_allow([^dist_plugins_standard$])
-m4trace:configure.ac:1655: -1- m4_pattern_allow([^dist_plugins_experimental$])
-m4trace:configure.ac:1660: -1- m4_pattern_allow([^GCONFTOOL$])
-m4trace:configure.ac:1661: -1- AM_GCONF_SOURCE_2
-m4trace:configure.ac:1661: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+m4trace:configure.ac:1614: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1615: -1- m4_pattern_allow([^LIBPST_CFLAGS$])
+m4trace:configure.ac:1616: -1- m4_pattern_allow([^LIBPST_LIBS$])
+m4trace:configure.ac:1648: -1- m4_pattern_allow([^plugins_enabled$])
+m4trace:configure.ac:1649: -1- m4_pattern_allow([^dist_plugins_base$])
+m4trace:configure.ac:1650: -1- m4_pattern_allow([^dist_plugins_standard$])
+m4trace:configure.ac:1651: -1- m4_pattern_allow([^dist_plugins_experimental$])
+m4trace:configure.ac:1656: -1- m4_pattern_allow([^GCONFTOOL$])
+m4trace:configure.ac:1657: -1- AM_GCONF_SOURCE_2
+m4trace:configure.ac:1657: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 /usr/share/aclocal/gconf-2.m4:8: AM_GCONF_SOURCE_2 is expanded from...
-configure.ac:1661: the top level])
-m4trace:configure.ac:1661: -1- m4_pattern_allow([^GCONF_SCHEMA_CONFIG_SOURCE$])
-m4trace:configure.ac:1661: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+configure.ac:1657: the top level])
+m4trace:configure.ac:1657: -1- m4_pattern_allow([^GCONF_SCHEMA_CONFIG_SOURCE$])
+m4trace:configure.ac:1657: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 /usr/share/aclocal/gconf-2.m4:8: AM_GCONF_SOURCE_2 is expanded from...
-configure.ac:1661: the top level])
-m4trace:configure.ac:1661: -1- m4_pattern_allow([^GCONF_SCHEMA_FILE_DIR$])
-m4trace:configure.ac:1661: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+configure.ac:1657: the top level])
+m4trace:configure.ac:1657: -1- m4_pattern_allow([^GCONF_SCHEMA_FILE_DIR$])
+m4trace:configure.ac:1657: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 /usr/share/aclocal/gconf-2.m4:8: AM_GCONF_SOURCE_2 is expanded from...
-configure.ac:1661: the top level])
-m4trace:configure.ac:1661: -1- AM_CONDITIONAL([GCONF_SCHEMAS_INSTALL], [test "$enable_schemas_install" != no])
-m4trace:configure.ac:1661: -1- m4_pattern_allow([^GCONF_SCHEMAS_INSTALL_TRUE$])
-m4trace:configure.ac:1661: -1- m4_pattern_allow([^GCONF_SCHEMAS_INSTALL_FALSE$])
-m4trace:configure.ac:1661: -1- _AM_SUBST_NOTMAKE([GCONF_SCHEMAS_INSTALL_TRUE])
-m4trace:configure.ac:1661: -1- _AM_SUBST_NOTMAKE([GCONF_SCHEMAS_INSTALL_FALSE])
-m4trace:configure.ac:1670: -1- m4_pattern_allow([^SUB_VERSION$])
-m4trace:configure.ac:1688: -1- AM_CONDITIONAL([HAVE_KDE_APPLNK], [test x"$KDE_APPLNK_DIR" != x])
-m4trace:configure.ac:1688: -1- m4_pattern_allow([^HAVE_KDE_APPLNK_TRUE$])
-m4trace:configure.ac:1688: -1- m4_pattern_allow([^HAVE_KDE_APPLNK_FALSE$])
-m4trace:configure.ac:1688: -1- _AM_SUBST_NOTMAKE([HAVE_KDE_APPLNK_TRUE])
-m4trace:configure.ac:1688: -1- _AM_SUBST_NOTMAKE([HAVE_KDE_APPLNK_FALSE])
-m4trace:configure.ac:1689: -1- m4_pattern_allow([^KDE_APPLNK_DIR$])
-m4trace:configure.ac:1700: -1- PKG_CHECK_MODULES([GLADEUI], [gladeui-1.0 >= gladeui_minimum_version])
-m4trace:configure.ac:1700: -1- m4_pattern_allow([^GLADEUI_CFLAGS$])
-m4trace:configure.ac:1700: -1- m4_pattern_allow([^GLADEUI_LIBS$])
-m4trace:configure.ac:1700: -1- PKG_CHECK_EXISTS([gladeui-1.0 >= gladeui_minimum_version], [pkg_cv_[]GLADEUI_CFLAGS=`$PKG_CONFIG --[]cflags "gladeui-1.0 >= gladeui_minimum_version" 2>/dev/null`
+configure.ac:1657: the top level])
+m4trace:configure.ac:1657: -1- AM_CONDITIONAL([GCONF_SCHEMAS_INSTALL], [test "$enable_schemas_install" != no])
+m4trace:configure.ac:1657: -1- m4_pattern_allow([^GCONF_SCHEMAS_INSTALL_TRUE$])
+m4trace:configure.ac:1657: -1- m4_pattern_allow([^GCONF_SCHEMAS_INSTALL_FALSE$])
+m4trace:configure.ac:1657: -1- _AM_SUBST_NOTMAKE([GCONF_SCHEMAS_INSTALL_TRUE])
+m4trace:configure.ac:1657: -1- _AM_SUBST_NOTMAKE([GCONF_SCHEMAS_INSTALL_FALSE])
+m4trace:configure.ac:1666: -1- m4_pattern_allow([^SUB_VERSION$])
+m4trace:configure.ac:1684: -1- AM_CONDITIONAL([HAVE_KDE_APPLNK], [test x"$KDE_APPLNK_DIR" != x])
+m4trace:configure.ac:1684: -1- m4_pattern_allow([^HAVE_KDE_APPLNK_TRUE$])
+m4trace:configure.ac:1684: -1- m4_pattern_allow([^HAVE_KDE_APPLNK_FALSE$])
+m4trace:configure.ac:1684: -1- _AM_SUBST_NOTMAKE([HAVE_KDE_APPLNK_TRUE])
+m4trace:configure.ac:1684: -1- _AM_SUBST_NOTMAKE([HAVE_KDE_APPLNK_FALSE])
+m4trace:configure.ac:1685: -1- m4_pattern_allow([^KDE_APPLNK_DIR$])
+m4trace:configure.ac:1696: -1- PKG_CHECK_MODULES([GLADEUI], [gladeui-1.0 >= gladeui_minimum_version])
+m4trace:configure.ac:1696: -1- m4_pattern_allow([^GLADEUI_CFLAGS$])
+m4trace:configure.ac:1696: -1- m4_pattern_allow([^GLADEUI_LIBS$])
+m4trace:configure.ac:1696: -1- PKG_CHECK_EXISTS([gladeui-1.0 >= gladeui_minimum_version], [pkg_cv_[]GLADEUI_CFLAGS=`$PKG_CONFIG --[]cflags "gladeui-1.0 >= gladeui_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1700: -1- PKG_CHECK_EXISTS([gladeui-1.0 >= gladeui_minimum_version], [pkg_cv_[]GLADEUI_LIBS=`$PKG_CONFIG --[]libs "gladeui-1.0 >= gladeui_minimum_version" 2>/dev/null`
+m4trace:configure.ac:1696: -1- PKG_CHECK_EXISTS([gladeui-1.0 >= gladeui_minimum_version], [pkg_cv_[]GLADEUI_LIBS=`$PKG_CONFIG --[]libs "gladeui-1.0 >= gladeui_minimum_version" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes ], [pkg_failed=yes])
-m4trace:configure.ac:1700: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:1702: -1- AM_CONDITIONAL([GLADE_CATALOG], [test "x$with_catalog" != "xno"])
-m4trace:configure.ac:1702: -1- m4_pattern_allow([^GLADE_CATALOG_TRUE$])
-m4trace:configure.ac:1702: -1- m4_pattern_allow([^GLADE_CATALOG_FALSE$])
-m4trace:configure.ac:1702: -1- _AM_SUBST_NOTMAKE([GLADE_CATALOG_TRUE])
-m4trace:configure.ac:1702: -1- _AM_SUBST_NOTMAKE([GLADE_CATALOG_FALSE])
-m4trace:configure.ac:1714: -1- m4_pattern_allow([^EVOLUTION_DIR$])
-m4trace:configure.ac:1875: -1- m4_pattern_allow([^LIB@&t@OBJS$])
-m4trace:configure.ac:1875: -1- m4_pattern_allow([^LTLIBOBJS$])
-m4trace:configure.ac:1875: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
-m4trace:configure.ac:1875: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
-m4trace:configure.ac:1875: -1- m4_pattern_allow([^am__EXEEXT_FALSE$])
-m4trace:configure.ac:1875: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_TRUE])
-m4trace:configure.ac:1875: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_FALSE])
-m4trace:configure.ac:1875: -1- _AC_AM_CONFIG_HEADER_HOOK(["$ac_file"])
-m4trace:configure.ac:1875: -1- _AM_OUTPUT_DEPENDENCY_COMMANDS
-m4trace:configure.ac:1875: -1- _LT_PROG_LTMAIN
+m4trace:configure.ac:1696: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:1698: -1- AM_CONDITIONAL([GLADE_CATALOG], [test "x$with_catalog" != "xno"])
+m4trace:configure.ac:1698: -1- m4_pattern_allow([^GLADE_CATALOG_TRUE$])
+m4trace:configure.ac:1698: -1- m4_pattern_allow([^GLADE_CATALOG_FALSE$])
+m4trace:configure.ac:1698: -1- _AM_SUBST_NOTMAKE([GLADE_CATALOG_TRUE])
+m4trace:configure.ac:1698: -1- _AM_SUBST_NOTMAKE([GLADE_CATALOG_FALSE])
+m4trace:configure.ac:1710: -1- m4_pattern_allow([^EVOLUTION_DIR$])
+m4trace:configure.ac:1870: -1- m4_pattern_allow([^LIB@&t@OBJS$])
+m4trace:configure.ac:1870: -1- m4_pattern_allow([^LTLIBOBJS$])
+m4trace:configure.ac:1870: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
+m4trace:configure.ac:1870: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
+m4trace:configure.ac:1870: -1- m4_pattern_allow([^am__EXEEXT_FALSE$])
+m4trace:configure.ac:1870: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_TRUE])
+m4trace:configure.ac:1870: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_FALSE])
+m4trace:configure.ac:1870: -1- _AC_AM_CONFIG_HEADER_HOOK(["$ac_file"])
+m4trace:configure.ac:1870: -1- _AM_OUTPUT_DEPENDENCY_COMMANDS
+m4trace:configure.ac:1870: -1- _LT_PROG_LTMAIN
