@@ -1439,7 +1439,6 @@ addressbook/backends/Makefile
 addressbook/backends/file/Makefile
 addressbook/backends/vcf/Makefile
 addressbook/backends/ldap/Makefile
-addressbook/backends/google/Makefile
 addressbook/backends/groupwise/Makefile
 addressbook/backends/webdav/Makefile
 addressbook/tests/Makefile
