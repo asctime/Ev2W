@@ -670,6 +670,9 @@ libevolution_calendar_la-itip-utils.lo: \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-enum-types.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-form.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-multipart.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-hsts-enforcer.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-hsts-enforcer-db.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-hsts-policy.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-logger.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-multipart-input-stream.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-proxy-resolver.h \
@@ -693,6 +696,10 @@ libevolution_calendar_la-itip-utils.lo: \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-tld.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-value-utils.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluecollector.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension-deflate.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension.h \
+ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension-manager.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-xmlrpc.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-xmlrpc-old.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-autocleanups.h \
@@ -2269,6 +2276,12 @@ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-form.h:
 
 D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-multipart.h:
 
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-hsts-enforcer.h:
+
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-hsts-enforcer-db.h:
+
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-hsts-policy.h:
+
 D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-logger.h:
 
 D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-multipart-input-stream.h:
@@ -2314,6 +2327,14 @@ D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-tld.h:
 D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-value-utils.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluecollector.h:
+
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension.h:
+
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension-deflate.h:
+
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension.h:
+
+D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-websocket-extension-manager.h:
 
 D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-xmlrpc.h:
 

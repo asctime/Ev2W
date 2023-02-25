@@ -81,7 +81,7 @@ e_addressbook_factory_SOURCES = \
 	e-data-book-migrate.c
 
 e_addressbook_factory_LDADD =					\
-	libedata-book-1.2.la					\
+	-mwindows libedata-book-1.2.la			\
 	$(EVOLUTION_ADDRESSBOOK_LIBS)				\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
 	$(top_builddir)/libebackend/libebackend-1.2.la

@@ -186,7 +186,7 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CERT_UI_CFLAGS =  -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr   -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -mms-bitfields  
 CERT_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib   -LD:/MSYS2/mingw64/bin/../lib -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4   -LD:/MSYS2/mingw64/bin/../lib -ledataserverui-1.2 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl  
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
 CHAMPLAIN_CFLAGS = 
 CHAMPLAIN_LIBS = 
 CLUTTER_CFLAGS = 
@@ -230,8 +230,6 @@ FGREP = /usr/bin/grep -F
 GCONFTOOL = /MSYS2/mingw64/bin/gconftool-2
 GCONF_SCHEMA_CONFIG_SOURCE = xml:merged:D:/MSYS2/mingw64/etc/gconf/gconf.xml.defaults
 GCONF_SCHEMA_FILE_DIR = $(sysconfdir)/gconf/schemas
-GDATA_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libgdata -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/json-glib-1.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr  
-GDATA_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgdata -lxml2 -lsoup-2.4 -ljson-glib-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl  
 GEOCLUE_CFLAGS = 
 GEOCLUE_LIBS = 
 GETTEXT_PACKAGE = evolution-2.32
@@ -404,7 +402,7 @@ build_vendor = w64
 builddir = .
 datadir = /MSYS2/mingw64/share
 datarootdir = ${prefix}/share
-dist_plugins_base = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features google-account-setup webdav-account-setup calendar-weather sa-junk-plugin bogo-junk-plugin
+dist_plugins_base = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features webdav-account-setup calendar-weather sa-junk-plugin bogo-junk-plugin
 dist_plugins_experimental = face external-editor profiler tnef-attachments contacts-map
 dist_plugins_standard = bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import audio-inline image-inline pst-import
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
@@ -435,7 +433,7 @@ moduledir = ${libdir}/evolution/2.32/modules
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 plugindir = ${libdir}/evolution/2.32/plugins
-plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features google-account-setup webdav-account-setup   bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import image-inline
+plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features webdav-account-setup   bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import image-inline
 prefix = /MSYS2/mingw64
 privdatadir = ${datadir}/evolution/2.32
 privincludedir = ${includedir}/evolution-2.32

@@ -166,7 +166,7 @@ AUTOHEADER = ${SHELL} /d/Download/MinGW-64-souorce/evolution-data-server-2.32.3/
 AUTOMAKE = ${SHELL} /d/Download/MinGW-64-souorce/evolution-data-server-2.32.3/missing --run automake-1.11
 AWK = gawk
 BASE_VERSION = 2.32
-CAMEL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr     -D_FILE_OFFSET_BITS=64 
+CAMEL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr     -D_FILE_OFFSET_BITS=64 
 CAMEL_GROUPWISE_CFLAGS = 
 CAMEL_GROUPWISE_LIBS = 
 CAMEL_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -lsqlite3  -lz   
@@ -176,10 +176,10 @@ CAMEL_SSL_DEFINES = -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
-CCDEPMODE = depmode=gcc3
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=generic -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501
+CCDEPMODE = depmode=gcc
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
-CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=generic -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -196,26 +196,24 @@ EDS_MAJOR_VERSION = 2
 EDS_MICRO_VERSION = 3
 EDS_MINOR_VERSION = 32
 EGREP = /usr/bin/grep -E
-EVOLUTION_ADDRESSBOOK_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
+EVOLUTION_ADDRESSBOOK_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 EVOLUTION_ADDRESSBOOK_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
-EVOLUTION_CALENDAR_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   -ID:/MSYS2/mingw64/bin/../include  
+EVOLUTION_CALENDAR_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   -ID:/MSYS2/mingw64/bin/../include  
 EVOLUTION_CALENDAR_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lical -licalss -licalvcal D:/MSYS2/mingw64/lib/libicuuc.dll.a D:/MSYS2/mingw64/lib/libicuin.dll.a -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 EVO_NAME_SERVER_RULE = %_$(API_VERSION).server: %.server ; mv $< $@
 EVO_SUBST_SERVER_RULE = %.server.in: %.server.in.in ; sed -e "s|\@BINDIR\@|$(bindir)|" -e "s|\@LIBEXECDIR_IN_SERVER_FILE\@|$(LIBEXECDIR_IN_SERVER_FILE)|" -e "s|\@COMPONENTDIR\@|$(componentdir)|" -e "s|\@IMPORTERSDIR\@|$(importersdir)|" -e "s|\@EXEEXT\@|$(EXEEXT)|" -e "s|\@VERSION\@|$(BASE_VERSION)|" -e "s|\@API_VERSION\@|$(API_VERSION)|" -e "s|\@INTERFACE_VERSION\@|$(INTERFACE_VERSION)|" $< > $@
 EVO_SUBST_SERVICE_RULE = %.service: %.service.in Makefile ; sed -e "s|\@BINDIR\@|$(bindir)|" -e "s|\@LIBEXECDIR\@|$(libexecdir)|" -e "s|\@COMPONENTDIR\@|$(componentdir)|" -e "s|\@IMPORTERSDIR\@|$(importersdir)|" -e "s|\@VERSION\@|$(BASE_VERSION)|" -e "s|\@EXEEXT\@|$(EXEEXT)|" -e "s|\@INTERFACE_VERSION\@|$(INTERFACE_VERSION)|" $< > $@
 EXEEXT = .exe
-E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
+E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
-E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
+E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
-E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
-E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
+E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
+E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
 GCONFTOOL = /MSYS2/mingw64/bin/gconftool-2
 GCONF_SCHEMA_CONFIG_SOURCE = xml:merged:D:/MSYS2/mingw64/etc/gconf/gconf.xml.defaults
 GCONF_SCHEMA_FILE_DIR = $(sysconfdir)/gconf/schemas
-GDATA_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libgdata -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
-GDATA_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgdata -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lxml2   
 GETTEXT_PACKAGE = evolution-data-server-2.32
 GLIB_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include 
 GLIB_COMPILE_RESOURCES = D:/MSYS2/mingw64/bin/../bin/glib-compile-resources
@@ -226,8 +224,8 @@ GMOFILES =
 GMSGFMT = /MSYS2/mingw64/bin/msgfmt
 GNOME_KEYRING_CFLAGS = 
 GNOME_KEYRING_LIBS = 
-GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libgdata -pthread -mms-bitfields 
-GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -pthread -lglib-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lgdata -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lxml2 
+GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -293,21 +291,22 @@ LIBEGROUPWISE_AGE = 0
 LIBEGROUPWISE_CURRENT = 13
 LIBEGROUPWISE_REVISION = 1
 LIBEXECDIR_IN_SERVER_FILE = ../../../libexec
-LIBGDATA_REQUIRED = 0.6.3
 LIBGWEATHER_CFLAGS = 
 LIBGWEATHER_LIBS = 
 LIBICAL_EXTRA_CFLAGS =  -ID:/MSYS2/mingw64/bin/../include 
 LIBICAL_EXTRA_LIBS = 
 LIBICAL_REQUIRED = 0.43
 LIBOBJS = 
-LIBS = -lz -lws2_32 -lregex -lversion
+LIBS = -lz -lws2_32 -lregex -lversion -lssp
 LIBSOUP_REQUIRED = 2.3.0
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = cp -pR
 LTLIBOBJS = 
+LT_SYS_LIBRARY_PATH = 
 MAINT = 
 MAKEINFO = ${SHELL} /d/Download/MinGW-64-souorce/evolution-data-server-2.32.3/missing --run makeinfo
+MANIFEST_TOOL = :
 MANUAL_NSPR_CFLAGS = 
 MANUAL_NSPR_LIBS = 
 MANUAL_NSS_CFLAGS = 
@@ -347,7 +346,7 @@ SENDMAIL = /usr/sbin/sendmail
 SET_MAKE = 
 SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
-SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
+SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 SQLITE_REQUIRED = 3.5
 STRIP = strip
@@ -554,179 +553,179 @@ include ./$(DEPDIR)/test8-test8.Po
 include ./$(DEPDIR)/test9-test9.Po
 
 .c.o:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c $<
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 test1-test1.o: test1.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test1-test1.o -MD -MP -MF $(DEPDIR)/test1-test1.Tpo -c -o test1-test1.o `test -f 'test1.c' || echo '$(srcdir)/'`test1.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test1-test1.Tpo $(DEPDIR)/test1-test1.Po
-#	$(AM_V_CC)source='test1.c' object='test1-test1.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test1-test1.o `test -f 'test1.c' || echo '$(srcdir)/'`test1.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test1-test1.o -MD -MP -MF $(DEPDIR)/test1-test1.Tpo -c -o test1-test1.o `test -f 'test1.c' || echo '$(srcdir)/'`test1.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test1-test1.Tpo $(DEPDIR)/test1-test1.Po
+	$(AM_V_CC)source='test1.c' object='test1-test1.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test1-test1.o `test -f 'test1.c' || echo '$(srcdir)/'`test1.c
 
 test1-test1.obj: test1.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test1-test1.obj -MD -MP -MF $(DEPDIR)/test1-test1.Tpo -c -o test1-test1.obj `if test -f 'test1.c'; then $(CYGPATH_W) 'test1.c'; else $(CYGPATH_W) '$(srcdir)/test1.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test1-test1.Tpo $(DEPDIR)/test1-test1.Po
-#	$(AM_V_CC)source='test1.c' object='test1-test1.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test1-test1.obj `if test -f 'test1.c'; then $(CYGPATH_W) 'test1.c'; else $(CYGPATH_W) '$(srcdir)/test1.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test1-test1.obj -MD -MP -MF $(DEPDIR)/test1-test1.Tpo -c -o test1-test1.obj `if test -f 'test1.c'; then $(CYGPATH_W) 'test1.c'; else $(CYGPATH_W) '$(srcdir)/test1.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test1-test1.Tpo $(DEPDIR)/test1-test1.Po
+	$(AM_V_CC)source='test1.c' object='test1-test1.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test1_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test1-test1.obj `if test -f 'test1.c'; then $(CYGPATH_W) 'test1.c'; else $(CYGPATH_W) '$(srcdir)/test1.c'; fi`
 
 test10-test10.o: test10.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test10-test10.o -MD -MP -MF $(DEPDIR)/test10-test10.Tpo -c -o test10-test10.o `test -f 'test10.c' || echo '$(srcdir)/'`test10.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test10-test10.Tpo $(DEPDIR)/test10-test10.Po
-#	$(AM_V_CC)source='test10.c' object='test10-test10.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test10-test10.o `test -f 'test10.c' || echo '$(srcdir)/'`test10.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test10-test10.o -MD -MP -MF $(DEPDIR)/test10-test10.Tpo -c -o test10-test10.o `test -f 'test10.c' || echo '$(srcdir)/'`test10.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test10-test10.Tpo $(DEPDIR)/test10-test10.Po
+	$(AM_V_CC)source='test10.c' object='test10-test10.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test10-test10.o `test -f 'test10.c' || echo '$(srcdir)/'`test10.c
 
 test10-test10.obj: test10.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test10-test10.obj -MD -MP -MF $(DEPDIR)/test10-test10.Tpo -c -o test10-test10.obj `if test -f 'test10.c'; then $(CYGPATH_W) 'test10.c'; else $(CYGPATH_W) '$(srcdir)/test10.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test10-test10.Tpo $(DEPDIR)/test10-test10.Po
-#	$(AM_V_CC)source='test10.c' object='test10-test10.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test10-test10.obj `if test -f 'test10.c'; then $(CYGPATH_W) 'test10.c'; else $(CYGPATH_W) '$(srcdir)/test10.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test10-test10.obj -MD -MP -MF $(DEPDIR)/test10-test10.Tpo -c -o test10-test10.obj `if test -f 'test10.c'; then $(CYGPATH_W) 'test10.c'; else $(CYGPATH_W) '$(srcdir)/test10.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test10-test10.Tpo $(DEPDIR)/test10-test10.Po
+	$(AM_V_CC)source='test10.c' object='test10-test10.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test10_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test10-test10.obj `if test -f 'test10.c'; then $(CYGPATH_W) 'test10.c'; else $(CYGPATH_W) '$(srcdir)/test10.c'; fi`
 
 test11-test11.o: test11.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test11-test11.o -MD -MP -MF $(DEPDIR)/test11-test11.Tpo -c -o test11-test11.o `test -f 'test11.c' || echo '$(srcdir)/'`test11.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test11-test11.Tpo $(DEPDIR)/test11-test11.Po
-#	$(AM_V_CC)source='test11.c' object='test11-test11.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test11-test11.o `test -f 'test11.c' || echo '$(srcdir)/'`test11.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test11-test11.o -MD -MP -MF $(DEPDIR)/test11-test11.Tpo -c -o test11-test11.o `test -f 'test11.c' || echo '$(srcdir)/'`test11.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test11-test11.Tpo $(DEPDIR)/test11-test11.Po
+	$(AM_V_CC)source='test11.c' object='test11-test11.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test11-test11.o `test -f 'test11.c' || echo '$(srcdir)/'`test11.c
 
 test11-test11.obj: test11.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test11-test11.obj -MD -MP -MF $(DEPDIR)/test11-test11.Tpo -c -o test11-test11.obj `if test -f 'test11.c'; then $(CYGPATH_W) 'test11.c'; else $(CYGPATH_W) '$(srcdir)/test11.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test11-test11.Tpo $(DEPDIR)/test11-test11.Po
-#	$(AM_V_CC)source='test11.c' object='test11-test11.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test11-test11.obj `if test -f 'test11.c'; then $(CYGPATH_W) 'test11.c'; else $(CYGPATH_W) '$(srcdir)/test11.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test11-test11.obj -MD -MP -MF $(DEPDIR)/test11-test11.Tpo -c -o test11-test11.obj `if test -f 'test11.c'; then $(CYGPATH_W) 'test11.c'; else $(CYGPATH_W) '$(srcdir)/test11.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test11-test11.Tpo $(DEPDIR)/test11-test11.Po
+	$(AM_V_CC)source='test11.c' object='test11-test11.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test11_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test11-test11.obj `if test -f 'test11.c'; then $(CYGPATH_W) 'test11.c'; else $(CYGPATH_W) '$(srcdir)/test11.c'; fi`
 
 test2-test2.o: test2.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test2-test2.o -MD -MP -MF $(DEPDIR)/test2-test2.Tpo -c -o test2-test2.o `test -f 'test2.c' || echo '$(srcdir)/'`test2.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test2-test2.Tpo $(DEPDIR)/test2-test2.Po
-#	$(AM_V_CC)source='test2.c' object='test2-test2.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test2-test2.o `test -f 'test2.c' || echo '$(srcdir)/'`test2.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test2-test2.o -MD -MP -MF $(DEPDIR)/test2-test2.Tpo -c -o test2-test2.o `test -f 'test2.c' || echo '$(srcdir)/'`test2.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test2-test2.Tpo $(DEPDIR)/test2-test2.Po
+	$(AM_V_CC)source='test2.c' object='test2-test2.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test2-test2.o `test -f 'test2.c' || echo '$(srcdir)/'`test2.c
 
 test2-test2.obj: test2.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test2-test2.obj -MD -MP -MF $(DEPDIR)/test2-test2.Tpo -c -o test2-test2.obj `if test -f 'test2.c'; then $(CYGPATH_W) 'test2.c'; else $(CYGPATH_W) '$(srcdir)/test2.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test2-test2.Tpo $(DEPDIR)/test2-test2.Po
-#	$(AM_V_CC)source='test2.c' object='test2-test2.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test2-test2.obj `if test -f 'test2.c'; then $(CYGPATH_W) 'test2.c'; else $(CYGPATH_W) '$(srcdir)/test2.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test2-test2.obj -MD -MP -MF $(DEPDIR)/test2-test2.Tpo -c -o test2-test2.obj `if test -f 'test2.c'; then $(CYGPATH_W) 'test2.c'; else $(CYGPATH_W) '$(srcdir)/test2.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test2-test2.Tpo $(DEPDIR)/test2-test2.Po
+	$(AM_V_CC)source='test2.c' object='test2-test2.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test2-test2.obj `if test -f 'test2.c'; then $(CYGPATH_W) 'test2.c'; else $(CYGPATH_W) '$(srcdir)/test2.c'; fi`
 
 test3-test3.o: test3.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test3-test3.o -MD -MP -MF $(DEPDIR)/test3-test3.Tpo -c -o test3-test3.o `test -f 'test3.c' || echo '$(srcdir)/'`test3.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test3-test3.Tpo $(DEPDIR)/test3-test3.Po
-#	$(AM_V_CC)source='test3.c' object='test3-test3.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test3-test3.o `test -f 'test3.c' || echo '$(srcdir)/'`test3.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test3-test3.o -MD -MP -MF $(DEPDIR)/test3-test3.Tpo -c -o test3-test3.o `test -f 'test3.c' || echo '$(srcdir)/'`test3.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test3-test3.Tpo $(DEPDIR)/test3-test3.Po
+	$(AM_V_CC)source='test3.c' object='test3-test3.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test3-test3.o `test -f 'test3.c' || echo '$(srcdir)/'`test3.c
 
 test3-test3.obj: test3.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test3-test3.obj -MD -MP -MF $(DEPDIR)/test3-test3.Tpo -c -o test3-test3.obj `if test -f 'test3.c'; then $(CYGPATH_W) 'test3.c'; else $(CYGPATH_W) '$(srcdir)/test3.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test3-test3.Tpo $(DEPDIR)/test3-test3.Po
-#	$(AM_V_CC)source='test3.c' object='test3-test3.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test3-test3.obj `if test -f 'test3.c'; then $(CYGPATH_W) 'test3.c'; else $(CYGPATH_W) '$(srcdir)/test3.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test3-test3.obj -MD -MP -MF $(DEPDIR)/test3-test3.Tpo -c -o test3-test3.obj `if test -f 'test3.c'; then $(CYGPATH_W) 'test3.c'; else $(CYGPATH_W) '$(srcdir)/test3.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test3-test3.Tpo $(DEPDIR)/test3-test3.Po
+	$(AM_V_CC)source='test3.c' object='test3-test3.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test3_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test3-test3.obj `if test -f 'test3.c'; then $(CYGPATH_W) 'test3.c'; else $(CYGPATH_W) '$(srcdir)/test3.c'; fi`
 
 test4-test4.o: test4.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test4-test4.o -MD -MP -MF $(DEPDIR)/test4-test4.Tpo -c -o test4-test4.o `test -f 'test4.c' || echo '$(srcdir)/'`test4.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test4-test4.Tpo $(DEPDIR)/test4-test4.Po
-#	$(AM_V_CC)source='test4.c' object='test4-test4.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test4-test4.o `test -f 'test4.c' || echo '$(srcdir)/'`test4.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test4-test4.o -MD -MP -MF $(DEPDIR)/test4-test4.Tpo -c -o test4-test4.o `test -f 'test4.c' || echo '$(srcdir)/'`test4.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test4-test4.Tpo $(DEPDIR)/test4-test4.Po
+	$(AM_V_CC)source='test4.c' object='test4-test4.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test4-test4.o `test -f 'test4.c' || echo '$(srcdir)/'`test4.c
 
 test4-test4.obj: test4.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test4-test4.obj -MD -MP -MF $(DEPDIR)/test4-test4.Tpo -c -o test4-test4.obj `if test -f 'test4.c'; then $(CYGPATH_W) 'test4.c'; else $(CYGPATH_W) '$(srcdir)/test4.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test4-test4.Tpo $(DEPDIR)/test4-test4.Po
-#	$(AM_V_CC)source='test4.c' object='test4-test4.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test4-test4.obj `if test -f 'test4.c'; then $(CYGPATH_W) 'test4.c'; else $(CYGPATH_W) '$(srcdir)/test4.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test4-test4.obj -MD -MP -MF $(DEPDIR)/test4-test4.Tpo -c -o test4-test4.obj `if test -f 'test4.c'; then $(CYGPATH_W) 'test4.c'; else $(CYGPATH_W) '$(srcdir)/test4.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test4-test4.Tpo $(DEPDIR)/test4-test4.Po
+	$(AM_V_CC)source='test4.c' object='test4-test4.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test4_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test4-test4.obj `if test -f 'test4.c'; then $(CYGPATH_W) 'test4.c'; else $(CYGPATH_W) '$(srcdir)/test4.c'; fi`
 
 test5-test5.o: test5.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test5-test5.o -MD -MP -MF $(DEPDIR)/test5-test5.Tpo -c -o test5-test5.o `test -f 'test5.c' || echo '$(srcdir)/'`test5.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test5-test5.Tpo $(DEPDIR)/test5-test5.Po
-#	$(AM_V_CC)source='test5.c' object='test5-test5.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test5-test5.o `test -f 'test5.c' || echo '$(srcdir)/'`test5.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test5-test5.o -MD -MP -MF $(DEPDIR)/test5-test5.Tpo -c -o test5-test5.o `test -f 'test5.c' || echo '$(srcdir)/'`test5.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test5-test5.Tpo $(DEPDIR)/test5-test5.Po
+	$(AM_V_CC)source='test5.c' object='test5-test5.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test5-test5.o `test -f 'test5.c' || echo '$(srcdir)/'`test5.c
 
 test5-test5.obj: test5.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test5-test5.obj -MD -MP -MF $(DEPDIR)/test5-test5.Tpo -c -o test5-test5.obj `if test -f 'test5.c'; then $(CYGPATH_W) 'test5.c'; else $(CYGPATH_W) '$(srcdir)/test5.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test5-test5.Tpo $(DEPDIR)/test5-test5.Po
-#	$(AM_V_CC)source='test5.c' object='test5-test5.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test5-test5.obj `if test -f 'test5.c'; then $(CYGPATH_W) 'test5.c'; else $(CYGPATH_W) '$(srcdir)/test5.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test5-test5.obj -MD -MP -MF $(DEPDIR)/test5-test5.Tpo -c -o test5-test5.obj `if test -f 'test5.c'; then $(CYGPATH_W) 'test5.c'; else $(CYGPATH_W) '$(srcdir)/test5.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test5-test5.Tpo $(DEPDIR)/test5-test5.Po
+	$(AM_V_CC)source='test5.c' object='test5-test5.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test5_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test5-test5.obj `if test -f 'test5.c'; then $(CYGPATH_W) 'test5.c'; else $(CYGPATH_W) '$(srcdir)/test5.c'; fi`
 
 test6-test6.o: test6.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test6-test6.o -MD -MP -MF $(DEPDIR)/test6-test6.Tpo -c -o test6-test6.o `test -f 'test6.c' || echo '$(srcdir)/'`test6.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test6-test6.Tpo $(DEPDIR)/test6-test6.Po
-#	$(AM_V_CC)source='test6.c' object='test6-test6.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test6-test6.o `test -f 'test6.c' || echo '$(srcdir)/'`test6.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test6-test6.o -MD -MP -MF $(DEPDIR)/test6-test6.Tpo -c -o test6-test6.o `test -f 'test6.c' || echo '$(srcdir)/'`test6.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test6-test6.Tpo $(DEPDIR)/test6-test6.Po
+	$(AM_V_CC)source='test6.c' object='test6-test6.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test6-test6.o `test -f 'test6.c' || echo '$(srcdir)/'`test6.c
 
 test6-test6.obj: test6.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test6-test6.obj -MD -MP -MF $(DEPDIR)/test6-test6.Tpo -c -o test6-test6.obj `if test -f 'test6.c'; then $(CYGPATH_W) 'test6.c'; else $(CYGPATH_W) '$(srcdir)/test6.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test6-test6.Tpo $(DEPDIR)/test6-test6.Po
-#	$(AM_V_CC)source='test6.c' object='test6-test6.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test6-test6.obj `if test -f 'test6.c'; then $(CYGPATH_W) 'test6.c'; else $(CYGPATH_W) '$(srcdir)/test6.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test6-test6.obj -MD -MP -MF $(DEPDIR)/test6-test6.Tpo -c -o test6-test6.obj `if test -f 'test6.c'; then $(CYGPATH_W) 'test6.c'; else $(CYGPATH_W) '$(srcdir)/test6.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test6-test6.Tpo $(DEPDIR)/test6-test6.Po
+	$(AM_V_CC)source='test6.c' object='test6-test6.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test6_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test6-test6.obj `if test -f 'test6.c'; then $(CYGPATH_W) 'test6.c'; else $(CYGPATH_W) '$(srcdir)/test6.c'; fi`
 
 test7-test7.o: test7.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test7-test7.o -MD -MP -MF $(DEPDIR)/test7-test7.Tpo -c -o test7-test7.o `test -f 'test7.c' || echo '$(srcdir)/'`test7.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test7-test7.Tpo $(DEPDIR)/test7-test7.Po
-#	$(AM_V_CC)source='test7.c' object='test7-test7.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test7-test7.o `test -f 'test7.c' || echo '$(srcdir)/'`test7.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test7-test7.o -MD -MP -MF $(DEPDIR)/test7-test7.Tpo -c -o test7-test7.o `test -f 'test7.c' || echo '$(srcdir)/'`test7.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test7-test7.Tpo $(DEPDIR)/test7-test7.Po
+	$(AM_V_CC)source='test7.c' object='test7-test7.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test7-test7.o `test -f 'test7.c' || echo '$(srcdir)/'`test7.c
 
 test7-test7.obj: test7.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test7-test7.obj -MD -MP -MF $(DEPDIR)/test7-test7.Tpo -c -o test7-test7.obj `if test -f 'test7.c'; then $(CYGPATH_W) 'test7.c'; else $(CYGPATH_W) '$(srcdir)/test7.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test7-test7.Tpo $(DEPDIR)/test7-test7.Po
-#	$(AM_V_CC)source='test7.c' object='test7-test7.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test7-test7.obj `if test -f 'test7.c'; then $(CYGPATH_W) 'test7.c'; else $(CYGPATH_W) '$(srcdir)/test7.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test7-test7.obj -MD -MP -MF $(DEPDIR)/test7-test7.Tpo -c -o test7-test7.obj `if test -f 'test7.c'; then $(CYGPATH_W) 'test7.c'; else $(CYGPATH_W) '$(srcdir)/test7.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test7-test7.Tpo $(DEPDIR)/test7-test7.Po
+	$(AM_V_CC)source='test7.c' object='test7-test7.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test7_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test7-test7.obj `if test -f 'test7.c'; then $(CYGPATH_W) 'test7.c'; else $(CYGPATH_W) '$(srcdir)/test7.c'; fi`
 
 test8-test8.o: test8.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test8-test8.o -MD -MP -MF $(DEPDIR)/test8-test8.Tpo -c -o test8-test8.o `test -f 'test8.c' || echo '$(srcdir)/'`test8.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test8-test8.Tpo $(DEPDIR)/test8-test8.Po
-#	$(AM_V_CC)source='test8.c' object='test8-test8.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test8-test8.o `test -f 'test8.c' || echo '$(srcdir)/'`test8.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test8-test8.o -MD -MP -MF $(DEPDIR)/test8-test8.Tpo -c -o test8-test8.o `test -f 'test8.c' || echo '$(srcdir)/'`test8.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test8-test8.Tpo $(DEPDIR)/test8-test8.Po
+	$(AM_V_CC)source='test8.c' object='test8-test8.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test8-test8.o `test -f 'test8.c' || echo '$(srcdir)/'`test8.c
 
 test8-test8.obj: test8.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test8-test8.obj -MD -MP -MF $(DEPDIR)/test8-test8.Tpo -c -o test8-test8.obj `if test -f 'test8.c'; then $(CYGPATH_W) 'test8.c'; else $(CYGPATH_W) '$(srcdir)/test8.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test8-test8.Tpo $(DEPDIR)/test8-test8.Po
-#	$(AM_V_CC)source='test8.c' object='test8-test8.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test8-test8.obj `if test -f 'test8.c'; then $(CYGPATH_W) 'test8.c'; else $(CYGPATH_W) '$(srcdir)/test8.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test8-test8.obj -MD -MP -MF $(DEPDIR)/test8-test8.Tpo -c -o test8-test8.obj `if test -f 'test8.c'; then $(CYGPATH_W) 'test8.c'; else $(CYGPATH_W) '$(srcdir)/test8.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test8-test8.Tpo $(DEPDIR)/test8-test8.Po
+	$(AM_V_CC)source='test8.c' object='test8-test8.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test8_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test8-test8.obj `if test -f 'test8.c'; then $(CYGPATH_W) 'test8.c'; else $(CYGPATH_W) '$(srcdir)/test8.c'; fi`
 
 test9-test9.o: test9.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test9-test9.o -MD -MP -MF $(DEPDIR)/test9-test9.Tpo -c -o test9-test9.o `test -f 'test9.c' || echo '$(srcdir)/'`test9.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test9-test9.Tpo $(DEPDIR)/test9-test9.Po
-#	$(AM_V_CC)source='test9.c' object='test9-test9.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test9-test9.o `test -f 'test9.c' || echo '$(srcdir)/'`test9.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test9-test9.o -MD -MP -MF $(DEPDIR)/test9-test9.Tpo -c -o test9-test9.o `test -f 'test9.c' || echo '$(srcdir)/'`test9.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test9-test9.Tpo $(DEPDIR)/test9-test9.Po
+	$(AM_V_CC)source='test9.c' object='test9-test9.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test9-test9.o `test -f 'test9.c' || echo '$(srcdir)/'`test9.c
 
 test9-test9.obj: test9.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test9-test9.obj -MD -MP -MF $(DEPDIR)/test9-test9.Tpo -c -o test9-test9.obj `if test -f 'test9.c'; then $(CYGPATH_W) 'test9.c'; else $(CYGPATH_W) '$(srcdir)/test9.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test9-test9.Tpo $(DEPDIR)/test9-test9.Po
-#	$(AM_V_CC)source='test9.c' object='test9-test9.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test9-test9.obj `if test -f 'test9.c'; then $(CYGPATH_W) 'test9.c'; else $(CYGPATH_W) '$(srcdir)/test9.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test9-test9.obj -MD -MP -MF $(DEPDIR)/test9-test9.Tpo -c -o test9-test9.obj `if test -f 'test9.c'; then $(CYGPATH_W) 'test9.c'; else $(CYGPATH_W) '$(srcdir)/test9.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test9-test9.Tpo $(DEPDIR)/test9-test9.Po
+	$(AM_V_CC)source='test9.c' object='test9-test9.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test9_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test9-test9.obj `if test -f 'test9.c'; then $(CYGPATH_W) 'test9.c'; else $(CYGPATH_W) '$(srcdir)/test9.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

@@ -36,7 +36,6 @@ m4_define([glib_minimum_version], [2.25.12])
 m4_define([gconf_minimum_version], [2.0.0])		dnl XXX Just a Guess
 m4_define([libxml_minimum_version], [2.0.0])		dnl XXX Just a Guess
 m4_define([libsoup_minimum_version], [2.3.0])
-m4_define([libgdata_minimum_version], [0.6.3])
 m4_define([gnome_keyring_minimum_version], [2.20.1])
 m4_define([sqlite_minimum_version], [3.5])
 m4_define([libical_minimum_version], [0.43])
@@ -323,8 +322,7 @@ PKG_CHECK_MODULES(GNOME_PLATFORM,
 	$GTK_MODULE
 	gconf-2.0 >= gconf_minimum_version
 	libxml-2.0 >= libxml_minimum_version
-	libsoup-2.4 >= libsoup_minimum_version
-	libgdata >= libgdata_minimum_version])
+	libsoup-2.4 >= libsoup_minimum_version])
 
 ac_cv_have_gdata_07=no
 dnl libgdata 0.7 breaks API, thus deal with it.
@@ -1267,18 +1265,8 @@ dnl *****
 	CFLAGS=$save_cflags
 	LIBS=$save_libs
 	AC_MSG_RESULT([$ac_cv_have_iuth])
-
 fi
 
-dnl ******************************
-dnl Google flags
-dnl ******************************
-LIBGDATA_REQUIRED=libgdata_minimum_version
-AC_SUBST(LIBGDATA_REQUIRED)
-
-EVO_SET_COMPILE_FLAGS(GDATA, libgdata)
-AC_SUBST(GDATA_CFLAGS)
-AC_SUBST(GDATA_LIBS)
 
 dnl ******************************
 dnl Groupwise flags

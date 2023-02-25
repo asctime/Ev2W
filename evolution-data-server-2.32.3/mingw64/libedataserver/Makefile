@@ -197,7 +197,7 @@ AUTOHEADER = ${SHELL} /d/Download/MinGW-64-souorce/evolution-data-server-2.32.3/
 AUTOMAKE = ${SHELL} /d/Download/MinGW-64-souorce/evolution-data-server-2.32.3/missing --run automake-1.11
 AWK = gawk
 BASE_VERSION = 2.32
-CAMEL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr     -D_FILE_OFFSET_BITS=64 
+CAMEL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr     -D_FILE_OFFSET_BITS=64 
 CAMEL_GROUPWISE_CFLAGS = 
 CAMEL_GROUPWISE_LIBS = 
 CAMEL_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -lsqlite3  -lz   
@@ -207,10 +207,10 @@ CAMEL_SSL_DEFINES = -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
-CCDEPMODE = depmode=gcc3
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=generic -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501
+CCDEPMODE = depmode=gcc
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
-CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=generic -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -227,26 +227,24 @@ EDS_MAJOR_VERSION = 2
 EDS_MICRO_VERSION = 3
 EDS_MINOR_VERSION = 32
 EGREP = /usr/bin/grep -E
-EVOLUTION_ADDRESSBOOK_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
+EVOLUTION_ADDRESSBOOK_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 EVOLUTION_ADDRESSBOOK_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
-EVOLUTION_CALENDAR_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   -ID:/MSYS2/mingw64/bin/../include  
+EVOLUTION_CALENDAR_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   -ID:/MSYS2/mingw64/bin/../include  
 EVOLUTION_CALENDAR_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lical -licalss -licalvcal D:/MSYS2/mingw64/lib/libicuuc.dll.a D:/MSYS2/mingw64/lib/libicuin.dll.a -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 EVO_NAME_SERVER_RULE = %_$(API_VERSION).server: %.server ; mv $< $@
 EVO_SUBST_SERVER_RULE = %.server.in: %.server.in.in ; sed -e "s|\@BINDIR\@|$(bindir)|" -e "s|\@LIBEXECDIR_IN_SERVER_FILE\@|$(LIBEXECDIR_IN_SERVER_FILE)|" -e "s|\@COMPONENTDIR\@|$(componentdir)|" -e "s|\@IMPORTERSDIR\@|$(importersdir)|" -e "s|\@EXEEXT\@|$(EXEEXT)|" -e "s|\@VERSION\@|$(BASE_VERSION)|" -e "s|\@API_VERSION\@|$(API_VERSION)|" -e "s|\@INTERFACE_VERSION\@|$(INTERFACE_VERSION)|" $< > $@
 EVO_SUBST_SERVICE_RULE = %.service: %.service.in Makefile ; sed -e "s|\@BINDIR\@|$(bindir)|" -e "s|\@LIBEXECDIR\@|$(libexecdir)|" -e "s|\@COMPONENTDIR\@|$(componentdir)|" -e "s|\@IMPORTERSDIR\@|$(importersdir)|" -e "s|\@VERSION\@|$(BASE_VERSION)|" -e "s|\@EXEEXT\@|$(EXEEXT)|" -e "s|\@INTERFACE_VERSION\@|$(INTERFACE_VERSION)|" $< > $@
 EXEEXT = .exe
-E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
+E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
-E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
+E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
-E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
-E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
+E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
+E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
 GCONFTOOL = /MSYS2/mingw64/bin/gconftool-2
 GCONF_SCHEMA_CONFIG_SOURCE = xml:merged:D:/MSYS2/mingw64/etc/gconf/gconf.xml.defaults
 GCONF_SCHEMA_FILE_DIR = $(sysconfdir)/gconf/schemas
-GDATA_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libgdata -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
-GDATA_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgdata -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lxml2   
 GETTEXT_PACKAGE = evolution-data-server-2.32
 GLIB_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include 
 GLIB_COMPILE_RESOURCES = D:/MSYS2/mingw64/bin/../bin/glib-compile-resources
@@ -257,8 +255,8 @@ GMOFILES =
 GMSGFMT = /MSYS2/mingw64/bin/msgfmt
 GNOME_KEYRING_CFLAGS = 
 GNOME_KEYRING_LIBS = 
-GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libgdata -pthread -mms-bitfields 
-GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -pthread -lglib-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lgdata -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lxml2 
+GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -324,21 +322,22 @@ LIBEGROUPWISE_AGE = 0
 LIBEGROUPWISE_CURRENT = 13
 LIBEGROUPWISE_REVISION = 1
 LIBEXECDIR_IN_SERVER_FILE = ../../../libexec
-LIBGDATA_REQUIRED = 0.6.3
 LIBGWEATHER_CFLAGS = 
 LIBGWEATHER_LIBS = 
 LIBICAL_EXTRA_CFLAGS =  -ID:/MSYS2/mingw64/bin/../include 
 LIBICAL_EXTRA_LIBS = 
 LIBICAL_REQUIRED = 0.43
 LIBOBJS = 
-LIBS = -lz -lws2_32 -lregex -lversion
+LIBS = -lz -lws2_32 -lregex -lversion -lssp
 LIBSOUP_REQUIRED = 2.3.0
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = cp -pR
 LTLIBOBJS = 
+LT_SYS_LIBRARY_PATH = 
 MAINT = 
 MAKEINFO = ${SHELL} /d/Download/MinGW-64-souorce/evolution-data-server-2.32.3/missing --run makeinfo
+MANIFEST_TOOL = :
 MANUAL_NSPR_CFLAGS = 
 MANUAL_NSPR_LIBS = 
 MANUAL_NSS_CFLAGS = 
@@ -378,7 +377,7 @@ SENDMAIL = /usr/sbin/sendmail
 SET_MAKE = 
 SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
-SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -pthread -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
+SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 SQLITE_REQUIRED = 3.5
 STRIP = strip
@@ -651,186 +650,186 @@ include ./$(DEPDIR)/libedataserver_1_2_la-eds-version.Plo
 include ./$(DEPDIR)/test_source_list-test-source-list.Po
 
 .c.o:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c $<
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libedataserver_1_2_la-e-account-list.lo: e-account-list.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-account-list.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-account-list.Tpo -c -o libedataserver_1_2_la-e-account-list.lo `test -f 'e-account-list.c' || echo '$(srcdir)/'`e-account-list.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-account-list.Tpo $(DEPDIR)/libedataserver_1_2_la-e-account-list.Plo
-#	$(AM_V_CC)source='e-account-list.c' object='libedataserver_1_2_la-e-account-list.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-account-list.lo `test -f 'e-account-list.c' || echo '$(srcdir)/'`e-account-list.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-account-list.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-account-list.Tpo -c -o libedataserver_1_2_la-e-account-list.lo `test -f 'e-account-list.c' || echo '$(srcdir)/'`e-account-list.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-account-list.Tpo $(DEPDIR)/libedataserver_1_2_la-e-account-list.Plo
+	$(AM_V_CC)source='e-account-list.c' object='libedataserver_1_2_la-e-account-list.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-account-list.lo `test -f 'e-account-list.c' || echo '$(srcdir)/'`e-account-list.c
 
 libedataserver_1_2_la-e-account.lo: e-account.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-account.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-account.Tpo -c -o libedataserver_1_2_la-e-account.lo `test -f 'e-account.c' || echo '$(srcdir)/'`e-account.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-account.Tpo $(DEPDIR)/libedataserver_1_2_la-e-account.Plo
-#	$(AM_V_CC)source='e-account.c' object='libedataserver_1_2_la-e-account.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-account.lo `test -f 'e-account.c' || echo '$(srcdir)/'`e-account.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-account.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-account.Tpo -c -o libedataserver_1_2_la-e-account.lo `test -f 'e-account.c' || echo '$(srcdir)/'`e-account.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-account.Tpo $(DEPDIR)/libedataserver_1_2_la-e-account.Plo
+	$(AM_V_CC)source='e-account.c' object='libedataserver_1_2_la-e-account.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-account.lo `test -f 'e-account.c' || echo '$(srcdir)/'`e-account.c
 
 libedataserver_1_2_la-e-categories.lo: e-categories.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-categories.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-categories.Tpo -c -o libedataserver_1_2_la-e-categories.lo `test -f 'e-categories.c' || echo '$(srcdir)/'`e-categories.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-categories.Tpo $(DEPDIR)/libedataserver_1_2_la-e-categories.Plo
-#	$(AM_V_CC)source='e-categories.c' object='libedataserver_1_2_la-e-categories.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-categories.lo `test -f 'e-categories.c' || echo '$(srcdir)/'`e-categories.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-categories.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-categories.Tpo -c -o libedataserver_1_2_la-e-categories.lo `test -f 'e-categories.c' || echo '$(srcdir)/'`e-categories.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-categories.Tpo $(DEPDIR)/libedataserver_1_2_la-e-categories.Plo
+	$(AM_V_CC)source='e-categories.c' object='libedataserver_1_2_la-e-categories.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-categories.lo `test -f 'e-categories.c' || echo '$(srcdir)/'`e-categories.c
 
 libedataserver_1_2_la-e-flag.lo: e-flag.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-flag.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-flag.Tpo -c -o libedataserver_1_2_la-e-flag.lo `test -f 'e-flag.c' || echo '$(srcdir)/'`e-flag.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-flag.Tpo $(DEPDIR)/libedataserver_1_2_la-e-flag.Plo
-#	$(AM_V_CC)source='e-flag.c' object='libedataserver_1_2_la-e-flag.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-flag.lo `test -f 'e-flag.c' || echo '$(srcdir)/'`e-flag.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-flag.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-flag.Tpo -c -o libedataserver_1_2_la-e-flag.lo `test -f 'e-flag.c' || echo '$(srcdir)/'`e-flag.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-flag.Tpo $(DEPDIR)/libedataserver_1_2_la-e-flag.Plo
+	$(AM_V_CC)source='e-flag.c' object='libedataserver_1_2_la-e-flag.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-flag.lo `test -f 'e-flag.c' || echo '$(srcdir)/'`e-flag.c
 
 libedataserver_1_2_la-e-iterator.lo: e-iterator.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-iterator.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-iterator.Tpo -c -o libedataserver_1_2_la-e-iterator.lo `test -f 'e-iterator.c' || echo '$(srcdir)/'`e-iterator.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-iterator.Tpo $(DEPDIR)/libedataserver_1_2_la-e-iterator.Plo
-#	$(AM_V_CC)source='e-iterator.c' object='libedataserver_1_2_la-e-iterator.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-iterator.lo `test -f 'e-iterator.c' || echo '$(srcdir)/'`e-iterator.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-iterator.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-iterator.Tpo -c -o libedataserver_1_2_la-e-iterator.lo `test -f 'e-iterator.c' || echo '$(srcdir)/'`e-iterator.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-iterator.Tpo $(DEPDIR)/libedataserver_1_2_la-e-iterator.Plo
+	$(AM_V_CC)source='e-iterator.c' object='libedataserver_1_2_la-e-iterator.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-iterator.lo `test -f 'e-iterator.c' || echo '$(srcdir)/'`e-iterator.c
 
 libedataserver_1_2_la-e-list.lo: e-list.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-list.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-list.Tpo -c -o libedataserver_1_2_la-e-list.lo `test -f 'e-list.c' || echo '$(srcdir)/'`e-list.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-list.Tpo $(DEPDIR)/libedataserver_1_2_la-e-list.Plo
-#	$(AM_V_CC)source='e-list.c' object='libedataserver_1_2_la-e-list.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-list.lo `test -f 'e-list.c' || echo '$(srcdir)/'`e-list.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-list.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-list.Tpo -c -o libedataserver_1_2_la-e-list.lo `test -f 'e-list.c' || echo '$(srcdir)/'`e-list.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-list.Tpo $(DEPDIR)/libedataserver_1_2_la-e-list.Plo
+	$(AM_V_CC)source='e-list.c' object='libedataserver_1_2_la-e-list.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-list.lo `test -f 'e-list.c' || echo '$(srcdir)/'`e-list.c
 
 libedataserver_1_2_la-e-list-iterator.lo: e-list-iterator.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-list-iterator.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-list-iterator.Tpo -c -o libedataserver_1_2_la-e-list-iterator.lo `test -f 'e-list-iterator.c' || echo '$(srcdir)/'`e-list-iterator.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-list-iterator.Tpo $(DEPDIR)/libedataserver_1_2_la-e-list-iterator.Plo
-#	$(AM_V_CC)source='e-list-iterator.c' object='libedataserver_1_2_la-e-list-iterator.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-list-iterator.lo `test -f 'e-list-iterator.c' || echo '$(srcdir)/'`e-list-iterator.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-list-iterator.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-list-iterator.Tpo -c -o libedataserver_1_2_la-e-list-iterator.lo `test -f 'e-list-iterator.c' || echo '$(srcdir)/'`e-list-iterator.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-list-iterator.Tpo $(DEPDIR)/libedataserver_1_2_la-e-list-iterator.Plo
+	$(AM_V_CC)source='e-list-iterator.c' object='libedataserver_1_2_la-e-list-iterator.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-list-iterator.lo `test -f 'e-list-iterator.c' || echo '$(srcdir)/'`e-list-iterator.c
 
 libedataserver_1_2_la-e-memory.lo: e-memory.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-memory.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-memory.Tpo -c -o libedataserver_1_2_la-e-memory.lo `test -f 'e-memory.c' || echo '$(srcdir)/'`e-memory.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-memory.Tpo $(DEPDIR)/libedataserver_1_2_la-e-memory.Plo
-#	$(AM_V_CC)source='e-memory.c' object='libedataserver_1_2_la-e-memory.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-memory.lo `test -f 'e-memory.c' || echo '$(srcdir)/'`e-memory.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-memory.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-memory.Tpo -c -o libedataserver_1_2_la-e-memory.lo `test -f 'e-memory.c' || echo '$(srcdir)/'`e-memory.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-memory.Tpo $(DEPDIR)/libedataserver_1_2_la-e-memory.Plo
+	$(AM_V_CC)source='e-memory.c' object='libedataserver_1_2_la-e-memory.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-memory.lo `test -f 'e-memory.c' || echo '$(srcdir)/'`e-memory.c
 
 libedataserver_1_2_la-e-proxy.lo: e-proxy.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-proxy.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-proxy.Tpo -c -o libedataserver_1_2_la-e-proxy.lo `test -f 'e-proxy.c' || echo '$(srcdir)/'`e-proxy.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-proxy.Tpo $(DEPDIR)/libedataserver_1_2_la-e-proxy.Plo
-#	$(AM_V_CC)source='e-proxy.c' object='libedataserver_1_2_la-e-proxy.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-proxy.lo `test -f 'e-proxy.c' || echo '$(srcdir)/'`e-proxy.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-proxy.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-proxy.Tpo -c -o libedataserver_1_2_la-e-proxy.lo `test -f 'e-proxy.c' || echo '$(srcdir)/'`e-proxy.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-proxy.Tpo $(DEPDIR)/libedataserver_1_2_la-e-proxy.Plo
+	$(AM_V_CC)source='e-proxy.c' object='libedataserver_1_2_la-e-proxy.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-proxy.lo `test -f 'e-proxy.c' || echo '$(srcdir)/'`e-proxy.c
 
 libedataserver_1_2_la-e-sexp.lo: e-sexp.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-sexp.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-sexp.Tpo -c -o libedataserver_1_2_la-e-sexp.lo `test -f 'e-sexp.c' || echo '$(srcdir)/'`e-sexp.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-sexp.Tpo $(DEPDIR)/libedataserver_1_2_la-e-sexp.Plo
-#	$(AM_V_CC)source='e-sexp.c' object='libedataserver_1_2_la-e-sexp.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-sexp.lo `test -f 'e-sexp.c' || echo '$(srcdir)/'`e-sexp.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-sexp.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-sexp.Tpo -c -o libedataserver_1_2_la-e-sexp.lo `test -f 'e-sexp.c' || echo '$(srcdir)/'`e-sexp.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-sexp.Tpo $(DEPDIR)/libedataserver_1_2_la-e-sexp.Plo
+	$(AM_V_CC)source='e-sexp.c' object='libedataserver_1_2_la-e-sexp.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-sexp.lo `test -f 'e-sexp.c' || echo '$(srcdir)/'`e-sexp.c
 
 libedataserver_1_2_la-e-source-group.lo: e-source-group.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-source-group.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-source-group.Tpo -c -o libedataserver_1_2_la-e-source-group.lo `test -f 'e-source-group.c' || echo '$(srcdir)/'`e-source-group.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-source-group.Tpo $(DEPDIR)/libedataserver_1_2_la-e-source-group.Plo
-#	$(AM_V_CC)source='e-source-group.c' object='libedataserver_1_2_la-e-source-group.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-source-group.lo `test -f 'e-source-group.c' || echo '$(srcdir)/'`e-source-group.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-source-group.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-source-group.Tpo -c -o libedataserver_1_2_la-e-source-group.lo `test -f 'e-source-group.c' || echo '$(srcdir)/'`e-source-group.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-source-group.Tpo $(DEPDIR)/libedataserver_1_2_la-e-source-group.Plo
+	$(AM_V_CC)source='e-source-group.c' object='libedataserver_1_2_la-e-source-group.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-source-group.lo `test -f 'e-source-group.c' || echo '$(srcdir)/'`e-source-group.c
 
 libedataserver_1_2_la-e-source-list.lo: e-source-list.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-source-list.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-source-list.Tpo -c -o libedataserver_1_2_la-e-source-list.lo `test -f 'e-source-list.c' || echo '$(srcdir)/'`e-source-list.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-source-list.Tpo $(DEPDIR)/libedataserver_1_2_la-e-source-list.Plo
-#	$(AM_V_CC)source='e-source-list.c' object='libedataserver_1_2_la-e-source-list.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-source-list.lo `test -f 'e-source-list.c' || echo '$(srcdir)/'`e-source-list.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-source-list.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-source-list.Tpo -c -o libedataserver_1_2_la-e-source-list.lo `test -f 'e-source-list.c' || echo '$(srcdir)/'`e-source-list.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-source-list.Tpo $(DEPDIR)/libedataserver_1_2_la-e-source-list.Plo
+	$(AM_V_CC)source='e-source-list.c' object='libedataserver_1_2_la-e-source-list.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-source-list.lo `test -f 'e-source-list.c' || echo '$(srcdir)/'`e-source-list.c
 
 libedataserver_1_2_la-e-source.lo: e-source.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-source.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-source.Tpo -c -o libedataserver_1_2_la-e-source.lo `test -f 'e-source.c' || echo '$(srcdir)/'`e-source.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-source.Tpo $(DEPDIR)/libedataserver_1_2_la-e-source.Plo
-#	$(AM_V_CC)source='e-source.c' object='libedataserver_1_2_la-e-source.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-source.lo `test -f 'e-source.c' || echo '$(srcdir)/'`e-source.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-source.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-source.Tpo -c -o libedataserver_1_2_la-e-source.lo `test -f 'e-source.c' || echo '$(srcdir)/'`e-source.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-source.Tpo $(DEPDIR)/libedataserver_1_2_la-e-source.Plo
+	$(AM_V_CC)source='e-source.c' object='libedataserver_1_2_la-e-source.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-source.lo `test -f 'e-source.c' || echo '$(srcdir)/'`e-source.c
 
 libedataserver_1_2_la-e-debug-log.lo: e-debug-log.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-debug-log.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-debug-log.Tpo -c -o libedataserver_1_2_la-e-debug-log.lo `test -f 'e-debug-log.c' || echo '$(srcdir)/'`e-debug-log.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-debug-log.Tpo $(DEPDIR)/libedataserver_1_2_la-e-debug-log.Plo
-#	$(AM_V_CC)source='e-debug-log.c' object='libedataserver_1_2_la-e-debug-log.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-debug-log.lo `test -f 'e-debug-log.c' || echo '$(srcdir)/'`e-debug-log.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-debug-log.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-debug-log.Tpo -c -o libedataserver_1_2_la-e-debug-log.lo `test -f 'e-debug-log.c' || echo '$(srcdir)/'`e-debug-log.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-debug-log.Tpo $(DEPDIR)/libedataserver_1_2_la-e-debug-log.Plo
+	$(AM_V_CC)source='e-debug-log.c' object='libedataserver_1_2_la-e-debug-log.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-debug-log.lo `test -f 'e-debug-log.c' || echo '$(srcdir)/'`e-debug-log.c
 
 libedataserver_1_2_la-e-time-utils.lo: e-time-utils.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-time-utils.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-time-utils.Tpo -c -o libedataserver_1_2_la-e-time-utils.lo `test -f 'e-time-utils.c' || echo '$(srcdir)/'`e-time-utils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-time-utils.Tpo $(DEPDIR)/libedataserver_1_2_la-e-time-utils.Plo
-#	$(AM_V_CC)source='e-time-utils.c' object='libedataserver_1_2_la-e-time-utils.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-time-utils.lo `test -f 'e-time-utils.c' || echo '$(srcdir)/'`e-time-utils.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-time-utils.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-time-utils.Tpo -c -o libedataserver_1_2_la-e-time-utils.lo `test -f 'e-time-utils.c' || echo '$(srcdir)/'`e-time-utils.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-time-utils.Tpo $(DEPDIR)/libedataserver_1_2_la-e-time-utils.Plo
+	$(AM_V_CC)source='e-time-utils.c' object='libedataserver_1_2_la-e-time-utils.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-time-utils.lo `test -f 'e-time-utils.c' || echo '$(srcdir)/'`e-time-utils.c
 
 libedataserver_1_2_la-e-uid.lo: e-uid.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-uid.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-uid.Tpo -c -o libedataserver_1_2_la-e-uid.lo `test -f 'e-uid.c' || echo '$(srcdir)/'`e-uid.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-uid.Tpo $(DEPDIR)/libedataserver_1_2_la-e-uid.Plo
-#	$(AM_V_CC)source='e-uid.c' object='libedataserver_1_2_la-e-uid.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-uid.lo `test -f 'e-uid.c' || echo '$(srcdir)/'`e-uid.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-uid.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-uid.Tpo -c -o libedataserver_1_2_la-e-uid.lo `test -f 'e-uid.c' || echo '$(srcdir)/'`e-uid.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-uid.Tpo $(DEPDIR)/libedataserver_1_2_la-e-uid.Plo
+	$(AM_V_CC)source='e-uid.c' object='libedataserver_1_2_la-e-uid.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-uid.lo `test -f 'e-uid.c' || echo '$(srcdir)/'`e-uid.c
 
 libedataserver_1_2_la-e-url.lo: e-url.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-url.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-url.Tpo -c -o libedataserver_1_2_la-e-url.lo `test -f 'e-url.c' || echo '$(srcdir)/'`e-url.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-url.Tpo $(DEPDIR)/libedataserver_1_2_la-e-url.Plo
-#	$(AM_V_CC)source='e-url.c' object='libedataserver_1_2_la-e-url.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-url.lo `test -f 'e-url.c' || echo '$(srcdir)/'`e-url.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-url.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-url.Tpo -c -o libedataserver_1_2_la-e-url.lo `test -f 'e-url.c' || echo '$(srcdir)/'`e-url.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-url.Tpo $(DEPDIR)/libedataserver_1_2_la-e-url.Plo
+	$(AM_V_CC)source='e-url.c' object='libedataserver_1_2_la-e-url.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-url.lo `test -f 'e-url.c' || echo '$(srcdir)/'`e-url.c
 
 libedataserver_1_2_la-e-data-server-util.lo: e-data-server-util.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-data-server-util.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-data-server-util.Tpo -c -o libedataserver_1_2_la-e-data-server-util.lo `test -f 'e-data-server-util.c' || echo '$(srcdir)/'`e-data-server-util.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-data-server-util.Tpo $(DEPDIR)/libedataserver_1_2_la-e-data-server-util.Plo
-#	$(AM_V_CC)source='e-data-server-util.c' object='libedataserver_1_2_la-e-data-server-util.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-data-server-util.lo `test -f 'e-data-server-util.c' || echo '$(srcdir)/'`e-data-server-util.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-data-server-util.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-data-server-util.Tpo -c -o libedataserver_1_2_la-e-data-server-util.lo `test -f 'e-data-server-util.c' || echo '$(srcdir)/'`e-data-server-util.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-data-server-util.Tpo $(DEPDIR)/libedataserver_1_2_la-e-data-server-util.Plo
+	$(AM_V_CC)source='e-data-server-util.c' object='libedataserver_1_2_la-e-data-server-util.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-data-server-util.lo `test -f 'e-data-server-util.c' || echo '$(srcdir)/'`e-data-server-util.c
 
 libedataserver_1_2_la-e-xml-utils.lo: e-xml-utils.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-xml-utils.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-xml-utils.Tpo -c -o libedataserver_1_2_la-e-xml-utils.lo `test -f 'e-xml-utils.c' || echo '$(srcdir)/'`e-xml-utils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-xml-utils.Tpo $(DEPDIR)/libedataserver_1_2_la-e-xml-utils.Plo
-#	$(AM_V_CC)source='e-xml-utils.c' object='libedataserver_1_2_la-e-xml-utils.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-xml-utils.lo `test -f 'e-xml-utils.c' || echo '$(srcdir)/'`e-xml-utils.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-xml-utils.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-xml-utils.Tpo -c -o libedataserver_1_2_la-e-xml-utils.lo `test -f 'e-xml-utils.c' || echo '$(srcdir)/'`e-xml-utils.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-xml-utils.Tpo $(DEPDIR)/libedataserver_1_2_la-e-xml-utils.Plo
+	$(AM_V_CC)source='e-xml-utils.c' object='libedataserver_1_2_la-e-xml-utils.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-xml-utils.lo `test -f 'e-xml-utils.c' || echo '$(srcdir)/'`e-xml-utils.c
 
 libedataserver_1_2_la-e-xml-hash-utils.lo: e-xml-hash-utils.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-xml-hash-utils.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-xml-hash-utils.Tpo -c -o libedataserver_1_2_la-e-xml-hash-utils.lo `test -f 'e-xml-hash-utils.c' || echo '$(srcdir)/'`e-xml-hash-utils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-xml-hash-utils.Tpo $(DEPDIR)/libedataserver_1_2_la-e-xml-hash-utils.Plo
-#	$(AM_V_CC)source='e-xml-hash-utils.c' object='libedataserver_1_2_la-e-xml-hash-utils.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-xml-hash-utils.lo `test -f 'e-xml-hash-utils.c' || echo '$(srcdir)/'`e-xml-hash-utils.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-e-xml-hash-utils.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-e-xml-hash-utils.Tpo -c -o libedataserver_1_2_la-e-xml-hash-utils.lo `test -f 'e-xml-hash-utils.c' || echo '$(srcdir)/'`e-xml-hash-utils.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-e-xml-hash-utils.Tpo $(DEPDIR)/libedataserver_1_2_la-e-xml-hash-utils.Plo
+	$(AM_V_CC)source='e-xml-hash-utils.c' object='libedataserver_1_2_la-e-xml-hash-utils.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-e-xml-hash-utils.lo `test -f 'e-xml-hash-utils.c' || echo '$(srcdir)/'`e-xml-hash-utils.c
 
 libedataserver_1_2_la-eds-version.lo: eds-version.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-eds-version.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-eds-version.Tpo -c -o libedataserver_1_2_la-eds-version.lo `test -f 'eds-version.c' || echo '$(srcdir)/'`eds-version.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-eds-version.Tpo $(DEPDIR)/libedataserver_1_2_la-eds-version.Plo
-#	$(AM_V_CC)source='eds-version.c' object='libedataserver_1_2_la-eds-version.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-eds-version.lo `test -f 'eds-version.c' || echo '$(srcdir)/'`eds-version.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserver_1_2_la-eds-version.lo -MD -MP -MF $(DEPDIR)/libedataserver_1_2_la-eds-version.Tpo -c -o libedataserver_1_2_la-eds-version.lo `test -f 'eds-version.c' || echo '$(srcdir)/'`eds-version.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserver_1_2_la-eds-version.Tpo $(DEPDIR)/libedataserver_1_2_la-eds-version.Plo
+	$(AM_V_CC)source='eds-version.c' object='libedataserver_1_2_la-eds-version.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserver_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserver_1_2_la-eds-version.lo `test -f 'eds-version.c' || echo '$(srcdir)/'`eds-version.c
 
 test_source_list-test-source-list.o: test-source-list.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_list-test-source-list.o -MD -MP -MF $(DEPDIR)/test_source_list-test-source-list.Tpo -c -o test_source_list-test-source-list.o `test -f 'test-source-list.c' || echo '$(srcdir)/'`test-source-list.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_list-test-source-list.Tpo $(DEPDIR)/test_source_list-test-source-list.Po
-#	$(AM_V_CC)source='test-source-list.c' object='test_source_list-test-source-list.o' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_list-test-source-list.o `test -f 'test-source-list.c' || echo '$(srcdir)/'`test-source-list.c
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_list-test-source-list.o -MD -MP -MF $(DEPDIR)/test_source_list-test-source-list.Tpo -c -o test_source_list-test-source-list.o `test -f 'test-source-list.c' || echo '$(srcdir)/'`test-source-list.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_list-test-source-list.Tpo $(DEPDIR)/test_source_list-test-source-list.Po
+	$(AM_V_CC)source='test-source-list.c' object='test_source_list-test-source-list.o' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_list-test-source-list.o `test -f 'test-source-list.c' || echo '$(srcdir)/'`test-source-list.c
 
 test_source_list-test-source-list.obj: test-source-list.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_list-test-source-list.obj -MD -MP -MF $(DEPDIR)/test_source_list-test-source-list.Tpo -c -o test_source_list-test-source-list.obj `if test -f 'test-source-list.c'; then $(CYGPATH_W) 'test-source-list.c'; else $(CYGPATH_W) '$(srcdir)/test-source-list.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_list-test-source-list.Tpo $(DEPDIR)/test_source_list-test-source-list.Po
-#	$(AM_V_CC)source='test-source-list.c' object='test_source_list-test-source-list.obj' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_list-test-source-list.obj `if test -f 'test-source-list.c'; then $(CYGPATH_W) 'test-source-list.c'; else $(CYGPATH_W) '$(srcdir)/test-source-list.c'; fi`
+#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_list-test-source-list.obj -MD -MP -MF $(DEPDIR)/test_source_list-test-source-list.Tpo -c -o test_source_list-test-source-list.obj `if test -f 'test-source-list.c'; then $(CYGPATH_W) 'test-source-list.c'; else $(CYGPATH_W) '$(srcdir)/test-source-list.c'; fi`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_list-test-source-list.Tpo $(DEPDIR)/test_source_list-test-source-list.Po
+	$(AM_V_CC)source='test-source-list.c' object='test_source_list-test-source-list.obj' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_list-test-source-list.obj `if test -f 'test-source-list.c'; then $(CYGPATH_W) 'test-source-list.c'; else $(CYGPATH_W) '$(srcdir)/test-source-list.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

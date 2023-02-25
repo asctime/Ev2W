@@ -29,10 +29,13 @@ libebookbackendgoogle_la-e-book-backend-google-factory.lo: \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  D:/MSYS2/mingw64/include/pthread_time.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/garray.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gasyncqueue.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gthread.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gatomic.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib/glib-typeof.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gerror.h \
  D:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0/include/stdarg.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdarg.h \
@@ -93,11 +96,10 @@ libebookbackendgoogle_la-e-book-backend-google-factory.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gsequence.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gshell.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gslice.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gspawn.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gstrfuncs.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gstringchunk.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib/gstrvbuilder.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtestutils.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gthreadpool.h \
@@ -124,9 +126,11 @@ libebookbackendgoogle_la-e-book-backend-google-factory.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gmarshal.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gboxed.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-types.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gobject/gbindinggroup.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/genums.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-enumtypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gparamspecs.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gobject/gsignalgroup.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gsourceclosure.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gtypemodule.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gtypeplugin.h \
@@ -196,6 +200,8 @@ libebookbackendgoogle_la-e-book-backend-google-factory.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusproxy.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusserver.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusutils.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontroller.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontrollerdbus.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdrive.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdtlsclientconnection.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gdtlsconnection.h \
@@ -245,6 +251,7 @@ libebookbackendgoogle_la-e-book-backend-google-factory.lo: \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableinputstream.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableoutputstream.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableutils.h \
+ D:/MSYS2/mingw64/include/glib-2.0/gio/gpowerprofilemonitor.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gpropertyaction.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gproxy.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gproxyaddress.h \
@@ -394,6 +401,10 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
 
 D:/MSYS2/mingw64/include/pthread_time.h:
 
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/glib/garray.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gasyncqueue.h:
@@ -401,6 +412,8 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/gasyncqueue.h:
 D:/MSYS2/mingw64/include/glib-2.0/glib/gthread.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gatomic.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/glib/glib-typeof.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gerror.h:
 
@@ -522,15 +535,13 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/gshell.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gslice.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
-
 D:/MSYS2/mingw64/include/glib-2.0/glib/gspawn.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gstrfuncs.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gstringchunk.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/glib/gstrvbuilder.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gtestutils.h:
 
@@ -584,11 +595,15 @@ D:/MSYS2/mingw64/include/glib-2.0/gobject/gboxed.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-types.h:
 
+D:/MSYS2/mingw64/include/glib-2.0/gobject/gbindinggroup.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/gobject/genums.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/glib-enumtypes.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gparamspecs.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gobject/gsignalgroup.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gobject/gsourceclosure.h:
 
@@ -728,6 +743,10 @@ D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusserver.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gdbusutils.h:
 
+D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontroller.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/gdebugcontrollerdbus.h:
+
 D:/MSYS2/mingw64/include/glib-2.0/gio/gdrive.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gdtlsclientconnection.h:
@@ -825,6 +844,8 @@ D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableinputstream.h:
 D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableoutputstream.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gpollableutils.h:
+
+D:/MSYS2/mingw64/include/glib-2.0/gio/gpowerprofilemonitor.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/gio/gpropertyaction.h:
 

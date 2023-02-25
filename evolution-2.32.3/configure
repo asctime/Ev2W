@@ -692,8 +692,6 @@ EVOLUTION_MAIL_LIBS
 EVOLUTION_MAIL_CFLAGS
 EVOLUTION_CALENDAR_LIBS
 EVOLUTION_CALENDAR_CFLAGS
-GDATA_LIBS
-GDATA_CFLAGS
 LIBSOUP_LIBS
 LIBSOUP_CFLAGS
 LIBNOTIFY_LIBS
@@ -1135,8 +1133,6 @@ LIBNOTIFY_CFLAGS
 LIBNOTIFY_LIBS
 LIBSOUP_CFLAGS
 LIBSOUP_LIBS
-GDATA_CFLAGS
-GDATA_LIBS
 EVOLUTION_CALENDAR_CFLAGS
 EVOLUTION_CALENDAR_LIBS
 EVOLUTION_MAIL_CFLAGS
@@ -1974,9 +1970,6 @@ Some influential environment variables:
               C compiler flags for LIBSOUP, overriding pkg-config
   LIBSOUP_LIBS
               linker flags for LIBSOUP, overriding pkg-config
-  GDATA_CFLAGS
-              C compiler flags for GDATA, overriding pkg-config
-  GDATA_LIBS  linker flags for GDATA, overriding pkg-config
   EVOLUTION_CALENDAR_CFLAGS
               C compiler flags for EVOLUTION_CALENDAR, overriding pkg-config
   EVOLUTION_CALENDAR_LIBS
@@ -21408,104 +21401,6 @@ fi
 
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GDATA" >&5
-$as_echo_n "checking for GDATA... " >&6; }
-
-if test -n "$GDATA_CFLAGS"; then
-    pkg_cv_GDATA_CFLAGS="$GDATA_CFLAGS"
- elif test -n "$PKG_CONFIG"; then
-    if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libgdata >= 0.4.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "libgdata >= 0.4.0") 2>&5
-  ac_status=$?
-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-  test $ac_status = 0; }; then
-  pkg_cv_GDATA_CFLAGS=`$PKG_CONFIG --cflags "libgdata >= 0.4.0" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes
-else
-  pkg_failed=yes
-fi
- else
-    pkg_failed=untried
-fi
-if test -n "$GDATA_LIBS"; then
-    pkg_cv_GDATA_LIBS="$GDATA_LIBS"
- elif test -n "$PKG_CONFIG"; then
-    if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libgdata >= 0.4.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "libgdata >= 0.4.0") 2>&5
-  ac_status=$?
-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-  test $ac_status = 0; }; then
-  pkg_cv_GDATA_LIBS=`$PKG_CONFIG --libs "libgdata >= 0.4.0" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes
-else
-  pkg_failed=yes
-fi
- else
-    pkg_failed=untried
-fi
-
-
-
-if test $pkg_failed = yes; then
-   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-
-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
-        _pkg_short_errors_supported=yes
-else
-        _pkg_short_errors_supported=no
-fi
-        if test $_pkg_short_errors_supported = yes; then
-	        GDATA_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libgdata >= 0.4.0" 2>&1`
-        else
-	        GDATA_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libgdata >= 0.4.0" 2>&1`
-        fi
-	# Put the nasty error message in config.log where it belongs
-	echo "$GDATA_PKG_ERRORS" >&5
-
-	as_fn_error $? "Package requirements (libgdata >= 0.4.0) were not met:
-
-$GDATA_PKG_ERRORS
-
-Consider adjusting the PKG_CONFIG_PATH environment variable if you
-installed software in a non-standard prefix.
-
-Alternatively, you may set the environment variables GDATA_CFLAGS
-and GDATA_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details." "$LINENO" 5
-elif test $pkg_failed = untried; then
-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
-is in your PATH or set the PKG_CONFIG environment variable to the full
-path to pkg-config.
-
-Alternatively, you may set the environment variables GDATA_CFLAGS
-and GDATA_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details.
-
-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
-See \`config.log' for more details" "$LINENO" 5; }
-else
-	GDATA_CFLAGS=$pkg_cv_GDATA_CFLAGS
-	GDATA_LIBS=$pkg_cv_GDATA_LIBS
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-$as_echo "yes" >&6; }
-
-fi
-	GDATA_CFLAGS="$GDATA_CFLAGS "
-	GDATA_LIBS="$GDATA_LIBS "
-
-
-
-
-
-
-pkg_failed=no
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for EVOLUTION_CALENDAR" >&5
 $as_echo_n "checking for EVOLUTION_CALENDAR... " >&6; }
 
@@ -22016,7 +21911,7 @@ else
 fi
 
 
-plugins_base_always="calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features google-account-setup webdav-account-setup"
+plugins_base_always="calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features webdav-account-setup"
 
 plugins_base="$plugins_base_always $SA_JUNK_PLUGIN $BF_JUNK_PLUGIN"
 dist_plugins_base="$plugins_base_always calendar-weather sa-junk-plugin bogo-junk-plugin"
@@ -23007,7 +22902,7 @@ export plugindir
 EVOLUTION_DIR=`(cd $srcdir; pwd)`
 
 
-ac_config_files="$ac_config_files po/Makefile.in Makefile a11y/Makefile addressbook/Makefile addressbook/gui/Makefile addressbook/gui/contact-editor/Makefile addressbook/gui/contact-list-editor/Makefile addressbook/gui/merging/Makefile addressbook/gui/widgets/Makefile addressbook/importers/Makefile addressbook/printing/Makefile addressbook/tools/Makefile addressbook/tools/csv2vcard addressbook/util/Makefile art/Makefile data/Makefile data/evolution.desktop.in data/evolution-alarm-notify.desktop.in data/evolution-settings.desktop.in data/icons/Makefile doc/Makefile doc/reference/Makefile doc/reference/shell/Makefile e-util/Makefile em-format/Makefile filter/Makefile help/Makefile help/quickref/Makefile help/quickref/C/Makefile help/quickref/ca/Makefile help/quickref/cs/Makefile help/quickref/de/Makefile help/quickref/es/Makefile help/quickref/hu/Makefile help/quickref/it/Makefile help/quickref/fr/Makefile help/quickref/oc/Makefile help/quickref/pl/Makefile help/quickref/pt/Makefile help/quickref/sv/Makefile help/quickref/sq/Makefile libart_lgpl/Makefile libgnomecanvas/Makefile shell/Makefile shell/evolution-nognome shell/test/Makefile ui/Makefile views/Makefile views/addressbook/Makefile views/calendar/Makefile views/mail/Makefile views/tasks/Makefile views/memos/Makefile widgets/Makefile widgets/e-timezone-dialog/Makefile widgets/menus/Makefile widgets/misc/Makefile widgets/text/Makefile widgets/table/Makefile calendar/Makefile calendar/importers/Makefile calendar/common/Makefile calendar/gui/Makefile calendar/gui/alarm-notify/Makefile calendar/gui/dialogs/Makefile composer/Makefile m4/Makefile mail/Makefile mail/default/Makefile mail/default/C/Makefile mail/default/ca/Makefile mail/default/cs/Makefile mail/default/de/Makefile mail/default/es/Makefile mail/default/fi/Makefile mail/default/fr/Makefile mail/default/hu/Makefile mail/default/id/Makefile mail/default/it/Makefile mail/default/ja/Makefile mail/default/ko/Makefile mail/default/lt/Makefile mail/default/mk/Makefile mail/default/nl/Makefile mail/default/pl/Makefile mail/default/pt/Makefile mail/default/ro/Makefile mail/default/sr/Makefile mail/default/sr@latin/Makefile mail/default/sv/Makefile mail/default/zh_CN/Makefile mail/importers/Makefile maint/Makefile modules/Makefile modules/addressbook/Makefile modules/calendar/Makefile modules/mail/Makefile modules/mailto-handler/Makefile modules/network-manager/Makefile modules/composer-autosave/Makefile modules/connman/Makefile modules/plugin-lib/Makefile modules/plugin-mono/Makefile modules/plugin-python/Makefile modules/startup-wizard/Makefile modules/windows-sens/Makefile plugins/Makefile plugins/addressbook-file/Makefile plugins/attachment-reminder/Makefile plugins/audio-inline/Makefile plugins/backup-restore/Makefile plugins/bbdb/Makefile plugins/bogo-junk-plugin/Makefile plugins/caldav/Makefile plugins/calendar-file/Makefile plugins/calendar-http/Makefile plugins/calendar-weather/Makefile plugins/dbx-import/Makefile plugins/default-source/Makefile plugins/email-custom-header/Makefile plugins/external-editor/Makefile plugins/face/Makefile plugins/google-account-setup/Makefile plugins/groupwise-features/Makefile plugins/image-inline/Makefile plugins/imap-features/Makefile plugins/itip-formatter/Makefile plugins/mail-notification/Makefile plugins/mail-to-task/Makefile plugins/mailing-list-actions/Makefile plugins/mark-all-read/Makefile plugins/plugin-manager/Makefile plugins/prefer-plain/Makefile plugins/profiler/Makefile plugins/pst-import/Makefile plugins/publish-calendar/Makefile plugins/sa-junk-plugin/Makefile plugins/save-calendar/Makefile plugins/subject-thread/Makefile plugins/templates/Makefile plugins/tnef-attachments/Makefile plugins/vcard-inline/Makefile plugins/webdav-account-setup/Makefile plugins/contacts-map/Makefile smclient/Makefile smime/Makefile smime/lib/Makefile smime/gui/Makefile sounds/Makefile capplet/Makefile capplet/settings/Makefile capplet/settings/mail-autoconfig/Makefile evolution-zip evolution-calendar.pc evolution-mail.pc evolution-shell.pc evolution-plugin.pc"
+ac_config_files="$ac_config_files po/Makefile.in Makefile a11y/Makefile addressbook/Makefile addressbook/gui/Makefile addressbook/gui/contact-editor/Makefile addressbook/gui/contact-list-editor/Makefile addressbook/gui/merging/Makefile addressbook/gui/widgets/Makefile addressbook/importers/Makefile addressbook/printing/Makefile addressbook/tools/Makefile addressbook/tools/csv2vcard addressbook/util/Makefile art/Makefile data/Makefile data/evolution.desktop.in data/evolution-alarm-notify.desktop.in data/evolution-settings.desktop.in data/icons/Makefile doc/Makefile doc/reference/Makefile doc/reference/shell/Makefile e-util/Makefile em-format/Makefile filter/Makefile help/Makefile help/quickref/Makefile help/quickref/C/Makefile help/quickref/ca/Makefile help/quickref/cs/Makefile help/quickref/de/Makefile help/quickref/es/Makefile help/quickref/hu/Makefile help/quickref/it/Makefile help/quickref/fr/Makefile help/quickref/oc/Makefile help/quickref/pl/Makefile help/quickref/pt/Makefile help/quickref/sv/Makefile help/quickref/sq/Makefile libart_lgpl/Makefile libgnomecanvas/Makefile shell/Makefile shell/evolution-nognome shell/test/Makefile ui/Makefile views/Makefile views/addressbook/Makefile views/calendar/Makefile views/mail/Makefile views/tasks/Makefile views/memos/Makefile widgets/Makefile widgets/e-timezone-dialog/Makefile widgets/menus/Makefile widgets/misc/Makefile widgets/text/Makefile widgets/table/Makefile calendar/Makefile calendar/importers/Makefile calendar/common/Makefile calendar/gui/Makefile calendar/gui/alarm-notify/Makefile calendar/gui/dialogs/Makefile composer/Makefile m4/Makefile mail/Makefile mail/default/Makefile mail/default/C/Makefile mail/default/ca/Makefile mail/default/cs/Makefile mail/default/de/Makefile mail/default/es/Makefile mail/default/fi/Makefile mail/default/fr/Makefile mail/default/hu/Makefile mail/default/id/Makefile mail/default/it/Makefile mail/default/ja/Makefile mail/default/ko/Makefile mail/default/lt/Makefile mail/default/mk/Makefile mail/default/nl/Makefile mail/default/pl/Makefile mail/default/pt/Makefile mail/default/ro/Makefile mail/default/sr/Makefile mail/default/sr@latin/Makefile mail/default/sv/Makefile mail/default/zh_CN/Makefile mail/importers/Makefile maint/Makefile modules/Makefile modules/addressbook/Makefile modules/calendar/Makefile modules/mail/Makefile modules/mailto-handler/Makefile modules/network-manager/Makefile modules/composer-autosave/Makefile modules/connman/Makefile modules/plugin-lib/Makefile modules/plugin-mono/Makefile modules/plugin-python/Makefile modules/startup-wizard/Makefile modules/windows-sens/Makefile plugins/Makefile plugins/addressbook-file/Makefile plugins/attachment-reminder/Makefile plugins/audio-inline/Makefile plugins/backup-restore/Makefile plugins/bbdb/Makefile plugins/bogo-junk-plugin/Makefile plugins/caldav/Makefile plugins/calendar-file/Makefile plugins/calendar-http/Makefile plugins/calendar-weather/Makefile plugins/dbx-import/Makefile plugins/default-source/Makefile plugins/email-custom-header/Makefile plugins/external-editor/Makefile plugins/face/Makefile plugins/groupwise-features/Makefile plugins/image-inline/Makefile plugins/imap-features/Makefile plugins/itip-formatter/Makefile plugins/mail-notification/Makefile plugins/mail-to-task/Makefile plugins/mailing-list-actions/Makefile plugins/mark-all-read/Makefile plugins/plugin-manager/Makefile plugins/prefer-plain/Makefile plugins/profiler/Makefile plugins/pst-import/Makefile plugins/publish-calendar/Makefile plugins/sa-junk-plugin/Makefile plugins/save-calendar/Makefile plugins/subject-thread/Makefile plugins/templates/Makefile plugins/tnef-attachments/Makefile plugins/vcard-inline/Makefile plugins/webdav-account-setup/Makefile plugins/contacts-map/Makefile smclient/Makefile smime/Makefile smime/lib/Makefile smime/gui/Makefile sounds/Makefile capplet/Makefile capplet/settings/Makefile capplet/settings/mail-autoconfig/Makefile evolution-zip evolution-calendar.pc evolution-mail.pc evolution-shell.pc evolution-plugin.pc"
 
 
 cat >confcache <<\_ACEOF
@@ -24271,7 +24166,6 @@ do
     "plugins/email-custom-header/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/email-custom-header/Makefile" ;;
     "plugins/external-editor/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/external-editor/Makefile" ;;
     "plugins/face/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/face/Makefile" ;;
-    "plugins/google-account-setup/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/google-account-setup/Makefile" ;;
     "plugins/groupwise-features/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/groupwise-features/Makefile" ;;
     "plugins/image-inline/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/image-inline/Makefile" ;;
     "plugins/imap-features/Makefile") CONFIG_FILES="$CONFIG_FILES plugins/imap-features/Makefile" ;;

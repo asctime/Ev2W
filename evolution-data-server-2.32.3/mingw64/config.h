@@ -101,7 +101,7 @@
 /* #undef HAVE_FSYNC */
 
 /* libgdata is 0.7 or higher */
-#define HAVE_GDATA_07 1
+/* #undef HAVE_GDATA_07 */
 
 /* Define to 1 if you have the `gethostbyaddr_r' function. */
 /* #undef HAVE_GETHOSTBYADDR_R */
@@ -226,8 +226,10 @@
 /* IDL interface version (Major.Minor) */
 #define INTERFACE_VERSION "2.32"
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define if running the test suite so that test #27 works on MinGW. */
+/* #undef LT_MINGW_STATIC_TESTSUITE_HACK */
+
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
 /* Enable getaddrinfo emulation */
