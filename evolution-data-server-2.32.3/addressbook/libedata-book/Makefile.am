@@ -80,6 +80,7 @@ e_addressbook_factory_SOURCES = \
 	e-data-book-factory.h \
 	e-data-book-migrate.c
 
+<<<<<<< HEAD
 if OS_WIN32
   e_addressbook_factory_LDFLAGS = -mwindows
 endif
@@ -90,6 +91,18 @@ e_addressbook_factory_LDADD =					\
 =======
 	-mwindows libedata-book-1.2.la			\
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+case "$host" in
+*-mingw* | *MSYS*)
+e_addressbook_factory_LDFLAGS= -mwindows
+	;;
+*)
+	;;
+esac
+
+e_addressbook_factory_LDADD =					\
+	libedata-book-1.2.la	           		\
+>>>>>>> c8c4b7a... added -mwindows flag for background operation of data server
 	$(EVOLUTION_ADDRESSBOOK_LIBS)				\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
 	$(top_builddir)/libebackend/libebackend-1.2.la

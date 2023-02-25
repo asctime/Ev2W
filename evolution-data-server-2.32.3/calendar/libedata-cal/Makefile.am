@@ -110,6 +110,7 @@ e_calendar_factory_CPPFLAGS = \
 	$(LIBICAL_CFLAGS)				\
 	$(EVOLUTION_CALENDAR_CFLAGS)
 
+<<<<<<< HEAD
 if OS_WIN32
   e_calendar_factory_LDFLAGS = -mwindows
 endif
@@ -120,6 +121,18 @@ e_calendar_factory_LDADD =						\
 =======
 	-mwindows  $(top_builddir)/calendar/libecal/libecal-1.2.la	 \
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+case "$host" in
+*-mingw* | *MSYS*)
+e_calendar_factory_LDFLAGS= -mwindows
+	;;
+*)
+	;;
+esac
+
+e_calendar_factory_LDADD =						\
+	$(top_builddir)/calendar/libecal/libecal-1.2.la	 \
+>>>>>>> c8c4b7a... added -mwindows flag for background operation of data server
 	$(top_builddir)/calendar/libegdbus/libegdbus-cal.la		\
 	libedata-cal-1.2.la						\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la 		\
