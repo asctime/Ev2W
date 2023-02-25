@@ -81,6 +81,7 @@ e_addressbook_factory_SOURCES = \
 	e-data-book-migrate.c
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if OS_WIN32
   e_addressbook_factory_LDFLAGS = -mwindows
 endif
@@ -99,6 +100,11 @@ e_addressbook_factory_LDFLAGS= -mwindows
 *)
 	;;
 esac
+=======
+if OS_WIN32
+  e_addressbook_factory_LDFLAGS = -mwindows
+endif
+>>>>>>> dc53f2f... Corrected AM_CONDITIONAL for -mwindows linker flag
 
 e_addressbook_factory_LDADD =					\
 	libedata-book-1.2.la	           		\

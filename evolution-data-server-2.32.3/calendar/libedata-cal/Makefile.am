@@ -111,6 +111,7 @@ e_calendar_factory_CPPFLAGS = \
 	$(EVOLUTION_CALENDAR_CFLAGS)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if OS_WIN32
   e_calendar_factory_LDFLAGS = -mwindows
 endif
@@ -129,6 +130,11 @@ e_calendar_factory_LDFLAGS= -mwindows
 *)
 	;;
 esac
+=======
+if OS_WIN32
+  e_calendar_factory_LDFLAGS = -mwindows
+endif
+>>>>>>> dc53f2f... Corrected AM_CONDITIONAL for -mwindows linker flag
 
 e_calendar_factory_LDADD =						\
 	$(top_builddir)/calendar/libecal/libecal-1.2.la	 \
