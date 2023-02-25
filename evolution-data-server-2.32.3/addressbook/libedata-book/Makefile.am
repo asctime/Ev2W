@@ -85,7 +85,11 @@ if OS_WIN32
 endif
 
 e_addressbook_factory_LDADD =					\
+<<<<<<< HEAD
 	libedata-book-1.2.la	           		\
+=======
+	-mwindows libedata-book-1.2.la			\
+>>>>>>> 1975953... Google account removed from this release (outdated-notworking)
 	$(EVOLUTION_ADDRESSBOOK_LIBS)				\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
 	$(top_builddir)/libebackend/libebackend-1.2.la

@@ -115,7 +115,11 @@ if OS_WIN32
 endif
 
 e_calendar_factory_LDADD =						\
+<<<<<<< HEAD
 	$(top_builddir)/calendar/libecal/libecal-1.2.la	 \
+=======
+	-mwindows  $(top_builddir)/calendar/libecal/libecal-1.2.la	 \
+>>>>>>> 1975953... Google account removed from this release (outdated-notworking)
 	$(top_builddir)/calendar/libegdbus/libegdbus-cal.la		\
 	libedata-cal-1.2.la						\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la 		\

@@ -182,10 +182,17 @@ CAMEL_SSL_DEFINES = -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
+<<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+=======
+CCDEPMODE = depmode=gcc
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+CPP = gcc -E
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> 1975953... Google account removed from this release (outdated-notworking)
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -213,7 +220,11 @@ EXEEXT = .exe
 E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
+<<<<<<< HEAD
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+=======
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+>>>>>>> 1975953... Google account removed from this release (outdated-notworking)
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -231,7 +242,11 @@ GMSGFMT = /MSYS2/mingw64/bin/msgfmt
 GNOME_KEYRING_CFLAGS = 
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
+<<<<<<< HEAD
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+=======
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+>>>>>>> 1975953... Google account removed from this release (outdated-notworking)
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -353,7 +368,11 @@ SET_MAKE =
 SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
+<<<<<<< HEAD
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+=======
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+>>>>>>> 1975953... Google account removed from this release (outdated-notworking)
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -545,67 +564,67 @@ include ./$(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Plo
 include ./$(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Plo
 
 .c.o:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c $<
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libcamelnntp_la-camel-nntp-folder.lo: camel-nntp-folder.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-folder.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-folder.Tpo -c -o libcamelnntp_la-camel-nntp-folder.lo `test -f 'camel-nntp-folder.c' || echo '$(srcdir)/'`camel-nntp-folder.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-folder.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-folder.Plo
-#	$(AM_V_CC)source='camel-nntp-folder.c' object='libcamelnntp_la-camel-nntp-folder.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-folder.lo `test -f 'camel-nntp-folder.c' || echo '$(srcdir)/'`camel-nntp-folder.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-folder.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-folder.Tpo -c -o libcamelnntp_la-camel-nntp-folder.lo `test -f 'camel-nntp-folder.c' || echo '$(srcdir)/'`camel-nntp-folder.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-folder.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-folder.Plo
+	$(AM_V_CC)source='camel-nntp-folder.c' object='libcamelnntp_la-camel-nntp-folder.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-folder.lo `test -f 'camel-nntp-folder.c' || echo '$(srcdir)/'`camel-nntp-folder.c
 
 libcamelnntp_la-camel-nntp-provider.lo: camel-nntp-provider.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-provider.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-provider.Tpo -c -o libcamelnntp_la-camel-nntp-provider.lo `test -f 'camel-nntp-provider.c' || echo '$(srcdir)/'`camel-nntp-provider.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-provider.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-provider.Plo
-#	$(AM_V_CC)source='camel-nntp-provider.c' object='libcamelnntp_la-camel-nntp-provider.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-provider.lo `test -f 'camel-nntp-provider.c' || echo '$(srcdir)/'`camel-nntp-provider.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-provider.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-provider.Tpo -c -o libcamelnntp_la-camel-nntp-provider.lo `test -f 'camel-nntp-provider.c' || echo '$(srcdir)/'`camel-nntp-provider.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-provider.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-provider.Plo
+	$(AM_V_CC)source='camel-nntp-provider.c' object='libcamelnntp_la-camel-nntp-provider.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-provider.lo `test -f 'camel-nntp-provider.c' || echo '$(srcdir)/'`camel-nntp-provider.c
 
 libcamelnntp_la-camel-nntp-store-summary.lo: camel-nntp-store-summary.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-store-summary.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-store-summary.Tpo -c -o libcamelnntp_la-camel-nntp-store-summary.lo `test -f 'camel-nntp-store-summary.c' || echo '$(srcdir)/'`camel-nntp-store-summary.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-store-summary.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-store-summary.Plo
-#	$(AM_V_CC)source='camel-nntp-store-summary.c' object='libcamelnntp_la-camel-nntp-store-summary.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-store-summary.lo `test -f 'camel-nntp-store-summary.c' || echo '$(srcdir)/'`camel-nntp-store-summary.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-store-summary.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-store-summary.Tpo -c -o libcamelnntp_la-camel-nntp-store-summary.lo `test -f 'camel-nntp-store-summary.c' || echo '$(srcdir)/'`camel-nntp-store-summary.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-store-summary.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-store-summary.Plo
+	$(AM_V_CC)source='camel-nntp-store-summary.c' object='libcamelnntp_la-camel-nntp-store-summary.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-store-summary.lo `test -f 'camel-nntp-store-summary.c' || echo '$(srcdir)/'`camel-nntp-store-summary.c
 
 libcamelnntp_la-camel-nntp-store.lo: camel-nntp-store.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-store.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-store.Tpo -c -o libcamelnntp_la-camel-nntp-store.lo `test -f 'camel-nntp-store.c' || echo '$(srcdir)/'`camel-nntp-store.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-store.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-store.Plo
-#	$(AM_V_CC)source='camel-nntp-store.c' object='libcamelnntp_la-camel-nntp-store.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-store.lo `test -f 'camel-nntp-store.c' || echo '$(srcdir)/'`camel-nntp-store.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-store.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-store.Tpo -c -o libcamelnntp_la-camel-nntp-store.lo `test -f 'camel-nntp-store.c' || echo '$(srcdir)/'`camel-nntp-store.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-store.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-store.Plo
+	$(AM_V_CC)source='camel-nntp-store.c' object='libcamelnntp_la-camel-nntp-store.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-store.lo `test -f 'camel-nntp-store.c' || echo '$(srcdir)/'`camel-nntp-store.c
 
 libcamelnntp_la-camel-nntp-stream.lo: camel-nntp-stream.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-stream.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Tpo -c -o libcamelnntp_la-camel-nntp-stream.lo `test -f 'camel-nntp-stream.c' || echo '$(srcdir)/'`camel-nntp-stream.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Plo
-#	$(AM_V_CC)source='camel-nntp-stream.c' object='libcamelnntp_la-camel-nntp-stream.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-stream.lo `test -f 'camel-nntp-stream.c' || echo '$(srcdir)/'`camel-nntp-stream.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-stream.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Tpo -c -o libcamelnntp_la-camel-nntp-stream.lo `test -f 'camel-nntp-stream.c' || echo '$(srcdir)/'`camel-nntp-stream.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-stream.Plo
+	$(AM_V_CC)source='camel-nntp-stream.c' object='libcamelnntp_la-camel-nntp-stream.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-stream.lo `test -f 'camel-nntp-stream.c' || echo '$(srcdir)/'`camel-nntp-stream.c
 
 libcamelnntp_la-camel-nntp-summary.lo: camel-nntp-summary.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-summary.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Tpo -c -o libcamelnntp_la-camel-nntp-summary.lo `test -f 'camel-nntp-summary.c' || echo '$(srcdir)/'`camel-nntp-summary.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Plo
-#	$(AM_V_CC)source='camel-nntp-summary.c' object='libcamelnntp_la-camel-nntp-summary.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-summary.lo `test -f 'camel-nntp-summary.c' || echo '$(srcdir)/'`camel-nntp-summary.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamelnntp_la-camel-nntp-summary.lo -MD -MP -MF $(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Tpo -c -o libcamelnntp_la-camel-nntp-summary.lo `test -f 'camel-nntp-summary.c' || echo '$(srcdir)/'`camel-nntp-summary.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Tpo $(DEPDIR)/libcamelnntp_la-camel-nntp-summary.Plo
+	$(AM_V_CC)source='camel-nntp-summary.c' object='libcamelnntp_la-camel-nntp-summary.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamelnntp_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamelnntp_la-camel-nntp-summary.lo `test -f 'camel-nntp-summary.c' || echo '$(srcdir)/'`camel-nntp-summary.c
 
 mostlyclean-libtool:
 	-rm -f *.lo
