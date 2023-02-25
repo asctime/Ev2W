@@ -80,13 +80,9 @@ e_addressbook_factory_SOURCES = \
 	e-data-book-factory.h \
 	e-data-book-migrate.c
 
-case "$host" in
-*-mingw* | *MSYS*)
-e_addressbook_factory_LDFLAGS= -mwindows
-	;;
-*)
-	;;
-esac
+if OS_WIN32
+  e_addressbook_factory_LDFLAGS = -mwindows
+endif
 
 e_addressbook_factory_LDADD =					\
 	libedata-book-1.2.la	           		\
