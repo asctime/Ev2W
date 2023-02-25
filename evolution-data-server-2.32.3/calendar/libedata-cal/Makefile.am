@@ -110,8 +110,16 @@ e_calendar_factory_CPPFLAGS = \
 	$(LIBICAL_CFLAGS)				\
 	$(EVOLUTION_CALENDAR_CFLAGS)
 
+case "$host" in
+*-mingw* | *MSYS*)
+e_calendar_factory_LDFLAGS= -mwindows
+	;;
+*)
+	;;
+esac
+
 e_calendar_factory_LDADD =						\
-	-mwindows  $(top_builddir)/calendar/libecal/libecal-1.2.la	 \
+	$(top_builddir)/calendar/libecal/libecal-1.2.la	 \
 	$(top_builddir)/calendar/libegdbus/libegdbus-cal.la		\
 	libedata-cal-1.2.la						\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la 		\
