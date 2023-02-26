@@ -1,6 +1,7 @@
 # Ev2W
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <strong>Gnome EVOLUTION email client and calendar ported to MSYS2/MinGW64 using GTK.</strong><br><br>
 Update and refresh of original work courtesy Novell, Inc., The GNOME Foundation, SUSE and Debian Linux groups, the MSYS2 team and others. <a href="https://en.wikipedia.org/wiki/GNOME_Evolution" target="_blank">Evolution</a> usage is granted under the GNU Lesser General Public License (LGPL). <br><br>
 <strong>What is working?</strong> User interface, GCONF, dll plugins, most protocols like SMTP, IMAP with CRAM-MD5 over TLS 1.x, SSLv3 is also enabled but is not advised for security reasons. Implicit TLS (not requiring STARTTLS) has been successfully tested with Outlook.com on port 993 but needs to be configured as "SSL". This is just how the interface was, SSL really meant any implicit encryption on port 993. Like older versions of Outlook, "TLS" specifically refers to the STARTTLS re-handshake negotiation from port 143. HTML images over HTTPS load, CalDAV and LDAP(S) connectors also work.<br>
@@ -12,6 +13,9 @@ Update and refresh of original work courtesy Novell, Inc., The GNOME Foundation,
 =======
 <strong>Ev2W Mail (Evolution 2.x email address book and calendar client, for Windows) based on MSYS2/MinGW64 and GTK2</strong><br><br>
 >>>>>>> 2b37fee... Update README.md
+=======
+<strong>Gnome EVOLUTION Mail and Calendar client ported to MSYS2/MinGW64 using GTK.</strong><br><br>
+>>>>>>> df4c53b... Update README.md
 Update and refresh of original work courtesy Novell, Inc., The GNOME Foundation, SUSE and Debian Linux groups, the MSYS2 team and others. <a href="https://en.wikipedia.org/wiki/GNOME_Evolution" target="_blank">Evolution</a> usage is granted under the GNU Lesser General Public License (LGPL). <br><br>
 <<<<<<< HEAD
 <strong>What is working?</strong> User interface, GCONF, dll plugins, several protocols like IMAP and SMTP, CalDAV, LDAP/LDAPS and more.<br>
