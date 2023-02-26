@@ -3012,10 +3012,10 @@ if test "x${enable_gtk3}" = "xyes"; then
 	GTK="gtk+-3.0"
 	gtk_minimum_version="2.90.4"
 
-	EVOLUTION_PLUGIN_PK="evolution-plugin-3.0"
-	EVOLUTION_MAIL_PK="evolution-mail-3.0"
-	EVOLUTION_SHELL_PK="evolution-shell-3.0"
-	LIBEDATASERVERUI_PK="libedataserverui-3.0"
+	EVOLUTION_PLUGIN_PK="evolution-plugin"
+	EVOLUTION_MAIL_PK="evolution-mail"
+	EVOLUTION_SHELL_PK="evolution-shell"
+	LIBEDATASERVERUI_PK="libedataserverui-1.2"
 else
 	GTK="gtk+-2.0"
 	gtk_minimum_version="2.20.0"

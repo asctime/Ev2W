@@ -158,11 +158,11 @@ CAMEL_providerdir = D:/MSYS2/mingw64/bin/../lib/evolution-data-server-1.2/camel-
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
-CCDEPMODE = depmode=gcc3
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -pthread -mtune=generic -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -fno-strict-aliasing
+CCDEPMODE = depmode=gcc
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
 CONNECTOR_DATADIR = $(datadir)/evolution-exchange/$(BASE_VERSION)
 CPP = gcc -E
-CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -pthread -fomit-frame-pointer -mtune=generic -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -177,15 +177,15 @@ ECHO_C =
 ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
-EVOLUTION_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -DCAMEL_HAVE_NSS -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32/groupwise -mms-bitfields -pthread -mms-bitfields 
-EVOLUTION_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -ledataserver-1.2 -ledataserverui-1.2 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -ledata-book-1.2 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledata-cal-1.2 -lecal-1.2 -lical -licalss -licalvcal D:/MSYS2/mingw64/lib/libicuuc.dll.a D:/MSYS2/mingw64/lib/libicuin.dll.a -ledataserver-1.2 -lxml2 -lgconf-2 -legroupwise-1.2 -lsoup-2.4 -lebackend-1.2 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
-EVOLUTION_MAIL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gnome-desktop-2.0 -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -DCAMEL_HAVE_NSS -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -mms-bitfields -mms-bitfields -pthread -mms-bitfields 
-EVOLUTION_MAIL_LIBS = -LD:/MSYS2/mingw64/bin/../lib -levolution-mail -lcomposer -leshell -Wl,-RD:/MSYS2/mingw64/bin/../lib -lgconf-2 -lgnome-desktop-2 -ledataserverui-1.2 -lebook-1.2 -lunique-1.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lcamel-1.2 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 
-EVOLUTION_PLUGIN_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libgtkhtml-3.14 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/enchant -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libgtkhtml-3.14/editor -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -pthread -mms-bitfields -mms-bitfields 
-EVOLUTION_PLUGIN_LIBS = -LD:/MSYS2/mingw64/bin/../lib -leutil -Wl,-RD:/MSYS2/mingw64/bin/../lib -lcamel-provider-1.2 -lcamel-1.2 -ledataserver-1.2 -lsoup-2.4 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -lxml2 -lunique-1.0 -lglib-2.0 -lgtkhtml-editor-3.14 -lgtkhtml-3.14 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lenchant -lgmodule-2.0 -pthread -lglib-2.0 -lgconf-2 -lglib-2.0 -lintl 
+EVOLUTION_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32/groupwise -mms-bitfields 
+EVOLUTION_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -ledataserver-1.2 -ledataserverui-1.2 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -ledata-book-1.2 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledata-cal-1.2 -lecal-1.2 -lical -licalss -licalvcal D:/MSYS2/mingw64/lib/libicuuc.dll.a D:/MSYS2/mingw64/lib/libicuin.dll.a -ledataserver-1.2 -lxml2 -lgconf-2 -legroupwise-1.2 -lsoup-2.4 -lgmodule-2.0 -lebackend-1.2 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+EVOLUTION_MAIL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -mms-bitfields 
+EVOLUTION_MAIL_LIBS = -LD:/MSYS2/mingw64/bin/../lib -levolution-mail -lcomposer -leshell -Wl,-RD:/MSYS2/mingw64/bin/../lib -lgconf-2 -ledataserverui-1.2 -lebook-1.2 -lunique-1.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lcamel-1.2 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 
+EVOLUTION_PLUGIN_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libgtkhtml-3.14 -ID:/MSYS2/mingw64/bin/../include/enchant -ID:/MSYS2/mingw64/bin/../include/libgtkhtml-3.14/editor -mms-bitfields 
+EVOLUTION_PLUGIN_LIBS = -LD:/MSYS2/mingw64/bin/../lib -leutil -Wl,-RD:/MSYS2/mingw64/bin/../lib -lcamel-provider-1.2 -lcamel-1.2 -ledataserver-1.2 -lsoup-2.4 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -lxml2 -lunique-1.0 -lgtkhtml-editor-3.14 -lgtkhtml-3.14 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lenchant -lgmodule-2.0 -lgconf-2 -lglib-2.0 -lintl 
 EVOLUTION_PLUGIN_errordir = D:/MSYS2/mingw64/bin/../share/evolution/2.32/errors
-EVOLUTION_SHELL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gnome-desktop-2.0 -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -mms-bitfields -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -mms-bitfields -mms-bitfields -mms-bitfields -pthread -mms-bitfields 
-EVOLUTION_SHELL_LIBS = -LD:/MSYS2/mingw64/bin/../lib -leshell -Wl,-RD:/MSYS2/mingw64/bin/../lib -lgconf-2 -lgnome-desktop-2 -ledataserverui-1.2 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lunique-1.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+EVOLUTION_SHELL_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -mms-bitfields 
+EVOLUTION_SHELL_LIBS = -LD:/MSYS2/mingw64/bin/../lib -leshell -Wl,-RD:/MSYS2/mingw64/bin/../lib -lgconf-2 -ledataserverui-1.2 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lgmodule-2.0 -lunique-1.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 EVOLUTION_VERSION = 2.32.3
 EVOLUTION_imagesdir = D:/MSYS2/mingw64/bin/../share/evolution/2.32/images
 EXEEXT = .exe
@@ -201,8 +201,8 @@ GLIB_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lglib-2.0 -lintl
 GLIB_MKENUMS = D:/MSYS2/mingw64/bin/../bin/glib-mkenums
 GMOFILES = 
 GMSGFMT = /MSYS2/mingw64/bin/msgfmt
-GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -pthread -mms-bitfields 
-GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GREP = /usr/bin/grep
 GTKDOC_CHECK = gtkdoc-check.test
@@ -218,7 +218,7 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 INSTOBJEXT = .mo
-INTLLIBS = 
+INTLLIBS = -lintl  
 INTLTOOL_EXTRACT = /usr/bin/intltool-extract
 INTLTOOL_MERGE = /usr/bin/intltool-merge
 INTLTOOL_PERL = /MSYS2/mingw64/bin/perl
@@ -235,13 +235,13 @@ LDAP_CFLAGS =  -DLDAP_DEPRECATED
 LDAP_LIBS = -lwldap32
 LDFLAGS = 
 LIBOBJS = 
-LIBS =  -lintl -lws2_32
+LIBS = -lz -lws2_32 -lregex -lversion -lssp
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = cp -pR
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-MAINT = #
+MAINT = 
 MAKEINFO = ${SHELL} /d/Download/MinGW-64-souorce/evolution-exchange-2.32.3/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
@@ -432,7 +432,7 @@ all: $(BUILT_SOURCES)
 
 .SUFFIXES:
 .SUFFIXES: .c .lo .o .obj
-$(srcdir)/Makefile.in: # $(srcdir)/Makefile.am  $(am__configure_deps)
+$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -457,9 +457,9 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 
-$(top_srcdir)/configure: # $(am__configure_deps)
+$(top_srcdir)/configure:  $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-$(ACLOCAL_M4): # $(am__aclocal_m4_deps)
+$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 
@@ -502,165 +502,165 @@ include ./$(DEPDIR)/libexchange_la-e2k-utils.Plo
 include ./$(DEPDIR)/libexchange_la-e2k-xml-utils.Plo
 
 .c.o:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c $<
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CC)source='$<' object='$@' libtool=no \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libexchange_la-e2k-marshal.lo: e2k-marshal.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-marshal.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-marshal.Tpo -c -o libexchange_la-e2k-marshal.lo `test -f 'e2k-marshal.c' || echo '$(srcdir)/'`e2k-marshal.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-marshal.Tpo $(DEPDIR)/libexchange_la-e2k-marshal.Plo
-#	$(AM_V_CC)source='e2k-marshal.c' object='libexchange_la-e2k-marshal.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-marshal.lo `test -f 'e2k-marshal.c' || echo '$(srcdir)/'`e2k-marshal.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-marshal.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-marshal.Tpo -c -o libexchange_la-e2k-marshal.lo `test -f 'e2k-marshal.c' || echo '$(srcdir)/'`e2k-marshal.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-marshal.Tpo $(DEPDIR)/libexchange_la-e2k-marshal.Plo
+	$(AM_V_CC)source='e2k-marshal.c' object='libexchange_la-e2k-marshal.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-marshal.lo `test -f 'e2k-marshal.c' || echo '$(srcdir)/'`e2k-marshal.c
 
 libexchange_la-e2k-action.lo: e2k-action.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-action.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-action.Tpo -c -o libexchange_la-e2k-action.lo `test -f 'e2k-action.c' || echo '$(srcdir)/'`e2k-action.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-action.Tpo $(DEPDIR)/libexchange_la-e2k-action.Plo
-#	$(AM_V_CC)source='e2k-action.c' object='libexchange_la-e2k-action.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-action.lo `test -f 'e2k-action.c' || echo '$(srcdir)/'`e2k-action.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-action.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-action.Tpo -c -o libexchange_la-e2k-action.lo `test -f 'e2k-action.c' || echo '$(srcdir)/'`e2k-action.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-action.Tpo $(DEPDIR)/libexchange_la-e2k-action.Plo
+	$(AM_V_CC)source='e2k-action.c' object='libexchange_la-e2k-action.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-action.lo `test -f 'e2k-action.c' || echo '$(srcdir)/'`e2k-action.c
 
 libexchange_la-e2k-autoconfig.lo: e2k-autoconfig.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-autoconfig.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-autoconfig.Tpo -c -o libexchange_la-e2k-autoconfig.lo `test -f 'e2k-autoconfig.c' || echo '$(srcdir)/'`e2k-autoconfig.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-autoconfig.Tpo $(DEPDIR)/libexchange_la-e2k-autoconfig.Plo
-#	$(AM_V_CC)source='e2k-autoconfig.c' object='libexchange_la-e2k-autoconfig.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-autoconfig.lo `test -f 'e2k-autoconfig.c' || echo '$(srcdir)/'`e2k-autoconfig.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-autoconfig.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-autoconfig.Tpo -c -o libexchange_la-e2k-autoconfig.lo `test -f 'e2k-autoconfig.c' || echo '$(srcdir)/'`e2k-autoconfig.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-autoconfig.Tpo $(DEPDIR)/libexchange_la-e2k-autoconfig.Plo
+	$(AM_V_CC)source='e2k-autoconfig.c' object='libexchange_la-e2k-autoconfig.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-autoconfig.lo `test -f 'e2k-autoconfig.c' || echo '$(srcdir)/'`e2k-autoconfig.c
 
 libexchange_la-e2k-context.lo: e2k-context.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-context.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-context.Tpo -c -o libexchange_la-e2k-context.lo `test -f 'e2k-context.c' || echo '$(srcdir)/'`e2k-context.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-context.Tpo $(DEPDIR)/libexchange_la-e2k-context.Plo
-#	$(AM_V_CC)source='e2k-context.c' object='libexchange_la-e2k-context.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-context.lo `test -f 'e2k-context.c' || echo '$(srcdir)/'`e2k-context.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-context.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-context.Tpo -c -o libexchange_la-e2k-context.lo `test -f 'e2k-context.c' || echo '$(srcdir)/'`e2k-context.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-context.Tpo $(DEPDIR)/libexchange_la-e2k-context.Plo
+	$(AM_V_CC)source='e2k-context.c' object='libexchange_la-e2k-context.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-context.lo `test -f 'e2k-context.c' || echo '$(srcdir)/'`e2k-context.c
 
 libexchange_la-e2k-freebusy.lo: e2k-freebusy.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-freebusy.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-freebusy.Tpo -c -o libexchange_la-e2k-freebusy.lo `test -f 'e2k-freebusy.c' || echo '$(srcdir)/'`e2k-freebusy.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-freebusy.Tpo $(DEPDIR)/libexchange_la-e2k-freebusy.Plo
-#	$(AM_V_CC)source='e2k-freebusy.c' object='libexchange_la-e2k-freebusy.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-freebusy.lo `test -f 'e2k-freebusy.c' || echo '$(srcdir)/'`e2k-freebusy.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-freebusy.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-freebusy.Tpo -c -o libexchange_la-e2k-freebusy.lo `test -f 'e2k-freebusy.c' || echo '$(srcdir)/'`e2k-freebusy.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-freebusy.Tpo $(DEPDIR)/libexchange_la-e2k-freebusy.Plo
+	$(AM_V_CC)source='e2k-freebusy.c' object='libexchange_la-e2k-freebusy.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-freebusy.lo `test -f 'e2k-freebusy.c' || echo '$(srcdir)/'`e2k-freebusy.c
 
 libexchange_la-e2k-global-catalog.lo: e2k-global-catalog.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-global-catalog.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-global-catalog.Tpo -c -o libexchange_la-e2k-global-catalog.lo `test -f 'e2k-global-catalog.c' || echo '$(srcdir)/'`e2k-global-catalog.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-global-catalog.Tpo $(DEPDIR)/libexchange_la-e2k-global-catalog.Plo
-#	$(AM_V_CC)source='e2k-global-catalog.c' object='libexchange_la-e2k-global-catalog.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-global-catalog.lo `test -f 'e2k-global-catalog.c' || echo '$(srcdir)/'`e2k-global-catalog.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-global-catalog.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-global-catalog.Tpo -c -o libexchange_la-e2k-global-catalog.lo `test -f 'e2k-global-catalog.c' || echo '$(srcdir)/'`e2k-global-catalog.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-global-catalog.Tpo $(DEPDIR)/libexchange_la-e2k-global-catalog.Plo
+	$(AM_V_CC)source='e2k-global-catalog.c' object='libexchange_la-e2k-global-catalog.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-global-catalog.lo `test -f 'e2k-global-catalog.c' || echo '$(srcdir)/'`e2k-global-catalog.c
 
 libexchange_la-e2k-http-utils.lo: e2k-http-utils.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-http-utils.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-http-utils.Tpo -c -o libexchange_la-e2k-http-utils.lo `test -f 'e2k-http-utils.c' || echo '$(srcdir)/'`e2k-http-utils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-http-utils.Tpo $(DEPDIR)/libexchange_la-e2k-http-utils.Plo
-#	$(AM_V_CC)source='e2k-http-utils.c' object='libexchange_la-e2k-http-utils.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-http-utils.lo `test -f 'e2k-http-utils.c' || echo '$(srcdir)/'`e2k-http-utils.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-http-utils.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-http-utils.Tpo -c -o libexchange_la-e2k-http-utils.lo `test -f 'e2k-http-utils.c' || echo '$(srcdir)/'`e2k-http-utils.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-http-utils.Tpo $(DEPDIR)/libexchange_la-e2k-http-utils.Plo
+	$(AM_V_CC)source='e2k-http-utils.c' object='libexchange_la-e2k-http-utils.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-http-utils.lo `test -f 'e2k-http-utils.c' || echo '$(srcdir)/'`e2k-http-utils.c
 
 libexchange_la-e2k-operation.lo: e2k-operation.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-operation.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-operation.Tpo -c -o libexchange_la-e2k-operation.lo `test -f 'e2k-operation.c' || echo '$(srcdir)/'`e2k-operation.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-operation.Tpo $(DEPDIR)/libexchange_la-e2k-operation.Plo
-#	$(AM_V_CC)source='e2k-operation.c' object='libexchange_la-e2k-operation.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-operation.lo `test -f 'e2k-operation.c' || echo '$(srcdir)/'`e2k-operation.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-operation.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-operation.Tpo -c -o libexchange_la-e2k-operation.lo `test -f 'e2k-operation.c' || echo '$(srcdir)/'`e2k-operation.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-operation.Tpo $(DEPDIR)/libexchange_la-e2k-operation.Plo
+	$(AM_V_CC)source='e2k-operation.c' object='libexchange_la-e2k-operation.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-operation.lo `test -f 'e2k-operation.c' || echo '$(srcdir)/'`e2k-operation.c
 
 libexchange_la-e2k-path.lo: e2k-path.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-path.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-path.Tpo -c -o libexchange_la-e2k-path.lo `test -f 'e2k-path.c' || echo '$(srcdir)/'`e2k-path.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-path.Tpo $(DEPDIR)/libexchange_la-e2k-path.Plo
-#	$(AM_V_CC)source='e2k-path.c' object='libexchange_la-e2k-path.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-path.lo `test -f 'e2k-path.c' || echo '$(srcdir)/'`e2k-path.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-path.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-path.Tpo -c -o libexchange_la-e2k-path.lo `test -f 'e2k-path.c' || echo '$(srcdir)/'`e2k-path.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-path.Tpo $(DEPDIR)/libexchange_la-e2k-path.Plo
+	$(AM_V_CC)source='e2k-path.c' object='libexchange_la-e2k-path.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-path.lo `test -f 'e2k-path.c' || echo '$(srcdir)/'`e2k-path.c
 
 libexchange_la-e2k-properties.lo: e2k-properties.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-properties.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-properties.Tpo -c -o libexchange_la-e2k-properties.lo `test -f 'e2k-properties.c' || echo '$(srcdir)/'`e2k-properties.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-properties.Tpo $(DEPDIR)/libexchange_la-e2k-properties.Plo
-#	$(AM_V_CC)source='e2k-properties.c' object='libexchange_la-e2k-properties.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-properties.lo `test -f 'e2k-properties.c' || echo '$(srcdir)/'`e2k-properties.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-properties.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-properties.Tpo -c -o libexchange_la-e2k-properties.lo `test -f 'e2k-properties.c' || echo '$(srcdir)/'`e2k-properties.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-properties.Tpo $(DEPDIR)/libexchange_la-e2k-properties.Plo
+	$(AM_V_CC)source='e2k-properties.c' object='libexchange_la-e2k-properties.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-properties.lo `test -f 'e2k-properties.c' || echo '$(srcdir)/'`e2k-properties.c
 
 libexchange_la-e2k-restriction.lo: e2k-restriction.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-restriction.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-restriction.Tpo -c -o libexchange_la-e2k-restriction.lo `test -f 'e2k-restriction.c' || echo '$(srcdir)/'`e2k-restriction.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-restriction.Tpo $(DEPDIR)/libexchange_la-e2k-restriction.Plo
-#	$(AM_V_CC)source='e2k-restriction.c' object='libexchange_la-e2k-restriction.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-restriction.lo `test -f 'e2k-restriction.c' || echo '$(srcdir)/'`e2k-restriction.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-restriction.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-restriction.Tpo -c -o libexchange_la-e2k-restriction.lo `test -f 'e2k-restriction.c' || echo '$(srcdir)/'`e2k-restriction.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-restriction.Tpo $(DEPDIR)/libexchange_la-e2k-restriction.Plo
+	$(AM_V_CC)source='e2k-restriction.c' object='libexchange_la-e2k-restriction.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-restriction.lo `test -f 'e2k-restriction.c' || echo '$(srcdir)/'`e2k-restriction.c
 
 libexchange_la-e2k-result.lo: e2k-result.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-result.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-result.Tpo -c -o libexchange_la-e2k-result.lo `test -f 'e2k-result.c' || echo '$(srcdir)/'`e2k-result.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-result.Tpo $(DEPDIR)/libexchange_la-e2k-result.Plo
-#	$(AM_V_CC)source='e2k-result.c' object='libexchange_la-e2k-result.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-result.lo `test -f 'e2k-result.c' || echo '$(srcdir)/'`e2k-result.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-result.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-result.Tpo -c -o libexchange_la-e2k-result.lo `test -f 'e2k-result.c' || echo '$(srcdir)/'`e2k-result.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-result.Tpo $(DEPDIR)/libexchange_la-e2k-result.Plo
+	$(AM_V_CC)source='e2k-result.c' object='libexchange_la-e2k-result.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-result.lo `test -f 'e2k-result.c' || echo '$(srcdir)/'`e2k-result.c
 
 libexchange_la-e2k-rule.lo: e2k-rule.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-rule.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-rule.Tpo -c -o libexchange_la-e2k-rule.lo `test -f 'e2k-rule.c' || echo '$(srcdir)/'`e2k-rule.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-rule.Tpo $(DEPDIR)/libexchange_la-e2k-rule.Plo
-#	$(AM_V_CC)source='e2k-rule.c' object='libexchange_la-e2k-rule.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-rule.lo `test -f 'e2k-rule.c' || echo '$(srcdir)/'`e2k-rule.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-rule.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-rule.Tpo -c -o libexchange_la-e2k-rule.lo `test -f 'e2k-rule.c' || echo '$(srcdir)/'`e2k-rule.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-rule.Tpo $(DEPDIR)/libexchange_la-e2k-rule.Plo
+	$(AM_V_CC)source='e2k-rule.c' object='libexchange_la-e2k-rule.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-rule.lo `test -f 'e2k-rule.c' || echo '$(srcdir)/'`e2k-rule.c
 
 libexchange_la-e2k-rule-xml.lo: e2k-rule-xml.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-rule-xml.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-rule-xml.Tpo -c -o libexchange_la-e2k-rule-xml.lo `test -f 'e2k-rule-xml.c' || echo '$(srcdir)/'`e2k-rule-xml.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-rule-xml.Tpo $(DEPDIR)/libexchange_la-e2k-rule-xml.Plo
-#	$(AM_V_CC)source='e2k-rule-xml.c' object='libexchange_la-e2k-rule-xml.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-rule-xml.lo `test -f 'e2k-rule-xml.c' || echo '$(srcdir)/'`e2k-rule-xml.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-rule-xml.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-rule-xml.Tpo -c -o libexchange_la-e2k-rule-xml.lo `test -f 'e2k-rule-xml.c' || echo '$(srcdir)/'`e2k-rule-xml.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-rule-xml.Tpo $(DEPDIR)/libexchange_la-e2k-rule-xml.Plo
+	$(AM_V_CC)source='e2k-rule-xml.c' object='libexchange_la-e2k-rule-xml.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-rule-xml.lo `test -f 'e2k-rule-xml.c' || echo '$(srcdir)/'`e2k-rule-xml.c
 
 libexchange_la-e2k-security-descriptor.lo: e2k-security-descriptor.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-security-descriptor.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-security-descriptor.Tpo -c -o libexchange_la-e2k-security-descriptor.lo `test -f 'e2k-security-descriptor.c' || echo '$(srcdir)/'`e2k-security-descriptor.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-security-descriptor.Tpo $(DEPDIR)/libexchange_la-e2k-security-descriptor.Plo
-#	$(AM_V_CC)source='e2k-security-descriptor.c' object='libexchange_la-e2k-security-descriptor.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-security-descriptor.lo `test -f 'e2k-security-descriptor.c' || echo '$(srcdir)/'`e2k-security-descriptor.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-security-descriptor.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-security-descriptor.Tpo -c -o libexchange_la-e2k-security-descriptor.lo `test -f 'e2k-security-descriptor.c' || echo '$(srcdir)/'`e2k-security-descriptor.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-security-descriptor.Tpo $(DEPDIR)/libexchange_la-e2k-security-descriptor.Plo
+	$(AM_V_CC)source='e2k-security-descriptor.c' object='libexchange_la-e2k-security-descriptor.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-security-descriptor.lo `test -f 'e2k-security-descriptor.c' || echo '$(srcdir)/'`e2k-security-descriptor.c
 
 libexchange_la-e2k-sid.lo: e2k-sid.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-sid.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-sid.Tpo -c -o libexchange_la-e2k-sid.lo `test -f 'e2k-sid.c' || echo '$(srcdir)/'`e2k-sid.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-sid.Tpo $(DEPDIR)/libexchange_la-e2k-sid.Plo
-#	$(AM_V_CC)source='e2k-sid.c' object='libexchange_la-e2k-sid.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-sid.lo `test -f 'e2k-sid.c' || echo '$(srcdir)/'`e2k-sid.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-sid.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-sid.Tpo -c -o libexchange_la-e2k-sid.lo `test -f 'e2k-sid.c' || echo '$(srcdir)/'`e2k-sid.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-sid.Tpo $(DEPDIR)/libexchange_la-e2k-sid.Plo
+	$(AM_V_CC)source='e2k-sid.c' object='libexchange_la-e2k-sid.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-sid.lo `test -f 'e2k-sid.c' || echo '$(srcdir)/'`e2k-sid.c
 
 libexchange_la-e2k-uri.lo: e2k-uri.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-uri.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-uri.Tpo -c -o libexchange_la-e2k-uri.lo `test -f 'e2k-uri.c' || echo '$(srcdir)/'`e2k-uri.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-uri.Tpo $(DEPDIR)/libexchange_la-e2k-uri.Plo
-#	$(AM_V_CC)source='e2k-uri.c' object='libexchange_la-e2k-uri.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-uri.lo `test -f 'e2k-uri.c' || echo '$(srcdir)/'`e2k-uri.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-uri.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-uri.Tpo -c -o libexchange_la-e2k-uri.lo `test -f 'e2k-uri.c' || echo '$(srcdir)/'`e2k-uri.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-uri.Tpo $(DEPDIR)/libexchange_la-e2k-uri.Plo
+	$(AM_V_CC)source='e2k-uri.c' object='libexchange_la-e2k-uri.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-uri.lo `test -f 'e2k-uri.c' || echo '$(srcdir)/'`e2k-uri.c
 
 libexchange_la-e2k-utils.lo: e2k-utils.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-utils.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-utils.Tpo -c -o libexchange_la-e2k-utils.lo `test -f 'e2k-utils.c' || echo '$(srcdir)/'`e2k-utils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-utils.Tpo $(DEPDIR)/libexchange_la-e2k-utils.Plo
-#	$(AM_V_CC)source='e2k-utils.c' object='libexchange_la-e2k-utils.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-utils.lo `test -f 'e2k-utils.c' || echo '$(srcdir)/'`e2k-utils.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-utils.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-utils.Tpo -c -o libexchange_la-e2k-utils.lo `test -f 'e2k-utils.c' || echo '$(srcdir)/'`e2k-utils.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-utils.Tpo $(DEPDIR)/libexchange_la-e2k-utils.Plo
+	$(AM_V_CC)source='e2k-utils.c' object='libexchange_la-e2k-utils.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-utils.lo `test -f 'e2k-utils.c' || echo '$(srcdir)/'`e2k-utils.c
 
 libexchange_la-e2k-xml-utils.lo: e2k-xml-utils.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-xml-utils.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-xml-utils.Tpo -c -o libexchange_la-e2k-xml-utils.lo `test -f 'e2k-xml-utils.c' || echo '$(srcdir)/'`e2k-xml-utils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-xml-utils.Tpo $(DEPDIR)/libexchange_la-e2k-xml-utils.Plo
-#	$(AM_V_CC)source='e2k-xml-utils.c' object='libexchange_la-e2k-xml-utils.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-xml-utils.lo `test -f 'e2k-xml-utils.c' || echo '$(srcdir)/'`e2k-xml-utils.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-xml-utils.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-xml-utils.Tpo -c -o libexchange_la-e2k-xml-utils.lo `test -f 'e2k-xml-utils.c' || echo '$(srcdir)/'`e2k-xml-utils.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-xml-utils.Tpo $(DEPDIR)/libexchange_la-e2k-xml-utils.Plo
+	$(AM_V_CC)source='e2k-xml-utils.c' object='libexchange_la-e2k-xml-utils.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-xml-utils.lo `test -f 'e2k-xml-utils.c' || echo '$(srcdir)/'`e2k-xml-utils.c
 
 libexchange_la-e2k-kerberos.lo: e2k-kerberos.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-kerberos.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-kerberos.Tpo -c -o libexchange_la-e2k-kerberos.lo `test -f 'e2k-kerberos.c' || echo '$(srcdir)/'`e2k-kerberos.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-kerberos.Tpo $(DEPDIR)/libexchange_la-e2k-kerberos.Plo
-#	$(AM_V_CC)source='e2k-kerberos.c' object='libexchange_la-e2k-kerberos.lo' libtool=yes \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-kerberos.lo `test -f 'e2k-kerberos.c' || echo '$(srcdir)/'`e2k-kerberos.c
+#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libexchange_la-e2k-kerberos.lo -MD -MP -MF $(DEPDIR)/libexchange_la-e2k-kerberos.Tpo -c -o libexchange_la-e2k-kerberos.lo `test -f 'e2k-kerberos.c' || echo '$(srcdir)/'`e2k-kerberos.c
+#	$(AM_V_at)$(am__mv) $(DEPDIR)/libexchange_la-e2k-kerberos.Tpo $(DEPDIR)/libexchange_la-e2k-kerberos.Plo
+	$(AM_V_CC)source='e2k-kerberos.c' object='libexchange_la-e2k-kerberos.lo' libtool=yes \
+	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libexchange_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libexchange_la-e2k-kerberos.lo `test -f 'e2k-kerberos.c' || echo '$(srcdir)/'`e2k-kerberos.c
 
 mostlyclean-libtool:
 	-rm -f *.lo
