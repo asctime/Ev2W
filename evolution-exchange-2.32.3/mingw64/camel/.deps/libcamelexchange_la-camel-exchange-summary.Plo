@@ -1,7 +1,12 @@
 libcamelexchange_la-camel-exchange-summary.lo : \
+<<<<<<< HEAD
  \
  ../../camel/camel-exchange-summary.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/stat.h \
+=======
+ ../../camel/camel-exchange-summary.c \
+ ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/stat.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -440,7 +445,10 @@ libcamelexchange_la-camel-exchange-summary.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vtrash-folder.h \
  ../../camel/camel-exchange-journal.h \
  ../../camel/camel-exchange-summary.h ../../camel/camel-exchange-utils.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../camel/camel-exchange-summary.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/stat.h :

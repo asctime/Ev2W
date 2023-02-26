@@ -1,5 +1,8 @@
 libecalbackendexchange_la-e2k-cal-utils.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../calendar/e2k-cal-utils.c ../config.h \
  ../../calendar/e2k-cal-utils.h D:/MSYS2/mingw64/include/libical/ical.h \
  D:/MSYS2/mingw64/include/libical/libical_ical_export.h \
@@ -126,7 +129,10 @@ libecalbackendexchange_la-e2k-cal-utils.lo : \
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
  ../../server/lib/e2k-utils.h ../../server/lib/e2k-types.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../calendar/e2k-cal-utils.c :
 ../config.h :
 ../../calendar/e2k-cal-utils.h :

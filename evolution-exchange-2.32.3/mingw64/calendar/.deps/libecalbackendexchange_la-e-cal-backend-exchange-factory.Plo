@@ -824,7 +824,10 @@ libecalbackendexchange_la-e-cal-backend-exchange-factory.lo : \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtkpreview.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtktipsquery.h \
  ../../calendar/e-cal-backend-exchange-tasks.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../calendar/e-cal-backend-exchange-factory.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

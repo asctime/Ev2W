@@ -720,7 +720,10 @@ libexchange_storage_la-exchange-hierarchy-favorites.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/getopt.h \
  D:/MSYS2/mingw64/include/pthread_unistd.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/storage/exchange-hierarchy-favorites.c :
 ../../config.h :
 ../../../server/storage/exchange-hierarchy-favorites.h :

@@ -1,5 +1,8 @@
 libexchange_la-e2k-xml-utils.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-xml-utils.c ../../config.h \
  ../../../server/lib/e2k-xml-utils.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
@@ -154,7 +157,10 @@ libexchange_la-e2k-xml-utils.lo : \
  D:/MSYS2/mingw64/include/libxml2/libxml/HTMLparser.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/parserInternals.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/chvalid.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-xml-utils.c :
 ../../config.h :
 ../../../server/lib/e2k-xml-utils.h :

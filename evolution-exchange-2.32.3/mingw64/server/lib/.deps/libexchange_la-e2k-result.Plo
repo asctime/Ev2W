@@ -1,5 +1,8 @@
 libexchange_la-e2k-result.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-result.c ../../config.h \
  ../../../server/lib/e2k-result.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-message.h \
@@ -340,7 +343,10 @@ libexchange_la-e2k-result.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
  ../../../server/lib/e2k-http-utils.h e2k-propnames.h \
  ../../../server/lib/e2k-xml-utils.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-result.c :
 ../../config.h :
 ../../../server/lib/e2k-result.h :

@@ -1,5 +1,8 @@
 libcamelexchange_la-camel-exchange-utils.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../camel/camel-exchange-utils.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -848,7 +851,10 @@ libcamelexchange_la-camel-exchange-utils.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../camel/camel-exchange-utils.c :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :

@@ -1,7 +1,12 @@
 liborg_gnome_exchange_operations_la-exchange-send-options.lo : \
+<<<<<<< HEAD
  \
  ../../eplugin/exchange-send-options.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+=======
+ ../../eplugin/exchange-send-options.c \
+ ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -730,7 +735,10 @@ liborg_gnome_exchange_operations_la-exchange-send-options.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert-dialog.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert.h \
  ../../eplugin/exchange-send-options.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../eplugin/exchange-send-options.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

@@ -1,7 +1,12 @@
 libebookbackendexchange_la-e-book-backend-db-cache.lo : \
+<<<<<<< HEAD
  \
  ../../addressbook/e-book-backend-db-cache.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+=======
+ ../../addressbook/e-book-backend-db-cache.c \
+ ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -353,7 +358,10 @@ libebookbackendexchange_la-e-book-backend-db-cache.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-iterator.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedata-book/e-book-backend-sexp.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../addressbook/e-book-backend-db-cache.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

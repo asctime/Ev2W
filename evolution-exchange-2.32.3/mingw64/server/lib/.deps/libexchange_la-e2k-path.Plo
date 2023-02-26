@@ -1,5 +1,8 @@
 libexchange_la-e2k-path.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-path.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -131,7 +134,10 @@ libexchange_la-e2k-path.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  ../../../server/lib/e2k-path.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-path.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h :

@@ -1,7 +1,12 @@
 libexchange_la-e2k-security-descriptor.lo : \
+<<<<<<< HEAD
  \
  ../../../server/lib/e2k-security-descriptor.c ../../config.h \
  ../../../server/lib/e2k-security-descriptor.h \
+=======
+ ../../../server/lib/e2k-security-descriptor.c \
+ ../../config.h ../../../server/lib/e2k-security-descriptor.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-types.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -174,7 +179,10 @@ libexchange_la-e2k-security-descriptor.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/malloc.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h \
  ../../../server/lib/e2k-sid.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-security-descriptor.c :
 ../../config.h :
 ../../../server/lib/e2k-security-descriptor.h :

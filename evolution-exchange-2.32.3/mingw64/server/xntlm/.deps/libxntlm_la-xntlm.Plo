@@ -1,5 +1,8 @@
 libxntlm_la-xntlm.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/xntlm/xntlm.c ../../config.h \
  ../../../server/xntlm/xntlm.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
@@ -117,7 +120,10 @@ libxntlm_la-xntlm.lo : \
  D:/MSYS2/mingw64/include/glib-2.0/glib/glib-autocleanups.h \
  ../../../server/xntlm/xntlm-des.h ../../../server/xntlm/xntlm-md4.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/xntlm/xntlm.c :
 ../../config.h :
 ../../../server/xntlm/xntlm.h :

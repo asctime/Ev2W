@@ -1,5 +1,8 @@
 liborg_gnome_exchange_operations_la-exchange-folder.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../eplugin/exchange-folder.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
@@ -869,7 +872,10 @@ liborg_gnome_exchange_operations_la-exchange-folder.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  ../../eplugin/exchange-folder-subscription.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../eplugin/exchange-folder.c :
 ../config.h :
 D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h :

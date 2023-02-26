@@ -1,8 +1,15 @@
 liborg_gnome_exchange_operations_la-exchange-delegates-user.lo : \
+<<<<<<< HEAD
  \
  ../../eplugin/exchange-delegates-user.c ../config.h \
  ../../eplugin/exchange-delegates.h ../../server/storage/exchange-types.h \
  ../../server/lib/e2k-types.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
+=======
+ ../../eplugin/exchange-delegates-user.c \
+ ../config.h ../../eplugin/exchange-delegates.h \
+ ../../server/storage/exchange-types.h ../../server/lib/e2k-types.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/glibconfig.h \
@@ -848,7 +855,10 @@ liborg_gnome_exchange_operations_la-exchange-delegates-user.lo : \
  ../../server/lib/e2k-utils.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-dialog-utils.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-dialog-widgets.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../eplugin/exchange-delegates-user.c :
 ../config.h :
 ../../eplugin/exchange-delegates.h :

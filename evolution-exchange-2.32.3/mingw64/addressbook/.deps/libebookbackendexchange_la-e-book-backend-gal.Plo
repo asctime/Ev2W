@@ -1,5 +1,8 @@
 libebookbackendexchange_la-e-book-backend-gal.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../addressbook/e-book-backend-gal.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
@@ -948,7 +951,10 @@ libebookbackendexchange_la-e-book-backend-gal.lo : \
  D:/MSYS2/mingw64/include/pthread_unistd.h \
  D:/MSYS2/mingw64/include/pthread.h \
  D:/MSYS2/mingw64/include/pthread_compat.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../addressbook/e-book-backend-gal.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h :

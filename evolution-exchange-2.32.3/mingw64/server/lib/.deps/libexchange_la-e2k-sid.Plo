@@ -1,5 +1,8 @@
 libexchange_la-e2k-sid.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-sid.c ../../config.h \
  ../../../server/lib/e2k-sid.h ../../../server/lib/e2k-types.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
@@ -173,7 +176,10 @@ libexchange_la-e2k-sid.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/malloc.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-sid.c :
 ../../config.h :
 ../../../server/lib/e2k-sid.h :

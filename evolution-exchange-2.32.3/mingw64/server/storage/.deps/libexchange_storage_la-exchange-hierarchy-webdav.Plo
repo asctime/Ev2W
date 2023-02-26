@@ -724,7 +724,10 @@ libexchange_storage_la-exchange-hierarchy-webdav.lo : \
  ../../../server/storage/exchange-folder-size.h \
  ../../../server/storage/exchange-esource.h \
  ../../../server/storage/exchange-constants.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/storage/exchange-hierarchy-webdav.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h :

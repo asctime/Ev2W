@@ -1,5 +1,8 @@
 libexchange_la-e2k-autoconfig.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-autoconfig.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -918,7 +921,10 @@ libexchange_la-e2k-autoconfig.lo : \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-listeners.h \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/HTMLparser.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-autoconfig.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h :

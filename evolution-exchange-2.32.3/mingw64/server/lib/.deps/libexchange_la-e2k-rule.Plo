@@ -1,5 +1,8 @@
 libexchange_la-e2k-rule.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/lib/e2k-rule.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -154,7 +157,10 @@ libexchange_la-e2k-rule.lo : \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h \
  ../../../server/lib/e2k-restriction.h ../../../server/lib/e2k-action.h \
  e2k-propnames.h ../../../server/lib/e2k-utils.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-rule.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

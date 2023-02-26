@@ -1,7 +1,12 @@
 libexchange_storage_la-exchange-esource.lo : \
+<<<<<<< HEAD
  \
  ../../../server/storage/exchange-esource.c ../../config.h \
  ../../../server/storage/exchange-esource.h \
+=======
+ ../../../server/storage/exchange-esource.c \
+ ../../config.h ../../../server/storage/exchange-esource.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../../server/storage/exchange-constants.h \
  ../../../server/storage/exchange-account.h \
  ../../../server/storage/exchange-types.h ../../../server/lib/e2k-types.h \
@@ -708,7 +713,10 @@ libexchange_storage_la-exchange-esource.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/storage/exchange-esource.c :
 ../../config.h :
 ../../../server/storage/exchange-esource.h :

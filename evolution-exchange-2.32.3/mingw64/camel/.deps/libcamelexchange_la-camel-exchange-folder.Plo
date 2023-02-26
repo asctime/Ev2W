@@ -1,5 +1,8 @@
 libcamelexchange_la-camel-exchange-folder.lo : \
+<<<<<<< HEAD
  \
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  ../../camel/camel-exchange-folder.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -445,7 +448,10 @@ libcamelexchange_la-camel-exchange-folder.lo : \
  ../../camel/camel-exchange-search.h ../../camel/camel-exchange-store.h \
  ../../camel/camel-exchange-summary.h \
  ../../camel/camel-exchange-journal.h ../../camel/camel-exchange-utils.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../camel/camel-exchange-folder.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h :

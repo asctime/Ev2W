@@ -1,7 +1,12 @@
 libexchange_la-e2k-global-catalog.lo : \
+<<<<<<< HEAD
  \
  ../../../server/lib/e2k-global-catalog.c ../../config.h \
  ../../../server/lib/e2k-global-catalog-ldap.h \
+=======
+ ../../../server/lib/e2k-global-catalog.c \
+ ../../config.h ../../../server/lib/e2k-global-catalog-ldap.h \
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -874,7 +879,10 @@ libexchange_la-e2k-global-catalog.lo : \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h \
  ../../../server/lib/e2k-utils.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/time.h
+<<<<<<< HEAD
 -fstack-protector-strong :
+=======
+>>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
 ../../../server/lib/e2k-global-catalog.c :
 ../../config.h :
 ../../../server/lib/e2k-global-catalog-ldap.h :
