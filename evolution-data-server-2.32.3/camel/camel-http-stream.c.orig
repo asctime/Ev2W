@@ -153,11 +153,7 @@ http_method_invoke (CamelHttpStream *http,
 
 	d(printf("HTTP Stream Sending: %s %s HTTP/1.0\r\nUser-Agent: %s\r\nHost: %s\r\n",
 		 method,
-#ifdef __MINGW32__
-     url,
-#else
 		 use_url,
-#endif
 		 http->user_agent ? http->user_agent : "CamelHttpStream/1.0",
 		 http->url->host));
 	if (camel_stream_printf (
