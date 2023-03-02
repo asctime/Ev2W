@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-calendar-item.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-calendar-item.lo: \
  ../../../widgets/misc/e-calendar-item.c ../../config.h \
  ../../../widgets/misc/e-calendar-item.h \
  ../../../libgnomecanvas/gnome-canvas.h \

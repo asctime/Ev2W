@@ -1,4 +1,5 @@
-libeabbookmerging_la-eab-contact-compare.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeabbookmerging_la-eab-contact-compare.lo: \
  ../../../../addressbook/gui/merging/eab-contact-compare.c \
  ../../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

@@ -1,4 +1,5 @@
-libeabwidgets_la-e-minicard.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeabwidgets_la-e-minicard.lo: \
  ../../../../addressbook/gui/widgets/e-minicard.c ../../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

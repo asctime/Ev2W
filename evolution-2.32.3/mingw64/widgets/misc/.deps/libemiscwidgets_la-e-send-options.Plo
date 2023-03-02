@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-send-options.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-send-options.lo: \
  ../../../widgets/misc/e-send-options.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

@@ -1,4 +1,5 @@
-liborg_gnome_evolution_bbdb_la-gaimbuddies.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_evolution_bbdb_la-gaimbuddies.lo: \
  ../../../plugins/bbdb/gaimbuddies.c \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \

@@ -1,4 +1,5 @@
-liborg_gnome_publish_calendar_la-url-editor-dialog.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_publish_calendar_la-url-editor-dialog.lo: \
  ../../../plugins/publish-calendar/url-editor-dialog.c \
  ../../../plugins/publish-calendar/url-editor-dialog.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

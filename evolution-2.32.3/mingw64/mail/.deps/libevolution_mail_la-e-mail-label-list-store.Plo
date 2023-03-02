@@ -1,4 +1,5 @@
-libevolution_mail_la-e-mail-label-list-store.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-label-list-store.lo: \
  ../../mail/e-mail-label-list-store.c \
  ../../mail/e-mail-label-list-store.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

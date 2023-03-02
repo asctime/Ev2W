@@ -1,5 +1,7 @@
-libeabutil_la-eab-book-util.lo: ../../../addressbook/util/eab-book-util.c \
- ../../config.h ../../../addressbook/util/eab-book-util.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeabutil_la-eab-book-util.lo: \
+ ../../../addressbook/util/eab-book-util.c ../../config.h \
+ ../../../addressbook/util/eab-book-util.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libebook/e-book.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \

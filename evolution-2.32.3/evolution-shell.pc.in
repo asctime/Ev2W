@@ -17,6 +17,6 @@ execversion=@BASE_VERSION@
 Name: evolution-shell
 Description: libraries needed for Evolution shell components
 Version: @VERSION@
-Requires: gconf-2.0 @GNOME_DESKTOP@ @GTK@ @LIBEDATASERVERUI@ @UNIQUE@
+Requires: gconf-2.0 @GTK@ @LIBEDATASERVERUI@ @UNIQUE@
 Libs: -L${privlibdir} -leshell -Wl,-R${privlibdir}
 Cflags: -I${privincludedir}

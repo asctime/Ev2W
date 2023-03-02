@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-e-task-shell-backend.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-e-task-shell-backend.lo: \
  ../../../modules/calendar/e-task-shell-backend.c \
  ../../../modules/calendar/e-task-shell-backend.h \
  ../../../shell/e-shell-backend.h ../../../shell/e-shell-common.h \

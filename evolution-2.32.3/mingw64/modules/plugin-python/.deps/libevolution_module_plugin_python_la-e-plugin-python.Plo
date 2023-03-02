@@ -1,4 +1,5 @@
-libevolution_module_plugin_python_la-e-plugin-python.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_plugin_python_la-e-plugin-python.lo: \
  ../../../modules/plugin-python/e-plugin-python.c \
  D:/MSYS2/mingw64/include/python2.7/Python.h \
  D:/MSYS2/mingw64/include/python2.7/patchlevel.h \

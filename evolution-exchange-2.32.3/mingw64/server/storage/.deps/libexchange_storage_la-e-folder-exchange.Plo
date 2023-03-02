@@ -1,6 +1,7 @@
 libexchange_storage_la-e-folder-exchange.lo : \
- ../../../server/storage/e-folder-exchange.c \
- ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ \
+ ../../../server/storage/e-folder-exchange.c ../../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
@@ -719,6 +720,7 @@ libexchange_storage_la-e-folder-exchange.lo : \
  ../../../server/storage/exchange-esource.h \
  ../../../server/storage/exchange-constants.h \
  ../../../server/storage/exchange-hierarchy.h
+-fstack-protector-strong :
 ../../../server/storage/e-folder-exchange.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h :

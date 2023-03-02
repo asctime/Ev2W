@@ -1,4 +1,5 @@
-libevolution_module_addressbook_la-e-book-shell-backend.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_addressbook_la-e-book-shell-backend.lo: \
  ../../../modules/addressbook/e-book-shell-backend.c \
  ../../../modules/addressbook/e-book-shell-backend.h \
  ../../../shell/e-shell-backend.h ../../../shell/e-shell-common.h \

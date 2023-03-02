@@ -1,4 +1,5 @@
-libmenus_la-gal-view-collection.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libmenus_la-gal-view-collection.lo: \
  ../../../widgets/menus/gal-view-collection.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

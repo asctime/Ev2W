@@ -1,6 +1,7 @@
 exchange_connector_setup-ximian-connector-setup.o : \
- ../../tools/ximian-connector-setup.c \
- ../config.h D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
+ \
+ ../../tools/ximian-connector-setup.c ../config.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
@@ -792,6 +793,7 @@ exchange_connector_setup-ximian-connector-setup.o : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/conio.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h
+-fstack-protector-strong :
 ../../tools/ximian-connector-setup.c :
 ../config.h :
 D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h :

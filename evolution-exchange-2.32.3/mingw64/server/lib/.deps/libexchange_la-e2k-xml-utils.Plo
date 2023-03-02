@@ -1,4 +1,5 @@
 libexchange_la-e2k-xml-utils.lo : \
+ \
  ../../../server/lib/e2k-xml-utils.c ../../config.h \
  ../../../server/lib/e2k-xml-utils.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
@@ -153,6 +154,7 @@ libexchange_la-e2k-xml-utils.lo : \
  D:/MSYS2/mingw64/include/libxml2/libxml/HTMLparser.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/parserInternals.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/chvalid.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-xml-utils.c :
 ../../config.h :
 ../../../server/lib/e2k-xml-utils.h :

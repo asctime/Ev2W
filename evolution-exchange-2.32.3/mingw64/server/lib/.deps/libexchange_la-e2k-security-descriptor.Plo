@@ -1,6 +1,7 @@
 libexchange_la-e2k-security-descriptor.lo : \
- ../../../server/lib/e2k-security-descriptor.c \
- ../../config.h ../../../server/lib/e2k-security-descriptor.h \
+ \
+ ../../../server/lib/e2k-security-descriptor.c ../../config.h \
+ ../../../server/lib/e2k-security-descriptor.h \
  ../../../server/lib/e2k-types.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -173,6 +174,7 @@ libexchange_la-e2k-security-descriptor.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/malloc.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h \
  ../../../server/lib/e2k-sid.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-security-descriptor.c :
 ../../config.h :
 ../../../server/lib/e2k-security-descriptor.h :

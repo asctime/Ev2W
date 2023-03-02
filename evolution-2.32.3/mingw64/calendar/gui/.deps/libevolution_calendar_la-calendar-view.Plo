@@ -1,4 +1,5 @@
-libevolution_calendar_la-calendar-view.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-calendar-view.lo: \
  ../../../calendar/gui/calendar-view.c ../../config.h \
  ../../../calendar/gui/calendar-view.h ../../../widgets/menus/gal-view.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

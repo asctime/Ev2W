@@ -1,4 +1,5 @@
-libevolution_module_addressbook_la-e-book-shell-content.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_addressbook_la-e-book-shell-content.lo: \
  ../../../modules/addressbook/e-book-shell-content.c \
  ../../../modules/addressbook/e-book-shell-content.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libebook/e-contact.h \

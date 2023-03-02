@@ -1,4 +1,5 @@
-libcal_dialogs_la-e-send-options-utils.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcal_dialogs_la-e-send-options-utils.lo: \
  ../../../../calendar/gui/dialogs/e-send-options-utils.c \
  ../../../../calendar/gui/dialogs/e-send-options-utils.h \
  ../../../../widgets/misc/e-send-options.h \

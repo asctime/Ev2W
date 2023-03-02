@@ -202,10 +202,10 @@ CAMEL_SSL_DEFINES = -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
-CCDEPMODE = depmode=gcc
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
-CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -233,7 +233,7 @@ EXEEXT = .exe
 E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
-E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -251,7 +251,7 @@ GMSGFMT = /MSYS2/mingw64/bin/msgfmt
 GNOME_KEYRING_CFLAGS = 
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
-GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -272,7 +272,7 @@ INTERFACE_VERSION = 2.32
 INTLLIBS = -lintl  
 INTLTOOL_EXTRACT = /usr/bin/intltool-extract
 INTLTOOL_MERGE = /usr/bin/intltool-merge
-INTLTOOL_PERL = /MSYS2/mingw64/bin/perl
+INTLTOOL_PERL = /usr/bin/perl
 INTLTOOL_UPDATE = /usr/bin/intltool-update
 INTL_MACOSX_LIBS = 
 JW = no
@@ -373,7 +373,7 @@ SET_MAKE =
 SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
-SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -596,144 +596,144 @@ include ./$(DEPDIR)/libcamellocal_la-camel-spool-store.Plo
 include ./$(DEPDIR)/libcamellocal_la-camel-spool-summary.Plo
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libcamellocal_la-camel-local-folder.lo: camel-local-folder.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-folder.Tpo -c -o libcamellocal_la-camel-local-folder.lo `test -f 'camel-local-folder.c' || echo '$(srcdir)/'`camel-local-folder.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-local-folder.Plo
-	$(AM_V_CC)source='camel-local-folder.c' object='libcamellocal_la-camel-local-folder.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-folder.lo `test -f 'camel-local-folder.c' || echo '$(srcdir)/'`camel-local-folder.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-folder.Tpo -c -o libcamellocal_la-camel-local-folder.lo `test -f 'camel-local-folder.c' || echo '$(srcdir)/'`camel-local-folder.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-local-folder.Plo
+#	$(AM_V_CC)source='camel-local-folder.c' object='libcamellocal_la-camel-local-folder.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-folder.lo `test -f 'camel-local-folder.c' || echo '$(srcdir)/'`camel-local-folder.c
 
 libcamellocal_la-camel-local-store.lo: camel-local-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-store.Tpo -c -o libcamellocal_la-camel-local-store.lo `test -f 'camel-local-store.c' || echo '$(srcdir)/'`camel-local-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-store.Tpo $(DEPDIR)/libcamellocal_la-camel-local-store.Plo
-	$(AM_V_CC)source='camel-local-store.c' object='libcamellocal_la-camel-local-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-store.lo `test -f 'camel-local-store.c' || echo '$(srcdir)/'`camel-local-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-store.Tpo -c -o libcamellocal_la-camel-local-store.lo `test -f 'camel-local-store.c' || echo '$(srcdir)/'`camel-local-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-store.Tpo $(DEPDIR)/libcamellocal_la-camel-local-store.Plo
+#	$(AM_V_CC)source='camel-local-store.c' object='libcamellocal_la-camel-local-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-store.lo `test -f 'camel-local-store.c' || echo '$(srcdir)/'`camel-local-store.c
 
 libcamellocal_la-camel-local-summary.lo: camel-local-summary.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-summary.Tpo -c -o libcamellocal_la-camel-local-summary.lo `test -f 'camel-local-summary.c' || echo '$(srcdir)/'`camel-local-summary.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-local-summary.Plo
-	$(AM_V_CC)source='camel-local-summary.c' object='libcamellocal_la-camel-local-summary.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-summary.lo `test -f 'camel-local-summary.c' || echo '$(srcdir)/'`camel-local-summary.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-summary.Tpo -c -o libcamellocal_la-camel-local-summary.lo `test -f 'camel-local-summary.c' || echo '$(srcdir)/'`camel-local-summary.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-local-summary.Plo
+#	$(AM_V_CC)source='camel-local-summary.c' object='libcamellocal_la-camel-local-summary.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-summary.lo `test -f 'camel-local-summary.c' || echo '$(srcdir)/'`camel-local-summary.c
 
 libcamellocal_la-camel-local-private.lo: camel-local-private.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-private.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-private.Tpo -c -o libcamellocal_la-camel-local-private.lo `test -f 'camel-local-private.c' || echo '$(srcdir)/'`camel-local-private.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-private.Tpo $(DEPDIR)/libcamellocal_la-camel-local-private.Plo
-	$(AM_V_CC)source='camel-local-private.c' object='libcamellocal_la-camel-local-private.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-private.lo `test -f 'camel-local-private.c' || echo '$(srcdir)/'`camel-local-private.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-private.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-private.Tpo -c -o libcamellocal_la-camel-local-private.lo `test -f 'camel-local-private.c' || echo '$(srcdir)/'`camel-local-private.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-private.Tpo $(DEPDIR)/libcamellocal_la-camel-local-private.Plo
+#	$(AM_V_CC)source='camel-local-private.c' object='libcamellocal_la-camel-local-private.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-private.lo `test -f 'camel-local-private.c' || echo '$(srcdir)/'`camel-local-private.c
 
 libcamellocal_la-camel-local-provider.lo: camel-local-provider.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-provider.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-provider.Tpo -c -o libcamellocal_la-camel-local-provider.lo `test -f 'camel-local-provider.c' || echo '$(srcdir)/'`camel-local-provider.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-provider.Tpo $(DEPDIR)/libcamellocal_la-camel-local-provider.Plo
-	$(AM_V_CC)source='camel-local-provider.c' object='libcamellocal_la-camel-local-provider.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-provider.lo `test -f 'camel-local-provider.c' || echo '$(srcdir)/'`camel-local-provider.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-local-provider.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-local-provider.Tpo -c -o libcamellocal_la-camel-local-provider.lo `test -f 'camel-local-provider.c' || echo '$(srcdir)/'`camel-local-provider.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-local-provider.Tpo $(DEPDIR)/libcamellocal_la-camel-local-provider.Plo
+#	$(AM_V_CC)source='camel-local-provider.c' object='libcamellocal_la-camel-local-provider.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-local-provider.lo `test -f 'camel-local-provider.c' || echo '$(srcdir)/'`camel-local-provider.c
 
 libcamellocal_la-camel-mbox-folder.lo: camel-mbox-folder.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mbox-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mbox-folder.Tpo -c -o libcamellocal_la-camel-mbox-folder.lo `test -f 'camel-mbox-folder.c' || echo '$(srcdir)/'`camel-mbox-folder.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mbox-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-mbox-folder.Plo
-	$(AM_V_CC)source='camel-mbox-folder.c' object='libcamellocal_la-camel-mbox-folder.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mbox-folder.lo `test -f 'camel-mbox-folder.c' || echo '$(srcdir)/'`camel-mbox-folder.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mbox-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mbox-folder.Tpo -c -o libcamellocal_la-camel-mbox-folder.lo `test -f 'camel-mbox-folder.c' || echo '$(srcdir)/'`camel-mbox-folder.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mbox-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-mbox-folder.Plo
+#	$(AM_V_CC)source='camel-mbox-folder.c' object='libcamellocal_la-camel-mbox-folder.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mbox-folder.lo `test -f 'camel-mbox-folder.c' || echo '$(srcdir)/'`camel-mbox-folder.c
 
 libcamellocal_la-camel-mbox-store.lo: camel-mbox-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mbox-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mbox-store.Tpo -c -o libcamellocal_la-camel-mbox-store.lo `test -f 'camel-mbox-store.c' || echo '$(srcdir)/'`camel-mbox-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mbox-store.Tpo $(DEPDIR)/libcamellocal_la-camel-mbox-store.Plo
-	$(AM_V_CC)source='camel-mbox-store.c' object='libcamellocal_la-camel-mbox-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mbox-store.lo `test -f 'camel-mbox-store.c' || echo '$(srcdir)/'`camel-mbox-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mbox-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mbox-store.Tpo -c -o libcamellocal_la-camel-mbox-store.lo `test -f 'camel-mbox-store.c' || echo '$(srcdir)/'`camel-mbox-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mbox-store.Tpo $(DEPDIR)/libcamellocal_la-camel-mbox-store.Plo
+#	$(AM_V_CC)source='camel-mbox-store.c' object='libcamellocal_la-camel-mbox-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mbox-store.lo `test -f 'camel-mbox-store.c' || echo '$(srcdir)/'`camel-mbox-store.c
 
 libcamellocal_la-camel-mbox-summary.lo: camel-mbox-summary.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mbox-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mbox-summary.Tpo -c -o libcamellocal_la-camel-mbox-summary.lo `test -f 'camel-mbox-summary.c' || echo '$(srcdir)/'`camel-mbox-summary.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mbox-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-mbox-summary.Plo
-	$(AM_V_CC)source='camel-mbox-summary.c' object='libcamellocal_la-camel-mbox-summary.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mbox-summary.lo `test -f 'camel-mbox-summary.c' || echo '$(srcdir)/'`camel-mbox-summary.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mbox-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mbox-summary.Tpo -c -o libcamellocal_la-camel-mbox-summary.lo `test -f 'camel-mbox-summary.c' || echo '$(srcdir)/'`camel-mbox-summary.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mbox-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-mbox-summary.Plo
+#	$(AM_V_CC)source='camel-mbox-summary.c' object='libcamellocal_la-camel-mbox-summary.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mbox-summary.lo `test -f 'camel-mbox-summary.c' || echo '$(srcdir)/'`camel-mbox-summary.c
 
 libcamellocal_la-camel-mh-folder.lo: camel-mh-folder.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mh-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mh-folder.Tpo -c -o libcamellocal_la-camel-mh-folder.lo `test -f 'camel-mh-folder.c' || echo '$(srcdir)/'`camel-mh-folder.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mh-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-mh-folder.Plo
-	$(AM_V_CC)source='camel-mh-folder.c' object='libcamellocal_la-camel-mh-folder.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mh-folder.lo `test -f 'camel-mh-folder.c' || echo '$(srcdir)/'`camel-mh-folder.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mh-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mh-folder.Tpo -c -o libcamellocal_la-camel-mh-folder.lo `test -f 'camel-mh-folder.c' || echo '$(srcdir)/'`camel-mh-folder.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mh-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-mh-folder.Plo
+#	$(AM_V_CC)source='camel-mh-folder.c' object='libcamellocal_la-camel-mh-folder.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mh-folder.lo `test -f 'camel-mh-folder.c' || echo '$(srcdir)/'`camel-mh-folder.c
 
 libcamellocal_la-camel-mh-store.lo: camel-mh-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mh-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mh-store.Tpo -c -o libcamellocal_la-camel-mh-store.lo `test -f 'camel-mh-store.c' || echo '$(srcdir)/'`camel-mh-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mh-store.Tpo $(DEPDIR)/libcamellocal_la-camel-mh-store.Plo
-	$(AM_V_CC)source='camel-mh-store.c' object='libcamellocal_la-camel-mh-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mh-store.lo `test -f 'camel-mh-store.c' || echo '$(srcdir)/'`camel-mh-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mh-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mh-store.Tpo -c -o libcamellocal_la-camel-mh-store.lo `test -f 'camel-mh-store.c' || echo '$(srcdir)/'`camel-mh-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mh-store.Tpo $(DEPDIR)/libcamellocal_la-camel-mh-store.Plo
+#	$(AM_V_CC)source='camel-mh-store.c' object='libcamellocal_la-camel-mh-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mh-store.lo `test -f 'camel-mh-store.c' || echo '$(srcdir)/'`camel-mh-store.c
 
 libcamellocal_la-camel-mh-summary.lo: camel-mh-summary.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mh-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mh-summary.Tpo -c -o libcamellocal_la-camel-mh-summary.lo `test -f 'camel-mh-summary.c' || echo '$(srcdir)/'`camel-mh-summary.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mh-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-mh-summary.Plo
-	$(AM_V_CC)source='camel-mh-summary.c' object='libcamellocal_la-camel-mh-summary.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mh-summary.lo `test -f 'camel-mh-summary.c' || echo '$(srcdir)/'`camel-mh-summary.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-mh-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-mh-summary.Tpo -c -o libcamellocal_la-camel-mh-summary.lo `test -f 'camel-mh-summary.c' || echo '$(srcdir)/'`camel-mh-summary.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-mh-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-mh-summary.Plo
+#	$(AM_V_CC)source='camel-mh-summary.c' object='libcamellocal_la-camel-mh-summary.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-mh-summary.lo `test -f 'camel-mh-summary.c' || echo '$(srcdir)/'`camel-mh-summary.c
 
 libcamellocal_la-camel-maildir-folder.lo: camel-maildir-folder.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-maildir-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-maildir-folder.Tpo -c -o libcamellocal_la-camel-maildir-folder.lo `test -f 'camel-maildir-folder.c' || echo '$(srcdir)/'`camel-maildir-folder.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-maildir-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-maildir-folder.Plo
-	$(AM_V_CC)source='camel-maildir-folder.c' object='libcamellocal_la-camel-maildir-folder.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-maildir-folder.lo `test -f 'camel-maildir-folder.c' || echo '$(srcdir)/'`camel-maildir-folder.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-maildir-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-maildir-folder.Tpo -c -o libcamellocal_la-camel-maildir-folder.lo `test -f 'camel-maildir-folder.c' || echo '$(srcdir)/'`camel-maildir-folder.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-maildir-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-maildir-folder.Plo
+#	$(AM_V_CC)source='camel-maildir-folder.c' object='libcamellocal_la-camel-maildir-folder.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-maildir-folder.lo `test -f 'camel-maildir-folder.c' || echo '$(srcdir)/'`camel-maildir-folder.c
 
 libcamellocal_la-camel-maildir-store.lo: camel-maildir-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-maildir-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-maildir-store.Tpo -c -o libcamellocal_la-camel-maildir-store.lo `test -f 'camel-maildir-store.c' || echo '$(srcdir)/'`camel-maildir-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-maildir-store.Tpo $(DEPDIR)/libcamellocal_la-camel-maildir-store.Plo
-	$(AM_V_CC)source='camel-maildir-store.c' object='libcamellocal_la-camel-maildir-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-maildir-store.lo `test -f 'camel-maildir-store.c' || echo '$(srcdir)/'`camel-maildir-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-maildir-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-maildir-store.Tpo -c -o libcamellocal_la-camel-maildir-store.lo `test -f 'camel-maildir-store.c' || echo '$(srcdir)/'`camel-maildir-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-maildir-store.Tpo $(DEPDIR)/libcamellocal_la-camel-maildir-store.Plo
+#	$(AM_V_CC)source='camel-maildir-store.c' object='libcamellocal_la-camel-maildir-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-maildir-store.lo `test -f 'camel-maildir-store.c' || echo '$(srcdir)/'`camel-maildir-store.c
 
 libcamellocal_la-camel-maildir-summary.lo: camel-maildir-summary.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-maildir-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-maildir-summary.Tpo -c -o libcamellocal_la-camel-maildir-summary.lo `test -f 'camel-maildir-summary.c' || echo '$(srcdir)/'`camel-maildir-summary.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-maildir-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-maildir-summary.Plo
-	$(AM_V_CC)source='camel-maildir-summary.c' object='libcamellocal_la-camel-maildir-summary.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-maildir-summary.lo `test -f 'camel-maildir-summary.c' || echo '$(srcdir)/'`camel-maildir-summary.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-maildir-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-maildir-summary.Tpo -c -o libcamellocal_la-camel-maildir-summary.lo `test -f 'camel-maildir-summary.c' || echo '$(srcdir)/'`camel-maildir-summary.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-maildir-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-maildir-summary.Plo
+#	$(AM_V_CC)source='camel-maildir-summary.c' object='libcamellocal_la-camel-maildir-summary.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-maildir-summary.lo `test -f 'camel-maildir-summary.c' || echo '$(srcdir)/'`camel-maildir-summary.c
 
 libcamellocal_la-camel-spool-folder.lo: camel-spool-folder.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-spool-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-spool-folder.Tpo -c -o libcamellocal_la-camel-spool-folder.lo `test -f 'camel-spool-folder.c' || echo '$(srcdir)/'`camel-spool-folder.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-spool-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-spool-folder.Plo
-	$(AM_V_CC)source='camel-spool-folder.c' object='libcamellocal_la-camel-spool-folder.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-spool-folder.lo `test -f 'camel-spool-folder.c' || echo '$(srcdir)/'`camel-spool-folder.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-spool-folder.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-spool-folder.Tpo -c -o libcamellocal_la-camel-spool-folder.lo `test -f 'camel-spool-folder.c' || echo '$(srcdir)/'`camel-spool-folder.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-spool-folder.Tpo $(DEPDIR)/libcamellocal_la-camel-spool-folder.Plo
+#	$(AM_V_CC)source='camel-spool-folder.c' object='libcamellocal_la-camel-spool-folder.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-spool-folder.lo `test -f 'camel-spool-folder.c' || echo '$(srcdir)/'`camel-spool-folder.c
 
 libcamellocal_la-camel-spool-store.lo: camel-spool-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-spool-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-spool-store.Tpo -c -o libcamellocal_la-camel-spool-store.lo `test -f 'camel-spool-store.c' || echo '$(srcdir)/'`camel-spool-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-spool-store.Tpo $(DEPDIR)/libcamellocal_la-camel-spool-store.Plo
-	$(AM_V_CC)source='camel-spool-store.c' object='libcamellocal_la-camel-spool-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-spool-store.lo `test -f 'camel-spool-store.c' || echo '$(srcdir)/'`camel-spool-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-spool-store.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-spool-store.Tpo -c -o libcamellocal_la-camel-spool-store.lo `test -f 'camel-spool-store.c' || echo '$(srcdir)/'`camel-spool-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-spool-store.Tpo $(DEPDIR)/libcamellocal_la-camel-spool-store.Plo
+#	$(AM_V_CC)source='camel-spool-store.c' object='libcamellocal_la-camel-spool-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-spool-store.lo `test -f 'camel-spool-store.c' || echo '$(srcdir)/'`camel-spool-store.c
 
 libcamellocal_la-camel-spool-summary.lo: camel-spool-summary.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-spool-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-spool-summary.Tpo -c -o libcamellocal_la-camel-spool-summary.lo `test -f 'camel-spool-summary.c' || echo '$(srcdir)/'`camel-spool-summary.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-spool-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-spool-summary.Plo
-	$(AM_V_CC)source='camel-spool-summary.c' object='libcamellocal_la-camel-spool-summary.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-spool-summary.lo `test -f 'camel-spool-summary.c' || echo '$(srcdir)/'`camel-spool-summary.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcamellocal_la-camel-spool-summary.lo -MD -MP -MF $(DEPDIR)/libcamellocal_la-camel-spool-summary.Tpo -c -o libcamellocal_la-camel-spool-summary.lo `test -f 'camel-spool-summary.c' || echo '$(srcdir)/'`camel-spool-summary.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcamellocal_la-camel-spool-summary.Tpo $(DEPDIR)/libcamellocal_la-camel-spool-summary.Plo
+#	$(AM_V_CC)source='camel-spool-summary.c' object='libcamellocal_la-camel-spool-summary.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcamellocal_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcamellocal_la-camel-spool-summary.lo `test -f 'camel-spool-summary.c' || echo '$(srcdir)/'`camel-spool-summary.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

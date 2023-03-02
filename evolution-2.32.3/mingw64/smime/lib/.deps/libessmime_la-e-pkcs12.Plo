@@ -1,4 +1,5 @@
-libessmime_la-e-pkcs12.lo: ../../../smime/lib/e-pkcs12.c ../../config.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libessmime_la-e-pkcs12.lo: ../../../smime/lib/e-pkcs12.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \

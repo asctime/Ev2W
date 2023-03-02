@@ -1,4 +1,5 @@
-liborg_gnome_pst_import_la-pst-importer.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_pst_import_la-pst-importer.lo: \
  ../../../plugins/pst-import/pst-importer.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -853,8 +854,8 @@ liborg_gnome_pst_import_la-pst-importer.lo: \
  ../../../e-util/e-activity.h ../../../e-util/e-extension.h \
  ../../../e-util/e-extensible.h ../../../mail/em-folder-tree.h \
  ../../../mail/em-folder-tree-model.h \
- D:/MSYS2/mingw64/include/libpst/libpst.h \
- D:/MSYS2/mingw64/include/libpst/common.h \
+ D:/MSYS2/mingw64/include/libpst-4/libpst/libpst.h \
+ D:/MSYS2/mingw64/include/libpst-4/libpst/common.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/inttypes.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdkddkver.h \
@@ -1060,7 +1061,7 @@ liborg_gnome_pst_import_la-pst-importer.lo: \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsvc.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mcx.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/imm.h \
- D:/MSYS2/mingw64/include/libpst/timeconv.h
+ D:/MSYS2/mingw64/include/libpst-4/libpst/timeconv.h
 
 ../../config.h:
 
@@ -2786,9 +2787,9 @@ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h:
 
 ../../../mail/em-folder-tree-model.h:
 
-D:/MSYS2/mingw64/include/libpst/libpst.h:
+D:/MSYS2/mingw64/include/libpst-4/libpst/libpst.h:
 
-D:/MSYS2/mingw64/include/libpst/common.h:
+D:/MSYS2/mingw64/include/libpst-4/libpst/common.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/inttypes.h:
 
@@ -3200,4 +3201,4 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mcx.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/imm.h:
 
-D:/MSYS2/mingw64/include/libpst/timeconv.h:
+D:/MSYS2/mingw64/include/libpst-4/libpst/timeconv.h:

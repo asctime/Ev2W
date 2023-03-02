@@ -719,6 +719,7 @@ liborg_gnome_exchange_operations_la-exchange-permissions-dialog.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-dialog-utils.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert-dialog.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert.h
+-fstack-protector-strong :
 ../../eplugin/exchange-permissions-dialog.c :
 ../config.h :
 ../../eplugin/exchange-permissions-dialog.h :

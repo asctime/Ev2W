@@ -1,4 +1,5 @@
-evolution_settings-anjal-settings-main.o: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ evolution_settings-anjal-settings-main.o: \
  ../../capplet/anjal-settings-main.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

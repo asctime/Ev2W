@@ -1,4 +1,5 @@
-libevolution_mail_la-em-format-html.lo: ../../mail/em-format-html.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-em-format-html.lo: ../../mail/em-format-html.c \
  ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

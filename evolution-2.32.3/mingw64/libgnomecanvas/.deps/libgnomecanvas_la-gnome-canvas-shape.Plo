@@ -1,4 +1,5 @@
-libgnomecanvas_la-gnome-canvas-shape.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libgnomecanvas_la-gnome-canvas-shape.lo: \
  ../../libgnomecanvas/gnome-canvas-shape.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/math.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

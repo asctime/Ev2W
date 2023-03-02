@@ -1,4 +1,5 @@
-libgnomecanvas_la-gailcanvaswidgetfactory.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libgnomecanvas_la-gailcanvaswidgetfactory.lo: \
  ../../libgnomecanvas/gailcanvaswidgetfactory.c \
  ../../libgnomecanvas/gailcanvaswidgetfactory.h \
  D:/MSYS2/mingw64/include/atk-1.0/atk/atkobjectfactory.h \

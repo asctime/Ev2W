@@ -1,4 +1,5 @@
-libevolution_calendar_la-e-itip-control.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-e-itip-control.lo: \
  ../../../calendar/gui/e-itip-control.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

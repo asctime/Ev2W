@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-canvas-vbox.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-canvas-vbox.lo: \
  ../../../widgets/misc/e-canvas-vbox.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/math.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

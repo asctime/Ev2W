@@ -1,4 +1,5 @@
-libemformat_la-em-format-quote.lo: ../../em-format/em-format-quote.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemformat_la-em-format-quote.lo: ../../em-format/em-format-quote.c \
  ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-canvas-utils.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-canvas-utils.lo: \
  ../../../widgets/misc/e-canvas-utils.c \
  ../../../widgets/misc/e-canvas-utils.h \
  ../../../libgnomecanvas/gnome-canvas.h \

@@ -1,4 +1,5 @@
-libcomposer_la-e-composer-text-header.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcomposer_la-e-composer-text-header.lo: \
  ../../composer/e-composer-text-header.c \
  ../../composer/e-composer-text-header.h \
  ../../composer/e-composer-common.h ../config.h \

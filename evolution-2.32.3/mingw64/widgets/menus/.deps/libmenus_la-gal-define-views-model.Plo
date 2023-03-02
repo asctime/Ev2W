@@ -1,4 +1,5 @@
-libmenus_la-gal-define-views-model.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libmenus_la-gal-define-views-model.lo: \
  ../../../widgets/menus/gal-define-views-model.c ../../config.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/tree.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdio.h \

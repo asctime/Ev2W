@@ -1,4 +1,5 @@
-libevolution_calendar_la-e-calendar-selector.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-e-calendar-selector.lo: \
  ../../../calendar/gui/e-calendar-selector.c \
  ../../../calendar/gui/e-calendar-selector.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h \

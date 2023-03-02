@@ -1,4 +1,5 @@
 liborg_gnome_exchange_operations_la-exchange-calendar.lo : \
+ \
  ../../eplugin/exchange-calendar.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -858,6 +859,7 @@ liborg_gnome_exchange_operations_la-exchange-calendar.lo : \
  ../../eplugin/exchange-operations.h \
  ../../eplugin/exchange-config-listener.h \
  ../../eplugin/exchange-folder-size-display.h
+-fstack-protector-strong :
 ../../eplugin/exchange-calendar.c :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :

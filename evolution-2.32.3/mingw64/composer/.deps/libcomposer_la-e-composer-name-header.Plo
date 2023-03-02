@@ -1,4 +1,5 @@
-libcomposer_la-e-composer-name-header.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcomposer_la-e-composer-name-header.lo: \
  ../../composer/e-composer-name-header.c ../../composer/e-msg-composer.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-address.h \

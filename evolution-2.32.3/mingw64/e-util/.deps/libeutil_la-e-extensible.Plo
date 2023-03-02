@@ -1,4 +1,5 @@
-libeutil_la-e-extensible.lo: ../../e-util/e-extensible.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-extensible.lo: ../../e-util/e-extensible.c \
  ../../e-util/e-extensible.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \

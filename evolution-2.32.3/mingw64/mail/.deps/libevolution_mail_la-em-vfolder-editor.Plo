@@ -1,5 +1,7 @@
-libevolution_mail_la-em-vfolder-editor.lo: ../../mail/em-vfolder-editor.c \
- ../config.h D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-em-vfolder-editor.lo: \
+ ../../mail/em-vfolder-editor.c ../config.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \

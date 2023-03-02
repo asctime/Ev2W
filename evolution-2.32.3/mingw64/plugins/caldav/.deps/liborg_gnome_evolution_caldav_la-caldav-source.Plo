@@ -1,4 +1,5 @@
-liborg_gnome_evolution_caldav_la-caldav-source.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_evolution_caldav_la-caldav-source.lo: \
  ../../../plugins/caldav/caldav-source.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n-lib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

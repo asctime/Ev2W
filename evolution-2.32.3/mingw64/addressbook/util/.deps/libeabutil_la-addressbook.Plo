@@ -1,4 +1,5 @@
-libeabutil_la-addressbook.lo: ../../../addressbook/util/addressbook.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeabutil_la-addressbook.lo: ../../../addressbook/util/addressbook.c \
  ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

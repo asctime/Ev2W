@@ -1,6 +1,7 @@
 libebookbackendexchange_la-e-book-backend-exchange.lo : \
- ../../addressbook/e-book-backend-exchange.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h \
+ \
+ ../../addressbook/e-book-backend-exchange.c ../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -865,6 +866,7 @@ libebookbackendexchange_la-e-book-backend-exchange.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  ../../addressbook/e-book-backend-exchange.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedata-book/e-book-backend-sync.h
+-fstack-protector-strong :
 ../../addressbook/e-book-backend-exchange.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h :

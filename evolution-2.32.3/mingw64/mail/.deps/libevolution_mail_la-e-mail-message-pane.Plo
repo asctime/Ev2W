@@ -1,4 +1,5 @@
-libevolution_mail_la-e-mail-message-pane.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-message-pane.lo: \
  ../../mail/e-mail-message-pane.c ../../mail/e-mail-message-pane.h \
  ../../mail/e-mail-paned-view.h ../../mail/e-mail-view.h \
  ../../shell/e-shell-view.h ../../shell/e-shell-common.h ../config.h \

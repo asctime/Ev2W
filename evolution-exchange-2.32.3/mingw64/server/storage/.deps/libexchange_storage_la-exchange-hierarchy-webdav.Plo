@@ -724,6 +724,7 @@ libexchange_storage_la-exchange-hierarchy-webdav.lo : \
  ../../../server/storage/exchange-folder-size.h \
  ../../../server/storage/exchange-esource.h \
  ../../../server/storage/exchange-constants.h
+-fstack-protector-strong :
 ../../../server/storage/exchange-hierarchy-webdav.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h :

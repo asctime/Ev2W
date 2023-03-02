@@ -1,4 +1,5 @@
 libexchange_la-e2k-rule-xml.lo : \
+ \
  ../../../server/lib/e2k-rule-xml.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -154,6 +155,7 @@ libexchange_la-e2k-rule-xml.lo : \
  ../../../server/lib/e2k-restriction.h ../../../server/lib/e2k-action.h \
  e2k-propnames.h e2k-proptags.h ../../../server/lib/e2k-utils.h \
  ../../../server/lib/mapi.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-rule-xml.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

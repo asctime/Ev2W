@@ -1,4 +1,5 @@
-liborg_gnome_save_calendar_la-rdf-format.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_save_calendar_la-rdf-format.lo: \
  ../../../plugins/save-calendar/rdf-format.c ../../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

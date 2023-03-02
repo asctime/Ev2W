@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-dateedit.lo: ../../../widgets/misc/e-dateedit.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-dateedit.lo: ../../../widgets/misc/e-dateedit.c \
  ../../config.h ../../../widgets/misc/e-dateedit.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

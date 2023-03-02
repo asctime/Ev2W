@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-e-cal-config-meeting-store.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-e-cal-config-meeting-store.lo: \
  ../../../modules/calendar/e-cal-config-meeting-store.c \
  ../../../modules/calendar/e-cal-config-meeting-store.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \

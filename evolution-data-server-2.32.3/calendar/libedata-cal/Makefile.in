@@ -155,6 +155,10 @@ e_calendar_factory_DEPENDENCIES =  \
 	libedata-cal-1.2.la \
 	$(top_builddir)/libedataserver/libedataserver-1.2.la \
 	$(top_builddir)/libebackend/libebackend-1.2.la
+e_calendar_factory_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(AM_CFLAGS) $(CFLAGS) $(e_calendar_factory_LDFLAGS) \
+	$(LDFLAGS) -o $@
 am_test_e_sexp_OBJECTS = test_e_sexp-e-cal-backend-sexp.$(OBJEXT)
 test_e_sexp_OBJECTS = $(am_test_e_sexp_OBJECTS)
 test_e_sexp_DEPENDENCIES = libedata-cal-1.2.la \
@@ -586,8 +590,9 @@ e_calendar_factory_CPPFLAGS = \
 	$(LIBICAL_CFLAGS)				\
 	$(EVOLUTION_CALENDAR_CFLAGS)
 
+@OS_WIN32_TRUE@e_calendar_factory_LDFLAGS = -mwindows
 e_calendar_factory_LDADD = \
-	$(top_builddir)/calendar/libecal/libecal-1.2.la			\
+	$(top_builddir)/calendar/libecal/libecal-1.2.la	 \
 	$(top_builddir)/calendar/libegdbus/libegdbus-cal.la		\
 	libedata-cal-1.2.la						\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la 		\
@@ -765,7 +770,7 @@ clean-noinstPROGRAMS:
 	rm -f $$list
 e-calendar-factory$(EXEEXT): $(e_calendar_factory_OBJECTS) $(e_calendar_factory_DEPENDENCIES) $(EXTRA_e_calendar_factory_DEPENDENCIES) 
 	@rm -f e-calendar-factory$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(e_calendar_factory_OBJECTS) $(e_calendar_factory_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(e_calendar_factory_LINK) $(e_calendar_factory_OBJECTS) $(e_calendar_factory_LDADD) $(LIBS)
 test-e-sexp$(EXEEXT): $(test_e_sexp_OBJECTS) $(test_e_sexp_DEPENDENCIES) $(EXTRA_test_e_sexp_DEPENDENCIES) 
 	@rm -f test-e-sexp$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_e_sexp_OBJECTS) $(test_e_sexp_LDADD) $(LIBS)

@@ -1,4 +1,5 @@
-libevolution_mail_la-e-mail-store.lo: ../../mail/e-mail-store.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-store.lo: ../../mail/e-mail-store.c \
  ../../mail/e-mail-store.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \

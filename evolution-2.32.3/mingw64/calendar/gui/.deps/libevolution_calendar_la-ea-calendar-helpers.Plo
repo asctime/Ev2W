@@ -1,4 +1,5 @@
-libevolution_calendar_la-ea-calendar-helpers.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-ea-calendar-helpers.lo: \
  ../../../calendar/gui/ea-calendar-helpers.c \
  ../../../calendar/gui/ea-calendar-helpers.h \
  ../../../calendar/gui/ea-cal-view.h \

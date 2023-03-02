@@ -1,4 +1,5 @@
-libeshell_la-e-shell-window.lo: ../../shell/e-shell-window.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeshell_la-e-shell-window.lo: ../../shell/e-shell-window.c \
  ../../shell/e-shell-window-private.h ../../shell/e-shell-window.h \
  ../../shell/e-shell.h \
  D:/MSYS2/mingw64/include/unique-1.0/unique/unique.h \

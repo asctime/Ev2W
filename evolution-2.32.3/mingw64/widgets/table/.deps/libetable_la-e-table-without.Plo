@@ -1,5 +1,7 @@
-libetable_la-e-table-without.lo: ../../../widgets/table/e-table-without.c \
- ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-table-without.lo: \
+ ../../../widgets/table/e-table-without.c ../../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \

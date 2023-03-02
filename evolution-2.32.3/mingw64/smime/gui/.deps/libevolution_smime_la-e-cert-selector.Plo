@@ -1,4 +1,5 @@
-libevolution_smime_la-e-cert-selector.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_smime_la-e-cert-selector.lo: \
  ../../../smime/gui/e-cert-selector.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

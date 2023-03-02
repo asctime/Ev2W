@@ -1,4 +1,5 @@
-libetable_la-e-cell-number.lo: ../../../widgets/table/e-cell-number.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-cell-number.lo: ../../../widgets/table/e-cell-number.c \
  ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/time.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

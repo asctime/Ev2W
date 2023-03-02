@@ -735,6 +735,7 @@ libecalbackendexchange_la-e-cal-backend-exchange-calendar.lo : \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-listeners.h \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h \
  ../../server/lib/mapi.h
+-fstack-protector-strong :
 ../../calendar/e-cal-backend-exchange-calendar.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h :

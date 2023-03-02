@@ -1,4 +1,5 @@
-libeutil_la-e-marshal.lo: e-marshal.c e-marshal.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-marshal.lo: e-marshal.c e-marshal.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

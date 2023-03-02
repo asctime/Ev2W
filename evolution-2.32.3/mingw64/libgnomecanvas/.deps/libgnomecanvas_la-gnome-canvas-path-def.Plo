@@ -1,4 +1,5 @@
-libgnomecanvas_la-gnome-canvas-path-def.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libgnomecanvas_la-gnome-canvas-path-def.lo: \
  ../../libgnomecanvas/gnome-canvas-path-def.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

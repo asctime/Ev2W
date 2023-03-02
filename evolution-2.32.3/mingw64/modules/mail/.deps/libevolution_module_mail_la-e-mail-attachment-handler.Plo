@@ -1,4 +1,5 @@
-libevolution_module_mail_la-e-mail-attachment-handler.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_mail_la-e-mail-attachment-handler.lo: \
  ../../../modules/mail/e-mail-attachment-handler.c \
  ../../../modules/mail/e-mail-attachment-handler.h \
  ../../../widgets/misc/e-attachment-handler.h \

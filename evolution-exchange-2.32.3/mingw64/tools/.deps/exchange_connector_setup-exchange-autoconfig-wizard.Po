@@ -1,6 +1,7 @@
 exchange_connector_setup-exchange-autoconfig-wizard.o : \
- ../../tools/exchange-autoconfig-wizard.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+ \
+ ../../tools/exchange-autoconfig-wizard.c ../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -655,6 +656,7 @@ exchange_connector_setup-exchange-autoconfig-wizard.o : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-passwords.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h
+-fstack-protector-strong :
 ../../tools/exchange-autoconfig-wizard.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

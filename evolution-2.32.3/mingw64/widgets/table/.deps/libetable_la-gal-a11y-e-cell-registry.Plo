@@ -1,4 +1,5 @@
-libetable_la-gal-a11y-e-cell-registry.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-gal-a11y-e-cell-registry.lo: \
  ../../../widgets/table/gal-a11y-e-cell-registry.c ../../config.h \
  ../../../widgets/table/gal-a11y-e-cell.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \

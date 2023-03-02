@@ -1,5 +1,7 @@
-libevolution_mail_la-e-mail-paned-view.lo: ../../mail/e-mail-paned-view.c \
- ../config.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-paned-view.lo: \
+ ../../mail/e-mail-paned-view.c ../config.h \
+ D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/glibconfig.h \

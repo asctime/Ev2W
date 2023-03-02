@@ -1,5 +1,6 @@
-libfilter_la-e-filter-input.lo: ../../filter/e-filter-input.c ../config.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libfilter_la-e-filter-input.lo: ../../filter/e-filter-input.c \
+ ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \

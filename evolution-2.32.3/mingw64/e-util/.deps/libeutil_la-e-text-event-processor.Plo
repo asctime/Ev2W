@@ -1,4 +1,5 @@
-libeutil_la-e-text-event-processor.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-text-event-processor.lo: \
  ../../e-util/e-text-event-processor.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

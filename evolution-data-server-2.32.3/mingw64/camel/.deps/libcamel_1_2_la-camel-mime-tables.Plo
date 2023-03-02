@@ -1,3 +1,2 @@
-libcamel_1_2_la-camel-mime-tables.lo : \
- ../../camel/camel-mime-tables.c
-../../camel/camel-mime-tables.c :
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcamel_1_2_la-camel-mime-tables.lo: ../../camel/camel-mime-tables.c

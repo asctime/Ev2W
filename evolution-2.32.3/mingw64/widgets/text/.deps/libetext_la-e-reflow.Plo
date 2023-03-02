@@ -1,4 +1,5 @@
-libetext_la-e-reflow.lo: ../../../widgets/text/e-reflow.c ../../config.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetext_la-e-reflow.lo: ../../../widgets/text/e-reflow.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/math.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

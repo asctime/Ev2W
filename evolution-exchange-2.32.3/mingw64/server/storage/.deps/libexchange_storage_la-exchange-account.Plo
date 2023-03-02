@@ -1,6 +1,7 @@
 libexchange_storage_la-exchange-account.lo : \
- ../../../server/storage/exchange-account.c \
- ../../config.h ../../../server/storage/exchange-account.h \
+ \
+ ../../../server/storage/exchange-account.c ../../config.h \
+ ../../../server/storage/exchange-account.h \
  ../../../server/storage/exchange-types.h ../../../server/lib/e2k-types.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
@@ -715,6 +716,7 @@ libexchange_storage_la-exchange-account.lo : \
  ../../../server/storage/exchange-constants.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-passwords.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h
+-fstack-protector-strong :
 ../../../server/storage/exchange-account.c :
 ../../config.h :
 ../../../server/storage/exchange-account.h :

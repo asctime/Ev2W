@@ -1,4 +1,5 @@
-libevolution_mail_la-em-junk.lo: ../../mail/em-junk.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-em-junk.lo: ../../mail/em-junk.c \
  ../../mail/em-junk.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-address.h \

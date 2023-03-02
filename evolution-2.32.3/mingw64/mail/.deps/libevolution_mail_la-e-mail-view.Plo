@@ -1,5 +1,6 @@
-libevolution_mail_la-e-mail-view.lo: ../../mail/e-mail-view.c ../config.h \
- ../../mail/e-mail-view.h ../../shell/e-shell-view.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-view.lo: ../../mail/e-mail-view.c \
+ ../config.h ../../mail/e-mail-view.h ../../shell/e-shell-view.h \
  ../../shell/e-shell-common.h D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gioenums.h \

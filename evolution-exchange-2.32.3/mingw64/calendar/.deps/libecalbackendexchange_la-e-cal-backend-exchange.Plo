@@ -1,6 +1,7 @@
 libecalbackendexchange_la-e-cal-backend-exchange.lo : \
- ../../calendar/e-cal-backend-exchange.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+ \
+ ../../calendar/e-cal-backend-exchange.c ../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -865,6 +866,7 @@ libecalbackendexchange_la-e-cal-backend-exchange.lo : \
  ../../tools/exchange-share-config-listener.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h
+-fstack-protector-strong :
 ../../calendar/e-cal-backend-exchange.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h :

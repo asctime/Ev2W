@@ -1,4 +1,5 @@
 libexchange_la-e2k-operation.lo : \
+ \
  ../../../server/lib/e2k-operation.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -122,6 +123,7 @@ libexchange_la-e2k-operation.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-operation.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

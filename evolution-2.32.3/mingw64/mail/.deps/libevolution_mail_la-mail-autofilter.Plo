@@ -1,4 +1,5 @@
-libevolution_mail_la-mail-autofilter.lo: ../../mail/mail-autofilter.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-mail-autofilter.lo: ../../mail/mail-autofilter.c \
  ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

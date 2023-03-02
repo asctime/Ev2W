@@ -1,4 +1,5 @@
-libevolution_calendar_la-e-meeting-store.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-e-meeting-store.lo: \
  ../../../calendar/gui/e-meeting-store.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \

@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-preview-pane.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-preview-pane.lo: \
  ../../../widgets/misc/e-preview-pane.c \
  ../../../widgets/misc/e-preview-pane.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

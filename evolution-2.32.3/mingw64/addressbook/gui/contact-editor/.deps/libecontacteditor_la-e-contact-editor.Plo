@@ -1,4 +1,5 @@
-libecontacteditor_la-e-contact-editor.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libecontacteditor_la-e-contact-editor.lo: \
  ../../../../addressbook/gui/contact-editor/e-contact-editor.c \
  ../../../config.h \
  ../../../../addressbook/gui/contact-editor/eab-editor.h \

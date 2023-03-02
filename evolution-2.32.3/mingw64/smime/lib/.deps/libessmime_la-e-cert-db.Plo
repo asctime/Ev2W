@@ -1,5 +1,6 @@
-libessmime_la-e-cert-db.lo: ../../../smime/lib/e-cert-db.c ../../config.h \
- D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libessmime_la-e-cert-db.lo: ../../../smime/lib/e-cert-db.c \
+ ../../config.h D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \

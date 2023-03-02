@@ -1,4 +1,5 @@
-libetable_la-gal-a11y-e-table-item.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-gal-a11y-e-table-item.lo: \
  ../../../widgets/table/gal-a11y-e-table-item.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

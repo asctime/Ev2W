@@ -1,6 +1,7 @@
 libcamelexchange_la-camel-exchange-transport.lo : \
- ../../camel/camel-exchange-transport.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+ \
+ ../../camel/camel-exchange-transport.c ../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -441,6 +442,7 @@ libcamelexchange_la-camel-exchange-transport.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vee-store.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vtrash-folder.h \
  ../../camel/camel-exchange-utils.h
+-fstack-protector-strong :
 ../../camel/camel-exchange-transport.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

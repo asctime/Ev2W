@@ -729,6 +729,7 @@ libecalbackendexchange_la-e-cal-backend-exchange-tasks.lo : \
  ../../server/storage/e-folder-exchange.h \
  ../../server/storage/exchange-types.h ../../server/lib/e2k-operation.h \
  ../../server/lib/e2k-restriction.h ../../server/lib/e2k-utils.h
+-fstack-protector-strong :
 ../../calendar/e-cal-backend-exchange-tasks.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h :

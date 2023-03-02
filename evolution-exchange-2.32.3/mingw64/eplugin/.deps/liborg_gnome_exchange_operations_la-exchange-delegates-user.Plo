@@ -1,8 +1,8 @@
 liborg_gnome_exchange_operations_la-exchange-delegates-user.lo : \
- ../../eplugin/exchange-delegates-user.c \
- ../config.h ../../eplugin/exchange-delegates.h \
- ../../server/storage/exchange-types.h ../../server/lib/e2k-types.h \
- D:/MSYS2/mingw64/include/glib-2.0/glib.h \
+ \
+ ../../eplugin/exchange-delegates-user.c ../config.h \
+ ../../eplugin/exchange-delegates.h ../../server/storage/exchange-types.h \
+ ../../server/lib/e2k-types.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/glibconfig.h \
@@ -848,6 +848,7 @@ liborg_gnome_exchange_operations_la-exchange-delegates-user.lo : \
  ../../server/lib/e2k-utils.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-dialog-utils.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-dialog-widgets.h
+-fstack-protector-strong :
 ../../eplugin/exchange-delegates-user.c :
 ../config.h :
 ../../eplugin/exchange-delegates.h :

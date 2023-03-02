@@ -1,4 +1,5 @@
-liborg_gnome_evolution_bbdb_la-bbdb.lo: ../../../plugins/bbdb/bbdb.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_evolution_bbdb_la-bbdb.lo: ../../../plugins/bbdb/bbdb.c \
  ../../config.h D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \

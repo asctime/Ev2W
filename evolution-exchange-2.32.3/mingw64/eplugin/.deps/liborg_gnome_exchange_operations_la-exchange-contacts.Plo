@@ -1,4 +1,5 @@
 liborg_gnome_exchange_operations_la-exchange-contacts.lo : \
+ \
  ../../eplugin/exchange-contacts.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -865,6 +866,7 @@ liborg_gnome_exchange_operations_la-exchange-contacts.lo : \
  ../../eplugin/exchange-config-listener.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  ../../eplugin/exchange-folder-size-display.h
+-fstack-protector-strong :
 ../../eplugin/exchange-contacts.c :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :

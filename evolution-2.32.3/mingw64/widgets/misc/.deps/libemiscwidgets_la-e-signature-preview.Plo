@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-signature-preview.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-signature-preview.lo: \
  ../../../widgets/misc/e-signature-preview.c \
  ../../../widgets/misc/e-signature-preview.h \
  ../../../e-util/e-signature.h \

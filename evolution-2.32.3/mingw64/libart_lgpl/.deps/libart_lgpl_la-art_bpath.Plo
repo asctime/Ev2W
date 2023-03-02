@@ -1,4 +1,5 @@
-libart_lgpl_la-art_bpath.lo: ../../libart_lgpl/art_bpath.c ../config.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libart_lgpl_la-art_bpath.lo: ../../libart_lgpl/art_bpath.c ../config.h \
  ../../libart_lgpl/art_bpath.h ../../libart_lgpl/art_misc.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \

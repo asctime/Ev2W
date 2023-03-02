@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-charset-combo-box.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-charset-combo-box.lo: \
  ../../../widgets/misc/e-charset-combo-box.c \
  ../../../widgets/misc/e-charset-combo-box.h \
  ../../../widgets/misc/e-action-combo-box.h \

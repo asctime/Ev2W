@@ -1,4 +1,5 @@
-libessmime_la-e-asn1-object.lo: ../../../smime/lib/e-asn1-object.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libessmime_la-e-asn1-object.lo: ../../../smime/lib/e-asn1-object.c \
  ../../config.h ../../../smime/lib/e-asn1-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \

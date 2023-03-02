@@ -1,4 +1,5 @@
-libevolution_calendar_la-ea-day-view-cell.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-ea-day-view-cell.lo: \
  ../../../calendar/gui/ea-day-view-cell.c \
  ../../../calendar/gui/ea-day-view-cell.h \
  D:/MSYS2/mingw64/include/atk-1.0/atk/atkgobjectaccessible.h \

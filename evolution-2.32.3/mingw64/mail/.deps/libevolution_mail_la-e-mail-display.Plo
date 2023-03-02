@@ -1,4 +1,5 @@
-libevolution_mail_la-e-mail-display.lo: ../../mail/e-mail-display.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-display.lo: ../../mail/e-mail-display.c \
  ../../mail/e-mail-display.h ../../mail/em-format-html.h \
  ../../em-format/em-format.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \

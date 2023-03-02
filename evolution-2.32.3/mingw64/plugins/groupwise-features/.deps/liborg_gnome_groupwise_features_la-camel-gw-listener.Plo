@@ -1,4 +1,5 @@
-liborg_gnome_groupwise_features_la-camel-gw-listener.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_groupwise_features_la-camel-gw-listener.lo: \
  ../../../plugins/groupwise-features/camel-gw-listener.c ../../config.h \
  ../../../plugins/groupwise-features/camel-gw-listener.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-account-list.h \

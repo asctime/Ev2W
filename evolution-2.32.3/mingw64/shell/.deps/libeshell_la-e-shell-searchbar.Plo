@@ -1,4 +1,5 @@
-libeshell_la-e-shell-searchbar.lo: ../../shell/e-shell-searchbar.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeshell_la-e-shell-searchbar.lo: ../../shell/e-shell-searchbar.c \
  ../../shell/e-shell-searchbar.h ../../shell/e-shell-common.h ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \

@@ -1,4 +1,5 @@
 libexchange_storage_la-exchange-oof.lo : \
+ \
  ../../../server/storage/exchange-oof.c ../../config.h \
  ../../../server/storage/exchange-oof.h \
  ../../../server/storage/exchange-types.h ../../../server/lib/e2k-types.h \
@@ -704,6 +705,7 @@ libexchange_storage_la-exchange-oof.lo : \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h \
  ../../server/lib/e2k-propnames.h ../../../server/lib/e2k-utils.h \
  ../../../server/lib/e2k-uri.h
+-fstack-protector-strong :
 ../../../server/storage/exchange-oof.c :
 ../../config.h :
 ../../../server/storage/exchange-oof.h :
