@@ -476,9 +476,13 @@ libebookbackendexchange_la-e-book-backend-exchange-factory.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedata-book/e-book-backend.h \
  ../../addressbook/e-book-backend-gal.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../addressbook/e-book-backend-exchange-factory.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

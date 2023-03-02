@@ -1,8 +1,12 @@
 liborg_gnome_exchange_operations_la-exchange-operations.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  \
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../eplugin/exchange-operations.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -734,9 +738,13 @@ liborg_gnome_exchange_operations_la-exchange-operations.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-extensible.h \
  D:/MSYS2/mingw64/include/evolution-2.32/shell/e-shell-settings.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-operations.c :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :

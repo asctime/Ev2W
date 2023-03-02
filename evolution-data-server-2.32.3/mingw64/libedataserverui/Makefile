@@ -295,12 +295,17 @@ CATALOGS =
 CATOBJEXT = .gmo
 CC = gcc
 <<<<<<< HEAD
+<<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 =======
 CCDEPMODE = depmode=gcc
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 CPP = gcc -E
 CPPFLAGS = \
 	$(AM_CPPFLAGS)				\
@@ -340,10 +345,14 @@ E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../i
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 <<<<<<< HEAD
+<<<<<<< HEAD
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 =======
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -362,10 +371,14 @@ GNOME_KEYRING_CFLAGS =
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
 <<<<<<< HEAD
+<<<<<<< HEAD
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 =======
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -488,10 +501,14 @@ SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 <<<<<<< HEAD
+<<<<<<< HEAD
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 =======
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -826,333 +843,333 @@ include ./$(DEPDIR)/test_source_combo_box-test-source-combo-box.Po
 include ./$(DEPDIR)/test_source_selector-test-source-selector.Po
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libedataserverui_1_2_la-e-data-server-ui-marshal.lo: e-data-server-ui-marshal.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-data-server-ui-marshal.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-data-server-ui-marshal.Tpo -c -o libedataserverui_1_2_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-data-server-ui-marshal.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-data-server-ui-marshal.Plo
-	$(AM_V_CC)source='e-data-server-ui-marshal.c' object='libedataserverui_1_2_la-e-data-server-ui-marshal.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-data-server-ui-marshal.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-data-server-ui-marshal.Tpo -c -o libedataserverui_1_2_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-data-server-ui-marshal.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-data-server-ui-marshal.Plo
+#	$(AM_V_CC)source='e-data-server-ui-marshal.c' object='libedataserverui_1_2_la-e-data-server-ui-marshal.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
 
 libedataserverui_1_2_la-e-categories-dialog.lo: e-categories-dialog.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-categories-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-categories-dialog.Tpo -c -o libedataserverui_1_2_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-categories-dialog.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-categories-dialog.Plo
-	$(AM_V_CC)source='e-categories-dialog.c' object='libedataserverui_1_2_la-e-categories-dialog.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-categories-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-categories-dialog.Tpo -c -o libedataserverui_1_2_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-categories-dialog.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-categories-dialog.Plo
+#	$(AM_V_CC)source='e-categories-dialog.c' object='libedataserverui_1_2_la-e-categories-dialog.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
 
 libedataserverui_1_2_la-e-category-completion.lo: e-category-completion.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-category-completion.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-category-completion.Tpo -c -o libedataserverui_1_2_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-category-completion.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-category-completion.Plo
-	$(AM_V_CC)source='e-category-completion.c' object='libedataserverui_1_2_la-e-category-completion.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-category-completion.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-category-completion.Tpo -c -o libedataserverui_1_2_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-category-completion.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-category-completion.Plo
+#	$(AM_V_CC)source='e-category-completion.c' object='libedataserverui_1_2_la-e-category-completion.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
 
 libedataserverui_1_2_la-e-destination-store.lo: e-destination-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-destination-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-destination-store.Tpo -c -o libedataserverui_1_2_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-destination-store.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-destination-store.Plo
-	$(AM_V_CC)source='e-destination-store.c' object='libedataserverui_1_2_la-e-destination-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-destination-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-destination-store.Tpo -c -o libedataserverui_1_2_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-destination-store.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-destination-store.Plo
+#	$(AM_V_CC)source='e-destination-store.c' object='libedataserverui_1_2_la-e-destination-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
 
 libedataserverui_1_2_la-e-book-auth-util.lo: e-book-auth-util.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-book-auth-util.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-book-auth-util.Tpo -c -o libedataserverui_1_2_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-book-auth-util.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-book-auth-util.Plo
-	$(AM_V_CC)source='e-book-auth-util.c' object='libedataserverui_1_2_la-e-book-auth-util.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-book-auth-util.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-book-auth-util.Tpo -c -o libedataserverui_1_2_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-book-auth-util.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-book-auth-util.Plo
+#	$(AM_V_CC)source='e-book-auth-util.c' object='libedataserverui_1_2_la-e-book-auth-util.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
 
 libedataserverui_1_2_la-e-contact-store.lo: e-contact-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-contact-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-contact-store.Tpo -c -o libedataserverui_1_2_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-contact-store.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-contact-store.Plo
-	$(AM_V_CC)source='e-contact-store.c' object='libedataserverui_1_2_la-e-contact-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-contact-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-contact-store.Tpo -c -o libedataserverui_1_2_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-contact-store.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-contact-store.Plo
+#	$(AM_V_CC)source='e-contact-store.c' object='libedataserverui_1_2_la-e-contact-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
 
 libedataserverui_1_2_la-e-name-selector.lo: e-name-selector.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector.Tpo -c -o libedataserverui_1_2_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector.Plo
-	$(AM_V_CC)source='e-name-selector.c' object='libedataserverui_1_2_la-e-name-selector.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector.Tpo -c -o libedataserverui_1_2_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector.Plo
+#	$(AM_V_CC)source='e-name-selector.c' object='libedataserverui_1_2_la-e-name-selector.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
 
 libedataserverui_1_2_la-e-name-selector-dialog.lo: e-name-selector-dialog.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-dialog.Tpo -c -o libedataserverui_1_2_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-dialog.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-dialog.Plo
-	$(AM_V_CC)source='e-name-selector-dialog.c' object='libedataserverui_1_2_la-e-name-selector-dialog.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-dialog.Tpo -c -o libedataserverui_1_2_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-dialog.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-dialog.Plo
+#	$(AM_V_CC)source='e-name-selector-dialog.c' object='libedataserverui_1_2_la-e-name-selector-dialog.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
 
 libedataserverui_1_2_la-e-name-selector-entry.lo: e-name-selector-entry.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-entry.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-entry.Tpo -c -o libedataserverui_1_2_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-entry.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-entry.Plo
-	$(AM_V_CC)source='e-name-selector-entry.c' object='libedataserverui_1_2_la-e-name-selector-entry.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-entry.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-entry.Tpo -c -o libedataserverui_1_2_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-entry.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-entry.Plo
+#	$(AM_V_CC)source='e-name-selector-entry.c' object='libedataserverui_1_2_la-e-name-selector-entry.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
 
 libedataserverui_1_2_la-e-name-selector-model.lo: e-name-selector-model.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-model.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-model.Tpo -c -o libedataserverui_1_2_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-model.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-model.Plo
-	$(AM_V_CC)source='e-name-selector-model.c' object='libedataserverui_1_2_la-e-name-selector-model.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-model.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-model.Tpo -c -o libedataserverui_1_2_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-model.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-model.Plo
+#	$(AM_V_CC)source='e-name-selector-model.c' object='libedataserverui_1_2_la-e-name-selector-model.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
 
 libedataserverui_1_2_la-e-name-selector-list.lo: e-name-selector-list.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-list.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-list.Tpo -c -o libedataserverui_1_2_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-list.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-list.Plo
-	$(AM_V_CC)source='e-name-selector-list.c' object='libedataserverui_1_2_la-e-name-selector-list.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-name-selector-list.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-list.Tpo -c -o libedataserverui_1_2_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-list.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-name-selector-list.Plo
+#	$(AM_V_CC)source='e-name-selector-list.c' object='libedataserverui_1_2_la-e-name-selector-list.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
 
 libedataserverui_1_2_la-e-passwords.lo: e-passwords.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-passwords.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-passwords.Tpo -c -o libedataserverui_1_2_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-passwords.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-passwords.Plo
-	$(AM_V_CC)source='e-passwords.c' object='libedataserverui_1_2_la-e-passwords.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-passwords.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-passwords.Tpo -c -o libedataserverui_1_2_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-passwords.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-passwords.Plo
+#	$(AM_V_CC)source='e-passwords.c' object='libedataserverui_1_2_la-e-passwords.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
 
 libedataserverui_1_2_la-e-source-selector.lo: e-source-selector.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-source-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-source-selector.Tpo -c -o libedataserverui_1_2_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-source-selector.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-source-selector.Plo
-	$(AM_V_CC)source='e-source-selector.c' object='libedataserverui_1_2_la-e-source-selector.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-source-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-source-selector.Tpo -c -o libedataserverui_1_2_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-source-selector.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-source-selector.Plo
+#	$(AM_V_CC)source='e-source-selector.c' object='libedataserverui_1_2_la-e-source-selector.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
 
 libedataserverui_1_2_la-e-source-selector-dialog.lo: e-source-selector-dialog.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-source-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-source-selector-dialog.Tpo -c -o libedataserverui_1_2_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-source-selector-dialog.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-source-selector-dialog.Plo
-	$(AM_V_CC)source='e-source-selector-dialog.c' object='libedataserverui_1_2_la-e-source-selector-dialog.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-source-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-source-selector-dialog.Tpo -c -o libedataserverui_1_2_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-source-selector-dialog.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-source-selector-dialog.Plo
+#	$(AM_V_CC)source='e-source-selector-dialog.c' object='libedataserverui_1_2_la-e-source-selector-dialog.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
 
 libedataserverui_1_2_la-e-source-combo-box.lo: e-source-combo-box.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-source-combo-box.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-source-combo-box.Tpo -c -o libedataserverui_1_2_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-source-combo-box.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-source-combo-box.Plo
-	$(AM_V_CC)source='e-source-combo-box.c' object='libedataserverui_1_2_la-e-source-combo-box.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-source-combo-box.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-source-combo-box.Tpo -c -o libedataserverui_1_2_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-source-combo-box.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-source-combo-box.Plo
+#	$(AM_V_CC)source='e-source-combo-box.c' object='libedataserverui_1_2_la-e-source-combo-box.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
 
 libedataserverui_1_2_la-e-tree-model-generator.lo: e-tree-model-generator.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-tree-model-generator.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-tree-model-generator.Tpo -c -o libedataserverui_1_2_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-tree-model-generator.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-tree-model-generator.Plo
-	$(AM_V_CC)source='e-tree-model-generator.c' object='libedataserverui_1_2_la-e-tree-model-generator.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-tree-model-generator.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-tree-model-generator.Tpo -c -o libedataserverui_1_2_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-tree-model-generator.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-tree-model-generator.Plo
+#	$(AM_V_CC)source='e-tree-model-generator.c' object='libedataserverui_1_2_la-e-tree-model-generator.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
 
 libedataserverui_1_2_la-e-cell-renderer-color.lo: e-cell-renderer-color.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-cell-renderer-color.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-cell-renderer-color.Tpo -c -o libedataserverui_1_2_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-cell-renderer-color.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-cell-renderer-color.Plo
-	$(AM_V_CC)source='e-cell-renderer-color.c' object='libedataserverui_1_2_la-e-cell-renderer-color.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_1_2_la-e-cell-renderer-color.lo -MD -MP -MF $(DEPDIR)/libedataserverui_1_2_la-e-cell-renderer-color.Tpo -c -o libedataserverui_1_2_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_1_2_la-e-cell-renderer-color.Tpo $(DEPDIR)/libedataserverui_1_2_la-e-cell-renderer-color.Plo
+#	$(AM_V_CC)source='e-cell-renderer-color.c' object='libedataserverui_1_2_la-e-cell-renderer-color.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_1_2_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
 
 libedataserverui_3_0_la-e-data-server-ui-marshal.lo: e-data-server-ui-marshal.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-data-server-ui-marshal.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-data-server-ui-marshal.Tpo -c -o libedataserverui_3_0_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-data-server-ui-marshal.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-data-server-ui-marshal.Plo
-	$(AM_V_CC)source='e-data-server-ui-marshal.c' object='libedataserverui_3_0_la-e-data-server-ui-marshal.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-data-server-ui-marshal.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-data-server-ui-marshal.Tpo -c -o libedataserverui_3_0_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-data-server-ui-marshal.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-data-server-ui-marshal.Plo
+#	$(AM_V_CC)source='e-data-server-ui-marshal.c' object='libedataserverui_3_0_la-e-data-server-ui-marshal.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-data-server-ui-marshal.lo `test -f 'e-data-server-ui-marshal.c' || echo '$(srcdir)/'`e-data-server-ui-marshal.c
 
 libedataserverui_3_0_la-e-categories-dialog.lo: e-categories-dialog.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-categories-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-categories-dialog.Tpo -c -o libedataserverui_3_0_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-categories-dialog.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-categories-dialog.Plo
-	$(AM_V_CC)source='e-categories-dialog.c' object='libedataserverui_3_0_la-e-categories-dialog.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-categories-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-categories-dialog.Tpo -c -o libedataserverui_3_0_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-categories-dialog.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-categories-dialog.Plo
+#	$(AM_V_CC)source='e-categories-dialog.c' object='libedataserverui_3_0_la-e-categories-dialog.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-categories-dialog.lo `test -f 'e-categories-dialog.c' || echo '$(srcdir)/'`e-categories-dialog.c
 
 libedataserverui_3_0_la-e-category-completion.lo: e-category-completion.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-category-completion.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-category-completion.Tpo -c -o libedataserverui_3_0_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-category-completion.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-category-completion.Plo
-	$(AM_V_CC)source='e-category-completion.c' object='libedataserverui_3_0_la-e-category-completion.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-category-completion.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-category-completion.Tpo -c -o libedataserverui_3_0_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-category-completion.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-category-completion.Plo
+#	$(AM_V_CC)source='e-category-completion.c' object='libedataserverui_3_0_la-e-category-completion.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-category-completion.lo `test -f 'e-category-completion.c' || echo '$(srcdir)/'`e-category-completion.c
 
 libedataserverui_3_0_la-e-destination-store.lo: e-destination-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-destination-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-destination-store.Tpo -c -o libedataserverui_3_0_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-destination-store.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-destination-store.Plo
-	$(AM_V_CC)source='e-destination-store.c' object='libedataserverui_3_0_la-e-destination-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-destination-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-destination-store.Tpo -c -o libedataserverui_3_0_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-destination-store.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-destination-store.Plo
+#	$(AM_V_CC)source='e-destination-store.c' object='libedataserverui_3_0_la-e-destination-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-destination-store.lo `test -f 'e-destination-store.c' || echo '$(srcdir)/'`e-destination-store.c
 
 libedataserverui_3_0_la-e-book-auth-util.lo: e-book-auth-util.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-book-auth-util.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-book-auth-util.Tpo -c -o libedataserverui_3_0_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-book-auth-util.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-book-auth-util.Plo
-	$(AM_V_CC)source='e-book-auth-util.c' object='libedataserverui_3_0_la-e-book-auth-util.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-book-auth-util.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-book-auth-util.Tpo -c -o libedataserverui_3_0_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-book-auth-util.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-book-auth-util.Plo
+#	$(AM_V_CC)source='e-book-auth-util.c' object='libedataserverui_3_0_la-e-book-auth-util.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-book-auth-util.lo `test -f 'e-book-auth-util.c' || echo '$(srcdir)/'`e-book-auth-util.c
 
 libedataserverui_3_0_la-e-contact-store.lo: e-contact-store.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-contact-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-contact-store.Tpo -c -o libedataserverui_3_0_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-contact-store.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-contact-store.Plo
-	$(AM_V_CC)source='e-contact-store.c' object='libedataserverui_3_0_la-e-contact-store.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-contact-store.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-contact-store.Tpo -c -o libedataserverui_3_0_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-contact-store.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-contact-store.Plo
+#	$(AM_V_CC)source='e-contact-store.c' object='libedataserverui_3_0_la-e-contact-store.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-contact-store.lo `test -f 'e-contact-store.c' || echo '$(srcdir)/'`e-contact-store.c
 
 libedataserverui_3_0_la-e-name-selector.lo: e-name-selector.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector.Tpo -c -o libedataserverui_3_0_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector.Plo
-	$(AM_V_CC)source='e-name-selector.c' object='libedataserverui_3_0_la-e-name-selector.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector.Tpo -c -o libedataserverui_3_0_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector.Plo
+#	$(AM_V_CC)source='e-name-selector.c' object='libedataserverui_3_0_la-e-name-selector.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector.lo `test -f 'e-name-selector.c' || echo '$(srcdir)/'`e-name-selector.c
 
 libedataserverui_3_0_la-e-name-selector-dialog.lo: e-name-selector-dialog.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-dialog.Tpo -c -o libedataserverui_3_0_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-dialog.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-dialog.Plo
-	$(AM_V_CC)source='e-name-selector-dialog.c' object='libedataserverui_3_0_la-e-name-selector-dialog.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-dialog.Tpo -c -o libedataserverui_3_0_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-dialog.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-dialog.Plo
+#	$(AM_V_CC)source='e-name-selector-dialog.c' object='libedataserverui_3_0_la-e-name-selector-dialog.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-dialog.lo `test -f 'e-name-selector-dialog.c' || echo '$(srcdir)/'`e-name-selector-dialog.c
 
 libedataserverui_3_0_la-e-name-selector-entry.lo: e-name-selector-entry.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-entry.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-entry.Tpo -c -o libedataserverui_3_0_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-entry.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-entry.Plo
-	$(AM_V_CC)source='e-name-selector-entry.c' object='libedataserverui_3_0_la-e-name-selector-entry.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-entry.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-entry.Tpo -c -o libedataserverui_3_0_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-entry.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-entry.Plo
+#	$(AM_V_CC)source='e-name-selector-entry.c' object='libedataserverui_3_0_la-e-name-selector-entry.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-entry.lo `test -f 'e-name-selector-entry.c' || echo '$(srcdir)/'`e-name-selector-entry.c
 
 libedataserverui_3_0_la-e-name-selector-model.lo: e-name-selector-model.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-model.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-model.Tpo -c -o libedataserverui_3_0_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-model.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-model.Plo
-	$(AM_V_CC)source='e-name-selector-model.c' object='libedataserverui_3_0_la-e-name-selector-model.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-model.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-model.Tpo -c -o libedataserverui_3_0_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-model.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-model.Plo
+#	$(AM_V_CC)source='e-name-selector-model.c' object='libedataserverui_3_0_la-e-name-selector-model.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-model.lo `test -f 'e-name-selector-model.c' || echo '$(srcdir)/'`e-name-selector-model.c
 
 libedataserverui_3_0_la-e-name-selector-list.lo: e-name-selector-list.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-list.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-list.Tpo -c -o libedataserverui_3_0_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-list.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-list.Plo
-	$(AM_V_CC)source='e-name-selector-list.c' object='libedataserverui_3_0_la-e-name-selector-list.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-name-selector-list.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-list.Tpo -c -o libedataserverui_3_0_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-list.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-name-selector-list.Plo
+#	$(AM_V_CC)source='e-name-selector-list.c' object='libedataserverui_3_0_la-e-name-selector-list.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-name-selector-list.lo `test -f 'e-name-selector-list.c' || echo '$(srcdir)/'`e-name-selector-list.c
 
 libedataserverui_3_0_la-e-passwords.lo: e-passwords.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-passwords.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-passwords.Tpo -c -o libedataserverui_3_0_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-passwords.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-passwords.Plo
-	$(AM_V_CC)source='e-passwords.c' object='libedataserverui_3_0_la-e-passwords.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-passwords.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-passwords.Tpo -c -o libedataserverui_3_0_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-passwords.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-passwords.Plo
+#	$(AM_V_CC)source='e-passwords.c' object='libedataserverui_3_0_la-e-passwords.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-passwords.lo `test -f 'e-passwords.c' || echo '$(srcdir)/'`e-passwords.c
 
 libedataserverui_3_0_la-e-source-selector.lo: e-source-selector.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-source-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-source-selector.Tpo -c -o libedataserverui_3_0_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-source-selector.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-source-selector.Plo
-	$(AM_V_CC)source='e-source-selector.c' object='libedataserverui_3_0_la-e-source-selector.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-source-selector.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-source-selector.Tpo -c -o libedataserverui_3_0_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-source-selector.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-source-selector.Plo
+#	$(AM_V_CC)source='e-source-selector.c' object='libedataserverui_3_0_la-e-source-selector.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-source-selector.lo `test -f 'e-source-selector.c' || echo '$(srcdir)/'`e-source-selector.c
 
 libedataserverui_3_0_la-e-source-selector-dialog.lo: e-source-selector-dialog.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-source-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-source-selector-dialog.Tpo -c -o libedataserverui_3_0_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-source-selector-dialog.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-source-selector-dialog.Plo
-	$(AM_V_CC)source='e-source-selector-dialog.c' object='libedataserverui_3_0_la-e-source-selector-dialog.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-source-selector-dialog.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-source-selector-dialog.Tpo -c -o libedataserverui_3_0_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-source-selector-dialog.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-source-selector-dialog.Plo
+#	$(AM_V_CC)source='e-source-selector-dialog.c' object='libedataserverui_3_0_la-e-source-selector-dialog.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-source-selector-dialog.lo `test -f 'e-source-selector-dialog.c' || echo '$(srcdir)/'`e-source-selector-dialog.c
 
 libedataserverui_3_0_la-e-source-combo-box.lo: e-source-combo-box.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-source-combo-box.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-source-combo-box.Tpo -c -o libedataserverui_3_0_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-source-combo-box.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-source-combo-box.Plo
-	$(AM_V_CC)source='e-source-combo-box.c' object='libedataserverui_3_0_la-e-source-combo-box.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-source-combo-box.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-source-combo-box.Tpo -c -o libedataserverui_3_0_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-source-combo-box.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-source-combo-box.Plo
+#	$(AM_V_CC)source='e-source-combo-box.c' object='libedataserverui_3_0_la-e-source-combo-box.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-source-combo-box.lo `test -f 'e-source-combo-box.c' || echo '$(srcdir)/'`e-source-combo-box.c
 
 libedataserverui_3_0_la-e-tree-model-generator.lo: e-tree-model-generator.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-tree-model-generator.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-tree-model-generator.Tpo -c -o libedataserverui_3_0_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-tree-model-generator.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-tree-model-generator.Plo
-	$(AM_V_CC)source='e-tree-model-generator.c' object='libedataserverui_3_0_la-e-tree-model-generator.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-tree-model-generator.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-tree-model-generator.Tpo -c -o libedataserverui_3_0_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-tree-model-generator.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-tree-model-generator.Plo
+#	$(AM_V_CC)source='e-tree-model-generator.c' object='libedataserverui_3_0_la-e-tree-model-generator.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-tree-model-generator.lo `test -f 'e-tree-model-generator.c' || echo '$(srcdir)/'`e-tree-model-generator.c
 
 libedataserverui_3_0_la-e-cell-renderer-color.lo: e-cell-renderer-color.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-cell-renderer-color.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-cell-renderer-color.Tpo -c -o libedataserverui_3_0_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-cell-renderer-color.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-cell-renderer-color.Plo
-	$(AM_V_CC)source='e-cell-renderer-color.c' object='libedataserverui_3_0_la-e-cell-renderer-color.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libedataserverui_3_0_la-e-cell-renderer-color.lo -MD -MP -MF $(DEPDIR)/libedataserverui_3_0_la-e-cell-renderer-color.Tpo -c -o libedataserverui_3_0_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libedataserverui_3_0_la-e-cell-renderer-color.Tpo $(DEPDIR)/libedataserverui_3_0_la-e-cell-renderer-color.Plo
+#	$(AM_V_CC)source='e-cell-renderer-color.c' object='libedataserverui_3_0_la-e-cell-renderer-color.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libedataserverui_3_0_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libedataserverui_3_0_la-e-cell-renderer-color.lo `test -f 'e-cell-renderer-color.c' || echo '$(srcdir)/'`e-cell-renderer-color.c
 
 test_category_completion-test-category-completion.o: test-category-completion.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_category_completion-test-category-completion.o -MD -MP -MF $(DEPDIR)/test_category_completion-test-category-completion.Tpo -c -o test_category_completion-test-category-completion.o `test -f 'test-category-completion.c' || echo '$(srcdir)/'`test-category-completion.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_category_completion-test-category-completion.Tpo $(DEPDIR)/test_category_completion-test-category-completion.Po
-	$(AM_V_CC)source='test-category-completion.c' object='test_category_completion-test-category-completion.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_category_completion-test-category-completion.o `test -f 'test-category-completion.c' || echo '$(srcdir)/'`test-category-completion.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_category_completion-test-category-completion.o -MD -MP -MF $(DEPDIR)/test_category_completion-test-category-completion.Tpo -c -o test_category_completion-test-category-completion.o `test -f 'test-category-completion.c' || echo '$(srcdir)/'`test-category-completion.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_category_completion-test-category-completion.Tpo $(DEPDIR)/test_category_completion-test-category-completion.Po
+#	$(AM_V_CC)source='test-category-completion.c' object='test_category_completion-test-category-completion.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_category_completion-test-category-completion.o `test -f 'test-category-completion.c' || echo '$(srcdir)/'`test-category-completion.c
 
 test_category_completion-test-category-completion.obj: test-category-completion.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_category_completion-test-category-completion.obj -MD -MP -MF $(DEPDIR)/test_category_completion-test-category-completion.Tpo -c -o test_category_completion-test-category-completion.obj `if test -f 'test-category-completion.c'; then $(CYGPATH_W) 'test-category-completion.c'; else $(CYGPATH_W) '$(srcdir)/test-category-completion.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_category_completion-test-category-completion.Tpo $(DEPDIR)/test_category_completion-test-category-completion.Po
-	$(AM_V_CC)source='test-category-completion.c' object='test_category_completion-test-category-completion.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_category_completion-test-category-completion.obj `if test -f 'test-category-completion.c'; then $(CYGPATH_W) 'test-category-completion.c'; else $(CYGPATH_W) '$(srcdir)/test-category-completion.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_category_completion-test-category-completion.obj -MD -MP -MF $(DEPDIR)/test_category_completion-test-category-completion.Tpo -c -o test_category_completion-test-category-completion.obj `if test -f 'test-category-completion.c'; then $(CYGPATH_W) 'test-category-completion.c'; else $(CYGPATH_W) '$(srcdir)/test-category-completion.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_category_completion-test-category-completion.Tpo $(DEPDIR)/test_category_completion-test-category-completion.Po
+#	$(AM_V_CC)source='test-category-completion.c' object='test_category_completion-test-category-completion.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_category_completion_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_category_completion-test-category-completion.obj `if test -f 'test-category-completion.c'; then $(CYGPATH_W) 'test-category-completion.c'; else $(CYGPATH_W) '$(srcdir)/test-category-completion.c'; fi`
 
 test_contact_store-test-contact-store.o: test-contact-store.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_contact_store-test-contact-store.o -MD -MP -MF $(DEPDIR)/test_contact_store-test-contact-store.Tpo -c -o test_contact_store-test-contact-store.o `test -f 'test-contact-store.c' || echo '$(srcdir)/'`test-contact-store.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_contact_store-test-contact-store.Tpo $(DEPDIR)/test_contact_store-test-contact-store.Po
-	$(AM_V_CC)source='test-contact-store.c' object='test_contact_store-test-contact-store.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_contact_store-test-contact-store.o `test -f 'test-contact-store.c' || echo '$(srcdir)/'`test-contact-store.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_contact_store-test-contact-store.o -MD -MP -MF $(DEPDIR)/test_contact_store-test-contact-store.Tpo -c -o test_contact_store-test-contact-store.o `test -f 'test-contact-store.c' || echo '$(srcdir)/'`test-contact-store.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_contact_store-test-contact-store.Tpo $(DEPDIR)/test_contact_store-test-contact-store.Po
+#	$(AM_V_CC)source='test-contact-store.c' object='test_contact_store-test-contact-store.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_contact_store-test-contact-store.o `test -f 'test-contact-store.c' || echo '$(srcdir)/'`test-contact-store.c
 
 test_contact_store-test-contact-store.obj: test-contact-store.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_contact_store-test-contact-store.obj -MD -MP -MF $(DEPDIR)/test_contact_store-test-contact-store.Tpo -c -o test_contact_store-test-contact-store.obj `if test -f 'test-contact-store.c'; then $(CYGPATH_W) 'test-contact-store.c'; else $(CYGPATH_W) '$(srcdir)/test-contact-store.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_contact_store-test-contact-store.Tpo $(DEPDIR)/test_contact_store-test-contact-store.Po
-	$(AM_V_CC)source='test-contact-store.c' object='test_contact_store-test-contact-store.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_contact_store-test-contact-store.obj `if test -f 'test-contact-store.c'; then $(CYGPATH_W) 'test-contact-store.c'; else $(CYGPATH_W) '$(srcdir)/test-contact-store.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_contact_store-test-contact-store.obj -MD -MP -MF $(DEPDIR)/test_contact_store-test-contact-store.Tpo -c -o test_contact_store-test-contact-store.obj `if test -f 'test-contact-store.c'; then $(CYGPATH_W) 'test-contact-store.c'; else $(CYGPATH_W) '$(srcdir)/test-contact-store.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_contact_store-test-contact-store.Tpo $(DEPDIR)/test_contact_store-test-contact-store.Po
+#	$(AM_V_CC)source='test-contact-store.c' object='test_contact_store-test-contact-store.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_contact_store_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_contact_store-test-contact-store.obj `if test -f 'test-contact-store.c'; then $(CYGPATH_W) 'test-contact-store.c'; else $(CYGPATH_W) '$(srcdir)/test-contact-store.c'; fi`
 
 test_name_selector-test-name-selector.o: test-name-selector.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_name_selector-test-name-selector.o -MD -MP -MF $(DEPDIR)/test_name_selector-test-name-selector.Tpo -c -o test_name_selector-test-name-selector.o `test -f 'test-name-selector.c' || echo '$(srcdir)/'`test-name-selector.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_name_selector-test-name-selector.Tpo $(DEPDIR)/test_name_selector-test-name-selector.Po
-	$(AM_V_CC)source='test-name-selector.c' object='test_name_selector-test-name-selector.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_name_selector-test-name-selector.o `test -f 'test-name-selector.c' || echo '$(srcdir)/'`test-name-selector.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_name_selector-test-name-selector.o -MD -MP -MF $(DEPDIR)/test_name_selector-test-name-selector.Tpo -c -o test_name_selector-test-name-selector.o `test -f 'test-name-selector.c' || echo '$(srcdir)/'`test-name-selector.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_name_selector-test-name-selector.Tpo $(DEPDIR)/test_name_selector-test-name-selector.Po
+#	$(AM_V_CC)source='test-name-selector.c' object='test_name_selector-test-name-selector.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_name_selector-test-name-selector.o `test -f 'test-name-selector.c' || echo '$(srcdir)/'`test-name-selector.c
 
 test_name_selector-test-name-selector.obj: test-name-selector.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_name_selector-test-name-selector.obj -MD -MP -MF $(DEPDIR)/test_name_selector-test-name-selector.Tpo -c -o test_name_selector-test-name-selector.obj `if test -f 'test-name-selector.c'; then $(CYGPATH_W) 'test-name-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-name-selector.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_name_selector-test-name-selector.Tpo $(DEPDIR)/test_name_selector-test-name-selector.Po
-	$(AM_V_CC)source='test-name-selector.c' object='test_name_selector-test-name-selector.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_name_selector-test-name-selector.obj `if test -f 'test-name-selector.c'; then $(CYGPATH_W) 'test-name-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-name-selector.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_name_selector-test-name-selector.obj -MD -MP -MF $(DEPDIR)/test_name_selector-test-name-selector.Tpo -c -o test_name_selector-test-name-selector.obj `if test -f 'test-name-selector.c'; then $(CYGPATH_W) 'test-name-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-name-selector.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_name_selector-test-name-selector.Tpo $(DEPDIR)/test_name_selector-test-name-selector.Po
+#	$(AM_V_CC)source='test-name-selector.c' object='test_name_selector-test-name-selector.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_name_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_name_selector-test-name-selector.obj `if test -f 'test-name-selector.c'; then $(CYGPATH_W) 'test-name-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-name-selector.c'; fi`
 
 test_source_combo_box-test-source-combo-box.o: test-source-combo-box.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_combo_box-test-source-combo-box.o -MD -MP -MF $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo -c -o test_source_combo_box-test-source-combo-box.o `test -f 'test-source-combo-box.c' || echo '$(srcdir)/'`test-source-combo-box.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo $(DEPDIR)/test_source_combo_box-test-source-combo-box.Po
-	$(AM_V_CC)source='test-source-combo-box.c' object='test_source_combo_box-test-source-combo-box.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_combo_box-test-source-combo-box.o `test -f 'test-source-combo-box.c' || echo '$(srcdir)/'`test-source-combo-box.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_combo_box-test-source-combo-box.o -MD -MP -MF $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo -c -o test_source_combo_box-test-source-combo-box.o `test -f 'test-source-combo-box.c' || echo '$(srcdir)/'`test-source-combo-box.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo $(DEPDIR)/test_source_combo_box-test-source-combo-box.Po
+#	$(AM_V_CC)source='test-source-combo-box.c' object='test_source_combo_box-test-source-combo-box.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_combo_box-test-source-combo-box.o `test -f 'test-source-combo-box.c' || echo '$(srcdir)/'`test-source-combo-box.c
 
 test_source_combo_box-test-source-combo-box.obj: test-source-combo-box.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_combo_box-test-source-combo-box.obj -MD -MP -MF $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo -c -o test_source_combo_box-test-source-combo-box.obj `if test -f 'test-source-combo-box.c'; then $(CYGPATH_W) 'test-source-combo-box.c'; else $(CYGPATH_W) '$(srcdir)/test-source-combo-box.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo $(DEPDIR)/test_source_combo_box-test-source-combo-box.Po
-	$(AM_V_CC)source='test-source-combo-box.c' object='test_source_combo_box-test-source-combo-box.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_combo_box-test-source-combo-box.obj `if test -f 'test-source-combo-box.c'; then $(CYGPATH_W) 'test-source-combo-box.c'; else $(CYGPATH_W) '$(srcdir)/test-source-combo-box.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_combo_box-test-source-combo-box.obj -MD -MP -MF $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo -c -o test_source_combo_box-test-source-combo-box.obj `if test -f 'test-source-combo-box.c'; then $(CYGPATH_W) 'test-source-combo-box.c'; else $(CYGPATH_W) '$(srcdir)/test-source-combo-box.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_combo_box-test-source-combo-box.Tpo $(DEPDIR)/test_source_combo_box-test-source-combo-box.Po
+#	$(AM_V_CC)source='test-source-combo-box.c' object='test_source_combo_box-test-source-combo-box.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_combo_box_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_combo_box-test-source-combo-box.obj `if test -f 'test-source-combo-box.c'; then $(CYGPATH_W) 'test-source-combo-box.c'; else $(CYGPATH_W) '$(srcdir)/test-source-combo-box.c'; fi`
 
 test_source_selector-test-source-selector.o: test-source-selector.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_selector-test-source-selector.o -MD -MP -MF $(DEPDIR)/test_source_selector-test-source-selector.Tpo -c -o test_source_selector-test-source-selector.o `test -f 'test-source-selector.c' || echo '$(srcdir)/'`test-source-selector.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_selector-test-source-selector.Tpo $(DEPDIR)/test_source_selector-test-source-selector.Po
-	$(AM_V_CC)source='test-source-selector.c' object='test_source_selector-test-source-selector.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_selector-test-source-selector.o `test -f 'test-source-selector.c' || echo '$(srcdir)/'`test-source-selector.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_selector-test-source-selector.o -MD -MP -MF $(DEPDIR)/test_source_selector-test-source-selector.Tpo -c -o test_source_selector-test-source-selector.o `test -f 'test-source-selector.c' || echo '$(srcdir)/'`test-source-selector.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_selector-test-source-selector.Tpo $(DEPDIR)/test_source_selector-test-source-selector.Po
+#	$(AM_V_CC)source='test-source-selector.c' object='test_source_selector-test-source-selector.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_selector-test-source-selector.o `test -f 'test-source-selector.c' || echo '$(srcdir)/'`test-source-selector.c
 
 test_source_selector-test-source-selector.obj: test-source-selector.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_selector-test-source-selector.obj -MD -MP -MF $(DEPDIR)/test_source_selector-test-source-selector.Tpo -c -o test_source_selector-test-source-selector.obj `if test -f 'test-source-selector.c'; then $(CYGPATH_W) 'test-source-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-source-selector.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_selector-test-source-selector.Tpo $(DEPDIR)/test_source_selector-test-source-selector.Po
-	$(AM_V_CC)source='test-source-selector.c' object='test_source_selector-test-source-selector.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_selector-test-source-selector.obj `if test -f 'test-source-selector.c'; then $(CYGPATH_W) 'test-source-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-source-selector.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_source_selector-test-source-selector.obj -MD -MP -MF $(DEPDIR)/test_source_selector-test-source-selector.Tpo -c -o test_source_selector-test-source-selector.obj `if test -f 'test-source-selector.c'; then $(CYGPATH_W) 'test-source-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-source-selector.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_source_selector-test-source-selector.Tpo $(DEPDIR)/test_source_selector-test-source-selector.Po
+#	$(AM_V_CC)source='test-source-selector.c' object='test_source_selector-test-source-selector.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_source_selector_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_source_selector-test-source-selector.obj `if test -f 'test-source-selector.c'; then $(CYGPATH_W) 'test-source-selector.c'; else $(CYGPATH_W) '$(srcdir)/test-source-selector.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

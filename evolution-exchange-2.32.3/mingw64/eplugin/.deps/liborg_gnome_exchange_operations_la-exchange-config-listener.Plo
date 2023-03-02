@@ -1,5 +1,6 @@
 liborg_gnome_exchange_operations_la-exchange-config-listener.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  \
  ../../eplugin/exchange-config-listener.c ../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
@@ -7,6 +8,11 @@ liborg_gnome_exchange_operations_la-exchange-config-listener.lo : \
  ../../eplugin/exchange-config-listener.c \
  ../config.h D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ \
+ ../../eplugin/exchange-config-listener.c ../config.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
@@ -874,9 +880,13 @@ liborg_gnome_exchange_operations_la-exchange-config-listener.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-passwords.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-config-listener.c :
 ../config.h :
 D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h :

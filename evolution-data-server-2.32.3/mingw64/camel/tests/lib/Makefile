@@ -157,6 +157,7 @@ CATALOGS =
 CATOBJEXT = .gmo
 CC = gcc
 <<<<<<< HEAD
+<<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
@@ -167,6 +168,12 @@ CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-depre
 CPP = gcc -E
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
+CPP = gcc -E
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -195,10 +202,14 @@ E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../i
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 <<<<<<< HEAD
+<<<<<<< HEAD
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 =======
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -217,10 +228,14 @@ GNOME_KEYRING_CFLAGS =
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
 <<<<<<< HEAD
+<<<<<<< HEAD
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 =======
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -343,10 +358,14 @@ SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 <<<<<<< HEAD
+<<<<<<< HEAD
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 =======
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -516,123 +535,123 @@ include ./$(DEPDIR)/libcameltest_a-streams.Po
 include ./$(DEPDIR)/libcameltest_provider_a-camel-test-provider.Po
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libcameltest_provider_a-camel-test-provider.o: camel-test-provider.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_provider_a-camel-test-provider.o -MD -MP -MF $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo -c -o libcameltest_provider_a-camel-test-provider.o `test -f 'camel-test-provider.c' || echo '$(srcdir)/'`camel-test-provider.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Po
-	$(AM_V_CC)source='camel-test-provider.c' object='libcameltest_provider_a-camel-test-provider.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_provider_a-camel-test-provider.o `test -f 'camel-test-provider.c' || echo '$(srcdir)/'`camel-test-provider.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_provider_a-camel-test-provider.o -MD -MP -MF $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo -c -o libcameltest_provider_a-camel-test-provider.o `test -f 'camel-test-provider.c' || echo '$(srcdir)/'`camel-test-provider.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Po
+#	$(AM_V_CC)source='camel-test-provider.c' object='libcameltest_provider_a-camel-test-provider.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_provider_a-camel-test-provider.o `test -f 'camel-test-provider.c' || echo '$(srcdir)/'`camel-test-provider.c
 
 libcameltest_provider_a-camel-test-provider.obj: camel-test-provider.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_provider_a-camel-test-provider.obj -MD -MP -MF $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo -c -o libcameltest_provider_a-camel-test-provider.obj `if test -f 'camel-test-provider.c'; then $(CYGPATH_W) 'camel-test-provider.c'; else $(CYGPATH_W) '$(srcdir)/camel-test-provider.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Po
-	$(AM_V_CC)source='camel-test-provider.c' object='libcameltest_provider_a-camel-test-provider.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_provider_a-camel-test-provider.obj `if test -f 'camel-test-provider.c'; then $(CYGPATH_W) 'camel-test-provider.c'; else $(CYGPATH_W) '$(srcdir)/camel-test-provider.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_provider_a-camel-test-provider.obj -MD -MP -MF $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo -c -o libcameltest_provider_a-camel-test-provider.obj `if test -f 'camel-test-provider.c'; then $(CYGPATH_W) 'camel-test-provider.c'; else $(CYGPATH_W) '$(srcdir)/camel-test-provider.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Tpo $(DEPDIR)/libcameltest_provider_a-camel-test-provider.Po
+#	$(AM_V_CC)source='camel-test-provider.c' object='libcameltest_provider_a-camel-test-provider.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_provider_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_provider_a-camel-test-provider.obj `if test -f 'camel-test-provider.c'; then $(CYGPATH_W) 'camel-test-provider.c'; else $(CYGPATH_W) '$(srcdir)/camel-test-provider.c'; fi`
 
 libcameltest_a-camel-test.o: camel-test.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-camel-test.o -MD -MP -MF $(DEPDIR)/libcameltest_a-camel-test.Tpo -c -o libcameltest_a-camel-test.o `test -f 'camel-test.c' || echo '$(srcdir)/'`camel-test.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-camel-test.Tpo $(DEPDIR)/libcameltest_a-camel-test.Po
-	$(AM_V_CC)source='camel-test.c' object='libcameltest_a-camel-test.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-camel-test.o `test -f 'camel-test.c' || echo '$(srcdir)/'`camel-test.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-camel-test.o -MD -MP -MF $(DEPDIR)/libcameltest_a-camel-test.Tpo -c -o libcameltest_a-camel-test.o `test -f 'camel-test.c' || echo '$(srcdir)/'`camel-test.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-camel-test.Tpo $(DEPDIR)/libcameltest_a-camel-test.Po
+#	$(AM_V_CC)source='camel-test.c' object='libcameltest_a-camel-test.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-camel-test.o `test -f 'camel-test.c' || echo '$(srcdir)/'`camel-test.c
 
 libcameltest_a-camel-test.obj: camel-test.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-camel-test.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-camel-test.Tpo -c -o libcameltest_a-camel-test.obj `if test -f 'camel-test.c'; then $(CYGPATH_W) 'camel-test.c'; else $(CYGPATH_W) '$(srcdir)/camel-test.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-camel-test.Tpo $(DEPDIR)/libcameltest_a-camel-test.Po
-	$(AM_V_CC)source='camel-test.c' object='libcameltest_a-camel-test.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-camel-test.obj `if test -f 'camel-test.c'; then $(CYGPATH_W) 'camel-test.c'; else $(CYGPATH_W) '$(srcdir)/camel-test.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-camel-test.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-camel-test.Tpo -c -o libcameltest_a-camel-test.obj `if test -f 'camel-test.c'; then $(CYGPATH_W) 'camel-test.c'; else $(CYGPATH_W) '$(srcdir)/camel-test.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-camel-test.Tpo $(DEPDIR)/libcameltest_a-camel-test.Po
+#	$(AM_V_CC)source='camel-test.c' object='libcameltest_a-camel-test.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-camel-test.obj `if test -f 'camel-test.c'; then $(CYGPATH_W) 'camel-test.c'; else $(CYGPATH_W) '$(srcdir)/camel-test.c'; fi`
 
 libcameltest_a-messages.o: messages.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-messages.o -MD -MP -MF $(DEPDIR)/libcameltest_a-messages.Tpo -c -o libcameltest_a-messages.o `test -f 'messages.c' || echo '$(srcdir)/'`messages.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-messages.Tpo $(DEPDIR)/libcameltest_a-messages.Po
-	$(AM_V_CC)source='messages.c' object='libcameltest_a-messages.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-messages.o `test -f 'messages.c' || echo '$(srcdir)/'`messages.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-messages.o -MD -MP -MF $(DEPDIR)/libcameltest_a-messages.Tpo -c -o libcameltest_a-messages.o `test -f 'messages.c' || echo '$(srcdir)/'`messages.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-messages.Tpo $(DEPDIR)/libcameltest_a-messages.Po
+#	$(AM_V_CC)source='messages.c' object='libcameltest_a-messages.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-messages.o `test -f 'messages.c' || echo '$(srcdir)/'`messages.c
 
 libcameltest_a-messages.obj: messages.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-messages.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-messages.Tpo -c -o libcameltest_a-messages.obj `if test -f 'messages.c'; then $(CYGPATH_W) 'messages.c'; else $(CYGPATH_W) '$(srcdir)/messages.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-messages.Tpo $(DEPDIR)/libcameltest_a-messages.Po
-	$(AM_V_CC)source='messages.c' object='libcameltest_a-messages.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-messages.obj `if test -f 'messages.c'; then $(CYGPATH_W) 'messages.c'; else $(CYGPATH_W) '$(srcdir)/messages.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-messages.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-messages.Tpo -c -o libcameltest_a-messages.obj `if test -f 'messages.c'; then $(CYGPATH_W) 'messages.c'; else $(CYGPATH_W) '$(srcdir)/messages.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-messages.Tpo $(DEPDIR)/libcameltest_a-messages.Po
+#	$(AM_V_CC)source='messages.c' object='libcameltest_a-messages.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-messages.obj `if test -f 'messages.c'; then $(CYGPATH_W) 'messages.c'; else $(CYGPATH_W) '$(srcdir)/messages.c'; fi`
 
 libcameltest_a-addresses.o: addresses.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-addresses.o -MD -MP -MF $(DEPDIR)/libcameltest_a-addresses.Tpo -c -o libcameltest_a-addresses.o `test -f 'addresses.c' || echo '$(srcdir)/'`addresses.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-addresses.Tpo $(DEPDIR)/libcameltest_a-addresses.Po
-	$(AM_V_CC)source='addresses.c' object='libcameltest_a-addresses.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-addresses.o `test -f 'addresses.c' || echo '$(srcdir)/'`addresses.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-addresses.o -MD -MP -MF $(DEPDIR)/libcameltest_a-addresses.Tpo -c -o libcameltest_a-addresses.o `test -f 'addresses.c' || echo '$(srcdir)/'`addresses.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-addresses.Tpo $(DEPDIR)/libcameltest_a-addresses.Po
+#	$(AM_V_CC)source='addresses.c' object='libcameltest_a-addresses.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-addresses.o `test -f 'addresses.c' || echo '$(srcdir)/'`addresses.c
 
 libcameltest_a-addresses.obj: addresses.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-addresses.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-addresses.Tpo -c -o libcameltest_a-addresses.obj `if test -f 'addresses.c'; then $(CYGPATH_W) 'addresses.c'; else $(CYGPATH_W) '$(srcdir)/addresses.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-addresses.Tpo $(DEPDIR)/libcameltest_a-addresses.Po
-	$(AM_V_CC)source='addresses.c' object='libcameltest_a-addresses.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-addresses.obj `if test -f 'addresses.c'; then $(CYGPATH_W) 'addresses.c'; else $(CYGPATH_W) '$(srcdir)/addresses.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-addresses.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-addresses.Tpo -c -o libcameltest_a-addresses.obj `if test -f 'addresses.c'; then $(CYGPATH_W) 'addresses.c'; else $(CYGPATH_W) '$(srcdir)/addresses.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-addresses.Tpo $(DEPDIR)/libcameltest_a-addresses.Po
+#	$(AM_V_CC)source='addresses.c' object='libcameltest_a-addresses.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-addresses.obj `if test -f 'addresses.c'; then $(CYGPATH_W) 'addresses.c'; else $(CYGPATH_W) '$(srcdir)/addresses.c'; fi`
 
 libcameltest_a-folders.o: folders.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-folders.o -MD -MP -MF $(DEPDIR)/libcameltest_a-folders.Tpo -c -o libcameltest_a-folders.o `test -f 'folders.c' || echo '$(srcdir)/'`folders.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-folders.Tpo $(DEPDIR)/libcameltest_a-folders.Po
-	$(AM_V_CC)source='folders.c' object='libcameltest_a-folders.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-folders.o `test -f 'folders.c' || echo '$(srcdir)/'`folders.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-folders.o -MD -MP -MF $(DEPDIR)/libcameltest_a-folders.Tpo -c -o libcameltest_a-folders.o `test -f 'folders.c' || echo '$(srcdir)/'`folders.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-folders.Tpo $(DEPDIR)/libcameltest_a-folders.Po
+#	$(AM_V_CC)source='folders.c' object='libcameltest_a-folders.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-folders.o `test -f 'folders.c' || echo '$(srcdir)/'`folders.c
 
 libcameltest_a-folders.obj: folders.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-folders.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-folders.Tpo -c -o libcameltest_a-folders.obj `if test -f 'folders.c'; then $(CYGPATH_W) 'folders.c'; else $(CYGPATH_W) '$(srcdir)/folders.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-folders.Tpo $(DEPDIR)/libcameltest_a-folders.Po
-	$(AM_V_CC)source='folders.c' object='libcameltest_a-folders.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-folders.obj `if test -f 'folders.c'; then $(CYGPATH_W) 'folders.c'; else $(CYGPATH_W) '$(srcdir)/folders.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-folders.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-folders.Tpo -c -o libcameltest_a-folders.obj `if test -f 'folders.c'; then $(CYGPATH_W) 'folders.c'; else $(CYGPATH_W) '$(srcdir)/folders.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-folders.Tpo $(DEPDIR)/libcameltest_a-folders.Po
+#	$(AM_V_CC)source='folders.c' object='libcameltest_a-folders.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-folders.obj `if test -f 'folders.c'; then $(CYGPATH_W) 'folders.c'; else $(CYGPATH_W) '$(srcdir)/folders.c'; fi`
 
 libcameltest_a-session.o: session.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-session.o -MD -MP -MF $(DEPDIR)/libcameltest_a-session.Tpo -c -o libcameltest_a-session.o `test -f 'session.c' || echo '$(srcdir)/'`session.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-session.Tpo $(DEPDIR)/libcameltest_a-session.Po
-	$(AM_V_CC)source='session.c' object='libcameltest_a-session.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-session.o `test -f 'session.c' || echo '$(srcdir)/'`session.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-session.o -MD -MP -MF $(DEPDIR)/libcameltest_a-session.Tpo -c -o libcameltest_a-session.o `test -f 'session.c' || echo '$(srcdir)/'`session.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-session.Tpo $(DEPDIR)/libcameltest_a-session.Po
+#	$(AM_V_CC)source='session.c' object='libcameltest_a-session.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-session.o `test -f 'session.c' || echo '$(srcdir)/'`session.c
 
 libcameltest_a-session.obj: session.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-session.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-session.Tpo -c -o libcameltest_a-session.obj `if test -f 'session.c'; then $(CYGPATH_W) 'session.c'; else $(CYGPATH_W) '$(srcdir)/session.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-session.Tpo $(DEPDIR)/libcameltest_a-session.Po
-	$(AM_V_CC)source='session.c' object='libcameltest_a-session.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-session.obj `if test -f 'session.c'; then $(CYGPATH_W) 'session.c'; else $(CYGPATH_W) '$(srcdir)/session.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-session.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-session.Tpo -c -o libcameltest_a-session.obj `if test -f 'session.c'; then $(CYGPATH_W) 'session.c'; else $(CYGPATH_W) '$(srcdir)/session.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-session.Tpo $(DEPDIR)/libcameltest_a-session.Po
+#	$(AM_V_CC)source='session.c' object='libcameltest_a-session.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-session.obj `if test -f 'session.c'; then $(CYGPATH_W) 'session.c'; else $(CYGPATH_W) '$(srcdir)/session.c'; fi`
 
 libcameltest_a-streams.o: streams.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-streams.o -MD -MP -MF $(DEPDIR)/libcameltest_a-streams.Tpo -c -o libcameltest_a-streams.o `test -f 'streams.c' || echo '$(srcdir)/'`streams.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-streams.Tpo $(DEPDIR)/libcameltest_a-streams.Po
-	$(AM_V_CC)source='streams.c' object='libcameltest_a-streams.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-streams.o `test -f 'streams.c' || echo '$(srcdir)/'`streams.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-streams.o -MD -MP -MF $(DEPDIR)/libcameltest_a-streams.Tpo -c -o libcameltest_a-streams.o `test -f 'streams.c' || echo '$(srcdir)/'`streams.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-streams.Tpo $(DEPDIR)/libcameltest_a-streams.Po
+#	$(AM_V_CC)source='streams.c' object='libcameltest_a-streams.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-streams.o `test -f 'streams.c' || echo '$(srcdir)/'`streams.c
 
 libcameltest_a-streams.obj: streams.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-streams.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-streams.Tpo -c -o libcameltest_a-streams.obj `if test -f 'streams.c'; then $(CYGPATH_W) 'streams.c'; else $(CYGPATH_W) '$(srcdir)/streams.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-streams.Tpo $(DEPDIR)/libcameltest_a-streams.Po
-	$(AM_V_CC)source='streams.c' object='libcameltest_a-streams.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-streams.obj `if test -f 'streams.c'; then $(CYGPATH_W) 'streams.c'; else $(CYGPATH_W) '$(srcdir)/streams.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libcameltest_a-streams.obj -MD -MP -MF $(DEPDIR)/libcameltest_a-streams.Tpo -c -o libcameltest_a-streams.obj `if test -f 'streams.c'; then $(CYGPATH_W) 'streams.c'; else $(CYGPATH_W) '$(srcdir)/streams.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libcameltest_a-streams.Tpo $(DEPDIR)/libcameltest_a-streams.Po
+#	$(AM_V_CC)source='streams.c' object='libcameltest_a-streams.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcameltest_a_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libcameltest_a-streams.obj `if test -f 'streams.c'; then $(CYGPATH_W) 'streams.c'; else $(CYGPATH_W) '$(srcdir)/streams.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

@@ -1,8 +1,12 @@
 libexchange_la-e2k-path.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  \
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../../server/lib/e2k-path.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -135,9 +139,13 @@ libexchange_la-e2k-path.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  ../../../server/lib/e2k-path.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/lib/e2k-path.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h :

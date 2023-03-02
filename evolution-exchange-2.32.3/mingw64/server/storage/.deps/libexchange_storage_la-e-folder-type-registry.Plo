@@ -309,9 +309,13 @@ libexchange_storage_la-e-folder-type-registry.lo : \
  D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h \
  D:/MSYS2/mingw64/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/storage/e-folder-type-registry.c :
 ../../config.h :
 ../../../server/storage/e-folder-type-registry.h :

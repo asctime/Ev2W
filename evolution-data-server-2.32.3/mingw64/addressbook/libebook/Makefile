@@ -186,6 +186,7 @@ CATALOGS =
 CATOBJEXT = .gmo
 CC = gcc
 <<<<<<< HEAD
+<<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
@@ -196,6 +197,12 @@ CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-depre
 CPP = gcc -E
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
+CPP = gcc -E
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -224,10 +231,14 @@ E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../i
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 <<<<<<< HEAD
+<<<<<<< HEAD
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 =======
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -246,10 +257,14 @@ GNOME_KEYRING_CFLAGS =
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
 <<<<<<< HEAD
+<<<<<<< HEAD
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 =======
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -372,10 +387,14 @@ SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 <<<<<<< HEAD
+<<<<<<< HEAD
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 =======
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -601,88 +620,88 @@ include ./$(DEPDIR)/libebook_1_2_la-e-name-western.Plo
 include ./$(DEPDIR)/libebook_1_2_la-e-vcard.Plo
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libebook_1_2_la-e-book-marshal.lo: e-book-marshal.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book-marshal.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book-marshal.Tpo -c -o libebook_1_2_la-e-book-marshal.lo `test -f 'e-book-marshal.c' || echo '$(srcdir)/'`e-book-marshal.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book-marshal.Tpo $(DEPDIR)/libebook_1_2_la-e-book-marshal.Plo
-	$(AM_V_CC)source='e-book-marshal.c' object='libebook_1_2_la-e-book-marshal.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book-marshal.lo `test -f 'e-book-marshal.c' || echo '$(srcdir)/'`e-book-marshal.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book-marshal.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book-marshal.Tpo -c -o libebook_1_2_la-e-book-marshal.lo `test -f 'e-book-marshal.c' || echo '$(srcdir)/'`e-book-marshal.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book-marshal.Tpo $(DEPDIR)/libebook_1_2_la-e-book-marshal.Plo
+#	$(AM_V_CC)source='e-book-marshal.c' object='libebook_1_2_la-e-book-marshal.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book-marshal.lo `test -f 'e-book-marshal.c' || echo '$(srcdir)/'`e-book-marshal.c
 
 libebook_1_2_la-e-address-western.lo: e-address-western.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-address-western.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-address-western.Tpo -c -o libebook_1_2_la-e-address-western.lo `test -f 'e-address-western.c' || echo '$(srcdir)/'`e-address-western.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-address-western.Tpo $(DEPDIR)/libebook_1_2_la-e-address-western.Plo
-	$(AM_V_CC)source='e-address-western.c' object='libebook_1_2_la-e-address-western.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-address-western.lo `test -f 'e-address-western.c' || echo '$(srcdir)/'`e-address-western.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-address-western.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-address-western.Tpo -c -o libebook_1_2_la-e-address-western.lo `test -f 'e-address-western.c' || echo '$(srcdir)/'`e-address-western.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-address-western.Tpo $(DEPDIR)/libebook_1_2_la-e-address-western.Plo
+#	$(AM_V_CC)source='e-address-western.c' object='libebook_1_2_la-e-address-western.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-address-western.lo `test -f 'e-address-western.c' || echo '$(srcdir)/'`e-address-western.c
 
 libebook_1_2_la-e-book-query.lo: e-book-query.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book-query.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book-query.Tpo -c -o libebook_1_2_la-e-book-query.lo `test -f 'e-book-query.c' || echo '$(srcdir)/'`e-book-query.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book-query.Tpo $(DEPDIR)/libebook_1_2_la-e-book-query.Plo
-	$(AM_V_CC)source='e-book-query.c' object='libebook_1_2_la-e-book-query.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book-query.lo `test -f 'e-book-query.c' || echo '$(srcdir)/'`e-book-query.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book-query.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book-query.Tpo -c -o libebook_1_2_la-e-book-query.lo `test -f 'e-book-query.c' || echo '$(srcdir)/'`e-book-query.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book-query.Tpo $(DEPDIR)/libebook_1_2_la-e-book-query.Plo
+#	$(AM_V_CC)source='e-book-query.c' object='libebook_1_2_la-e-book-query.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book-query.lo `test -f 'e-book-query.c' || echo '$(srcdir)/'`e-book-query.c
 
 libebook_1_2_la-e-book-view.lo: e-book-view.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book-view.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book-view.Tpo -c -o libebook_1_2_la-e-book-view.lo `test -f 'e-book-view.c' || echo '$(srcdir)/'`e-book-view.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book-view.Tpo $(DEPDIR)/libebook_1_2_la-e-book-view.Plo
-	$(AM_V_CC)source='e-book-view.c' object='libebook_1_2_la-e-book-view.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book-view.lo `test -f 'e-book-view.c' || echo '$(srcdir)/'`e-book-view.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book-view.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book-view.Tpo -c -o libebook_1_2_la-e-book-view.lo `test -f 'e-book-view.c' || echo '$(srcdir)/'`e-book-view.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book-view.Tpo $(DEPDIR)/libebook_1_2_la-e-book-view.Plo
+#	$(AM_V_CC)source='e-book-view.c' object='libebook_1_2_la-e-book-view.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book-view.lo `test -f 'e-book-view.c' || echo '$(srcdir)/'`e-book-view.c
 
 libebook_1_2_la-e-book.lo: e-book.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book.Tpo -c -o libebook_1_2_la-e-book.lo `test -f 'e-book.c' || echo '$(srcdir)/'`e-book.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book.Tpo $(DEPDIR)/libebook_1_2_la-e-book.Plo
-	$(AM_V_CC)source='e-book.c' object='libebook_1_2_la-e-book.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book.lo `test -f 'e-book.c' || echo '$(srcdir)/'`e-book.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-book.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-book.Tpo -c -o libebook_1_2_la-e-book.lo `test -f 'e-book.c' || echo '$(srcdir)/'`e-book.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-book.Tpo $(DEPDIR)/libebook_1_2_la-e-book.Plo
+#	$(AM_V_CC)source='e-book.c' object='libebook_1_2_la-e-book.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-book.lo `test -f 'e-book.c' || echo '$(srcdir)/'`e-book.c
 
 libebook_1_2_la-e-contact.lo: e-contact.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-contact.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-contact.Tpo -c -o libebook_1_2_la-e-contact.lo `test -f 'e-contact.c' || echo '$(srcdir)/'`e-contact.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-contact.Tpo $(DEPDIR)/libebook_1_2_la-e-contact.Plo
-	$(AM_V_CC)source='e-contact.c' object='libebook_1_2_la-e-contact.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-contact.lo `test -f 'e-contact.c' || echo '$(srcdir)/'`e-contact.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-contact.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-contact.Tpo -c -o libebook_1_2_la-e-contact.lo `test -f 'e-contact.c' || echo '$(srcdir)/'`e-contact.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-contact.Tpo $(DEPDIR)/libebook_1_2_la-e-contact.Plo
+#	$(AM_V_CC)source='e-contact.c' object='libebook_1_2_la-e-contact.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-contact.lo `test -f 'e-contact.c' || echo '$(srcdir)/'`e-contact.c
 
 libebook_1_2_la-e-destination.lo: e-destination.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-destination.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-destination.Tpo -c -o libebook_1_2_la-e-destination.lo `test -f 'e-destination.c' || echo '$(srcdir)/'`e-destination.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-destination.Tpo $(DEPDIR)/libebook_1_2_la-e-destination.Plo
-	$(AM_V_CC)source='e-destination.c' object='libebook_1_2_la-e-destination.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-destination.lo `test -f 'e-destination.c' || echo '$(srcdir)/'`e-destination.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-destination.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-destination.Tpo -c -o libebook_1_2_la-e-destination.lo `test -f 'e-destination.c' || echo '$(srcdir)/'`e-destination.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-destination.Tpo $(DEPDIR)/libebook_1_2_la-e-destination.Plo
+#	$(AM_V_CC)source='e-destination.c' object='libebook_1_2_la-e-destination.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-destination.lo `test -f 'e-destination.c' || echo '$(srcdir)/'`e-destination.c
 
 libebook_1_2_la-e-name-western.lo: e-name-western.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-name-western.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-name-western.Tpo -c -o libebook_1_2_la-e-name-western.lo `test -f 'e-name-western.c' || echo '$(srcdir)/'`e-name-western.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-name-western.Tpo $(DEPDIR)/libebook_1_2_la-e-name-western.Plo
-	$(AM_V_CC)source='e-name-western.c' object='libebook_1_2_la-e-name-western.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-name-western.lo `test -f 'e-name-western.c' || echo '$(srcdir)/'`e-name-western.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-name-western.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-name-western.Tpo -c -o libebook_1_2_la-e-name-western.lo `test -f 'e-name-western.c' || echo '$(srcdir)/'`e-name-western.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-name-western.Tpo $(DEPDIR)/libebook_1_2_la-e-name-western.Plo
+#	$(AM_V_CC)source='e-name-western.c' object='libebook_1_2_la-e-name-western.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-name-western.lo `test -f 'e-name-western.c' || echo '$(srcdir)/'`e-name-western.c
 
 libebook_1_2_la-e-vcard.lo: e-vcard.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-vcard.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-vcard.Tpo -c -o libebook_1_2_la-e-vcard.lo `test -f 'e-vcard.c' || echo '$(srcdir)/'`e-vcard.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-vcard.Tpo $(DEPDIR)/libebook_1_2_la-e-vcard.Plo
-	$(AM_V_CC)source='e-vcard.c' object='libebook_1_2_la-e-vcard.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-vcard.lo `test -f 'e-vcard.c' || echo '$(srcdir)/'`e-vcard.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_1_2_la-e-vcard.lo -MD -MP -MF $(DEPDIR)/libebook_1_2_la-e-vcard.Tpo -c -o libebook_1_2_la-e-vcard.lo `test -f 'e-vcard.c' || echo '$(srcdir)/'`e-vcard.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_1_2_la-e-vcard.Tpo $(DEPDIR)/libebook_1_2_la-e-vcard.Plo
+#	$(AM_V_CC)source='e-vcard.c' object='libebook_1_2_la-e-vcard.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_1_2_la-e-vcard.lo `test -f 'e-vcard.c' || echo '$(srcdir)/'`e-vcard.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

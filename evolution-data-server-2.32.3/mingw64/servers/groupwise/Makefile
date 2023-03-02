@@ -204,6 +204,7 @@ CATALOGS =
 CATOBJEXT = .gmo
 CC = gcc
 <<<<<<< HEAD
+<<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
@@ -214,6 +215,12 @@ CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-depre
 CPP = gcc -E
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
+CPP = gcc -E
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -242,10 +249,14 @@ E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../i
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 <<<<<<< HEAD
+<<<<<<< HEAD
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 =======
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -264,10 +275,14 @@ GNOME_KEYRING_CFLAGS =
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
 <<<<<<< HEAD
+<<<<<<< HEAD
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 =======
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -390,10 +405,14 @@ SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 <<<<<<< HEAD
+<<<<<<< HEAD
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 =======
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -651,123 +670,123 @@ include ./$(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Plo
 include ./$(DEPDIR)/soap_test-soap-test.Po
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libegroupwise_1_2_la-e-gw-connection.lo: e-gw-connection.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-connection.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-connection.Tpo -c -o libegroupwise_1_2_la-e-gw-connection.lo `test -f 'e-gw-connection.c' || echo '$(srcdir)/'`e-gw-connection.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-connection.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-connection.Plo
-	$(AM_V_CC)source='e-gw-connection.c' object='libegroupwise_1_2_la-e-gw-connection.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-connection.lo `test -f 'e-gw-connection.c' || echo '$(srcdir)/'`e-gw-connection.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-connection.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-connection.Tpo -c -o libegroupwise_1_2_la-e-gw-connection.lo `test -f 'e-gw-connection.c' || echo '$(srcdir)/'`e-gw-connection.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-connection.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-connection.Plo
+#	$(AM_V_CC)source='e-gw-connection.c' object='libegroupwise_1_2_la-e-gw-connection.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-connection.lo `test -f 'e-gw-connection.c' || echo '$(srcdir)/'`e-gw-connection.c
 
 libegroupwise_1_2_la-e-gw-container.lo: e-gw-container.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-container.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-container.Tpo -c -o libegroupwise_1_2_la-e-gw-container.lo `test -f 'e-gw-container.c' || echo '$(srcdir)/'`e-gw-container.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-container.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-container.Plo
-	$(AM_V_CC)source='e-gw-container.c' object='libegroupwise_1_2_la-e-gw-container.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-container.lo `test -f 'e-gw-container.c' || echo '$(srcdir)/'`e-gw-container.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-container.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-container.Tpo -c -o libegroupwise_1_2_la-e-gw-container.lo `test -f 'e-gw-container.c' || echo '$(srcdir)/'`e-gw-container.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-container.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-container.Plo
+#	$(AM_V_CC)source='e-gw-container.c' object='libegroupwise_1_2_la-e-gw-container.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-container.lo `test -f 'e-gw-container.c' || echo '$(srcdir)/'`e-gw-container.c
 
 libegroupwise_1_2_la-e-gw-item.lo: e-gw-item.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-item.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-item.Tpo -c -o libegroupwise_1_2_la-e-gw-item.lo `test -f 'e-gw-item.c' || echo '$(srcdir)/'`e-gw-item.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-item.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-item.Plo
-	$(AM_V_CC)source='e-gw-item.c' object='libegroupwise_1_2_la-e-gw-item.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-item.lo `test -f 'e-gw-item.c' || echo '$(srcdir)/'`e-gw-item.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-item.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-item.Tpo -c -o libegroupwise_1_2_la-e-gw-item.lo `test -f 'e-gw-item.c' || echo '$(srcdir)/'`e-gw-item.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-item.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-item.Plo
+#	$(AM_V_CC)source='e-gw-item.c' object='libegroupwise_1_2_la-e-gw-item.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-item.lo `test -f 'e-gw-item.c' || echo '$(srcdir)/'`e-gw-item.c
 
 libegroupwise_1_2_la-e-gw-sendoptions.lo: e-gw-sendoptions.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-sendoptions.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-sendoptions.Tpo -c -o libegroupwise_1_2_la-e-gw-sendoptions.lo `test -f 'e-gw-sendoptions.c' || echo '$(srcdir)/'`e-gw-sendoptions.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-sendoptions.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-sendoptions.Plo
-	$(AM_V_CC)source='e-gw-sendoptions.c' object='libegroupwise_1_2_la-e-gw-sendoptions.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-sendoptions.lo `test -f 'e-gw-sendoptions.c' || echo '$(srcdir)/'`e-gw-sendoptions.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-sendoptions.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-sendoptions.Tpo -c -o libegroupwise_1_2_la-e-gw-sendoptions.lo `test -f 'e-gw-sendoptions.c' || echo '$(srcdir)/'`e-gw-sendoptions.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-sendoptions.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-sendoptions.Plo
+#	$(AM_V_CC)source='e-gw-sendoptions.c' object='libegroupwise_1_2_la-e-gw-sendoptions.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-sendoptions.lo `test -f 'e-gw-sendoptions.c' || echo '$(srcdir)/'`e-gw-sendoptions.c
 
 libegroupwise_1_2_la-e-gw-message.lo: e-gw-message.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-message.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-message.Tpo -c -o libegroupwise_1_2_la-e-gw-message.lo `test -f 'e-gw-message.c' || echo '$(srcdir)/'`e-gw-message.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-message.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-message.Plo
-	$(AM_V_CC)source='e-gw-message.c' object='libegroupwise_1_2_la-e-gw-message.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-message.lo `test -f 'e-gw-message.c' || echo '$(srcdir)/'`e-gw-message.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-message.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-message.Tpo -c -o libegroupwise_1_2_la-e-gw-message.lo `test -f 'e-gw-message.c' || echo '$(srcdir)/'`e-gw-message.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-message.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-message.Plo
+#	$(AM_V_CC)source='e-gw-message.c' object='libegroupwise_1_2_la-e-gw-message.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-message.lo `test -f 'e-gw-message.c' || echo '$(srcdir)/'`e-gw-message.c
 
 libegroupwise_1_2_la-e-gw-filter.lo: e-gw-filter.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-filter.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-filter.Tpo -c -o libegroupwise_1_2_la-e-gw-filter.lo `test -f 'e-gw-filter.c' || echo '$(srcdir)/'`e-gw-filter.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-filter.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-filter.Plo
-	$(AM_V_CC)source='e-gw-filter.c' object='libegroupwise_1_2_la-e-gw-filter.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-filter.lo `test -f 'e-gw-filter.c' || echo '$(srcdir)/'`e-gw-filter.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-filter.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-filter.Tpo -c -o libegroupwise_1_2_la-e-gw-filter.lo `test -f 'e-gw-filter.c' || echo '$(srcdir)/'`e-gw-filter.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-filter.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-filter.Plo
+#	$(AM_V_CC)source='e-gw-filter.c' object='libegroupwise_1_2_la-e-gw-filter.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-filter.lo `test -f 'e-gw-filter.c' || echo '$(srcdir)/'`e-gw-filter.c
 
 libegroupwise_1_2_la-e-gw-recur-utils.lo: e-gw-recur-utils.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-recur-utils.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-recur-utils.Tpo -c -o libegroupwise_1_2_la-e-gw-recur-utils.lo `test -f 'e-gw-recur-utils.c' || echo '$(srcdir)/'`e-gw-recur-utils.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-recur-utils.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-recur-utils.Plo
-	$(AM_V_CC)source='e-gw-recur-utils.c' object='libegroupwise_1_2_la-e-gw-recur-utils.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-recur-utils.lo `test -f 'e-gw-recur-utils.c' || echo '$(srcdir)/'`e-gw-recur-utils.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-recur-utils.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-recur-utils.Tpo -c -o libegroupwise_1_2_la-e-gw-recur-utils.lo `test -f 'e-gw-recur-utils.c' || echo '$(srcdir)/'`e-gw-recur-utils.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-recur-utils.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-recur-utils.Plo
+#	$(AM_V_CC)source='e-gw-recur-utils.c' object='libegroupwise_1_2_la-e-gw-recur-utils.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-recur-utils.lo `test -f 'e-gw-recur-utils.c' || echo '$(srcdir)/'`e-gw-recur-utils.c
 
 libegroupwise_1_2_la-e-gw-proxy.lo: e-gw-proxy.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-proxy.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-proxy.Tpo -c -o libegroupwise_1_2_la-e-gw-proxy.lo `test -f 'e-gw-proxy.c' || echo '$(srcdir)/'`e-gw-proxy.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-proxy.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-proxy.Plo
-	$(AM_V_CC)source='e-gw-proxy.c' object='libegroupwise_1_2_la-e-gw-proxy.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-proxy.lo `test -f 'e-gw-proxy.c' || echo '$(srcdir)/'`e-gw-proxy.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-e-gw-proxy.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-e-gw-proxy.Tpo -c -o libegroupwise_1_2_la-e-gw-proxy.lo `test -f 'e-gw-proxy.c' || echo '$(srcdir)/'`e-gw-proxy.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-e-gw-proxy.Tpo $(DEPDIR)/libegroupwise_1_2_la-e-gw-proxy.Plo
+#	$(AM_V_CC)source='e-gw-proxy.c' object='libegroupwise_1_2_la-e-gw-proxy.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-e-gw-proxy.lo `test -f 'e-gw-proxy.c' || echo '$(srcdir)/'`e-gw-proxy.c
 
 libegroupwise_1_2_la-soup-soap-message.lo: soup-soap-message.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-soup-soap-message.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-soup-soap-message.Tpo -c -o libegroupwise_1_2_la-soup-soap-message.lo `test -f 'soup-soap-message.c' || echo '$(srcdir)/'`soup-soap-message.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-soup-soap-message.Tpo $(DEPDIR)/libegroupwise_1_2_la-soup-soap-message.Plo
-	$(AM_V_CC)source='soup-soap-message.c' object='libegroupwise_1_2_la-soup-soap-message.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-soup-soap-message.lo `test -f 'soup-soap-message.c' || echo '$(srcdir)/'`soup-soap-message.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-soup-soap-message.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-soup-soap-message.Tpo -c -o libegroupwise_1_2_la-soup-soap-message.lo `test -f 'soup-soap-message.c' || echo '$(srcdir)/'`soup-soap-message.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-soup-soap-message.Tpo $(DEPDIR)/libegroupwise_1_2_la-soup-soap-message.Plo
+#	$(AM_V_CC)source='soup-soap-message.c' object='libegroupwise_1_2_la-soup-soap-message.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-soup-soap-message.lo `test -f 'soup-soap-message.c' || echo '$(srcdir)/'`soup-soap-message.c
 
 libegroupwise_1_2_la-soup-soap-response.lo: soup-soap-response.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-soup-soap-response.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Tpo -c -o libegroupwise_1_2_la-soup-soap-response.lo `test -f 'soup-soap-response.c' || echo '$(srcdir)/'`soup-soap-response.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Tpo $(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Plo
-	$(AM_V_CC)source='soup-soap-response.c' object='libegroupwise_1_2_la-soup-soap-response.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-soup-soap-response.lo `test -f 'soup-soap-response.c' || echo '$(srcdir)/'`soup-soap-response.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libegroupwise_1_2_la-soup-soap-response.lo -MD -MP -MF $(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Tpo -c -o libegroupwise_1_2_la-soup-soap-response.lo `test -f 'soup-soap-response.c' || echo '$(srcdir)/'`soup-soap-response.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Tpo $(DEPDIR)/libegroupwise_1_2_la-soup-soap-response.Plo
+#	$(AM_V_CC)source='soup-soap-response.c' object='libegroupwise_1_2_la-soup-soap-response.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libegroupwise_1_2_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libegroupwise_1_2_la-soup-soap-response.lo `test -f 'soup-soap-response.c' || echo '$(srcdir)/'`soup-soap-response.c
 
 create_account-create-account.o: create-account.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT create_account-create-account.o -MD -MP -MF $(DEPDIR)/create_account-create-account.Tpo -c -o create_account-create-account.o `test -f 'create-account.c' || echo '$(srcdir)/'`create-account.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/create_account-create-account.Tpo $(DEPDIR)/create_account-create-account.Po
-	$(AM_V_CC)source='create-account.c' object='create_account-create-account.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o create_account-create-account.o `test -f 'create-account.c' || echo '$(srcdir)/'`create-account.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT create_account-create-account.o -MD -MP -MF $(DEPDIR)/create_account-create-account.Tpo -c -o create_account-create-account.o `test -f 'create-account.c' || echo '$(srcdir)/'`create-account.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/create_account-create-account.Tpo $(DEPDIR)/create_account-create-account.Po
+#	$(AM_V_CC)source='create-account.c' object='create_account-create-account.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o create_account-create-account.o `test -f 'create-account.c' || echo '$(srcdir)/'`create-account.c
 
 create_account-create-account.obj: create-account.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT create_account-create-account.obj -MD -MP -MF $(DEPDIR)/create_account-create-account.Tpo -c -o create_account-create-account.obj `if test -f 'create-account.c'; then $(CYGPATH_W) 'create-account.c'; else $(CYGPATH_W) '$(srcdir)/create-account.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/create_account-create-account.Tpo $(DEPDIR)/create_account-create-account.Po
-	$(AM_V_CC)source='create-account.c' object='create_account-create-account.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o create_account-create-account.obj `if test -f 'create-account.c'; then $(CYGPATH_W) 'create-account.c'; else $(CYGPATH_W) '$(srcdir)/create-account.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT create_account-create-account.obj -MD -MP -MF $(DEPDIR)/create_account-create-account.Tpo -c -o create_account-create-account.obj `if test -f 'create-account.c'; then $(CYGPATH_W) 'create-account.c'; else $(CYGPATH_W) '$(srcdir)/create-account.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/create_account-create-account.Tpo $(DEPDIR)/create_account-create-account.Po
+#	$(AM_V_CC)source='create-account.c' object='create_account-create-account.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(create_account_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o create_account-create-account.obj `if test -f 'create-account.c'; then $(CYGPATH_W) 'create-account.c'; else $(CYGPATH_W) '$(srcdir)/create-account.c'; fi`
 
 soap_test-soap-test.o: soap-test.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT soap_test-soap-test.o -MD -MP -MF $(DEPDIR)/soap_test-soap-test.Tpo -c -o soap_test-soap-test.o `test -f 'soap-test.c' || echo '$(srcdir)/'`soap-test.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/soap_test-soap-test.Tpo $(DEPDIR)/soap_test-soap-test.Po
-	$(AM_V_CC)source='soap-test.c' object='soap_test-soap-test.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o soap_test-soap-test.o `test -f 'soap-test.c' || echo '$(srcdir)/'`soap-test.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT soap_test-soap-test.o -MD -MP -MF $(DEPDIR)/soap_test-soap-test.Tpo -c -o soap_test-soap-test.o `test -f 'soap-test.c' || echo '$(srcdir)/'`soap-test.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/soap_test-soap-test.Tpo $(DEPDIR)/soap_test-soap-test.Po
+#	$(AM_V_CC)source='soap-test.c' object='soap_test-soap-test.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o soap_test-soap-test.o `test -f 'soap-test.c' || echo '$(srcdir)/'`soap-test.c
 
 soap_test-soap-test.obj: soap-test.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT soap_test-soap-test.obj -MD -MP -MF $(DEPDIR)/soap_test-soap-test.Tpo -c -o soap_test-soap-test.obj `if test -f 'soap-test.c'; then $(CYGPATH_W) 'soap-test.c'; else $(CYGPATH_W) '$(srcdir)/soap-test.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/soap_test-soap-test.Tpo $(DEPDIR)/soap_test-soap-test.Po
-	$(AM_V_CC)source='soap-test.c' object='soap_test-soap-test.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o soap_test-soap-test.obj `if test -f 'soap-test.c'; then $(CYGPATH_W) 'soap-test.c'; else $(CYGPATH_W) '$(srcdir)/soap-test.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT soap_test-soap-test.obj -MD -MP -MF $(DEPDIR)/soap_test-soap-test.Tpo -c -o soap_test-soap-test.obj `if test -f 'soap-test.c'; then $(CYGPATH_W) 'soap-test.c'; else $(CYGPATH_W) '$(srcdir)/soap-test.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/soap_test-soap-test.Tpo $(DEPDIR)/soap_test-soap-test.Po
+#	$(AM_V_CC)source='soap-test.c' object='soap_test-soap-test.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(soap_test_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o soap_test-soap-test.obj `if test -f 'soap-test.c'; then $(CYGPATH_W) 'soap-test.c'; else $(CYGPATH_W) '$(srcdir)/soap-test.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

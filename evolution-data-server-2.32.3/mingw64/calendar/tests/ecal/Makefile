@@ -344,6 +344,7 @@ CATALOGS =
 CATOBJEXT = .gmo
 CC = gcc
 <<<<<<< HEAD
+<<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
@@ -354,6 +355,12 @@ CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-depre
 CPP = gcc -E
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
+CPP = gcc -E
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -382,10 +389,14 @@ E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../i
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
 <<<<<<< HEAD
+<<<<<<< HEAD
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 =======
 E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -404,10 +415,14 @@ GNOME_KEYRING_CFLAGS =
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
 <<<<<<< HEAD
+<<<<<<< HEAD
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 =======
 GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -530,10 +545,14 @@ SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
 <<<<<<< HEAD
+<<<<<<< HEAD
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 =======
 SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 >>>>>>> 1975953... Google account removed from this release (outdated-notworking)
+=======
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -905,424 +924,424 @@ include ./$(DEPDIR)/test_recur-test-recur.Po
 include ./$(DEPDIR)/test_search-test-search.Po
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libecal_test_utils_la-ecal-test-utils.lo: ecal-test-utils.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libecal_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libecal_test_utils_la-ecal-test-utils.lo -MD -MP -MF $(DEPDIR)/libecal_test_utils_la-ecal-test-utils.Tpo -c -o libecal_test_utils_la-ecal-test-utils.lo `test -f 'ecal-test-utils.c' || echo '$(srcdir)/'`ecal-test-utils.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libecal_test_utils_la-ecal-test-utils.Tpo $(DEPDIR)/libecal_test_utils_la-ecal-test-utils.Plo
-	$(AM_V_CC)source='ecal-test-utils.c' object='libecal_test_utils_la-ecal-test-utils.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libecal_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libecal_test_utils_la-ecal-test-utils.lo `test -f 'ecal-test-utils.c' || echo '$(srcdir)/'`ecal-test-utils.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libecal_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libecal_test_utils_la-ecal-test-utils.lo -MD -MP -MF $(DEPDIR)/libecal_test_utils_la-ecal-test-utils.Tpo -c -o libecal_test_utils_la-ecal-test-utils.lo `test -f 'ecal-test-utils.c' || echo '$(srcdir)/'`ecal-test-utils.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libecal_test_utils_la-ecal-test-utils.Tpo $(DEPDIR)/libecal_test_utils_la-ecal-test-utils.Plo
+#	$(AM_V_CC)source='ecal-test-utils.c' object='libecal_test_utils_la-ecal-test-utils.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libecal_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libecal_test_utils_la-ecal-test-utils.lo `test -f 'ecal-test-utils.c' || echo '$(srcdir)/'`ecal-test-utils.c
 
 test_ecal-test-ecal.o: test-ecal.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal-test-ecal.o -MD -MP -MF $(DEPDIR)/test_ecal-test-ecal.Tpo -c -o test_ecal-test-ecal.o `test -f 'test-ecal.c' || echo '$(srcdir)/'`test-ecal.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal-test-ecal.Tpo $(DEPDIR)/test_ecal-test-ecal.Po
-	$(AM_V_CC)source='test-ecal.c' object='test_ecal-test-ecal.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal-test-ecal.o `test -f 'test-ecal.c' || echo '$(srcdir)/'`test-ecal.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal-test-ecal.o -MD -MP -MF $(DEPDIR)/test_ecal-test-ecal.Tpo -c -o test_ecal-test-ecal.o `test -f 'test-ecal.c' || echo '$(srcdir)/'`test-ecal.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal-test-ecal.Tpo $(DEPDIR)/test_ecal-test-ecal.Po
+#	$(AM_V_CC)source='test-ecal.c' object='test_ecal-test-ecal.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal-test-ecal.o `test -f 'test-ecal.c' || echo '$(srcdir)/'`test-ecal.c
 
 test_ecal-test-ecal.obj: test-ecal.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal-test-ecal.obj -MD -MP -MF $(DEPDIR)/test_ecal-test-ecal.Tpo -c -o test_ecal-test-ecal.obj `if test -f 'test-ecal.c'; then $(CYGPATH_W) 'test-ecal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal-test-ecal.Tpo $(DEPDIR)/test_ecal-test-ecal.Po
-	$(AM_V_CC)source='test-ecal.c' object='test_ecal-test-ecal.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal-test-ecal.obj `if test -f 'test-ecal.c'; then $(CYGPATH_W) 'test-ecal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal-test-ecal.obj -MD -MP -MF $(DEPDIR)/test_ecal-test-ecal.Tpo -c -o test_ecal-test-ecal.obj `if test -f 'test-ecal.c'; then $(CYGPATH_W) 'test-ecal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal-test-ecal.Tpo $(DEPDIR)/test_ecal-test-ecal.Po
+#	$(AM_V_CC)source='test-ecal.c' object='test_ecal-test-ecal.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal-test-ecal.obj `if test -f 'test-ecal.c'; then $(CYGPATH_W) 'test-ecal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal.c'; fi`
 
 test_ecal_add_timezone-test-ecal-add-timezone.o: test-ecal-add-timezone.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_add_timezone-test-ecal-add-timezone.o -MD -MP -MF $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo -c -o test_ecal_add_timezone-test-ecal-add-timezone.o `test -f 'test-ecal-add-timezone.c' || echo '$(srcdir)/'`test-ecal-add-timezone.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Po
-	$(AM_V_CC)source='test-ecal-add-timezone.c' object='test_ecal_add_timezone-test-ecal-add-timezone.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_add_timezone-test-ecal-add-timezone.o `test -f 'test-ecal-add-timezone.c' || echo '$(srcdir)/'`test-ecal-add-timezone.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_add_timezone-test-ecal-add-timezone.o -MD -MP -MF $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo -c -o test_ecal_add_timezone-test-ecal-add-timezone.o `test -f 'test-ecal-add-timezone.c' || echo '$(srcdir)/'`test-ecal-add-timezone.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Po
+#	$(AM_V_CC)source='test-ecal-add-timezone.c' object='test_ecal_add_timezone-test-ecal-add-timezone.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_add_timezone-test-ecal-add-timezone.o `test -f 'test-ecal-add-timezone.c' || echo '$(srcdir)/'`test-ecal-add-timezone.c
 
 test_ecal_add_timezone-test-ecal-add-timezone.obj: test-ecal-add-timezone.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_add_timezone-test-ecal-add-timezone.obj -MD -MP -MF $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo -c -o test_ecal_add_timezone-test-ecal-add-timezone.obj `if test -f 'test-ecal-add-timezone.c'; then $(CYGPATH_W) 'test-ecal-add-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-add-timezone.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Po
-	$(AM_V_CC)source='test-ecal-add-timezone.c' object='test_ecal_add_timezone-test-ecal-add-timezone.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_add_timezone-test-ecal-add-timezone.obj `if test -f 'test-ecal-add-timezone.c'; then $(CYGPATH_W) 'test-ecal-add-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-add-timezone.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_add_timezone-test-ecal-add-timezone.obj -MD -MP -MF $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo -c -o test_ecal_add_timezone-test-ecal-add-timezone.obj `if test -f 'test-ecal-add-timezone.c'; then $(CYGPATH_W) 'test-ecal-add-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-add-timezone.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Tpo $(DEPDIR)/test_ecal_add_timezone-test-ecal-add-timezone.Po
+#	$(AM_V_CC)source='test-ecal-add-timezone.c' object='test_ecal_add_timezone-test-ecal-add-timezone.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_add_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_add_timezone-test-ecal-add-timezone.obj `if test -f 'test-ecal-add-timezone.c'; then $(CYGPATH_W) 'test-ecal-add-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-add-timezone.c'; fi`
 
 test_ecal_create_object-test-ecal-create-object.o: test-ecal-create-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object-test-ecal-create-object.o -MD -MP -MF $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo -c -o test_ecal_create_object-test-ecal-create-object.o `test -f 'test-ecal-create-object.c' || echo '$(srcdir)/'`test-ecal-create-object.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Po
-	$(AM_V_CC)source='test-ecal-create-object.c' object='test_ecal_create_object-test-ecal-create-object.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object-test-ecal-create-object.o `test -f 'test-ecal-create-object.c' || echo '$(srcdir)/'`test-ecal-create-object.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object-test-ecal-create-object.o -MD -MP -MF $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo -c -o test_ecal_create_object-test-ecal-create-object.o `test -f 'test-ecal-create-object.c' || echo '$(srcdir)/'`test-ecal-create-object.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Po
+#	$(AM_V_CC)source='test-ecal-create-object.c' object='test_ecal_create_object-test-ecal-create-object.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object-test-ecal-create-object.o `test -f 'test-ecal-create-object.c' || echo '$(srcdir)/'`test-ecal-create-object.c
 
 test_ecal_create_object-test-ecal-create-object.obj: test-ecal-create-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object-test-ecal-create-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo -c -o test_ecal_create_object-test-ecal-create-object.obj `if test -f 'test-ecal-create-object.c'; then $(CYGPATH_W) 'test-ecal-create-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Po
-	$(AM_V_CC)source='test-ecal-create-object.c' object='test_ecal_create_object-test-ecal-create-object.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object-test-ecal-create-object.obj `if test -f 'test-ecal-create-object.c'; then $(CYGPATH_W) 'test-ecal-create-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object-test-ecal-create-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo -c -o test_ecal_create_object-test-ecal-create-object.obj `if test -f 'test-ecal-create-object.c'; then $(CYGPATH_W) 'test-ecal-create-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Tpo $(DEPDIR)/test_ecal_create_object-test-ecal-create-object.Po
+#	$(AM_V_CC)source='test-ecal-create-object.c' object='test_ecal_create_object-test-ecal-create-object.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object-test-ecal-create-object.obj `if test -f 'test-ecal-create-object.c'; then $(CYGPATH_W) 'test-ecal-create-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object.c'; fi`
 
 test_ecal_create_object__2-test-ecal-create-object--2.o: test-ecal-create-object--2.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object__2-test-ecal-create-object--2.o -MD -MP -MF $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo -c -o test_ecal_create_object__2-test-ecal-create-object--2.o `test -f 'test-ecal-create-object--2.c' || echo '$(srcdir)/'`test-ecal-create-object--2.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Po
-	$(AM_V_CC)source='test-ecal-create-object--2.c' object='test_ecal_create_object__2-test-ecal-create-object--2.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object__2-test-ecal-create-object--2.o `test -f 'test-ecal-create-object--2.c' || echo '$(srcdir)/'`test-ecal-create-object--2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object__2-test-ecal-create-object--2.o -MD -MP -MF $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo -c -o test_ecal_create_object__2-test-ecal-create-object--2.o `test -f 'test-ecal-create-object--2.c' || echo '$(srcdir)/'`test-ecal-create-object--2.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Po
+#	$(AM_V_CC)source='test-ecal-create-object--2.c' object='test_ecal_create_object__2-test-ecal-create-object--2.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object__2-test-ecal-create-object--2.o `test -f 'test-ecal-create-object--2.c' || echo '$(srcdir)/'`test-ecal-create-object--2.c
 
 test_ecal_create_object__2-test-ecal-create-object--2.obj: test-ecal-create-object--2.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object__2-test-ecal-create-object--2.obj -MD -MP -MF $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo -c -o test_ecal_create_object__2-test-ecal-create-object--2.obj `if test -f 'test-ecal-create-object--2.c'; then $(CYGPATH_W) 'test-ecal-create-object--2.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object--2.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Po
-	$(AM_V_CC)source='test-ecal-create-object--2.c' object='test_ecal_create_object__2-test-ecal-create-object--2.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object__2-test-ecal-create-object--2.obj `if test -f 'test-ecal-create-object--2.c'; then $(CYGPATH_W) 'test-ecal-create-object--2.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object--2.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_create_object__2-test-ecal-create-object--2.obj -MD -MP -MF $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo -c -o test_ecal_create_object__2-test-ecal-create-object--2.obj `if test -f 'test-ecal-create-object--2.c'; then $(CYGPATH_W) 'test-ecal-create-object--2.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object--2.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Tpo $(DEPDIR)/test_ecal_create_object__2-test-ecal-create-object--2.Po
+#	$(AM_V_CC)source='test-ecal-create-object--2.c' object='test_ecal_create_object__2-test-ecal-create-object--2.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_create_object__2_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_create_object__2-test-ecal-create-object--2.obj `if test -f 'test-ecal-create-object--2.c'; then $(CYGPATH_W) 'test-ecal-create-object--2.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-create-object--2.c'; fi`
 
 test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o: test-ecal-get-alarm-email-address.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o -MD -MP -MF $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o `test -f 'test-ecal-get-alarm-email-address.c' || echo '$(srcdir)/'`test-ecal-get-alarm-email-address.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Po
-	$(AM_V_CC)source='test-ecal-get-alarm-email-address.c' object='test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o `test -f 'test-ecal-get-alarm-email-address.c' || echo '$(srcdir)/'`test-ecal-get-alarm-email-address.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o -MD -MP -MF $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o `test -f 'test-ecal-get-alarm-email-address.c' || echo '$(srcdir)/'`test-ecal-get-alarm-email-address.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Po
+#	$(AM_V_CC)source='test-ecal-get-alarm-email-address.c' object='test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.o `test -f 'test-ecal-get-alarm-email-address.c' || echo '$(srcdir)/'`test-ecal-get-alarm-email-address.c
 
 test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj: test-ecal-get-alarm-email-address.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj `if test -f 'test-ecal-get-alarm-email-address.c'; then $(CYGPATH_W) 'test-ecal-get-alarm-email-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-alarm-email-address.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Po
-	$(AM_V_CC)source='test-ecal-get-alarm-email-address.c' object='test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj `if test -f 'test-ecal-get-alarm-email-address.c'; then $(CYGPATH_W) 'test-ecal-get-alarm-email-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-alarm-email-address.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj `if test -f 'test-ecal-get-alarm-email-address.c'; then $(CYGPATH_W) 'test-ecal-get-alarm-email-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-alarm-email-address.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Tpo $(DEPDIR)/test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.Po
+#	$(AM_V_CC)source='test-ecal-get-alarm-email-address.c' object='test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_alarm_email_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_alarm_email_address-test-ecal-get-alarm-email-address.obj `if test -f 'test-ecal-get-alarm-email-address.c'; then $(CYGPATH_W) 'test-ecal-get-alarm-email-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-alarm-email-address.c'; fi`
 
 test_ecal_get_cal_address-test-ecal-get-cal-address.o: test-ecal-get-cal-address.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_cal_address-test-ecal-get-cal-address.o -MD -MP -MF $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.o `test -f 'test-ecal-get-cal-address.c' || echo '$(srcdir)/'`test-ecal-get-cal-address.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Po
-	$(AM_V_CC)source='test-ecal-get-cal-address.c' object='test_ecal_get_cal_address-test-ecal-get-cal-address.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.o `test -f 'test-ecal-get-cal-address.c' || echo '$(srcdir)/'`test-ecal-get-cal-address.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_cal_address-test-ecal-get-cal-address.o -MD -MP -MF $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.o `test -f 'test-ecal-get-cal-address.c' || echo '$(srcdir)/'`test-ecal-get-cal-address.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Po
+#	$(AM_V_CC)source='test-ecal-get-cal-address.c' object='test_ecal_get_cal_address-test-ecal-get-cal-address.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.o `test -f 'test-ecal-get-cal-address.c' || echo '$(srcdir)/'`test-ecal-get-cal-address.c
 
 test_ecal_get_cal_address-test-ecal-get-cal-address.obj: test-ecal-get-cal-address.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_cal_address-test-ecal-get-cal-address.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.obj `if test -f 'test-ecal-get-cal-address.c'; then $(CYGPATH_W) 'test-ecal-get-cal-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-cal-address.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Po
-	$(AM_V_CC)source='test-ecal-get-cal-address.c' object='test_ecal_get_cal_address-test-ecal-get-cal-address.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.obj `if test -f 'test-ecal-get-cal-address.c'; then $(CYGPATH_W) 'test-ecal-get-cal-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-cal-address.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_cal_address-test-ecal-get-cal-address.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.obj `if test -f 'test-ecal-get-cal-address.c'; then $(CYGPATH_W) 'test-ecal-get-cal-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-cal-address.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Tpo $(DEPDIR)/test_ecal_get_cal_address-test-ecal-get-cal-address.Po
+#	$(AM_V_CC)source='test-ecal-get-cal-address.c' object='test_ecal_get_cal_address-test-ecal-get-cal-address.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_cal_address_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_cal_address-test-ecal-get-cal-address.obj `if test -f 'test-ecal-get-cal-address.c'; then $(CYGPATH_W) 'test-ecal-get-cal-address.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-cal-address.c'; fi`
 
 test_ecal_get_capabilities-test-ecal-get-capabilities.o: test-ecal-get-capabilities.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_capabilities-test-ecal-get-capabilities.o -MD -MP -MF $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.o `test -f 'test-ecal-get-capabilities.c' || echo '$(srcdir)/'`test-ecal-get-capabilities.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Po
-	$(AM_V_CC)source='test-ecal-get-capabilities.c' object='test_ecal_get_capabilities-test-ecal-get-capabilities.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.o `test -f 'test-ecal-get-capabilities.c' || echo '$(srcdir)/'`test-ecal-get-capabilities.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_capabilities-test-ecal-get-capabilities.o -MD -MP -MF $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.o `test -f 'test-ecal-get-capabilities.c' || echo '$(srcdir)/'`test-ecal-get-capabilities.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Po
+#	$(AM_V_CC)source='test-ecal-get-capabilities.c' object='test_ecal_get_capabilities-test-ecal-get-capabilities.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.o `test -f 'test-ecal-get-capabilities.c' || echo '$(srcdir)/'`test-ecal-get-capabilities.c
 
 test_ecal_get_capabilities-test-ecal-get-capabilities.obj: test-ecal-get-capabilities.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_capabilities-test-ecal-get-capabilities.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.obj `if test -f 'test-ecal-get-capabilities.c'; then $(CYGPATH_W) 'test-ecal-get-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-capabilities.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Po
-	$(AM_V_CC)source='test-ecal-get-capabilities.c' object='test_ecal_get_capabilities-test-ecal-get-capabilities.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.obj `if test -f 'test-ecal-get-capabilities.c'; then $(CYGPATH_W) 'test-ecal-get-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-capabilities.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_capabilities-test-ecal-get-capabilities.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.obj `if test -f 'test-ecal-get-capabilities.c'; then $(CYGPATH_W) 'test-ecal-get-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-capabilities.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Tpo $(DEPDIR)/test_ecal_get_capabilities-test-ecal-get-capabilities.Po
+#	$(AM_V_CC)source='test-ecal-get-capabilities.c' object='test_ecal_get_capabilities-test-ecal-get-capabilities.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_capabilities-test-ecal-get-capabilities.obj `if test -f 'test-ecal-get-capabilities.c'; then $(CYGPATH_W) 'test-ecal-get-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-capabilities.c'; fi`
 
 test_ecal_get_default_object-test-ecal-get-default-object.o: test-ecal-get-default-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_default_object-test-ecal-get-default-object.o -MD -MP -MF $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo -c -o test_ecal_get_default_object-test-ecal-get-default-object.o `test -f 'test-ecal-get-default-object.c' || echo '$(srcdir)/'`test-ecal-get-default-object.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Po
-	$(AM_V_CC)source='test-ecal-get-default-object.c' object='test_ecal_get_default_object-test-ecal-get-default-object.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_default_object-test-ecal-get-default-object.o `test -f 'test-ecal-get-default-object.c' || echo '$(srcdir)/'`test-ecal-get-default-object.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_default_object-test-ecal-get-default-object.o -MD -MP -MF $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo -c -o test_ecal_get_default_object-test-ecal-get-default-object.o `test -f 'test-ecal-get-default-object.c' || echo '$(srcdir)/'`test-ecal-get-default-object.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Po
+#	$(AM_V_CC)source='test-ecal-get-default-object.c' object='test_ecal_get_default_object-test-ecal-get-default-object.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_default_object-test-ecal-get-default-object.o `test -f 'test-ecal-get-default-object.c' || echo '$(srcdir)/'`test-ecal-get-default-object.c
 
 test_ecal_get_default_object-test-ecal-get-default-object.obj: test-ecal-get-default-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_default_object-test-ecal-get-default-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo -c -o test_ecal_get_default_object-test-ecal-get-default-object.obj `if test -f 'test-ecal-get-default-object.c'; then $(CYGPATH_W) 'test-ecal-get-default-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-default-object.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Po
-	$(AM_V_CC)source='test-ecal-get-default-object.c' object='test_ecal_get_default_object-test-ecal-get-default-object.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_default_object-test-ecal-get-default-object.obj `if test -f 'test-ecal-get-default-object.c'; then $(CYGPATH_W) 'test-ecal-get-default-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-default-object.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_default_object-test-ecal-get-default-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo -c -o test_ecal_get_default_object-test-ecal-get-default-object.obj `if test -f 'test-ecal-get-default-object.c'; then $(CYGPATH_W) 'test-ecal-get-default-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-default-object.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Tpo $(DEPDIR)/test_ecal_get_default_object-test-ecal-get-default-object.Po
+#	$(AM_V_CC)source='test-ecal-get-default-object.c' object='test_ecal_get_default_object-test-ecal-get-default-object.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_default_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_default_object-test-ecal-get-default-object.obj `if test -f 'test-ecal-get-default-object.c'; then $(CYGPATH_W) 'test-ecal-get-default-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-default-object.c'; fi`
 
 test_ecal_get_free_busy-test-ecal-get-free-busy.o: test-ecal-get-free-busy.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_free_busy-test-ecal-get-free-busy.o -MD -MP -MF $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.o `test -f 'test-ecal-get-free-busy.c' || echo '$(srcdir)/'`test-ecal-get-free-busy.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Po
-	$(AM_V_CC)source='test-ecal-get-free-busy.c' object='test_ecal_get_free_busy-test-ecal-get-free-busy.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.o `test -f 'test-ecal-get-free-busy.c' || echo '$(srcdir)/'`test-ecal-get-free-busy.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_free_busy-test-ecal-get-free-busy.o -MD -MP -MF $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.o `test -f 'test-ecal-get-free-busy.c' || echo '$(srcdir)/'`test-ecal-get-free-busy.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Po
+#	$(AM_V_CC)source='test-ecal-get-free-busy.c' object='test_ecal_get_free_busy-test-ecal-get-free-busy.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.o `test -f 'test-ecal-get-free-busy.c' || echo '$(srcdir)/'`test-ecal-get-free-busy.c
 
 test_ecal_get_free_busy-test-ecal-get-free-busy.obj: test-ecal-get-free-busy.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_free_busy-test-ecal-get-free-busy.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.obj `if test -f 'test-ecal-get-free-busy.c'; then $(CYGPATH_W) 'test-ecal-get-free-busy.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-free-busy.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Po
-	$(AM_V_CC)source='test-ecal-get-free-busy.c' object='test_ecal_get_free_busy-test-ecal-get-free-busy.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.obj `if test -f 'test-ecal-get-free-busy.c'; then $(CYGPATH_W) 'test-ecal-get-free-busy.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-free-busy.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_free_busy-test-ecal-get-free-busy.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.obj `if test -f 'test-ecal-get-free-busy.c'; then $(CYGPATH_W) 'test-ecal-get-free-busy.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-free-busy.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Tpo $(DEPDIR)/test_ecal_get_free_busy-test-ecal-get-free-busy.Po
+#	$(AM_V_CC)source='test-ecal-get-free-busy.c' object='test_ecal_get_free_busy-test-ecal-get-free-busy.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_free_busy_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_free_busy-test-ecal-get-free-busy.obj `if test -f 'test-ecal-get-free-busy.c'; then $(CYGPATH_W) 'test-ecal-get-free-busy.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-free-busy.c'; fi`
 
 test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o: test-ecal-get-ldap-attribute.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o -MD -MP -MF $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o `test -f 'test-ecal-get-ldap-attribute.c' || echo '$(srcdir)/'`test-ecal-get-ldap-attribute.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Po
-	$(AM_V_CC)source='test-ecal-get-ldap-attribute.c' object='test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o `test -f 'test-ecal-get-ldap-attribute.c' || echo '$(srcdir)/'`test-ecal-get-ldap-attribute.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o -MD -MP -MF $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o `test -f 'test-ecal-get-ldap-attribute.c' || echo '$(srcdir)/'`test-ecal-get-ldap-attribute.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Po
+#	$(AM_V_CC)source='test-ecal-get-ldap-attribute.c' object='test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.o `test -f 'test-ecal-get-ldap-attribute.c' || echo '$(srcdir)/'`test-ecal-get-ldap-attribute.c
 
 test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj: test-ecal-get-ldap-attribute.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj `if test -f 'test-ecal-get-ldap-attribute.c'; then $(CYGPATH_W) 'test-ecal-get-ldap-attribute.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-ldap-attribute.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Po
-	$(AM_V_CC)source='test-ecal-get-ldap-attribute.c' object='test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj `if test -f 'test-ecal-get-ldap-attribute.c'; then $(CYGPATH_W) 'test-ecal-get-ldap-attribute.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-ldap-attribute.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj `if test -f 'test-ecal-get-ldap-attribute.c'; then $(CYGPATH_W) 'test-ecal-get-ldap-attribute.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-ldap-attribute.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Tpo $(DEPDIR)/test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.Po
+#	$(AM_V_CC)source='test-ecal-get-ldap-attribute.c' object='test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_ldap_attribute_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_ldap_attribute-test-ecal-get-ldap-attribute.obj `if test -f 'test-ecal-get-ldap-attribute.c'; then $(CYGPATH_W) 'test-ecal-get-ldap-attribute.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-ldap-attribute.c'; fi`
 
 test_ecal_get_object_list-test-ecal-get-object-list.o: test-ecal-get-object-list.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_object_list-test-ecal-get-object-list.o -MD -MP -MF $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo -c -o test_ecal_get_object_list-test-ecal-get-object-list.o `test -f 'test-ecal-get-object-list.c' || echo '$(srcdir)/'`test-ecal-get-object-list.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Po
-	$(AM_V_CC)source='test-ecal-get-object-list.c' object='test_ecal_get_object_list-test-ecal-get-object-list.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_object_list-test-ecal-get-object-list.o `test -f 'test-ecal-get-object-list.c' || echo '$(srcdir)/'`test-ecal-get-object-list.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_object_list-test-ecal-get-object-list.o -MD -MP -MF $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo -c -o test_ecal_get_object_list-test-ecal-get-object-list.o `test -f 'test-ecal-get-object-list.c' || echo '$(srcdir)/'`test-ecal-get-object-list.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Po
+#	$(AM_V_CC)source='test-ecal-get-object-list.c' object='test_ecal_get_object_list-test-ecal-get-object-list.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_object_list-test-ecal-get-object-list.o `test -f 'test-ecal-get-object-list.c' || echo '$(srcdir)/'`test-ecal-get-object-list.c
 
 test_ecal_get_object_list-test-ecal-get-object-list.obj: test-ecal-get-object-list.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_object_list-test-ecal-get-object-list.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo -c -o test_ecal_get_object_list-test-ecal-get-object-list.obj `if test -f 'test-ecal-get-object-list.c'; then $(CYGPATH_W) 'test-ecal-get-object-list.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-object-list.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Po
-	$(AM_V_CC)source='test-ecal-get-object-list.c' object='test_ecal_get_object_list-test-ecal-get-object-list.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_object_list-test-ecal-get-object-list.obj `if test -f 'test-ecal-get-object-list.c'; then $(CYGPATH_W) 'test-ecal-get-object-list.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-object-list.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_object_list-test-ecal-get-object-list.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo -c -o test_ecal_get_object_list-test-ecal-get-object-list.obj `if test -f 'test-ecal-get-object-list.c'; then $(CYGPATH_W) 'test-ecal-get-object-list.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-object-list.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Tpo $(DEPDIR)/test_ecal_get_object_list-test-ecal-get-object-list.Po
+#	$(AM_V_CC)source='test-ecal-get-object-list.c' object='test_ecal_get_object_list-test-ecal-get-object-list.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_object_list_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_object_list-test-ecal-get-object-list.obj `if test -f 'test-ecal-get-object-list.c'; then $(CYGPATH_W) 'test-ecal-get-object-list.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-object-list.c'; fi`
 
 test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o: test-ecal-get-objects-for-uid.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o -MD -MP -MF $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o `test -f 'test-ecal-get-objects-for-uid.c' || echo '$(srcdir)/'`test-ecal-get-objects-for-uid.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Po
-	$(AM_V_CC)source='test-ecal-get-objects-for-uid.c' object='test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o `test -f 'test-ecal-get-objects-for-uid.c' || echo '$(srcdir)/'`test-ecal-get-objects-for-uid.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o -MD -MP -MF $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o `test -f 'test-ecal-get-objects-for-uid.c' || echo '$(srcdir)/'`test-ecal-get-objects-for-uid.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Po
+#	$(AM_V_CC)source='test-ecal-get-objects-for-uid.c' object='test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.o `test -f 'test-ecal-get-objects-for-uid.c' || echo '$(srcdir)/'`test-ecal-get-objects-for-uid.c
 
 test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj: test-ecal-get-objects-for-uid.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj `if test -f 'test-ecal-get-objects-for-uid.c'; then $(CYGPATH_W) 'test-ecal-get-objects-for-uid.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-objects-for-uid.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Po
-	$(AM_V_CC)source='test-ecal-get-objects-for-uid.c' object='test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj `if test -f 'test-ecal-get-objects-for-uid.c'; then $(CYGPATH_W) 'test-ecal-get-objects-for-uid.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-objects-for-uid.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj `if test -f 'test-ecal-get-objects-for-uid.c'; then $(CYGPATH_W) 'test-ecal-get-objects-for-uid.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-objects-for-uid.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Tpo $(DEPDIR)/test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.Po
+#	$(AM_V_CC)source='test-ecal-get-objects-for-uid.c' object='test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_objects_for_uid_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_objects_for_uid-test-ecal-get-objects-for-uid.obj `if test -f 'test-ecal-get-objects-for-uid.c'; then $(CYGPATH_W) 'test-ecal-get-objects-for-uid.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-objects-for-uid.c'; fi`
 
 test_ecal_get_query-test-ecal-get-query.o: test-ecal-get-query.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_query-test-ecal-get-query.o -MD -MP -MF $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo -c -o test_ecal_get_query-test-ecal-get-query.o `test -f 'test-ecal-get-query.c' || echo '$(srcdir)/'`test-ecal-get-query.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Po
-	$(AM_V_CC)source='test-ecal-get-query.c' object='test_ecal_get_query-test-ecal-get-query.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_query-test-ecal-get-query.o `test -f 'test-ecal-get-query.c' || echo '$(srcdir)/'`test-ecal-get-query.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_query-test-ecal-get-query.o -MD -MP -MF $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo -c -o test_ecal_get_query-test-ecal-get-query.o `test -f 'test-ecal-get-query.c' || echo '$(srcdir)/'`test-ecal-get-query.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Po
+#	$(AM_V_CC)source='test-ecal-get-query.c' object='test_ecal_get_query-test-ecal-get-query.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_query-test-ecal-get-query.o `test -f 'test-ecal-get-query.c' || echo '$(srcdir)/'`test-ecal-get-query.c
 
 test_ecal_get_query-test-ecal-get-query.obj: test-ecal-get-query.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_query-test-ecal-get-query.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo -c -o test_ecal_get_query-test-ecal-get-query.obj `if test -f 'test-ecal-get-query.c'; then $(CYGPATH_W) 'test-ecal-get-query.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-query.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Po
-	$(AM_V_CC)source='test-ecal-get-query.c' object='test_ecal_get_query-test-ecal-get-query.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_query-test-ecal-get-query.obj `if test -f 'test-ecal-get-query.c'; then $(CYGPATH_W) 'test-ecal-get-query.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-query.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_query-test-ecal-get-query.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo -c -o test_ecal_get_query-test-ecal-get-query.obj `if test -f 'test-ecal-get-query.c'; then $(CYGPATH_W) 'test-ecal-get-query.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-query.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Tpo $(DEPDIR)/test_ecal_get_query-test-ecal-get-query.Po
+#	$(AM_V_CC)source='test-ecal-get-query.c' object='test_ecal_get_query-test-ecal-get-query.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_query-test-ecal-get-query.obj `if test -f 'test-ecal-get-query.c'; then $(CYGPATH_W) 'test-ecal-get-query.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-query.c'; fi`
 
 test_ecal_get_timezone-test-ecal-get-timezone.o: test-ecal-get-timezone.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_timezone-test-ecal-get-timezone.o -MD -MP -MF $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo -c -o test_ecal_get_timezone-test-ecal-get-timezone.o `test -f 'test-ecal-get-timezone.c' || echo '$(srcdir)/'`test-ecal-get-timezone.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Po
-	$(AM_V_CC)source='test-ecal-get-timezone.c' object='test_ecal_get_timezone-test-ecal-get-timezone.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_timezone-test-ecal-get-timezone.o `test -f 'test-ecal-get-timezone.c' || echo '$(srcdir)/'`test-ecal-get-timezone.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_timezone-test-ecal-get-timezone.o -MD -MP -MF $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo -c -o test_ecal_get_timezone-test-ecal-get-timezone.o `test -f 'test-ecal-get-timezone.c' || echo '$(srcdir)/'`test-ecal-get-timezone.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Po
+#	$(AM_V_CC)source='test-ecal-get-timezone.c' object='test_ecal_get_timezone-test-ecal-get-timezone.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_timezone-test-ecal-get-timezone.o `test -f 'test-ecal-get-timezone.c' || echo '$(srcdir)/'`test-ecal-get-timezone.c
 
 test_ecal_get_timezone-test-ecal-get-timezone.obj: test-ecal-get-timezone.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_timezone-test-ecal-get-timezone.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo -c -o test_ecal_get_timezone-test-ecal-get-timezone.obj `if test -f 'test-ecal-get-timezone.c'; then $(CYGPATH_W) 'test-ecal-get-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-timezone.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Po
-	$(AM_V_CC)source='test-ecal-get-timezone.c' object='test_ecal_get_timezone-test-ecal-get-timezone.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_timezone-test-ecal-get-timezone.obj `if test -f 'test-ecal-get-timezone.c'; then $(CYGPATH_W) 'test-ecal-get-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-timezone.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_get_timezone-test-ecal-get-timezone.obj -MD -MP -MF $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo -c -o test_ecal_get_timezone-test-ecal-get-timezone.obj `if test -f 'test-ecal-get-timezone.c'; then $(CYGPATH_W) 'test-ecal-get-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-timezone.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Tpo $(DEPDIR)/test_ecal_get_timezone-test-ecal-get-timezone.Po
+#	$(AM_V_CC)source='test-ecal-get-timezone.c' object='test_ecal_get_timezone-test-ecal-get-timezone.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_get_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_get_timezone-test-ecal-get-timezone.obj `if test -f 'test-ecal-get-timezone.c'; then $(CYGPATH_W) 'test-ecal-get-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-get-timezone.c'; fi`
 
 test_ecal_modify_object-test-ecal-modify-object.o: test-ecal-modify-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_modify_object-test-ecal-modify-object.o -MD -MP -MF $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo -c -o test_ecal_modify_object-test-ecal-modify-object.o `test -f 'test-ecal-modify-object.c' || echo '$(srcdir)/'`test-ecal-modify-object.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Po
-	$(AM_V_CC)source='test-ecal-modify-object.c' object='test_ecal_modify_object-test-ecal-modify-object.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_modify_object-test-ecal-modify-object.o `test -f 'test-ecal-modify-object.c' || echo '$(srcdir)/'`test-ecal-modify-object.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_modify_object-test-ecal-modify-object.o -MD -MP -MF $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo -c -o test_ecal_modify_object-test-ecal-modify-object.o `test -f 'test-ecal-modify-object.c' || echo '$(srcdir)/'`test-ecal-modify-object.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Po
+#	$(AM_V_CC)source='test-ecal-modify-object.c' object='test_ecal_modify_object-test-ecal-modify-object.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_modify_object-test-ecal-modify-object.o `test -f 'test-ecal-modify-object.c' || echo '$(srcdir)/'`test-ecal-modify-object.c
 
 test_ecal_modify_object-test-ecal-modify-object.obj: test-ecal-modify-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_modify_object-test-ecal-modify-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo -c -o test_ecal_modify_object-test-ecal-modify-object.obj `if test -f 'test-ecal-modify-object.c'; then $(CYGPATH_W) 'test-ecal-modify-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-modify-object.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Po
-	$(AM_V_CC)source='test-ecal-modify-object.c' object='test_ecal_modify_object-test-ecal-modify-object.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_modify_object-test-ecal-modify-object.obj `if test -f 'test-ecal-modify-object.c'; then $(CYGPATH_W) 'test-ecal-modify-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-modify-object.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_modify_object-test-ecal-modify-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo -c -o test_ecal_modify_object-test-ecal-modify-object.obj `if test -f 'test-ecal-modify-object.c'; then $(CYGPATH_W) 'test-ecal-modify-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-modify-object.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Tpo $(DEPDIR)/test_ecal_modify_object-test-ecal-modify-object.Po
+#	$(AM_V_CC)source='test-ecal-modify-object.c' object='test_ecal_modify_object-test-ecal-modify-object.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_modify_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_modify_object-test-ecal-modify-object.obj `if test -f 'test-ecal-modify-object.c'; then $(CYGPATH_W) 'test-ecal-modify-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-modify-object.c'; fi`
 
 test_ecal_open-test-ecal-open.o: test-ecal-open.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_open-test-ecal-open.o -MD -MP -MF $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo -c -o test_ecal_open-test-ecal-open.o `test -f 'test-ecal-open.c' || echo '$(srcdir)/'`test-ecal-open.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo $(DEPDIR)/test_ecal_open-test-ecal-open.Po
-	$(AM_V_CC)source='test-ecal-open.c' object='test_ecal_open-test-ecal-open.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_open-test-ecal-open.o `test -f 'test-ecal-open.c' || echo '$(srcdir)/'`test-ecal-open.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_open-test-ecal-open.o -MD -MP -MF $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo -c -o test_ecal_open-test-ecal-open.o `test -f 'test-ecal-open.c' || echo '$(srcdir)/'`test-ecal-open.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo $(DEPDIR)/test_ecal_open-test-ecal-open.Po
+#	$(AM_V_CC)source='test-ecal-open.c' object='test_ecal_open-test-ecal-open.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_open-test-ecal-open.o `test -f 'test-ecal-open.c' || echo '$(srcdir)/'`test-ecal-open.c
 
 test_ecal_open-test-ecal-open.obj: test-ecal-open.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_open-test-ecal-open.obj -MD -MP -MF $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo -c -o test_ecal_open-test-ecal-open.obj `if test -f 'test-ecal-open.c'; then $(CYGPATH_W) 'test-ecal-open.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-open.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo $(DEPDIR)/test_ecal_open-test-ecal-open.Po
-	$(AM_V_CC)source='test-ecal-open.c' object='test_ecal_open-test-ecal-open.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_open-test-ecal-open.obj `if test -f 'test-ecal-open.c'; then $(CYGPATH_W) 'test-ecal-open.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-open.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_open-test-ecal-open.obj -MD -MP -MF $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo -c -o test_ecal_open-test-ecal-open.obj `if test -f 'test-ecal-open.c'; then $(CYGPATH_W) 'test-ecal-open.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-open.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_open-test-ecal-open.Tpo $(DEPDIR)/test_ecal_open-test-ecal-open.Po
+#	$(AM_V_CC)source='test-ecal-open.c' object='test_ecal_open-test-ecal-open.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_open_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_open-test-ecal-open.obj `if test -f 'test-ecal-open.c'; then $(CYGPATH_W) 'test-ecal-open.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-open.c'; fi`
 
 test_ecal_receive_objects-test-ecal-receive-objects.o: test-ecal-receive-objects.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_receive_objects-test-ecal-receive-objects.o -MD -MP -MF $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo -c -o test_ecal_receive_objects-test-ecal-receive-objects.o `test -f 'test-ecal-receive-objects.c' || echo '$(srcdir)/'`test-ecal-receive-objects.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Po
-	$(AM_V_CC)source='test-ecal-receive-objects.c' object='test_ecal_receive_objects-test-ecal-receive-objects.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_receive_objects-test-ecal-receive-objects.o `test -f 'test-ecal-receive-objects.c' || echo '$(srcdir)/'`test-ecal-receive-objects.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_receive_objects-test-ecal-receive-objects.o -MD -MP -MF $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo -c -o test_ecal_receive_objects-test-ecal-receive-objects.o `test -f 'test-ecal-receive-objects.c' || echo '$(srcdir)/'`test-ecal-receive-objects.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Po
+#	$(AM_V_CC)source='test-ecal-receive-objects.c' object='test_ecal_receive_objects-test-ecal-receive-objects.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_receive_objects-test-ecal-receive-objects.o `test -f 'test-ecal-receive-objects.c' || echo '$(srcdir)/'`test-ecal-receive-objects.c
 
 test_ecal_receive_objects-test-ecal-receive-objects.obj: test-ecal-receive-objects.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_receive_objects-test-ecal-receive-objects.obj -MD -MP -MF $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo -c -o test_ecal_receive_objects-test-ecal-receive-objects.obj `if test -f 'test-ecal-receive-objects.c'; then $(CYGPATH_W) 'test-ecal-receive-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-receive-objects.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Po
-	$(AM_V_CC)source='test-ecal-receive-objects.c' object='test_ecal_receive_objects-test-ecal-receive-objects.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_receive_objects-test-ecal-receive-objects.obj `if test -f 'test-ecal-receive-objects.c'; then $(CYGPATH_W) 'test-ecal-receive-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-receive-objects.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_receive_objects-test-ecal-receive-objects.obj -MD -MP -MF $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo -c -o test_ecal_receive_objects-test-ecal-receive-objects.obj `if test -f 'test-ecal-receive-objects.c'; then $(CYGPATH_W) 'test-ecal-receive-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-receive-objects.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Tpo $(DEPDIR)/test_ecal_receive_objects-test-ecal-receive-objects.Po
+#	$(AM_V_CC)source='test-ecal-receive-objects.c' object='test_ecal_receive_objects-test-ecal-receive-objects.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_receive_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_receive_objects-test-ecal-receive-objects.obj `if test -f 'test-ecal-receive-objects.c'; then $(CYGPATH_W) 'test-ecal-receive-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-receive-objects.c'; fi`
 
 test_ecal_remove-test-ecal-remove.o: test-ecal-remove.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove-test-ecal-remove.o -MD -MP -MF $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo -c -o test_ecal_remove-test-ecal-remove.o `test -f 'test-ecal-remove.c' || echo '$(srcdir)/'`test-ecal-remove.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo $(DEPDIR)/test_ecal_remove-test-ecal-remove.Po
-	$(AM_V_CC)source='test-ecal-remove.c' object='test_ecal_remove-test-ecal-remove.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove-test-ecal-remove.o `test -f 'test-ecal-remove.c' || echo '$(srcdir)/'`test-ecal-remove.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove-test-ecal-remove.o -MD -MP -MF $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo -c -o test_ecal_remove-test-ecal-remove.o `test -f 'test-ecal-remove.c' || echo '$(srcdir)/'`test-ecal-remove.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo $(DEPDIR)/test_ecal_remove-test-ecal-remove.Po
+#	$(AM_V_CC)source='test-ecal-remove.c' object='test_ecal_remove-test-ecal-remove.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove-test-ecal-remove.o `test -f 'test-ecal-remove.c' || echo '$(srcdir)/'`test-ecal-remove.c
 
 test_ecal_remove-test-ecal-remove.obj: test-ecal-remove.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove-test-ecal-remove.obj -MD -MP -MF $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo -c -o test_ecal_remove-test-ecal-remove.obj `if test -f 'test-ecal-remove.c'; then $(CYGPATH_W) 'test-ecal-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo $(DEPDIR)/test_ecal_remove-test-ecal-remove.Po
-	$(AM_V_CC)source='test-ecal-remove.c' object='test_ecal_remove-test-ecal-remove.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove-test-ecal-remove.obj `if test -f 'test-ecal-remove.c'; then $(CYGPATH_W) 'test-ecal-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove-test-ecal-remove.obj -MD -MP -MF $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo -c -o test_ecal_remove-test-ecal-remove.obj `if test -f 'test-ecal-remove.c'; then $(CYGPATH_W) 'test-ecal-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove-test-ecal-remove.Tpo $(DEPDIR)/test_ecal_remove-test-ecal-remove.Po
+#	$(AM_V_CC)source='test-ecal-remove.c' object='test_ecal_remove-test-ecal-remove.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove-test-ecal-remove.obj `if test -f 'test-ecal-remove.c'; then $(CYGPATH_W) 'test-ecal-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove.c'; fi`
 
 test_ecal_remove_object-test-ecal-remove-object.o: test-ecal-remove-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove_object-test-ecal-remove-object.o -MD -MP -MF $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo -c -o test_ecal_remove_object-test-ecal-remove-object.o `test -f 'test-ecal-remove-object.c' || echo '$(srcdir)/'`test-ecal-remove-object.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Po
-	$(AM_V_CC)source='test-ecal-remove-object.c' object='test_ecal_remove_object-test-ecal-remove-object.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove_object-test-ecal-remove-object.o `test -f 'test-ecal-remove-object.c' || echo '$(srcdir)/'`test-ecal-remove-object.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove_object-test-ecal-remove-object.o -MD -MP -MF $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo -c -o test_ecal_remove_object-test-ecal-remove-object.o `test -f 'test-ecal-remove-object.c' || echo '$(srcdir)/'`test-ecal-remove-object.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Po
+#	$(AM_V_CC)source='test-ecal-remove-object.c' object='test_ecal_remove_object-test-ecal-remove-object.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove_object-test-ecal-remove-object.o `test -f 'test-ecal-remove-object.c' || echo '$(srcdir)/'`test-ecal-remove-object.c
 
 test_ecal_remove_object-test-ecal-remove-object.obj: test-ecal-remove-object.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove_object-test-ecal-remove-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo -c -o test_ecal_remove_object-test-ecal-remove-object.obj `if test -f 'test-ecal-remove-object.c'; then $(CYGPATH_W) 'test-ecal-remove-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove-object.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Po
-	$(AM_V_CC)source='test-ecal-remove-object.c' object='test_ecal_remove_object-test-ecal-remove-object.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove_object-test-ecal-remove-object.obj `if test -f 'test-ecal-remove-object.c'; then $(CYGPATH_W) 'test-ecal-remove-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove-object.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_remove_object-test-ecal-remove-object.obj -MD -MP -MF $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo -c -o test_ecal_remove_object-test-ecal-remove-object.obj `if test -f 'test-ecal-remove-object.c'; then $(CYGPATH_W) 'test-ecal-remove-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove-object.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Tpo $(DEPDIR)/test_ecal_remove_object-test-ecal-remove-object.Po
+#	$(AM_V_CC)source='test-ecal-remove-object.c' object='test_ecal_remove_object-test-ecal-remove-object.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_remove_object_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_remove_object-test-ecal-remove-object.obj `if test -f 'test-ecal-remove-object.c'; then $(CYGPATH_W) 'test-ecal-remove-object.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-remove-object.c'; fi`
 
 test_ecal_send_objects-test-ecal-send-objects.o: test-ecal-send-objects.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_send_objects-test-ecal-send-objects.o -MD -MP -MF $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo -c -o test_ecal_send_objects-test-ecal-send-objects.o `test -f 'test-ecal-send-objects.c' || echo '$(srcdir)/'`test-ecal-send-objects.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Po
-	$(AM_V_CC)source='test-ecal-send-objects.c' object='test_ecal_send_objects-test-ecal-send-objects.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_send_objects-test-ecal-send-objects.o `test -f 'test-ecal-send-objects.c' || echo '$(srcdir)/'`test-ecal-send-objects.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_send_objects-test-ecal-send-objects.o -MD -MP -MF $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo -c -o test_ecal_send_objects-test-ecal-send-objects.o `test -f 'test-ecal-send-objects.c' || echo '$(srcdir)/'`test-ecal-send-objects.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Po
+#	$(AM_V_CC)source='test-ecal-send-objects.c' object='test_ecal_send_objects-test-ecal-send-objects.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_send_objects-test-ecal-send-objects.o `test -f 'test-ecal-send-objects.c' || echo '$(srcdir)/'`test-ecal-send-objects.c
 
 test_ecal_send_objects-test-ecal-send-objects.obj: test-ecal-send-objects.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_send_objects-test-ecal-send-objects.obj -MD -MP -MF $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo -c -o test_ecal_send_objects-test-ecal-send-objects.obj `if test -f 'test-ecal-send-objects.c'; then $(CYGPATH_W) 'test-ecal-send-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-send-objects.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Po
-	$(AM_V_CC)source='test-ecal-send-objects.c' object='test_ecal_send_objects-test-ecal-send-objects.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_send_objects-test-ecal-send-objects.obj `if test -f 'test-ecal-send-objects.c'; then $(CYGPATH_W) 'test-ecal-send-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-send-objects.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_send_objects-test-ecal-send-objects.obj -MD -MP -MF $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo -c -o test_ecal_send_objects-test-ecal-send-objects.obj `if test -f 'test-ecal-send-objects.c'; then $(CYGPATH_W) 'test-ecal-send-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-send-objects.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Tpo $(DEPDIR)/test_ecal_send_objects-test-ecal-send-objects.Po
+#	$(AM_V_CC)source='test-ecal-send-objects.c' object='test_ecal_send_objects-test-ecal-send-objects.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_send_objects_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_send_objects-test-ecal-send-objects.obj `if test -f 'test-ecal-send-objects.c'; then $(CYGPATH_W) 'test-ecal-send-objects.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-send-objects.c'; fi`
 
 test_ecal_set_default_timezone-test-ecal-set-default-timezone.o: test-ecal-set-default-timezone.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_default_timezone-test-ecal-set-default-timezone.o -MD -MP -MF $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.o `test -f 'test-ecal-set-default-timezone.c' || echo '$(srcdir)/'`test-ecal-set-default-timezone.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Po
-	$(AM_V_CC)source='test-ecal-set-default-timezone.c' object='test_ecal_set_default_timezone-test-ecal-set-default-timezone.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.o `test -f 'test-ecal-set-default-timezone.c' || echo '$(srcdir)/'`test-ecal-set-default-timezone.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_default_timezone-test-ecal-set-default-timezone.o -MD -MP -MF $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.o `test -f 'test-ecal-set-default-timezone.c' || echo '$(srcdir)/'`test-ecal-set-default-timezone.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Po
+#	$(AM_V_CC)source='test-ecal-set-default-timezone.c' object='test_ecal_set_default_timezone-test-ecal-set-default-timezone.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.o `test -f 'test-ecal-set-default-timezone.c' || echo '$(srcdir)/'`test-ecal-set-default-timezone.c
 
 test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj: test-ecal-set-default-timezone.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj -MD -MP -MF $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj `if test -f 'test-ecal-set-default-timezone.c'; then $(CYGPATH_W) 'test-ecal-set-default-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-default-timezone.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Po
-	$(AM_V_CC)source='test-ecal-set-default-timezone.c' object='test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj `if test -f 'test-ecal-set-default-timezone.c'; then $(CYGPATH_W) 'test-ecal-set-default-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-default-timezone.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj -MD -MP -MF $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj `if test -f 'test-ecal-set-default-timezone.c'; then $(CYGPATH_W) 'test-ecal-set-default-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-default-timezone.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Tpo $(DEPDIR)/test_ecal_set_default_timezone-test-ecal-set-default-timezone.Po
+#	$(AM_V_CC)source='test-ecal-set-default-timezone.c' object='test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_default_timezone_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_default_timezone-test-ecal-set-default-timezone.obj `if test -f 'test-ecal-set-default-timezone.c'; then $(CYGPATH_W) 'test-ecal-set-default-timezone.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-default-timezone.c'; fi`
 
 test_ecal_set_mode-test-ecal-set-mode.o: test-ecal-set-mode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_mode-test-ecal-set-mode.o -MD -MP -MF $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo -c -o test_ecal_set_mode-test-ecal-set-mode.o `test -f 'test-ecal-set-mode.c' || echo '$(srcdir)/'`test-ecal-set-mode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Po
-	$(AM_V_CC)source='test-ecal-set-mode.c' object='test_ecal_set_mode-test-ecal-set-mode.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_mode-test-ecal-set-mode.o `test -f 'test-ecal-set-mode.c' || echo '$(srcdir)/'`test-ecal-set-mode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_mode-test-ecal-set-mode.o -MD -MP -MF $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo -c -o test_ecal_set_mode-test-ecal-set-mode.o `test -f 'test-ecal-set-mode.c' || echo '$(srcdir)/'`test-ecal-set-mode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Po
+#	$(AM_V_CC)source='test-ecal-set-mode.c' object='test_ecal_set_mode-test-ecal-set-mode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_mode-test-ecal-set-mode.o `test -f 'test-ecal-set-mode.c' || echo '$(srcdir)/'`test-ecal-set-mode.c
 
 test_ecal_set_mode-test-ecal-set-mode.obj: test-ecal-set-mode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_mode-test-ecal-set-mode.obj -MD -MP -MF $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo -c -o test_ecal_set_mode-test-ecal-set-mode.obj `if test -f 'test-ecal-set-mode.c'; then $(CYGPATH_W) 'test-ecal-set-mode.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-mode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Po
-	$(AM_V_CC)source='test-ecal-set-mode.c' object='test_ecal_set_mode-test-ecal-set-mode.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_mode-test-ecal-set-mode.obj `if test -f 'test-ecal-set-mode.c'; then $(CYGPATH_W) 'test-ecal-set-mode.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-mode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_set_mode-test-ecal-set-mode.obj -MD -MP -MF $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo -c -o test_ecal_set_mode-test-ecal-set-mode.obj `if test -f 'test-ecal-set-mode.c'; then $(CYGPATH_W) 'test-ecal-set-mode.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-mode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Tpo $(DEPDIR)/test_ecal_set_mode-test-ecal-set-mode.Po
+#	$(AM_V_CC)source='test-ecal-set-mode.c' object='test_ecal_set_mode-test-ecal-set-mode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_set_mode_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_set_mode-test-ecal-set-mode.obj `if test -f 'test-ecal-set-mode.c'; then $(CYGPATH_W) 'test-ecal-set-mode.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-set-mode.c'; fi`
 
 test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o: test-ecal-stress-factory--fifo.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o `test -f 'test-ecal-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ecal-stress-factory--fifo.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--fifo.c' object='test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o `test -f 'test-ecal-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ecal-stress-factory--fifo.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o `test -f 'test-ecal-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ecal-stress-factory--fifo.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--fifo.c' object='test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.o `test -f 'test-ecal-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ecal-stress-factory--fifo.c
 
 test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj: test-ecal-stress-factory--fifo.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj `if test -f 'test-ecal-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--fifo.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--fifo.c' object='test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj `if test -f 'test-ecal-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--fifo.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj `if test -f 'test-ecal-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--fifo.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Tpo $(DEPDIR)/test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--fifo.c' object='test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__fifo-test-ecal-stress-factory--fifo.obj `if test -f 'test-ecal-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--fifo.c'; fi`
 
 test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o: test-ecal-stress-factory--open-async.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o `test -f 'test-ecal-stress-factory--open-async.c' || echo '$(srcdir)/'`test-ecal-stress-factory--open-async.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--open-async.c' object='test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o `test -f 'test-ecal-stress-factory--open-async.c' || echo '$(srcdir)/'`test-ecal-stress-factory--open-async.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o `test -f 'test-ecal-stress-factory--open-async.c' || echo '$(srcdir)/'`test-ecal-stress-factory--open-async.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--open-async.c' object='test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.o `test -f 'test-ecal-stress-factory--open-async.c' || echo '$(srcdir)/'`test-ecal-stress-factory--open-async.c
 
 test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj: test-ecal-stress-factory--open-async.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj `if test -f 'test-ecal-stress-factory--open-async.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--open-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--open-async.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--open-async.c' object='test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj `if test -f 'test-ecal-stress-factory--open-async.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--open-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--open-async.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj `if test -f 'test-ecal-stress-factory--open-async.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--open-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--open-async.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Tpo $(DEPDIR)/test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--open-async.c' object='test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__open_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__open_async-test-ecal-stress-factory--open-async.obj `if test -f 'test-ecal-stress-factory--open-async.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--open-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--open-async.c'; fi`
 
 test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o: test-ecal-stress-factory--serial.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o `test -f 'test-ecal-stress-factory--serial.c' || echo '$(srcdir)/'`test-ecal-stress-factory--serial.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--serial.c' object='test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o `test -f 'test-ecal-stress-factory--serial.c' || echo '$(srcdir)/'`test-ecal-stress-factory--serial.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o `test -f 'test-ecal-stress-factory--serial.c' || echo '$(srcdir)/'`test-ecal-stress-factory--serial.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--serial.c' object='test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.o `test -f 'test-ecal-stress-factory--serial.c' || echo '$(srcdir)/'`test-ecal-stress-factory--serial.c
 
 test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj: test-ecal-stress-factory--serial.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj `if test -f 'test-ecal-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--serial.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--serial.c' object='test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj `if test -f 'test-ecal-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--serial.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj `if test -f 'test-ecal-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--serial.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Tpo $(DEPDIR)/test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--serial.c' object='test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__serial-test-ecal-stress-factory--serial.obj `if test -f 'test-ecal-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--serial.c'; fi`
 
 test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o: test-ecal-stress-factory--single-cal.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o `test -f 'test-ecal-stress-factory--single-cal.c' || echo '$(srcdir)/'`test-ecal-stress-factory--single-cal.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--single-cal.c' object='test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o `test -f 'test-ecal-stress-factory--single-cal.c' || echo '$(srcdir)/'`test-ecal-stress-factory--single-cal.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o `test -f 'test-ecal-stress-factory--single-cal.c' || echo '$(srcdir)/'`test-ecal-stress-factory--single-cal.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--single-cal.c' object='test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.o `test -f 'test-ecal-stress-factory--single-cal.c' || echo '$(srcdir)/'`test-ecal-stress-factory--single-cal.c
 
 test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj: test-ecal-stress-factory--single-cal.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj `if test -f 'test-ecal-stress-factory--single-cal.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--single-cal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--single-cal.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Po
-	$(AM_V_CC)source='test-ecal-stress-factory--single-cal.c' object='test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj `if test -f 'test-ecal-stress-factory--single-cal.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--single-cal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--single-cal.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj -MD -MP -MF $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj `if test -f 'test-ecal-stress-factory--single-cal.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--single-cal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--single-cal.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Tpo $(DEPDIR)/test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.Po
+#	$(AM_V_CC)source='test-ecal-stress-factory--single-cal.c' object='test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ecal_stress_factory__single_cal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ecal_stress_factory__single_cal-test-ecal-stress-factory--single-cal.obj `if test -f 'test-ecal-stress-factory--single-cal.c'; then $(CYGPATH_W) 'test-ecal-stress-factory--single-cal.c'; else $(CYGPATH_W) '$(srcdir)/test-ecal-stress-factory--single-cal.c'; fi`
 
 test_recur-test-recur.o: test-recur.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_recur-test-recur.o -MD -MP -MF $(DEPDIR)/test_recur-test-recur.Tpo -c -o test_recur-test-recur.o `test -f 'test-recur.c' || echo '$(srcdir)/'`test-recur.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_recur-test-recur.Tpo $(DEPDIR)/test_recur-test-recur.Po
-	$(AM_V_CC)source='test-recur.c' object='test_recur-test-recur.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_recur-test-recur.o `test -f 'test-recur.c' || echo '$(srcdir)/'`test-recur.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_recur-test-recur.o -MD -MP -MF $(DEPDIR)/test_recur-test-recur.Tpo -c -o test_recur-test-recur.o `test -f 'test-recur.c' || echo '$(srcdir)/'`test-recur.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_recur-test-recur.Tpo $(DEPDIR)/test_recur-test-recur.Po
+#	$(AM_V_CC)source='test-recur.c' object='test_recur-test-recur.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_recur-test-recur.o `test -f 'test-recur.c' || echo '$(srcdir)/'`test-recur.c
 
 test_recur-test-recur.obj: test-recur.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_recur-test-recur.obj -MD -MP -MF $(DEPDIR)/test_recur-test-recur.Tpo -c -o test_recur-test-recur.obj `if test -f 'test-recur.c'; then $(CYGPATH_W) 'test-recur.c'; else $(CYGPATH_W) '$(srcdir)/test-recur.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_recur-test-recur.Tpo $(DEPDIR)/test_recur-test-recur.Po
-	$(AM_V_CC)source='test-recur.c' object='test_recur-test-recur.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_recur-test-recur.obj `if test -f 'test-recur.c'; then $(CYGPATH_W) 'test-recur.c'; else $(CYGPATH_W) '$(srcdir)/test-recur.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_recur-test-recur.obj -MD -MP -MF $(DEPDIR)/test_recur-test-recur.Tpo -c -o test_recur-test-recur.obj `if test -f 'test-recur.c'; then $(CYGPATH_W) 'test-recur.c'; else $(CYGPATH_W) '$(srcdir)/test-recur.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_recur-test-recur.Tpo $(DEPDIR)/test_recur-test-recur.Po
+#	$(AM_V_CC)source='test-recur.c' object='test_recur-test-recur.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_recur_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_recur-test-recur.obj `if test -f 'test-recur.c'; then $(CYGPATH_W) 'test-recur.c'; else $(CYGPATH_W) '$(srcdir)/test-recur.c'; fi`
 
 test_search-test-search.o: test-search.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.o -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
-	$(AM_V_CC)source='test-search.c' object='test_search-test-search.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.o -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
+#	$(AM_V_CC)source='test-search.c' object='test_search-test-search.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
 
 test_search-test-search.obj: test-search.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.obj -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
-	$(AM_V_CC)source='test-search.c' object='test_search-test-search.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.obj -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
+#	$(AM_V_CC)source='test-search.c' object='test_search-test-search.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

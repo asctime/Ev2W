@@ -126,7 +126,7 @@ gcc3)
   for arg
   do
     case $arg in
-    -c) set fnord "$@" -pthread "$object" -MD -MP -MF "$tmpdepfile" "$arg" ;;
+    -c) set fnord "$@" -MT "$object" -MD -MP -MF "$tmpdepfile" "$arg" ;;
     *)  set fnord "$@" "$arg" ;;
     esac
     shift # fnord

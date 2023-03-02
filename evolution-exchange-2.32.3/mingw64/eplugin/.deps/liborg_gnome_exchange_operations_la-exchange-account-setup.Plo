@@ -1,11 +1,16 @@
 liborg_gnome_exchange_operations_la-exchange-account-setup.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  \
  ../../eplugin/exchange-account-setup.c ../config.h \
 =======
  ../../eplugin/exchange-account-setup.c \
  ../config.h \
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ \
+ ../../eplugin/exchange-account-setup.c ../config.h \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-account.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \
@@ -858,9 +863,13 @@ liborg_gnome_exchange_operations_la-exchange-account-setup.lo : \
  ../../eplugin/exchange-delegates.h \
  ../../eplugin/exchange-change-password.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-account-setup.c :
 ../config.h :
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-account.h :

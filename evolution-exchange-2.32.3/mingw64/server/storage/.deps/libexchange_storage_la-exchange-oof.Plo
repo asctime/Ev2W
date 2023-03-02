@@ -1,8 +1,12 @@
 libexchange_storage_la-exchange-oof.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  \
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../../server/storage/exchange-oof.c ../../config.h \
  ../../../server/storage/exchange-oof.h \
  ../../../server/storage/exchange-types.h ../../../server/lib/e2k-types.h \
@@ -709,9 +713,13 @@ libexchange_storage_la-exchange-oof.lo : \
  ../../server/lib/e2k-propnames.h ../../../server/lib/e2k-utils.h \
  ../../../server/lib/e2k-uri.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/storage/exchange-oof.c :
 ../../config.h :
 ../../../server/storage/exchange-oof.h :

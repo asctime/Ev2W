@@ -1,11 +1,16 @@
 libexchange_la-e2k-marshal.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  e2k-marshal.c \
  e2k-marshal.h D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
 =======
  e2k-marshal.c e2k-marshal.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ e2k-marshal.c \
+ e2k-marshal.h D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
@@ -142,9 +147,13 @@ libexchange_la-e2k-marshal.lo : \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gvaluetypes.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gobject-autocleanups.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 e2k-marshal.c :
 e2k-marshal.h :
 D:/MSYS2/mingw64/include/glib-2.0/glib-object.h :

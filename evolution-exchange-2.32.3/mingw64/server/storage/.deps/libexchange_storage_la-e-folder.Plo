@@ -1,8 +1,12 @@
 libexchange_storage_la-e-folder.lo : \
 <<<<<<< HEAD
+<<<<<<< HEAD
  \
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+ \
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../../server/storage/e-folder.c ../../config.h \
  ../../../server/storage/e-folder.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
@@ -636,9 +640,13 @@ libexchange_storage_la-e-folder.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 -fstack-protector-strong :
 =======
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
+=======
+-fstack-protector-strong :
+>>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/storage/e-folder.c :
 ../../config.h :
 ../../../server/storage/e-folder.h :
