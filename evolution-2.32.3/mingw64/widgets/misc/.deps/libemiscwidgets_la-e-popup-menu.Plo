@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-popup-menu.lo: ../../../widgets/misc/e-popup-menu.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-popup-menu.lo: ../../../widgets/misc/e-popup-menu.c \
  ../../config.h D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

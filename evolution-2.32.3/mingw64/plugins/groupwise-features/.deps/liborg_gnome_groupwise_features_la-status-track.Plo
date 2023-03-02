@@ -1,4 +1,5 @@
-liborg_gnome_groupwise_features_la-status-track.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_groupwise_features_la-status-track.lo: \
  ../../../plugins/groupwise-features/status-track.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n-lib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

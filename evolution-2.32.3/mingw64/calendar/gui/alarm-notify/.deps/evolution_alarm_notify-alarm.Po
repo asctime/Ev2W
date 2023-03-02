@@ -1,4 +1,5 @@
-evolution_alarm_notify-alarm.o: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ evolution_alarm_notify-alarm.o: \
  ../../../../calendar/gui/alarm-notify/alarm.c ../../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unistd.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h \

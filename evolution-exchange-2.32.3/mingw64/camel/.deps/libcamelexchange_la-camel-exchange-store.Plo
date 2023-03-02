@@ -1,4 +1,5 @@
 libcamelexchange_la-camel-exchange-store.lo : \
+ \
  ../../camel/camel-exchange-store.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -443,6 +444,7 @@ libcamelexchange_la-camel-exchange-store.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vtrash-folder.h \
  ../../camel/camel-exchange-folder.h ../../camel/camel-exchange-summary.h \
  ../../camel/camel-exchange-utils.h
+-fstack-protector-strong :
 ../../camel/camel-exchange-store.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

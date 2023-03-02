@@ -1,4 +1,5 @@
-libevolution_module_mail_la-em-mailer-prefs.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_mail_la-em-mailer-prefs.lo: \
  ../../../modules/mail/em-mailer-prefs.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

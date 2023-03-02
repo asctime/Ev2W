@@ -1,4 +1,5 @@
-libevolution_mail_la-e-mail-sidebar.lo: ../../mail/e-mail-sidebar.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-sidebar.lo: ../../mail/e-mail-sidebar.c \
  ../../mail/e-mail-sidebar.h ../../mail/em-folder-tree.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

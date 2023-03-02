@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-combo-cell-editable.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-combo-cell-editable.lo: \
  ../../../widgets/misc/e-combo-cell-editable.c ../../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h \

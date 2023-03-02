@@ -1,4 +1,5 @@
-libevolution_mail_settings_la-mail-capplet-shell.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_settings_la-mail-capplet-shell.lo: \
  ../../../capplet/settings/mail-capplet-shell.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

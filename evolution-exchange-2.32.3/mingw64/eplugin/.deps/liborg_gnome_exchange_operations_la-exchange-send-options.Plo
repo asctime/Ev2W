@@ -1,6 +1,7 @@
 liborg_gnome_exchange_operations_la-exchange-send-options.lo : \
- ../../eplugin/exchange-send-options.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
+ \
+ ../../eplugin/exchange-send-options.c ../config.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -729,6 +730,7 @@ liborg_gnome_exchange_operations_la-exchange-send-options.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert-dialog.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert.h \
  ../../eplugin/exchange-send-options.h
+-fstack-protector-strong :
 ../../eplugin/exchange-send-options.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

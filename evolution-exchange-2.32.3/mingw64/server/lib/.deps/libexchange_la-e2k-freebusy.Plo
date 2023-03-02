@@ -1,4 +1,5 @@
 libexchange_la-e2k-freebusy.lo : \
+ \
  ../../../server/lib/e2k-freebusy.c ../../config.h \
  ../../../server/lib/e2k-freebusy.h ../../../server/lib/e2k-context.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-message.h \
@@ -347,6 +348,7 @@ libexchange_la-e2k-freebusy.lo : \
  ../../../server/lib/e2k-restriction.h ../../../server/lib/e2k-uri.h \
  ../../../server/lib/e2k-utils.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-time-utils.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-freebusy.c :
 ../../config.h :
 ../../../server/lib/e2k-freebusy.h :

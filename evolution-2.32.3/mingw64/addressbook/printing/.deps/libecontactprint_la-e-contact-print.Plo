@@ -1,4 +1,5 @@
-libecontactprint_la-e-contact-print.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libecontactprint_la-e-contact-print.lo: \
  ../../../addressbook/printing/e-contact-print.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-e-cal-shell-view.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-e-cal-shell-view.lo: \
  ../../../modules/calendar/e-cal-shell-view.c \
  ../../../modules/calendar/e-cal-shell-view-private.h \
  ../../../modules/calendar/e-cal-shell-view.h \

@@ -1,6 +1,6 @@
 libcamelexchange_la-mail-utils.lo : \
- ../../camel/mail-utils.c ../config.h \
- ../../camel/mail-utils.h \
+ \
+ ../../camel/mail-utils.c ../config.h ../../camel/mail-utils.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-address.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-object.h \
@@ -815,6 +815,7 @@ libcamelexchange_la-mail-utils.lo : \
  D:/MSYS2/mingw64/include/libical/ical.h \
  D:/MSYS2/mingw64/include/libical/libical_ical_export.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/assert.h
+-fstack-protector-strong :
 ../../camel/mail-utils.c :
 ../config.h :
 ../../camel/mail-utils.h :

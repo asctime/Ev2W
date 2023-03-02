@@ -1,4 +1,5 @@
-libeutil_la-e-signature-utils.lo: ../../e-util/e-signature-utils.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-signature-utils.lo: ../../e-util/e-signature-utils.c \
  ../../e-util/e-signature-utils.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

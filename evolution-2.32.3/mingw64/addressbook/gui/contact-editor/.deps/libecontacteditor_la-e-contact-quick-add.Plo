@@ -1,4 +1,5 @@
-libecontacteditor_la-e-contact-quick-add.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libecontacteditor_la-e-contact-quick-add.lo: \
  ../../../../addressbook/gui/contact-editor/e-contact-quick-add.c \
  ../../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

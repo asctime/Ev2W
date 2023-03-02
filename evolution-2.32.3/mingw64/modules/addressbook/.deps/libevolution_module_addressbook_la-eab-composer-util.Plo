@@ -1,4 +1,5 @@
-libevolution_module_addressbook_la-eab-composer-util.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_addressbook_la-eab-composer-util.lo: \
  ../../../modules/addressbook/eab-composer-util.c \
  ../../../modules/addressbook/eab-composer-util.h \
  ../../../shell/e-shell.h \

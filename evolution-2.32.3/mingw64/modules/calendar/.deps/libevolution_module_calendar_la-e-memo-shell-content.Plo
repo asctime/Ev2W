@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-e-memo-shell-content.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-e-memo-shell-content.lo: \
  ../../../modules/calendar/e-memo-shell-content.c \
  ../../../modules/calendar/e-memo-shell-content.h \
  ../../../shell/e-shell-content.h ../../../shell/e-shell-common.h \

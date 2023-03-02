@@ -1,4 +1,5 @@
-libeabbookmerging_la-eab-contact-merging.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeabbookmerging_la-eab-contact-merging.lo: \
  ../../../../addressbook/gui/merging/eab-contact-merging.c \
  ../../../config.h \
  ../../../../addressbook/gui/merging/eab-contact-merging.h \

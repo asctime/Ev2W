@@ -1,4 +1,5 @@
-evolution_backup-backup.o: ../../../plugins/backup-restore/backup.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ evolution_backup-backup.o: ../../../plugins/backup-restore/backup.c \
  ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

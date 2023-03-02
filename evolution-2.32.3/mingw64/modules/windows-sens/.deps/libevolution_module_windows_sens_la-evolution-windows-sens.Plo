@@ -1,4 +1,5 @@
-libevolution_module_windows_sens_la-evolution-windows-sens.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_windows_sens_la-evolution-windows-sens.lo: \
  ../../../modules/windows-sens/evolution-windows-sens.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \

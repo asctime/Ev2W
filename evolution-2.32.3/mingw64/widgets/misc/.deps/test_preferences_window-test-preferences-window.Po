@@ -1,4 +1,5 @@
-test_preferences_window-test-preferences-window.o: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ test_preferences_window-test-preferences-window.o: \
  ../../../widgets/misc/test-preferences-window.c \
  ../../../widgets/misc/e-preferences-window.c \
  ../../../widgets/misc/e-preferences-window.h \

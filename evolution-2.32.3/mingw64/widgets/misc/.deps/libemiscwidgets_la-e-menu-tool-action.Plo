@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-menu-tool-action.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-menu-tool-action.lo: \
  ../../../widgets/misc/e-menu-tool-action.c \
  ../../../widgets/misc/e-menu-tool-action.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

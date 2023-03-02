@@ -1,4 +1,5 @@
 liborg_gnome_exchange_operations_la-exchange-folder.lo : \
+ \
  ../../eplugin/exchange-folder.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
@@ -868,6 +869,7 @@ liborg_gnome_exchange_operations_la-exchange-folder.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  ../../eplugin/exchange-folder-subscription.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source.h
+-fstack-protector-strong :
 ../../eplugin/exchange-folder.c :
 ../config.h :
 D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h :

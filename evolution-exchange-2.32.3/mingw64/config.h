@@ -5,7 +5,7 @@
 #define BASE_VERSION "2.32"
 
 /* Used to prevent clock-setting attacks against pilot licenses */
-#define E2K_APPROX_BUILD_TIME 1676937600
+#define E2K_APPROX_BUILD_TIME 1677283200
 
 /* Define if you want E2K_DEBUG to be available */
 /* #undef E2K_DEBUG */

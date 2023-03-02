@@ -1,4 +1,5 @@
-libevolution_module_mail_la-e-mail-shell-content.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_mail_la-e-mail-shell-content.lo: \
  ../../../modules/mail/e-mail-shell-content.c \
  ../../../modules/mail/e-mail-shell-content.h \
  ../../../shell/e-shell-content.h ../../../shell/e-shell-common.h \

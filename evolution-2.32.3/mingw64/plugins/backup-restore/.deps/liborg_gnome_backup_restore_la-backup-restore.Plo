@@ -1,4 +1,5 @@
-liborg_gnome_backup_restore_la-backup-restore.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_backup_restore_la-backup-restore.lo: \
  ../../../plugins/backup-restore/backup-restore.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unistd.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h \

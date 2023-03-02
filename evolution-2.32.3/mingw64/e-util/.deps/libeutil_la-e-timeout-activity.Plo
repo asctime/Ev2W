@@ -1,4 +1,5 @@
-libeutil_la-e-timeout-activity.lo: ../../e-util/e-timeout-activity.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-timeout-activity.lo: ../../e-util/e-timeout-activity.c \
  ../../e-util/e-timeout-activity.h ../../e-util/e-activity.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

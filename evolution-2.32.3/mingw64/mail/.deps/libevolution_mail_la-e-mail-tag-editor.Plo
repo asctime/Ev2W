@@ -1,5 +1,7 @@
-libevolution_mail_la-e-mail-tag-editor.lo: ../../mail/e-mail-tag-editor.c \
- ../config.h ../../mail/e-mail-tag-editor.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_la-e-mail-tag-editor.lo: \
+ ../../mail/e-mail-tag-editor.c ../config.h \
+ ../../mail/e-mail-tag-editor.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \

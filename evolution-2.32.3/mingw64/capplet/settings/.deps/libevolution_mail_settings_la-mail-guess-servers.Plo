@@ -1,4 +1,5 @@
-libevolution_mail_settings_la-mail-guess-servers.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_settings_la-mail-guess-servers.lo: \
  ../../../capplet/settings/mail-guess-servers.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

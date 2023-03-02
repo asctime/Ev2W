@@ -1,4 +1,5 @@
-libemiscwidgets_la-ea-calendar-item.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-ea-calendar-item.lo: \
  ../../../widgets/misc/ea-calendar-item.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

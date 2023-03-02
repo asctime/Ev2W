@@ -323,10 +323,10 @@ CAMEL_SSL_DEFINES = -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
-CCDEPMODE = depmode=gcc
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations-DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+CCDEPMODE = depmode=gcc3
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 CPP = gcc -E
-CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include
@@ -354,7 +354,7 @@ EXEEXT = .exe
 E_BACKEND_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_BACKEND_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 E_DATA_SERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nspr   
-E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
+E_DATA_SERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgconf-2 -lglib-2.0 -lintl -lplds4 -lplc4 -lnspr4   
 E_DATA_SERVER_UI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -mms-bitfields   
 E_DATA_SERVER_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lxml2 -lgconf-2 -lglib-2.0 -lintl   
 FGREP = /usr/bin/grep -F
@@ -372,7 +372,7 @@ GMSGFMT = /MSYS2/mingw64/bin/msgfmt
 GNOME_KEYRING_CFLAGS = 
 GNOME_KEYRING_LIBS = 
 GNOME_PLATFORM_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -mms-bitfields 
-GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgmodule-2.0 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
+GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgconf-2 -lxml2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
@@ -393,7 +393,7 @@ INTERFACE_VERSION = 2.32
 INTLLIBS = -lintl  
 INTLTOOL_EXTRACT = /usr/bin/intltool-extract
 INTLTOOL_MERGE = /usr/bin/intltool-merge
-INTLTOOL_PERL = /MSYS2/mingw64/bin/perl
+INTLTOOL_PERL = /usr/bin/perl
 INTLTOOL_UPDATE = /usr/bin/intltool-update
 INTL_MACOSX_LIBS = 
 JW = no
@@ -494,7 +494,7 @@ SET_MAKE =
 SHELL = /bin/sh
 SOCKET_LIBS = -lws2_32 -ldnsapi
 SOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2   
-SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
+SOUP_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl   
 SQLITE_REQUIRED = 3.5
 STRIP = strip
 USE_NLS = yes
@@ -837,438 +837,438 @@ include ./$(DEPDIR)/test_undefinedfield-test-undefinedfield.Po
 include ./$(DEPDIR)/test_untyped_phones-test-untyped-phones.Po
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-	$(AM_V_CC)source='$<' object='$@' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-	$(AM_V_CC)source='$<' object='$@' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 libebook_test_utils_la-ebook-test-utils.lo: ebook-test-utils.c
-#	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_test_utils_la-ebook-test-utils.lo -MD -MP -MF $(DEPDIR)/libebook_test_utils_la-ebook-test-utils.Tpo -c -o libebook_test_utils_la-ebook-test-utils.lo `test -f 'ebook-test-utils.c' || echo '$(srcdir)/'`ebook-test-utils.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_test_utils_la-ebook-test-utils.Tpo $(DEPDIR)/libebook_test_utils_la-ebook-test-utils.Plo
-	$(AM_V_CC)source='ebook-test-utils.c' object='libebook_test_utils_la-ebook-test-utils.lo' libtool=yes \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_test_utils_la-ebook-test-utils.lo `test -f 'ebook-test-utils.c' || echo '$(srcdir)/'`ebook-test-utils.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebook_test_utils_la-ebook-test-utils.lo -MD -MP -MF $(DEPDIR)/libebook_test_utils_la-ebook-test-utils.Tpo -c -o libebook_test_utils_la-ebook-test-utils.lo `test -f 'ebook-test-utils.c' || echo '$(srcdir)/'`ebook-test-utils.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libebook_test_utils_la-ebook-test-utils.Tpo $(DEPDIR)/libebook_test_utils_la-ebook-test-utils.Plo
+#	$(AM_V_CC)source='ebook-test-utils.c' object='libebook_test_utils_la-ebook-test-utils.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebook_test_utils_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebook_test_utils_la-ebook-test-utils.lo `test -f 'ebook-test-utils.c' || echo '$(srcdir)/'`ebook-test-utils.c
 
 test_categories-test-categories.o: test-categories.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_categories-test-categories.o -MD -MP -MF $(DEPDIR)/test_categories-test-categories.Tpo -c -o test_categories-test-categories.o `test -f 'test-categories.c' || echo '$(srcdir)/'`test-categories.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_categories-test-categories.Tpo $(DEPDIR)/test_categories-test-categories.Po
-	$(AM_V_CC)source='test-categories.c' object='test_categories-test-categories.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_categories-test-categories.o `test -f 'test-categories.c' || echo '$(srcdir)/'`test-categories.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_categories-test-categories.o -MD -MP -MF $(DEPDIR)/test_categories-test-categories.Tpo -c -o test_categories-test-categories.o `test -f 'test-categories.c' || echo '$(srcdir)/'`test-categories.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_categories-test-categories.Tpo $(DEPDIR)/test_categories-test-categories.Po
+#	$(AM_V_CC)source='test-categories.c' object='test_categories-test-categories.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_categories-test-categories.o `test -f 'test-categories.c' || echo '$(srcdir)/'`test-categories.c
 
 test_categories-test-categories.obj: test-categories.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_categories-test-categories.obj -MD -MP -MF $(DEPDIR)/test_categories-test-categories.Tpo -c -o test_categories-test-categories.obj `if test -f 'test-categories.c'; then $(CYGPATH_W) 'test-categories.c'; else $(CYGPATH_W) '$(srcdir)/test-categories.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_categories-test-categories.Tpo $(DEPDIR)/test_categories-test-categories.Po
-	$(AM_V_CC)source='test-categories.c' object='test_categories-test-categories.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_categories-test-categories.obj `if test -f 'test-categories.c'; then $(CYGPATH_W) 'test-categories.c'; else $(CYGPATH_W) '$(srcdir)/test-categories.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_categories-test-categories.obj -MD -MP -MF $(DEPDIR)/test_categories-test-categories.Tpo -c -o test_categories-test-categories.obj `if test -f 'test-categories.c'; then $(CYGPATH_W) 'test-categories.c'; else $(CYGPATH_W) '$(srcdir)/test-categories.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_categories-test-categories.Tpo $(DEPDIR)/test_categories-test-categories.Po
+#	$(AM_V_CC)source='test-categories.c' object='test_categories-test-categories.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_categories_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_categories-test-categories.obj `if test -f 'test-categories.c'; then $(CYGPATH_W) 'test-categories.c'; else $(CYGPATH_W) '$(srcdir)/test-categories.c'; fi`
 
 test_changes-test-changes.o: test-changes.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_changes-test-changes.o -MD -MP -MF $(DEPDIR)/test_changes-test-changes.Tpo -c -o test_changes-test-changes.o `test -f 'test-changes.c' || echo '$(srcdir)/'`test-changes.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_changes-test-changes.Tpo $(DEPDIR)/test_changes-test-changes.Po
-	$(AM_V_CC)source='test-changes.c' object='test_changes-test-changes.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_changes-test-changes.o `test -f 'test-changes.c' || echo '$(srcdir)/'`test-changes.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_changes-test-changes.o -MD -MP -MF $(DEPDIR)/test_changes-test-changes.Tpo -c -o test_changes-test-changes.o `test -f 'test-changes.c' || echo '$(srcdir)/'`test-changes.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_changes-test-changes.Tpo $(DEPDIR)/test_changes-test-changes.Po
+#	$(AM_V_CC)source='test-changes.c' object='test_changes-test-changes.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_changes-test-changes.o `test -f 'test-changes.c' || echo '$(srcdir)/'`test-changes.c
 
 test_changes-test-changes.obj: test-changes.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_changes-test-changes.obj -MD -MP -MF $(DEPDIR)/test_changes-test-changes.Tpo -c -o test_changes-test-changes.obj `if test -f 'test-changes.c'; then $(CYGPATH_W) 'test-changes.c'; else $(CYGPATH_W) '$(srcdir)/test-changes.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_changes-test-changes.Tpo $(DEPDIR)/test_changes-test-changes.Po
-	$(AM_V_CC)source='test-changes.c' object='test_changes-test-changes.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_changes-test-changes.obj `if test -f 'test-changes.c'; then $(CYGPATH_W) 'test-changes.c'; else $(CYGPATH_W) '$(srcdir)/test-changes.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_changes-test-changes.obj -MD -MP -MF $(DEPDIR)/test_changes-test-changes.Tpo -c -o test_changes-test-changes.obj `if test -f 'test-changes.c'; then $(CYGPATH_W) 'test-changes.c'; else $(CYGPATH_W) '$(srcdir)/test-changes.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_changes-test-changes.Tpo $(DEPDIR)/test_changes-test-changes.Po
+#	$(AM_V_CC)source='test-changes.c' object='test_changes-test-changes.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_changes_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_changes-test-changes.obj `if test -f 'test-changes.c'; then $(CYGPATH_W) 'test-changes.c'; else $(CYGPATH_W) '$(srcdir)/test-changes.c'; fi`
 
 test_date-test-date.o: test-date.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_date-test-date.o -MD -MP -MF $(DEPDIR)/test_date-test-date.Tpo -c -o test_date-test-date.o `test -f 'test-date.c' || echo '$(srcdir)/'`test-date.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_date-test-date.Tpo $(DEPDIR)/test_date-test-date.Po
-	$(AM_V_CC)source='test-date.c' object='test_date-test-date.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_date-test-date.o `test -f 'test-date.c' || echo '$(srcdir)/'`test-date.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_date-test-date.o -MD -MP -MF $(DEPDIR)/test_date-test-date.Tpo -c -o test_date-test-date.o `test -f 'test-date.c' || echo '$(srcdir)/'`test-date.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_date-test-date.Tpo $(DEPDIR)/test_date-test-date.Po
+#	$(AM_V_CC)source='test-date.c' object='test_date-test-date.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_date-test-date.o `test -f 'test-date.c' || echo '$(srcdir)/'`test-date.c
 
 test_date-test-date.obj: test-date.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_date-test-date.obj -MD -MP -MF $(DEPDIR)/test_date-test-date.Tpo -c -o test_date-test-date.obj `if test -f 'test-date.c'; then $(CYGPATH_W) 'test-date.c'; else $(CYGPATH_W) '$(srcdir)/test-date.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_date-test-date.Tpo $(DEPDIR)/test_date-test-date.Po
-	$(AM_V_CC)source='test-date.c' object='test_date-test-date.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_date-test-date.obj `if test -f 'test-date.c'; then $(CYGPATH_W) 'test-date.c'; else $(CYGPATH_W) '$(srcdir)/test-date.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_date-test-date.obj -MD -MP -MF $(DEPDIR)/test_date-test-date.Tpo -c -o test_date-test-date.obj `if test -f 'test-date.c'; then $(CYGPATH_W) 'test-date.c'; else $(CYGPATH_W) '$(srcdir)/test-date.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_date-test-date.Tpo $(DEPDIR)/test_date-test-date.Po
+#	$(AM_V_CC)source='test-date.c' object='test_date-test-date.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_date_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_date-test-date.obj `if test -f 'test-date.c'; then $(CYGPATH_W) 'test-date.c'; else $(CYGPATH_W) '$(srcdir)/test-date.c'; fi`
 
 test_ebook-test-ebook.o: test-ebook.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook-test-ebook.o -MD -MP -MF $(DEPDIR)/test_ebook-test-ebook.Tpo -c -o test_ebook-test-ebook.o `test -f 'test-ebook.c' || echo '$(srcdir)/'`test-ebook.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook-test-ebook.Tpo $(DEPDIR)/test_ebook-test-ebook.Po
-	$(AM_V_CC)source='test-ebook.c' object='test_ebook-test-ebook.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook-test-ebook.o `test -f 'test-ebook.c' || echo '$(srcdir)/'`test-ebook.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook-test-ebook.o -MD -MP -MF $(DEPDIR)/test_ebook-test-ebook.Tpo -c -o test_ebook-test-ebook.o `test -f 'test-ebook.c' || echo '$(srcdir)/'`test-ebook.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook-test-ebook.Tpo $(DEPDIR)/test_ebook-test-ebook.Po
+#	$(AM_V_CC)source='test-ebook.c' object='test_ebook-test-ebook.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook-test-ebook.o `test -f 'test-ebook.c' || echo '$(srcdir)/'`test-ebook.c
 
 test_ebook-test-ebook.obj: test-ebook.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook-test-ebook.obj -MD -MP -MF $(DEPDIR)/test_ebook-test-ebook.Tpo -c -o test_ebook-test-ebook.obj `if test -f 'test-ebook.c'; then $(CYGPATH_W) 'test-ebook.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook-test-ebook.Tpo $(DEPDIR)/test_ebook-test-ebook.Po
-	$(AM_V_CC)source='test-ebook.c' object='test_ebook-test-ebook.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook-test-ebook.obj `if test -f 'test-ebook.c'; then $(CYGPATH_W) 'test-ebook.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook-test-ebook.obj -MD -MP -MF $(DEPDIR)/test_ebook-test-ebook.Tpo -c -o test_ebook-test-ebook.obj `if test -f 'test-ebook.c'; then $(CYGPATH_W) 'test-ebook.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook-test-ebook.Tpo $(DEPDIR)/test_ebook-test-ebook.Po
+#	$(AM_V_CC)source='test-ebook.c' object='test_ebook-test-ebook.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook-test-ebook.obj `if test -f 'test-ebook.c'; then $(CYGPATH_W) 'test-ebook.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook.c'; fi`
 
 test_ebook_add_contact-test-ebook-add-contact.o: test-ebook-add-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_add_contact-test-ebook-add-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo -c -o test_ebook_add_contact-test-ebook-add-contact.o `test -f 'test-ebook-add-contact.c' || echo '$(srcdir)/'`test-ebook-add-contact.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Po
-	$(AM_V_CC)source='test-ebook-add-contact.c' object='test_ebook_add_contact-test-ebook-add-contact.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_add_contact-test-ebook-add-contact.o `test -f 'test-ebook-add-contact.c' || echo '$(srcdir)/'`test-ebook-add-contact.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_add_contact-test-ebook-add-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo -c -o test_ebook_add_contact-test-ebook-add-contact.o `test -f 'test-ebook-add-contact.c' || echo '$(srcdir)/'`test-ebook-add-contact.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Po
+#	$(AM_V_CC)source='test-ebook-add-contact.c' object='test_ebook_add_contact-test-ebook-add-contact.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_add_contact-test-ebook-add-contact.o `test -f 'test-ebook-add-contact.c' || echo '$(srcdir)/'`test-ebook-add-contact.c
 
 test_ebook_add_contact-test-ebook-add-contact.obj: test-ebook-add-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_add_contact-test-ebook-add-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo -c -o test_ebook_add_contact-test-ebook-add-contact.obj `if test -f 'test-ebook-add-contact.c'; then $(CYGPATH_W) 'test-ebook-add-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-add-contact.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Po
-	$(AM_V_CC)source='test-ebook-add-contact.c' object='test_ebook_add_contact-test-ebook-add-contact.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_add_contact-test-ebook-add-contact.obj `if test -f 'test-ebook-add-contact.c'; then $(CYGPATH_W) 'test-ebook-add-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-add-contact.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_add_contact-test-ebook-add-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo -c -o test_ebook_add_contact-test-ebook-add-contact.obj `if test -f 'test-ebook-add-contact.c'; then $(CYGPATH_W) 'test-ebook-add-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-add-contact.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Tpo $(DEPDIR)/test_ebook_add_contact-test-ebook-add-contact.Po
+#	$(AM_V_CC)source='test-ebook-add-contact.c' object='test_ebook_add_contact-test-ebook-add-contact.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_add_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_add_contact-test-ebook-add-contact.obj `if test -f 'test-ebook-add-contact.c'; then $(CYGPATH_W) 'test-ebook-add-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-add-contact.c'; fi`
 
 test_ebook_async-test-ebook-async.o: test-ebook-async.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_async-test-ebook-async.o -MD -MP -MF $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo -c -o test_ebook_async-test-ebook-async.o `test -f 'test-ebook-async.c' || echo '$(srcdir)/'`test-ebook-async.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo $(DEPDIR)/test_ebook_async-test-ebook-async.Po
-	$(AM_V_CC)source='test-ebook-async.c' object='test_ebook_async-test-ebook-async.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_async-test-ebook-async.o `test -f 'test-ebook-async.c' || echo '$(srcdir)/'`test-ebook-async.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_async-test-ebook-async.o -MD -MP -MF $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo -c -o test_ebook_async-test-ebook-async.o `test -f 'test-ebook-async.c' || echo '$(srcdir)/'`test-ebook-async.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo $(DEPDIR)/test_ebook_async-test-ebook-async.Po
+#	$(AM_V_CC)source='test-ebook-async.c' object='test_ebook_async-test-ebook-async.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_async-test-ebook-async.o `test -f 'test-ebook-async.c' || echo '$(srcdir)/'`test-ebook-async.c
 
 test_ebook_async-test-ebook-async.obj: test-ebook-async.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_async-test-ebook-async.obj -MD -MP -MF $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo -c -o test_ebook_async-test-ebook-async.obj `if test -f 'test-ebook-async.c'; then $(CYGPATH_W) 'test-ebook-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-async.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo $(DEPDIR)/test_ebook_async-test-ebook-async.Po
-	$(AM_V_CC)source='test-ebook-async.c' object='test_ebook_async-test-ebook-async.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_async-test-ebook-async.obj `if test -f 'test-ebook-async.c'; then $(CYGPATH_W) 'test-ebook-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-async.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_async-test-ebook-async.obj -MD -MP -MF $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo -c -o test_ebook_async-test-ebook-async.obj `if test -f 'test-ebook-async.c'; then $(CYGPATH_W) 'test-ebook-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-async.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_async-test-ebook-async.Tpo $(DEPDIR)/test_ebook_async-test-ebook-async.Po
+#	$(AM_V_CC)source='test-ebook-async.c' object='test_ebook_async-test-ebook-async.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_async_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_async-test-ebook-async.obj `if test -f 'test-ebook-async.c'; then $(CYGPATH_W) 'test-ebook-async.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-async.c'; fi`
 
 test_ebook_commit_contact-test-ebook-commit-contact.o: test-ebook-commit-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_commit_contact-test-ebook-commit-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo -c -o test_ebook_commit_contact-test-ebook-commit-contact.o `test -f 'test-ebook-commit-contact.c' || echo '$(srcdir)/'`test-ebook-commit-contact.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Po
-	$(AM_V_CC)source='test-ebook-commit-contact.c' object='test_ebook_commit_contact-test-ebook-commit-contact.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_commit_contact-test-ebook-commit-contact.o `test -f 'test-ebook-commit-contact.c' || echo '$(srcdir)/'`test-ebook-commit-contact.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_commit_contact-test-ebook-commit-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo -c -o test_ebook_commit_contact-test-ebook-commit-contact.o `test -f 'test-ebook-commit-contact.c' || echo '$(srcdir)/'`test-ebook-commit-contact.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Po
+#	$(AM_V_CC)source='test-ebook-commit-contact.c' object='test_ebook_commit_contact-test-ebook-commit-contact.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_commit_contact-test-ebook-commit-contact.o `test -f 'test-ebook-commit-contact.c' || echo '$(srcdir)/'`test-ebook-commit-contact.c
 
 test_ebook_commit_contact-test-ebook-commit-contact.obj: test-ebook-commit-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_commit_contact-test-ebook-commit-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo -c -o test_ebook_commit_contact-test-ebook-commit-contact.obj `if test -f 'test-ebook-commit-contact.c'; then $(CYGPATH_W) 'test-ebook-commit-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-commit-contact.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Po
-	$(AM_V_CC)source='test-ebook-commit-contact.c' object='test_ebook_commit_contact-test-ebook-commit-contact.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_commit_contact-test-ebook-commit-contact.obj `if test -f 'test-ebook-commit-contact.c'; then $(CYGPATH_W) 'test-ebook-commit-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-commit-contact.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_commit_contact-test-ebook-commit-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo -c -o test_ebook_commit_contact-test-ebook-commit-contact.obj `if test -f 'test-ebook-commit-contact.c'; then $(CYGPATH_W) 'test-ebook-commit-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-commit-contact.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Tpo $(DEPDIR)/test_ebook_commit_contact-test-ebook-commit-contact.Po
+#	$(AM_V_CC)source='test-ebook-commit-contact.c' object='test_ebook_commit_contact-test-ebook-commit-contact.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_commit_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_commit_contact-test-ebook-commit-contact.obj `if test -f 'test-ebook-commit-contact.c'; then $(CYGPATH_W) 'test-ebook-commit-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-commit-contact.c'; fi`
 
 test_ebook_get_book_view-test-ebook-get-book-view.o: test-ebook-get-book-view.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_book_view-test-ebook-get-book-view.o -MD -MP -MF $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo -c -o test_ebook_get_book_view-test-ebook-get-book-view.o `test -f 'test-ebook-get-book-view.c' || echo '$(srcdir)/'`test-ebook-get-book-view.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Po
-	$(AM_V_CC)source='test-ebook-get-book-view.c' object='test_ebook_get_book_view-test-ebook-get-book-view.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_book_view-test-ebook-get-book-view.o `test -f 'test-ebook-get-book-view.c' || echo '$(srcdir)/'`test-ebook-get-book-view.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_book_view-test-ebook-get-book-view.o -MD -MP -MF $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo -c -o test_ebook_get_book_view-test-ebook-get-book-view.o `test -f 'test-ebook-get-book-view.c' || echo '$(srcdir)/'`test-ebook-get-book-view.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Po
+#	$(AM_V_CC)source='test-ebook-get-book-view.c' object='test_ebook_get_book_view-test-ebook-get-book-view.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_book_view-test-ebook-get-book-view.o `test -f 'test-ebook-get-book-view.c' || echo '$(srcdir)/'`test-ebook-get-book-view.c
 
 test_ebook_get_book_view-test-ebook-get-book-view.obj: test-ebook-get-book-view.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_book_view-test-ebook-get-book-view.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo -c -o test_ebook_get_book_view-test-ebook-get-book-view.obj `if test -f 'test-ebook-get-book-view.c'; then $(CYGPATH_W) 'test-ebook-get-book-view.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-book-view.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Po
-	$(AM_V_CC)source='test-ebook-get-book-view.c' object='test_ebook_get_book_view-test-ebook-get-book-view.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_book_view-test-ebook-get-book-view.obj `if test -f 'test-ebook-get-book-view.c'; then $(CYGPATH_W) 'test-ebook-get-book-view.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-book-view.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_book_view-test-ebook-get-book-view.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo -c -o test_ebook_get_book_view-test-ebook-get-book-view.obj `if test -f 'test-ebook-get-book-view.c'; then $(CYGPATH_W) 'test-ebook-get-book-view.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-book-view.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Tpo $(DEPDIR)/test_ebook_get_book_view-test-ebook-get-book-view.Po
+#	$(AM_V_CC)source='test-ebook-get-book-view.c' object='test_ebook_get_book_view-test-ebook-get-book-view.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_book_view_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_book_view-test-ebook-get-book-view.obj `if test -f 'test-ebook-get-book-view.c'; then $(CYGPATH_W) 'test-ebook-get-book-view.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-book-view.c'; fi`
 
 test_ebook_get_contact-test-ebook-get-contact.o: test-ebook-get-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_contact-test-ebook-get-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo -c -o test_ebook_get_contact-test-ebook-get-contact.o `test -f 'test-ebook-get-contact.c' || echo '$(srcdir)/'`test-ebook-get-contact.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Po
-	$(AM_V_CC)source='test-ebook-get-contact.c' object='test_ebook_get_contact-test-ebook-get-contact.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_contact-test-ebook-get-contact.o `test -f 'test-ebook-get-contact.c' || echo '$(srcdir)/'`test-ebook-get-contact.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_contact-test-ebook-get-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo -c -o test_ebook_get_contact-test-ebook-get-contact.o `test -f 'test-ebook-get-contact.c' || echo '$(srcdir)/'`test-ebook-get-contact.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Po
+#	$(AM_V_CC)source='test-ebook-get-contact.c' object='test_ebook_get_contact-test-ebook-get-contact.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_contact-test-ebook-get-contact.o `test -f 'test-ebook-get-contact.c' || echo '$(srcdir)/'`test-ebook-get-contact.c
 
 test_ebook_get_contact-test-ebook-get-contact.obj: test-ebook-get-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_contact-test-ebook-get-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo -c -o test_ebook_get_contact-test-ebook-get-contact.obj `if test -f 'test-ebook-get-contact.c'; then $(CYGPATH_W) 'test-ebook-get-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-contact.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Po
-	$(AM_V_CC)source='test-ebook-get-contact.c' object='test_ebook_get_contact-test-ebook-get-contact.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_contact-test-ebook-get-contact.obj `if test -f 'test-ebook-get-contact.c'; then $(CYGPATH_W) 'test-ebook-get-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-contact.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_contact-test-ebook-get-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo -c -o test_ebook_get_contact-test-ebook-get-contact.obj `if test -f 'test-ebook-get-contact.c'; then $(CYGPATH_W) 'test-ebook-get-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-contact.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Tpo $(DEPDIR)/test_ebook_get_contact-test-ebook-get-contact.Po
+#	$(AM_V_CC)source='test-ebook-get-contact.c' object='test_ebook_get_contact-test-ebook-get-contact.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_contact-test-ebook-get-contact.obj `if test -f 'test-ebook-get-contact.c'; then $(CYGPATH_W) 'test-ebook-get-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-contact.c'; fi`
 
 test_ebook_get_required_fields-test-ebook-get-required-fields.o: test-ebook-get-required-fields.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_required_fields-test-ebook-get-required-fields.o -MD -MP -MF $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.o `test -f 'test-ebook-get-required-fields.c' || echo '$(srcdir)/'`test-ebook-get-required-fields.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Po
-	$(AM_V_CC)source='test-ebook-get-required-fields.c' object='test_ebook_get_required_fields-test-ebook-get-required-fields.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.o `test -f 'test-ebook-get-required-fields.c' || echo '$(srcdir)/'`test-ebook-get-required-fields.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_required_fields-test-ebook-get-required-fields.o -MD -MP -MF $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.o `test -f 'test-ebook-get-required-fields.c' || echo '$(srcdir)/'`test-ebook-get-required-fields.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Po
+#	$(AM_V_CC)source='test-ebook-get-required-fields.c' object='test_ebook_get_required_fields-test-ebook-get-required-fields.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.o `test -f 'test-ebook-get-required-fields.c' || echo '$(srcdir)/'`test-ebook-get-required-fields.c
 
 test_ebook_get_required_fields-test-ebook-get-required-fields.obj: test-ebook-get-required-fields.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_required_fields-test-ebook-get-required-fields.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.obj `if test -f 'test-ebook-get-required-fields.c'; then $(CYGPATH_W) 'test-ebook-get-required-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-required-fields.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Po
-	$(AM_V_CC)source='test-ebook-get-required-fields.c' object='test_ebook_get_required_fields-test-ebook-get-required-fields.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.obj `if test -f 'test-ebook-get-required-fields.c'; then $(CYGPATH_W) 'test-ebook-get-required-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-required-fields.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_required_fields-test-ebook-get-required-fields.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.obj `if test -f 'test-ebook-get-required-fields.c'; then $(CYGPATH_W) 'test-ebook-get-required-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-required-fields.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Tpo $(DEPDIR)/test_ebook_get_required_fields-test-ebook-get-required-fields.Po
+#	$(AM_V_CC)source='test-ebook-get-required-fields.c' object='test_ebook_get_required_fields-test-ebook-get-required-fields.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_required_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_required_fields-test-ebook-get-required-fields.obj `if test -f 'test-ebook-get-required-fields.c'; then $(CYGPATH_W) 'test-ebook-get-required-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-required-fields.c'; fi`
 
 test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o: test-ebook-get-static-capabilities.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o -MD -MP -MF $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o `test -f 'test-ebook-get-static-capabilities.c' || echo '$(srcdir)/'`test-ebook-get-static-capabilities.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Po
-	$(AM_V_CC)source='test-ebook-get-static-capabilities.c' object='test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o `test -f 'test-ebook-get-static-capabilities.c' || echo '$(srcdir)/'`test-ebook-get-static-capabilities.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o -MD -MP -MF $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o `test -f 'test-ebook-get-static-capabilities.c' || echo '$(srcdir)/'`test-ebook-get-static-capabilities.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Po
+#	$(AM_V_CC)source='test-ebook-get-static-capabilities.c' object='test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.o `test -f 'test-ebook-get-static-capabilities.c' || echo '$(srcdir)/'`test-ebook-get-static-capabilities.c
 
 test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj: test-ebook-get-static-capabilities.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj `if test -f 'test-ebook-get-static-capabilities.c'; then $(CYGPATH_W) 'test-ebook-get-static-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-static-capabilities.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Po
-	$(AM_V_CC)source='test-ebook-get-static-capabilities.c' object='test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj `if test -f 'test-ebook-get-static-capabilities.c'; then $(CYGPATH_W) 'test-ebook-get-static-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-static-capabilities.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj `if test -f 'test-ebook-get-static-capabilities.c'; then $(CYGPATH_W) 'test-ebook-get-static-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-static-capabilities.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Tpo $(DEPDIR)/test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.Po
+#	$(AM_V_CC)source='test-ebook-get-static-capabilities.c' object='test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_static_capabilities_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_static_capabilities-test-ebook-get-static-capabilities.obj `if test -f 'test-ebook-get-static-capabilities.c'; then $(CYGPATH_W) 'test-ebook-get-static-capabilities.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-static-capabilities.c'; fi`
 
 test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o: test-ebook-get-supported-auth-methods.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o `test -f 'test-ebook-get-supported-auth-methods.c' || echo '$(srcdir)/'`test-ebook-get-supported-auth-methods.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Po
-	$(AM_V_CC)source='test-ebook-get-supported-auth-methods.c' object='test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o `test -f 'test-ebook-get-supported-auth-methods.c' || echo '$(srcdir)/'`test-ebook-get-supported-auth-methods.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o `test -f 'test-ebook-get-supported-auth-methods.c' || echo '$(srcdir)/'`test-ebook-get-supported-auth-methods.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Po
+#	$(AM_V_CC)source='test-ebook-get-supported-auth-methods.c' object='test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.o `test -f 'test-ebook-get-supported-auth-methods.c' || echo '$(srcdir)/'`test-ebook-get-supported-auth-methods.c
 
 test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj: test-ebook-get-supported-auth-methods.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj `if test -f 'test-ebook-get-supported-auth-methods.c'; then $(CYGPATH_W) 'test-ebook-get-supported-auth-methods.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-auth-methods.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Po
-	$(AM_V_CC)source='test-ebook-get-supported-auth-methods.c' object='test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj `if test -f 'test-ebook-get-supported-auth-methods.c'; then $(CYGPATH_W) 'test-ebook-get-supported-auth-methods.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-auth-methods.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj `if test -f 'test-ebook-get-supported-auth-methods.c'; then $(CYGPATH_W) 'test-ebook-get-supported-auth-methods.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-auth-methods.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Tpo $(DEPDIR)/test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.Po
+#	$(AM_V_CC)source='test-ebook-get-supported-auth-methods.c' object='test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_auth_methods_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_auth_methods-test-ebook-get-supported-auth-methods.obj `if test -f 'test-ebook-get-supported-auth-methods.c'; then $(CYGPATH_W) 'test-ebook-get-supported-auth-methods.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-auth-methods.c'; fi`
 
 test_ebook_get_supported_fields-test-ebook-get-supported-fields.o: test-ebook-get-supported-fields.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_fields-test-ebook-get-supported-fields.o -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.o `test -f 'test-ebook-get-supported-fields.c' || echo '$(srcdir)/'`test-ebook-get-supported-fields.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Po
-	$(AM_V_CC)source='test-ebook-get-supported-fields.c' object='test_ebook_get_supported_fields-test-ebook-get-supported-fields.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.o `test -f 'test-ebook-get-supported-fields.c' || echo '$(srcdir)/'`test-ebook-get-supported-fields.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_fields-test-ebook-get-supported-fields.o -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.o `test -f 'test-ebook-get-supported-fields.c' || echo '$(srcdir)/'`test-ebook-get-supported-fields.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Po
+#	$(AM_V_CC)source='test-ebook-get-supported-fields.c' object='test_ebook_get_supported_fields-test-ebook-get-supported-fields.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.o `test -f 'test-ebook-get-supported-fields.c' || echo '$(srcdir)/'`test-ebook-get-supported-fields.c
 
 test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj: test-ebook-get-supported-fields.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj `if test -f 'test-ebook-get-supported-fields.c'; then $(CYGPATH_W) 'test-ebook-get-supported-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-fields.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Po
-	$(AM_V_CC)source='test-ebook-get-supported-fields.c' object='test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj `if test -f 'test-ebook-get-supported-fields.c'; then $(CYGPATH_W) 'test-ebook-get-supported-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-fields.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj -MD -MP -MF $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj `if test -f 'test-ebook-get-supported-fields.c'; then $(CYGPATH_W) 'test-ebook-get-supported-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-fields.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Tpo $(DEPDIR)/test_ebook_get_supported_fields-test-ebook-get-supported-fields.Po
+#	$(AM_V_CC)source='test-ebook-get-supported-fields.c' object='test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_get_supported_fields_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_get_supported_fields-test-ebook-get-supported-fields.obj `if test -f 'test-ebook-get-supported-fields.c'; then $(CYGPATH_W) 'test-ebook-get-supported-fields.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-get-supported-fields.c'; fi`
 
 test_ebook_remove-test-ebook-remove.o: test-ebook-remove.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove-test-ebook-remove.o -MD -MP -MF $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo -c -o test_ebook_remove-test-ebook-remove.o `test -f 'test-ebook-remove.c' || echo '$(srcdir)/'`test-ebook-remove.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo $(DEPDIR)/test_ebook_remove-test-ebook-remove.Po
-	$(AM_V_CC)source='test-ebook-remove.c' object='test_ebook_remove-test-ebook-remove.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove-test-ebook-remove.o `test -f 'test-ebook-remove.c' || echo '$(srcdir)/'`test-ebook-remove.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove-test-ebook-remove.o -MD -MP -MF $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo -c -o test_ebook_remove-test-ebook-remove.o `test -f 'test-ebook-remove.c' || echo '$(srcdir)/'`test-ebook-remove.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo $(DEPDIR)/test_ebook_remove-test-ebook-remove.Po
+#	$(AM_V_CC)source='test-ebook-remove.c' object='test_ebook_remove-test-ebook-remove.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove-test-ebook-remove.o `test -f 'test-ebook-remove.c' || echo '$(srcdir)/'`test-ebook-remove.c
 
 test_ebook_remove-test-ebook-remove.obj: test-ebook-remove.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove-test-ebook-remove.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo -c -o test_ebook_remove-test-ebook-remove.obj `if test -f 'test-ebook-remove.c'; then $(CYGPATH_W) 'test-ebook-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo $(DEPDIR)/test_ebook_remove-test-ebook-remove.Po
-	$(AM_V_CC)source='test-ebook-remove.c' object='test_ebook_remove-test-ebook-remove.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove-test-ebook-remove.obj `if test -f 'test-ebook-remove.c'; then $(CYGPATH_W) 'test-ebook-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove-test-ebook-remove.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo -c -o test_ebook_remove-test-ebook-remove.obj `if test -f 'test-ebook-remove.c'; then $(CYGPATH_W) 'test-ebook-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove-test-ebook-remove.Tpo $(DEPDIR)/test_ebook_remove-test-ebook-remove.Po
+#	$(AM_V_CC)source='test-ebook-remove.c' object='test_ebook_remove-test-ebook-remove.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove-test-ebook-remove.obj `if test -f 'test-ebook-remove.c'; then $(CYGPATH_W) 'test-ebook-remove.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove.c'; fi`
 
 test_ebook_remove_contact-test-ebook-remove-contact.o: test-ebook-remove-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact-test-ebook-remove-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo -c -o test_ebook_remove_contact-test-ebook-remove-contact.o `test -f 'test-ebook-remove-contact.c' || echo '$(srcdir)/'`test-ebook-remove-contact.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Po
-	$(AM_V_CC)source='test-ebook-remove-contact.c' object='test_ebook_remove_contact-test-ebook-remove-contact.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact-test-ebook-remove-contact.o `test -f 'test-ebook-remove-contact.c' || echo '$(srcdir)/'`test-ebook-remove-contact.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact-test-ebook-remove-contact.o -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo -c -o test_ebook_remove_contact-test-ebook-remove-contact.o `test -f 'test-ebook-remove-contact.c' || echo '$(srcdir)/'`test-ebook-remove-contact.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Po
+#	$(AM_V_CC)source='test-ebook-remove-contact.c' object='test_ebook_remove_contact-test-ebook-remove-contact.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact-test-ebook-remove-contact.o `test -f 'test-ebook-remove-contact.c' || echo '$(srcdir)/'`test-ebook-remove-contact.c
 
 test_ebook_remove_contact-test-ebook-remove-contact.obj: test-ebook-remove-contact.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact-test-ebook-remove-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo -c -o test_ebook_remove_contact-test-ebook-remove-contact.obj `if test -f 'test-ebook-remove-contact.c'; then $(CYGPATH_W) 'test-ebook-remove-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Po
-	$(AM_V_CC)source='test-ebook-remove-contact.c' object='test_ebook_remove_contact-test-ebook-remove-contact.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact-test-ebook-remove-contact.obj `if test -f 'test-ebook-remove-contact.c'; then $(CYGPATH_W) 'test-ebook-remove-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact-test-ebook-remove-contact.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo -c -o test_ebook_remove_contact-test-ebook-remove-contact.obj `if test -f 'test-ebook-remove-contact.c'; then $(CYGPATH_W) 'test-ebook-remove-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Tpo $(DEPDIR)/test_ebook_remove_contact-test-ebook-remove-contact.Po
+#	$(AM_V_CC)source='test-ebook-remove-contact.c' object='test_ebook_remove_contact-test-ebook-remove-contact.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact-test-ebook-remove-contact.obj `if test -f 'test-ebook-remove-contact.c'; then $(CYGPATH_W) 'test-ebook-remove-contact.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact.c'; fi`
 
 test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o: test-ebook-remove-contact-by-id.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o `test -f 'test-ebook-remove-contact-by-id.c' || echo '$(srcdir)/'`test-ebook-remove-contact-by-id.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Po
-	$(AM_V_CC)source='test-ebook-remove-contact-by-id.c' object='test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o `test -f 'test-ebook-remove-contact-by-id.c' || echo '$(srcdir)/'`test-ebook-remove-contact-by-id.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o `test -f 'test-ebook-remove-contact-by-id.c' || echo '$(srcdir)/'`test-ebook-remove-contact-by-id.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Po
+#	$(AM_V_CC)source='test-ebook-remove-contact-by-id.c' object='test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.o `test -f 'test-ebook-remove-contact-by-id.c' || echo '$(srcdir)/'`test-ebook-remove-contact-by-id.c
 
 test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj: test-ebook-remove-contact-by-id.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj `if test -f 'test-ebook-remove-contact-by-id.c'; then $(CYGPATH_W) 'test-ebook-remove-contact-by-id.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact-by-id.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Po
-	$(AM_V_CC)source='test-ebook-remove-contact-by-id.c' object='test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj `if test -f 'test-ebook-remove-contact-by-id.c'; then $(CYGPATH_W) 'test-ebook-remove-contact-by-id.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact-by-id.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj `if test -f 'test-ebook-remove-contact-by-id.c'; then $(CYGPATH_W) 'test-ebook-remove-contact-by-id.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact-by-id.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Tpo $(DEPDIR)/test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.Po
+#	$(AM_V_CC)source='test-ebook-remove-contact-by-id.c' object='test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contact_by_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contact_by_id-test-ebook-remove-contact-by-id.obj `if test -f 'test-ebook-remove-contact-by-id.c'; then $(CYGPATH_W) 'test-ebook-remove-contact-by-id.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contact-by-id.c'; fi`
 
 test_ebook_remove_contacts-test-ebook-remove-contacts.o: test-ebook-remove-contacts.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contacts-test-ebook-remove-contacts.o -MD -MP -MF $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.o `test -f 'test-ebook-remove-contacts.c' || echo '$(srcdir)/'`test-ebook-remove-contacts.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Po
-	$(AM_V_CC)source='test-ebook-remove-contacts.c' object='test_ebook_remove_contacts-test-ebook-remove-contacts.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.o `test -f 'test-ebook-remove-contacts.c' || echo '$(srcdir)/'`test-ebook-remove-contacts.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contacts-test-ebook-remove-contacts.o -MD -MP -MF $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.o `test -f 'test-ebook-remove-contacts.c' || echo '$(srcdir)/'`test-ebook-remove-contacts.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Po
+#	$(AM_V_CC)source='test-ebook-remove-contacts.c' object='test_ebook_remove_contacts-test-ebook-remove-contacts.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.o `test -f 'test-ebook-remove-contacts.c' || echo '$(srcdir)/'`test-ebook-remove-contacts.c
 
 test_ebook_remove_contacts-test-ebook-remove-contacts.obj: test-ebook-remove-contacts.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contacts-test-ebook-remove-contacts.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.obj `if test -f 'test-ebook-remove-contacts.c'; then $(CYGPATH_W) 'test-ebook-remove-contacts.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contacts.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Po
-	$(AM_V_CC)source='test-ebook-remove-contacts.c' object='test_ebook_remove_contacts-test-ebook-remove-contacts.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.obj `if test -f 'test-ebook-remove-contacts.c'; then $(CYGPATH_W) 'test-ebook-remove-contacts.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contacts.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_remove_contacts-test-ebook-remove-contacts.obj -MD -MP -MF $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.obj `if test -f 'test-ebook-remove-contacts.c'; then $(CYGPATH_W) 'test-ebook-remove-contacts.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contacts.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Tpo $(DEPDIR)/test_ebook_remove_contacts-test-ebook-remove-contacts.Po
+#	$(AM_V_CC)source='test-ebook-remove-contacts.c' object='test_ebook_remove_contacts-test-ebook-remove-contacts.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_remove_contacts_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_remove_contacts-test-ebook-remove-contacts.obj `if test -f 'test-ebook-remove-contacts.c'; then $(CYGPATH_W) 'test-ebook-remove-contacts.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-remove-contacts.c'; fi`
 
 test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o: test-ebook-stress-factory--fifo.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o `test -f 'test-ebook-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ebook-stress-factory--fifo.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Po
-	$(AM_V_CC)source='test-ebook-stress-factory--fifo.c' object='test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o `test -f 'test-ebook-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ebook-stress-factory--fifo.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o `test -f 'test-ebook-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ebook-stress-factory--fifo.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Po
+#	$(AM_V_CC)source='test-ebook-stress-factory--fifo.c' object='test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.o `test -f 'test-ebook-stress-factory--fifo.c' || echo '$(srcdir)/'`test-ebook-stress-factory--fifo.c
 
 test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj: test-ebook-stress-factory--fifo.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj `if test -f 'test-ebook-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--fifo.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Po
-	$(AM_V_CC)source='test-ebook-stress-factory--fifo.c' object='test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj `if test -f 'test-ebook-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--fifo.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj `if test -f 'test-ebook-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--fifo.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Tpo $(DEPDIR)/test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.Po
+#	$(AM_V_CC)source='test-ebook-stress-factory--fifo.c' object='test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__fifo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__fifo-test-ebook-stress-factory--fifo.obj `if test -f 'test-ebook-stress-factory--fifo.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--fifo.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--fifo.c'; fi`
 
 test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o: test-ebook-stress-factory--serial.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o `test -f 'test-ebook-stress-factory--serial.c' || echo '$(srcdir)/'`test-ebook-stress-factory--serial.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Po
-	$(AM_V_CC)source='test-ebook-stress-factory--serial.c' object='test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o `test -f 'test-ebook-stress-factory--serial.c' || echo '$(srcdir)/'`test-ebook-stress-factory--serial.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o `test -f 'test-ebook-stress-factory--serial.c' || echo '$(srcdir)/'`test-ebook-stress-factory--serial.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Po
+#	$(AM_V_CC)source='test-ebook-stress-factory--serial.c' object='test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.o `test -f 'test-ebook-stress-factory--serial.c' || echo '$(srcdir)/'`test-ebook-stress-factory--serial.c
 
 test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj: test-ebook-stress-factory--serial.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj `if test -f 'test-ebook-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--serial.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Po
-	$(AM_V_CC)source='test-ebook-stress-factory--serial.c' object='test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj `if test -f 'test-ebook-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--serial.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj `if test -f 'test-ebook-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--serial.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Tpo $(DEPDIR)/test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.Po
+#	$(AM_V_CC)source='test-ebook-stress-factory--serial.c' object='test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__serial_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__serial-test-ebook-stress-factory--serial.obj `if test -f 'test-ebook-stress-factory--serial.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--serial.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--serial.c'; fi`
 
 test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o: test-ebook-stress-factory--single-book.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o `test -f 'test-ebook-stress-factory--single-book.c' || echo '$(srcdir)/'`test-ebook-stress-factory--single-book.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Po
-	$(AM_V_CC)source='test-ebook-stress-factory--single-book.c' object='test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o `test -f 'test-ebook-stress-factory--single-book.c' || echo '$(srcdir)/'`test-ebook-stress-factory--single-book.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o `test -f 'test-ebook-stress-factory--single-book.c' || echo '$(srcdir)/'`test-ebook-stress-factory--single-book.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Po
+#	$(AM_V_CC)source='test-ebook-stress-factory--single-book.c' object='test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.o `test -f 'test-ebook-stress-factory--single-book.c' || echo '$(srcdir)/'`test-ebook-stress-factory--single-book.c
 
 test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj: test-ebook-stress-factory--single-book.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj `if test -f 'test-ebook-stress-factory--single-book.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--single-book.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--single-book.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Po
-	$(AM_V_CC)source='test-ebook-stress-factory--single-book.c' object='test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj `if test -f 'test-ebook-stress-factory--single-book.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--single-book.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--single-book.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj -MD -MP -MF $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj `if test -f 'test-ebook-stress-factory--single-book.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--single-book.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--single-book.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Tpo $(DEPDIR)/test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.Po
+#	$(AM_V_CC)source='test-ebook-stress-factory--single-book.c' object='test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_ebook_stress_factory__single_book_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_ebook_stress_factory__single_book-test-ebook-stress-factory--single-book.obj `if test -f 'test-ebook-stress-factory--single-book.c'; then $(CYGPATH_W) 'test-ebook-stress-factory--single-book.c'; else $(CYGPATH_W) '$(srcdir)/test-ebook-stress-factory--single-book.c'; fi`
 
 test_nonexistent_id-test-nonexistent-id.o: test-nonexistent-id.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_nonexistent_id-test-nonexistent-id.o -MD -MP -MF $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo -c -o test_nonexistent_id-test-nonexistent-id.o `test -f 'test-nonexistent-id.c' || echo '$(srcdir)/'`test-nonexistent-id.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Po
-	$(AM_V_CC)source='test-nonexistent-id.c' object='test_nonexistent_id-test-nonexistent-id.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_nonexistent_id-test-nonexistent-id.o `test -f 'test-nonexistent-id.c' || echo '$(srcdir)/'`test-nonexistent-id.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_nonexistent_id-test-nonexistent-id.o -MD -MP -MF $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo -c -o test_nonexistent_id-test-nonexistent-id.o `test -f 'test-nonexistent-id.c' || echo '$(srcdir)/'`test-nonexistent-id.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Po
+#	$(AM_V_CC)source='test-nonexistent-id.c' object='test_nonexistent_id-test-nonexistent-id.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_nonexistent_id-test-nonexistent-id.o `test -f 'test-nonexistent-id.c' || echo '$(srcdir)/'`test-nonexistent-id.c
 
 test_nonexistent_id-test-nonexistent-id.obj: test-nonexistent-id.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_nonexistent_id-test-nonexistent-id.obj -MD -MP -MF $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo -c -o test_nonexistent_id-test-nonexistent-id.obj `if test -f 'test-nonexistent-id.c'; then $(CYGPATH_W) 'test-nonexistent-id.c'; else $(CYGPATH_W) '$(srcdir)/test-nonexistent-id.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Po
-	$(AM_V_CC)source='test-nonexistent-id.c' object='test_nonexistent_id-test-nonexistent-id.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_nonexistent_id-test-nonexistent-id.obj `if test -f 'test-nonexistent-id.c'; then $(CYGPATH_W) 'test-nonexistent-id.c'; else $(CYGPATH_W) '$(srcdir)/test-nonexistent-id.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_nonexistent_id-test-nonexistent-id.obj -MD -MP -MF $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo -c -o test_nonexistent_id-test-nonexistent-id.obj `if test -f 'test-nonexistent-id.c'; then $(CYGPATH_W) 'test-nonexistent-id.c'; else $(CYGPATH_W) '$(srcdir)/test-nonexistent-id.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Tpo $(DEPDIR)/test_nonexistent_id-test-nonexistent-id.Po
+#	$(AM_V_CC)source='test-nonexistent-id.c' object='test_nonexistent_id-test-nonexistent-id.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_nonexistent_id_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_nonexistent_id-test-nonexistent-id.obj `if test -f 'test-nonexistent-id.c'; then $(CYGPATH_W) 'test-nonexistent-id.c'; else $(CYGPATH_W) '$(srcdir)/test-nonexistent-id.c'; fi`
 
 test_photo-test-photo.o: test-photo.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_photo-test-photo.o -MD -MP -MF $(DEPDIR)/test_photo-test-photo.Tpo -c -o test_photo-test-photo.o `test -f 'test-photo.c' || echo '$(srcdir)/'`test-photo.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_photo-test-photo.Tpo $(DEPDIR)/test_photo-test-photo.Po
-	$(AM_V_CC)source='test-photo.c' object='test_photo-test-photo.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_photo-test-photo.o `test -f 'test-photo.c' || echo '$(srcdir)/'`test-photo.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_photo-test-photo.o -MD -MP -MF $(DEPDIR)/test_photo-test-photo.Tpo -c -o test_photo-test-photo.o `test -f 'test-photo.c' || echo '$(srcdir)/'`test-photo.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_photo-test-photo.Tpo $(DEPDIR)/test_photo-test-photo.Po
+#	$(AM_V_CC)source='test-photo.c' object='test_photo-test-photo.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_photo-test-photo.o `test -f 'test-photo.c' || echo '$(srcdir)/'`test-photo.c
 
 test_photo-test-photo.obj: test-photo.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_photo-test-photo.obj -MD -MP -MF $(DEPDIR)/test_photo-test-photo.Tpo -c -o test_photo-test-photo.obj `if test -f 'test-photo.c'; then $(CYGPATH_W) 'test-photo.c'; else $(CYGPATH_W) '$(srcdir)/test-photo.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_photo-test-photo.Tpo $(DEPDIR)/test_photo-test-photo.Po
-	$(AM_V_CC)source='test-photo.c' object='test_photo-test-photo.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_photo-test-photo.obj `if test -f 'test-photo.c'; then $(CYGPATH_W) 'test-photo.c'; else $(CYGPATH_W) '$(srcdir)/test-photo.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_photo-test-photo.obj -MD -MP -MF $(DEPDIR)/test_photo-test-photo.Tpo -c -o test_photo-test-photo.obj `if test -f 'test-photo.c'; then $(CYGPATH_W) 'test-photo.c'; else $(CYGPATH_W) '$(srcdir)/test-photo.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_photo-test-photo.Tpo $(DEPDIR)/test_photo-test-photo.Po
+#	$(AM_V_CC)source='test-photo.c' object='test_photo-test-photo.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_photo_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_photo-test-photo.obj `if test -f 'test-photo.c'; then $(CYGPATH_W) 'test-photo.c'; else $(CYGPATH_W) '$(srcdir)/test-photo.c'; fi`
 
 test_query-test-query.o: test-query.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_query-test-query.o -MD -MP -MF $(DEPDIR)/test_query-test-query.Tpo -c -o test_query-test-query.o `test -f 'test-query.c' || echo '$(srcdir)/'`test-query.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_query-test-query.Tpo $(DEPDIR)/test_query-test-query.Po
-	$(AM_V_CC)source='test-query.c' object='test_query-test-query.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_query-test-query.o `test -f 'test-query.c' || echo '$(srcdir)/'`test-query.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_query-test-query.o -MD -MP -MF $(DEPDIR)/test_query-test-query.Tpo -c -o test_query-test-query.o `test -f 'test-query.c' || echo '$(srcdir)/'`test-query.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_query-test-query.Tpo $(DEPDIR)/test_query-test-query.Po
+#	$(AM_V_CC)source='test-query.c' object='test_query-test-query.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_query-test-query.o `test -f 'test-query.c' || echo '$(srcdir)/'`test-query.c
 
 test_query-test-query.obj: test-query.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_query-test-query.obj -MD -MP -MF $(DEPDIR)/test_query-test-query.Tpo -c -o test_query-test-query.obj `if test -f 'test-query.c'; then $(CYGPATH_W) 'test-query.c'; else $(CYGPATH_W) '$(srcdir)/test-query.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_query-test-query.Tpo $(DEPDIR)/test_query-test-query.Po
-	$(AM_V_CC)source='test-query.c' object='test_query-test-query.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_query-test-query.obj `if test -f 'test-query.c'; then $(CYGPATH_W) 'test-query.c'; else $(CYGPATH_W) '$(srcdir)/test-query.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_query-test-query.obj -MD -MP -MF $(DEPDIR)/test_query-test-query.Tpo -c -o test_query-test-query.obj `if test -f 'test-query.c'; then $(CYGPATH_W) 'test-query.c'; else $(CYGPATH_W) '$(srcdir)/test-query.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_query-test-query.Tpo $(DEPDIR)/test_query-test-query.Po
+#	$(AM_V_CC)source='test-query.c' object='test_query-test-query.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_query_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_query-test-query.obj `if test -f 'test-query.c'; then $(CYGPATH_W) 'test-query.c'; else $(CYGPATH_W) '$(srcdir)/test-query.c'; fi`
 
 test_search-test-search.o: test-search.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.o -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
-	$(AM_V_CC)source='test-search.c' object='test_search-test-search.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.o -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
+#	$(AM_V_CC)source='test-search.c' object='test_search-test-search.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.o `test -f 'test-search.c' || echo '$(srcdir)/'`test-search.c
 
 test_search-test-search.obj: test-search.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.obj -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
-	$(AM_V_CC)source='test-search.c' object='test_search-test-search.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_search-test-search.obj -MD -MP -MF $(DEPDIR)/test_search-test-search.Tpo -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_search-test-search.Tpo $(DEPDIR)/test_search-test-search.Po
+#	$(AM_V_CC)source='test-search.c' object='test_search-test-search.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_search_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_search-test-search.obj `if test -f 'test-search.c'; then $(CYGPATH_W) 'test-search.c'; else $(CYGPATH_W) '$(srcdir)/test-search.c'; fi`
 
 test_self-test-self.o: test-self.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_self-test-self.o -MD -MP -MF $(DEPDIR)/test_self-test-self.Tpo -c -o test_self-test-self.o `test -f 'test-self.c' || echo '$(srcdir)/'`test-self.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_self-test-self.Tpo $(DEPDIR)/test_self-test-self.Po
-	$(AM_V_CC)source='test-self.c' object='test_self-test-self.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_self-test-self.o `test -f 'test-self.c' || echo '$(srcdir)/'`test-self.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_self-test-self.o -MD -MP -MF $(DEPDIR)/test_self-test-self.Tpo -c -o test_self-test-self.o `test -f 'test-self.c' || echo '$(srcdir)/'`test-self.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_self-test-self.Tpo $(DEPDIR)/test_self-test-self.Po
+#	$(AM_V_CC)source='test-self.c' object='test_self-test-self.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_self-test-self.o `test -f 'test-self.c' || echo '$(srcdir)/'`test-self.c
 
 test_self-test-self.obj: test-self.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_self-test-self.obj -MD -MP -MF $(DEPDIR)/test_self-test-self.Tpo -c -o test_self-test-self.obj `if test -f 'test-self.c'; then $(CYGPATH_W) 'test-self.c'; else $(CYGPATH_W) '$(srcdir)/test-self.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_self-test-self.Tpo $(DEPDIR)/test_self-test-self.Po
-	$(AM_V_CC)source='test-self.c' object='test_self-test-self.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_self-test-self.obj `if test -f 'test-self.c'; then $(CYGPATH_W) 'test-self.c'; else $(CYGPATH_W) '$(srcdir)/test-self.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_self-test-self.obj -MD -MP -MF $(DEPDIR)/test_self-test-self.Tpo -c -o test_self-test-self.obj `if test -f 'test-self.c'; then $(CYGPATH_W) 'test-self.c'; else $(CYGPATH_W) '$(srcdir)/test-self.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_self-test-self.Tpo $(DEPDIR)/test_self-test-self.Po
+#	$(AM_V_CC)source='test-self.c' object='test_self-test-self.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_self_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_self-test-self.obj `if test -f 'test-self.c'; then $(CYGPATH_W) 'test-self.c'; else $(CYGPATH_W) '$(srcdir)/test-self.c'; fi`
 
 test_stress_bookviews-test-stress-bookviews.o: test-stress-bookviews.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_stress_bookviews-test-stress-bookviews.o -MD -MP -MF $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo -c -o test_stress_bookviews-test-stress-bookviews.o `test -f 'test-stress-bookviews.c' || echo '$(srcdir)/'`test-stress-bookviews.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Po
-	$(AM_V_CC)source='test-stress-bookviews.c' object='test_stress_bookviews-test-stress-bookviews.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_stress_bookviews-test-stress-bookviews.o `test -f 'test-stress-bookviews.c' || echo '$(srcdir)/'`test-stress-bookviews.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_stress_bookviews-test-stress-bookviews.o -MD -MP -MF $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo -c -o test_stress_bookviews-test-stress-bookviews.o `test -f 'test-stress-bookviews.c' || echo '$(srcdir)/'`test-stress-bookviews.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Po
+#	$(AM_V_CC)source='test-stress-bookviews.c' object='test_stress_bookviews-test-stress-bookviews.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_stress_bookviews-test-stress-bookviews.o `test -f 'test-stress-bookviews.c' || echo '$(srcdir)/'`test-stress-bookviews.c
 
 test_stress_bookviews-test-stress-bookviews.obj: test-stress-bookviews.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_stress_bookviews-test-stress-bookviews.obj -MD -MP -MF $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo -c -o test_stress_bookviews-test-stress-bookviews.obj `if test -f 'test-stress-bookviews.c'; then $(CYGPATH_W) 'test-stress-bookviews.c'; else $(CYGPATH_W) '$(srcdir)/test-stress-bookviews.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Po
-	$(AM_V_CC)source='test-stress-bookviews.c' object='test_stress_bookviews-test-stress-bookviews.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_stress_bookviews-test-stress-bookviews.obj `if test -f 'test-stress-bookviews.c'; then $(CYGPATH_W) 'test-stress-bookviews.c'; else $(CYGPATH_W) '$(srcdir)/test-stress-bookviews.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_stress_bookviews-test-stress-bookviews.obj -MD -MP -MF $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo -c -o test_stress_bookviews-test-stress-bookviews.obj `if test -f 'test-stress-bookviews.c'; then $(CYGPATH_W) 'test-stress-bookviews.c'; else $(CYGPATH_W) '$(srcdir)/test-stress-bookviews.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Tpo $(DEPDIR)/test_stress_bookviews-test-stress-bookviews.Po
+#	$(AM_V_CC)source='test-stress-bookviews.c' object='test_stress_bookviews-test-stress-bookviews.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_stress_bookviews_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_stress_bookviews-test-stress-bookviews.obj `if test -f 'test-stress-bookviews.c'; then $(CYGPATH_W) 'test-stress-bookviews.c'; else $(CYGPATH_W) '$(srcdir)/test-stress-bookviews.c'; fi`
 
 test_string-test-string.o: test-string.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_string-test-string.o -MD -MP -MF $(DEPDIR)/test_string-test-string.Tpo -c -o test_string-test-string.o `test -f 'test-string.c' || echo '$(srcdir)/'`test-string.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_string-test-string.Tpo $(DEPDIR)/test_string-test-string.Po
-	$(AM_V_CC)source='test-string.c' object='test_string-test-string.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_string-test-string.o `test -f 'test-string.c' || echo '$(srcdir)/'`test-string.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_string-test-string.o -MD -MP -MF $(DEPDIR)/test_string-test-string.Tpo -c -o test_string-test-string.o `test -f 'test-string.c' || echo '$(srcdir)/'`test-string.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_string-test-string.Tpo $(DEPDIR)/test_string-test-string.Po
+#	$(AM_V_CC)source='test-string.c' object='test_string-test-string.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_string-test-string.o `test -f 'test-string.c' || echo '$(srcdir)/'`test-string.c
 
 test_string-test-string.obj: test-string.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_string-test-string.obj -MD -MP -MF $(DEPDIR)/test_string-test-string.Tpo -c -o test_string-test-string.obj `if test -f 'test-string.c'; then $(CYGPATH_W) 'test-string.c'; else $(CYGPATH_W) '$(srcdir)/test-string.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_string-test-string.Tpo $(DEPDIR)/test_string-test-string.Po
-	$(AM_V_CC)source='test-string.c' object='test_string-test-string.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_string-test-string.obj `if test -f 'test-string.c'; then $(CYGPATH_W) 'test-string.c'; else $(CYGPATH_W) '$(srcdir)/test-string.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_string-test-string.obj -MD -MP -MF $(DEPDIR)/test_string-test-string.Tpo -c -o test_string-test-string.obj `if test -f 'test-string.c'; then $(CYGPATH_W) 'test-string.c'; else $(CYGPATH_W) '$(srcdir)/test-string.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_string-test-string.Tpo $(DEPDIR)/test_string-test-string.Po
+#	$(AM_V_CC)source='test-string.c' object='test_string-test-string.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_string_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_string-test-string.obj `if test -f 'test-string.c'; then $(CYGPATH_W) 'test-string.c'; else $(CYGPATH_W) '$(srcdir)/test-string.c'; fi`
 
 test_undefinedfield-test-undefinedfield.o: test-undefinedfield.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_undefinedfield-test-undefinedfield.o -MD -MP -MF $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo -c -o test_undefinedfield-test-undefinedfield.o `test -f 'test-undefinedfield.c' || echo '$(srcdir)/'`test-undefinedfield.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo $(DEPDIR)/test_undefinedfield-test-undefinedfield.Po
-	$(AM_V_CC)source='test-undefinedfield.c' object='test_undefinedfield-test-undefinedfield.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_undefinedfield-test-undefinedfield.o `test -f 'test-undefinedfield.c' || echo '$(srcdir)/'`test-undefinedfield.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_undefinedfield-test-undefinedfield.o -MD -MP -MF $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo -c -o test_undefinedfield-test-undefinedfield.o `test -f 'test-undefinedfield.c' || echo '$(srcdir)/'`test-undefinedfield.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo $(DEPDIR)/test_undefinedfield-test-undefinedfield.Po
+#	$(AM_V_CC)source='test-undefinedfield.c' object='test_undefinedfield-test-undefinedfield.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_undefinedfield-test-undefinedfield.o `test -f 'test-undefinedfield.c' || echo '$(srcdir)/'`test-undefinedfield.c
 
 test_undefinedfield-test-undefinedfield.obj: test-undefinedfield.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_undefinedfield-test-undefinedfield.obj -MD -MP -MF $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo -c -o test_undefinedfield-test-undefinedfield.obj `if test -f 'test-undefinedfield.c'; then $(CYGPATH_W) 'test-undefinedfield.c'; else $(CYGPATH_W) '$(srcdir)/test-undefinedfield.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo $(DEPDIR)/test_undefinedfield-test-undefinedfield.Po
-	$(AM_V_CC)source='test-undefinedfield.c' object='test_undefinedfield-test-undefinedfield.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_undefinedfield-test-undefinedfield.obj `if test -f 'test-undefinedfield.c'; then $(CYGPATH_W) 'test-undefinedfield.c'; else $(CYGPATH_W) '$(srcdir)/test-undefinedfield.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_undefinedfield-test-undefinedfield.obj -MD -MP -MF $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo -c -o test_undefinedfield-test-undefinedfield.obj `if test -f 'test-undefinedfield.c'; then $(CYGPATH_W) 'test-undefinedfield.c'; else $(CYGPATH_W) '$(srcdir)/test-undefinedfield.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_undefinedfield-test-undefinedfield.Tpo $(DEPDIR)/test_undefinedfield-test-undefinedfield.Po
+#	$(AM_V_CC)source='test-undefinedfield.c' object='test_undefinedfield-test-undefinedfield.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_undefinedfield_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_undefinedfield-test-undefinedfield.obj `if test -f 'test-undefinedfield.c'; then $(CYGPATH_W) 'test-undefinedfield.c'; else $(CYGPATH_W) '$(srcdir)/test-undefinedfield.c'; fi`
 
 test_untyped_phones-test-untyped-phones.o: test-untyped-phones.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_untyped_phones-test-untyped-phones.o -MD -MP -MF $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo -c -o test_untyped_phones-test-untyped-phones.o `test -f 'test-untyped-phones.c' || echo '$(srcdir)/'`test-untyped-phones.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo $(DEPDIR)/test_untyped_phones-test-untyped-phones.Po
-	$(AM_V_CC)source='test-untyped-phones.c' object='test_untyped_phones-test-untyped-phones.o' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_untyped_phones-test-untyped-phones.o `test -f 'test-untyped-phones.c' || echo '$(srcdir)/'`test-untyped-phones.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_untyped_phones-test-untyped-phones.o -MD -MP -MF $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo -c -o test_untyped_phones-test-untyped-phones.o `test -f 'test-untyped-phones.c' || echo '$(srcdir)/'`test-untyped-phones.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo $(DEPDIR)/test_untyped_phones-test-untyped-phones.Po
+#	$(AM_V_CC)source='test-untyped-phones.c' object='test_untyped_phones-test-untyped-phones.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_untyped_phones-test-untyped-phones.o `test -f 'test-untyped-phones.c' || echo '$(srcdir)/'`test-untyped-phones.c
 
 test_untyped_phones-test-untyped-phones.obj: test-untyped-phones.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_untyped_phones-test-untyped-phones.obj -MD -MP -MF $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo -c -o test_untyped_phones-test-untyped-phones.obj `if test -f 'test-untyped-phones.c'; then $(CYGPATH_W) 'test-untyped-phones.c'; else $(CYGPATH_W) '$(srcdir)/test-untyped-phones.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo $(DEPDIR)/test_untyped_phones-test-untyped-phones.Po
-	$(AM_V_CC)source='test-untyped-phones.c' object='test_untyped_phones-test-untyped-phones.obj' libtool=no \
-	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_untyped_phones-test-untyped-phones.obj `if test -f 'test-untyped-phones.c'; then $(CYGPATH_W) 'test-untyped-phones.c'; else $(CYGPATH_W) '$(srcdir)/test-untyped-phones.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_untyped_phones-test-untyped-phones.obj -MD -MP -MF $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo -c -o test_untyped_phones-test-untyped-phones.obj `if test -f 'test-untyped-phones.c'; then $(CYGPATH_W) 'test-untyped-phones.c'; else $(CYGPATH_W) '$(srcdir)/test-untyped-phones.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_untyped_phones-test-untyped-phones.Tpo $(DEPDIR)/test_untyped_phones-test-untyped-phones.Po
+#	$(AM_V_CC)source='test-untyped-phones.c' object='test_untyped_phones-test-untyped-phones.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_untyped_phones_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_untyped_phones-test-untyped-phones.obj `if test -f 'test-untyped-phones.c'; then $(CYGPATH_W) 'test-untyped-phones.c'; else $(CYGPATH_W) '$(srcdir)/test-untyped-phones.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

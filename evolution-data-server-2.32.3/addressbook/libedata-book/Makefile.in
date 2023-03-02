@@ -149,6 +149,10 @@ e_addressbook_factory_DEPENDENCIES = libedata-book-1.2.la \
 	$(am__DEPENDENCIES_1) \
 	$(top_builddir)/libedataserver/libedataserver-1.2.la \
 	$(top_builddir)/libebackend/libebackend-1.2.la
+e_addressbook_factory_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(AM_CFLAGS) $(CFLAGS) $(e_addressbook_factory_LDFLAGS) \
+	$(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -530,8 +534,9 @@ e_addressbook_factory_SOURCES = \
 	e-data-book-factory.h \
 	e-data-book-migrate.c
 
+@OS_WIN32_TRUE@e_addressbook_factory_LDFLAGS = -mwindows
 e_addressbook_factory_LDADD = \
-	libedata-book-1.2.la					\
+	libedata-book-1.2.la	           		\
 	$(EVOLUTION_ADDRESSBOOK_LIBS)				\
 	$(top_builddir)/libedataserver/libedataserver-1.2.la	\
 	$(top_builddir)/libebackend/libebackend-1.2.la
@@ -671,7 +676,7 @@ clean-factoryPROGRAMS:
 	rm -f $$list
 e-addressbook-factory$(EXEEXT): $(e_addressbook_factory_OBJECTS) $(e_addressbook_factory_DEPENDENCIES) $(EXTRA_e_addressbook_factory_DEPENDENCIES) 
 	@rm -f e-addressbook-factory$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(e_addressbook_factory_OBJECTS) $(e_addressbook_factory_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(e_addressbook_factory_LINK) $(e_addressbook_factory_OBJECTS) $(e_addressbook_factory_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

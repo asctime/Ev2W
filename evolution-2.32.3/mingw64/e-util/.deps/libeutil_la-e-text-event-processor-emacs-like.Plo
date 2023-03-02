@@ -1,4 +1,5 @@
-libeutil_la-e-text-event-processor-emacs-like.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-text-event-processor-emacs-like.lo: \
  ../../e-util/e-text-event-processor-emacs-like.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

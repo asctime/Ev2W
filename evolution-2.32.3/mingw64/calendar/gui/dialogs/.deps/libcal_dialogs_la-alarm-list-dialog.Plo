@@ -1,4 +1,5 @@
-libcal_dialogs_la-alarm-list-dialog.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcal_dialogs_la-alarm-list-dialog.lo: \
  ../../../../calendar/gui/dialogs/alarm-list-dialog.c ../../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

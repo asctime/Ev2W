@@ -1,4 +1,5 @@
-libessmime_la-e-cert-trust.lo: ../../../smime/lib/e-cert-trust.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libessmime_la-e-cert-trust.lo: ../../../smime/lib/e-cert-trust.c \
  ../../config.h ../../../smime/lib/e-cert-trust.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \

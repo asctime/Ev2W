@@ -1,4 +1,5 @@
-libgnomecanvas_la-libgnomecanvastypes.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libgnomecanvas_la-libgnomecanvastypes.lo: \
  ../../libgnomecanvas/libgnomecanvastypes.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \

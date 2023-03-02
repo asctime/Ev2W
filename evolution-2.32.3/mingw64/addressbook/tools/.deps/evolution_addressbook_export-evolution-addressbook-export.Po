@@ -1,4 +1,5 @@
-evolution_addressbook_export-evolution-addressbook-export.o: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ evolution_addressbook_export-evolution-addressbook-export.o: \
  ../../../addressbook/tools/evolution-addressbook-export.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

@@ -1,4 +1,5 @@
-libevolution_calendar_la-calendar-config.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-calendar-config.lo: \
  ../../../calendar/gui/calendar-config.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

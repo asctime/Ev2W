@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-evolution-module-calendar.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-evolution-module-calendar.lo: \
  ../../../modules/calendar/evolution-module-calendar.c \
  ../../../modules/calendar/e-cal-attachment-handler.h \
  ../../../widgets/misc/e-attachment-handler.h \

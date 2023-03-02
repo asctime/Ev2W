@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-signature-editor.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-signature-editor.lo: \
  ../../../widgets/misc/e-signature-editor.c \
  ../../../widgets/misc/e-signature-editor.h \
  D:/MSYS2/mingw64/include/libgtkhtml-3.14/editor/gtkhtml-editor.h \

@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-attachment-handler-sendto.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-attachment-handler-sendto.lo: \
  ../../../widgets/misc/e-attachment-handler-sendto.c \
  ../../../widgets/misc/e-attachment-handler-sendto.h \
  ../../../widgets/misc/e-attachment-handler.h \

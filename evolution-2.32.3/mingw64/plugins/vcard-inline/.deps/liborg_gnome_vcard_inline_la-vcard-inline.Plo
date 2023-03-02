@@ -1,4 +1,5 @@
-liborg_gnome_vcard_inline_la-vcard-inline.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_vcard_inline_la-vcard-inline.lo: \
  ../../../plugins/vcard-inline/vcard-inline.c ../../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

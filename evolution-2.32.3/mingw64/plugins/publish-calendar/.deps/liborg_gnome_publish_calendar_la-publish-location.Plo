@@ -1,4 +1,5 @@
-liborg_gnome_publish_calendar_la-publish-location.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_publish_calendar_la-publish-location.lo: \
  ../../../plugins/publish-calendar/publish-location.c \
  ../../../plugins/publish-calendar/publish-location.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-e-cal-config-calendar-item.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-e-cal-config-calendar-item.lo: \
  ../../../modules/calendar/e-cal-config-calendar-item.c \
  ../../../modules/calendar/e-cal-config-calendar-item.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \

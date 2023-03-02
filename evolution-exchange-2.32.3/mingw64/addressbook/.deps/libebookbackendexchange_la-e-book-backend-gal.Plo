@@ -1,4 +1,5 @@
 libebookbackendexchange_la-e-book-backend-gal.lo : \
+ \
  ../../addressbook/e-book-backend-gal.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
@@ -947,6 +948,7 @@ libebookbackendexchange_la-e-book-backend-gal.lo : \
  D:/MSYS2/mingw64/include/pthread_unistd.h \
  D:/MSYS2/mingw64/include/pthread.h \
  D:/MSYS2/mingw64/include/pthread_compat.h
+-fstack-protector-strong :
 ../../addressbook/e-book-backend-gal.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h :

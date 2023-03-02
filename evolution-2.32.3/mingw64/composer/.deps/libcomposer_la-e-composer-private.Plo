@@ -1,5 +1,7 @@
-libcomposer_la-e-composer-private.lo: ../../composer/e-composer-private.c \
- ../../composer/e-composer-private.h ../../composer/e-msg-composer.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcomposer_la-e-composer-private.lo: \
+ ../../composer/e-composer-private.c ../../composer/e-composer-private.h \
+ ../../composer/e-msg-composer.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-address.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-object.h \

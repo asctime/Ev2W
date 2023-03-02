@@ -1,4 +1,5 @@
-libeabwidgets_la-eab-contact-display.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeabwidgets_la-eab-contact-display.lo: \
  ../../../../addressbook/gui/widgets/eab-contact-display.c \
  ../../../config.h \
  ../../../../addressbook/gui/widgets/eab-contact-display.h \

@@ -724,6 +724,7 @@ libexchange_storage_la-exchange-hierarchy-foreign.lo : \
  ../../../server/storage/exchange-hierarchy-somedav.h \
  ../../../server/storage/exchange-hierarchy-webdav.h \
  ../../../server/storage/exchange-hierarchy.h
+-fstack-protector-strong :
 ../../../server/storage/exchange-hierarchy-foreign.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h :

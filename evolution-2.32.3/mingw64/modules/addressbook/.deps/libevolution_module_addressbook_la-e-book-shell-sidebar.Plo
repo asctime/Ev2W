@@ -1,4 +1,5 @@
-libevolution_module_addressbook_la-e-book-shell-sidebar.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_addressbook_la-e-book-shell-sidebar.lo: \
  ../../../modules/addressbook/e-book-shell-sidebar.c \
  ../../../modules/addressbook/e-book-shell-sidebar.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-source-selector.h \

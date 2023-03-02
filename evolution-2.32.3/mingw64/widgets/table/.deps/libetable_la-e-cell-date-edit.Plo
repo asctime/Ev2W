@@ -1,4 +1,5 @@
-libetable_la-e-cell-date-edit.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-cell-date-edit.lo: \
  ../../../widgets/table/e-cell-date-edit.c ../../config.h \
  ../../../widgets/table/e-cell-date-edit.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \

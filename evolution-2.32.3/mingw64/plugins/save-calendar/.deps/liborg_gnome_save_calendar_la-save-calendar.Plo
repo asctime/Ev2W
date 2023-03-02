@@ -1,4 +1,5 @@
-liborg_gnome_save_calendar_la-save-calendar.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ liborg_gnome_save_calendar_la-save-calendar.lo: \
  ../../../plugins/save-calendar/save-calendar.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \

@@ -1,4 +1,5 @@
-libevolution_mail_importers_la-pine-importer.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_mail_importers_la-pine-importer.lo: \
  ../../../mail/importers/pine-importer.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

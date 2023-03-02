@@ -1,4 +1,5 @@
 libexchange_la-e2k-properties.lo : \
+ \
  ../../../server/lib/e2k-properties.c ../../config.h \
  ../../../server/lib/e2k-properties.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
@@ -152,6 +153,7 @@ libexchange_la-e2k-properties.lo : \
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-properties.c :
 ../../config.h :
 ../../../server/lib/e2k-properties.h :

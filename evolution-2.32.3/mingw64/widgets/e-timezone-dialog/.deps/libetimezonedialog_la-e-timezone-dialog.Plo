@@ -1,4 +1,5 @@
-libetimezonedialog_la-e-timezone-dialog.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetimezonedialog_la-e-timezone-dialog.lo: \
  ../../../widgets/e-timezone-dialog/e-timezone-dialog.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

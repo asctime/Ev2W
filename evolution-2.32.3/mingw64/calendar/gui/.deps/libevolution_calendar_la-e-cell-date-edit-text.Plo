@@ -1,4 +1,5 @@
-libevolution_calendar_la-e-cell-date-edit-text.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-e-cell-date-edit-text.lo: \
  ../../../calendar/gui/e-cell-date-edit-text.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/time.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \

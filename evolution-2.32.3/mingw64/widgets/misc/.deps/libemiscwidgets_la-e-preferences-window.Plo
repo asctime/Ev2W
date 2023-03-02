@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-preferences-window.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-preferences-window.lo: \
  ../../../widgets/misc/e-preferences-window.c \
  ../../../widgets/misc/e-preferences-window.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

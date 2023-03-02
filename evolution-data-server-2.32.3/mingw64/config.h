@@ -28,7 +28,7 @@
 #define ENABLE_CALENDAR 1
 
 /* Enable IPv6 support */
-/* #undef ENABLE_IPv6 */
+#define ENABLE_IPv6 1
 
 /* always defined to indicate that i18n is enabled */
 #define ENABLE_NLS 1
@@ -313,7 +313,7 @@
 /* #undef _LARGE_FILES */
 
 /* To get getaddrinfo etc declarations */
-/* #define _WIN32_WINNT 0x501 */
+#define _WIN32_WINNT 0x501
 
 /* Define to `__inline__' or `__inline' if that's what the C compiler
    calls it, or to nothing if 'inline' is not supported under any name.  */

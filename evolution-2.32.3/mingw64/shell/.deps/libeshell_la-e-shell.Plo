@@ -1,4 +1,5 @@
-libeshell_la-e-shell.lo: ../../shell/e-shell.c ../../shell/e-shell.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeshell_la-e-shell.lo: ../../shell/e-shell.c ../../shell/e-shell.h \
  D:/MSYS2/mingw64/include/unique-1.0/unique/unique.h \
  D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueapp.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \

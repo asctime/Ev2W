@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-hinted-entry.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-hinted-entry.lo: \
  ../../../widgets/misc/e-hinted-entry.c \
  ../../../widgets/misc/e-hinted-entry.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

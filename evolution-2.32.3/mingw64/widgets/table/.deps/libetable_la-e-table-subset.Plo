@@ -1,4 +1,5 @@
-libetable_la-e-table-subset.lo: ../../../widgets/table/e-table-subset.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-table-subset.lo: ../../../widgets/table/e-table-subset.c \
  ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \

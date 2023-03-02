@@ -1,4 +1,5 @@
-libemiscwidgets_la-ea-widgets.lo: ../../../widgets/misc/ea-widgets.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-ea-widgets.lo: ../../../widgets/misc/ea-widgets.c \
  ../../../a11y/ea-factory.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \
  D:/MSYS2/mingw64/include/glib-2.0/gobject/gbinding.h \

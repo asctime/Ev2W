@@ -1,4 +1,5 @@
 libcamelexchange_la-camel-exchange-folder.lo : \
+ \
  ../../camel/camel-exchange-folder.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -444,6 +445,7 @@ libcamelexchange_la-camel-exchange-folder.lo : \
  ../../camel/camel-exchange-search.h ../../camel/camel-exchange-store.h \
  ../../camel/camel-exchange-summary.h \
  ../../camel/camel-exchange-journal.h ../../camel/camel-exchange-utils.h
+-fstack-protector-strong :
 ../../camel/camel-exchange-folder.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h :

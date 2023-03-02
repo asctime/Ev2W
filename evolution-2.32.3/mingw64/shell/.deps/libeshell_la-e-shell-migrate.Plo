@@ -1,4 +1,5 @@
-libeshell_la-e-shell-migrate.lo: ../../shell/e-shell-migrate.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeshell_la-e-shell-migrate.lo: ../../shell/e-shell-migrate.c \
  ../../shell/e-shell-migrate.h ../../shell/e-shell-common.h ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \

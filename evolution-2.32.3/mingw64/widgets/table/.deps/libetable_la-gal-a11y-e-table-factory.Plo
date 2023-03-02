@@ -1,4 +1,5 @@
-libetable_la-gal-a11y-e-table-factory.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-gal-a11y-e-table-factory.lo: \
  ../../../widgets/table/gal-a11y-e-table-factory.c ../../config.h \
  ../../../widgets/table/gal-a11y-e-table.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

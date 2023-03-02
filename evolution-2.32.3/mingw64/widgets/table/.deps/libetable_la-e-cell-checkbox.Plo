@@ -1,5 +1,7 @@
-libetable_la-e-cell-checkbox.lo: ../../../widgets/table/e-cell-checkbox.c \
- ../../config.h D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-cell-checkbox.lo: \
+ ../../../widgets/table/e-cell-checkbox.c ../../config.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

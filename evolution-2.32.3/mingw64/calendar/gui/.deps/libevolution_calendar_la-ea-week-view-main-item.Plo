@@ -1,4 +1,5 @@
-libevolution_calendar_la-ea-week-view-main-item.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-ea-week-view-main-item.lo: \
  ../../../calendar/gui/ea-week-view-main-item.c \
  ../../../calendar/gui/ea-week-view-main-item.h \
  D:/MSYS2/mingw64/include/atk-1.0/atk/atkgobjectaccessible.h \

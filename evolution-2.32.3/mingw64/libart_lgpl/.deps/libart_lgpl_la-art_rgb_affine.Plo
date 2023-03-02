@@ -1,4 +1,5 @@
-libart_lgpl_la-art_rgb_affine.lo: ../../libart_lgpl/art_rgb_affine.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libart_lgpl_la-art_rgb_affine.lo: ../../libart_lgpl/art_rgb_affine.c \
  ../config.h ../../libart_lgpl/art_rgb_affine.h \
  ../../libart_lgpl/art_filterlevel.h ../../libart_lgpl/art_alphagamma.h \
  ../../libart_lgpl/art_misc.h D:/MSYS2/mingw64/include/glib-2.0/glib.h \

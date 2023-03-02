@@ -1,4 +1,5 @@
-libevolution_module_mail_la-e-mail-config-format-html.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_mail_la-e-mail-config-format-html.lo: \
  ../../../modules/mail/e-mail-config-format-html.c \
  ../../../modules/mail/e-mail-config-format-html.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib-object.h \

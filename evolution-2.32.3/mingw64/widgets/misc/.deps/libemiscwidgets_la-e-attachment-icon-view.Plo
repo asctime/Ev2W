@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-attachment-icon-view.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-attachment-icon-view.lo: \
  ../../../widgets/misc/e-attachment-icon-view.c \
  ../../../widgets/misc/e-attachment-icon-view.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \

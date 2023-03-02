@@ -1,4 +1,5 @@
 libexchange_la-e2k-restriction.lo : \
+ \
  ../../../server/lib/e2k-restriction.c ../../config.h \
  ../../../server/lib/e2k-restriction.h ../../../server/lib/e2k-types.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
@@ -152,6 +153,7 @@ libexchange_la-e2k-restriction.lo : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/malloc.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/xlink.h \
  ../../../server/lib/e2k-rule.h
+-fstack-protector-strong :
 ../../../server/lib/e2k-restriction.c :
 ../../config.h :
 ../../../server/lib/e2k-restriction.h :

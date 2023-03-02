@@ -1,4 +1,5 @@
-libeshell_la-e-shell-taskbar.lo: ../../shell/e-shell-taskbar.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeshell_la-e-shell-taskbar.lo: ../../shell/e-shell-taskbar.c \
  ../../shell/e-shell-taskbar.h ../../shell/e-shell-common.h ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/giotypes.h \

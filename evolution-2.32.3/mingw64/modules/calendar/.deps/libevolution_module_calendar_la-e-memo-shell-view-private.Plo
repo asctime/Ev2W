@@ -1,4 +1,5 @@
-libevolution_module_calendar_la-e-memo-shell-view-private.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_module_calendar_la-e-memo-shell-view-private.lo: \
  ../../../modules/calendar/e-memo-shell-view-private.c \
  ../../../e-util/e-util-private.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h \

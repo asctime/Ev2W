@@ -1,4 +1,5 @@
-libevolution_calendar_la-e-day-view-main-item.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-e-day-view-main-item.lo: \
  ../../../calendar/gui/e-day-view-main-item.c ../../config.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libecal/e-cal-time-util.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \

@@ -1,4 +1,5 @@
-contact_print_test-test-print.o: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ contact_print_test-test-print.o: \
  ../../../addressbook/printing/test-print.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

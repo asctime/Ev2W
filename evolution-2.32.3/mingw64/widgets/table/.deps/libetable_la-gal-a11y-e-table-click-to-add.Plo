@@ -1,4 +1,5 @@
-libetable_la-gal-a11y-e-table-click-to-add.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-gal-a11y-e-table-click-to-add.lo: \
  ../../../widgets/table/gal-a11y-e-table-click-to-add.c ../../config.h \
  D:/MSYS2/mingw64/include/atk-1.0/atk/atk.h \
  D:/MSYS2/mingw64/include/atk-1.0/atk/atkobject.h \

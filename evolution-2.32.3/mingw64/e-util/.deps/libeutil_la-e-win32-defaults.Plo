@@ -1,4 +1,5 @@
-libeutil_la-e-win32-defaults.lo: ../../e-util/e-win32-defaults.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeutil_la-e-win32-defaults.lo: ../../e-util/e-win32-defaults.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \

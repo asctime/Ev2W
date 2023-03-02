@@ -1,4 +1,5 @@
-libcomposer_la-e-msg-composer.lo: ../../composer/e-msg-composer.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcomposer_la-e-msg-composer.lo: ../../composer/e-msg-composer.c \
  ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \

@@ -1,4 +1,5 @@
-libmenus_la-gal-view-instance-save-as-dialog.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libmenus_la-gal-view-instance-save-as-dialog.lo: \
  ../../../widgets/menus/gal-view-instance-save-as-dialog.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

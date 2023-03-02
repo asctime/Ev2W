@@ -1,4 +1,5 @@
-libetable_la-e-table-one.lo: ../../../widgets/table/e-table-one.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-table-one.lo: ../../../widgets/table/e-table-one.c \
  ../../config.h ../../../e-util/e-util.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

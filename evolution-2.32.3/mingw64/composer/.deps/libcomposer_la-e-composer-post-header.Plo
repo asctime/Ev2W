@@ -1,4 +1,5 @@
-libcomposer_la-e-composer-post-header.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libcomposer_la-e-composer-post-header.lo: \
  ../../composer/e-composer-post-header.c \
  ../../composer/e-composer-post-header.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-account.h \

@@ -1,4 +1,5 @@
-libevolution_calendar_importers_la-icalendar-importer.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_importers_la-icalendar-importer.lo: \
  ../../../calendar/importers/icalendar-importer.c ../../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

@@ -1,4 +1,5 @@
-libevolution_calendar_la-e-meeting-utils.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-e-meeting-utils.lo: \
  ../../../calendar/gui/e-meeting-utils.c ../../config.h \
  ../../../calendar/gui/e-meeting-utils.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \

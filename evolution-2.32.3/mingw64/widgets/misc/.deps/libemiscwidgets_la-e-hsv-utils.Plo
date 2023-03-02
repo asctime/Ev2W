@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-hsv-utils.lo: ../../../widgets/misc/e-hsv-utils.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-hsv-utils.lo: ../../../widgets/misc/e-hsv-utils.c \
  ../../config.h ../../../widgets/misc/e-hsv-utils.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \

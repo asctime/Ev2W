@@ -1,4 +1,5 @@
-libetable_la-e-cell-popup.lo: ../../../widgets/table/e-cell-popup.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-cell-popup.lo: ../../../widgets/table/e-cell-popup.c \
  ../../config.h D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h \
  ../../../widgets/table/gal-a11y-e-cell-popup.h \

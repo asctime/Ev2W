@@ -1,4 +1,5 @@
-libevolution_calendar_la-gnome-cal.lo: ../../../calendar/gui/gnome-cal.c \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libevolution_calendar_la-gnome-cal.lo: ../../../calendar/gui/gnome-cal.c \
  ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unistd.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

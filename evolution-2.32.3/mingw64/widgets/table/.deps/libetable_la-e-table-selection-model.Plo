@@ -1,4 +1,5 @@
-libetable_la-e-table-selection-model.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libetable_la-e-table-selection-model.lo: \
  ../../../widgets/table/e-table-selection-model.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \

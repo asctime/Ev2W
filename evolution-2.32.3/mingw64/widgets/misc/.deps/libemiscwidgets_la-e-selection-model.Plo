@@ -1,4 +1,5 @@
-libemiscwidgets_la-e-selection-model.lo: \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libemiscwidgets_la-e-selection-model.lo: \
  ../../../widgets/misc/e-selection-model.c ../../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h \

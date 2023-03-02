@@ -1,4 +1,5 @@
-libeshell_la-es-event.lo: ../../shell/es-event.c ../config.h \
+-fstack-protector-strong -fasynchronous-unwind-tables \
+ libeshell_la-es-event.lo: ../../shell/es-event.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \

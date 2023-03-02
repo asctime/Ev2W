@@ -1,4 +1,5 @@
 liborg_gnome_exchange_operations_la-exchange-operations.lo : \
+ \
  ../../eplugin/exchange-operations.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -729,6 +730,7 @@ liborg_gnome_exchange_operations_la-exchange-operations.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-extension.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-extensible.h \
  D:/MSYS2/mingw64/include/evolution-2.32/shell/e-shell-settings.h
+-fstack-protector-strong :
 ../../eplugin/exchange-operations.c :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :
