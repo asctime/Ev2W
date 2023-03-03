@@ -1,5 +1,5 @@
 # Ev2W
-<strong>Gnome EVOLUTION Mail and Calendar client ported to MSYS2/MinGW64 using GTK.</strong><br><br>
+<strong>Gnome EVOLUTION email client and calendar ported to MSYS2/MinGW64 using GTK.</strong><br><br>
 Update and refresh of original work courtesy Novell, Inc., The GNOME Foundation, SUSE and Debian Linux groups, the MSYS2 team and others. <a href="https://en.wikipedia.org/wiki/GNOME_Evolution" target="_blank">Evolution</a> usage is granted under the GNU Lesser General Public License (LGPL). <br><br>
 <strong>What is working?</strong> User interface, GCONF, dll plugins, most protocols like SMTP, IMAP with CRAM-MD5 over SSL, CalDAV and LDAP(S).<br>
 <strong>What is not working yet?</strong> Some message image loading, GTK2 printing (see <a href="https://github.com/msys2/MINGW-packages/issues/14787">bug</a>), binary release, proper instructions and documentation.. <br><br>
