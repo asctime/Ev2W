@@ -18,9 +18,13 @@ Name: evolution-shell
 Description: libraries needed for Evolution shell components
 Version: 2.32.3
 <<<<<<< HEAD
+<<<<<<< HEAD
 Requires: gconf-2.0 gtk+-2.0 libedataserverui-1.2 unique-1.0
 =======
 Requires: gconf-2.0 @GNOME_DESKTOP@ gtk+-2.0 libedataserverui-1.2 unique-1.0
 >>>>>>> e03013f... gnome-desktop removal. pthread and stack prtection added.
+=======
+Requires: gconf-2.0 gtk+-2.0 libedataserverui-1.2 unique-1.0
+>>>>>>> 07966f1... Ev2W-Gnome2 project closed. Gnome removed. nome-vfs replaced by gio.
 Libs: -L${privlibdir} -leshell -Wl,-R${privlibdir}
 Cflags: -I${privincludedir}

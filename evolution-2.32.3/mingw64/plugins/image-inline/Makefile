@@ -395,8 +395,8 @@ LIBGWEATHER_LIBS =
 LIBNOTIFY_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/libpng16 -mms-bitfields 
 LIBNOTIFY_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lnotify -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl 
 LIBOBJS = 
-LIBPST_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libpst-4 
-LIBPST_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lpst 
+LIBPST_CFLAGS = 
+LIBPST_LIBS = 
 LIBS = -lz -lws2_32 -lregex -lversion -lssp
 LIBSOUP_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2  
 <<<<<<< HEAD
@@ -553,6 +553,7 @@ plugindir = ${libdir}/evolution/2.32/plugins
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features webdav-account-setup   bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import image-inline
 =======
 plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features google-account-setup webdav-account-setup   bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import image-inline
@@ -563,6 +564,9 @@ plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager defa
 =======
 plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features webdav-account-setup   bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import image-inline pst-import
 >>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
+=======
+plugins_enabled = calendar-file calendar-http itip-formatter plugin-manager default-source addressbook-file mark-all-read groupwise-features publish-calendar caldav imap-features webdav-account-setup   bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import image-inline
+>>>>>>> 07966f1... Ev2W-Gnome2 project closed. Gnome removed. nome-vfs replaced by gio.
 prefix = /MSYS2/mingw64
 privdatadir = ${datadir}/evolution/2.32
 privincludedir = ${includedir}/evolution-2.32
