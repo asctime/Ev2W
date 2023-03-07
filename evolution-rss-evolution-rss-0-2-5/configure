@@ -3322,6 +3322,7 @@ ac_config_headers="$ac_config_headers config.h"
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD:evolution-rss-evolution-rss-0-2-5/configure
 =======
 
@@ -3358,6 +3359,8 @@ BASE_VERSION=2.32
 
 
 >>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.:evolution-exchange-2.32.3/autom4te.cache/output.1
+=======
+>>>>>>> 2a8e534... evolution-rss added, with xml mime type detection currently disabled.
 DEPDIR="${am__leading_dot}deps"
 
 ac_config_commands="$ac_config_commands depfiles"
