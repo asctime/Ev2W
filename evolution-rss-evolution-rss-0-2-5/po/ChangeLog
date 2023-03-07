@@ -1,0 +1,84 @@
+2009-08-17  Ani Peter  <apeter@redhat.com>
+	* ml.po: Added Malayalam (ml) Translations.
+	* LINGUAS: Added ml to the list of languages.
+
+2009-04-05  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
+
+	* es.po: Updated Spanish translation by Roby Sottini.
+
+2009-04-05  Philip Withnall  <philip@tecnocode.co.uk>
+
+	* en_GB.po: Updated British English translation by Jen Ockwell
+	<jenfraggleubuntu@gmail.com>.
+
+2009-03-30  Shankar Prasad  <svenkate@redhat.com>
+
+	* kn.po: Updated Kannada translations.
+
+2009-03-30  Shankar Prasad  <svenkate@redhat.com>
+
+	* kn.po: Added Kannada(kn) translations.
+	* LINGUAS: Added kn to the list.
+
+2009-03-28  Claude Paroz  <claude@2xlibre.net>
+
+	* LINGUAS:
+	* fr.po: Added French translation.
+
+2009-03-26  Philip Withnall  <philip@tecnocode.co.uk>
+
+	* en_GB.po: Added British English translation by Jen Ockwell
+	<jenfraggleubuntu@gmail.com>.
+
+2009-03-24  Krishnababu K  <kkrothap@redhat.com>
+
+	* te.po: Updated Telugu Translation.
+
+2009-03-24  Daniel Nylander <po@danielnylander.se>
+
+	* sv.po: Updated Swedish translation.
+	
+2009-03-20  Lucian Langa  <lucilanga@gnome.org>
+
+	* ro.po: Updated Romanian translation.
+
+2009-03-19  Sandeep Shedmake  <sshedmak@redhat.com>
+
+	* mr.po: Added Marathi Translations.
+
+2009-03-19  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
+
+	* es.po: Updated Spanish translation. 
+
+2009-03-12  Milo Casagrande  <milo@ubuntu.com>
+
+	* it.po: Added Italian translation by Rita Bandiera.
+
+2009-03-08  Nickolay V. Shmyrev  <nshmyrev@yandex.ru>
+
+	* ru.po: Updated Russian translaion by Yuriy Myasoedov.
+
+2009-02-15  Petr Kovar  <pknbe@volny.cz>
+
+	* cs.po: Added Czech translation by Jiri Eischmann.
+
+2009-02-12  Lucian Langa  <lucilanga@gnome.org>
+
+	** Fix for bug #571481 - bug in translation string
+
+2009-02-11  Daniel Nylander <po@danielnylander.se>
+
+	* sv.po: Updated translations
+	
+2009-02-04  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
+
+	* es.po: Added initial Spanish translation. 
+
+2007-10-20  Daniel Nylander <po@danielnylander.se>
+
+	* sv.po: Updated translations
+	
+2007-04-21  Daniel Nylander <po@danielnylander.se>
+
+	* sv.po: New file
+

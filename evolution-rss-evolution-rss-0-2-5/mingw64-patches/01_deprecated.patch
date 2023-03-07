@@ -1,0 +1,25 @@
+From: Josselin Mouette <joss@debian.org>
+Date: Thu, 1 Dec 2011 20:42:42 +0000
+Subject: Remove _DISABLE_DEPRECATED flags.
+
+Closes: #650050.
+---
+ configure.ac | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index b13d42d..06331c5 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -11,10 +11,7 @@ dnl ******************************
+ dnl Compiler Warning Flags
+ dnl ******************************
+ AS_COMPILER_FLAGS(WARNING_FLAGS,
+-	"-DPANGO_DISABLE_DEPRECATED
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED
+-	-DGDK_DISABLE_DEPRECATED
+-	-DG_DISABLE_SINGLE_INCLUDES
++	"-DG_DISABLE_SINGLE_INCLUDES
+ 	-DGTK_DISABLE_SINGLE_INCLUDES
+ 	-DGSEAL_ENABLE
+ 	-Wall -Wextra

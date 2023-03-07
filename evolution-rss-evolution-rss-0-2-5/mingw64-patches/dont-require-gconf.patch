@@ -1,0 +1,25 @@
+From: Jeremy Bicha <jbicha@ubuntu.com>
+Date: Sun, 2 Sep 2018 13:58:41 -0400
+Subject: Don't require gconf
+
+---
+ configure.ac | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 04d7b53..d3c369b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -317,12 +317,6 @@ AC_SUBST(RENDER_CFLAGS)
+ AC_SUBST(RENDER)
+ AC_SUBST(RENDER_N)
+ 
+-dnl ***********
+-dnl GConf stuff
+-dnl ***********
+-AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
+-AM_GCONF_SOURCE_2
+-
+ dnl ***************
+ dnl Gsettings stuff
+ dnl ***************
