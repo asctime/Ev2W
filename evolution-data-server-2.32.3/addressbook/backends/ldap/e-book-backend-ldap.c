@@ -547,7 +547,11 @@ check_schema_support (EBookBackendLDAP *bl)
 {
 	const gchar *attrs[2];
 	LDAPMessage *resp;
+#ifdef __MINGW64__
+	struct l_timeval timeout;
+#else
 	struct timeval timeout;
+#endif
 
 	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
 	if (!bl->priv->ldap) {
@@ -669,7 +673,11 @@ get_ldap_library_info (void)
 
 		/* yuck.  we have to free these? */
 		for (i = 0; info.ldapai_extensions[i]; i++) {
+#ifdef __MINGW64__
+			gchar *extension = (PCHAR)info.ldapai_extensions[i];
+#else
 			gchar *extension = info.ldapai_extensions[i];
+#endif
 			if (enable_debug)
 				g_message ("%s", extension);
 			ldap_memfree (extension);
@@ -691,7 +699,11 @@ query_ldap_root_dse (EBookBackendLDAP *bl)
 	const gchar *attrs[MAX_DSE_ATTRS];
 	gchar **values;
 	gint i = 0;
+#ifdef __MINGW64__
+	struct l_timeval timeout;
+#else
 	struct timeval timeout;
+#endif
 
 	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
 	if (!bl->priv->ldap) {
@@ -1204,7 +1216,7 @@ create_dn_from_contact (EContact *contact, gchar *rootdn)
 		}
 	}
 
-	dn = g_strdup_printf ("%s=%s%s%lu",
+	dn = g_strdup_printf ("%s=%s%s%llu",
 			      get_dn_attribute_name (rootdn),
 			      (cn_part && *cn_part) ? cn_part : "",
 			      (cn_part && *cn_part) ? "." : "",
@@ -2181,7 +2193,7 @@ modify_contact_rename_handler (LDAPOp *op, LDAPMessage *res)
 		e_data_book_respond_modify (op->book,
 					    op->opid,
 					    e_data_book_create_error_fmt (E_DATA_BOOK_STATUS_OTHER_ERROR,
-						"%s: Unhandled result type %d returned", G_STRFUNC, ldap_msgtype (res)),
+						"%s: Unhandled result type %ld returned", G_STRFUNC, ldap_msgtype (res)),
 					    NULL);
 		ldap_op_finished (op);
 	}
@@ -4375,7 +4387,11 @@ ldap_search_handler (LDAPOp *op, LDAPMessage *res)
 	else if (msg_type == LDAP_RES_SEARCH_RESULT) {
 		GError *edb_err = NULL;
 		gchar *ldap_error_msg;
+#ifdef __MINGW64__
+		ULONG ldap_error;
+#else
 		gint ldap_error;
+#endif
 
 		g_static_rec_mutex_lock (&eds_ldap_handler_lock);
 		ldap_parse_result (bl->priv->ldap, res, &ldap_error,
@@ -4488,9 +4504,15 @@ e_book_backend_ldap_search (EBookBackendLDAP *bl,
 
 		g_static_rec_mutex_lock (&eds_ldap_handler_lock);
 		if (ldap_query != NULL && bl->priv->ldap) {
+#ifdef __MINGW32__
+			ULONG ldap_err;
+			ULONG search_msgid;
+			ULONG view_limit;
+#else
 			gint ldap_err;
 			gint search_msgid;
 			gint view_limit;
+#endif
 
 			g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
 

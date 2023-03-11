@@ -194,6 +194,8 @@
  D:/MSYS2/mingw64/include/nss3/certt.h \
  D:/MSYS2/mingw64/include/nss3/sslt.h \
  D:/MSYS2/mingw64/include/nss3/keyhi.h \
+ D:/MSYS2/mingw64/include/nss3/sslt.h \
+ D:/MSYS2/mingw64/include/nss3/sslproto.h \
  D:/MSYS2/mingw64/include/nss3/cert.h \
  D:/MSYS2/mingw64/include/nss3/certdb.h \
  D:/MSYS2/mingw64/include/nss3/pk11func.h \
@@ -1028,6 +1030,10 @@ D:/MSYS2/mingw64/include/nss3/certt.h:
 D:/MSYS2/mingw64/include/nss3/sslt.h:
 
 D:/MSYS2/mingw64/include/nss3/keyhi.h:
+
+D:/MSYS2/mingw64/include/nss3/sslt.h:
+
+D:/MSYS2/mingw64/include/nss3/sslproto.h:
 
 D:/MSYS2/mingw64/include/nss3/cert.h:
 

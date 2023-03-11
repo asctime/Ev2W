@@ -42,7 +42,7 @@
 #include "camel-tcp-stream-ssl.h"
 #endif
 
-#define SSL_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL2 | CAMEL_TCP_STREAM_SSL_ENABLE_SSL3)
+#define SSL_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
 
 #ifdef G_OS_WIN32
 #include <winsock2.h>

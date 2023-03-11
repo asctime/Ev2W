@@ -59,26 +59,19 @@ static gint initialised = FALSE;
 
 gint camel_application_is_exiting = FALSE;
 
-#ifdef __MINGW32__
-#define NSS_SYSTEM_DB "/MSYS2/mingw64/etc/pki/nssdb"
-#else
 #define NSS_SYSTEM_DB "/etc/pki/nssdb"
-#endif
 
 static gint
 nss_has_system_db(void)
 {
 	gint found = FALSE;
-#if defined(G_OS_WIN32) && !defined(__MINGW32__)
+#ifndef G_OS_WIN32
 	FILE *f;
 	gchar buf[80];
 
 	f = fopen(NSS_SYSTEM_DB "/pkcs11.txt", "r");
 	if (!f)
 		return FALSE;
-#ifdef __MINGW32__ /* MinGW NSS does not require libnsssysinit */
-			found = TRUE;
-#endif
 
 	/* Check whether the system NSS db is actually enabled */
 	while (fgets(buf, 80, f) && !found) {
@@ -110,9 +103,6 @@ camel_init (const gchar *configdir, gboolean nss_init)
 		gchar *nss_sql_configdir = NULL;
 		SECStatus status = SECFailure;
 		PRUint16 indx;
- #if NSS_VMAJOR > 3 || (NSS_VMAJOR == 3 && NSS_VMINOR >= 14)
-		SSLVersionRange versionStream;
-#endif
 
 		if (nss_initlock == NULL) {
 			PR_Init(PR_SYSTEM_THREAD, PR_PRIORITY_NORMAL, 10);
@@ -202,18 +192,10 @@ skip_nss_init:
 				SSL_CipherPrefSetDefault (SSL_ImplementedCiphers[indx], PR_TRUE);
 		}
 
-/* 		SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
-		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE); */
+		SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
+		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE);
 		SSL_OptionSetDefault (SSL_ENABLE_TLS, PR_TRUE);
 		SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_TRUE /* maybe? */);
-#if defined (__MINGW64__) || (NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14))
-		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE);
-		SSL_OptionSetDefault (SSL_ENABLE_TLS, PR_TRUE); /* Enable TLSv1.0 */
-#else
-		/* Enable all SSL/TLS versions supported by NSS (this API is for SSLv3 and newer). */
-		SSL_VersionRangeGetSupported (ssl_variant_stream, &versionStream);
-		SSL_VersionRangeSetDefault (ssl_variant_stream, &versionStream);
-#endif
 
 		g_free (nss_configdir);
 		g_free (nss_sql_configdir);
