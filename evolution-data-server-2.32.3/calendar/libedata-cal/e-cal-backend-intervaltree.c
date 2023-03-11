@@ -593,7 +593,7 @@ e_intervaltree_node_dump (EIntervalTree *tree, EIntervalNode *node, gint indent)
 	*/
 	EIntervalTreePrivate *priv = tree->priv;
 	if (node != priv->nil)
-		g_print ("%*s[%ld - %ld] [%ld - %ld] red %d\n", indent, "", node->start,
+		g_print ("%*s[%lld - %lld] [%lld - %lld] red %d\n", indent, "", node->start,
 				node->end, node->min, node->max, node->red);
 	else
 	{
