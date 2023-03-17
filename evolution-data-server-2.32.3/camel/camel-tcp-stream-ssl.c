@@ -92,20 +92,34 @@ tcp_stream_ssl_get_cert_dir (void)
 
 	if (G_UNLIKELY (cert_dir == NULL)) {
 		const gchar *data_dir;
+<<<<<<< HEAD
 		/* const gchar *home_dir;
 		gchar *old_dir;             */
 
     /* Just be for upgrade migration? Doesn't work in WIN32 */
 		/* home_dir = g_get_home_dir (); */
+=======
+		const gchar *home_dir;
+		gchar *old_dir;
+
+		home_dir = g_get_home_dir ();
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 		data_dir = g_get_user_data_dir ();
 
 		cert_dir = g_build_filename (data_dir, "camel_certs", NULL);
 
 		/* Move the old certificate directory if present. */
+<<<<<<< HEAD
 		/* old_dir = g_build_filename (home_dir, ".camel_certs", NULL);
 		if (g_file_test (old_dir, G_FILE_TEST_IS_DIR))
 			g_rename (old_dir, cert_dir);
 		g_free (old_dir); */
+=======
+		old_dir = g_build_filename (home_dir, ".camel_certs", NULL);
+		if (g_file_test (old_dir, G_FILE_TEST_IS_DIR))
+			g_rename (old_dir, cert_dir);
+		g_free (old_dir);
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 
 		g_mkdir_with_parents (cert_dir, 0700);
 	}
@@ -143,7 +157,7 @@ tcp_stream_ssl_finalize (GObject *object)
 }
 
 
-CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert);
+CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert, const gchar *hostname);
 CamelCert *camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert);
 void camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert);
 
@@ -188,12 +202,18 @@ cert_fingerprint(CERTCertificate *cert)
 /* lookup a cert uses fingerprint to index an on-disk file */
 CamelCert *
 camel_certdb_nss_cert_get (CamelCertDB *certdb,
+<<<<<<< HEAD
                            CERTCertificate *cert)
+=======
+                           CERTCertificate *cert,
+                           const gchar *hostname)
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 {
 	gchar *fingerprint;
 	CamelCert *ccert;
 
 	fingerprint = cert_fingerprint (cert);
+
 	ccert = camel_certdb_get_cert (certdb, fingerprint);
 	if (ccert == NULL) {
 		g_free (fingerprint);
@@ -212,8 +232,11 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 
 		cert_dir = tcp_stream_ssl_get_cert_dir ();
 		filename = g_build_filename (cert_dir, fingerprint, NULL);
+<<<<<<< HEAD
     /* filename = g_build_filename (g_get_home_dir (), ".camel_certs", 
       fingerprint, NULL); */
+=======
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 		if (!g_file_get_contents (filename, &contents, &length, &error) ||
 		    error != NULL) {
 			g_warning (
@@ -267,9 +290,16 @@ camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert)
 	camel_cert_set_trust(certdb, ccert, CAMEL_CERT_TRUST_UNKNOWN);
 	g_free(fingerprint);
 
+<<<<<<< HEAD
 /* Future versions handle in ssl_bad_cert            */
 	camel_certdb_nss_cert_set(certdb, ccert, cert);
 	camel_certdb_add(certdb, ccert);               
+=======
+/* This is now handled in ssl_bad_cert            */
+/*	camel_certdb_nss_cert_set(certdb, ccert, cert);
+
+	camel_certdb_add(certdb, ccert);               */
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 
 	return ccert;
 }
@@ -292,8 +322,20 @@ camel_certdb_nss_cert_set (CamelCertDB *certdb,
 	g_byte_array_set_size (ccert->rawcert, cert->derCert.len);
 	memcpy (ccert->rawcert->data, cert->derCert.data, cert->derCert.len);
 
+<<<<<<< HEAD
 	cert_dir = tcp_stream_ssl_get_cert_dir ();
 	filename = g_build_filename (cert_dir, fingerprint, NULL);
+=======
+	dir = g_build_filename (g_get_home_dir (), ".camel_certs", NULL);
+	if (g_stat (dir, &st) == -1 && g_mkdir (dir, 0700) == -1) {
+		g_warning ("Could not create cert directory '%s': %s", dir, g_strerror (errno));
+		g_free (dir);
+		return;
+	}
+
+	path = g_strdup_printf ("%s/%s", dir, fingerprint);
+	g_free (dir);
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 
 /* O_BINARY is added by camel_stream_fs_new_with_name */
 	stream = camel_stream_fs_new_with_name (
@@ -340,7 +382,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		return SECFailure;
 
 	certdb = camel_certdb_get_default();
-	ccert = camel_certdb_nss_cert_get(certdb, cert);
+	ccert = camel_certdb_nss_cert_get(certdb, cert, ssl->priv->expected_host);
 	if (ccert == NULL) {
 		ccert = camel_certdb_nss_cert_add(certdb, cert);
 		camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);

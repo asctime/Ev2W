@@ -357,7 +357,11 @@ enum {
 	USE_SSL_WHEN_POSSIBLE
 };
 
+<<<<<<< HEAD
 #define SSL_PORT_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL2 | CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
+=======
+#define SSL_PORT_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
+>>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 #define STARTTLS_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
 
 static gboolean imapx_select(CamelIMAPXServer *is, CamelFolder *folder, gboolean force, GError **error);
