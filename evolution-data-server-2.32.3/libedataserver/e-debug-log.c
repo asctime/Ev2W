@@ -163,7 +163,12 @@ e_debug_logv (gboolean is_milestone, const gchar *domain, const gchar *format, v
 	str = g_strdup_vprintf (format, args);
 	gettimeofday (&tv, NULL);
 
+#ifdef __MINGW64__ /* MINGW64 sourceforge.net/p/mingw-w64/bugs/720/ */
+  time_t t = tv.tv_sec;
+	tm = *localtime (&t);
+#else
 	tm = *localtime (&tv.tv_sec);
+#endif
 
 	debug_str = g_strdup_printf ("%p;%04d/%02d/%02d;%02d:%02d:%02d.%04d;(%s);%s",
 				     g_thread_self (),

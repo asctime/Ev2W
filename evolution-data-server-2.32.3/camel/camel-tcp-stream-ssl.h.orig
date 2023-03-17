@@ -50,8 +50,6 @@
 	(G_TYPE_INSTANCE_GET_CLASS \
 	((obj), CAMEL_TYPE_TCP_STREAM_SSL, CamelTcpStreamSSLClass))
 
-/* re-implemented as CamelTcpStreamSSLFlags in 3.1 but values same */
-/* See 3.1 camel/camel-enums.h ref for TLS function backport       */
 #define CAMEL_TCP_STREAM_SSL_ENABLE_SSL2   (1 << 0)
 #define CAMEL_TCP_STREAM_SSL_ENABLE_SSL3   (1 << 1)
 #define CAMEL_TCP_STREAM_SSL_ENABLE_TLS    (1 << 2)

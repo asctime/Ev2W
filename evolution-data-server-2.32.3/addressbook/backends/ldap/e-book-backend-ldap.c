@@ -4270,7 +4270,11 @@ poll_ldap (EBookBackendLDAP *bl)
 {
 	gint            rc;
 	LDAPMessage    *res;
+#ifdef __MINGW64__
+	struct l_timeval timeout;
+#else
 	struct timeval timeout;
+#endif
 	const gchar *ldap_timeout_string;
 
 	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
@@ -4399,7 +4403,7 @@ ldap_search_handler (LDAPOp *op, LDAPMessage *res)
 		g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
 		if (ldap_error != LDAP_SUCCESS) {
 			g_warning ("ldap_search_handler: %02X (%s), additional info: %s",
-				   ldap_error,
+				   (unsigned int)ldap_error,
 				   ldap_err2string (ldap_error), ldap_error_msg);
 		}
 		ldap_memfree (ldap_error_msg);
@@ -4415,7 +4419,7 @@ ldap_search_handler (LDAPOp *op, LDAPMessage *res)
 			edb_err = EDB_ERROR (SUCCESS);
 		else
 			edb_err = e_data_book_create_error_fmt (E_DATA_BOOK_STATUS_OTHER_ERROR,
-				"LDAP error 0x%x (%s)", ldap_error,
+				"LDAP error 0x%lx (%s)", ldap_error,
 				ldap_err2string (ldap_error) ? ldap_err2string (ldap_error) : "Unknown error");
 
 		e_data_book_view_notify_complete (view, edb_err);
@@ -4724,7 +4728,11 @@ generate_cache (EBookBackendLDAP *book_backend_ldap)
 {
 	LDAPGetContactListOp *contact_list_op = g_new0 (LDAPGetContactListOp, 1);
 	EBookBackendLDAPPrivate *priv;
+#ifdef __MINGW64__
+	ULONG contact_list_msgid;
+#else
 	gint contact_list_msgid;
+#endif
 	gint ldap_error;
 	GTimeVal start, end;
 	gulong diff;
@@ -4751,7 +4759,7 @@ generate_cache (EBookBackendLDAP *book_backend_ldap)
 		ldap_error = ldap_search_ext (priv->ldap,
 					      priv->ldap_rootdn,
 					      priv->ldap_scope,
-					      "(cn=*)",
+					      (PCHAR)"(cn=*)",
 					      NULL, 0, NULL, NULL,
 					      NULL, /* XXX timeout */
 					      LDAP_NO_LIMIT, &contact_list_msgid);

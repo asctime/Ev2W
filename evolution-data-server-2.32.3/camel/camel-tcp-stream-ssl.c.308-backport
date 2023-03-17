@@ -28,8 +28,6 @@
 #include <config.h>
 #endif
 
-#ifdef CAMEL_HAVE_NSS
-
 #include <errno.h>
 #include <fcntl.h>
 #include <string.h>
@@ -80,7 +78,7 @@ struct _CamelTcpStreamSSLPrivate {
 	CamelSession *session;
 	gchar *expected_host;
 	gboolean ssl_mode;
-	guint32 flags;
+	CamelTcpStreamSSLFlags flags;
 };
 
 G_DEFINE_TYPE (CamelTcpStreamSSL, camel_tcp_stream_ssl, CAMEL_TYPE_TCP_STREAM_RAW)
@@ -144,10 +142,11 @@ tcp_stream_ssl_finalize (GObject *object)
 #if 0
 /* Since this is default implementation, let NSS handle it. */
 static SECStatus
-ssl_get_client_auth (gpointer data, PRFileDesc *sockfd,
-		     struct CERTDistNamesStr *caNames,
-		     struct CERTCertificateStr **pRetCert,
-		     struct SECKEYPrivateKeyStr **pRetKey)
+ssl_get_client_auth (gpointer data,
+                     PRFileDesc *sockfd,
+                     struct CERTDistNamesStr *caNames,
+                     struct CERTCertificateStr **pRetCert,
+                     struct SECKEYPrivateKeyStr **pRetKey)
 {
 	SECStatus status = SECFailure;
 	SECKEYPrivateKey *privkey;
@@ -171,14 +170,15 @@ ssl_get_client_auth (gpointer data, PRFileDesc *sockfd,
 		CERTCertNicknames *names;
 		gint i;
 
-		names = CERT_GetCertNicknames (CERT_GetDefaultCertDB (),
-					       SEC_CERT_NICKNAMES_USER,
-					       proto_win);
+		names = CERT_GetCertNicknames (
+			CERT_GetDefaultCertDB (),
+			SEC_CERT_NICKNAMES_USER,
+			proto_win);
 
 		if (names != NULL) {
 			for (i = 0; i < names->numnicknames; i++) {
-				cert = PK11_FindCertFromNickname (names->nicknames[i],
-								  proto_win);
+				cert = PK11_FindCertFromNickname (
+					names->nicknames[i], proto_win);
 				if (!cert)
 					continue;
 
@@ -215,7 +215,10 @@ ssl_get_client_auth (gpointer data, PRFileDesc *sockfd,
 #if 0
 /* Since this is the default NSS implementation, no need for us to use this. */
 static SECStatus
-ssl_auth_cert (gpointer data, PRFileDesc *sockfd, PRBool checksig, PRBool is_server)
+ssl_auth_cert (gpointer data,
+               PRFileDesc *sockfd,
+               PRBool checksig,
+               PRBool is_server)
 {
 	CERTCertificate *cert;
 	SECStatus status;
@@ -224,8 +227,9 @@ ssl_auth_cert (gpointer data, PRFileDesc *sockfd, PRBool checksig, PRBool is_ser
 
 	cert = SSL_PeerCertificate (sockfd);
 	pinarg = SSL_RevealPinArg (sockfd);
-	status = CERT_VerifyCertNow ((CERTCertDBHandle *)data, cert,
-				     checksig, certUsageSSLClient, pinarg);
+	status = CERT_VerifyCertNow (
+		(CERTCertDBHandle *) data, cert,
+		checksig, certUsageSSLClient, pinarg);
 
 	if (status != SECSuccess)
 		return SECFailure;
@@ -253,12 +257,12 @@ ssl_auth_cert (gpointer data, PRFileDesc *sockfd, PRBool checksig, PRBool is_ser
 }
 #endif
 
-CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert, const gchar *hostname);
-CamelCert *camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert);
-void camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert);
+CamelCert *camel_certdb_nss_cert_get (CamelCertDB *certdb, CERTCertificate *cert, const gchar *hostname);
+CamelCert *camel_certdb_nss_cert_convert (CamelCertDB *certdb, CERTCertificate *cert);
+void camel_certdb_nss_cert_set (CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert);
 
 static gchar *
-cert_fingerprint(CERTCertificate *cert)
+cert_fingerprint (CERTCertificate *cert)
 {
 	GChecksum *checksum;
 	guint8 *digest;
@@ -275,7 +279,7 @@ cert_fingerprint(CERTCertificate *cert)
 	g_checksum_get_digest (checksum, digest, &length);
 	g_checksum_free (checksum);
 
-	for (i=0,f = fingerprint; i < length; i++) {
+	for (i = 0,f = fingerprint; i < length; i++) {
 		guint c = digest[i];
 
 		*f++ = tohex[(c >> 4) & 0xf];
@@ -292,7 +296,7 @@ cert_fingerprint(CERTCertificate *cert)
 
 	fingerprint[47] = 0;
 
-	return g_strdup((gchar *) fingerprint);
+	return g_strdup ((gchar *) fingerprint);
 }
 
 /* lookup a cert uses fingerprint to index an on-disk file */
@@ -306,7 +310,7 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 
 	fingerprint = cert_fingerprint (cert);
 
-	ccert = camel_certdb_get_cert (certdb, fingerprint);
+	ccert = camel_certdb_get_host (certdb, hostname, fingerprint);
 	if (ccert == NULL) {
 		g_free (fingerprint);
 		return NULL;
@@ -329,8 +333,9 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 				filename, error ? error->message : "Unknown error");
 			g_clear_error (&error);
 
-			camel_cert_set_trust (
-				certdb, ccert, CAMEL_CERT_TRUST_UNKNOWN);
+			/* failed to load the certificate, thus remove it from
+			 * the CertDB, thus it can be re-added and properly saved */
+			camel_certdb_remove_host (certdb, hostname, fingerprint);
 			camel_certdb_touch (certdb);
 			g_free (fingerprint);
 			g_free (filename);
@@ -357,39 +362,37 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 	return ccert;
 }
 
-/* add a cert to the certdb */
+/* Create a CamelCert corresponding to the NSS cert, with unknown trust. */
 CamelCert *
-camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert)
+camel_certdb_nss_cert_convert (CamelCertDB *certdb,
+                               CERTCertificate *cert)
 {
 	CamelCert *ccert;
 	gchar *fingerprint;
 
-	fingerprint = cert_fingerprint(cert);
+	fingerprint = cert_fingerprint (cert);
 
-	ccert = camel_certdb_cert_new(certdb);
-	camel_cert_set_issuer(certdb, ccert, CERT_NameToAscii(&cert->issuer));
-	camel_cert_set_subject(certdb, ccert, CERT_NameToAscii(&cert->subject));
+	ccert = camel_certdb_cert_new (certdb);
+	camel_cert_set_issuer (certdb, ccert, CERT_NameToAscii (&cert->issuer));
+	camel_cert_set_subject (certdb, ccert, CERT_NameToAscii (&cert->subject));
 	/* hostname is set in caller */
 	/*camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);*/
-	camel_cert_set_fingerprint(certdb, ccert, fingerprint);
-	camel_cert_set_trust(certdb, ccert, CAMEL_CERT_TRUST_UNKNOWN);
-	g_free(fingerprint);
-
-/* This is now handled in ssl_bad_cert            */
-/*	camel_certdb_nss_cert_set(certdb, ccert, cert);
-
-	camel_certdb_add(certdb, ccert);               */
+	camel_cert_set_fingerprint (certdb, ccert, fingerprint);
+	camel_cert_set_trust (certdb, ccert, CAMEL_CERT_TRUST_UNKNOWN);
+	g_free (fingerprint);
 
 	return ccert;
 }
 
 /* set the 'raw' cert (& save it) */
 void
-camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert)
+camel_certdb_nss_cert_set (CamelCertDB *certdb,
+                           CamelCert *ccert,
+                           CERTCertificate *cert)
 {
-	gchar *dir, *path, *fingerprint;
+	gchar *filename, *fingerprint;
 	CamelStream *stream;
-	struct stat st;
+	const gchar *cert_dir;
 
 	fingerprint = ccert->fingerprint;
 
@@ -399,71 +402,48 @@ camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate
 	g_byte_array_set_size (ccert->rawcert, cert->derCert.len);
 	memcpy (ccert->rawcert->data, cert->derCert.data, cert->derCert.len);
 
-	dir = g_build_filename (g_get_home_dir (), ".camel_certs", NULL);
-	if (g_stat (dir, &st) == -1 && g_mkdir (dir, 0700) == -1) {
-		g_warning ("Could not create cert directory '%s': %s", dir, g_strerror (errno));
-		g_free (dir);
-		return;
-	}
-
-	path = g_strdup_printf ("%s/%s", dir, fingerprint);
-	g_free (dir);
+	cert_dir = tcp_stream_ssl_get_cert_dir ();
+	filename = g_build_filename (cert_dir, fingerprint, NULL);
 
 	stream = camel_stream_fs_new_with_name (
-		path, O_WRONLY | O_CREAT | O_TRUNC, 0600, NULL);
+		filename, O_WRONLY | O_CREAT | O_TRUNC, 0600, NULL);
 	if (stream != NULL) {
 		if (camel_stream_write (
 			stream, (const gchar *) ccert->rawcert->data,
-			ccert->rawcert->len, NULL) == -1) {
-			g_warning ("Could not save cert: %s: %s", path, g_strerror (errno));
-			g_unlink (path);
+			ccert->rawcert->len, NULL, NULL) == -1) {
+			g_warning (
+				"Could not save cert: %s: %s",
+				filename, g_strerror (errno));
+			g_unlink (filename);
 		}
-		camel_stream_close (stream, NULL);
+		camel_stream_close (stream, NULL, NULL);
 		g_object_unref (stream);
 	} else {
-		g_warning ("Could not save cert: %s: %s", path, g_strerror (errno));
+		g_warning (
+			"Could not save cert: %s: %s",
+			filename, g_strerror (errno));
 	}
 
-	g_free (path);
+	g_free (filename);
 }
 
-#if 0
-/* used by the mozilla-like code below */
-static gchar *
-get_nickname(CERTCertificate *cert)
+static void
+tcp_stream_cancelled (GCancellable *cancellable,
+                      PRThread *thread)
 {
-	gchar *server, *nick = NULL;
-	gint i;
-	PRBool status = PR_TRUE;
-
-	server = CERT_GetCommonName(&cert->subject);
-	if (server == NULL)
-		return NULL;
-
-	for (i=1;status == PR_TRUE;i++) {
-		if (nick) {
-			g_free(nick);
-			nick = g_strdup_printf("%s #%d", server, i);
-		} else {
-			nick = g_strdup(server);
-		}
-		status = SEC_CertNicknameConflict(server, &cert->derSubject, cert->dbhandle);
-	}
-
-	return nick;
+	PR_Interrupt (thread);
 }
-#endif
 
 static SECStatus
-ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
+ssl_bad_cert (gpointer data,
+              PRFileDesc *sockfd)
 {
 	gboolean accept;
 	CamelCertDB *certdb = NULL;
 	CamelCert *ccert = NULL;
-	gchar *prompt, *cert_str, *fingerprint;
+	gboolean ccert_is_new = FALSE;
 	CamelTcpStreamSSL *ssl;
 	CERTCertificate *cert;
-	SECStatus status = SECFailure;
 
 	g_return_val_if_fail (data != NULL, SECFailure);
 	g_return_val_if_fail (CAMEL_IS_TCP_STREAM_SSL (data), SECFailure);
@@ -474,60 +454,102 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 	if (cert == NULL)
 		return SECFailure;
 
-	certdb = camel_certdb_get_default();
-	ccert = camel_certdb_nss_cert_get(certdb, cert, ssl->priv->expected_host);
+	certdb = camel_certdb_get_default ();
+	ccert = camel_certdb_nss_cert_get (certdb, cert, ssl->priv->expected_host);
 	if (ccert == NULL) {
-		ccert = camel_certdb_nss_cert_add(certdb, cert);
-		camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);
+		ccert = camel_certdb_nss_cert_convert (certdb, cert);
+		camel_cert_set_hostname (certdb, ccert, ssl->priv->expected_host);
+		/* Don't put in the certdb yet.  Since we can only store one
+		 * entry per hostname, we'd rather not ruin any existing entry
+		 * for this hostname if the user rejects the new certificate. */
+		ccert_is_new = TRUE;
 	}
 
 	if (ccert->trust == CAMEL_CERT_TRUST_UNKNOWN) {
-		status = CERT_VerifyCertNow(cert->dbhandle, cert, TRUE, certUsageSSLClient, NULL);
-		fingerprint = cert_fingerprint(cert);
-		cert_str = g_strdup_printf (_("Issuer:            %s\n"
-					      "Subject:           %s\n"
-					      "Fingerprint:       %s\n"
-					      "Signature:         %s"),
-					    CERT_NameToAscii (&cert->issuer),
-					    CERT_NameToAscii (&cert->subject),
-					    fingerprint, status == SECSuccess?_("GOOD"):_("BAD"));
-		g_free(fingerprint);
+		CERTCertificate *issuer;
+		CamelCertTrust trust_response;
+		gchar *base64;
+		guint32 certificate_errors = 0;
+		GList *issuers = NULL;
 
-		/* construct our user prompt */
-		prompt = g_strdup_printf (_("SSL Certificate check for %s:\n\n%s\n\nDo you wish to accept?"),
-					  ssl->priv->expected_host, cert_str);
-		g_free (cert_str);
+		if (CERT_VerifyCertNow (cert->dbhandle, cert, TRUE, certUsageSSLClient, NULL) != SECSuccess) {
+			gint pr_error;
+
+			pr_error = PR_GetError ();
+
+			switch (pr_error) {
+			case SEC_ERROR_UNKNOWN_ISSUER:
+				certificate_errors |= G_TLS_CERTIFICATE_UNKNOWN_CA;
+				break;
+			case SSL_ERROR_BAD_CERT_DOMAIN:
+				certificate_errors |= G_TLS_CERTIFICATE_BAD_IDENTITY;
+				break;
+			case SEC_ERROR_EXPIRED_CERTIFICATE:
+			case SEC_ERROR_EXPIRED_ISSUER_CERTIFICATE:
+				certificate_errors |= G_TLS_CERTIFICATE_EXPIRED;
+				break;
+			}
+		}
+
+		issuer = cert;
+		while (issuer) {
+			if (SECITEM_CompareItem (&issuer->derIssuer, &issuer->derSubject) == SECEqual)
+				break;
+
+			issuer = CERT_FindCertIssuer (issuer, PR_Now (), certUsageSSLClient);
+			if (!issuer)
+				break;
+
+			base64 = g_base64_encode (issuer->derIssuer.data, issuer->derIssuer.len);
+			if (!base64)
+				break;
+
+			issuers = g_list_append (issuers, base64);
+		}
+
+		base64 = g_base64_encode (cert->derCert.data, cert->derCert.len);
 
 		/* query the user to find out if we want to accept this certificate */
-		accept = camel_session_alert_user (ssl->priv->session, CAMEL_SESSION_ALERT_WARNING, prompt, TRUE);
-		g_free(prompt);
-		if (accept) {
-			camel_certdb_nss_cert_set(certdb, ccert, cert);
-			camel_cert_set_trust(certdb, ccert, CAMEL_CERT_TRUST_FULLY);
-			camel_certdb_touch(certdb);
+		trust_response = camel_session_trust_prompt (
+			ssl->priv->session,
+			ssl->priv->expected_host,
+			base64, certificate_errors, issuers, NULL);
+
+		g_free (base64);
+		g_list_free_full (issuers, g_free);
+
+		accept = trust_response != CAMEL_CERT_TRUST_UNKNOWN &&
+			 trust_response != CAMEL_CERT_TRUST_NEVER;
+
+		if (ccert_is_new) {
+			camel_certdb_nss_cert_set (certdb, ccert, cert);
+			camel_certdb_put (certdb, ccert);
 		}
+
+		if (trust_response != CAMEL_CERT_TRUST_UNKNOWN)
+			camel_cert_set_trust (certdb, ccert, trust_response);
+
+		camel_certdb_touch (certdb);
 	} else {
 		accept = ccert->trust != CAMEL_CERT_TRUST_NEVER;
 	}
 
-	camel_certdb_cert_unref(certdb, ccert);
+	camel_certdb_cert_unref (certdb, ccert);
+	camel_certdb_save (certdb);
 	g_object_unref (certdb);
 
 	return accept ? SECSuccess : SECFailure;
 }
 
 static PRFileDesc *
-enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
+enable_ssl (CamelTcpStreamSSL *ssl,
+            PRFileDesc *fd)
 {
 	PRFileDesc *ssl_fd;
-
-/* Redhat patch Evolution 3.10.4 not able to use TLSv1 or higher
- (only SSLv3) */
-  static gchar v2_enabled = -1;
+	static gchar v2_enabled = -1;
 #if NSS_VMAJOR > 3 || (NSS_VMAJOR == 3 && NSS_VMINOR >= 14)
 	SSLVersionRange versionStreamSup, versionStream;
 #endif
-
 
 	g_assert (fd != NULL);
 
@@ -538,16 +560,15 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 	SSL_OptionSet (ssl_fd, SSL_SECURITY, PR_TRUE);
 
 	/* check camel.c for the same "CAMEL_SSL_V2_ENABLE" */
-	if (v2_enabled == -1) {
+	if (v2_enabled == -1)
 		v2_enabled = g_strcmp0 (g_getenv ("CAMEL_SSL_V2_ENABLE"), "1") == 0 ? 1 : 0;
-  }
 
 	if (v2_enabled && (ssl->priv->flags & CAMEL_TCP_STREAM_SSL_ENABLE_SSL2) != 0) {
 		static gchar v2_hello = -1;
 
-		/* 2023 Many servers with disabled SSL v2 rejects connection when
+		/* Zarafa server with disabled SSL v2 rejects connection when
 		 * SSL v2 compatible hello is sent, thus disabled this by default.
-		 * After all, TLS 1.2+ should be used in general these days anyway.
+		 * After all, SSL v3 should be used in general these days anyway.
 		*/
 		if (v2_hello == -1)
 			v2_hello = g_strcmp0 (g_getenv ("CAMEL_SSL_V2_HELLO"), "1") == 0 ? 1 : 0;
@@ -559,7 +580,6 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 		SSL_OptionSet (ssl_fd, SSL_V2_COMPATIBLE_HELLO, PR_FALSE);
 	}
 
-/* https://bugzilla.redhat.com/show_bug.cgi?id=1153052 */
 #if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14)
 	if (ssl->priv->flags & CAMEL_TCP_STREAM_SSL_ENABLE_SSL3)
 		SSL_OptionSet (ssl_fd, SSL_ENABLE_SSL3, PR_TRUE);
@@ -570,8 +590,9 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 		SSL_OptionSet (ssl_fd, SSL_ENABLE_TLS, PR_TRUE);
 	else
 		SSL_OptionSet (ssl_fd, SSL_ENABLE_TLS, PR_FALSE);
+
 #else
- 	SSL_VersionRangeGetSupported (ssl_variant_stream, &versionStreamSup);
+	SSL_VersionRangeGetSupported (ssl_variant_stream, &versionStreamSup);
 
 	if (ssl->priv->flags & CAMEL_TCP_STREAM_SSL_ENABLE_SSL3)
 		versionStream.min = SSL_LIBRARY_VERSION_3_0;
@@ -593,13 +614,12 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 
 	SSL_VersionRangeSet (ssl_fd, &versionStream);
 #endif
-
 	SSL_SetURL (ssl_fd, ssl->priv->expected_host);
 
 	/* NSS provides a default implementation for the SSL_GetClientAuthDataHook callback
 	 * but does not enable it by default. It must be explicltly requested by the application.
 	 * See: http://www.mozilla.org/projects/security/pki/nss/ref/ssl/sslfnc.html#1126622 */
-	SSL_GetClientAuthDataHook (ssl_fd, (SSLGetClientAuthData)&NSS_GetClientAuthData, NULL );
+	SSL_GetClientAuthDataHook (ssl_fd, (SSLGetClientAuthData) &NSS_GetClientAuthData, NULL );
 
 	/* NSS provides _and_ installs a default implementation for the
 	 * SSL_AuthCertificateHook callback so we _don't_ need to install one. */
@@ -609,7 +629,9 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 }
 
 static PRFileDesc *
-enable_ssl_or_close_fd (CamelTcpStreamSSL *ssl, PRFileDesc *fd, GError **error)
+enable_ssl_or_close_fd (CamelTcpStreamSSL *ssl,
+                        PRFileDesc *fd,
+                        GError **error)
 {
 	PRFileDesc *ssl_fd;
 
@@ -630,33 +652,55 @@ enable_ssl_or_close_fd (CamelTcpStreamSSL *ssl, PRFileDesc *fd, GError **error)
 	return ssl_fd;
 }
 
-/* 3.1.4 API has cancellable argument & returns (status == SECSuccess) */
-/* Otherwise it is step=-by-step functionally the same */
 static gboolean
-rehandshake_ssl (PRFileDesc *fd, GError **error)
+rehandshake_ssl (PRFileDesc *fd,
+                 GCancellable *cancellable,
+                 GError **error)
 {
-	if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
-		_set_errno_from_pr_error (PR_GetError ());
-		_set_g_error_from_errno (error, FALSE);
+	SECStatus status = SECSuccess;
+	gulong cancel_id = 0;
+
+	if (g_cancellable_set_error_if_cancelled (cancellable, error))
 		return FALSE;
+
+	if (G_IS_CANCELLABLE (cancellable))
+		cancel_id = g_cancellable_connect (
+			cancellable, G_CALLBACK (tcp_stream_cancelled),
+			PR_GetCurrentThread (), (GDestroyNotify) NULL);
+
+	if (status == SECSuccess)
+		status = SSL_ResetHandshake (fd, FALSE);
+
+	if (status == SECSuccess)
+		status = SSL_ForceHandshake (fd);
+
+	if (cancel_id > 0)
+		g_cancellable_disconnect (cancellable, cancel_id);
+
+	if (g_cancellable_set_error_if_cancelled (cancellable, error)) {
+		status = SECFailure;
+
+	} else if (status == SECFailure) {
+		_set_error_from_pr_error (error);
 	}
 
-	if (SSL_ForceHandshake (fd) == SECFailure) {
-		_set_errno_from_pr_error (PR_GetError ());
-		_set_g_error_from_errno (error, FALSE);
-		return FALSE;
-	}
-
-	return TRUE;
+	return (status == SECSuccess);
 }
 
 static gint
-tcp_stream_ssl_connect (CamelTcpStream *stream, const gchar *host, const gchar *service, gint fallback_port, GError **error)
+tcp_stream_ssl_connect (CamelTcpStream *stream,
+                        const gchar *host,
+                        const gchar *service,
+                        gint fallback_port,
+                        GCancellable *cancellable,
+                        GError **error)
 {
 	CamelTcpStreamSSL *ssl = CAMEL_TCP_STREAM_SSL (stream);
 	gint retval;
 
-	retval = CAMEL_TCP_STREAM_CLASS (camel_tcp_stream_ssl_parent_class)->connect (stream, host, service, fallback_port, error);
+	retval = CAMEL_TCP_STREAM_CLASS (
+		camel_tcp_stream_ssl_parent_class)->connect (
+		stream, host, service, fallback_port, cancellable, error);
 	if (retval != 0)
 		return retval;
 
@@ -672,10 +716,11 @@ tcp_stream_ssl_connect (CamelTcpStream *stream, const gchar *host, const gchar *
 
 		if (!ssl_fd) {
 			d (g_print ("  could not enable SSL\n"));
+			return -1;
 		} else {
 			d (g_print ("  re-handshaking SSL\n"));
 
-			if (!rehandshake_ssl (ssl_fd, error)) {
+			if (!rehandshake_ssl (ssl_fd, cancellable, error)) {
 				d (g_print ("  failed\n"));
 				return -1;
 			}
@@ -711,10 +756,7 @@ camel_tcp_stream_ssl_init (CamelTcpStreamSSL *stream)
  * camel_tcp_stream_ssl_new:
  * @session: an active #CamelSession object
  * @expected_host: host that the stream is expected to connect with
- * @flags: a bitwise combination of any of
- * #CAMEL_TCP_STREAM_SSL_ENABLE_SSL2,
- * #CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 or
- * #CAMEL_TCP_STREAM_SSL_ENABLE_TLS
+ * @flags: a bitwise combination of #CamelTcpStreamSSLFlags
  *
  * Since the SSL certificate authenticator may need to prompt the
  * user, a #CamelSession is needed. @expected_host is needed as a
@@ -723,11 +765,13 @@ camel_tcp_stream_ssl_init (CamelTcpStreamSSL *stream)
  * Returns: a new #CamelTcpStreamSSL stream preset in SSL mode
  **/
 CamelStream *
-camel_tcp_stream_ssl_new (CamelSession *session, const gchar *expected_host, guint32 flags)
+camel_tcp_stream_ssl_new (CamelSession *session,
+                          const gchar *expected_host,
+                          CamelTcpStreamSSLFlags flags)
 {
 	CamelTcpStreamSSL *stream;
 
-	g_assert(CAMEL_IS_SESSION(session));
+	g_assert (CAMEL_IS_SESSION (session));
 
 	stream = g_object_new (CAMEL_TYPE_TCP_STREAM_SSL, NULL);
 
@@ -743,10 +787,7 @@ camel_tcp_stream_ssl_new (CamelSession *session, const gchar *expected_host, gui
  * camel_tcp_stream_ssl_new_raw:
  * @session: an active #CamelSession object
  * @expected_host: host that the stream is expected to connect with
- * @flags: a bitwise combination of any of
- * #CAMEL_TCP_STREAM_SSL_ENABLE_SSL2,
- * #CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 or
- * #CAMEL_TCP_STREAM_SSL_ENABLE_TLS
+ * @flags: a bitwise combination of #CamelTcpStreamSSLFlags
  *
  * Since the SSL certificate authenticator may need to prompt the
  * user, a CamelSession is needed. @expected_host is needed as a
@@ -755,11 +796,13 @@ camel_tcp_stream_ssl_new (CamelSession *session, const gchar *expected_host, gui
  * Returns: a new #CamelTcpStreamSSL stream not yet toggled into SSL mode
  **/
 CamelStream *
-camel_tcp_stream_ssl_new_raw (CamelSession *session, const gchar *expected_host, guint32 flags)
+camel_tcp_stream_ssl_new_raw (CamelSession *session,
+                              const gchar *expected_host,
+                              CamelTcpStreamSSLFlags flags)
 {
 	CamelTcpStreamSSL *stream;
 
-	g_assert(CAMEL_IS_SESSION(session));
+	g_assert (CAMEL_IS_SESSION (session));
 
 	stream = g_object_new (CAMEL_TYPE_TCP_STREAM_SSL, NULL);
 
@@ -774,13 +817,17 @@ camel_tcp_stream_ssl_new_raw (CamelSession *session, const gchar *expected_host,
 /**
  * camel_tcp_stream_ssl_enable_ssl:
  * @ssl: a #CamelTcpStreamSSL object
+ * @cancellable: optional #GCancellable object, or %NULL
+ * @error: return location for a #GError, or %NULL
  *
  * Toggles an ssl-capable stream into ssl mode (if it isn't already).
  *
  * Returns: %0 on success or %-1 on fail
  **/
 gint
-camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl)
+camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl,
+                                 GCancellable *cancellable,
+                                 GError **error)
 {
 	PRFileDesc *fd, *ssl_fd;
 
@@ -790,14 +837,14 @@ camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl)
 
 	if (fd && !ssl->priv->ssl_mode) {
 		if (!(ssl_fd = enable_ssl (ssl, fd))) {
-			_set_errno_from_pr_error (PR_GetError ());
+			_set_error_from_pr_error (error);
 			return -1;
 		}
 
 		_camel_tcp_stream_raw_replace_file_desc (CAMEL_TCP_STREAM_RAW (ssl), ssl_fd);
 		ssl->priv->ssl_mode = TRUE;
 
-		if (!rehandshake_ssl (ssl_fd, NULL)) /* NULL-GError */
+		if (!rehandshake_ssl (ssl_fd, cancellable, error))
 			return -1;
 	}
 
@@ -805,5 +852,3 @@ camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl)
 
 	return 0;
 }
-
-#endif /* CAMEL_HAVE_NSS */

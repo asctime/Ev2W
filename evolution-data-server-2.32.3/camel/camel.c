@@ -32,6 +32,7 @@
 #include <prthread.h>
 #include "nss.h"      /* Don't use <> here or it will include the system nss.h instead */
 #include <ssl.h>
+#include <sslproto.h>
 #include <errno.h>
 #endif /* CAMEL_HAVE_NSS */
 
@@ -69,7 +70,7 @@ static gint
 nss_has_system_db(void)
 {
 	gint found = FALSE;
-#if defined(G_OS_WIN32) && !defined(__MINGW32__)
+#if defined(G_OS_WIN32)
 	FILE *f;
 	gchar buf[80];
 
@@ -106,13 +107,23 @@ camel_init (const gchar *configdir, gboolean nss_init)
 
 #ifdef CAMEL_HAVE_NSS
 	if (nss_init) {
+		static gchar v2_enabled = -1, weak_ciphers = -1;
 		gchar *nss_configdir = NULL;
 		gchar *nss_sql_configdir = NULL;
 		SECStatus status = SECFailure;
-		PRUint16 indx;
- #if NSS_VMAJOR > 3 || (NSS_VMAJOR == 3 && NSS_VMINOR >= 14)
+
+#if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14)
+		/* NSS pre-3.14 has most of the ciphers disabled, thus enable
+		 * weak ciphers, if it's compiled against such */
+		weak_ciphers = 1;
+#else
 		SSLVersionRange versionStream;
 #endif
+		/* check camel-tcp-stream-ssl.c for the same "CAMEL_SSL_V2_ENABLE" */
+		if (v2_enabled == -1)
+			v2_enabled = g_strcmp0 (g_getenv ("CAMEL_SSL_V2_ENABLE"), "1") == 0 ? 1 : 0;
+		if (weak_ciphers == -1)
+			weak_ciphers = g_strcmp0 (g_getenv ("CAMEL_SSL_WEAK_CIPHERS"), "1") == 0 ? 1 : 0;
 
 		if (nss_initlock == NULL) {
 			PR_Init(PR_SYSTEM_THREAD, PR_PRIORITY_NORMAL, 10);
@@ -169,8 +180,9 @@ camel_init (const gchar *configdir, gboolean nss_init)
 			0);			/* flags */
 
 		if (status == SECFailure) {
-			g_warning ("Failed to initialize NSS SQL database in %s: NSS error %d",
-				   nss_sql_configdir, PORT_GetError());
+			g_warning (
+        "Failed to initialize NSS SQL database in %s: NSS error %d",
+				nss_sql_configdir, PORT_GetError());
 			/* Fall back to opening the old DBM database */
 		}
 #endif
@@ -196,17 +208,26 @@ skip_nss_init:
 
 		PR_Unlock(nss_initlock);
 
-		/* we must enable all ciphersuites */
-		for (indx = 0; indx < SSL_NumImplementedCiphers; indx++) {
-			if (!SSL_IS_SSL2_CIPHER(SSL_ImplementedCiphers[indx]))
-				SSL_CipherPrefSetDefault (SSL_ImplementedCiphers[indx], PR_TRUE);
+		if (weak_ciphers) {
+		/* we must enable all SSL3/TLS ciphersuites */
+			PRUint16 indx;
+
+			/* enable SSL3/TLS cipher-suites */
+			for (indx = 0; indx < SSL_NumImplementedCiphers; indx++) {
+				if (!SSL_IS_SSL2_CIPHER (SSL_ImplementedCiphers[indx]) &&
+				    SSL_ImplementedCiphers[indx] != SSL_RSA_WITH_NULL_SHA &&
+				    SSL_ImplementedCiphers[indx] != SSL_RSA_WITH_NULL_MD5)
+					SSL_CipherPrefSetDefault (SSL_ImplementedCiphers[indx], PR_TRUE);
+			}
 		}
 
-/* 		SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
+/* 	SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
 		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE); */
-		SSL_OptionSetDefault (SSL_ENABLE_TLS, PR_TRUE);
-		SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_TRUE /* maybe? */);
-#if defined (__MINGW64__) || (NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14))
+/* This often causes connections to be rejected outright these days: */
+/* SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_TRUE);   maybe? */
+		SSL_OptionSetDefault (SSL_ENABLE_SSL2, v2_enabled ? PR_TRUE : PR_FALSE);
+		SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_FALSE);
+#if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14) /* __MINGW64__ */
 		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE);
 		SSL_OptionSetDefault (SSL_ENABLE_TLS, PR_TRUE); /* Enable TLSv1.0 */
 #else

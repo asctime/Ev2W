@@ -101,7 +101,7 @@ camel_test_init(gint argc, gchar **argv)
 	g_type_init ();
 
 	path = g_strdup_printf ("/tmp/camel-test");
-	if (mkdir (path, 0700) == -1 && errno != EEXIST)
+	if (mkdir (path) == -1 && errno != EEXIST)
 		abort ();
 
 	if (g_stat (path, &st) == -1)
