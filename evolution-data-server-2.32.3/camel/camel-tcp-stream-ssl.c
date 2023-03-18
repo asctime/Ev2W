@@ -141,117 +141,6 @@ tcp_stream_ssl_finalize (GObject *object)
 	G_OBJECT_CLASS (camel_tcp_stream_ssl_parent_class)->finalize (object);
 }
 
-#if 0
-/* Since this is default implementation, let NSS handle it. */
-static SECStatus
-ssl_get_client_auth (gpointer data, PRFileDesc *sockfd,
-		     struct CERTDistNamesStr *caNames,
-		     struct CERTCertificateStr **pRetCert,
-		     struct SECKEYPrivateKeyStr **pRetKey)
-{
-	SECStatus status = SECFailure;
-	SECKEYPrivateKey *privkey;
-	CERTCertificate *cert;
-	gpointer proto_win;
-
-	proto_win = SSL_RevealPinArg (sockfd);
-
-	if ((gchar *) data) {
-		cert = PK11_FindCertFromNickname ((gchar *) data, proto_win);
-		if (cert) {
-			privKey = PK11_FindKeyByAnyCert (cert, proto_win);
-			if (privkey) {
-				status = SECSuccess;
-			} else {
-				CERT_DestroyCertificate (cert);
-			}
-		}
-	} else {
-		/* no nickname given, automatically find the right cert */
-		CERTCertNicknames *names;
-		gint i;
-
-		names = CERT_GetCertNicknames (CERT_GetDefaultCertDB (),
-					       SEC_CERT_NICKNAMES_USER,
-					       proto_win);
-
-		if (names != NULL) {
-			for (i = 0; i < names->numnicknames; i++) {
-				cert = PK11_FindCertFromNickname (names->nicknames[i],
-								  proto_win);
-				if (!cert)
-					continue;
-
-				/* Only check unexpired certs */
-				if (CERT_CheckCertValidTimes (cert, PR_Now (), PR_FALSE) != secCertTimeValid) {
-					CERT_DestroyCertificate (cert);
-					continue;
-				}
-
-				status = NSS_CmpCertChainWCANames (cert, caNames);
-				if (status == SECSuccess) {
-					privkey = PK11_FindKeyByAnyCert (cert, proto_win);
-					if (privkey)
-						break;
-
-					status = SECFailure;
-					break;
-				}
-
-				CERT_FreeNicknames (names);
-			}
-		}
-	}
-
-	if (status == SECSuccess) {
-		*pRetCert = cert;
-		*pRetKey  = privkey;
-	}
-
-	return status;
-}
-#endif
-
-#if 0
-/* Since this is the default NSS implementation, no need for us to use this. */
-static SECStatus
-ssl_auth_cert (gpointer data, PRFileDesc *sockfd, PRBool checksig, PRBool is_server)
-{
-	CERTCertificate *cert;
-	SECStatus status;
-	gpointer pinarg;
-	gchar *host;
-
-	cert = SSL_PeerCertificate (sockfd);
-	pinarg = SSL_RevealPinArg (sockfd);
-	status = CERT_VerifyCertNow ((CERTCertDBHandle *)data, cert,
-				     checksig, certUsageSSLClient, pinarg);
-
-	if (status != SECSuccess)
-		return SECFailure;
-
-	/* Certificate is OK.  Since this is the client side of an SSL
-	 * connection, we need to verify that the name field in the cert
-	 * matches the desired hostname.  This is our defense against
-	 * man-in-the-middle attacks.
-	 */
-
-	/* SSL_RevealURL returns a hostname, not a URL. */
-	host = SSL_RevealURL (sockfd);
-
-	if (host && *host) {
-		status = CERT_VerifyCertName (cert, host);
-	} else {
-		PR_SetError (SSL_ERROR_BAD_CERT_DOMAIN, 0);
-		status = SECFailure;
-	}
-
-	if (host)
-		PR_Free (host);
-
-	return secStatus;
-}
-#endif
 
 CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert, const gchar *hostname);
 CamelCert *camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert);
@@ -322,6 +211,8 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 
 		cert_dir = tcp_stream_ssl_get_cert_dir ();
 		filename = g_build_filename (cert_dir, fingerprint, NULL);
+    /* filename = g_build_filename (g_get_home_dir (), ".camel_certs", 
+      fingerprint, NULL); */
 		if (!g_file_get_contents (filename, &contents, &length, &error) ||
 		    error != NULL) {
 			g_warning (
@@ -385,11 +276,13 @@ camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert)
 
 /* set the 'raw' cert (& save it) */
 void
-camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert)
+camel_certdb_nss_cert_set (CamelCertDB *certdb,
+                           CamelCert *ccert,
+                           CERTCertificate *cert)
 {
-	gchar *dir, *path, *fingerprint;
+	gchar *filename, *fingerprint;
 	CamelStream *stream;
-	struct stat st;
+	const gchar *cert_dir;
 
 	fingerprint = ccert->fingerprint;
 
@@ -399,60 +292,30 @@ camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate
 	g_byte_array_set_size (ccert->rawcert, cert->derCert.len);
 	memcpy (ccert->rawcert->data, cert->derCert.data, cert->derCert.len);
 
-	dir = g_build_filename (g_get_home_dir (), ".camel_certs", NULL);
-	if (g_stat (dir, &st) == -1 && g_mkdir (dir, 0700) == -1) {
-		g_warning ("Could not create cert directory '%s': %s", dir, g_strerror (errno));
-		g_free (dir);
-		return;
-	}
-
-	path = g_strdup_printf ("%s/%s", dir, fingerprint);
-	g_free (dir);
+	cert_dir = tcp_stream_ssl_get_cert_dir ();
+	filename = g_build_filename (cert_dir, fingerprint, NULL);
 
 	stream = camel_stream_fs_new_with_name (
-		path, O_WRONLY | O_CREAT | O_TRUNC, 0600, NULL);
+		filename, O_WRONLY | O_CREAT | O_TRUNC, 0600, NULL);
 	if (stream != NULL) {
 		if (camel_stream_write (
 			stream, (const gchar *) ccert->rawcert->data,
 			ccert->rawcert->len, NULL) == -1) {
-			g_warning ("Could not save cert: %s: %s", path, g_strerror (errno));
-			g_unlink (path);
+			g_warning (
+				"Could not save cert: %s: %s",
+				filename, g_strerror (errno));
+			g_unlink (filename);
 		}
 		camel_stream_close (stream, NULL);
 		g_object_unref (stream);
 	} else {
-		g_warning ("Could not save cert: %s: %s", path, g_strerror (errno));
+		g_warning (
+			"Could not save cert: %s: %s",
+			filename, g_strerror (errno));
 	}
 
-	g_free (path);
+	g_free (filename);
 }
-
-#if 0
-/* used by the mozilla-like code below */
-static gchar *
-get_nickname(CERTCertificate *cert)
-{
-	gchar *server, *nick = NULL;
-	gint i;
-	PRBool status = PR_TRUE;
-
-	server = CERT_GetCommonName(&cert->subject);
-	if (server == NULL)
-		return NULL;
-
-	for (i=1;status == PR_TRUE;i++) {
-		if (nick) {
-			g_free(nick);
-			nick = g_strdup_printf("%s #%d", server, i);
-		} else {
-			nick = g_strdup(server);
-		}
-		status = SEC_CertNicknameConflict(server, &cert->derSubject, cert->dbhandle);
-	}
-
-	return nick;
-}
-#endif
 
 static SECStatus
 ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
