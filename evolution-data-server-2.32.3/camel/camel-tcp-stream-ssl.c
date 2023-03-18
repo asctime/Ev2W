@@ -233,10 +233,15 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 		cert_dir = tcp_stream_ssl_get_cert_dir ();
 		filename = g_build_filename (cert_dir, fingerprint, NULL);
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* filename = g_build_filename (g_get_home_dir (), ".camel_certs", 
       fingerprint, NULL); */
 =======
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+    /* filename = g_build_filename (g_get_home_dir (), ".camel_certs", 
+      fingerprint, NULL); */
+>>>>>>> 1ffd117... camel_certdb_nss_cert_set backported from 3.8.5; more 64-bit cleanup
 		if (!g_file_get_contents (filename, &contents, &length, &error) ||
 		    error != NULL) {
 			g_warning (
@@ -323,6 +328,7 @@ camel_certdb_nss_cert_set (CamelCertDB *certdb,
 	memcpy (ccert->rawcert->data, cert->derCert.data, cert->derCert.len);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cert_dir = tcp_stream_ssl_get_cert_dir ();
 	filename = g_build_filename (cert_dir, fingerprint, NULL);
 =======
@@ -336,6 +342,10 @@ camel_certdb_nss_cert_set (CamelCertDB *certdb,
 	path = g_strdup_printf ("%s/%s", dir, fingerprint);
 	g_free (dir);
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+	cert_dir = tcp_stream_ssl_get_cert_dir ();
+	filename = g_build_filename (cert_dir, fingerprint, NULL);
+>>>>>>> 1ffd117... camel_certdb_nss_cert_set backported from 3.8.5; more 64-bit cleanup
 
 /* O_BINARY is added by camel_stream_fs_new_with_name */
 	stream = camel_stream_fs_new_with_name (
