@@ -79,7 +79,11 @@ e_book_backend_vcf_create_unique_id (void)
 	   it's doubtful 2^32 id's will be created in a second, so we
 	   should be okay. */
 	static guint c = 0;
+#ifdef __MINGW64__
+	return g_strdup_printf (PAS_ID_PREFIX "%08llX%08X", time(NULL), c++);
+#else
 	return g_strdup_printf (PAS_ID_PREFIX "%08lX%08X", time(NULL), c++);
+#endif
 }
 
 static void
@@ -716,8 +720,7 @@ e_book_backend_vcf_dispose (GObject *object)
 			save_file (bvcf);
 
 		g_hash_table_destroy (bvcf->priv->contacts);
-		g_list_foreach (bvcf->priv->contact_list, (GFunc)g_free, NULL);
-		g_list_free (bvcf->priv->contact_list);
+		g_list_free_full (bvcf->priv->contact_list, g_free);
 
 		g_free (bvcf->priv->filename);
 

@@ -226,11 +226,11 @@ static void camel_imapx_stream_grow (CamelIMAPXStream *is, guint len, guchar **b
 	if (is->unget)
 		is->unget_token = is->tokenbuf + (is->unget_token - oldtok);
 
-	//io(printf("buf was %p, ptr %p end %p\n", is->buf, is->ptr, is->end));
+	/* io(printf("buf was %p, ptr %p end %p\n", is->buf, is->ptr, is->end)); */
 	is->buf = g_realloc (is->buf, is->bufsize + 1);
 	is->ptr = is->buf + (is->ptr - oldbuf);
 	is->end = is->buf + (is->end - oldbuf);
-	//io(printf("buf now %p, ptr %p end %p\n", is->buf, is->ptr, is->end));
+	/* io(printf("buf now %p, ptr %p end %p\n", is->buf, is->ptr, is->end)); */
 	if (bufptr)
 		*bufptr = is->buf + (*bufptr - oldbuf);
 }

@@ -301,8 +301,7 @@ free_icalcomponent (ECalComponent *comp, gboolean free)
 	g_slist_free (priv->attachment_list);
 	priv->attachment_list = NULL;
 
-	g_slist_foreach (priv->attendee_list, (GFunc) g_free, NULL);
-	g_slist_free (priv->attendee_list);
+	g_slist_free_full (priv->attendee_list, g_free);
 	priv->attendee_list = NULL;
 
 	priv->categories = NULL;
@@ -4972,8 +4971,7 @@ e_cal_component_free_priority (gint *priority)
 void
 e_cal_component_free_period_list (GSList *period_list)
 {
-	g_slist_foreach (period_list, (GFunc) g_free, NULL);
-	g_slist_free (period_list);
+	g_slist_free_full (period_list, g_free);
 }
 
 /**
@@ -4985,8 +4983,7 @@ e_cal_component_free_period_list (GSList *period_list)
 void
 e_cal_component_free_recur_list (GSList *recur_list)
 {
-	g_slist_foreach (recur_list, (GFunc) g_free, NULL);
-	g_slist_free (recur_list);
+	g_slist_free_full (recur_list, g_free);
 }
 
 /**
@@ -5038,8 +5035,7 @@ e_cal_component_free_id (ECalComponentId *id)
 void
 e_cal_component_free_text_list (GSList *text_list)
 {
-	g_slist_foreach (text_list, (GFunc) g_free, NULL);
-	g_slist_free (text_list);
+	g_slist_free_full (text_list, g_free);
 }
 
 /**
@@ -5052,8 +5048,7 @@ e_cal_component_free_text_list (GSList *text_list)
 void
 e_cal_component_free_attendee_list (GSList *attendee_list)
 {
-	g_slist_foreach (attendee_list, (GFunc) g_free, NULL);
-	g_slist_free (attendee_list);
+	g_slist_free_full (attendee_list, g_free);
 }
 
 

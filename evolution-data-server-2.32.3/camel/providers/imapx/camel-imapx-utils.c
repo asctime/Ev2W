@@ -1220,7 +1220,7 @@ imapx_parse_body(CamelIMAPXStream *is, GError **error)
 			/* what do we do with the envelope?? */
 			minfo = imapx_parse_envelope(is, &local_error);
 			/* what do we do with the message content info?? */
-			//((CamelMessageInfoBase *)minfo)->content = imapx_parse_body(is);
+			/* ((CamelMessageInfoBase *)minfo)->content = imapx_parse_body(is); */
 			camel_message_info_free(minfo);
 			minfo = NULL;
 			d(printf("Scanned envelope - what do i do with it?\n"));
@@ -1436,7 +1436,7 @@ imapx_dump_fetch(struct _fetch_info *finfo)
 	}
 	if (finfo->cinfo) {
 		camel_stream_printf(sout, "Content Info:\n");
-		//camel_content_info_dump(finfo->cinfo, 0);
+		/* camel_content_info_dump(finfo->cinfo, 0); */
 	}
 	if (finfo->got & FETCH_SIZE)
 		camel_stream_printf(sout, "Size: %d\n", (gint)finfo->size);

@@ -170,7 +170,7 @@ typedef struct LDAPOp LDAPOp;
 #define EDB_ERROR(_code) e_data_book_create_error (E_DATA_BOOK_STATUS_ ## _code, NULL)
 #define EDB_ERROR_EX(_code, _msg) e_data_book_create_error (E_DATA_BOOK_STATUS_ ## _code, _msg)
 #define EDB_ERROR_NOT_CONNECTED() e_data_book_create_error (E_DATA_BOOK_STATUS_OTHER_ERROR, _("Not connected"))
-#define EDB_ERROR_MSG_TYPE(_msg_type) e_data_book_create_error_fmt (E_DATA_BOOK_STATUS_INVALID_ARG, "Incorrect msg type %d passed to %s", _msg_type, G_STRFUNC)
+#define EDB_ERROR_MSG_TYPE(_msg_type) e_data_book_create_error_fmt (E_DATA_BOOK_STATUS_INVALID_ARG, "Incorrect msg type %d passed to %s", (int)_msg_type, G_STRFUNC)
 
 G_DEFINE_TYPE (EBookBackendLDAP, e_book_backend_ldap, E_TYPE_BOOK_BACKEND)
 
@@ -767,8 +767,7 @@ query_ldap_root_dse (EBookBackendLDAP *bl)
 	if (values) {
 		gchar *auth_method;
 		if (bl->priv->supported_auth_methods) {
-			g_list_foreach (bl->priv->supported_auth_methods, (GFunc)g_free, NULL);
-			g_list_free (bl->priv->supported_auth_methods);
+			g_list_free_full (bl->priv->supported_auth_methods, g_free);
 		}
 		bl->priv->supported_auth_methods = NULL;
 
@@ -1872,7 +1871,11 @@ modify_contact_modify_handler (LDAPOp *op, LDAPMessage *res)
 	LDAPModifyOp *modify_op = (LDAPModifyOp*)op;
 	EBookBackendLDAP *bl = E_BOOK_BACKEND_LDAP (op->backend);
 	gchar *ldap_error_msg;
+#ifdef __MINGW64__
+	ULONG ldap_error;
+#else
 	gint ldap_error;
+#endif
 
 	g_static_rec_mutex_lock (&eds_ldap_handler_lock);
 	if (!bl->priv->ldap) {
@@ -2207,8 +2210,7 @@ modify_contact_dtor (LDAPOp *op)
 	g_free (modify_op->new_id);
 	g_free (modify_op->ldap_uid);
 	free_mods (modify_op->mod_array);
-	g_list_foreach (modify_op->existing_objectclasses, (GFunc)g_free, NULL);
-	g_list_free (modify_op->existing_objectclasses);
+	g_list_free_full (modify_op->existing_objectclasses, g_free);
 	if (modify_op->current_contact)
 		g_object_unref (modify_op->current_contact);
 	if (modify_op->contact)
@@ -3194,8 +3196,7 @@ category_populate (EContact *contact, gchar **values)
 
 	e_contact_set (contact, E_CONTACT_CATEGORY_LIST, categories);
 
-	g_list_foreach (categories, (GFunc)g_free, NULL);
-	g_list_free (categories);
+	g_list_free_full (categories, g_free);
 }
 
 static struct berval**
@@ -3228,8 +3229,7 @@ category_ber (EContact *contact)
 		}
 	}
 
-	g_list_foreach (categories, (GFunc)g_free, NULL);
-	g_list_free (categories);
+	g_list_free_full (categories, g_free);
 	return result;
 }
 
@@ -4014,7 +4014,7 @@ e_book_backend_ldap_build_query (EBookBackendLDAP *bl, const gchar *query)
 		if (data.list->next) {
 			g_warning ("conversion to ldap query string failed");
 			retval = NULL;
-			g_list_foreach (data.list, (GFunc)g_free, NULL);
+			g_list_free_full (data.list, g_free);
 		}
 		else {
 			if (bl->priv->ldap_search_filter && *bl->priv->ldap_search_filter
@@ -5366,13 +5366,11 @@ e_book_backend_ldap_dispose (GObject *object)
 		}
 
 		if (bl->priv->supported_fields) {
-			g_list_foreach (bl->priv->supported_fields, (GFunc)g_free, NULL);
-			g_list_free (bl->priv->supported_fields);
+			g_list_free_full (bl->priv->supported_fields, g_free);
 		}
 
 		if (bl->priv->supported_auth_methods) {
-			g_list_foreach (bl->priv->supported_auth_methods, (GFunc)g_free, NULL);
-			g_list_free (bl->priv->supported_auth_methods);
+			g_list_free_full (bl->priv->supported_auth_methods, g_free);
 		}
 		if (bl->priv->summary_file_name) {
 			g_free (bl->priv->summary_file_name);

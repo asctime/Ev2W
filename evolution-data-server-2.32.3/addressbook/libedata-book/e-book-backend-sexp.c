@@ -57,8 +57,7 @@ compare_im (EContact *contact, const gchar *str,
 		}
 	}
 
-	g_list_foreach (aims, (GFunc)g_free, NULL);
-	g_list_free (aims);
+	g_list_free_full (aims, g_free);
 
 	return found_it;
 }
@@ -229,8 +228,7 @@ compare_category (EContact *contact, const gchar *str,
 		}
 	}
 
-	g_list_foreach (categories, (GFunc)g_free, NULL);
-	g_list_free (categories);
+	g_list_free_full (categories, g_free);
 
 	return ret_val;
 }

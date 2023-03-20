@@ -131,8 +131,7 @@ name_selector_entry_dispose (GObject *object)
 		priv->contact_store = NULL;
 	}
 
-	g_slist_foreach (priv->user_query_fields, (GFunc)g_free, NULL);
-	g_slist_free (priv->user_query_fields);
+	g_slist_free_full (priv->user_query_fields, g_free);
 	priv->user_query_fields = NULL;
 
 	/* Chain up to parent's dispose() method. */

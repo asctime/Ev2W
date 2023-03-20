@@ -406,7 +406,7 @@ retrieval_done (SoupSession *session, SoupMessage *msg, ECalBackendHttp *cbhttp)
 				uri_parsed = soup_uri_new (priv->uri);
 				soup_uri_set_path (uri_parsed, newuri);
 				soup_uri_set_query (uri_parsed, NULL);
-				// g_free(newuri);
+				/* g_free(newuri); */
 
 				newuri = soup_uri_to_string (uri_parsed, FALSE);
 				g_message ("Translated URI: %s\n", newuri);

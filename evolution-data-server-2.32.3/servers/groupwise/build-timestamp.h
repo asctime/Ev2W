@@ -1,1 +1,1 @@
-const char *build_timestamp = "Evolution-Data-Server-2.32-2023-03-02";
+const char *build_timestamp = "Evolution-Data-Server-2.32-2023-03-20";

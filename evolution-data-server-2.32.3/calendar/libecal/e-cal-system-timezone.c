@@ -652,7 +652,7 @@ windows_timezone_string_to_olson(const gchar * windows_tz)
 		{ "Western Brazilian Standard Time", "America/Rio_Branco" },
 		{ "Yakutsk", "Asia/Yakutsk" },
 		{ "Yakutsk Standard Time", "Asia/Yakutsk" },
-		{ 0, 0 } // end marker
+		{ 0, 0 } /* end marker */
 	};
 
 	gint i;

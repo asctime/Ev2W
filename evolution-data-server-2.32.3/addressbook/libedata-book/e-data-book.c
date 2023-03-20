@@ -129,8 +129,7 @@ operation_thread (gpointer data, gpointer user_data)
 		break;
 	case OP_REMOVE_CONTACTS:
 		e_book_backend_remove_contacts (backend, op->book, op->id, op->d.ids);
-		g_list_foreach (op->d.ids, (GFunc)g_free, NULL);
-		g_list_free (op->d.ids);
+		g_list_free_full (op->d.ids, g_free);
 		break;
 	case OP_GET_CHANGES:
 		e_book_backend_get_changes (backend, op->book, op->id, op->d.change_id);

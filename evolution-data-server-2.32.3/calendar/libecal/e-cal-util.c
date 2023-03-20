@@ -1183,7 +1183,7 @@ componenttime_to_utc_timet (const ECalComponentDateTime* dt_time,
 		if (dt_time->tzid)
 			zone = tz_cb(dt_time->tzid, tz_cb_data);
 
-		// zone = icaltimezone_get_utc_timezone ();
+		/* zone = icaltimezone_get_utc_timezone (); */
 		timet = icaltime_as_timet_with_zone (*dt_time->value, zone ? zone : default_zone);
 	}
 

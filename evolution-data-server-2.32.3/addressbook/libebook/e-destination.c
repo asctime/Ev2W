@@ -246,8 +246,7 @@ e_destination_clear (EDestination *dest)
 	}
 	dest->priv->email_num = -1;
 
-	g_list_foreach (dest->priv->list_dests, (GFunc) g_object_unref, NULL);
-	g_list_free (dest->priv->list_dests);
+	g_list_free_full (dest->priv->list_dests, g_object_unref);
 	dest->priv->list_dests = NULL;
 }
 
@@ -417,8 +416,7 @@ e_destination_set_contact (EDestination *dest, EContact *contact, gint email_num
 					dest->priv->list_dests = g_list_append (dest->priv->list_dests, list_dest);
 				}
 
-				g_list_foreach (email, (GFunc) e_vcard_attribute_free, NULL);
-				g_list_free (email);
+				g_list_free_full (email, e_vcard_attribute_free);
 			}
 		}
 		else {
@@ -813,8 +811,7 @@ e_destination_get_email (const EDestination *dest)
 					priv->email = g_strdup (e);
 			}
 			if (email) {
-				g_list_foreach (email, (GFunc)g_free, NULL);
-				g_list_free (email);
+				g_list_free_full (email, g_free);
 			}
 
 		} else if (priv->raw != NULL) {

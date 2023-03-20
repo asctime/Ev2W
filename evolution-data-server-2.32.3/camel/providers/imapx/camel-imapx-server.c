@@ -28,7 +28,7 @@
 #include <glib/gstdio.h>
 #include <glib/gi18n-lib.h>
 
-// fixme, use own type funcs
+/* fixme, use own type funcs */
 #include <ctype.h>
 
 #ifdef CAMEL_HAVE_NSS
@@ -235,8 +235,8 @@ struct _CamelIMAPXJob {
 
 	void (*start)(CamelIMAPXServer *is, struct _CamelIMAPXJob *job);
 
-	// ??
-	//CamelOperation *op;
+	/* ?? */
+	/* CamelOperation *op; */
 
 	gint noreply:1;		/* dont wait for reply */
 	guint32 type;		/* operation type */
@@ -357,7 +357,7 @@ enum {
 	USE_SSL_WHEN_POSSIBLE
 };
 
-#define SSL_PORT_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
+#define SSL_PORT_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL2 | CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
 #define STARTTLS_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
 
 static gboolean imapx_select(CamelIMAPXServer *is, CamelFolder *folder, gboolean force, GError **error);
@@ -591,7 +591,7 @@ imapx_command_addv(CamelIMAPXCommand *ic, const gchar *fmt, va_list ap)
 				} while (c);
 
 				do {
-					// FIXME: ascii isdigit
+					/* FIXME: ascii isdigit  */
 					if (isdigit(c))
 						width = width * 10 + (c-'0');
 					else
@@ -1588,7 +1588,7 @@ imapx_untagged(CamelIMAPXServer *imap, GError **error)
 
 		job = imapx_match_active_job(imap, IMAPX_JOB_LIST, linfo->name);
 
-		// TODO: we want to make sure the names match?
+		/* TODO: we want to make sure the names match? */
 
 		if (job->u.list.flags & CAMEL_STORE_FOLDER_INFO_SUBSCRIBED) {
 			c(printf("lsub: '%s' (%c)\n", linfo->name, linfo->separator));
@@ -1818,12 +1818,12 @@ imapx_continuation(CamelIMAPXServer *imap, gboolean litplus, GError **error)
 
 		c(printf("writing file '%s' to literal\n", (gchar *)cp->ob));
 
-		// FIXME: errors
+		/* FIXME: errors */
 		if (cp->ob && (file = camel_stream_fs_new_with_name(cp->ob, O_RDONLY, 0, NULL))) {
 			camel_stream_write_to_stream(file, (CamelStream *)imap->stream, NULL);
 			g_object_unref (file);
 		} else if (cp->ob_size > 0) {
-			// Server is expecting data ... ummm, send it zeros?  abort?
+			/* Server is expecting data ... ummm, send it zeros?  abort? */
 		}
 		break; }
 	case CAMEL_IMAPX_COMMAND_STRING:
@@ -1952,7 +1952,7 @@ imapx_step(CamelIMAPXServer *is, GError **error)
 	guchar *token;
 	gint tok;
 
-	// poll ?  wait for other stuff? loop?
+	/* poll ?  wait for other stuff? loop? */
 	tok = camel_imapx_stream_token (is->stream, &token, &len, error);
 	if (tok < 0)
 		return;
@@ -2103,7 +2103,7 @@ imapx_submit_job (CamelIMAPXServer *is,
 }
 
 /* ********************************************************************** */
-// IDLE support
+/* IDLE support */
 
 /*TODO handle negative cases sanely */
 static gboolean
@@ -2394,7 +2394,7 @@ imapx_idle_supported (CamelIMAPXServer *is)
 	return (is->cinfo && (is->cinfo->capa & IMAPX_CAPABILITY_IDLE) != 0 && is->use_idle);
 }
 
-// end IDLE
+/* end IDLE  */
 /* ********************************************************************** */
 static void
 imapx_command_select_done (CamelIMAPXServer *is, CamelIMAPXCommand *ic)
@@ -2470,7 +2470,7 @@ imapx_command_select_done (CamelIMAPXServer *is, CamelIMAPXCommand *ic)
 			imapx_server_fetch_new_messages (is, is->select_pending, TRUE, TRUE, NULL);
 			/* We don't do this right now because we want the new messages to
 			   update the unseen count. */
-			//ifolder->uidnext_on_server = is->uidnext;
+			/* ifolder->uidnext_on_server = is->uidnext; */
 		}
 		ifolder->uidvalidity_on_server = is->uidvalidity;
 		selected_folder = camel_folder_get_full_name (is->select_folder);
@@ -2828,7 +2828,7 @@ imapx_connect_to_server (CamelIMAPXServer *is, GError **error)
 
  connected:
 	while (1) {
-		// poll ?  wait for other stuff? loop?
+		/* poll ?  wait for other stuff? loop? */
 		if (camel_application_is_exiting || is->parser_quit) {
 			g_set_error (
 				error, G_IO_ERROR,
@@ -3778,8 +3778,9 @@ imapx_job_scan_changes_done(CamelIMAPXServer *is, CamelIMAPXCommand *ic)
 
 			full_name = camel_folder_get_full_name (s->folder);
 			camel_db_delete_uids (is->store->cdb_w, full_name, removed, NULL);
-			g_slist_foreach (removed, (GFunc) g_free, NULL);
-			g_slist_free (removed);
+			g_slist_free_full (removed, g_free);
+			/* g_slist_foreach (removed, (GFunc) g_free, NULL);
+			g_slist_free (removed); */
 		}
 
 		imapx_update_store_summary (job->folder);

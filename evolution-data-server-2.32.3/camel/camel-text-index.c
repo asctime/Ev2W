@@ -1408,6 +1408,8 @@ camel_text_index_validate (CamelTextIndex *idx)
 
 	g_hash_table_foreach (word_word, (GHFunc)g_free, NULL);
 	g_hash_table_destroy (word_word);
+
+/* (GHFunc) casting is STILL in 3.56 despite compiler warnings */
 }
 
 /* ********************************************************************** */

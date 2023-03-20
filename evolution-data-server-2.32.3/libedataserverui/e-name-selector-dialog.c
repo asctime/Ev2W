@@ -334,7 +334,7 @@ e_name_selector_dialog_init (ENameSelectorDialog *name_selector_dialog)
 	/* TODO: Remember last used source */
 
 	/* Set up dialog defaults */
-#if 0 // MEEGO - but we should consider for everyone
+#if 0 /* MEEGO - but we should consider for everyone */
 	gtk_widget_hide (GTK_WIDGET (gtk_builder_get_object (name_selector_dialog->gui, "show-contacts-label")));
 #endif
 

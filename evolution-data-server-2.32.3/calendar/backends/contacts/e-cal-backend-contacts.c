@@ -2,11 +2,11 @@
 /* Evolution calendar - iCalendar file backend
  *
  * Copyright (C) 1999-2008 Novell, Inc. (www.novell.com)
- * Copyright (C) 2003 Gergõ Érdi
+ * Copyright (C) 2003 Gerg? ?rdi
  *
  * Authors: Federico Mena-Quintero <federico@ximian.com>
  *          Rodrigo Moya <rodrigo@ximian.com>
- *          Gergõ Érdi <cactus@cactus.rulez.org>
+ *          Gerg? ?rdi <cactus@cactus.rulez.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of version 2 of the GNU Lesser General Public
@@ -276,8 +276,7 @@ contact_record_cb_new (ECalBackendContacts *cbc, ECalBackendSExp *sexp)
 static void
 contact_record_cb_free (ContactRecordCB *cb_data)
 {
-        g_list_foreach (cb_data->result, (GFunc) g_free, NULL);
-        g_list_free (cb_data->result);
+        g_list_free_full (cb_data->result, (GFunc) g_free);
 
         g_free (cb_data);
 }

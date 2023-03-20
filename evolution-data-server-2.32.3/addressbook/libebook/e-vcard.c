@@ -73,8 +73,7 @@ e_vcard_dispose (GObject *object)
 
 	if (evc->priv) {
 
-		g_list_foreach (evc->priv->attributes, (GFunc)e_vcard_attribute_free, NULL);
-		g_list_free (evc->priv->attributes);
+		g_list_free_full (evc->priv->attributes, e_vcard_attribute_free);
 
 		g_free (evc->priv);
 		evc->priv = NULL;
@@ -1368,12 +1367,10 @@ e_vcard_attribute_remove_values (EVCardAttribute *attr)
 {
 	g_return_if_fail (attr != NULL);
 
-	g_list_foreach (attr->values, (GFunc)g_free, NULL);
-	g_list_free (attr->values);
+	g_list_free_full (attr->values, g_free);
 	attr->values = NULL;
 
-	g_list_foreach (attr->decoded_values, (GFunc)free_gstring, NULL);
-	g_list_free (attr->decoded_values);
+  g_list_free_full (attr->decoded_values, free_gstring);
 	attr->decoded_values = NULL;
 }
 
@@ -1711,8 +1708,7 @@ e_vcard_attribute_param_remove_values (EVCardAttributeParam *param)
 {
 	g_return_if_fail (param != NULL);
 
-	g_list_foreach (param->values, (GFunc)g_free, NULL);
-	g_list_free (param->values);
+	g_list_free_full (param->values, g_free);
 	param->values = NULL;
 }
 

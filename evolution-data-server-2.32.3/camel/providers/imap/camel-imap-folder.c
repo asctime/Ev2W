@@ -4177,8 +4177,7 @@ camel_imap_folder_changed (CamelFolder *folder, gint exists,
 		full_name = camel_folder_get_full_name (folder);
 		parent_store = camel_folder_get_parent_store (folder);
 		camel_db_delete_uids (parent_store->cdb_w, full_name, deleted, NULL);
-		g_slist_foreach (deleted, (GFunc) g_free, NULL);
-		g_slist_free (deleted);
+		g_slist_free_full (deleted, g_free);
 	}
 
 	len = camel_folder_summary_count (folder->summary);

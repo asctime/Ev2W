@@ -182,10 +182,9 @@ e_proxy_dispose (GObject *object)
 	if (priv->uri_https)
 		soup_uri_free (priv->uri_https);
 
-	g_slist_foreach (priv->ign_hosts, (GFunc) g_free, NULL);
-	g_slist_free (priv->ign_hosts);
-
-	g_slist_foreach (priv->ign_addrs, (GFunc) ep_free_proxy_host_addr, NULL);
+	g_slist_free_full (priv->ign_hosts, g_free);
+	
+  g_slist_foreach (priv->ign_addrs, (GFunc) ep_free_proxy_host_addr, NULL);
 	g_slist_free (priv->ign_addrs);
 
 	/* Chain up to parent's dispose() method. */
@@ -634,8 +633,7 @@ ep_set_proxy (GConfClient *client,
 
 	if (regen_ign_host_list) {
 		if (priv->ign_hosts) {
-			g_slist_foreach (priv->ign_hosts, (GFunc) g_free, NULL);
-			g_slist_free (priv->ign_hosts);
+			g_slist_free_full (priv->ign_hosts, g_free);
 			priv->ign_hosts = NULL;
 		}
 
@@ -648,8 +646,7 @@ ep_set_proxy (GConfClient *client,
 		ignore = gconf_client_get_list (client, RIGHT_KEY (HTTP_IGNORE_HOSTS), GCONF_VALUE_STRING, NULL);
 		if (ignore) {
 			g_slist_foreach (ignore, (GFunc) ep_parse_ignore_host, proxy);
-			g_slist_foreach (ignore, (GFunc) g_free, NULL);
-			g_slist_free (ignore);
+			g_slist_free_full (ignore, g_free);
 		}
 	}
 

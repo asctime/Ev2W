@@ -1114,8 +1114,7 @@ e_book_backend_webdav_get_supported_fields(EBookBackend *backend,
 	}
 
 	e_data_book_respond_get_supported_fields (book, opid, EDB_ERROR (SUCCESS), fields);
-	g_list_foreach(fields, (GFunc) g_free, NULL);
-	g_list_free(fields);
+	g_list_free_full (fields, g_free);
 }
 
 static void
@@ -1128,8 +1127,7 @@ e_book_backend_webdav_get_supported_auth_methods(EBookBackend *backend,
 
 	e_data_book_respond_get_supported_auth_methods (book, opid, EDB_ERROR (SUCCESS), auth_methods);
 
-	g_list_foreach(auth_methods, (GFunc) g_free, NULL);
-	g_list_free(auth_methods);
+	g_list_free_full (auth_methods, g_free);
 }
 
 static void

@@ -571,6 +571,7 @@ on_name_lost (GDBusConnection *connection,
 	g_mutex_unlock (factory->priv->connections_lock);
 }
 
+/* * *  NOTE MOVED IN 3.x  * * */
 gint
 main (gint argc, gchar **argv)
 {

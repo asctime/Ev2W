@@ -134,8 +134,7 @@ load_from_gconf (ESourceList *list)
 
 	new_groups_list = g_slist_reverse (new_groups_list);
 
-	g_slist_foreach (conf_list, (GFunc) g_free, NULL);
-	g_slist_free (conf_list);
+	g_slist_free_full (conf_list, g_free);
 
 	/* Emit "group_removed" and disconnect the "changed" signal for all the
 	   groups that we haven't found in the new list.  Also, check if the
@@ -786,8 +785,7 @@ e_source_list_sync (ESourceList *list,
 	else
 		retval = TRUE;
 
-	g_slist_foreach (conf_list, (GFunc) g_free, NULL);
-	g_slist_free (conf_list);
+	g_slist_free_full (conf_list, g_free);
 
 	return retval;
 }

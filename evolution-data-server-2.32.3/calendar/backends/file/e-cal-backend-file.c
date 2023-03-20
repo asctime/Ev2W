@@ -1896,8 +1896,7 @@ e_cal_backend_file_start_query (ECalBackend *backend, EDataCalView *query)
 		e_data_cal_view_notify_objects_added (query, (const GList *) match_data.obj_list);
 
 		/* free memory */
-		g_list_foreach (match_data.obj_list, (GFunc) g_free, NULL);
-		g_list_free (match_data.obj_list);
+		g_list_free_full (match_data.obj_list, g_free);
 	}
 
 	if (objs_occuring_in_tw) {
@@ -3536,10 +3535,8 @@ test_query (ECalBackendFile* cbfile, const gchar * query)
 		exit (-1);
 	}
 
-	g_list_foreach(objects, (GFunc) g_free, NULL);
-	g_list_free (objects);
-	g_list_foreach(all_objects, (GFunc) g_free, NULL);
-	g_list_free (all_objects);
+	g_list_free_full (objects, g_free);
+	g_list_free_full (all_objects, g_free);
 }
 
 static void
@@ -3557,8 +3554,7 @@ execute_query (ECalBackendFile* cbfile, const gchar * query)
 		exit(0);
 	}
 
-	g_list_foreach(objects, (GFunc) g_free, NULL);
-	g_list_free (objects);
+	g_list_free_full (objects, g_free);
 }
 
 static gchar *fname = NULL;
