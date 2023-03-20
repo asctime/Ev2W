@@ -73,7 +73,11 @@ e_vcard_dispose (GObject *object)
 
 	if (evc->priv) {
 
+<<<<<<< HEAD
 		g_list_free_full (evc->priv->attributes, (GDestroyNotify)e_vcard_attribute_free);
+=======
+		g_list_free_full (evc->priv->attributes, e_vcard_attribute_free);
+>>>>>>> 0f52cde... (GFunc) cleanup first pass; Fix CFLAGS; Fix C++ style comments
 
 		g_free (evc->priv);
 		evc->priv = NULL;
@@ -1370,7 +1374,11 @@ e_vcard_attribute_remove_values (EVCardAttribute *attr)
 	g_list_free_full (attr->values, g_free);
 	attr->values = NULL;
 
+<<<<<<< HEAD
   g_list_free_full (attr->decoded_values, (GDestroyNotify)free_gstring);
+=======
+  g_list_free_full (attr->decoded_values, free_gstring);
+>>>>>>> 0f52cde... (GFunc) cleanup first pass; Fix CFLAGS; Fix C++ style comments
 	attr->decoded_values = NULL;
 }
 

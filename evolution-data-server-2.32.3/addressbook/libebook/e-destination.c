@@ -416,7 +416,11 @@ e_destination_set_contact (EDestination *dest, EContact *contact, gint email_num
 					dest->priv->list_dests = g_list_append (dest->priv->list_dests, list_dest);
 				}
 
+<<<<<<< HEAD
 				g_list_free_full (email, (GDestroyNotify)e_vcard_attribute_free);
+=======
+				g_list_free_full (email, e_vcard_attribute_free);
+>>>>>>> 0f52cde... (GFunc) cleanup first pass; Fix CFLAGS; Fix C++ style comments
 			}
 		}
 		else {
