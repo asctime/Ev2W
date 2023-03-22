@@ -73,7 +73,7 @@ e_vcard_dispose (GObject *object)
 
 	if (evc->priv) {
 
-		g_list_free_full (evc->priv->attributes, e_vcard_attribute_free);
+		g_list_free_full (evc->priv->attributes, (GDestroyNotify)e_vcard_attribute_free);
 
 		g_free (evc->priv);
 		evc->priv = NULL;
@@ -1370,7 +1370,7 @@ e_vcard_attribute_remove_values (EVCardAttribute *attr)
 	g_list_free_full (attr->values, g_free);
 	attr->values = NULL;
 
-  g_list_free_full (attr->decoded_values, free_gstring);
+  g_list_free_full (attr->decoded_values, (GDestroyNotify)free_gstring);
 	attr->decoded_values = NULL;
 }
 
@@ -1437,8 +1437,7 @@ e_vcard_attribute_remove_params (EVCardAttribute *attr)
 {
 	g_return_if_fail (attr != NULL);
 
-	g_list_foreach (attr->params, (GFunc)e_vcard_attribute_param_free, NULL);
-	g_list_free (attr->params);
+	g_list_free_full (attr->params, (GDestroyNotify)e_vcard_attribute_param_free);
 	attr->params = NULL;
 
 	/* also remove the cached encoding on this attribute */

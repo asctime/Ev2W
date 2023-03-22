@@ -4279,8 +4279,7 @@ caldav_get_free_busy (ECalBackendSync  *backend,
 							}
 						}
 
-						g_list_foreach (objects, (GFunc)icalcomponent_free, NULL);
-						g_list_free (objects);
+						g_list_free_full (objects, (GDestroyNotify)icalcomponent_free);
 
 						if (icalcomp)
 							icalcomponent_free (icalcomp);

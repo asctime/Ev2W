@@ -585,7 +585,17 @@ main (gint argc, gchar **argv)
 		typedef BOOL (WINAPI *t_SetDllDirectoryA) (LPCSTR lpPathName);
 		t_SetDllDirectoryA p_SetDllDirectoryA;
 
+    /* GCC 8 adds -Wcast-function-type, enabled by default with -Wextra,
+       which causes this line to emit a warning on MinGW. We know what
+       we're doing, so suppress that. */
+#if defined(__MINGW32__) && __GNUC__ >= 8
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wincompatible-pointer-types"
+#endif
 		p_SetDllDirectoryA = GetProcAddress (GetModuleHandle ("kernel32.dll"), "SetDllDirectoryA");
+#if defined(CORRADE_TARGET_GCC) && __GNUC__ >= 8
+#pragma GCC diagnostic pop
+#endif
 		if (p_SetDllDirectoryA)
 			(*p_SetDllDirectoryA) ("");
 	}

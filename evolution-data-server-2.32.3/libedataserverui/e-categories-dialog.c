@@ -477,8 +477,7 @@ edit_button_clicked_cb (GtkButton *button, gpointer user_data)
 	g_free (category_name);
 	free_properties_dialog (prop_dialog);
 
-	g_list_foreach (selected, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, (GDestroyNotify)gtk_tree_path_free);
 }
 
 static void
@@ -529,8 +528,7 @@ categories_dialog_delete_cb (ECategoriesDialog *dialog)
 				gtk_tree_selection_select_path (selection, path);
 	}
 
-	g_list_foreach (selected, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, (GDestroyNotify)gtk_tree_path_free);
 }
 
 static void

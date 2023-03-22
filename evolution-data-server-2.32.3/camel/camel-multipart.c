@@ -44,8 +44,7 @@ multipart_dispose (GObject *object)
 {
 	CamelMultipart *multipart = CAMEL_MULTIPART (object);
 
-	g_list_foreach (multipart->parts, (GFunc) g_object_unref, NULL);
-	g_list_free (multipart->parts);
+	g_list_free_full (multipart->parts, g_object_unref);
 	multipart->parts = NULL;
 
 	/* Chain up to parent's dispose() method. */

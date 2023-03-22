@@ -632,8 +632,8 @@ e_book_query_from_string  (const gchar *query_string)
 	if (list) {
 		if (list->next) {
 			g_warning ("conversion to EBookQuery");
-			retval = NULL;
-			g_list_foreach (list, (GFunc)e_book_query_unref, NULL);
+			g_list_free_full (list, (GDestroyNotify) e_book_query_unref);
+			return NULL;
 		}
 		else {
 			retval = list->data;

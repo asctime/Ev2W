@@ -501,8 +501,7 @@ enl_tree_button_press_event (GtkWidget *widget,
 							  entry);
 			}
 		}
-		g_list_foreach (email_list, (GFunc) g_free, NULL);
-		g_list_free (email_list);
+		g_list_free_full (email_list, g_free);
 	}
 
 	/* Separator */
