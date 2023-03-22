@@ -417,10 +417,14 @@ e_destination_set_contact (EDestination *dest, EContact *contact, gint email_num
 				}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				g_list_free_full (email, (GDestroyNotify)e_vcard_attribute_free);
 =======
 				g_list_free_full (email, e_vcard_attribute_free);
 >>>>>>> 0f52cde... (GFunc) cleanup first pass; Fix CFLAGS; Fix C++ style comments
+=======
+				g_list_free_full (email, (GDestroyNotify)e_vcard_attribute_free);
+>>>>>>> 900975c... (GFunc) cleanup second pass
 			}
 		}
 		else {
