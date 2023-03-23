@@ -269,6 +269,10 @@ e_data_server_module_add_type (GType type)
 void
 e_data_server_module_remove_unused (void)
 {
+<<<<<<< HEAD
   /* FIXME do NOT use g_list_free_full it will cause crash.   */
+=======
+  /* FIXME do NOT use g_list_free_full it will cause crash.
+>>>>>>> 06fc8d2... Added WIN32 casts for e-book-backend-ldap.c; More (GFunc) cleanup second pass
 	g_list_foreach (module_objects, (GFunc) g_object_unref, NULL);
 }

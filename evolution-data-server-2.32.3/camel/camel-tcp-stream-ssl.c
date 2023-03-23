@@ -213,14 +213,17 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 	CamelCert *ccert;
 
 	fingerprint = cert_fingerprint (cert);
-
 	ccert = camel_certdb_get_cert (certdb, fingerprint);
 	if (ccert == NULL) {
 		g_free (fingerprint);
 		return NULL;
 	}
 
+<<<<<<< HEAD
 /*  First try looking in cert_db. Check cert_dir when that fails. 
+=======
+/*  First try looking in memory. Check cert_dir when that fails. 
+>>>>>>> 06fc8d2... Added WIN32 casts for e-book-backend-ldap.c; More (GFunc) cleanup second pass
     Return any existing certifcate but dont trust yet.       */
 	if (ccert->rawcert == NULL) {
 		GByteArray *array;
