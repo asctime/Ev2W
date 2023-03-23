@@ -9,6 +9,10 @@
 
 #include <sqlite3.h>
 #include <glib.h>
+/* sqlite3 picks this up on Windows, which Evolution already sets.. */
+#ifdef _WIN32_WINNT
+#undef _WIN32_WINNT
+#endif
 
 /**
  * CAMEL_DB_FILE:

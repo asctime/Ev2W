@@ -276,8 +276,7 @@ contact_record_cb_new (ECalBackendContacts *cbc, ECalBackendSExp *sexp)
 static void
 contact_record_cb_free (ContactRecordCB *cb_data)
 {
-        g_list_free_full (cb_data->result, (GFunc) g_free);
-
+        g_list_free_full (cb_data->result, g_free);
         g_free (cb_data);
 }
 

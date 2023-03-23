@@ -194,13 +194,14 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 	CamelCert *ccert;
 
 	fingerprint = cert_fingerprint (cert);
-
 	ccert = camel_certdb_get_cert (certdb, fingerprint);
 	if (ccert == NULL) {
 		g_free (fingerprint);
 		return NULL;
 	}
 
+/*  First try looking in memory. Check cert_dir when that fails. 
+    Return any existing certifcate but dont trust yet.       */
 	if (ccert->rawcert == NULL) {
 		GByteArray *array;
 		gchar *filename;
@@ -295,6 +296,7 @@ camel_certdb_nss_cert_set (CamelCertDB *certdb,
 	cert_dir = tcp_stream_ssl_get_cert_dir ();
 	filename = g_build_filename (cert_dir, fingerprint, NULL);
 
+/* O_BINARY is added by camel_stream_fs_new_with_name */
 	stream = camel_stream_fs_new_with_name (
 		filename, O_WRONLY | O_CREAT | O_TRUNC, 0600, NULL);
 	if (stream != NULL) {

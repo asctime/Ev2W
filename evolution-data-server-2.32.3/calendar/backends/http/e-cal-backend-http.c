@@ -1059,8 +1059,7 @@ e_cal_backend_http_get_object_list (ECalBackendSync *backend, EDataCal *cal, con
 		}
 	}
 
-	g_slist_foreach (components, (GFunc) g_object_unref, NULL);
-	g_slist_free (components);
+	g_slist_free_full (components, g_object_unref);
 	g_object_unref (cbsexp);
 }
 
@@ -1108,10 +1107,8 @@ e_cal_backend_http_start_query (ECalBackend *backend, EDataCalView *query)
 
 	e_data_cal_view_notify_objects_added (query, (const GList *) objects);
 
-	g_slist_foreach (components, (GFunc) g_object_unref, NULL);
-	g_slist_free (components);
-	g_list_foreach (objects, (GFunc) g_free, NULL);
-	g_list_free (objects);
+	g_slist_free_full (components, g_object_unref);
+	g_list_free_full (objects, g_free);
 	g_object_unref (cbsexp);
 
 	e_data_cal_view_notify_done (query, NULL /* Success */);

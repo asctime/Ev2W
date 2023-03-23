@@ -93,7 +93,7 @@ static GHashTable *iconv_cache_open;
 static guint iconv_cache_size = 0;
 
 static GHashTable *iconv_charsets = NULL;
-static gchar *locale_charset = NULL;
+static const gchar *locale_charset = NULL;
 static gchar *locale_lang = NULL;
 
 struct {
