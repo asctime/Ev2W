@@ -392,7 +392,6 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		return SECFailure;
 
 	certdb = camel_certdb_get_default();
-	ccert = camel_certdb_nss_cert_get(certdb, cert, ssl->priv->expected_host);
 	if (ccert == NULL) {
 		ccert = camel_certdb_nss_cert_add(certdb, cert);
 		camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);
@@ -431,9 +430,14 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		accept = ccert->trust != CAMEL_CERT_TRUST_NEVER;
 	}
 
+<<<<<<< HEAD
   /* Future versions */
 	/* camel_certdb_cert_unref(certdb, ccert);
 	camel_certdb_save (certdb);                 */
+=======
+	camel_certdb_cert_unref(certdb, ccert);
+	camel_certdb_save (certdb);
+>>>>>>> 45a6504... More work in ssl_bad_cert; More (GFunc) cleanup second pass
 	g_object_unref (certdb);
 
 	return accept ? SECSuccess : SECFailure;
