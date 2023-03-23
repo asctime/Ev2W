@@ -531,8 +531,7 @@ e_source_group_update_from_xmldoc (ESourceGroup *group,
 	g_hash_table_destroy (new_sources_hash);
 
 	/* Replace the original group list with the new one.  */
-	g_slist_foreach (group->priv->sources, (GFunc) g_object_unref, NULL);
-	g_slist_free (group->priv->sources);
+	g_slist_free_full (group->priv->sources, g_object_unref);
 
 	group->priv->sources = new_sources_list;
 

@@ -3127,8 +3127,7 @@ camel_folder_summary_remove_range (CamelFolderSummary *s, gint start, gint end)
 		 * folder switch */
 		camel_db_delete_uids (cdb, folder_name, uids, NULL);
 
-		g_slist_foreach (uids, (GFunc) camel_pstring_free, NULL);
-		g_slist_free (uids);
+		g_slist_free_full (uids, (GDestroyNotify)camel_pstring_free);
 
 		memmove(s->uids->pdata+start, s->uids->pdata+end, (s->uids->len-end)*sizeof(s->uids->pdata[0]));
 		g_ptr_array_set_size(s->uids, s->uids->len - (end - start));

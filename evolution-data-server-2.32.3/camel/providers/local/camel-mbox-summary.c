@@ -576,8 +576,7 @@ summary_update(CamelLocalSummary *cls, goffset offset, CamelFolderChangeInfo *ch
 	full_name = camel_folder_get_full_name (s->folder);
 	parent_store = camel_folder_get_parent_store (s->folder);
 	camel_db_delete_uids (parent_store->cdb_w, full_name, del, NULL);
-	g_slist_foreach (del, (GFunc) camel_pstring_free, NULL);
-	g_slist_free (del);
+	g_slist_free_full (del, (GDestroyNotify)camel_pstring_free);
 
 	mbs->changes = NULL;
 
@@ -1224,8 +1223,7 @@ camel_mbox_summary_sync_mbox(CamelMboxSummary *cls, guint32 flags, CamelFolderCh
 	full_name = camel_folder_get_full_name (s->folder);
 	parent_store = camel_folder_get_parent_store (s->folder);
 	camel_db_delete_uids (parent_store->cdb_w, full_name, del, NULL);
-	g_slist_foreach (del, (GFunc) camel_pstring_free, NULL);
-	g_slist_free (del);
+	g_slist_free_full (del, (GDestroyNotify)camel_pstring_free);
 
 #if 0
 	/* if last was deleted, append the \n we removed */

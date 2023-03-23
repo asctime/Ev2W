@@ -364,8 +364,7 @@ e_gw_connection_dispose (GObject *object)
 		}
 
 		if (priv->book_list) {
-			g_list_foreach (priv->book_list, (GFunc) g_object_unref, NULL);
-			g_list_free (priv->book_list);
+			g_list_free_full (priv->book_list, g_object_unref);
 			priv->book_list = NULL;
 		}
 
@@ -768,8 +767,7 @@ e_gw_connection_free_container_list (GList *container_list)
 {
 	g_return_if_fail (container_list != NULL);
 
-	g_list_foreach (container_list, (GFunc) g_object_unref, NULL);
-	g_list_free (container_list);
+	g_list_free_full (container_list, g_object_unref);
 }
 
 gchar *
@@ -3756,8 +3754,7 @@ e_gw_connection_read_cal_ids (EGwConnection *cnc, const gchar *container, gint c
 			param_id = soup_soap_parameter_get_first_child_by_name (subparam, "iCalId");
 			if (!param_id) {
 				if (*list) {
-					g_list_foreach (*list, (GFunc) e_gw_item_free_cal_id, NULL);
-					g_list_free (*list);
+					g_list_free_full (*list, (GDestroyNotify)e_gw_item_free_cal_id);
 					*list = NULL;
 				}
 
@@ -3836,8 +3833,7 @@ e_gw_connection_get_all_mail_uids (EGwConnection *cnc, const gchar *container, g
 		param_id = soup_soap_parameter_get_first_child_by_name (subparam, "id");
 		if (!param_id) {
 			if (*list) {
-				g_list_foreach (*list, (GFunc) g_free, NULL);
-				g_list_free (*list);
+				g_list_free_full (*list, g_free);
 				*list = NULL;
 			}
 			g_object_unref (response);
@@ -3850,8 +3846,7 @@ e_gw_connection_get_all_mail_uids (EGwConnection *cnc, const gchar *container, g
 			*list =	g_list_prepend (*list, id);
 		else {
 			if (*list) {
-				g_list_foreach (*list, (GFunc) g_free, NULL);
-				g_list_free (*list);
+				g_list_free_full (*list, g_free);
 				*list = NULL;
 			}
 			g_object_unref (response);

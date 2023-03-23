@@ -323,6 +323,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 	gboolean accept;
 	CamelCertDB *certdb = NULL;
 	CamelCert *ccert = NULL;
+	gboolean ccert_is_new = FALSE;
 	gchar *prompt, *cert_str, *fingerprint;
 	CamelTcpStreamSSL *ssl;
 	CERTCertificate *cert;
@@ -338,10 +339,13 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		return SECFailure;
 
 	certdb = camel_certdb_get_default();
-	ccert = camel_certdb_nss_cert_get(certdb, cert, ssl->priv->expected_host);
 	if (ccert == NULL) {
 		ccert = camel_certdb_nss_cert_add(certdb, cert);
 		camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);
+		/* Don't put in the certdb yet.  Since we can only store one
+		 * entry per hostname, we'd rather not ruin any existing entry
+		 * for this hostname if the user rejects the new certificate. */
+		ccert_is_new = TRUE;
 	}
 
 	if (ccert->trust == CAMEL_CERT_TRUST_UNKNOWN) {
@@ -364,7 +368,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		/* query the user to find out if we want to accept this certificate */
 		accept = camel_session_alert_user (ssl->priv->session, CAMEL_SESSION_ALERT_WARNING, prompt, TRUE);
 		g_free(prompt);
-		if (accept) {
+		if ((accept) && (ccert_is_new)) {
 			camel_certdb_nss_cert_set(certdb, ccert, cert);
 			camel_cert_set_trust(certdb, ccert, CAMEL_CERT_TRUST_FULLY);
 			camel_certdb_touch(certdb);
@@ -374,6 +378,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 	}
 
 	camel_certdb_cert_unref(certdb, ccert);
+	camel_certdb_save (certdb);
 	g_object_unref (certdb);
 
 	return accept ? SECSuccess : SECFailure;

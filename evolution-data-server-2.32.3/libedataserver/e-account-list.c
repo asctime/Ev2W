@@ -164,8 +164,7 @@ gconf_accounts_changed (GConfClient *client, guint cnxn_id,
 	}
 
 	if (list) {
-		g_slist_foreach (list, (GFunc) g_free, NULL);
-		g_slist_free (list);
+		g_slist_free_full (list, g_free);
 	}
 
 	/* Now emit signals for each added account. (We do this after

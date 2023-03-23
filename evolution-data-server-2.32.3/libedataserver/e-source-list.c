@@ -160,8 +160,7 @@ load_from_gconf (ESourceList *list)
 
 	/* Replace the original group list with the new one.  */
 
-	g_slist_foreach (list->priv->groups, (GFunc) g_object_unref, NULL);
-	g_slist_free (list->priv->groups);
+	g_slist_free_full (list->priv->groups, g_object_unref);
 
 	list->priv->groups = new_groups_list;
 
