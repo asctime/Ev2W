@@ -93,6 +93,7 @@ tcp_stream_ssl_get_cert_dir (void)
 	if (G_UNLIKELY (cert_dir == NULL)) {
 		const gchar *data_dir;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		/* const gchar *home_dir;
 		gchar *old_dir;             */
 
@@ -104,11 +105,19 @@ tcp_stream_ssl_get_cert_dir (void)
 
 		home_dir = g_get_home_dir ();
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+		/* const gchar *home_dir;
+		gchar *old_dir;             */
+
+    /* Just be for upgrade migration? Doesn't work in WIN32 */
+		/* home_dir = g_get_home_dir (); */
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 		data_dir = g_get_user_data_dir ();
 
 		cert_dir = g_build_filename (data_dir, "camel_certs", NULL);
 
 		/* Move the old certificate directory if present. */
+<<<<<<< HEAD
 <<<<<<< HEAD
 		/* old_dir = g_build_filename (home_dir, ".camel_certs", NULL);
 		if (g_file_test (old_dir, G_FILE_TEST_IS_DIR))
@@ -120,6 +129,12 @@ tcp_stream_ssl_get_cert_dir (void)
 			g_rename (old_dir, cert_dir);
 		g_free (old_dir);
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+		/* old_dir = g_build_filename (home_dir, ".camel_certs", NULL);
+		if (g_file_test (old_dir, G_FILE_TEST_IS_DIR))
+			g_rename (old_dir, cert_dir);
+		g_free (old_dir); */
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 
 		g_mkdir_with_parents (cert_dir, 0700);
 	}
@@ -157,7 +172,7 @@ tcp_stream_ssl_finalize (GObject *object)
 }
 
 
-CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert, const gchar *hostname);
+CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert);
 CamelCert *camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert);
 void camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert);
 
@@ -203,11 +218,15 @@ cert_fingerprint(CERTCertificate *cert)
 CamelCert *
 camel_certdb_nss_cert_get (CamelCertDB *certdb,
 <<<<<<< HEAD
+<<<<<<< HEAD
                            CERTCertificate *cert)
 =======
                            CERTCertificate *cert,
                            const gchar *hostname)
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+                           CERTCertificate *cert)
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 {
 	gchar *fingerprint;
 	CamelCert *ccert;
@@ -220,10 +239,14 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*  First try looking in cert_db. Check cert_dir when that fails. 
 =======
 /*  First try looking in memory. Check cert_dir when that fails. 
 >>>>>>> 06fc8d2... Added WIN32 casts for e-book-backend-ldap.c; More (GFunc) cleanup second pass
+=======
+/*  First try looking in cert_db. Check cert_dir when that fails. 
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
     Return any existing certifcate but dont trust yet.       */
 	if (ccert->rawcert == NULL) {
 		GByteArray *array;
@@ -299,6 +322,7 @@ camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert)
 	g_free(fingerprint);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Future versions handle in ssl_bad_cert            */
 	camel_certdb_nss_cert_set(certdb, ccert, cert);
 	camel_certdb_add(certdb, ccert);               
@@ -308,6 +332,11 @@ camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert)
 
 	camel_certdb_add(certdb, ccert);               */
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+/* Future versions handle in ssl_bad_cert            */
+	camel_certdb_nss_cert_set(certdb, ccert, cert);
+	camel_certdb_add(certdb, ccert);               
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 
 	return ccert;
 }
@@ -395,6 +424,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		return SECFailure;
 
 	certdb = camel_certdb_get_default();
+	ccert = camel_certdb_nss_cert_get(certdb, cert);
 	if (ccert == NULL) {
 		ccert = camel_certdb_nss_cert_add(certdb, cert);
 		camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);
@@ -434,6 +464,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /* Future versions */
 	/* camel_certdb_cert_unref(certdb, ccert);
 	camel_certdb_save (certdb);                 */
@@ -441,6 +472,11 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 	camel_certdb_cert_unref(certdb, ccert);
 	camel_certdb_save (certdb);
 >>>>>>> 45a6504... More work in ssl_bad_cert; More (GFunc) cleanup second pass
+=======
+  /* Future versions */
+	/* camel_certdb_cert_unref(certdb, ccert);
+	camel_certdb_save (certdb);                 */
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 	g_object_unref (certdb);
 
 	return accept ? SECSuccess : SECFailure;

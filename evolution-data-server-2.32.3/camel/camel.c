@@ -86,6 +86,7 @@ nss_has_system_db(void)
 	if (!f) {
 		return FALSE;
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 #ifdef __MINGW32__
 	return TRUE;
@@ -93,6 +94,11 @@ nss_has_system_db(void)
 #ifdef __MINGW32__ /* MinGW NSS does not require libnsssysinit */
 			found = TRUE;
 >>>>>>> 3a1416c... Image loading fix, Backported Redhat fix for #1153052, 64-bit LDAP fixes
+=======
+  }
+#ifdef __MINGW32__
+	return TRUE;
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 #endif
 
 	/* Check whether the system NSS db is actually enabled */

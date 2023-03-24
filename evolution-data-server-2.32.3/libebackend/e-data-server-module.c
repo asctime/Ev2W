@@ -270,9 +270,13 @@ void
 e_data_server_module_remove_unused (void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   /* FIXME do NOT use g_list_free_full it will cause crash.   */
 =======
   /* FIXME do NOT use g_list_free_full it will cause crash.
 >>>>>>> 06fc8d2... Added WIN32 casts for e-book-backend-ldap.c; More (GFunc) cleanup second pass
+=======
+  /* FIXME do NOT use g_list_free_full it will cause crash.   */
+>>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 	g_list_foreach (module_objects, (GFunc) g_object_unref, NULL);
 }
