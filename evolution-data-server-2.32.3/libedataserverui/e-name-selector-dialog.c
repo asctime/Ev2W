@@ -375,9 +375,7 @@ e_name_selector_dialog_finalize (GObject *object)
 
 	priv = E_NAME_SELECTOR_DIALOG_GET_PRIVATE (object);
 
-	g_slist_foreach (priv->user_query_fields, (GFunc)g_free, NULL);
-	g_slist_free (priv->user_query_fields);
-
+	g_slist_free_full (priv->user_query_fields, g_free);
 	g_array_free (priv->sections, TRUE);
 	g_object_unref (priv->button_size_group);
 	g_object_unref (priv->dest_label_size_group);

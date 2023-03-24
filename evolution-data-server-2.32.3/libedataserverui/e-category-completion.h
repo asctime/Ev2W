@@ -19,6 +19,9 @@
 #define E_CATEGORY_COMPLETION_H
 
 #include <gtk/gtk.h>
+#ifdef _WIN32_WINNT
+#undef _WIN32_WINNT
+#endif
 
 /* Standard GObject macros */
 #define E_TYPE_CATEGORY_COMPLETION \

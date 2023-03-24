@@ -490,8 +490,7 @@ camel_nntp_summary_check (CamelNNTPSummary *cns, CamelNNTPStore *store, gchar *l
 	}
 
 	camel_db_delete_uids (parent_store->cdb_w, full_name, del, NULL);
-	g_slist_foreach (del, (GFunc) g_free, NULL);
-	g_slist_free (del);
+	g_slist_free_full(del, g_free);
 
 	if (cns->high < l) {
 		if (cns->high < f)

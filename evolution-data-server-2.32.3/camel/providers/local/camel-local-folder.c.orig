@@ -190,11 +190,7 @@ local_folder_constructed (GObject *object)
 
 	path = g_strdup_printf ("%s/%s", url->path, full_name);
 
-#ifdef __MINGW32__
-	if ((tmp = g_get_home_dir ()) && strncmp (tmp, path, strlen (tmp)) == 0)
-#else
 	if ((tmp = getenv ("HOME")) && strncmp (tmp, path, strlen (tmp)) == 0)
-#endif
 		/* Translators: This is used for a folder description,
 		 * for folders being under $HOME.  The first %s is replaced
 		 * with a relative path under $HOME, the second %s is
@@ -203,11 +199,7 @@ local_folder_constructed (GObject *object)
 			_("~%s (%s)"),
 			path + strlen (tmp),
 			url->protocol);
-#ifdef __MINGW32__
-	else if ((tmp = "/MSYS2/mingw64/var/spool/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
-#else
 	else if ((tmp = "/var/spool/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
-#endif
 		/* Translators: This is used for a folder description, for
 		 * folders being under /var/spool/mail.  The first %s is
 		 * replaced with a relative path under /var/spool/mail,
@@ -217,11 +209,7 @@ local_folder_constructed (GObject *object)
 			_("mailbox: %s (%s)"),
 			path + strlen (tmp),
 			url->protocol);
-#ifdef __MINGW32__
 	else if ((tmp = "/var/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
-#else
-	else if ((tmp = "/var/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
-#endif
 		/* Translators: This is used for a folder description, for
 		 * folders being under /var/mail.  The first %s is replaced
 		 * with a relative path under /var/mail, the second %s is

@@ -1103,8 +1103,7 @@ vee_folder_sync (CamelFolder *folder,
 		full_name = camel_folder_get_full_name (folder);
 		parent_store = camel_folder_get_parent_store (folder);
 		camel_db_delete_vuids (parent_store->cdb_w, full_name, "", del, NULL);
-		g_slist_foreach (del, (GFunc) camel_pstring_free, NULL);
-		g_slist_free (del);
+		g_slist_free_full (del, (GDestroyNotify)camel_pstring_free);
 	}
 	camel_vee_folder_unlock (vf, CAMEL_VEE_FOLDER_SUBFOLDER_LOCK);
 
@@ -1847,8 +1846,7 @@ vee_folder_rebuild_folder (CamelVeeFolder *vee_folder,
 				full_name, shash, del_list, NULL);
 		}
 		((CamelVeeSummary *)folder->summary)->force_counts = TRUE;
-		g_slist_foreach (del_list, (GFunc) camel_pstring_free, NULL);
-		g_slist_free (del_list);
+		g_slist_free_full (del_list, (GDestroyNotify)camel_pstring_free);
 	};
 
 	g_hash_table_destroy (matchhash);
@@ -1858,10 +1856,11 @@ vee_folder_rebuild_folder (CamelVeeFolder *vee_folder,
 	g_free (shash);
 	/* if expression not set, we only had a null list */
 	if (vee_folder->expression == NULL || !rebuilded) {
-		g_ptr_array_foreach (match, (GFunc) camel_pstring_free, NULL);
+		g_ptr_array_set_free_func (match, (GDestroyNotify)camel_pstring_free);
 		g_ptr_array_free (match, TRUE);
-	} else
+	} else {
 		camel_folder_search_free (source, match);
+  }
 	camel_folder_free_summary (source, all);
 
 	if (unmatched_changes) {

@@ -92,19 +92,20 @@ tcp_stream_ssl_get_cert_dir (void)
 
 	if (G_UNLIKELY (cert_dir == NULL)) {
 		const gchar *data_dir;
-		const gchar *home_dir;
-		gchar *old_dir;
+		/* const gchar *home_dir;
+		gchar *old_dir;             */
 
-		home_dir = g_get_home_dir ();
+    /* Just be for upgrade migration? Doesn't work in WIN32 */
+		/* home_dir = g_get_home_dir (); */
 		data_dir = g_get_user_data_dir ();
 
 		cert_dir = g_build_filename (data_dir, "camel_certs", NULL);
 
 		/* Move the old certificate directory if present. */
-		old_dir = g_build_filename (home_dir, ".camel_certs", NULL);
+		/* old_dir = g_build_filename (home_dir, ".camel_certs", NULL);
 		if (g_file_test (old_dir, G_FILE_TEST_IS_DIR))
 			g_rename (old_dir, cert_dir);
-		g_free (old_dir);
+		g_free (old_dir); */
 
 		g_mkdir_with_parents (cert_dir, 0700);
 	}
@@ -142,7 +143,7 @@ tcp_stream_ssl_finalize (GObject *object)
 }
 
 
-CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert, const gchar *hostname);
+CamelCert *camel_certdb_nss_cert_get(CamelCertDB *certdb, CERTCertificate *cert);
 CamelCert *camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert);
 void camel_certdb_nss_cert_set(CamelCertDB *certdb, CamelCert *ccert, CERTCertificate *cert);
 
@@ -187,8 +188,7 @@ cert_fingerprint(CERTCertificate *cert)
 /* lookup a cert uses fingerprint to index an on-disk file */
 CamelCert *
 camel_certdb_nss_cert_get (CamelCertDB *certdb,
-                           CERTCertificate *cert,
-                           const gchar *hostname)
+                           CERTCertificate *cert)
 {
 	gchar *fingerprint;
 	CamelCert *ccert;
@@ -200,7 +200,7 @@ camel_certdb_nss_cert_get (CamelCertDB *certdb,
 		return NULL;
 	}
 
-/*  First try looking in memory. Check cert_dir when that fails. 
+/*  First try looking in cert_db. Check cert_dir when that fails. 
     Return any existing certifcate but dont trust yet.       */
 	if (ccert->rawcert == NULL) {
 		GByteArray *array;
@@ -267,10 +267,9 @@ camel_certdb_nss_cert_add(CamelCertDB *certdb, CERTCertificate *cert)
 	camel_cert_set_trust(certdb, ccert, CAMEL_CERT_TRUST_UNKNOWN);
 	g_free(fingerprint);
 
-/* This is now handled in ssl_bad_cert            */
-/*	camel_certdb_nss_cert_set(certdb, ccert, cert);
-
-	camel_certdb_add(certdb, ccert);               */
+/* Future versions handle in ssl_bad_cert            */
+	camel_certdb_nss_cert_set(certdb, ccert, cert);
+	camel_certdb_add(certdb, ccert);               
 
 	return ccert;
 }
@@ -341,6 +340,7 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		return SECFailure;
 
 	certdb = camel_certdb_get_default();
+	ccert = camel_certdb_nss_cert_get(certdb, cert);
 	if (ccert == NULL) {
 		ccert = camel_certdb_nss_cert_add(certdb, cert);
 		camel_cert_set_hostname(certdb, ccert, ssl->priv->expected_host);
@@ -379,8 +379,9 @@ ssl_bad_cert (gpointer data, PRFileDesc *sockfd)
 		accept = ccert->trust != CAMEL_CERT_TRUST_NEVER;
 	}
 
-	camel_certdb_cert_unref(certdb, ccert);
-	camel_certdb_save (certdb);
+  /* Future versions */
+	/* camel_certdb_cert_unref(certdb, ccert);
+	camel_certdb_save (certdb);                 */
 	g_object_unref (certdb);
 
 	return accept ? SECSuccess : SECFailure;

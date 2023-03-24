@@ -934,7 +934,7 @@ mbox_summary_sync_quick(CamelMboxSummary *mbs, gboolean expunge, CamelFolderChan
 		goto error;
 	}
 
-	g_ptr_array_foreach (summary, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (summary, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (summary, TRUE);
 	g_object_unref (mp);
 
@@ -943,7 +943,7 @@ mbox_summary_sync_quick(CamelMboxSummary *mbs, gboolean expunge, CamelFolderChan
 
 	return 0;
  error:
-	g_ptr_array_foreach (summary, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (summary, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (summary, TRUE);
 	if (fd != -1)
 		close(fd);
@@ -992,7 +992,7 @@ mbox_summary_sync(CamelLocalSummary *cls, gboolean expunge, CamelFolderChangeInf
 		camel_message_info_free(info);
 	}
 
-	g_ptr_array_foreach (summary, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (summary, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (summary, TRUE);
 
 	if (quick && expunge) {

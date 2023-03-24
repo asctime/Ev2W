@@ -1904,8 +1904,7 @@ imapx_completion(CamelIMAPXServer *imap, guchar *token, gint len, GError **error
 		}
 
 		if (imap->expunged) {
-			g_slist_foreach (imap->expunged, (GFunc) g_free, NULL);
-			g_slist_free (imap->expunged);
+			g_slist_free_full (imap->expunged, g_free);
 			imap->expunged = NULL;
 		}
 
@@ -4151,7 +4150,7 @@ imapx_command_expunge_done (CamelIMAPXServer *is, CamelIMAPXCommand *ic)
 			camel_folder_change_info_free (changes);
 
 			g_slist_free (removed);
-			g_ptr_array_foreach (uids, (GFunc) camel_pstring_free, NULL);
+			g_ptr_array_set_free_func (uids, (GDestroyNotify)camel_pstring_free);
 			g_ptr_array_free (uids, TRUE);
 		}
 	}

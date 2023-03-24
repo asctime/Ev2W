@@ -1813,8 +1813,7 @@ e_cal_backend_file_get_object_list (ECalBackendSync *backend, EDataCal *cal, con
 	*objects = match_data.obj_list;
 
 	if (objs_occuring_in_tw) {
-		g_list_foreach(objs_occuring_in_tw, (GFunc)g_object_unref, NULL);
-		g_list_free (objs_occuring_in_tw);
+		g_list_free_full(objs_occuring_in_tw, g_object_unref);
 	}
 
 	g_object_unref (match_data.obj_sexp);
@@ -1900,8 +1899,7 @@ e_cal_backend_file_start_query (ECalBackend *backend, EDataCalView *query)
 	}
 
 	if (objs_occuring_in_tw) {
-		g_list_foreach(objs_occuring_in_tw, (GFunc)g_object_unref, NULL);
-		g_list_free (objs_occuring_in_tw);
+		g_list_free_full(objs_occuring_in_tw, g_object_unref);
 	}
 	g_object_unref (match_data.obj_sexp);
 

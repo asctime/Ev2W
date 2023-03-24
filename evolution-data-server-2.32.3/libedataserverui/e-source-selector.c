@@ -1421,8 +1421,7 @@ e_source_selector_get_primary_source_group (ESourceSelector *selector)
 void
 e_source_selector_free_selection (GSList *list)
 {
-	g_slist_foreach (list, (GFunc) g_object_unref, NULL);
-	g_slist_free (list);
+	g_slist_free_full (list, g_object_unref);
 }
 
 /**

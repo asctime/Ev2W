@@ -1698,11 +1698,11 @@ imap_sync (CamelFolder *folder,
 		if (local_error != NULL) {
 			g_propagate_error (error, local_error);
 			if (deleted_uids) {
-				g_ptr_array_foreach (deleted_uids, (GFunc) camel_pstring_free, NULL);
+				g_ptr_array_set_free_func (deleted_uids, (GDestroyNotify)camel_pstring_free);
 				g_ptr_array_free (deleted_uids, TRUE);
 			}
 			if (junked_uids) {
-				g_ptr_array_foreach (junked_uids, (GFunc) camel_pstring_free, NULL);
+				g_ptr_array_set_free_func (junked_uids, (GDestroyNotify)camel_pstring_free);
 				g_ptr_array_free (junked_uids, TRUE);
 			}
 			if (real_trash)
@@ -1722,11 +1722,11 @@ imap_sync (CamelFolder *folder,
 		move_messages (folder, junked_uids, real_junk, &local_error);
 
 	if (deleted_uids) {
-		g_ptr_array_foreach (deleted_uids, (GFunc) camel_pstring_free, NULL);
+		g_ptr_array_set_free_func (deleted_uids, (GDestroyNotify)camel_pstring_free);
 		g_ptr_array_free (deleted_uids, TRUE);
 	}
 	if (junked_uids) {
-		g_ptr_array_foreach (junked_uids, (GFunc) camel_pstring_free, NULL);
+		g_ptr_array_set_free_func (junked_uids, (GDestroyNotify)camel_pstring_free);
 		g_ptr_array_free (junked_uids, TRUE);
 	}
 	if (real_trash)
@@ -1740,7 +1740,7 @@ imap_sync (CamelFolder *folder,
 	if (local_error != NULL)
 		g_propagate_error (error, local_error);
 
-	g_ptr_array_foreach (summary, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (summary, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (summary, TRUE);
 
 	/* Save the summary */
@@ -1942,7 +1942,7 @@ imap_expunge (CamelFolder *folder,
 	else
 		success = imap_expunge_uids_offline (folder, uids, error);
 
-	g_ptr_array_foreach (uids, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (uids, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (uids, TRUE);
 
 	return success;

@@ -74,20 +74,22 @@ nss_has_system_db(void)
 	FILE *f;
 	gchar buf[80];
 
-	f = fopen(NSS_SYSTEM_DB "/pkcs11.txt", "r");
-	if (!f)
+	f = fopen(NSS_SYSTEM_DB "/cert8.db", "rb");
+	if (!f) {
 		return FALSE;
-#ifdef __MINGW32__ /* MinGW NSS does not require libnsssysinit */
-			found = TRUE;
+  }
+#ifdef __MINGW32__
+	return TRUE;
 #endif
 
 	/* Check whether the system NSS db is actually enabled */
+  /* only for really old CYGWIN libnsssysinit I think ?  */
 	while (fgets(buf, 80, f) && !found) {
 		if (!strcmp(buf, "library=libnsssysinit.so\n"))
 			found = TRUE;
 	}
-	fclose(f);
 #endif
+	fclose(f);
 	return found;
 }
 

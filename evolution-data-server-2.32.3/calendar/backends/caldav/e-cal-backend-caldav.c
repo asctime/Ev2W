@@ -2037,8 +2037,7 @@ caldav_synch_slave_loop (gpointer data)
 
 			printf ("CalDAV - finished syncing with %d items in a cache\n", g_slist_length (c_objs)); fflush (stdout);
 
-			g_slist_foreach (c_objs, (GFunc) g_object_unref, NULL);
-			g_slist_free (c_objs);
+			g_slist_free_full (c_objs, g_object_unref);
 		}
 
 		priv->slave_busy = FALSE;
@@ -2586,8 +2585,7 @@ get_comp_from_cache (ECalBackendCalDAV *cbdav, const gchar *uid, const gchar *ri
 		if (etag)
 			*etag = ecalcomp_get_etag (objects->data);
 
-		g_slist_foreach (objects, (GFunc)g_object_unref, NULL);
-		g_slist_free (objects);
+		g_slist_free_full (objects, g_object_unref);
 	} else {
 		/* get the exact object */
 		ECalComponent *comp = e_cal_backend_store_get_component (priv->store, uid, rid);
@@ -2920,8 +2918,7 @@ remove_cached_attachment (ECalBackendCalDAV *cbdav, const gchar *uid)
 	priv = E_CAL_BACKEND_CALDAV_GET_PRIVATE (cbdav);
 	l = e_cal_backend_store_get_components_by_uid (priv->store, uid);
 	len = g_slist_length (l);
-	g_slist_foreach (l, (GFunc)g_object_unref, NULL);
-	g_slist_free (l);
+	g_slist_free_full (l, g_object_unref);
 	if (len > 0)
 		return;
 
@@ -4215,11 +4212,8 @@ caldav_get_free_busy (ECalBackendSync  *backend,
 
 	e_cal_component_set_attendee_list (comp, attendees);
 
-	g_slist_foreach (attendees, (GFunc) g_free, NULL);
-	g_slist_free (attendees);
-
-	g_slist_foreach (to_free, (GFunc) g_free, NULL);
-	g_slist_free (to_free);
+	g_slist_free_full (attendees, g_free);
+	g_slist_free_full (to_free, g_free);
 
 	e_cal_component_abort_sequence (comp);
 
