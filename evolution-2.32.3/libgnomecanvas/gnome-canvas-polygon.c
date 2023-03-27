@@ -49,8 +49,8 @@ enum {
 	PROP_POINTS
 };
 
-static void gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class);
-static void gnome_canvas_polygon_init       (GnomeCanvasPolygon      *poly);
+static void gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class, gpointer class_data);
+static void gnome_canvas_polygon_init       (GnomeCanvasPolygon      *poly, gpointer class_data);
 static void gnome_canvas_polygon_destroy    (GtkObject               *object);
 static void gnome_canvas_polygon_set_property (GObject              *object,
 					       guint                 param_id,
@@ -92,7 +92,7 @@ gnome_canvas_polygon_get_type (void)
 }
 
 static void
-gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class)
+gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -120,7 +120,7 @@ gnome_canvas_polygon_class_init (GnomeCanvasPolygonClass *class)
 }
 
 static void
-gnome_canvas_polygon_init (GnomeCanvasPolygon *poly)
+gnome_canvas_polygon_init (GnomeCanvasPolygon *poly, gpointer class_data)
 {
 	poly->path_def = NULL;
 }

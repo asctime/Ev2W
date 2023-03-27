@@ -21,7 +21,7 @@
 #include "gailcanvasgroupfactory.h"
 #include "gailcanvasgroup.h"
 
-static void gail_canvas_group_factory_class_init (GailCanvasGroupFactoryClass *klass);
+static void gail_canvas_group_factory_class_init (GailCanvasGroupFactoryClass *klass, gpointer class_data);
 
 static AtkObject * gail_canvas_group_factory_create_accessible (GObject *obj);
 
@@ -56,7 +56,7 @@ gail_canvas_group_factory_get_type (void)
 }
 
 static void
-gail_canvas_group_factory_class_init (GailCanvasGroupFactoryClass *klass)
+gail_canvas_group_factory_class_init (GailCanvasGroupFactoryClass *klass, gpointer class_data)
 {
   AtkObjectFactoryClass *class = ATK_OBJECT_FACTORY_CLASS (klass);
 

@@ -45,8 +45,7 @@ filter_part_finalize (GObject *object)
 {
 	EFilterPart *part = E_FILTER_PART (object);
 
-	g_list_foreach (part->elements, (GFunc) g_object_unref, NULL);
-	g_list_free (part->elements);
+	g_list_free_full (part->elements, g_object_unref);
 
 	g_free (part->name);
 	g_free (part->title);

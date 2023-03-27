@@ -186,7 +186,7 @@ am__v_lt_0 = --silent
 libemiscwidgets_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(AM_CFLAGS) $(CFLAGS) $(libemiscwidgets_la_LDFLAGS) \
-	$(LDFLAGS) -o $@
+	$(LDFLAGS) -o $@ -lcomdlg32
 PROGRAMS = $(noinst_PROGRAMS)
 am_test_calendar_OBJECTS = test_calendar-test-calendar.$(OBJEXT)
 test_calendar_OBJECTS = $(am_test_calendar_OBJECTS)

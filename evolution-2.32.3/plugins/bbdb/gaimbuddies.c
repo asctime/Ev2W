@@ -364,8 +364,7 @@ bbdb_merge_buddy_to_contact (EBook *book, GaimBuddy *b, EContact *c)
 		dirty = TRUE;
 	}
 
-	g_list_foreach (ims, (GFunc) g_free, NULL);
-	g_list_free (ims);
+	g_list_free_full (ims, g_free);
 	ims = NULL;
 
         /* Set the photo if it's not set */
@@ -492,8 +491,7 @@ bbdb_get_gaim_buddy_list (void)
 
 	xmlFreeDoc (buddy_xml);
 
-	g_slist_foreach (blocked, (GFunc)g_free, NULL);
-	g_slist_free (blocked);
+	g_slist_free_full (blocked, g_free);
 
 	return buddies;
 }
@@ -514,8 +512,7 @@ free_gaim_body (GaimBuddy *gb)
 static void
 free_buddy_list (GList *blist)
 {
-	g_list_foreach (blist, (GFunc)free_gaim_body, NULL);
-	g_list_free (blist);
+	g_list_free_full (blist, (GDestroyNotify)free_gaim_body);
 }
 
 static gchar *

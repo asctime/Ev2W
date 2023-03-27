@@ -81,8 +81,8 @@ enum {
 	PROP_ANCHOR
 };
 
-static void gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class);
-static void gnome_canvas_pixbuf_init (GnomeCanvasPixbuf *cpb);
+static void gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class, gpointer class_data);
+static void gnome_canvas_pixbuf_init (GnomeCanvasPixbuf *cpb, gpointer class_data);
 static void gnome_canvas_pixbuf_destroy (GtkObject *object);
 static void gnome_canvas_pixbuf_set_property (GObject *object,
 					      guint param_id,
@@ -148,7 +148,7 @@ gnome_canvas_pixbuf_get_type (void)
 
 /* Class initialization function for the pixbuf canvas item */
 static void
-gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class)
+gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class, gpointer class_data)
 {
         GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -248,7 +248,7 @@ gnome_canvas_pixbuf_class_init (GnomeCanvasPixbufClass *class)
 
 /* Object initialization function for the pixbuf canvas item */
 static void
-gnome_canvas_pixbuf_init (GnomeCanvasPixbuf *gcp)
+gnome_canvas_pixbuf_init (GnomeCanvasPixbuf *gcp, gpointer class_data)
 {
 	PixbufPrivate *priv;
 

@@ -141,8 +141,7 @@ commit_changes (UIData *ui)
 
 	gconf_client_set_list (ui->gconf, GCONF_KEY_TEMPLATE_PLACEHOLDERS, GCONF_VALUE_STRING, clue_list, NULL);
 
-	g_slist_foreach (clue_list, (GFunc) g_free, NULL);
-	g_slist_free (clue_list);
+	g_slist_free_full (clue_list, g_free);
 }
 
 static void
@@ -448,8 +447,7 @@ e_plugin_lib_get_configure_widget (EPlugin *epl)
 	}
 
 	if (clue_list) {
-		g_slist_foreach (clue_list, (GFunc) g_free, NULL);
-		g_slist_free (clue_list);
+		g_slist_free_full (clue_list, g_free);
 	}
 
 	/* Add the list here */

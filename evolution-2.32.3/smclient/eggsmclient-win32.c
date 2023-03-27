@@ -271,7 +271,11 @@ g_win32_handle_source_add (HANDLE handle, GSourceFunc callback, gpointer user_da
 
   source = g_source_new (&g_win32_handle_source_funcs, sizeof (GWin32HandleSource));
   hsource = (GWin32HandleSource *)source;
+#ifdef __MINGW32__
+  hsource->pollfd.fd = (intptr_t)handle;
+#else
   hsource->pollfd.fd = (int)handle;
+#endif
   hsource->pollfd.events = G_IO_IN;
   hsource->pollfd.revents = 0;
   g_source_add_poll (source, &hsource->pollfd);

@@ -47,8 +47,8 @@ enum {
 	PROP_SIZE_PIXELS
 };
 
-static void gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class);
-static void gnome_canvas_widget_init       (GnomeCanvasWidget      *witem);
+static void gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class, gpointer class_data);
+static void gnome_canvas_widget_init       (GnomeCanvasWidget      *witem, gpointer class_data);
 static void gnome_canvas_widget_destroy    (GtkObject              *object);
 static void gnome_canvas_widget_get_property (GObject            *object,
 					      guint               param_id,
@@ -113,7 +113,7 @@ gnome_canvas_widget_get_type (void)
 }
 
 static void
-gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class)
+gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -182,7 +182,7 @@ gnome_canvas_widget_class_init (GnomeCanvasWidgetClass *class)
 }
 
 static void
-gnome_canvas_widget_init (GnomeCanvasWidget *witem)
+gnome_canvas_widget_init (GnomeCanvasWidget *witem, gpointer class_data)
 {
 	witem->x = 0.0;
 	witem->y = 0.0;

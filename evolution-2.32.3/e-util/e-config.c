@@ -1638,8 +1638,7 @@ emph_free_item (struct _EConfigItem *item)
 static void
 emph_free_group (struct _EConfigHookGroup *group)
 {
-	g_slist_foreach (group->items, (GFunc)emph_free_item, NULL);
-	g_slist_free (group->items);
+	g_slist_free_full (group->items, (GDestroyNotify)emph_free_item);
 
 	g_free (group->id);
 	g_free (group);
@@ -1855,8 +1854,7 @@ emph_finalize (GObject *o)
 {
 	EPluginHook *eph = (EPluginHook *)o;
 
-	g_slist_foreach (emph->groups, (GFunc)emph_free_group, NULL);
-	g_slist_free (emph->groups);
+	g_slist_free_full (emph->groups, (GDestroyNotify)emph_free_group);
 
 	((GObjectClass *)e_config_hook_parent_class)->finalize (o);
 }

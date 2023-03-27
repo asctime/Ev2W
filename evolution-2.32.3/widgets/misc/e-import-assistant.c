@@ -1107,8 +1107,7 @@ import_assistant_dispose (GObject *object)
 	}
 
 	if (priv->fileuris != NULL) {
-		g_ptr_array_foreach (priv->fileuris, (GFunc) g_free, NULL);
-		g_ptr_array_free (priv->fileuris, TRUE);
+		g_ptr_array_set_free_func (priv->fileuris, g_free);
 		priv->fileuris = NULL;
 	}
 

@@ -42,8 +42,8 @@ enum {
 	PROP_WIND
 };
 
-static void gnome_canvas_clipgroup_class_init      (GnomeCanvasClipgroupClass *klass);
-static void gnome_canvas_clipgroup_init            (GnomeCanvasClipgroup      *clipgroup);
+static void gnome_canvas_clipgroup_class_init      (GnomeCanvasClipgroupClass *klass, gpointer class_data);
+static void gnome_canvas_clipgroup_init            (GnomeCanvasClipgroup      *clipgroup, gpointer class_data);
 static void gnome_canvas_clipgroup_destroy         (GtkObject                 *object);
 static void gnome_canvas_clipgroup_set_property    (GObject                   *object,
                                                     guint                      param_id,
@@ -116,7 +116,7 @@ gnome_canvas_clipgroup_get_type (void)
 }
 
 static void
-gnome_canvas_clipgroup_class_init (GnomeCanvasClipgroupClass *klass)
+gnome_canvas_clipgroup_class_init (GnomeCanvasClipgroupClass *klass, gpointer class_data)
 {
         GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -145,7 +145,7 @@ gnome_canvas_clipgroup_class_init (GnomeCanvasClipgroupClass *klass)
 }
 
 static void
-gnome_canvas_clipgroup_init (GnomeCanvasClipgroup *clipgroup)
+gnome_canvas_clipgroup_init (GnomeCanvasClipgroup *clipgroup, gpointer class_data)
 {
 	clipgroup->path = NULL;
 	clipgroup->wind = ART_WIND_RULE_NONZERO; /* default winding rule */

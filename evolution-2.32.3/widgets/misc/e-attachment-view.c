@@ -103,8 +103,7 @@ action_cancel_cb (GtkAction *action,
 
 	e_attachment_cancel (attachment);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -120,8 +119,7 @@ action_hide_cb (GtkAction *action,
 
 	e_attachment_set_shown (attachment, FALSE);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -141,8 +139,7 @@ action_hide_all_cb (GtkAction *action,
 		e_attachment_set_shown (attachment, FALSE);
 	}
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -162,8 +159,7 @@ action_open_in_cb (GtkAction *action,
 
 	e_attachment_view_open_path (view, path, app_info);
 
-	g_list_foreach (list, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
 }
 
 static void
@@ -186,8 +182,7 @@ action_properties_cb (GtkAction *action,
 	gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -258,8 +253,7 @@ action_save_all_cb (GtkAction *action,
 	g_object_unref (destination);
 
 exit:
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -295,8 +289,7 @@ action_save_as_cb (GtkAction *action,
 	g_object_unref (destination);
 
 exit:
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -312,8 +305,7 @@ action_show_cb (GtkAction *action,
 
 	e_attachment_set_shown (attachment, TRUE);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -333,8 +325,7 @@ action_show_all_cb (GtkAction *action,
 		e_attachment_set_shown (attachment, TRUE);
 	}
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static GtkActionEntry standard_entries[] = {
@@ -663,8 +654,7 @@ attachment_view_update_actions (EAttachmentView *view)
 			n_hidden++;
 	}
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 
 	list = e_attachment_view_get_selected_attachments (view);
 	n_selected = g_list_length (list);
@@ -678,8 +668,7 @@ attachment_view_update_actions (EAttachmentView *view)
 	} else
 		attachment = NULL;
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 
 	action = e_attachment_view_get_action (view, "cancel");
 	gtk_action_set_visible (action, busy);
@@ -773,8 +762,7 @@ attachment_view_update_actions (EAttachmentView *view)
 	}
 
 	g_object_unref (attachment);
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -927,11 +915,8 @@ e_attachment_view_finalize (EAttachmentView *view)
 
 	priv = e_attachment_view_get_private (view);
 
-	g_list_foreach (priv->event_list, (GFunc) gdk_event_free, NULL);
-	g_list_free (priv->event_list);
-
-	g_list_foreach (priv->selected, (GFunc) g_object_unref, NULL);
-	g_list_free (priv->selected);
+	g_list_free_full (priv->event_list, (GDestroyNotify)gdk_event_free);
+	g_list_free_full (priv->selected, g_object_unref);
 }
 
 EAttachmentViewPrivate *
@@ -1164,8 +1149,7 @@ e_attachment_view_remove_selected (EAttachmentView *view,
 				e_attachment_view_select_path (view, path);
 	}
 
-	g_list_foreach (list, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
 }
 
 gboolean
@@ -1221,8 +1205,7 @@ e_attachment_view_button_press_event (EAttachmentView *view,
 			handled = TRUE;
 		}
 
-		g_list_foreach (list, (GFunc) g_object_unref, NULL);
-		g_list_free (list);
+		g_list_free_full (list, g_object_unref);
 	}
 
 	if (event->button == 3 && event->type == GDK_BUTTON_PRESS) {
@@ -1300,8 +1283,7 @@ e_attachment_view_motion_notify_event (EAttachmentView *view,
 		widget, priv->start_x, priv->start_y, event->x, event->y))
 		return TRUE;
 
-	g_list_foreach (priv->event_list, (GFunc) gdk_event_free, NULL);
-	g_list_free (priv->event_list);
+	g_list_free_full (priv->event_list, (GDestroyNotify)gdk_event_free);
 	priv->event_list = NULL;
 
 	targets = gtk_drag_source_get_target_list (widget);
@@ -1448,8 +1430,7 @@ e_attachment_view_sync_selection (EAttachmentView *view,
 	for (iter = list; iter != NULL; iter = iter->next)
 		e_attachment_view_select_path (target, iter->data);
 
-	g_list_foreach (list, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
 }
 
 void
@@ -1565,8 +1546,7 @@ e_attachment_view_drag_end (EAttachmentView *view,
 
 	e_attachment_view_set_dragging (view, FALSE);
 
-	g_list_foreach (priv->selected, (GFunc) g_object_unref, NULL);
-	g_list_free (priv->selected);
+	g_list_free_full (priv->selected, g_object_unref);
 	priv->selected = NULL;
 }
 

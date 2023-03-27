@@ -29,7 +29,7 @@
 
 /* ECalendarCell */
 
-static void e_calendar_cell_class_init (ECalendarCellClass *class);
+static void e_calendar_cell_class_init (ECalendarCellClass *class, gpointer class_data);
 
 EA_FACTORY_GOBJECT (EA_TYPE_CALENDAR_CELL, ea_calendar_cell, ea_calendar_cell_new)
 
@@ -60,7 +60,7 @@ e_calendar_cell_get_type (void)
 }
 
 static void
-e_calendar_cell_class_init (ECalendarCellClass *class)
+e_calendar_cell_class_init (ECalendarCellClass *class, gpointer class_data)
 {
     EA_SET_FACTORY (e_calendar_cell_get_type (), ea_calendar_cell);
 }
@@ -88,8 +88,8 @@ e_calendar_cell_new (ECalendarItem *calitem, gint row, gint column)
 
 /* EaCalendarCell */
 
-static void ea_calendar_cell_class_init (EaCalendarCellClass *klass);
-static void ea_calendar_cell_init (EaCalendarCell *a11y);
+static void ea_calendar_cell_class_init (EaCalendarCellClass *klass, gpointer class_data);
+static void ea_calendar_cell_init (EaCalendarCell *a11y, gpointer class_data);
 
 static G_CONST_RETURN gchar * ea_calendar_cell_get_name (AtkObject *accessible);
 static G_CONST_RETURN gchar * ea_calendar_cell_get_description (AtkObject *accessible);
@@ -98,7 +98,7 @@ static gint ea_calendar_cell_get_index_in_parent (AtkObject *accessible);
 static AtkStateSet *ea_calendar_cell_ref_state_set (AtkObject *accessible);
 
 /* component interface */
-static void atk_component_interface_init (AtkComponentIface *iface);
+static void atk_component_interface_init (AtkComponentIface *iface, gpointer class_data);
 static void component_interface_get_extents (AtkComponent *component,
 					     gint *x, gint *y,
 					     gint *width, gint *height,
@@ -147,7 +147,7 @@ ea_calendar_cell_get_type (void)
 }
 
 static void
-ea_calendar_cell_class_init (EaCalendarCellClass *klass)
+ea_calendar_cell_class_init (EaCalendarCellClass *klass, gpointer class_data)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 
@@ -167,7 +167,7 @@ ea_calendar_cell_class_init (EaCalendarCellClass *klass)
 }
 
 static void
-ea_calendar_cell_init (EaCalendarCell *a11y)
+ea_calendar_cell_init (EaCalendarCell *a11y, gpointer class_data)
 {
 	a11y->state_set = atk_state_set_new ();
 	atk_state_set_add_state (a11y->state_set, ATK_STATE_TRANSIENT);
@@ -302,7 +302,7 @@ ea_calendar_cell_ref_state_set (AtkObject *accessible)
 /* Atk Component Interface */
 
 static void
-atk_component_interface_init (AtkComponentIface *iface)
+atk_component_interface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

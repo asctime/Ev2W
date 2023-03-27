@@ -707,8 +707,7 @@ e_format_number (gint number)
 			strcpy (value_iterator, iterator->data);
 			value_iterator += strlen (iterator->data);
 		}
-		g_list_foreach (list, (GFunc) g_free, NULL);
-		g_list_free (list);
+		g_list_free_full (list, g_free);
 		return value;
 	} else {
 		return g_strdup("0");

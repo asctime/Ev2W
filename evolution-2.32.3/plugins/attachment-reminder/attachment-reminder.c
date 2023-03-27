@@ -160,8 +160,7 @@ check_for_attachment_clues (gchar *msg)
 	}
 
 	if (clue_list) {
-		g_slist_foreach (clue_list, (GFunc) g_free, NULL);
-		g_slist_free (clue_list);
+		g_slist_free_full (clue_list, g_free);
 	}
 
 	return ret_val;
@@ -233,8 +232,7 @@ commit_changes (UIData *ui)
 
 	gconf_client_set_list (ui->gconf, GCONF_KEY_ATTACH_REMINDER_CLUES, GCONF_VALUE_STRING, clue_list, NULL);
 
-	g_slist_foreach (clue_list, (GFunc) g_free, NULL);
-	g_slist_free (clue_list);
+	g_slist_free_full (clue_list, g_free);
 }
 
 static void
@@ -483,8 +481,7 @@ e_plugin_lib_get_configure_widget (EPlugin *plugin)
 	}
 
 	if (clue_list) {
-		g_slist_foreach (clue_list, (GFunc) g_free, NULL);
-		g_slist_free (clue_list);
+		g_slist_free_full (clue_list, g_free);
 	}
 
 	/* Add the list here */

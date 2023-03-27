@@ -53,7 +53,7 @@ type_as_function ## _factory_create_accessible (GObject *obj)			\
 }										\
 										\
 static void									\
-type_as_function ## _factory_class_init (AtkObjectFactoryClass *klass)		\
+type_as_function ## _factory_class_init (AtkObjectFactoryClass *klass, gpointer class_data)		\
 {										\
   klass->create_accessible   = type_as_function ## _factory_create_accessible;	\
   klass->get_accessible_type = type_as_function ## _factory_get_accessible_type;\

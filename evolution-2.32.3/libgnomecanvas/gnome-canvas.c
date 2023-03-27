@@ -129,8 +129,8 @@ enum {
 	ITEM_LAST_SIGNAL
 };
 
-static void gnome_canvas_item_class_init     (GnomeCanvasItemClass *class);
-static void gnome_canvas_item_init           (GnomeCanvasItem      *item);
+static void gnome_canvas_item_class_init     (GnomeCanvasItemClass *class, gpointer class_data);
+static void gnome_canvas_item_init           (GnomeCanvasItem      *item, gpointer class_data);
 static gint  emit_event                       (GnomeCanvas *canvas, GdkEvent *event);
 
 static guint item_signals[ITEM_LAST_SIGNAL];
@@ -173,7 +173,7 @@ gnome_canvas_item_get_type (void)
 
 /* Object initialization function for GnomeCanvasItem */
 static void
-gnome_canvas_item_init (GnomeCanvasItem *item)
+gnome_canvas_item_init (GnomeCanvasItem *item, gpointer class_data)
 {
 	item->flags |= GNOME_CANVAS_ITEM_VISIBLE;
 }
@@ -1343,8 +1343,8 @@ enum {
 	GROUP_PROP_Y
 };
 
-static void gnome_canvas_group_class_init  (GnomeCanvasGroupClass *class);
-static void gnome_canvas_group_init        (GnomeCanvasGroup      *group);
+static void gnome_canvas_group_class_init  (GnomeCanvasGroupClass *class, gpointer class_data);
+static void gnome_canvas_group_init        (GnomeCanvasGroup      *group, gpointer class_data);
 static void gnome_canvas_group_set_property (GObject               *object,
 					    guint                  param_id,
 					    const GValue          *value,
@@ -1415,7 +1415,7 @@ gnome_canvas_group_get_type (void)
 
 /* Class initialization function for GnomeCanvasGroupClass */
 static void
-gnome_canvas_group_class_init (GnomeCanvasGroupClass *class)
+gnome_canvas_group_class_init (GnomeCanvasGroupClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -1460,7 +1460,7 @@ gnome_canvas_group_class_init (GnomeCanvasGroupClass *class)
 
 /* Object initialization function for GnomeCanvasGroup */
 static void
-gnome_canvas_group_init (GnomeCanvasGroup *group)
+gnome_canvas_group_init (GnomeCanvasGroup *group, gpointer class_data)
 {
 #if 0
 	group->xpos = 0.0;
@@ -1938,8 +1938,8 @@ enum {
 	LAST_SIGNAL
 };
 
-static void gnome_canvas_class_init          (GnomeCanvasClass *class);
-static void gnome_canvas_init                (GnomeCanvas      *canvas);
+static void gnome_canvas_class_init          (GnomeCanvasClass *class, gpointer class_data);
+static void gnome_canvas_init                (GnomeCanvas      *canvas, gpointer class_data);
 static void gnome_canvas_destroy             (GtkObject        *object);
 static void gnome_canvas_map                 (GtkWidget        *widget);
 static void gnome_canvas_unmap               (GtkWidget        *widget);
@@ -2052,7 +2052,7 @@ gnome_canvas_set_property (GObject      *object,
 
 /* Class initialization function for GnomeCanvasClass */
 static void
-gnome_canvas_class_init (GnomeCanvasClass *klass)
+gnome_canvas_class_init (GnomeCanvasClass *klass, gpointer class_data)
 {
 	GObjectClass   *gobject_class;
 	GtkObjectClass *object_class;
@@ -2134,7 +2134,7 @@ panic_root_destroyed (GtkObject *object, gpointer data)
 
 /* Object initialization function for GnomeCanvas */
 static void
-gnome_canvas_init (GnomeCanvas *canvas)
+gnome_canvas_init (GnomeCanvas *canvas, gpointer class_data)
 {
 	GtkLayout *layout;
 	guint layout_width, layout_height;
@@ -4259,7 +4259,7 @@ boolean_handled_accumulator (GSignalInvocationHint *ihint,
 
 /* Class initialization function for GnomeCanvasItemClass */
 static void
-gnome_canvas_item_class_init (GnomeCanvasItemClass *class)
+gnome_canvas_item_class_init (GnomeCanvasItemClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 

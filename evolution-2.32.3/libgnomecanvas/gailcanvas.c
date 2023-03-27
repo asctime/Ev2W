@@ -31,7 +31,7 @@
 
 #include "e-util/gtk-compat.h"
 
-static void       gail_canvas_class_init          (GailCanvasClass *klass);
+static void       gail_canvas_class_init          (GailCanvasClass *klass, gpointer class_data);
 static void       gail_canvas_real_initialize     (AtkObject       *obj,
                                                    gpointer        data);
 
@@ -144,7 +144,7 @@ gail_canvas_init (void)
 }
 
 static void
-gail_canvas_class_init (GailCanvasClass *klass)
+gail_canvas_class_init (GailCanvasClass *klass, gpointer class_data)
 {
   AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
   parent_atk_object_class = g_type_class_peek_parent (klass);

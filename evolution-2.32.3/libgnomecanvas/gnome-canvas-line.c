@@ -82,8 +82,8 @@ enum {
 	PROP_ARROW_SHAPE_C
 };
 
-static void gnome_canvas_line_class_init   (GnomeCanvasLineClass *class);
-static void gnome_canvas_line_init         (GnomeCanvasLine      *line);
+static void gnome_canvas_line_class_init   (GnomeCanvasLineClass *class, gpointer class_data);
+static void gnome_canvas_line_init         (GnomeCanvasLine      *line, gpointer class_data);
 static void gnome_canvas_line_destroy      (GtkObject            *object);
 static void gnome_canvas_line_set_property (GObject              *object,
 					    guint                 param_id,
@@ -133,7 +133,7 @@ gnome_canvas_line_get_type (void)
 }
 
 static void
-gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
+gnome_canvas_line_class_init (GnomeCanvasLineClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -267,7 +267,7 @@ gnome_canvas_line_class_init (GnomeCanvasLineClass *class)
 }
 
 static void
-gnome_canvas_line_init (GnomeCanvasLine *line)
+gnome_canvas_line_init (GnomeCanvasLine *line, gpointer class_data)
 {
 	line->width = 0.0;
 	line->cap = GDK_CAP_BUTT;

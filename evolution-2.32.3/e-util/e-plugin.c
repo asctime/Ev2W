@@ -266,8 +266,7 @@ ep_finalize (GObject *object)
 	g_free (ep->name);
 	g_free (ep->domain);
 
-	g_slist_foreach (ep->hooks, (GFunc) g_object_unref, NULL);
-	g_slist_free (ep->hooks);
+	g_slist_free_full (ep->hooks, g_object_unref);
 
 	/* Chain up to parent's finalize() method. */
 	G_OBJECT_CLASS (e_plugin_parent_class)->finalize (object);

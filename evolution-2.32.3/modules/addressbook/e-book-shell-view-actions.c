@@ -295,8 +295,7 @@ action_address_book_save_as_cb (GtkAction *action,
 	g_object_unref (file);
 
 exit:
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -390,8 +389,7 @@ action_contact_forward_cb (GtkAction *action,
 
 	eab_send_as_attachment (shell, list);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -581,8 +579,7 @@ action_contact_save_as_cb (GtkAction *action,
 	g_object_unref (file);
 
 exit:
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void
@@ -621,8 +618,7 @@ action_contact_send_message_cb (GtkAction *action,
 
 	eab_send_as_to (shell, list);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 static void

@@ -23,6 +23,7 @@
 #include <config.h>
 
 #include <gtk/gtk.h>
+#include <libgnomecanvas/gnome-canvas.h>
 
 #include "e-util/e-util.h"
 

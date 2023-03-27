@@ -172,21 +172,16 @@ rule_context_finalize (GObject *obj)
 {
 	ERuleContext *context =(ERuleContext *) obj;
 
-	g_list_foreach (context->rule_set_list, (GFunc)free_rule_set, NULL);
-	g_list_free (context->rule_set_list);
+	g_list_free_full (context->rule_set_list, (GDestroyNotify)free_rule_set);
 	g_hash_table_destroy (context->rule_set_map);
 
-	g_list_foreach (context->part_set_list, (GFunc)free_part_set, NULL);
-	g_list_free (context->part_set_list);
+	g_list_free_full (context->part_set_list, (GDestroyNotify)free_part_set);
 	g_hash_table_destroy (context->part_set_map);
 
 	g_free (context->error);
 
-	g_list_foreach (context->parts, (GFunc)g_object_unref, NULL);
-	g_list_free (context->parts);
-
-	g_list_foreach (context->rules, (GFunc)g_object_unref, NULL);
-	g_list_free (context->rules);
+	g_list_free_full (context->parts, g_object_unref);
+	g_list_free_full (context->rules, g_object_unref);
 
 	G_OBJECT_CLASS (e_rule_context_parent_class)->finalize (obj);
 }
@@ -956,8 +951,7 @@ e_rule_context_free_uri_list (ERuleContext *context,
 
 	/* TODO: should be virtual */
 
-	g_list_foreach (uris, (GFunc) g_free, NULL);
-	g_list_free (uris);
+	g_list_free_full (uris, g_free);
 }
 
 /**

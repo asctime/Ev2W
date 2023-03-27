@@ -154,8 +154,7 @@ preferences_window_selection_changed_cb (EPreferencesWindow *window)
 	notebook = GTK_NOTEBOOK (window->priv->notebook);
 	gtk_notebook_set_current_page (notebook, page);
 
-	g_list_foreach (list, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
 
 	gtk_widget_grab_focus (GTK_WIDGET (icon_view));
 }

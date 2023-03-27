@@ -50,8 +50,7 @@ filter_input_entry_changed (GtkEntry *entry,
 	EFilterInput *input = E_FILTER_INPUT (element);
 	const gchar *text;
 
-	g_list_foreach (input->values, (GFunc) g_free, NULL);
-	g_list_free (input->values);
+	g_list_free_full (input->values, g_free);
 
 	text = gtk_entry_get_text (entry);
 	input->values = g_list_append (NULL, g_strdup (text));
@@ -64,8 +63,7 @@ filter_input_finalize (GObject *object)
 
 	xmlFree (input->type);
 
-	g_list_foreach (input->values, (GFunc)g_free, NULL);
-	g_list_free (input->values);
+	g_list_free_full (input->values, g_free);
 
 	/* Chain up to parent's finalize() method. */
 	G_OBJECT_CLASS (e_filter_input_parent_class)->finalize (object);
@@ -184,8 +182,7 @@ filter_input_xml_decode (EFilterElement *element, xmlNodePtr node)
 	gchar *name, *str, *type;
 	xmlNodePtr child;
 
-	g_list_foreach (input->values, (GFunc) g_free, NULL);
-	g_list_free (input->values);
+	g_list_free_full (input->values, g_free);
 	input->values = NULL;
 
 	name = (gchar *) xmlGetProp (node, (xmlChar *) "name");
@@ -299,8 +296,7 @@ e_filter_input_set_value (EFilterInput *input,
 {
 	g_return_if_fail (E_IS_FILTER_INPUT (input));
 
-	g_list_foreach (input->values, (GFunc) g_free, NULL);
-	g_list_free (input->values);
+	g_list_free_full (input->values, g_free);
 
 	input->values = g_list_append (NULL, g_strdup (value));
 }

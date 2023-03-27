@@ -197,8 +197,7 @@ bbdb_do_in_thread (gpointer data)
 	if (!book || !bbdb_open_ebook (book)) {
 		G_LOCK (todo);
 
-		g_slist_foreach (todo, (GFunc)free_todo_struct, NULL);
-		g_slist_free (todo);
+		g_slist_free_full (todo, (GDestroyNotify)free_todo_struct);
 		todo = NULL;
 
 		G_UNLOCK (todo);

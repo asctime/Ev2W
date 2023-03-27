@@ -82,8 +82,7 @@ event_finalize (GObject *object)
 		g_free (node);
 	}
 
-	g_slist_foreach (p->sorted, (GFunc)g_free, NULL);
-	g_slist_free (p->sorted);
+	g_slist_free_full (p->sorted, g_free);
 
 	/* Chain up to parent's finalize() method. */
 	G_OBJECT_CLASS (e_event_parent_class)->finalize (object);
@@ -161,8 +160,7 @@ e_event_add_items (EEvent *event,
 	g_queue_push_tail (&event->priv->events, node);
 
 	if (event->priv->sorted) {
-		g_slist_foreach (event->priv->sorted, (GFunc)g_free, NULL);
-		g_slist_free (event->priv->sorted);
+		g_slist_free_full (event->priv->sorted, g_free);
 		event->priv->sorted = NULL;
 	}
 
@@ -189,8 +187,7 @@ e_event_remove_items (EEvent *event, gpointer handle)
 	g_free (node);
 
 	if (event->priv->sorted) {
-		g_slist_foreach (event->priv->sorted, (GFunc)g_free, NULL);
-		g_slist_free (event->priv->sorted);
+		g_slist_free_full (event->priv->sorted, g_free);
 		event->priv->sorted = NULL;
 	}
 }
@@ -404,8 +401,7 @@ emph_free_items (EEvent *ee, GSList *items, gpointer data)
 {
 	/*EPluginHook *eph = data;*/
 
-	g_slist_foreach (items, (GFunc)emph_free_item, NULL);
-	g_slist_free (items);
+	g_slist_free_full (items, (GDestroyNotify)emph_free_item);
 }
 
 static EEventItem *

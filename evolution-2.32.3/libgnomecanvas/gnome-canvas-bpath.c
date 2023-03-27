@@ -33,8 +33,8 @@ enum {
 	PROP_BPATH
 };
 
-static void gnome_canvas_bpath_class_init   (GnomeCanvasBpathClass *class);
-static void gnome_canvas_bpath_init         (GnomeCanvasBpath      *bpath);
+static void gnome_canvas_bpath_class_init   (GnomeCanvasBpathClass *class, gpointer class_data);
+static void gnome_canvas_bpath_init         (GnomeCanvasBpath      *bpath, gpointer class_data);
 static void gnome_canvas_bpath_destroy      (GtkObject               *object);
 static void gnome_canvas_bpath_set_property (GObject               *object,
 					     guint                  param_id,
@@ -76,7 +76,7 @@ gnome_canvas_bpath_get_type (void)
 }
 
 static void
-gnome_canvas_bpath_class_init (GnomeCanvasBpathClass *class)
+gnome_canvas_bpath_class_init (GnomeCanvasBpathClass *class, gpointer class_data)
 {
 	GObjectClass         *gobject_class;
 	GtkObjectClass       *object_class;
@@ -107,7 +107,7 @@ gnome_canvas_bpath_class_init (GnomeCanvasBpathClass *class)
 }
 
 static void
-gnome_canvas_bpath_init (GnomeCanvasBpath *bpath)
+gnome_canvas_bpath_init (GnomeCanvasBpath *bpath, gpointer class_data)
 {
 
 }

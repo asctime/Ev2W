@@ -353,8 +353,7 @@ filter_rule_finalize (GObject *object)
 	g_free (rule->name);
 	g_free (rule->source);
 
-	g_list_foreach (rule->parts, (GFunc) g_object_unref, NULL);
-	g_list_free (rule->parts);
+	g_list_free_full (rule->parts, g_object_unref);
 
 	/* Chain up to parent's finalize() method. */
 	G_OBJECT_CLASS (e_filter_rule_parent_class)->finalize (object);
@@ -626,8 +625,7 @@ filter_rule_copy (EFilterRule *dest, EFilterRule *src)
 	dest->threading = src->threading;
 
 	if (dest->parts) {
-		g_list_foreach (dest->parts, (GFunc) g_object_unref, NULL);
-		g_list_free (dest->parts);
+		g_list_free_full (dest->parts, g_object_unref);
 		dest->parts = NULL;
 	}
 

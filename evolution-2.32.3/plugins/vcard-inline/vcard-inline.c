@@ -141,8 +141,7 @@ org_gnome_vcard_inline_book_loaded_cb (ESource *source,
 	g_object_unref (book);
 
 exit:
-	g_list_foreach (contact_list, (GFunc) g_object_unref, NULL);
-	g_list_free (contact_list);
+	g_list_free_full (contact_list, g_object_unref);
 }
 
 static void

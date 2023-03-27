@@ -105,8 +105,7 @@ filter_option_finalize (GObject *object)
 {
 	EFilterOption *option = E_FILTER_OPTION (object);
 
-	g_list_foreach (option->options, (GFunc) free_option, NULL);
-	g_list_free (option->options);
+	g_list_free_full (option->options, (GDestroyNotify)free_option);
 
 	g_free (option->dynamic_func);
 
@@ -351,8 +350,7 @@ filter_option_get_widget (EFilterElement *element)
 			e_filter_option_set_current (option, old_cur->value);
 
 		/* free old list */
-		g_list_foreach (old_ops, (GFunc)free_option, NULL);
-		g_list_free (old_ops);
+		g_list_free_full (old_ops, (GDestroyNotify)free_option);
 	}
 
 	combobox = gtk_combo_box_new_text ();
@@ -490,8 +488,7 @@ e_filter_option_remove_all (EFilterOption *option)
 {
 	g_return_if_fail (E_IS_FILTER_OPTION (option));
 
-	g_list_foreach (option->options, (GFunc) free_option, NULL);
-	g_list_free (option->options);
+	g_list_free_full (option->options, (GDestroyNotify)free_option);
 
 	option->options = NULL;
 	option->current = NULL;

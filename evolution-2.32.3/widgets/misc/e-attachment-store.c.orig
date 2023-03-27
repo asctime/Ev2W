@@ -348,7 +348,8 @@ e_attachment_store_add_to_multipart (EAttachmentStore *store,
 				attachment, multipart, default_charset);
 	}
 
-	g_list_free_full (list, g_object_unref);
+	g_list_foreach (list, (GFunc) g_object_unref, NULL);
+	g_list_free (list);
 }
 
 GList *
@@ -427,7 +428,8 @@ e_attachment_store_get_num_loading (EAttachmentStore *store)
 			num_loading++;
 	}
 
-	g_list_free_full (list, g_object_unref);
+	g_list_foreach (list, (GFunc) g_object_unref, NULL);
+	g_list_free (list);
 
 	return num_loading;
 }
@@ -451,7 +453,8 @@ e_attachment_store_get_total_size (EAttachmentStore *store)
 			total_size += g_file_info_get_size (file_info);
 	}
 
-	g_list_free_full (list, g_object_unref);
+	g_list_foreach (list, (GFunc) g_object_unref, NULL);
+	g_list_free (list);
 
 	return total_size;
 }
@@ -546,7 +549,8 @@ e_attachment_store_run_load_dialog (EAttachmentStore *store,
 		g_object_unref (attachment);
 	}
 
-	g_slist_free_full (files, g_object_unref);
+	g_slist_foreach (files, (GFunc) g_object_unref, NULL);
+	g_slist_free (files);
 
 exit:
 	gtk_widget_destroy (dialog);

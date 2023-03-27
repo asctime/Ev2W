@@ -109,8 +109,8 @@ enum {
 static GnomeCanvasItemClass *parent_class;
 static guint signals[LAST_SIGNAL] = { 0 };
 
-static void gnome_canvas_rich_text_class_init (GnomeCanvasRichTextClass *klass);
-static void gnome_canvas_rich_text_init (GnomeCanvasRichText *text);
+static void gnome_canvas_rich_text_class_init (GnomeCanvasRichTextClass *klass, gpointer class_data);
+static void gnome_canvas_rich_text_init (GnomeCanvasRichText *text, gpointer class_data);
 static void gnome_canvas_rich_text_set_property (GObject *object, guint property_id,
 						const GValue *value, GParamSpec *pspec);
 static void gnome_canvas_rich_text_get_property (GObject *object, guint property_id,
@@ -193,7 +193,7 @@ gnome_canvas_rich_text_finalize (GObject *object)
 }
 
 static void
-gnome_canvas_rich_text_class_init (GnomeCanvasRichTextClass *klass)
+gnome_canvas_rich_text_class_init (GnomeCanvasRichTextClass *klass, gpointer class_data)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 	GtkObjectClass *object_class = GTK_OBJECT_CLASS (klass);
@@ -399,7 +399,7 @@ gnome_canvas_rich_text_class_init (GnomeCanvasRichTextClass *klass)
 } /* gnome_canvas_rich_text_class_init */
 
 static void
-gnome_canvas_rich_text_init (GnomeCanvasRichText *text)
+gnome_canvas_rich_text_init (GnomeCanvasRichText *text, gpointer class_data)
 {
 #if 0
 	GtkObject *object = GTK_OBJECT (text);

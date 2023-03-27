@@ -32,7 +32,7 @@
  *
  *
  * Author: Federico Mena <federico@nuclecu.unam.mx>
- * Port to Pango co-done by Gergõ Érdi <cactus@cactus.rulez.org>
+ * Port to Pango co-done by Gerg? ?rdi <cactus@cactus.rulez.org>
  */
 
 #include <config.h>
@@ -103,8 +103,8 @@ struct _GnomeCanvasTextPrivate {
 	FT_Bitmap bitmap;
 };
 
-static void gnome_canvas_text_class_init (GnomeCanvasTextClass *class);
-static void gnome_canvas_text_init (GnomeCanvasText *text);
+static void gnome_canvas_text_class_init (GnomeCanvasTextClass *class, gpointer class_data);
+static void gnome_canvas_text_init (GnomeCanvasText *text, gpointer class_data);
 static void gnome_canvas_text_destroy (GtkObject *object);
 static void gnome_canvas_text_set_property (GObject            *object,
 					    guint               param_id,
@@ -184,7 +184,7 @@ gnome_canvas_text_get_type (void)
 
 /* Class initialization function for the text item */
 static void
-gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
+gnome_canvas_text_class_init (GnomeCanvasTextClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -525,7 +525,7 @@ gnome_canvas_text_class_init (GnomeCanvasTextClass *class)
 
 /* Object initialization function for the text item */
 static void
-gnome_canvas_text_init (GnomeCanvasText *text)
+gnome_canvas_text_init (GnomeCanvasText *text, gpointer class_data)
 {
 	text->x = 0.0;
 	text->y = 0.0;

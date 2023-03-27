@@ -203,8 +203,7 @@ drag_data_get_cb (GtkImageView *image_view,
 		attachment = NULL;
 	}
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 
 	/* Make sure we found an EAttachment to select. */
 	g_return_if_fail (E_IS_ATTACHMENT (attachment));

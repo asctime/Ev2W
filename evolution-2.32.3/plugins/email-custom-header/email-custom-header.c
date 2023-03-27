@@ -625,8 +625,7 @@ commit_changes (ConfigData *cd)
 
 	gconf_client_set_list (cd->gconf, GCONF_KEY_CUSTOM_HEADER, GCONF_VALUE_STRING, header_config_list, NULL);
 
-	g_slist_foreach (header_config_list, (GFunc) g_free, NULL);
-	g_slist_free (header_config_list);
+	g_slist_free_full (header_config_list, g_free);
 }
 
 static void
@@ -943,8 +942,7 @@ e_plugin_lib_get_configure_widget (EPlugin *epl)
 	}
 
 	if (header_list) {
-		g_slist_foreach (header_list, (GFunc) g_free, NULL);
-		g_slist_free (header_list);
+		g_slist_free_full (header_list, g_free);
 	}
 
 	/* Add the list here */

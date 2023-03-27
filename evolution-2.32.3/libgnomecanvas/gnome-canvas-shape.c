@@ -60,8 +60,8 @@ enum {
 	PROP_DASH
 };
 
-static void gnome_canvas_shape_class_init   (GnomeCanvasShapeClass *class);
-static void gnome_canvas_shape_init         (GnomeCanvasShape      *bpath);
+static void gnome_canvas_shape_class_init   (GnomeCanvasShapeClass *class, gpointer class_data);
+static void gnome_canvas_shape_init         (GnomeCanvasShape      *bpath, gpointer class_data);
 static void gnome_canvas_shape_destroy      (GtkObject               *object);
 static void gnome_canvas_shape_set_property (GObject               *object,
 					     guint                  param_id,
@@ -121,7 +121,7 @@ gnome_canvas_shape_get_type (void)
 }
 
 static void
-gnome_canvas_shape_class_init (GnomeCanvasShapeClass *class)
+gnome_canvas_shape_class_init (GnomeCanvasShapeClass *class, gpointer class_data)
 {
 	GObjectClass         *gobject_class;
 	GtkObjectClass       *object_class;
@@ -229,7 +229,7 @@ gnome_canvas_shape_class_init (GnomeCanvasShapeClass *class)
 }
 
 static void
-gnome_canvas_shape_init (GnomeCanvasShape *shape)
+gnome_canvas_shape_init (GnomeCanvasShape *shape, gpointer class_data)
 {
 	shape->priv = g_new (GnomeCanvasShapePriv, 1);
 

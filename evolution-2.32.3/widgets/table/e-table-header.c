@@ -165,8 +165,7 @@ eth_finalize (GObject *object)
 	eth->idle = 0;
 
 	if (eth->change_queue) {
-		g_slist_foreach (eth->change_queue, (GFunc) g_free, NULL);
-		g_slist_free (eth->change_queue);
+		g_slist_free_full (eth->change_queue, g_free);
 		eth->change_queue = NULL;
 	}
 

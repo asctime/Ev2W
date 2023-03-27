@@ -55,8 +55,8 @@ enum {
 	PROP_Y2
 };
 
-static void gnome_canvas_re_class_init (GnomeCanvasREClass *class);
-static void gnome_canvas_re_init       (GnomeCanvasRE      *re);
+static void gnome_canvas_re_class_init (GnomeCanvasREClass *class, gpointer class_data);
+static void gnome_canvas_re_init       (GnomeCanvasRE      *re, gpointer class_data);
 static void gnome_canvas_re_destroy    (GtkObject          *object);
 static void gnome_canvas_re_set_property (GObject              *object,
 					  guint                 param_id,
@@ -99,7 +99,7 @@ gnome_canvas_re_get_type (void)
 }
 
 static void
-gnome_canvas_re_class_init (GnomeCanvasREClass *class)
+gnome_canvas_re_class_init (GnomeCanvasREClass *class, gpointer class_data)
 {
 	GObjectClass *gobject_class;
 	GtkObjectClass *object_class;
@@ -141,7 +141,7 @@ gnome_canvas_re_class_init (GnomeCanvasREClass *class)
 }
 
 static void
-gnome_canvas_re_init (GnomeCanvasRE *re)
+gnome_canvas_re_init (GnomeCanvasRE *re, gpointer class_data)
 {
 	re->x1 = 0.0;
 	re->y1 = 0.0;
@@ -243,7 +243,7 @@ gnome_canvas_re_get_property (GObject              *object,
 }
 
 /* Rectangle item */
-static void gnome_canvas_rect_class_init (GnomeCanvasRectClass *class);
+static void gnome_canvas_rect_class_init (GnomeCanvasRectClass *class, gpointer class_data);
 
 GType
 gnome_canvas_rect_get_type (void)
@@ -272,7 +272,7 @@ gnome_canvas_rect_get_type (void)
 }
 
 static void
-gnome_canvas_rect_class_init (GnomeCanvasRectClass *class)
+gnome_canvas_rect_class_init (GnomeCanvasRectClass *class, gpointer class_data)
 {
 	GnomeCanvasItemClass *item_class;
 
@@ -309,7 +309,7 @@ gnome_canvas_rect_update (GnomeCanvasItem *item, gdouble affine[6], ArtSVP *clip
 
 /* Ellipse item */
 
-static void gnome_canvas_ellipse_class_init (GnomeCanvasEllipseClass *class);
+static void gnome_canvas_ellipse_class_init (GnomeCanvasEllipseClass *class, gpointer class_data);
 
 GType
 gnome_canvas_ellipse_get_type (void)
@@ -338,7 +338,7 @@ gnome_canvas_ellipse_get_type (void)
 }
 
 static void
-gnome_canvas_ellipse_class_init (GnomeCanvasEllipseClass *class)
+gnome_canvas_ellipse_class_init (GnomeCanvasEllipseClass *class, gpointer class_data)
 {
 	GnomeCanvasItemClass *item_class;
 
