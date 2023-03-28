@@ -42,7 +42,7 @@
 #include "camel-tcp-stream-ssl.h"
 #endif
 
-#define SSL_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
+#define SSL_FLAGS (CAMEL_TCP_STREAM_SSL_ENABLE_SSL2 | CAMEL_TCP_STREAM_SSL_ENABLE_SSL3 | CAMEL_TCP_STREAM_SSL_ENABLE_TLS)
 
 #ifdef G_OS_WIN32
 #include <winsock2.h>
@@ -63,8 +63,9 @@ http_connect (CamelHttpStream *http,
 	gint errsave;
 	gchar *serv;
 
-	d(printf("connecting to http stream @ '%s'\n", url->host));
+	d(printf("connecting to %s stream @ '%s'\n", url->protocol, url->host));
 
+  /* There is no support for STARTTLS if implicit TLS fails */
 	if (!g_ascii_strcasecmp (url->protocol, "https")) {
 #ifdef CAMEL_HAVE_SSL
 		stream = camel_tcp_stream_ssl_new (http->session, url->host, SSL_FLAGS);

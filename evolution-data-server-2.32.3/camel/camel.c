@@ -60,16 +60,21 @@ static gint initialised = FALSE;
 
 gint camel_application_is_exiting = FALSE;
 
-#ifdef __MINGW32__
+/* SYSTEM-wide NSS certdb. Requires NSS built with nsssysinit option. */
+/* LINUX ONLY, can break cert usage. WIN32 use datadir fallback:      */
+/* App-specific system fallback will auto-generate on first use:      */
+/* $PREFIX/share/evoltuon/pkcs11.txt                                  */
+/* #ifdef __MINGW32__
 #define NSS_SYSTEM_DB "/MSYS2/mingw64/etc/pki/nssdb"
-#else
+#endif                                            */
+
 #define NSS_SYSTEM_DB "/etc/pki/nssdb"
-#endif
 
 static gint
 nss_has_system_db(void)
 {
 	gint found = FALSE;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 #if defined(G_OS_WIN32)
@@ -79,12 +84,16 @@ nss_has_system_db(void)
 =======
 #if defined(G_OS_WIN32)
 >>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
+=======
+#ifndef G_OS_WIN32
+>>>>>>> 9ebde4c... Finalize system certdb drop with comments; Undo a wrong (GFunc) cleanup.
 	FILE *f;
 	gchar buf[80];
 
-	f = fopen(NSS_SYSTEM_DB "/cert8.db", "rb");
-	if (!f) {
+	f = fopen(NSS_SYSTEM_DB "/pkcs11.txt", "r");
+	if (!f)
 		return FALSE;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   }
@@ -100,15 +109,16 @@ nss_has_system_db(void)
 	return TRUE;
 >>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
 #endif
+=======
+>>>>>>> 9ebde4c... Finalize system certdb drop with comments; Undo a wrong (GFunc) cleanup.
 
 	/* Check whether the system NSS db is actually enabled */
-  /* only for really old CYGWIN libnsssysinit I think ?  */
 	while (fgets(buf, 80, f) && !found) {
 		if (!strcmp(buf, "library=libnsssysinit.so\n"))
 			found = TRUE;
 	}
-#endif
 	fclose(f);
+#endif
 	return found;
 }
 

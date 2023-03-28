@@ -629,11 +629,13 @@ e_book_query_from_string  (const gchar *query_string)
 	e_sexp_result_free(sexp, r);
 	e_sexp_unref (sexp);
 
+
 	if (list) {
 		if (list->next) {
 			g_warning ("conversion to EBookQuery");
-			g_list_free_full (list, (GDestroyNotify) e_book_query_unref);
-			return NULL;
+			retval = NULL;
+			g_list_foreach (list, (GFunc)e_book_query_unref, NULL);
+      /* We cant g_list_free(list) yet because list->next  */
 		}
 		else {
 			retval = list->data;
