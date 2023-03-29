@@ -2912,7 +2912,8 @@ imapx_connect_to_server (CamelIMAPXServer *is, GError **error)
 		}
 
 		/* See if we got new capabilities in the STARTTLS response */
-		imapx_free_capability(is->cinfo);
+    if (is->cinfo)
+		  imapx_free_capability(is->cinfo);
 		is->cinfo = NULL;
 		if (ic->status->condition == IMAPX_CAPABILITY) {
 			is->cinfo = ic->status->u.cinfo;

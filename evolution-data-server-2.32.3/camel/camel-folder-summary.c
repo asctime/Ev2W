@@ -218,7 +218,7 @@ folder_summary_finalize (GObject *object)
 	if (summary->timeout_handle)
 		g_source_remove (summary->timeout_handle);
 	/*camel_folder_summary_clear(s);*/
-	g_ptr_array_foreach (summary->uids, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (summary->uids, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (summary->uids, TRUE);
 	g_hash_table_destroy (summary->loaded_infos);
 
@@ -2831,7 +2831,7 @@ camel_folder_summary_clear(CamelFolderSummary *s)
 		return;
 	}
 
-	g_ptr_array_foreach (s->uids, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (s->uids, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (s->uids, TRUE);
 	s->uids = g_ptr_array_new ();
 	s->saved_count = 0;
@@ -2876,7 +2876,7 @@ camel_folder_summary_clear_db (CamelFolderSummary *s)
 		return;
 	}
 
-	g_ptr_array_foreach (s->uids, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (s->uids, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (s->uids, TRUE);
 	s->uids = g_ptr_array_new ();
 	s->saved_count = 0;

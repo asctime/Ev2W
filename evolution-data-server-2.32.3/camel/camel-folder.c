@@ -625,7 +625,7 @@ static void
 folder_free_summary (CamelFolder *folder,
                      GPtrArray *summary)
 {
-	g_ptr_array_foreach (summary, (GFunc) camel_pstring_free, NULL);
+	g_ptr_array_set_free_func (summary, (GDestroyNotify)camel_pstring_free);
 	g_ptr_array_free (summary, TRUE);
 }
 

@@ -44,11 +44,7 @@
 #ifdef DEBUG
 #undef LDAP_DEBUG
 #endif
-#else
-/* UNICODE Support for WIN32 LDAP not yet working */
-#if defined(__MINGW32__) && defined(UNICODE)
-#undef UNICODE
-#endif
+#else   /* is G_OS_WIN32 */
 #define interface windows_interface
 #include <windows.h>
 #undef interface
@@ -56,8 +52,6 @@
 #define LDAP_RES_RENAME LDAP_RES_MODRDN
 #include <winber.h>
 #include "openldap-extract.h"
-
-
 
 /* map between the WinLDAP API and OpenLDAP API */
 #  ifndef ldap_msgtype
@@ -83,27 +77,61 @@
 #    undef ldap_search_ext
 #  endif
 
+       /*  UNICODE */
 #  ifdef UNICODE
+#    undef PCHAR
+#    define PCHAR PWCHAR
+
+#ifndef __MINGW32__
 #    define ldap_compare_ext(ld,dn,a,v,sc,cc,msg) \
         ldap_compare_extW(ld,dn,a,0,v,sc,cc,msg)
 #    define ldap_search_ext(ld,base,scope,f,a,o,sc,cc,(t),s,msg) \
         ldap_search_extW(ld,base,scope,f,a,o,sc,cc,((PLDAP_TIMEVAL)t)?((PLDAP_TIMEVAL)t)->tv_sec:0,s,msg)
-# if defined (defined (_MSC_VER) && !defined(__MINGW64__)
+# if defined (_MSC_VER) || defined(__MINGW32__)
 #    define ldap_start_tls_s(ld,sc,cc) \
-        ldap_start_tls_sW(ld,0,0,sc,cc)
+        ldap_start_tls_sW(ld,0,0,sc,cc)    
 # endif
+#else
+#    undef ldap_init
+#    undef ldap_search_s
+#    undef ldap_search_ext_s
+#    undef ldap_get_values
+#    undef ldap_get_values_len
+#    undef ldap_memfree
+#    undef ldap_delete_ext
+#    undef ldap_value_free
+#    undef ldap_simple_bind_s
+#    define ldap_compare_ext(ld,dn,a,v,sc,cc,msg) \
+        ldap_compare_extW(ld,dn,a,0,v,sc,cc,msg)
+#    define ldap_search_s(ld,base,scope,f,a,o,sc) \
+        ldap_search_sW(ld,(PCHAR)base,scope,(PCHAR)f,(PCHAR *)a,o,sc)
+#    define ldap_search_ext(ld,base,scope,f,a,o,sc,cc,t,s,msg) \
+        ldap_search_extW(ld,(PCHAR)base,scope,(PCHAR)f,(PCHAR *)a,o,sc,cc,t,s,msg)
+#    define ldap_search_ext_s(ld,base,scope,f,a,o,sc,cc,t,s,msg) \
+        ldap_search_ext_sW(ld,(PCHAR)base,scope,f,(PCHAR *)a,o,sc,cc,t,s,msg)
+#    define ldap_get_values(ld,e,a) ldap_get_valuesW(ld,e,(PCHAR)a)
+#    define ldap_get_values_len(ld,e,a) ldap_get_values_lenW(ld,e,(PCHAR)a)
+#    define ldap_memfree(s) ldap_memfreeW((PCHAR)s)
+#    define ldap_init(h,p) ldap_initW((PCHAR)h,p)
+#    define ldap_delete_ext(ld,base,sc,cc,msg) ldap_delete_extW(ld,(PCHAR)base,sc,cc,msg)
+#    define ldap_value_free(s) ldap_value_freeW((PCHAR *)s)
+#    define ldap_simple_bind_s(ld,base,p) ldap_simple_bind_sW(ld,(PCHAR)base,(PCHAR)p)
+/* #define ldap_search_ext ldap_search_extW
+#define ldap_compare_ext ldap_search_extW
+#define ldap_start_tls_s ldap_start_tls_sW */
+#endif /* __MINGW32__ */
 #  else /* !UNICODE */
 #    define ldap_compare_ext(ld,dn,a,v,sc,cc,msg) \
         ldap_compare_extA(ld,dn,a,0,v,sc,cc,msg)
 #    define ldap_search_ext(ld,base,scope,f,a,o,sc,cc,t,s,msg) \
         ldap_search_extA(ld,base,scope,f,a,o,sc,cc,((PLDAP_TIMEVAL)t)?((PLDAP_TIMEVAL)t)->tv_sec:0,s,msg)
-# ifndef __MINGW32__
+# if defined (_MSC_VER) || defined(__MINGW32__)
 #    define ldap_start_tls_s(ld,sc,cc) \
         ldap_start_tls_sA(ld,0,0,sc,cc)
 # endif
 #  endif /* UNICODE */
 
-#endif
+#endif /* G_OS_WIN32 */
 
 #define d(x)
 
@@ -581,7 +609,11 @@ check_schema_support (EBookBackendLDAP *bl)
 	if (ldap_search_ext_s (bl->priv->ldap, bl->priv->schema_dn, LDAP_SCOPE_BASE,
 			       (PCHAR)"(objectClass=subschema)", (gchar **) attrs, 0,
 			       NULL, NULL, &timeout, LDAP_NO_LIMIT, &resp) == LDAP_SUCCESS) {
+#ifdef UNICODE
+		wchar_t **values;
+#else
 		gchar **values;
+#endif
 
 		values = ldap_get_values (bl->priv->ldap, resp, (PCHAR)"objectClasses");
 		g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
@@ -737,7 +769,11 @@ query_ldap_root_dse (EBookBackendLDAP *bl)
 					(gchar **) attrs, 0, NULL, NULL, &timeout, LDAP_NO_LIMIT, &resp);
 	g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
 	if (ldap_error != LDAP_SUCCESS) {
+#ifdef UNICODE
+		g_warning ("could not perform query on Root DSE (ldap_error 0x%02x/%s)", ldap_error, "Unknown error");
+#else
 		g_warning ("could not perform query on Root DSE (ldap_error 0x%02x/%s)", ldap_error, ldap_err2string (ldap_error) ? ldap_err2string (ldap_error) : "Unknown error");
+#endif
 		return ldap_error;
 	}
 
@@ -1698,7 +1734,7 @@ e_book_backend_ldap_create_contact (EBookBackend *backend,
 		do {
 			book_view_notify_status (bl, book_view, _("Adding contact to LDAP server..."));
 			g_static_rec_mutex_lock (&eds_ldap_handler_lock);
-			err = ldap_add_ext (bl->priv->ldap, create_op->dn, ldap_mods,
+			err = ldap_add_ext (bl->priv->ldap, (PCHAR)create_op->dn, ldap_mods,
 					    NULL, NULL, &create_contact_msgid);
 			g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
 

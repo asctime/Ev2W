@@ -297,6 +297,7 @@ CC = gcc
 <<<<<<< HEAD
 <<<<<<< HEAD
 CCDEPMODE = depmode=gcc3
+<<<<<<< HEAD
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 =======
 CCDEPMODE = depmode=gcc
@@ -310,6 +311,9 @@ CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-depre
 =======
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -std=iso9899:1990 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
 >>>>>>> 0f52cde... (GFunc) cleanup first pass; Fix CFLAGS; Fix C++ style comments
+=======
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -m64 -DUNICODE -D_UNICODE -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions
+>>>>>>> 452e3dc... Backport CVE-2020-16117 fix; -municode flag; misc (GFunc) cleanup
 CPP = gcc -E
 CPPFLAGS = \
 	$(AM_CPPFLAGS)				\

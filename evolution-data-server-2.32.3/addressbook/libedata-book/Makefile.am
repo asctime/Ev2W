@@ -83,7 +83,7 @@ e_addressbook_factory_SOURCES = \
 <<<<<<< HEAD
 <<<<<<< HEAD
 if OS_WIN32
-  e_addressbook_factory_LDFLAGS = -mwindows
+  e_addressbook_factory_LDFLAGS = -mwindows -municode
 endif
 
 e_addressbook_factory_LDADD =					\

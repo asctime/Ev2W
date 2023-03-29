@@ -269,6 +269,7 @@ html_convert (CamelMimeFilter *mime_filter,
 	outend = mime_filter->outbuf + mime_filter->outsize;
 
 	if (priv->flags & CAMEL_MIME_FILTER_TOHTML_PRE && !priv->pre_open) {
+    outptr = check_size (mime_filter, outptr, &outend, 6);
 		outptr = g_stpcpy (outptr, "<pre>");
 		priv->pre_open = TRUE;
 	}

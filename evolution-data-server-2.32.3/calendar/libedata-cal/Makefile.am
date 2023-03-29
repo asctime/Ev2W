@@ -113,7 +113,7 @@ e_calendar_factory_CPPFLAGS = \
 <<<<<<< HEAD
 <<<<<<< HEAD
 if OS_WIN32
-  e_calendar_factory_LDFLAGS = -mwindows
+  e_calendar_factory_LDFLAGS = -mwindows -municode
 endif
 
 e_calendar_factory_LDADD =						\

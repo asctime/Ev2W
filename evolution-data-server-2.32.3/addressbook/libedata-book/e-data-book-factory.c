@@ -572,8 +572,11 @@ on_name_lost (GDBusConnection *connection,
 }
 
 /* * *  NOTE MOVED IN 3.x  * * */
-gint
-main (gint argc, gchar **argv)
+#if defined(G_OS_WIN32) && defined(UNICODE)
+gint wmain (gint argc, gchar **argv)
+#else
+gint main (gint argc, gchar **argv)
+#endif
 {
 	EOfflineListener *eol;
 	EDataBookFactory *factory;
