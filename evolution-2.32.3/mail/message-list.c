@@ -2370,7 +2370,7 @@ message_list_set_shell_backend (MessageList *message_list,
 }
 
 static void
-message_list_init (MessageList *message_list)
+message_list_init (MessageList *message_list, gpointer class_data)
 {
 	MessageListPrivate *p;
 	GtkTargetList *target_list;
@@ -2606,7 +2606,7 @@ message_list_selectable_select_all (ESelectable *selectable)
 }
 
 static void
-message_list_class_init (MessageListClass *class)
+message_list_class_init (MessageListClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkObjectClass *gtk_object_class;
@@ -2674,7 +2674,7 @@ message_list_class_init (MessageListClass *class)
 }
 
 static void
-message_list_selectable_init (ESelectableInterface *interface)
+message_list_selectable_init (ESelectableInterface *interface, gpointer class_data)
 {
 	interface->update_actions = message_list_selectable_update_actions;
 	interface->select_all = message_list_selectable_select_all;
@@ -4366,7 +4366,7 @@ ml_sort_uids_by_tree (MessageList *ml, GPtrArray *uids)
 	g_hash_table_foreach (sort_data.message_infos, (GHFunc) free_message_info_data, &sort_data);
 	g_hash_table_destroy (sort_data.message_infos);
 
-	g_ptr_array_foreach (sort_data.sort_columns, (GFunc) g_free, NULL);
+	g_ptr_array_set_free_func (sort_data.sort_columns, g_free);
 	g_ptr_array_free (sort_data.sort_columns, TRUE);
 
 	e_table_sorting_utils_free_cmp_cache (sort_data.cmp_cache);

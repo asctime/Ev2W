@@ -51,8 +51,8 @@ static void rule_copy(EFilterRule *dest, EFilterRule *src);
 /*static void build_code(EFilterRule *, GString *out);*/
 static GtkWidget *get_widget(EFilterRule *fr, ERuleContext *f);
 
-static void em_vfolder_rule_class_init(EMVFolderRuleClass *klass);
-static void em_vfolder_rule_init(EMVFolderRule *vr);
+static void em_vfolder_rule_class_init(EMVFolderRuleClass *klass, gpointer class_data);
+static void em_vfolder_rule_init(EMVFolderRule *vr, gpointer class_data);
 static void em_vfolder_rule_finalise(GObject *obj);
 
 /* DO NOT internationalise these strings */
@@ -90,7 +90,7 @@ em_vfolder_rule_get_type(void)
 }
 
 static void
-em_vfolder_rule_class_init(EMVFolderRuleClass *klass)
+em_vfolder_rule_class_init(EMVFolderRuleClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	EFilterRuleClass *fr_class =(EFilterRuleClass *)klass;
@@ -110,7 +110,7 @@ em_vfolder_rule_class_init(EMVFolderRuleClass *klass)
 }
 
 static void
-em_vfolder_rule_init(EMVFolderRule *vr)
+em_vfolder_rule_init(EMVFolderRule *vr, gpointer class_data)
 {
 	vr->with = EM_VFOLDER_RULE_WITH_SPECIFIC;
 	vr->rule.source = g_strdup("incoming");
@@ -121,8 +121,7 @@ em_vfolder_rule_finalise(GObject *obj)
 {
 	EMVFolderRule *vr =(EMVFolderRule *)obj;
 
-	g_list_foreach(vr->sources, (GFunc)g_free, NULL);
-	g_list_free(vr->sources);
+	g_list_free_full(vr->sources, g_free);
 
         G_OBJECT_CLASS(parent_class)->finalize(obj);
 }
@@ -347,8 +346,7 @@ rule_copy(EFilterRule *dest, EFilterRule *src)
 	vsrc =(EMVFolderRule *)src;
 
 	if (vdest->sources) {
-		g_list_foreach(vdest->sources, (GFunc)g_free, NULL);
-		g_list_free(vdest->sources);
+		g_list_free_full(vdest->sources, g_free);
 		vdest->sources = NULL;
 	}
 

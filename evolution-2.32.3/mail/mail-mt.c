@@ -32,6 +32,11 @@
 #include "e-util/e-alert-dialog.h"
 
 #include "mail-mt.h"
+#ifdef __MINGW32__
+#include <stdarg.h>
+#undef G_VA_COPY
+#define G_VA_COPY(d,s)	__builtin_va_copy(d,s)
+#endif
 
 /*#define MALLOC_CHECK*/
 #define d(x)

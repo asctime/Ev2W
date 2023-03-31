@@ -95,8 +95,7 @@ emfh_free_item(struct _EMFormatHookItem *item)
 static void
 emfh_free_group(struct _EMFormatHookGroup *group)
 {
-	g_slist_foreach(group->items, (GFunc)emfh_free_item, NULL);
-	g_slist_free(group->items);
+	g_slist_free_full(group->items, (GDestroyNotify)emfh_free_item);
 
 	g_free(group->id);
 	g_free(group);
@@ -237,14 +236,13 @@ emfh_finalise(GObject *o)
 {
 	EPluginHook *eph = (EPluginHook *)o;
 
-	g_slist_foreach(emfh->groups, (GFunc)emfh_free_group, NULL);
-	g_slist_free(emfh->groups);
+	g_slist_free_full(emfh->groups, (GDestroyNotify)emfh_free_group);
 
 	((GObjectClass *)emfh_parent_class)->finalize(o);
 }
 
 static void
-emfh_class_init(EPluginHookClass *klass)
+emfh_class_init(EPluginHookClass *klass, gpointer class_data)
 {
 	((GObjectClass *)klass)->finalize = emfh_finalise;
 	klass->construct = emfh_construct;

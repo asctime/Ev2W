@@ -61,7 +61,7 @@ efhp_is_inline (EMFormat *emf,
 }
 
 static void
-efhp_class_init (EMFormatHTMLPrintClass *class)
+efhp_class_init (EMFormatHTMLPrintClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EMFormatClass *format_class;
@@ -76,7 +76,7 @@ efhp_class_init (EMFormatHTMLPrintClass *class)
 }
 
 static void
-efhp_init (GObject *o)
+efhp_init (GObject *o, gpointer class_data)
 {
 	EMFormatHTMLPrint *efhp = (EMFormatHTMLPrint *)o;
 	EWebView *web_view;

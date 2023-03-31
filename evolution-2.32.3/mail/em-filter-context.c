@@ -38,8 +38,8 @@
 
 #define d(x)
 
-static void em_filter_context_class_init(EMFilterContextClass *klass);
-static void em_filter_context_init(EMFilterContext *fc);
+static void em_filter_context_class_init(EMFilterContextClass *klass, gpointer class_data);
+static void em_filter_context_init(EMFilterContext *fc, gpointer class_data);
 static void em_filter_context_finalise(GObject *obj);
 
 static GList *filter_rename_uri(ERuleContext *rc, const gchar *olduri, const gchar *newuri, GCompareFunc cmp);
@@ -73,7 +73,7 @@ em_filter_context_get_type(void)
 }
 
 static void
-em_filter_context_class_init(EMFilterContextClass *klass)
+em_filter_context_class_init(EMFilterContextClass *klass, gpointer class_init)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	ERuleContextClass *rc_class = E_RULE_CONTEXT_CLASS(klass);
@@ -89,7 +89,7 @@ em_filter_context_class_init(EMFilterContextClass *klass)
 }
 
 static void
-em_filter_context_init(EMFilterContext *fc)
+em_filter_context_init(EMFilterContext *fc, gpointer class_data)
 {
 	e_rule_context_add_part_set((ERuleContext *) fc, "partset", e_filter_part_get_type(),
 				   e_rule_context_add_part, e_rule_context_next_part);
@@ -106,8 +106,7 @@ em_filter_context_finalise(GObject *obj)
 {
 	EMFilterContext *fc = (EMFilterContext *)obj;
 
-	g_list_foreach(fc->actions, (GFunc)g_object_unref, NULL);
-	g_list_free(fc->actions);
+	g_list_free_full(fc->actions, g_object_unref);
 
         G_OBJECT_CLASS(parent_class)->finalize(obj);
 }

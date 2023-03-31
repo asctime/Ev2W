@@ -50,7 +50,7 @@ search_context_new_element (ERuleContext *context,
 }
 
 static void
-search_context_class_init (EMSearchContextClass *class)
+search_context_class_init (EMSearchContextClass *class, gpointer class_data)
 {
 	ERuleContextClass *rule_context_class;
 
@@ -61,7 +61,7 @@ search_context_class_init (EMSearchContextClass *class)
 }
 
 static void
-search_context_init (EMSearchContext *vc)
+search_context_init (EMSearchContext *vc, gpointer class_init)
 {
 	ERuleContext *rule_context;
 

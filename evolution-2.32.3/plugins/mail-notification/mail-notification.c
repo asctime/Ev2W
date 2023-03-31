@@ -698,7 +698,18 @@ do_play_sound (gboolean beep, gboolean use_theme, const gchar *file)
 			NULL);
 #elif defined (__MINGW32__)
 		if (file && *file) {
-    PlaySound(TEXT(file), NULL, SND_FILENAME | SND_ASYNC);
+#ifdef UNICODE
+    /* PlaySoundW(LTEXT(file), NULL, SND_FILENAME | SND_ASYNC); */
+		gunichar2 *wavfile_utf16 = g_utf8_to_utf16 (file, -1, NULL, NULL, NULL);
+		if (wavfile_utf16 != NULL)
+		{
+			PlaySoundW (wavfile_utf16, NULL, SND_NODEFAULT | SND_FILENAME | SND_ASYNC);
+
+			g_free (wavfile_utf16);
+		}
+#else
+    PlaySoundA(TEXT(file), NULL, SND_FILENAME | SND_ASYNC);
+#endif
   }
 #endif
 	}

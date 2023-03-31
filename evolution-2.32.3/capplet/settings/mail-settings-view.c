@@ -291,8 +291,8 @@ mail_settings_view_activate (MailSettingsView *mcv, GtkWidget *tree, GtkWidget *
 {
 	 if (!check_mail || !sort_by)
 		  return;
-	 //if (!GTK_WIDGET_VISIBLE(folder_tree))
-	 //	 gtk_widget_show (slider);
+	 /*if (!GTK_WIDGET_VISIBLE(folder_tree))
+	 //	 gtk_widget_show (slider);             */
 	 gtk_widget_set_sensitive (check_mail, TRUE);
 	 gtk_widget_set_sensitive (sort_by, FALSE);
 }

@@ -1829,8 +1829,7 @@ search_address_in_addressbooks (const gchar *address, gboolean local_only, gbool
 					found = TRUE;
 				}
 
-				g_list_foreach (contacts, (GFunc)g_object_unref, NULL);
-				g_list_free (contacts);
+				g_list_free_full (contacts, g_object_unref);
 			}
 		} else if (book) {
 			stop = stop || (err && g_error_matches (err, E_BOOK_ERROR, E_BOOK_ERROR_CANCELLED));
@@ -1856,8 +1855,7 @@ search_address_in_addressbooks (const gchar *address, gboolean local_only, gbool
 		}
 	}
 
-	g_slist_foreach (addr_sources, (GFunc) g_object_unref, NULL);
-	g_slist_free (addr_sources);
+	g_slist_free_full (addr_sources, g_object_unref);
 
 	e_book_query_unref (query);
 
@@ -2083,8 +2081,7 @@ emu_free_mail_cache (void)
 
 	G_LOCK (photos_cache);
 
-	g_slist_foreach (photos_cache, (GFunc) emu_free_photo_info, NULL);
-	g_slist_free (photos_cache);
+	g_slist_free_full (photos_cache, (GDestroyNotify)emu_free_photo_info);
 	photos_cache = NULL;
 
 	G_UNLOCK (photos_cache);

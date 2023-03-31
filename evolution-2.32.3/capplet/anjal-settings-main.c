@@ -93,8 +93,8 @@ mail_message_received_cb (UniqueApp         *app G_GNUC_UNUSED,
 		  url = unique_message_data_get_text (message_data);
 		  args[0] = url;
 		  args[1] = NULL;
-		  //mail_shell_set_cmdline_args ((MailShell *)window, args);
-		  //mail_shell_handle_cmdline ((MailShell *)window);
+		  /* mail_shell_set_cmdline_args ((MailShell *)window, args);
+		  /* mail_shell_handle_cmdline ((MailShell *)window);      */
 		  g_free (url);
 		  gdk_window_raise (gtk_widget_get_window (GTK_WIDGET (window)));
 		  gtk_window_deiconify (window);

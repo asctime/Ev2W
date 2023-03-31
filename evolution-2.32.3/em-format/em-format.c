@@ -324,7 +324,7 @@ emf_base_init (EMFormatClass *class)
 }
 
 static void
-emf_class_init (EMFormatClass *class)
+emf_class_init (EMFormatClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -351,7 +351,7 @@ emf_class_init (EMFormatClass *class)
 }
 
 static void
-emf_init (EMFormat *emf)
+emf_init (EMFormat *emf, gpointer class_data)
 {
 	EShell *shell;
 	EShellSettings *shell_settings;

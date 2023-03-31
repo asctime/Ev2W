@@ -64,7 +64,7 @@ folder_selector_destroy (GtkObject *object)
 }
 
 static void
-folder_selector_class_init (EMFolderSelectorClass *class)
+folder_selector_class_init (EMFolderSelectorClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkObjectClass *gtk_object_class;
@@ -79,7 +79,7 @@ folder_selector_class_init (EMFolderSelectorClass *class)
 }
 
 static void
-folder_selector_init (EMFolderSelector *emfs)
+folder_selector_init (EMFolderSelector *emfs, gpointer class_data)
 {
 	emfs->selected_path = NULL;
 	emfs->selected_uri = NULL;

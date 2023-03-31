@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+  <e-plugin type="shlib" location="/MSYS2/mingw64/lib/evolution/2.32/plugins/liborg-gnome-pst-import.dll" id="org.gnome.evolution.plugin.pst.import" name="Outlook PST import">
+    <description>Import Outlook messages from PST file</description>
+    <author name="Bharath Acharya" email="abharath@novell.com"/>
+    <author name="Chris Halls" email="chris.halls@credativ.co.uk"/>
+    <hook class="org.gnome.evolution.import:1.0">
+        <importer target="uri" supported="org_credativ_evolution_readpst_supported" import="org_credativ_evolution_readpst_import" get-widget="org_credativ_evolution_readpst_getwidget" cancel="org_credativ_evolution_readpst_cancel" name="Outlook personal folders (.pst)">
+	</importer>
+    </hook>
+  </e-plugin> 
+</e-plugin-list>

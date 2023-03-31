@@ -586,7 +586,7 @@ efhd_format_secure (EMFormat *emf,
 }
 
 static void
-efhd_class_init (EMFormatHTMLDisplayClass *class)
+efhd_class_init (EMFormatHTMLDisplayClass *class, gpointer class_data)
 {
 	EMFormatClass *format_class;
 	EMFormatHTMLClass *format_html_class;
@@ -607,7 +607,7 @@ efhd_class_init (EMFormatHTMLDisplayClass *class)
 }
 
 static void
-efhd_init (EMFormatHTMLDisplay *efhd)
+efhd_init (EMFormatHTMLDisplay *efhd, gpointer class_data)
 {
 	EWebView *web_view;
 

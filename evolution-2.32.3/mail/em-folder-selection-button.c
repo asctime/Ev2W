@@ -178,8 +178,7 @@ folder_selection_button_finalize (GObject *object)
 
 	priv = EM_FOLDER_SELECTION_BUTTON_GET_PRIVATE (object);
 
-	g_list_foreach (priv->uris, (GFunc) g_free, NULL);
-	g_list_free (priv->uris);
+	g_list_free_full (priv->uris, g_free);
 
 	g_free (priv->title);
 	g_free (priv->caption);
@@ -255,7 +254,7 @@ exit:
 }
 
 static void
-folder_selection_button_class_init (EMFolderSelectionButtonClass *class)
+folder_selection_button_class_init (EMFolderSelectionButtonClass *class, gpointer class_init)
 {
 	GObjectClass *object_class;
 	GtkButtonClass *button_class;
@@ -315,7 +314,7 @@ folder_selection_button_class_init (EMFolderSelectionButtonClass *class)
 }
 
 static void
-folder_selection_button_init (EMFolderSelectionButton *emfsb)
+folder_selection_button_init (EMFolderSelectionButton *emfsb, gpointer class_init)
 {
 	GtkWidget *box;
 
@@ -455,8 +454,7 @@ em_folder_selection_button_set_selection_mult (EMFolderSelectionButton *button,
 
 	g_return_if_fail (EM_IS_FOLDER_SELECTION_BUTTON (button));
 
-	g_list_foreach (button->priv->uris, (GFunc) g_free, NULL);
-	g_list_free (button->priv->uris);
+	g_list_free_full (button->priv->uris, g_free);
 
 	button->priv->uris = uris;
 

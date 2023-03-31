@@ -153,8 +153,7 @@ gconf_jh_headers_changed (GConfClient *client, guint cnxn_id,
 	GSList *node;
 	GPtrArray *name, *value;
 
-	g_slist_foreach (config->jh_header, (GFunc) g_free, NULL);
-	g_slist_free (config->jh_header);
+	g_slist_free_full (config->jh_header, g_free);
 
 	config->jh_header = gconf_client_get_list (config->gconf, "/apps/evolution/mail/junk/custom_header", GCONF_VALUE_STRING, NULL);
 
@@ -170,8 +169,8 @@ gconf_jh_headers_changed (GConfClient *client, guint cnxn_id,
 	}
 	mail_session_set_junk_headers ((const gchar **)name->pdata, (const gchar **)value->pdata, name->len);
 
-	g_ptr_array_foreach (name, (GFunc) g_free, NULL);
-	g_ptr_array_foreach (value, (GFunc) g_free, NULL);
+	g_ptr_array_set_free_func (name, g_free);
+	g_ptr_array_set_free_func (value, g_free);
 	g_ptr_array_free (name, TRUE);
 	g_ptr_array_free (value, TRUE);
 }

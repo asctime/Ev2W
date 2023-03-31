@@ -40,7 +40,7 @@ static EFilterElement *vfolder_new_element(ERuleContext *rc, const gchar *type);
 static ERuleContextClass *parent_class = NULL;
 
 static void
-em_vfolder_context_class_init (EMVFolderContextClass *klass)
+em_vfolder_context_class_init (EMVFolderContextClass *klass, gpointer class_data)
 {
 	parent_class = g_type_class_ref(E_TYPE_RULE_CONTEXT);
 
@@ -48,7 +48,7 @@ em_vfolder_context_class_init (EMVFolderContextClass *klass)
 }
 
 static void
-em_vfolder_context_init (EMVFolderContext *vc)
+em_vfolder_context_init (EMVFolderContext *vc, gpointer class_data)
 {
 	e_rule_context_add_part_set (
 		(ERuleContext *) vc, "partset", E_TYPE_FILTER_PART,

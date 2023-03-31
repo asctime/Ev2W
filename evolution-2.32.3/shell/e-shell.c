@@ -336,8 +336,7 @@ shell_ready_for_quit (EShell *shell,
 	 * watched window will modify the watched windows list, which
 	 * would derail the iteration. */
 	list = g_list_copy (e_shell_get_watched_windows (shell));
-	g_list_foreach (list, (GFunc) gtk_widget_destroy, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)gtk_widget_destroy);
 }
 
 static void
@@ -661,8 +660,7 @@ shell_finalize (GObject *object)
 	if (!unique_app_is_running (UNIQUE_APP (object)))
 		e_file_lock_destroy ();
 
-	g_list_foreach (priv->loaded_backends, (GFunc) g_object_unref, NULL);
-	g_list_free (priv->loaded_backends);
+	g_list_free_full (priv->loaded_backends, g_object_unref);
 
 	g_free (priv->geometry);
 	g_free (priv->module_directory);
@@ -1279,8 +1277,7 @@ e_shell_load_modules (EShell *shell)
 	g_return_if_fail (module_directory != NULL);
 
 	list = e_module_load_all_in_directory (module_directory);
-	g_list_foreach (list, (GFunc) g_type_module_unuse, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)g_type_module_unuse);
 
 	/* Process shell backends. */
 

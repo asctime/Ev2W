@@ -239,7 +239,11 @@ cp (const gchar *src, const gchar *dest, gboolean show_progress, gint mode)
 	gssize nread, nwritten;
 	gint errnosav, readfd, writefd;
 	gsize total = 0;
+#ifdef __MINGW64__
+	struct _stat64 st;
+#else
 	struct stat st;
+#endif
 	struct utimbuf ut;
 
 	/* if the dest file exists and has content, abort - we don't
@@ -473,12 +477,10 @@ em_update_message_notify_settings_2_21 (void)
 			}
 		}
 
-		g_slist_foreach (plugins, (GFunc)g_object_unref, NULL);
-		g_slist_free (plugins);
+		g_slist_free_full (plugins, g_object_unref);
 	}
 
-	g_slist_foreach (list, (GFunc) g_free, NULL);
-	g_slist_free (list);
+	g_slist_free_full (list, g_free);
 
 	val = gconf_client_get_int (client, "/apps/evolution/mail/notify/type", NULL);
 	gconf_client_set_bool (client, "/apps/evolution/eplugin/mail-notification/sound-enabled", val == 1 || val == 2, NULL);
@@ -761,8 +763,7 @@ em_ensure_proxy_ignore_hosts_being_list (void)
 		gconf_client_unset (client, key, NULL);
 		gconf_client_set_list (client, key, GCONF_VALUE_STRING, lst, &error);
 
-		g_slist_foreach (lst, (GFunc) g_free, NULL);
-		g_slist_free (lst);
+		g_slist_free_full (lst, g_free);
 		g_free (value);
 
 		if (error) {
@@ -783,7 +784,11 @@ e_mail_migrate (EShellBackend *shell_backend,
                 gint micro,
                 GError **error)
 {
+#ifdef __MINGW64__
+	struct _stat64 st;
+#else
 	struct stat st;
+#endif
 	const gchar *data_dir;
 
 	/* make sure ~/.evolution/mail exists */

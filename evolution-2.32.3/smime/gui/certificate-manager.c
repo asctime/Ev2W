@@ -503,8 +503,7 @@ import_contact (GtkWidget *widget, CertificateManagerData *cfm)
 		}
 
 		g_free (filename);
-		g_slist_foreach (imported_certs, (GFunc) g_object_unref, NULL);
-		g_slist_free (imported_certs);
+		g_slist_free_full (imported_certs, g_object_unref);
 	} else
 		gtk_widget_destroy (filesel);
 }
@@ -737,8 +736,7 @@ import_ca (GtkWidget *widget, CertificateManagerData *cfm)
 			report_and_free_error (cfm, _("Failed to import certificate authority's certificate"), error);
 		}
 
-		g_slist_foreach (imported_certs, (GFunc) g_object_unref, NULL);
-		g_slist_free (imported_certs);
+		g_slist_free_full (imported_certs, g_object_unref);
 		g_free (filename);
 	} else
 		gtk_widget_destroy (filesel);

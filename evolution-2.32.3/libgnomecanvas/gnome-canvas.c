@@ -1561,7 +1561,7 @@ gnome_canvas_group_destroy (GtkObject *object)
 	group = GNOME_CANVAS_GROUP (object);
 
 	while (group->item_list) {
-		// child is unref'ed by the child's group_remove ().
+		/* child is unref'ed by the child's group_remove (). */
 		gtk_object_destroy (GTK_OBJECT (group->item_list->data));
 	}
 

@@ -1151,7 +1151,7 @@ mail_account_view_activate (MailAccountView *mcv, GtkWidget *tree, GtkWidget *fo
 {
 	 if (!check_mail || !sort_by)
 		  return;
-	 //gtk_widget_hide (folder_tree);
+	 /* gtk_widget_hide (folder_tree);         */
 	 gtk_widget_set_sensitive (check_mail, TRUE);
 	 gtk_widget_set_sensitive (sort_by, FALSE);
 }

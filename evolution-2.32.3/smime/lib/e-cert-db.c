@@ -511,7 +511,7 @@ install_loadable_roots (void)
 }
 
 static void
-e_cert_db_class_init (ECertDBClass *klass)
+e_cert_db_class_init (ECertDBClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -557,7 +557,7 @@ e_cert_db_class_init (ECertDBClass *klass)
 }
 
 static void
-e_cert_db_init (ECertDB *ec)
+e_cert_db_init (ECertDB *ec, gpointer class_data)
 {
 	ec->priv = g_new0 (ECertDBPrivate, 1);
 }
@@ -1053,8 +1053,7 @@ e_cert_db_import_certs (ECertDB *certdb,
 		cert = e_cert_new_from_der ((gchar *)currItem->data, currItem->len);
 		if (!cert) {
 			set_nss_error (error);
-			g_list_foreach (certs, (GFunc)g_object_unref, NULL);
-			g_list_free (certs);
+			g_list_free_full (certs, g_object_unref);
 			PORT_FreeArena(arena, PR_FALSE);
 			return FALSE;
 		}
@@ -1085,8 +1084,7 @@ e_cert_db_import_certs (ECertDB *certdb,
 		rv = FALSE;
 	}
 
-	g_list_foreach (certs, (GFunc)g_object_unref, NULL);
-	g_list_free (certs);
+	g_list_free_full (certs, g_object_unref);
 	PORT_FreeArena(arena, PR_FALSE);
 	return rv;
 }

@@ -54,7 +54,7 @@ vfolder_editor_create_rule (ERuleEditor *rule_editor)
 }
 
 static void
-vfolder_editor_class_init (EMVFolderEditorClass *class)
+vfolder_editor_class_init (EMVFolderEditorClass *class, gpointer class_data)
 {
 	ERuleEditorClass *rule_editor_class;
 
@@ -65,7 +65,7 @@ vfolder_editor_class_init (EMVFolderEditorClass *class)
 }
 
 static void
-vfolder_editor_init (EMVFolderEditor *vfolder_editor)
+vfolder_editor_init (EMVFolderEditor *vfolder_editor, gpointer class_data)
 {
 	GConfBridge *bridge;
 	const gchar *key_prefix;

@@ -358,7 +358,7 @@ folder_tree_model_finalize (GObject *object)
 }
 
 static void
-folder_tree_model_class_init (EMFolderTreeModelClass *class)
+folder_tree_model_class_init (EMFolderTreeModelClass *class, gpointer class_init)
 {
 	GObjectClass *object_class;
 
@@ -471,7 +471,7 @@ folder_tree_model_set_unread_count (EMFolderTreeModel *model,
 }
 
 static void
-folder_tree_model_init (EMFolderTreeModel *model)
+folder_tree_model_init (EMFolderTreeModel *model, gpointer class_data)
 {
 	GHashTable *store_index;
 	GHashTable *uri_index;

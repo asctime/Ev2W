@@ -277,8 +277,7 @@ vfolder_adduri_done(struct _adduri_msg *m)
 static void
 vfolder_adduri_free (struct _adduri_msg *m)
 {
-	g_list_foreach(m->folders, (GFunc)g_object_unref, NULL);
-	g_list_free(m->folders);
+	g_list_free_full(m->folders, g_object_unref);
 	g_free(m->uri);
 }
 

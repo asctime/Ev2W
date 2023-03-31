@@ -382,7 +382,7 @@ e_sens_network_listener_connectionmadenoqocinfo (ISensNetwork *This,
                                                  BSTR          bstrConnection,
                                                  ULONG         ulType)
 {
-	//Always followed by ConnectionMade
+	/*  Always followed by ConnectionMade  */
 	return S_OK;
 }
 

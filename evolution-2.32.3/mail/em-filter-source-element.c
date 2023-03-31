@@ -36,8 +36,8 @@
 
 #include "filter/e-filter-part.h"
 
-static void em_filter_source_element_class_init(EMFilterSourceElementClass *klass);
-static void em_filter_source_element_init(EMFilterSourceElement *fs);
+static void em_filter_source_element_class_init(EMFilterSourceElementClass *klass, gpointer class_data);
+static void em_filter_source_element_init(EMFilterSourceElement *fs, gpointer class_data);
 static void em_filter_source_element_finalize(GObject *obj);
 
 static gint source_eq(EFilterElement *fe, EFilterElement *cm);
@@ -92,7 +92,7 @@ em_filter_source_element_get_type(void)
 }
 
 static void
-em_filter_source_element_class_init(EMFilterSourceElementClass *klass)
+em_filter_source_element_class_init(EMFilterSourceElementClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	EFilterElementClass *fe_class = E_FILTER_ELEMENT_CLASS(klass);
@@ -113,7 +113,7 @@ em_filter_source_element_class_init(EMFilterSourceElementClass *klass)
 }
 
 static void
-em_filter_source_element_init(EMFilterSourceElement *fs)
+em_filter_source_element_init(EMFilterSourceElement *fs, gpointer class_data)
 {
 	fs->priv = g_new(struct _EMFilterSourceElementPrivate, 1);
 	fs->priv->sources = NULL;

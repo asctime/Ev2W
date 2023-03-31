@@ -56,7 +56,7 @@ filter_editor_create_rule (ERuleEditor *rule_editor)
 }
 
 static void
-filter_editor_class_init (EMFilterEditorClass *class)
+filter_editor_class_init (EMFilterEditorClass *class, gpointer class_data)
 {
 	ERuleEditorClass *rule_editor_class;
 
@@ -67,7 +67,7 @@ filter_editor_class_init (EMFilterEditorClass *class)
 }
 
 static void
-filter_editor_init (EMFilterEditor *filter_editor)
+filter_editor_init (EMFilterEditor *filter_editor, gpointer class_data)
 {
 	GConfBridge *bridge;
 	const gchar *key_prefix;
@@ -134,8 +134,7 @@ free_sources (gpointer data)
 {
 	GSList *sources = data;
 
-	g_slist_foreach (sources, (GFunc)g_free, NULL);
-	g_slist_free (sources);
+	g_slist_free_full (sources, g_free);
 }
 
 static void

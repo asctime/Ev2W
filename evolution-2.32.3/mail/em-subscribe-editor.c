@@ -234,8 +234,7 @@ sub_unref(EMSubscribe *sub)
 		if (sub->folders)
 			g_hash_table_destroy(sub->folders);
 		g_slist_free (sub->all_selectable);
-		g_slist_foreach (sub->tree_expanded_paths, (GFunc) gtk_tree_path_free, NULL);
-		g_slist_free (sub->tree_expanded_paths);
+		g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
 		l = sub->info_list;
 		while (l) {
 			GSList *n = l->next;
@@ -805,8 +804,7 @@ sub_editor_refresh(GtkWidget *w, EMSubscribeEditor *se)
 	g_slist_free (sub->all_selectable);
 	sub->all_selectable = NULL;
 
-	g_slist_foreach (sub->tree_expanded_paths, (GFunc) gtk_tree_path_free, NULL);
-	g_slist_free (sub->tree_expanded_paths);
+	g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
 	sub->tree_expanded_paths = NULL;
 
 	gtk_tree_store_clear ((GtkTreeStore *)sub->tree_store);
@@ -983,8 +981,7 @@ change_filtering_models (EMSubscribeEditor *se, gboolean turn_on)
 
 		if (sub->widget && sub->tree) {
 			if (turn_on) {
-				g_slist_foreach (sub->tree_expanded_paths, (GFunc) gtk_tree_path_free, NULL);
-				g_slist_free (sub->tree_expanded_paths);
+				g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
 				sub->tree_expanded_paths = NULL;
 
 				gtk_tree_view_map_expanded_rows (sub->tree, store_expanded_rows_cb, &sub->tree_expanded_paths);
@@ -995,8 +992,7 @@ change_filtering_models (EMSubscribeEditor *se, gboolean turn_on)
 				gtk_tree_view_set_model (sub->tree, sub->tree_store);
 
 				g_slist_foreach (sub->tree_expanded_paths, (GFunc) expand_to_path_cb, sub->tree);
-				g_slist_foreach (sub->tree_expanded_paths, (GFunc) gtk_tree_path_free, NULL);
-				g_slist_free (sub->tree_expanded_paths);
+				g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
 				sub->tree_expanded_paths = NULL;
 			}
 

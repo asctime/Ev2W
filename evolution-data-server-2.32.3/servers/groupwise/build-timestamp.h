@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const char *build_timestamp = "Evolution-Data-Server-2.32-2023-03-20";
 =======
 const char *build_timestamp = "Evolution-Data-Server-2.32-2023-02-25";
@@ -15,3 +16,6 @@ const char *build_timestamp = "Evolution-Data-Server-2.32-2023-03-20";
 =======
 const char *build_timestamp = "Evolution-Data-Server-2.32-2023-03-29";
 >>>>>>> 452e3dc... Backport CVE-2020-16117 fix; -municode flag; misc (GFunc) cleanup
+=======
+const char *build_timestamp = "Evolution-Data-Server-2.32-2023-03-31";
+>>>>>>> f32db13... (GFunc) cleanup forth pass; -DUNICODE -D_GNU_SOURCE -std=iso9899:1990

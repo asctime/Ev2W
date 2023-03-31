@@ -323,6 +323,7 @@ connect_to_server (CamelService *service,
 			transport->connected = FALSE;
 			goto exception_cleanup;
 		}
+    printf ("SMTP TLS Initial response: \"%s\" .\r\n", respbuf);
 		if (strncmp (respbuf, "220", 3) != 0) {
 			smtp_set_error (transport, respbuf, error);
 			g_prefix_error (error, _("STARTTLS command failed: "));

@@ -111,7 +111,7 @@ typedef struct {
 
 	gchar *uri;
 	gint dbx_fd;
-	//	dbx_file dbx;
+	/*	dbx_file dbx;  */
 
 	CamelOperation *cancel;
 	CamelFolder *folder;

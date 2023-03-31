@@ -36,7 +36,7 @@ static GObjectClass *eme_parent;
 static ESEvent *es_event;
 
 static void
-eme_init (GObject *o)
+eme_init (GObject *o, gpointer class_data)
 {
 	/*ESEvent *eme = (ESEvent *)o; */
 }
@@ -62,7 +62,7 @@ eme_target_free (EEvent *ep, EEventTarget *t)
 }
 
 static void
-eme_class_init (GObjectClass *klass)
+eme_class_init (GObjectClass *klass, gpointer class_data)
 {
 	klass->finalize = eme_finalise;
 	((EEventClass *)klass)->target_free = eme_target_free;
@@ -193,7 +193,7 @@ emeh_finalise (GObject *o)
 }
 
 static void
-emeh_class_init (EPluginHookClass *klass)
+emeh_class_init (EPluginHookClass *klass, gpointer class_data)
 {
 	gint i;
 

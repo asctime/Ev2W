@@ -29,6 +29,10 @@
 #include "art_bpath.h"
 #include "art_vpath.h"
 
+#ifndef hypot
+#define hypot _hypot
+#endif
+
 /* p must be allocated 2^level points. */
 
 /* level must be >= 1 */

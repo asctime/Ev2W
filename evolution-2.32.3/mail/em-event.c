@@ -36,7 +36,7 @@ static GObjectClass *eme_parent;
 static EMEvent *em_event;
 
 static void
-eme_init(GObject *o)
+eme_init(GObject *o, gpointer class_data)
 {
 	/*EMEvent *eme = (EMEvent *)o; */
 }
@@ -82,7 +82,7 @@ eme_target_free(EEvent *ep, EEventTarget *t)
 }
 
 static void
-eme_class_init(GObjectClass *klass)
+eme_class_init(GObjectClass *klass, gpointer class_data)
 {
 	klass->finalize = eme_finalise;
 	((EEventClass *)klass)->target_free = eme_target_free;

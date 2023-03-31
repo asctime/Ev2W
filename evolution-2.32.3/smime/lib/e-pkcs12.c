@@ -103,7 +103,7 @@ e_pkcs12_dispose (GObject *object)
 }
 
 static void
-e_pkcs12_class_init (EPKCS12Class *klass)
+e_pkcs12_class_init (EPKCS12Class *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -115,7 +115,7 @@ e_pkcs12_class_init (EPKCS12Class *klass)
 }
 
 static void
-e_pkcs12_init (EPKCS12 *ec)
+e_pkcs12_init (EPKCS12 *ec, gpointer class_data)
 {
 	ec->priv = g_new0 (EPKCS12Private, 1);
 }

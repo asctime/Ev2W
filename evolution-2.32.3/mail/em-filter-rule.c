@@ -43,8 +43,8 @@ static void rule_copy(EFilterRule *dest, EFilterRule *src);
 /*static void build_code(EFilterRule *, GString *out);*/
 static GtkWidget *get_widget(EFilterRule *fr, ERuleContext *rc);
 
-static void em_filter_rule_class_init(EMFilterRuleClass *klass);
-static void em_filter_rule_init(EMFilterRule *ff);
+static void em_filter_rule_class_init(EMFilterRuleClass *klass, gpointer class_data);
+static void em_filter_rule_init(EMFilterRule *ff, gpointer class_data);
 static void em_filter_rule_finalise(GObject *obj);
 
 static EFilterRuleClass *parent_class = NULL;
@@ -74,7 +74,7 @@ em_filter_rule_get_type(void)
 }
 
 static void
-em_filter_rule_class_init(EMFilterRuleClass *klass)
+em_filter_rule_class_init(EMFilterRuleClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	EFilterRuleClass *fr_class =(EFilterRuleClass *)klass;
@@ -94,7 +94,7 @@ em_filter_rule_class_init(EMFilterRuleClass *klass)
 }
 
 static void
-em_filter_rule_init(EMFilterRule *ff)
+em_filter_rule_init(EMFilterRule *ff, gpointer class_data)
 {
 	;
 }
@@ -294,8 +294,7 @@ rule_copy(EFilterRule *dest, EFilterRule *src)
 	fsrc =(EMFilterRule *)src;
 
 	if (fdest->actions) {
-		g_list_foreach(fdest->actions, (GFunc)g_object_unref, NULL);
-		g_list_free(fdest->actions);
+		g_list_free_full(fdest->actions, g_object_unref);
 		fdest->actions = NULL;
 	}
 

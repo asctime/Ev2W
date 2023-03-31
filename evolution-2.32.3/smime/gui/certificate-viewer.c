@@ -169,8 +169,7 @@ populate_fields_tree (CertificateViewerData *cvm_data, EASN1Object *asn1, GtkTre
 				populate_fields_tree (cvm_data, subasn1, &new_iter);
 			}
 		}
-		g_list_foreach (children, (GFunc)g_object_unref, NULL);
-		g_list_free (children);
+		g_list_free_full (children, g_object_unref);
 	}
 }
 

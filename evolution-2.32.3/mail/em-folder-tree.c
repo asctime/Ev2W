@@ -554,8 +554,7 @@ folder_tree_clear_selected_list(EMFolderTree *folder_tree)
 {
 	EMFolderTreePrivate *priv = folder_tree->priv;
 
-	g_slist_foreach(priv->select_uris, (GFunc) folder_tree_free_select_uri, NULL);
-	g_slist_free(priv->select_uris);
+	g_slist_free_full(priv->select_uris, (GDestroyNotify)folder_tree_free_select_uri);
 	g_hash_table_destroy(priv->select_uris_table);
 	priv->select_uris = NULL;
 	priv->select_uris_table = g_hash_table_new(g_str_hash, g_str_equal);
@@ -689,8 +688,7 @@ exit:
 	g_free (full_name);
 	g_free (uri);
 
-	g_list_foreach (list, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
 }
 
 static void
@@ -956,7 +954,7 @@ folder_tree_row_expanded (GtkTreeView *tree_view,
 }
 
 static void
-folder_tree_class_init (EMFolderTreeClass *class)
+folder_tree_class_init (EMFolderTreeClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkObjectClass *gtk_object_class;
@@ -1300,7 +1298,7 @@ em_folder_tree_construct (EMFolderTree *folder_tree)
 }
 
 static void
-folder_tree_init (EMFolderTree *folder_tree)
+folder_tree_init (EMFolderTree *folder_tree, gpointer class_data)
 {
 	GtkTreeView *tree_view;
 	GtkTreeSelection *selection;
@@ -1416,7 +1414,7 @@ folder_tree_selectable_func (select_all);
 #undef folder_tree_selectable_func
 
 static void
-folder_tree_selectable_init (ESelectableInterface *interface)
+folder_tree_selectable_init (ESelectableInterface *interface, gpointer class_data)
 {
 	interface->update_actions = folder_tree_selectable_update_actions;
 	interface->cut_clipboard = folder_tree_selectable_cut_clipboard;

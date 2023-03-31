@@ -124,7 +124,7 @@ plugin_python_invoke (EPlugin *plugin,
 
 		priv->pModule = PyImport_Import (pModuleName);
 
-		Py_DECREF (pModuleName); //Free
+		Py_DECREF (pModuleName); /*  Free  */
 
 		if (priv->pModule == NULL) {
 			PyErr_Print ();

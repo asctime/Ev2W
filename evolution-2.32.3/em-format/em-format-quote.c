@@ -154,7 +154,7 @@ emfq_base_init (EMFormatQuoteClass *class)
 }
 
 static void
-emfq_class_init (EMFormatQuoteClass *class)
+emfq_class_init (EMFormatQuoteClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EMFormatClass *format_class;
@@ -173,7 +173,7 @@ emfq_class_init (EMFormatQuoteClass *class)
 }
 
 static void
-emfq_init (EMFormatQuote *emfq)
+emfq_init (EMFormatQuote *emfq, gpointer class_init)
 {
 	/* we want to convert url's etc */
 	emfq->text_html_flags =
