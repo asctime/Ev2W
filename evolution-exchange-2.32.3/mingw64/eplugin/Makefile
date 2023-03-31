@@ -190,6 +190,7 @@ CC = gcc
 CCDEPMODE = depmode=gcc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
 CONNECTOR_DATADIR = $(datadir)/evolution-exchange/$(BASE_VERSION)
 CPP = gcc -E
@@ -206,6 +207,12 @@ CONNECTOR_DATADIR = $(datadir)/evolution-exchange/$(BASE_VERSION)
 CPP = gcc -E
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
+=======
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -DUNICODE -D_UNICODE -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -std=iso9899:1990 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
+CONNECTOR_DATADIR = $(datadir)/evolution-exchange/$(BASE_VERSION)
+CPP = gcc -E
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -DUNICODE -D_UNICODE -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -std=iso9899:1990 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> b09a491... More (GFunc) cleanup forth pass; _stat64 and WIN32 type fixes; -DUNICODE
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DB_CFLAGS = -I${prefix}/include

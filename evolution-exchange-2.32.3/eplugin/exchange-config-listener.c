@@ -98,7 +98,7 @@ static gboolean exchange_camel_urls_is_equal (const gchar *url1,
 static void remove_selected_non_offline_esources (ExchangeAccount *account,
 						  const gchar *gconf_key);
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 	EAccountListClass *e_account_list_class =
 		E_ACCOUNT_LIST_CLASS (object_class);
@@ -135,7 +135,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (GObject *object)
+init (GObject *object, gpointer class_data)
 {
 	ExchangeConfigListener *config_listener =
 		EXCHANGE_CONFIG_LISTENER (object);
@@ -565,8 +565,7 @@ remove_account_esource (ExchangeAccount *account,
 								CONF_KEY_SELECTED_CAL_SOURCES,
 								GCONF_VALUE_STRING, ids, NULL);
 						}
-						g_slist_foreach (ids, (GFunc) g_free, NULL);
-						g_slist_free (ids);
+						g_slist_free_full (ids, g_free);
 					}
 				}
 				else if (folder_type == EXCHANGE_TASKS_FOLDER) {
@@ -586,8 +585,7 @@ remove_account_esource (ExchangeAccount *account,
 								CONF_KEY_SELECTED_TASKS_SOURCES,
 								GCONF_VALUE_STRING, ids, NULL);
 						}
-						g_slist_foreach (ids, (GFunc) g_free, NULL);
-						g_slist_free (ids);
+						g_slist_free_full (ids, g_free);
 					}
 				}
 			}
@@ -1506,8 +1504,7 @@ remove_selected_non_offline_esources (ExchangeAccount *account, const gchar *gco
 									       GCONF_VALUE_STRING, ids, NULL);
 						}
 					}
-					g_slist_foreach (ids, (GFunc) g_free, NULL);
-					g_slist_free (ids);
+					g_slist_free_full (ids, g_free);
 				}
 			}
 			found_group = TRUE;

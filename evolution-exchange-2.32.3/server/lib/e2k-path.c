@@ -153,7 +153,11 @@ find_folders_recursive (const gchar *physical_path, const gchar *path,
 
 	ok = TRUE;
 	while (ok) {
+#ifdef __MINGW64__
+		struct _stat64 file_stat;
+#else
 		struct stat file_stat;
+#endif
 		const gchar *dirent;
 		gchar *file_path;
 		gchar *new_path;

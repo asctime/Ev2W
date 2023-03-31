@@ -704,7 +704,7 @@ exchange_folder_transfer_messages_to (CamelFolder *source,
 		if (transferred_uids)
 			*transferred_uids = ret_uids;
 		else {
-			g_ptr_array_foreach (ret_uids, (GFunc) g_free, NULL);
+			g_ptr_array_set_free_func (ret_uids, g_free);
 			g_ptr_array_free (ret_uids, TRUE);
 		}
 	} else if (transferred_uids)
@@ -1159,7 +1159,7 @@ camel_exchange_folder_construct (CamelFolder *folder,
 			info = camel_folder_summary_uid (folder->summary, uids->pdata[i]);
 			flags->data[i] = ((CamelMessageInfoBase *)info)->flags & CAMEL_EXCHANGE_SERVER_FLAGS;
 			hrefs->pdata[i] = ((CamelExchangeMessageInfo *)info)->href;
-			//camel_tag_list_free (&((CamelMessageInfoBase *)info)->user_tags);
+			/* camel_tag_list_free (&((CamelMessageInfoBase *)info)->user_tags); */
 		}
 
 		camel_operation_start (NULL, _("Scanning for changed messages"));

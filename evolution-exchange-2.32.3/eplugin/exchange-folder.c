@@ -270,8 +270,7 @@ unsubscribe_dialog_response (GtkDialog *dialog, gint response, ESource *source)
 					CONF_KEY_SELECTED_CAL_SOURCES,
 					GCONF_VALUE_STRING, ids, NULL);
 			}
-			g_slist_foreach (ids, (GFunc) g_free, NULL);
-			g_slist_free (ids);
+			g_slist_free_full (ids, g_free);
 		}
 
 		source_group = e_source_peek_group (source);

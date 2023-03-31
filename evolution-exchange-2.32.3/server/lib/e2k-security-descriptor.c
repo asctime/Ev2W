@@ -126,7 +126,7 @@ static GObjectClass *parent_class = NULL;
 static void dispose (GObject *object);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_init)
 {
 	parent_class = g_type_class_ref (PARENT_TYPE);
 
@@ -134,7 +134,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (E2kSecurityDescriptor *sd)
+init (E2kSecurityDescriptor *sd, gpointer class_init)
 {
 	sd->priv = g_new0 (E2kSecurityDescriptorPrivate, 1);
 

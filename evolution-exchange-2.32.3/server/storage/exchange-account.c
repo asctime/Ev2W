@@ -103,7 +103,7 @@ static void finalize (GObject *);
 static void remove_hierarchy (ExchangeAccount *account, ExchangeHierarchy *hier);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 	parent_class = g_type_class_ref (PARENT_TYPE);
 
@@ -142,7 +142,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (GObject *object)
+init (GObject *object, gpointer class_data)
 {
 	ExchangeAccount *account = EXCHANGE_ACCOUNT (object);
 

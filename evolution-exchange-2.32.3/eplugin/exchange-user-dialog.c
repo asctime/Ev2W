@@ -68,7 +68,7 @@ dispose (GObject *object)
 }
 
 static void
-class_init (E2kUserDialogClass *class)
+class_init (E2kUserDialogClass *class, gpointer Class_data)
 {
 	GObjectClass *object_class = (GObjectClass *) class;
 
@@ -79,7 +79,7 @@ class_init (E2kUserDialogClass *class)
 }
 
 static void
-init (E2kUserDialog *dialog)
+init (E2kUserDialog *dialog, gpointer class_data)
 {
 	GtkWidget *content_area;
 

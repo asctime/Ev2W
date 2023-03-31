@@ -93,7 +93,7 @@ static gboolean exchange_camel_urls_is_equal (const gchar *url1,
 					      const gchar *url2);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 	EAccountListClass *e_account_list_class =
 		E_ACCOUNT_LIST_CLASS (object_class);
@@ -130,7 +130,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (GObject *object)
+init (GObject *object, gpointer class_data)
 {
 	ExchangeShareConfigListener *config_listener =
 		EXCHANGE_SHARE_CONFIG_LISTENER (object);

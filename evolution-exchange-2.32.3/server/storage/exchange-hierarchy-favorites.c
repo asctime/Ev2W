@@ -53,7 +53,7 @@ static ExchangeAccountFolderResult remove_folder (ExchangeHierarchy *hier,
 static void finalize (GObject *object);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 	ExchangeHierarchySomeDAVClass *somedav_class =
 		EXCHANGE_HIERARCHY_SOMEDAV_CLASS (object_class);
@@ -69,7 +69,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (GObject *object)
+init (GObject *object, gpointer class_data)
 {
 	ExchangeHierarchyFavorites *hfav = EXCHANGE_HIERARCHY_FAVORITES (object);
 

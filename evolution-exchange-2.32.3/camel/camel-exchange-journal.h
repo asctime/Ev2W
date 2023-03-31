@@ -52,7 +52,7 @@ typedef struct _CamelExchangeJournal CamelExchangeJournal;
 typedef struct _CamelExchangeJournalClass CamelExchangeJournalClass;
 typedef struct _CamelExchangeJournalEntry CamelExchangeJournalEntry;
 
-//struct CamelExchangeFolder;
+/* struct CamelExchangeFolder; */
 
 enum {
 	CAMEL_EXCHANGE_JOURNAL_ENTRY_APPEND,

@@ -170,7 +170,11 @@ load_cache (ECalBackendExchange *cbex, E2kUri *e2kuri, GError **perror)
 	const gchar *user_cache_dir;
 	const gchar *uristr;
 	gint i;
+#ifdef __MINGW64__
+	struct _stat64 buf;
+#else
 	struct stat buf;
+#endif
 
 	uristr = e_cal_backend_get_uri (E_CAL_BACKEND (cbex));
 	cbex->priv->object_cache_file =
@@ -1809,7 +1813,7 @@ get_attachment (ECalBackendExchange *cbex, const gchar *uid,
 				camel_data_wrapper_decode_to_stream (content, stream, NULL);
 				attach_data = g_memdup (byte_array->data, byte_array->len);
 				attach_file = g_strdup_printf ("%s/%s-%s", cbex->priv->local_attachment_store, uid, filename);
-				// Attach
+				/* Attach */
 				attach_file_url = save_attach_file (attach_file, (gchar *) attach_data, byte_array->len);
 				g_free (attach_data);
 				g_free (attach_file);
@@ -2270,7 +2274,7 @@ free_exchange_comp (gpointer value)
 }
 
 static void
-init (ECalBackendExchange *cbex)
+init (ECalBackendExchange *cbex, gpointer class_data)
 {
 	cbex->priv = g_new0 (ECalBackendExchangePrivate, 1);
 
@@ -2336,7 +2340,7 @@ finalize (GObject *object)
 }
 
 static void
-class_init (ECalBackendExchangeClass *klass)
+class_init (ECalBackendExchangeClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 	ECalBackendClass *backend_class = E_CAL_BACKEND_CLASS (klass);

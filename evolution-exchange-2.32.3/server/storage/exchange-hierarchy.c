@@ -64,7 +64,7 @@ static ExchangeAccountFolderResult xfer_folder   (ExchangeHierarchy *hier,
 						  gboolean remove_source);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 	ExchangeHierarchyClass *exchange_hierarchy_class =
 		EXCHANGE_HIERARCHY_CLASS (object_class);

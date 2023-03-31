@@ -1485,12 +1485,12 @@ process_flags (gpointer user_data)
 	if (seen || unseen) {
 		if (seen) {
 			mark_read (mfld->folder, seen, TRUE);
-			g_ptr_array_foreach (seen, (GFunc)g_free, NULL);
+			g_ptr_array_set_free_func (seen, g_free);
 			g_ptr_array_free (seen, TRUE);
 		}
 		if (unseen) {
 			mark_read (mfld->folder, unseen, FALSE);
-			g_ptr_array_foreach (unseen, (GFunc)g_free, NULL);
+			g_ptr_array_set_free_func (unseen, g_free);
 			g_ptr_array_free (unseen, TRUE);
 		}
 
@@ -2073,8 +2073,7 @@ get_folder_info_data (ExchangeData *ed, const gchar *top, guint32 store_flags, G
 			get_folder_info_data (ed, l->data, store_flags, known_uris, names, uris, unread, flags);
 		}
 
-		g_slist_foreach (check_children, (GFunc) g_free, NULL);
-		g_slist_free (check_children);
+		g_slist_free_full (check_children, g_free);
 	}
 }
 
@@ -2790,7 +2789,7 @@ camel_exchange_utils_search (CamelService *service,
 	if (status == E2K_HTTP_UNPROCESSABLE_ENTITY) {
 		set_exception (error, _("Mailbox does not support full-text searching"));
 
-		g_ptr_array_foreach (matches, (GFunc) g_free, NULL);
+		g_ptr_array_set_free_func (matches, g_free);
 		g_ptr_array_free (matches, TRUE);
 		matches = NULL;
 	} else {

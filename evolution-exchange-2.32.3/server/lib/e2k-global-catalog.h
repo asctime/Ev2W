@@ -8,6 +8,9 @@
 #include "e2k-types.h"
 #include "e2k-operation.h"
 #include "e2k-validate.h"
+#ifndef PCHAR
+typedef char *PCHAR;
+#endif
 
 G_BEGIN_DECLS
 
@@ -103,6 +106,16 @@ gdouble		lookup_passwd_max_age (E2kGlobalCatalog *gc,
 
 #define e2k_global_catalog_entry_free(gc, entry)
 
+#ifdef __MINGW32__
+E2kGlobalCatalogStatus e2k_global_catalog_add_delegate    (E2kGlobalCatalog *gc,
+							   E2kOperation     *op,
+							   PCHAR self_dn,
+							   const gchar *delegate_dn);
+E2kGlobalCatalogStatus e2k_global_catalog_remove_delegate (E2kGlobalCatalog *gc,
+							   E2kOperation     *op,
+							   PCHAR self_dn,
+							   const gchar *delegate_dn);
+#else
 E2kGlobalCatalogStatus e2k_global_catalog_add_delegate    (E2kGlobalCatalog *gc,
 							   E2kOperation     *op,
 							   const gchar *self_dn,
@@ -111,6 +124,7 @@ E2kGlobalCatalogStatus e2k_global_catalog_remove_delegate (E2kGlobalCatalog *gc,
 							   E2kOperation     *op,
 							   const gchar *self_dn,
 							   const gchar *delegate_dn);
+#endif
 
 G_END_DECLS
 

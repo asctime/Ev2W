@@ -289,8 +289,7 @@ add_folder_esource (ExchangeAccount *account,
 			gconf_client_set_list (client,
 				       CONF_KEY_SELECTED_CAL_SOURCES,
 				       GCONF_VALUE_STRING, ids, NULL);
-			g_slist_foreach (ids, (GFunc) g_free, NULL);
-			g_slist_free (ids);
+			g_slist_free_full (ids, g_free);
 		}
 		else if (folder_type == EXCHANGE_TASKS_FOLDER && !offline_flag) {
 			ids = gconf_client_get_list (client,
@@ -302,8 +301,7 @@ add_folder_esource (ExchangeAccount *account,
 			gconf_client_set_list (client,
 				       CONF_KEY_SELECTED_TASKS_SOURCES,
 				       GCONF_VALUE_STRING, ids, NULL);
-			g_slist_foreach (ids, (GFunc) g_free, NULL);
-			g_slist_free (ids);
+			g_slist_free_full (ids, g_free);
 		}
 	}
 

@@ -97,7 +97,7 @@ finalize (GObject *object)
 }
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 	parent_class = g_type_class_ref (PARENT_TYPE);
 

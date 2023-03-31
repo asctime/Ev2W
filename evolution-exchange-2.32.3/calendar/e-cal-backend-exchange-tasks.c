@@ -902,8 +902,7 @@ get_changed_tasks (ECalBackendExchange *cbex)
 			icalcomponent_free (ecalbexcomp->icomp);
 			ecalbexcomp->icomp = icalcomponent_new_clone (e_cal_component_get_icalcomponent (ecomp));
 			g_object_unref (ecomp);
-			g_slist_foreach (attachment_list, (GFunc) g_free, NULL);
-			g_slist_free (attachment_list);
+			g_slist_free_full (attachment_list, g_free);
 		}
 		e_cal_backend_exchange_cache_unlock (cbex);
 	}
@@ -950,8 +949,7 @@ get_changed_tasks (ECalBackendExchange *cbex)
 			icalcomponent_free (ecalbexcomp->icomp);
 			ecalbexcomp->icomp = icalcomponent_new_clone (e_cal_component_get_icalcomponent (ecomp));
 			g_object_unref (ecomp);
-			g_slist_foreach (attachment_list, (GFunc) g_free, NULL);
-			g_slist_free (attachment_list);
+			g_slist_free_full (attachment_list, g_free);
 		}
 		e_cal_backend_exchange_cache_unlock (cbex);
 		soup_buffer_free (response);
@@ -1471,7 +1469,7 @@ remove_task_object (ECalBackendSync *backend, EDataCal *cal,
 }
 
 static void
-init (ECalBackendExchangeTasks *cbext)
+init (ECalBackendExchangeTasks *cbext, gpointer class_data)
 {
 	cbext->priv = g_new0 (ECalBackendExchangeTasksPrivate, 1);
 
@@ -1502,7 +1500,7 @@ finalize (GObject *object)
 }
 
 static void
-class_init (ECalBackendExchangeTasksClass *klass)
+class_init (ECalBackendExchangeTasksClass *klass, gpointer class_init)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	ECalBackendSyncClass *sync_class = E_CAL_BACKEND_SYNC_CLASS (klass);

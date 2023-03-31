@@ -238,8 +238,7 @@ add_ical (ECalBackendExchange *cbex, const gchar *href, const gchar *lastmod,
 			e_cal_component_set_attachment_list (ecomp, attachment_list);
 			icalcomp = icalcomponent_new_clone (e_cal_component_get_icalcomponent (ecomp));
 			g_object_unref (ecomp);
-			g_slist_foreach (attachment_list, (GFunc) g_free, NULL);
-			g_slist_free (attachment_list);
+			g_slist_free_full (attachment_list, g_free);
 		}
 		status = add_vevent (cbex, href, lastmod, icalcomp);
 
@@ -302,8 +301,7 @@ add_ical (ECalBackendExchange *cbex, const gchar *href, const gchar *lastmod,
 	icalcomponent_free (icalcomp);
 
 	if (attachment_list) {
-		g_slist_foreach (attachment_list, (GFunc) g_free, NULL);
-		g_slist_free (attachment_list);
+		g_slist_free_full (attachment_list, g_free);
 	}
 	return retval;
 }
@@ -951,7 +949,7 @@ create_object (ECalBackendSync *backend, EDataCal *cal,
 	g_free (from);
 	g_free (body_crlf);
 	g_free (msg);
-	icalcomponent_free (cbdata->vcal_comp); // not sure
+	icalcomponent_free (cbdata->vcal_comp); /* not sure */
 	g_free (cbdata);
 
 	if (!E2K_HTTP_STATUS_IS_SUCCESSFUL (http_status)) {
@@ -1713,8 +1711,7 @@ receive_objects (ECalBackendSync *backend, EDataCal *cal,
 					attachment_list = receive_attachments (cbex, comp);
 					if (attachment_list) {
 						e_cal_component_set_attachment_list (comp, attachment_list);
-						g_slist_foreach (attachment_list, (GFunc) g_free, NULL);
-						g_slist_free (attachment_list);
+						g_slist_free_full (attachment_list, g_free);
 					}
 
 					if (e_cal_util_component_is_instance (subcomp))
@@ -1742,8 +1739,7 @@ receive_objects (ECalBackendSync *backend, EDataCal *cal,
 				attachment_list = receive_attachments (cbex, comp);
 				if (attachment_list) {
 					e_cal_component_set_attachment_list (comp, attachment_list);
-					g_slist_foreach (attachment_list, (GFunc) g_free, NULL);
-					g_slist_free (attachment_list);
+					g_slist_free_full (attachment_list, g_free);
 				}
 
 				d(printf ("object : %s .. not found in the cache\n", uid));
@@ -2406,7 +2402,7 @@ get_free_busy (ECalBackendSync *backend, EDataCal *cal,
 }
 
 static void
-init (ECalBackendExchangeCalendar *cbexc)
+init (ECalBackendExchangeCalendar *cbexc, gpointer class_data)
 {
 	cbexc->priv = g_new0 (ECalBackendExchangeCalendarPrivate, 1);
 	cbexc->priv->is_loaded = FALSE;
@@ -2436,7 +2432,7 @@ finalize (GObject *object)
 }
 
 static void
-class_init (ECalBackendExchangeCalendarClass *klass)
+class_init (ECalBackendExchangeCalendarClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	ECalBackendSyncClass *sync_class = E_CAL_BACKEND_SYNC_CLASS (klass);

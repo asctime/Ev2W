@@ -409,8 +409,7 @@ free_members_list (GSList *list)
 	if (!list)
 		return;
 
-	g_slist_foreach (list, (GFunc)free_contact_list_member, NULL);
-	g_slist_free (list);
+	g_slist_free_full (list, (GDestroyNotify)free_contact_list_member);
 }
 
 static EContact *
@@ -1652,8 +1651,7 @@ merge_contact_lists (EBookBackendExchange *be, const gchar *location, EContact *
 	g_hash_table_foreach (sh, (GHFunc)remove_member, &rm);
 
 	g_hash_table_destroy (sh);
-	g_list_foreach (local, (GFunc)e_vcard_attribute_free, NULL);
-	g_list_free (local);
+	g_list_free_full (local, (GDestroyNotify)e_vcard_attribute_free);
 	free_members_list (server);
 
 	return status;
@@ -2357,7 +2355,7 @@ e_book_backend_exchange_start_book_view (EBookBackend  *backend,
 							E_CONTACT(contacts->data));
 			g_object_unref (contacts->data);
 		}
-		//if (!stopped)
+		/* if (!stopped) */
 		e_data_book_view_notify_complete (book_view, NULL);
 		if (temp_list)
 			 g_list_free (temp_list);
@@ -2855,7 +2853,7 @@ e_book_backend_exchange_load_source (EBookBackend *backend,
 		return;
 	}
 
-	// writable property will be set in authenticate_user callback
+	/* writable property will be set in authenticate_user callback */
 	e_book_backend_set_is_writable (E_BOOK_BACKEND(backend), FALSE);
 	e_book_backend_set_is_loaded (E_BOOK_BACKEND (be), TRUE);
 	e_book_backend_notify_connection_status (E_BOOK_BACKEND (be), TRUE);
@@ -2985,7 +2983,7 @@ e_book_backend_exchange_dispose (GObject *object)
 }
 
 static void
-e_book_backend_exchange_class_init (EBookBackendExchangeClass *klass)
+e_book_backend_exchange_class_init (EBookBackendExchangeClass *klass, gpointer class_data)
 {
 	GObjectClass  *object_class = (GObjectClass *) klass;
 	EBookBackendClass *backend_class = E_BOOK_BACKEND_CLASS (klass);
@@ -3033,7 +3031,7 @@ e_book_backend_exchange_class_init (EBookBackendExchangeClass *klass)
 }
 
 static void
-e_book_backend_exchange_init (EBookBackendExchange *backend)
+e_book_backend_exchange_init (EBookBackendExchange *backend, gpointer class_data)
 {
 	EBookBackendExchangePrivate *priv;
 

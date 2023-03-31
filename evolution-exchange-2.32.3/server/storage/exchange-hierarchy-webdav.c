@@ -89,7 +89,7 @@ static void hierarchy_removed_folder (ExchangeHierarchy *hier, EFolder *folder,
 				      gpointer user_data);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_init)
 {
 	ExchangeHierarchyClass *exchange_hierarchy_class =
 		EXCHANGE_HIERARCHY_CLASS (object_class);
@@ -111,7 +111,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (GObject *object)
+init (GObject *object, gpointer class_init)
 {
 	ExchangeHierarchyWebDAV *hwd = EXCHANGE_HIERARCHY_WEBDAV (object);
 

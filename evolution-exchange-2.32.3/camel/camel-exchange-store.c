@@ -547,7 +547,7 @@ exchange_store_get_folder_info (CamelStore *store,
 			g_ptr_array_add (folders, info);
 	}
 	g_ptr_array_free (folder_names, TRUE);
-	g_ptr_array_foreach (folder_uris, (GFunc) g_free, NULL);
+	g_ptr_array_set_free_func (folder_uris, g_free);
 	g_ptr_array_free (folder_uris, TRUE);
 	g_array_free (unread_counts, TRUE);
 	g_array_free (folder_flags, TRUE);
@@ -659,7 +659,7 @@ exchange_store_rename_folder (CamelStore *store,
 			g_ptr_array_add (folders, info);
 	}
 	g_ptr_array_free (folder_names, TRUE);
-	g_ptr_array_foreach (folder_uris, (GFunc) g_free, NULL);
+	g_ptr_array_set_free_func (folder_uris, g_free);
 	g_ptr_array_free (folder_uris, TRUE);
 	g_array_free (unread_counts, TRUE);
 	g_array_free (folder_flags, TRUE);

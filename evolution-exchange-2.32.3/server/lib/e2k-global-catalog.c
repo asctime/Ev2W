@@ -21,6 +21,11 @@
 #include "config.h"
 #endif
 
+#ifdef __MINGW64__
+/* UNICODE NOT CURRENTLY SUPPORTED FOR WIN32 LDAP */
+#undef UNICODE
+#endif
+
 #include "e2k-global-catalog-ldap.h"
 #include "e2k-sid.h"
 #include "e2k-utils.h"
@@ -60,7 +65,7 @@ static void finalize (GObject *);
 static gint get_gc_connection (E2kGlobalCatalog *gc, E2kOperation *op);
 
 static void
-class_init (GObjectClass *object_class)
+class_init (GObjectClass *object_class, gpointer class_data)
 {
 #ifdef E2K_DEBUG
 	gchar *e2k_debug = getenv ("E2K_DEBUG");
@@ -82,7 +87,7 @@ class_init (GObjectClass *object_class)
 }
 
 static void
-init (GObject *object)
+init (GObject *object, gpointer class_data)
 {
 	E2kGlobalCatalog *gc = E2K_GLOBAL_CATALOG (object);
 
@@ -172,7 +177,11 @@ static gint
 gc_ldap_result (LDAP *ldap, E2kOperation *op,
 		gint msgid, LDAPMessage **msg)
 {
+#ifdef __MINGW64__
+	struct l_timeval tv;
+#else
 	struct timeval tv;
+#endif
 	gint status, ldap_error;
 
 	tv.tv_sec = 1;
@@ -194,12 +203,21 @@ gc_ldap_result (LDAP *ldap, E2kOperation *op,
 		return LDAP_SUCCESS;
 }
 
+#ifdef __MINGW32__
+static gint
+gc_search (E2kGlobalCatalog *gc, E2kOperation *op,
+	   PCHAR base, gint scope, PCHAR filter,
+	   const gchar **attrs, LDAPMessage **msg)
+{
+	ULONG ldap_error, msgid, try;
+#else
 static gint
 gc_search (E2kGlobalCatalog *gc, E2kOperation *op,
 	   const gchar *base, gint scope, const gchar *filter,
 	   const gchar **attrs, LDAPMessage **msg)
 {
 	gint ldap_error, msgid, try;
+#endif
 
 	for (try = 0; try < 2; try++) {
 		ldap_error = get_gc_connection (gc, op);
@@ -347,7 +365,11 @@ connect_ldap (E2kGlobalCatalog *gc, E2kOperation *op, LDAP *ldap)
 	auth.Password = g_utf8_to_utf16 (gc->priv->password, -1, NULL, NULL, NULL);
 	auth.PasswordLength = wcslen (auth.Password);
 	auth.Flags = SEC_WINNT_AUTH_IDENTITY_UNICODE;
+#ifdef __MINGW32__
+	ldap_error = ldap_bind_s (ldap, nt_name, (PCHAR)&auth, gc->priv->auth == E2K_AUTOCONFIG_USE_GAL_BASIC ? LDAP_AUTH_SIMPLE : LDAP_AUTH_NTLM);
+#else
 	ldap_error = ldap_bind_s (ldap, nt_name, &auth, gc->priv->auth == E2K_AUTOCONFIG_USE_GAL_BASIC ? LDAP_AUTH_SIMPLE : LDAP_AUTH_NTLM);
+#endif
 	g_free (auth.Password);
 	g_free (auth.Domain);
 	g_free (auth.User);
@@ -363,10 +385,17 @@ connect_ldap (E2kGlobalCatalog *gc, E2kOperation *op, LDAP *ldap)
 	return ldap_error;
 }
 
+#ifdef __MINGW64__
+static gint
+get_ldap_connection (E2kGlobalCatalog *gc, E2kOperation *op,
+		     PCHAR server, gint port,
+		     LDAP **ldap)
+#else
 static gint
 get_ldap_connection (E2kGlobalCatalog *gc, E2kOperation *op,
 		     const gchar *server, gint port,
 		     LDAP **ldap)
+#endif
 {
 	gint ldap_opt, ldap_error;
 
@@ -473,8 +502,13 @@ e2k_global_catalog_new (const gchar *server, gint response_limit,
 	return gc;
 }
 
+#ifdef __MINGW32__
+static const gchar *
+lookup_mta (E2kGlobalCatalog *gc, E2kOperation *op, PCHAR mta_dn)
+#else
 static const gchar *
 lookup_mta (E2kGlobalCatalog *gc, E2kOperation *op, const gchar *mta_dn)
+#endif
 {
 	gchar *hostname, **values;
 	const gchar *attrs[2];
@@ -503,7 +537,11 @@ lookup_mta (E2kGlobalCatalog *gc, E2kOperation *op, const gchar *mta_dn)
 		return NULL;
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, resp, (PCHAR)"networkAddress");
+#else
 	values = ldap_get_values (gc->priv->ldap, resp, "networkAddress");
+#endif
 	ldap_msgfree (resp);
 	if (!values) {
 		E2K_GC_DEBUG_MSG(("GC:   entry has no networkAddress\n"));
@@ -539,14 +577,22 @@ get_sid_values (E2kGlobalCatalog *gc, E2kOperation *op,
 	struct berval **bsid_values;
 	E2kSidType type;
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"displayName");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "displayName");
+#endif
 	if (values) {
 		E2K_GC_DEBUG_MSG(("GC: displayName %s\n", values[0]));
 		entry->display_name = g_strdup (values[0]);
 		ldap_value_free (values);
 	}
 
+#ifdef __MINGW32__
+	bsid_values = ldap_get_values_len (gc->priv->ldap, msg, (PCHAR)"objectSid");
+#else
 	bsid_values = ldap_get_values_len (gc->priv->ldap, msg, "objectSid");
+#endif
 	if (!bsid_values)
 		return;
 	if (bsid_values[0]->bv_len < 2 ||
@@ -555,7 +601,11 @@ get_sid_values (E2kGlobalCatalog *gc, E2kOperation *op,
 		return;
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"objectCategory");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "objectCategory");
+#endif
 	if (values && values[0] && !g_ascii_strncasecmp (values[0], "CN=Group", 8))
 		type = E2K_SID_TYPE_GROUP;
 	else if (values && values[0] && !g_ascii_strncasecmp (values[0], "CN=Foreign", 10))
@@ -578,7 +628,11 @@ get_mail_values (E2kGlobalCatalog *gc, E2kOperation *op,
 {
 	gchar **values, **mtavalues;
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"mail");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "mail");
+#endif
 	if (values) {
 		E2K_GC_DEBUG_MSG(("GC: mail %s\n", values[0]));
 		entry->email = g_strdup (values[0]);
@@ -588,8 +642,13 @@ get_mail_values (E2kGlobalCatalog *gc, E2kOperation *op,
 		ldap_value_free (values);
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"mailNickname");
+	mtavalues = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"homeMTA");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "mailNickname");
 	mtavalues = ldap_get_values (gc->priv->ldap, msg, "homeMTA");
+#endif
 	if (values && mtavalues) {
 		E2K_GC_DEBUG_MSG(("GC: mailNickname %s\n", values[0]));
 		E2K_GC_DEBUG_MSG(("GC: homeMTA %s\n", mtavalues[0]));
@@ -601,7 +660,11 @@ get_mail_values (E2kGlobalCatalog *gc, E2kOperation *op,
 		entry->mask |= E2K_GLOBAL_CATALOG_LOOKUP_MAILBOX;
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"legacyExchangeDN");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "legacyExchangeDN");
+#endif
 	if (values) {
 		E2K_GC_DEBUG_MSG(("GC: legacyExchangeDN %s\n", values[0]));
 		entry->legacy_exchange_dn = g_strdup (values[0]);
@@ -620,7 +683,11 @@ get_delegation_values (E2kGlobalCatalog *gc, E2kOperation *op,
 	gchar **values;
 	gint i;
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"publicDelegates");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "publicDelegates");
+#endif
 	if (values) {
 		E2K_GC_DEBUG_MSG(("GC: publicDelegates\n"));
 		entry->delegates = g_ptr_array_new ();
@@ -632,7 +699,11 @@ get_delegation_values (E2kGlobalCatalog *gc, E2kOperation *op,
 		entry->mask |= E2K_GLOBAL_CATALOG_LOOKUP_DELEGATES;
 		ldap_value_free (values);
 	}
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"publicDelegatesBL");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "publicDelegatesBL");
+#endif
 	if (values) {
 		E2K_GC_DEBUG_MSG(("GC: publicDelegatesBL\n"));
 		entry->delegators = g_ptr_array_new ();
@@ -653,7 +724,11 @@ get_quota_values (E2kGlobalCatalog *gc, E2kOperation *op,
 	gchar **quota_setting_values, **quota_limit_values;
 
 	/* Check if mailbox store default values are used */
+#ifdef __MINGW32__
+	quota_setting_values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"mDBUseDefaults");
+#else
 	quota_setting_values = ldap_get_values (gc->priv->ldap, msg, "mDBUseDefaults");
+#endif
 	if (!quota_setting_values) {
 		entry->quota_warn = entry->quota_nosend = entry->quota_norecv = 0;
 		return;
@@ -668,21 +743,33 @@ get_quota_values (E2kGlobalCatalog *gc, E2kOperation *op,
 	}
 	ldap_value_free (quota_setting_values);
 
+#ifdef __MINGW32__
+	quota_limit_values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"mDBStorageQuota");
+#else
 	quota_limit_values = ldap_get_values (gc->priv->ldap, msg, "mDBStorageQuota");
+#endif
 	if (quota_limit_values) {
 		entry->quota_warn = atoi(quota_limit_values[0]);
 		E2K_GC_DEBUG_MSG(("GC: mDBStorageQuota %s\n", quota_limit_values[0]));
 		ldap_value_free (quota_limit_values);
 	}
 
+#ifdef __MINGW32__
+	quota_limit_values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"mDBOverQuotaLimit");
+#else
 	quota_limit_values = ldap_get_values (gc->priv->ldap, msg, "mDBOverQuotaLimit");
+#endif
 	if (quota_limit_values) {
 		entry->quota_nosend = atoi(quota_limit_values[0]);
 		E2K_GC_DEBUG_MSG(("GC: mDBOverQuotaLimit %s\n", quota_limit_values[0]));
 		ldap_value_free (quota_limit_values);
 	}
 
+#ifdef __MINGW32__
+	quota_limit_values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"mDBOverHardQuotaLimit");
+#else
 	quota_limit_values = ldap_get_values (gc->priv->ldap, msg, "mDBOverHardQuotaLimit");
+#endif
 	if (quota_limit_values) {
 		entry->quota_norecv = atoi(quota_limit_values[0]);
 		E2K_GC_DEBUG_MSG(("GC: mDBHardQuotaLimit %s\n", quota_limit_values[0]));
@@ -696,7 +783,11 @@ get_account_control_values (E2kGlobalCatalog *gc, E2kOperation *op,
 {
 	gchar **values;
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, msg, (PCHAR)"userAccountControl");
+#else
 	values = ldap_get_values (gc->priv->ldap, msg, "userAccountControl");
+#endif
 	if (values) {
 		entry->user_account_control = atoi(values[0]);
 		E2K_GC_DEBUG_MSG(("GC: userAccountControl %s\n", values[0]));
@@ -958,11 +1049,19 @@ e2k_global_catalog_async_lookup (E2kGlobalCatalog *gc,
 	}
 }
 
+#ifdef __MINGW32__
+static const gchar *
+lookup_controlling_ad_server (E2kGlobalCatalog *gc, E2kOperation *op,
+			      char *dn)
+{
+	PCHAR hostname, *values, ad_dn;
+#else
 static const gchar *
 lookup_controlling_ad_server (E2kGlobalCatalog *gc, E2kOperation *op,
 			      const gchar *dn)
 {
 	gchar *hostname, **values, *ad_dn;
+#endif
 	const gchar *attrs[2];
 	LDAPMessage *resp;
 	gint ldap_error;
@@ -989,7 +1088,11 @@ lookup_controlling_ad_server (E2kGlobalCatalog *gc, E2kOperation *op,
 		return NULL;
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, resp, (PCHAR)"masteredBy");
+#else
 	values = ldap_get_values (gc->priv->ldap, resp, "masteredBy");
+#endif
 	ldap_msgfree (resp);
 	if (!values) {
 		E2K_GC_DEBUG_MSG(("GC:   no known AD server\n\n"));
@@ -1016,7 +1119,11 @@ lookup_controlling_ad_server (E2kGlobalCatalog *gc, E2kOperation *op,
 		return NULL;
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (gc->priv->ldap, resp, (PCHAR)"dNSHostName");
+#else
 	values = ldap_get_values (gc->priv->ldap, resp, "dNSHostName");
+#endif
 	ldap_msgfree (resp);
 	if (!values) {
 		E2K_GC_DEBUG_MSG(("GC:   entry has no dNSHostName\n\n"));
@@ -1061,7 +1168,11 @@ lookup_passwd_max_age (E2kGlobalCatalog *gc, E2kOperation *op)
 	const gchar *attrs[2];
 	LDAP *ldap;
 	LDAPMessage *msg=NULL;
+#ifdef __MINGW32__
+	ULONG ldap_error, msgid;
+#else
 	gint ldap_error, msgid;
+#endif
 	gdouble maxAge=0;
 	gchar *dn=NULL;
 
@@ -1093,7 +1204,11 @@ lookup_passwd_max_age (E2kGlobalCatalog *gc, E2kOperation *op)
 		return -1;
 	}
 
+#ifdef __MINGW32__
+	values = ldap_get_values (ldap, msg, (PCHAR)"maxPwdAge");
+#else
 	values = ldap_get_values (ldap, msg, "maxPwdAge");
+#endif
 	if (!values) {
 		E2K_GC_DEBUG_MSG(("GC: couldn't retrieve maxPwdAge\n"));
 		return -1;
@@ -1120,15 +1235,26 @@ lookup_passwd_max_age (E2kGlobalCatalog *gc, E2kOperation *op)
 	return maxAge;
 }
 
+#ifdef __MINGW32__
+static E2kGlobalCatalogStatus
+do_delegate_op (E2kGlobalCatalog *gc, E2kOperation *op, gint deleg_op,
+	  PCHAR self_dn, const gchar *delegate_dn)
+#else
 static E2kGlobalCatalogStatus
 do_delegate_op (E2kGlobalCatalog *gc, E2kOperation *op, gint deleg_op,
 		const gchar *self_dn, const gchar *delegate_dn)
+#endif
 {
 	LDAP *ldap;
 	LDAPMod *mods[2], mod;
-	const gchar *ad_server;
 	gchar *values[2];
+#ifdef __MINGW32__
+	PCHAR ad_server;
+	ULONG ldap_error, msgid;
+#else
+	const gchar *ad_server;
 	gint ldap_error, msgid;
+#endif
 
 	g_return_val_if_fail (E2K_IS_GLOBAL_CATALOG (gc), E2K_GLOBAL_CATALOG_ERROR);
 	g_return_val_if_fail (self_dn != NULL, E2K_GLOBAL_CATALOG_ERROR);
@@ -1217,11 +1343,19 @@ do_delegate_op (E2kGlobalCatalog *gc, E2kOperation *op, gint deleg_op,
  * %E2K_GLOBAL_CATALOG_EXISTS if @delegate_dn is already a delegate,
  * %E2K_GLOBAL_CATALOG_ERROR on other errors.
  **/
+#ifdef __MINGW32__
+E2kGlobalCatalogStatus
+e2k_global_catalog_add_delegate (E2kGlobalCatalog *gc,
+				 E2kOperation *op,
+				 PCHAR self_dn,
+				 const gchar *delegate_dn)
+#else
 E2kGlobalCatalogStatus
 e2k_global_catalog_add_delegate (E2kGlobalCatalog *gc,
 				 E2kOperation *op,
 				 const gchar *self_dn,
 				 const gchar *delegate_dn)
+#endif
 {
 	E2K_GC_DEBUG_MSG(("\nGC: adding %s as delegate for %s\n", delegate_dn, self_dn));
 
@@ -1242,11 +1376,19 @@ e2k_global_catalog_add_delegate (E2kGlobalCatalog *gc,
  * %E2K_GLOBAL_CATALOG_NO_DATA if @delegate_dn is not a delegate of @self_dn,
  * %E2K_GLOBAL_CATALOG_ERROR on other errors.
  **/
+#ifdef __MINGW32__
+E2kGlobalCatalogStatus
+e2k_global_catalog_remove_delegate (E2kGlobalCatalog *gc,
+				    E2kOperation *op,
+				    PCHAR self_dn,
+				    const gchar *delegate_dn)
+#else
 E2kGlobalCatalogStatus
 e2k_global_catalog_remove_delegate (E2kGlobalCatalog *gc,
 				    E2kOperation *op,
 				    const gchar *self_dn,
 				    const gchar *delegate_dn)
+#endif
 {
 	E2K_GC_DEBUG_MSG(("\nGC: removing %s as delegate for %s\n", delegate_dn, self_dn));
 

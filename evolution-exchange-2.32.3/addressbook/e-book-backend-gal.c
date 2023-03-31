@@ -25,6 +25,11 @@
 #include <config.h>
 #endif
 
+#ifdef __MINGW64__
+/* UNICODE NOT CURRENTLY SUPPORTED FOR WIN32 LDAP */
+#undef UNICODE
+#endif
+
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
@@ -1335,7 +1340,7 @@ get_time_stamp (gchar *serv_time_str, time_t *mtime)
 	hour = G_STRNDUP(input_str, 2)
 	minute = G_STRNDUP(input_str, 2)
 	second = G_STRNDUP(input_str, 2)
-	input_str++; // parse over the dot
+	input_str++; /* parse over the dot */
 	zone = G_STRNDUP(input_str, 1)
 
 	mytime.tm_year = atoi(year)-1900;
@@ -2443,12 +2448,12 @@ authenticate_user (EBookBackend *backend,
 				t2 = time (NULL);
 				diff = interval * 24 * 60 *60;
 				/* We have a day specified, then we cache it. */
-				//if (!diff || t2 - t1 > diff) {
+				/*if (!diff || t2 - t1 > diff) {
 				//	d(printf ("Cache older than specified period, refreshing \n"));
 					update_cache (be);
 				//}
 				//else
-				//	be->priv->is_summary_ready= TRUE;
+				//	be->priv->is_summary_ready= TRUE; */
 			}
 			else {
 				d(printf("Cache not there, generate cache\n"));
@@ -2720,7 +2725,7 @@ load_source (EBookBackend *backend,
 				return;
 			}
 
-			//env->set_errcall (env, file_errcall);
+			/* env->set_errcall (env, file_errcall); */
 			global_env.env = env;
 			global_env.ref_count = 1;
 		}
@@ -2907,7 +2912,7 @@ dispose (GObject *object)
 }
 
 static void
-class_init (EBookBackendGALClass *klass)
+class_init (EBookBackendGALClass *klass, gpointer class_init)
 {
 	GObjectClass  *object_class = G_OBJECT_CLASS (klass);
 	EBookBackendClass *backend_class = E_BOOK_BACKEND_CLASS (klass);
@@ -2952,7 +2957,7 @@ class_init (EBookBackendGALClass *klass)
 }
 
 static void
-init (EBookBackendGAL *backend)
+init (EBookBackendGAL *backend, gpointer class_init)
 {
 	EBookBackendGALPrivate *priv;
 

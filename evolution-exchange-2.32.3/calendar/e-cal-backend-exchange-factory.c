@@ -67,7 +67,7 @@ _events_get_kind (ECalBackendFactory *factory)
 }
 
 static void
-todos_backend_exchange_factory_class_init (ECalBackendExchangeFactoryClass *klass)
+todos_backend_exchange_factory_class_init (ECalBackendExchangeFactoryClass *klass, gpointer class_data)
 {
 	E_CAL_BACKEND_FACTORY_CLASS (klass)->get_protocol = _get_protocol;
 	E_CAL_BACKEND_FACTORY_CLASS (klass)->get_kind     = _todos_get_kind;
@@ -75,7 +75,7 @@ todos_backend_exchange_factory_class_init (ECalBackendExchangeFactoryClass *klas
 }
 
 static void
-events_backend_exchange_factory_class_init (ECalBackendExchangeFactoryClass *klass)
+events_backend_exchange_factory_class_init (ECalBackendExchangeFactoryClass *klass, gpointer class_data)
 {
 	E_CAL_BACKEND_FACTORY_CLASS (klass)->get_protocol = _get_protocol;
 	E_CAL_BACKEND_FACTORY_CLASS (klass)->get_kind     = _events_get_kind;
