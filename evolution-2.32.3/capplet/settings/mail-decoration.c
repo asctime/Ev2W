@@ -49,8 +49,8 @@ struct _MailDecorationPrivate
 
 static GObjectClass *parent_class = NULL;
 
-static void mail_decoration_class_init(MailDecorationClass *klass);
-static void mail_decoration_init(MailDecoration *facet);
+static void mail_decoration_class_init(MailDecorationClass *klass, gpointer class_data);
+static void mail_decoration_init(MailDecoration *facet, gpointer class_data);
 
 GType
 mail_decoration_get_type(void)
@@ -327,7 +327,7 @@ MailDecoration* mail_decoration_new(GtkWindow *window)
 }
 
 static void
-mail_decoration_class_init(MailDecorationClass *klass)
+mail_decoration_class_init(MailDecorationClass *klass, gpointer class_data)
 {
 
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -337,7 +337,7 @@ mail_decoration_class_init(MailDecorationClass *klass)
 }
 
 static void
-mail_decoration_init(MailDecoration *md)
+mail_decoration_init(MailDecoration *md, gpointer class_data)
 {
 	MailDecorationPrivate *priv;
 

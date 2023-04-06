@@ -280,8 +280,7 @@ table_drag_data_get (ETable *table,
 			break;
 	}
 
-	g_list_foreach (contact_list, (GFunc) g_object_unref, NULL);
-	g_list_free (contact_list);
+	g_list_free_full (contact_list, g_object_unref);
 }
 
 static void
@@ -680,8 +679,7 @@ addressbook_view_copy_clipboard (ESelectable *selectable)
 	e_clipboard_set_directory (clipboard, string, -1);
 	g_free (string);
 
-	g_list_foreach (contact_list, (GFunc) g_object_unref, NULL);
-	g_list_free (contact_list);
+	g_list_free_full (contact_list, g_object_unref);
 }
 
 static void
@@ -713,8 +711,7 @@ addressbook_view_paste_clipboard (ESelectable *selectable)
 		eab_merging_book_add_contact (book, contact, NULL, NULL);
 	}
 
-	g_list_foreach (contact_list, (GFunc) g_object_unref, NULL);
-	g_list_free (contact_list);
+	g_list_free_full (contact_list, g_object_unref);
 }
 
 static void
@@ -741,7 +738,7 @@ addressbook_view_select_all (ESelectable *selectable)
 }
 
 static void
-addressbook_view_class_init (EAddressbookViewClass *class)
+addressbook_view_class_init (EAddressbookViewClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -842,7 +839,7 @@ addressbook_view_class_init (EAddressbookViewClass *class)
 }
 
 static void
-addressbook_view_init (EAddressbookView *view)
+addressbook_view_init (EAddressbookView *view, gpointer class_data)
 {
 	GtkTargetList *target_list;
 
@@ -866,7 +863,7 @@ addressbook_view_init (EAddressbookView *view)
 }
 
 static void
-addressbook_view_selectable_init (ESelectableInterface *interface)
+addressbook_view_selectable_init (ESelectableInterface *interface, gpointer class_data)
 {
 	interface->update_actions = addressbook_view_update_actions;
 	interface->cut_clipboard = addressbook_view_cut_clipboard;
@@ -1217,8 +1214,7 @@ e_addressbook_view_print (EAddressbookView *view,
 
 		contact_list = e_addressbook_view_get_selected (view);
 		e_contact_print (NULL, NULL, contact_list, action);
-		g_list_foreach (contact_list, (GFunc) g_object_unref, NULL);
-		g_list_free (contact_list);
+		g_list_free_full (contact_list, g_object_unref);
 
 	/* Print the latest query results. */
 	} else if (GAL_IS_VIEW_MINICARD (gal_view)) {
@@ -1385,8 +1381,7 @@ e_addressbook_view_delete_selection(EAddressbookView *view, gboolean is_delete)
 			GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET(view))),
 			plural, is_list, name)) {
 		g_free (name);
-		g_list_foreach (list, (GFunc) g_object_unref, NULL);
-		g_list_free (list);
+		g_list_free_full (list, g_object_unref);
 		return;
 	}
 
@@ -1445,8 +1440,7 @@ e_addressbook_view_delete_selection(EAddressbookView *view, gboolean is_delete)
 		row = e_table_view_to_model_row (E_TABLE (etable), select);
 		e_table_set_cursor_row (E_TABLE (etable), row);
 	}
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 void
@@ -1486,8 +1480,7 @@ e_addressbook_view_view (EAddressbookView *view)
 			addressbook_view_emit_open_contact (
 				view, iter->data, FALSE);
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 }
 
 void

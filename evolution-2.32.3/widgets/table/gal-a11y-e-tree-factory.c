@@ -47,7 +47,7 @@ gal_a11y_e_tree_factory_create_accessible (GObject *obj)
 }
 
 static void
-gal_a11y_e_tree_factory_class_init (GalA11yETreeFactoryClass *klass)
+gal_a11y_e_tree_factory_class_init (GalA11yETreeFactoryClass *klass, gpointer class_data)
 {
 	AtkObjectFactoryClass *factory_class = ATK_OBJECT_FACTORY_CLASS (klass);
 
@@ -58,7 +58,7 @@ gal_a11y_e_tree_factory_class_init (GalA11yETreeFactoryClass *klass)
 }
 
 static void
-gal_a11y_e_tree_factory_init (GalA11yETreeFactory *factory)
+gal_a11y_e_tree_factory_init (GalA11yETreeFactory *factory, gpointer class_data)
 {
 }
 

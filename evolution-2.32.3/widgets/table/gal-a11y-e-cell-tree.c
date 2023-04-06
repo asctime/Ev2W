@@ -144,13 +144,13 @@ ectr_do_action_collapse (AtkAction *action)
 }
 
 static void
-ectr_class_init (GalA11yECellTreeClass *klass)
+ectr_class_init (GalA11yECellTreeClass *klass, gpointer class_data)
 {
 	a11y_parent_class        = g_type_class_ref (A11Y_PARENT_TYPE);
 }
 
 static void
-ectr_init (GalA11yECellTree *a11y)
+ectr_init (GalA11yECellTree *a11y, gpointer class_data)
 {
 }
 

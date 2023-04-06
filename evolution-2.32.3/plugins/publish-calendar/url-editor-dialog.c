@@ -504,7 +504,7 @@ url_editor_dialog_dispose (GObject *obj)
 }
 
 static void
-url_editor_dialog_class_init (UrlEditorDialogClass *klass)
+url_editor_dialog_class_init (UrlEditorDialogClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -515,7 +515,7 @@ url_editor_dialog_class_init (UrlEditorDialogClass *klass)
 }
 
 static void
-url_editor_dialog_init (UrlEditorDialog *dialog)
+url_editor_dialog_init (UrlEditorDialog *dialog, gpointer class_data)
 {
 }
 

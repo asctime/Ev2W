@@ -47,7 +47,7 @@ gal_a11y_e_cell_registry_finalize (GObject *obj)
 }
 
 static void
-gal_a11y_e_cell_registry_class_init (GalA11yECellRegistryClass *klass)
+gal_a11y_e_cell_registry_class_init (GalA11yECellRegistryClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -57,7 +57,7 @@ gal_a11y_e_cell_registry_class_init (GalA11yECellRegistryClass *klass)
 }
 
 static void
-gal_a11y_e_cell_registry_init (GalA11yECellRegistry *registry)
+gal_a11y_e_cell_registry_init (GalA11yECellRegistry *registry, gpointer class_data)
 {
 	registry->priv = g_new (GalA11yECellRegistryPrivate, 1);
 	registry->priv->table = g_hash_table_new (NULL, NULL);

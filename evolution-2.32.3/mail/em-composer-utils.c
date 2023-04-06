@@ -392,8 +392,7 @@ composer_get_message (EMsgComposer *composer, gboolean save_html_object_data)
 
 		postlist = e_composer_header_table_get_post_to (table);
 		num_post = g_list_length (postlist);
-		g_list_foreach (postlist, (GFunc)g_free, NULL);
-		g_list_free (postlist);
+		g_list_free_full (postlist, g_free);
 	}
 
 	/* I'm sensing a lack of love, er, I mean recipients. */
@@ -993,8 +992,7 @@ edit_message (EShell *shell,
 
 		traverse_parts (clue_list, message, camel_medium_get_content (CAMEL_MEDIUM (message)));
 
-		g_slist_foreach (clue_list, (GFunc) g_free, NULL);
-		g_slist_free (clue_list);
+		g_slist_free_full (clue_list, g_free);
 	}
 
 	composer = e_msg_composer_new_with_message (shell, message);
@@ -2599,8 +2597,7 @@ post_header_clicked_cb (EComposerPostHeader *header,
 	list = e_composer_post_header_get_folders (header);
 	em_folder_selector_set_selected_list (
 		EM_FOLDER_SELECTOR (dialog), list);
-	g_list_foreach (list, (GFunc) g_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_free);
 
 	if (gtk_dialog_run (GTK_DIALOG (dialog)) != GTK_RESPONSE_OK) {
 		/* Prevent the header's "custom" flag from being reset,
@@ -2612,8 +2609,7 @@ post_header_clicked_cb (EComposerPostHeader *header,
 	list = em_folder_selector_get_selected_uris (
 		EM_FOLDER_SELECTOR (dialog));
 	e_composer_post_header_set_folders (header, list);
-	g_list_foreach (list, (GFunc) g_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_free);
 
 exit:
 	gtk_widget_destroy (dialog);

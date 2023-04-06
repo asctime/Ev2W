@@ -147,8 +147,7 @@ action_contact_mailto_copy_cb (GtkAction *action,
 	gtk_clipboard_set_text (clipboard, text, -1);
 	gtk_clipboard_store (clipboard);
 
-	g_list_foreach (list, (GFunc) g_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_free);
 }
 
 static void
@@ -390,8 +389,7 @@ accum_multival_attribute (GString *buffer,
 		const gchar *str = (const gchar *) l->data;
 		accum_name_value (buffer, html_label, str, icon, html_flags);
 	}
-	g_list_foreach (val_list, (GFunc) g_free, NULL);
-	g_list_free (val_list);
+	g_list_free_full (val_list, g_free);
 }
 
 static void
@@ -502,8 +500,7 @@ render_contact (GString *buffer,
 		g_free (name);
 		g_free (mail);
 	}
-	g_list_foreach (email_list, (GFunc)g_free, NULL);
-	g_list_free (email_list);
+	g_list_free_full (email_list, g_free);
 
 	if (accum->len) {
 
@@ -1073,7 +1070,7 @@ contact_display_update_actions (EWebView *web_view)
 }
 
 static void
-eab_contact_display_class_init (EABContactDisplayClass *class)
+eab_contact_display_class_init (EABContactDisplayClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkHTMLClass *html_class;
@@ -1130,7 +1127,7 @@ eab_contact_display_class_init (EABContactDisplayClass *class)
 }
 
 static void
-eab_contact_display_init (EABContactDisplay *display)
+eab_contact_display_init (EABContactDisplay *display, gpointer class_data)
 {
 	EWebView *web_view;
 	GtkUIManager *ui_manager;

@@ -221,14 +221,14 @@ gal_a11y_e_cell_grab_focus (AtkComponent *component)
 /* Table IFace */
 
 static void
-gal_a11y_e_cell_atk_component_iface_init (AtkComponentIface *iface)
+gal_a11y_e_cell_atk_component_iface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	iface->get_extents = gal_a11y_e_cell_get_extents;
 	iface->grab_focus  = gal_a11y_e_cell_grab_focus;
 }
 
 static void
-gal_a11y_e_cell_class_init (GalA11yECellClass *klass)
+gal_a11y_e_cell_class_init (GalA11yECellClass *klass, gpointer class_data)
 {
 	AtkObjectClass *atk_object_class = ATK_OBJECT_CLASS (klass);
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -244,7 +244,7 @@ gal_a11y_e_cell_class_init (GalA11yECellClass *klass)
 }
 
 static void
-gal_a11y_e_cell_init (GalA11yECell *a11y)
+gal_a11y_e_cell_init (GalA11yECell *a11y, gpointer class_data)
 {
 	a11y->item = NULL;
 	a11y->cell_view = NULL;
@@ -462,7 +462,7 @@ gal_a11y_e_cell_action_do_action (AtkAction *action,
 }
 
 static void
-gal_a11y_e_cell_atk_action_interface_init (AtkActionIface *iface)
+gal_a11y_e_cell_atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
   g_return_if_fail (iface != NULL);
 

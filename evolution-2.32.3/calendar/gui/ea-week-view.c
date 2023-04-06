@@ -29,7 +29,7 @@
 
 #include <e-util/gtk-compat.h>
 
-static void ea_week_view_class_init (EaWeekViewClass *klass);
+static void ea_week_view_class_init (EaWeekViewClass *klass, gpointer class_data);
 
 static G_CONST_RETURN gchar * ea_week_view_get_name (AtkObject *accessible);
 static G_CONST_RETURN gchar * ea_week_view_get_description (AtkObject *accessible);
@@ -86,7 +86,7 @@ ea_week_view_get_type (void)
 }
 
 static void
-ea_week_view_class_init (EaWeekViewClass *klass)
+ea_week_view_class_init (EaWeekViewClass *klass, gpointer class_data)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 

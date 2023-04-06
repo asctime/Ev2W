@@ -147,7 +147,7 @@ ecv_ref_accessible_at_point (AtkComponent *component,
 }
 
 static void
-ecv_class_init (GalA11yECellVboxClass *klass)
+ecv_class_init (GalA11yECellVboxClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	AtkObjectClass *a11y_class = ATK_OBJECT_CLASS (klass);
@@ -160,7 +160,7 @@ ecv_class_init (GalA11yECellVboxClass *klass)
 }
 
 static void
-ecv_init (GalA11yECellVbox *a11y)
+ecv_init (GalA11yECellVbox *a11y, gpointer class_data)
 {
 }
 

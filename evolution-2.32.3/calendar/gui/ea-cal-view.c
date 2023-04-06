@@ -30,7 +30,7 @@
 
 #include <e-util/gtk-compat.h>
 
-static void ea_cal_view_class_init (EaCalViewClass *klass);
+static void ea_cal_view_class_init (EaCalViewClass *klass, gpointer class_data);
 
 static AtkObject* ea_cal_view_get_parent (AtkObject *accessible);
 static void ea_cal_view_real_initialize (AtkObject *accessible, gpointer data);
@@ -45,7 +45,7 @@ static void ea_cal_view_event_added_cb (ECalendarView *cal_view,
 static gboolean idle_dates_changed (gpointer data);
 static void ea_cal_view_dates_change_cb (GnomeCalendar *gcal, gpointer data);
 
-static void atk_action_interface_init (AtkActionIface *iface);
+static void atk_action_interface_init (AtkActionIface *iface, gpointer class_data);
 static gboolean action_interface_do_action (AtkAction *action, gint i);
 static gint action_interface_get_n_actions (AtkAction *action);
 static G_CONST_RETURN gchar *
@@ -108,7 +108,7 @@ ea_cal_view_get_type (void)
 }
 
 static void
-ea_cal_view_class_init (EaCalViewClass *klass)
+ea_cal_view_class_init (EaCalViewClass *klass, gpointer class_init)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 
@@ -309,7 +309,7 @@ static const gchar * action_name[CAL_VIEW_ACTION_NUM] = {
 };
 
 static void
-atk_action_interface_init (AtkActionIface *iface)
+atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

@@ -348,10 +348,7 @@ process_unref (ContactCopyProcess *process)
 	if (process->count == 0) {
 		if (process->done_cb)
 			process->done_cb (process);
-		g_list_foreach (
-			process->contacts,
-			(GFunc) g_object_unref, NULL);
-		g_list_free (process->contacts);
+		g_list_free_full (process->contacts, g_object_unref);
 		g_object_unref (process->source);
 		g_object_unref (process->destination);
 		g_free (process);

@@ -141,8 +141,7 @@ action_image_set_as_background_cb (GtkAction *action,
 
 	g_object_unref (destination);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static GtkActionEntry standard_entries[] = {
@@ -194,8 +193,7 @@ exit:
 	action_group = e_attachment_view_get_action_group (view, "image");
 	gtk_action_group_set_visible (action_group, visible);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static void

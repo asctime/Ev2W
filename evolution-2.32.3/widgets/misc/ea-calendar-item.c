@@ -35,7 +35,7 @@
 #define EA_CALENDAR_COLUMN_NUM E_CALENDAR_COLS_PER_MONTH
 
 /* EaCalendarItem */
-static void ea_calendar_item_class_init (EaCalendarItemClass *klass);
+static void ea_calendar_item_class_init (EaCalendarItemClass *klass, gpointer class_data);
 static void ea_calendar_item_finalize (GObject *object);
 
 static G_CONST_RETURN gchar * ea_calendar_item_get_name (AtkObject *accessible);
@@ -45,7 +45,7 @@ static AtkObject *ea_calendar_item_ref_child (AtkObject *accessible, gint index)
 static AtkStateSet* ea_calendar_item_ref_state_set (AtkObject *accessible);
 
 /* atk table interface */
-static void atk_table_interface_init (AtkTableIface *iface);
+static void atk_table_interface_init (AtkTableIface *iface, gpointer class_data);
 static gint table_interface_get_index_at (AtkTable *table,
 					  gint     row,
 					  gint     column);
@@ -97,7 +97,7 @@ table_interface_get_row_description (AtkTable *table, gint row);
 static AtkObject* table_interface_get_summary (AtkTable *table);
 
 /* atk selection interface */
-static void atk_selection_interface_init (AtkSelectionIface *iface);
+static void atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data);
 static gboolean selection_interface_add_selection (AtkSelection *selection,
 						   gint i);
 static gboolean selection_interface_clear_selection (AtkSelection *selection);
@@ -193,7 +193,7 @@ ea_calendar_item_get_type (void)
 }
 
 static void
-ea_calendar_item_class_init (EaCalendarItemClass *klass)
+ea_calendar_item_class_init (EaCalendarItemClass *klass, gpointer class_data)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
@@ -447,7 +447,7 @@ ea_calendar_item_ref_child (AtkObject *accessible, gint index)
 /* atk table interface */
 
 static void
-atk_table_interface_init (AtkTableIface *iface)
+atk_table_interface_init (AtkTableIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 
@@ -870,7 +870,7 @@ table_interface_get_summary (AtkTable	*table)
 /* atkselection interface */
 
 static void
-atk_selection_interface_init (AtkSelectionIface *iface)
+atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

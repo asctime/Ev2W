@@ -28,7 +28,7 @@
 
 /* EDayViewCell */
 
-static void e_day_view_cell_class_init (EDayViewCellClass *class);
+static void e_day_view_cell_class_init (EDayViewCellClass *class, gpointer class_data);
 
 EA_FACTORY_GOBJECT (EA_TYPE_DAY_VIEW_CELL, ea_day_view_cell, ea_day_view_cell_new)
 
@@ -59,7 +59,7 @@ e_day_view_cell_get_type (void)
 }
 
 static void
-e_day_view_cell_class_init (EDayViewCellClass *class)
+e_day_view_cell_class_init (EDayViewCellClass *class, gpointer class_data)
 {
     EA_SET_FACTORY (e_day_view_cell_get_type (), ea_day_view_cell);
 }

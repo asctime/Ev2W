@@ -281,8 +281,7 @@ parseLine (GHashTable *dn_contact_hash, EContact *contact,
 					list = g_list_append (list, g_strdup (ldif_value->str));
 					e_contact_set (contact, ldif_fields[i].contact_field, list);
 
-					g_list_foreach (list, (GFunc) g_free, NULL);
-					g_list_free (list);
+					g_list_free_full (list, g_free);
 				}
 				else if (ldif_fields[i].flags & FLAG_BOOLEAN) {
 					if (!g_ascii_strcasecmp (ldif_value->str, "true")) {
@@ -321,8 +320,7 @@ parseLine (GHashTable *dn_contact_hash, EContact *contact,
 				email = g_list_append (email, g_strdup (ldif_value->str));
 				e_contact_set (contact, E_CONTACT_EMAIL, email);
 
-				g_list_foreach (email, (GFunc) g_free, NULL);
-				g_list_free (email);
+				g_list_free_full (email, g_free);
 			}
 		}
 
@@ -438,10 +436,8 @@ resolve_list_card (LDIFImporter *gci, EContact *contact)
 	}
 	e_contact_set_attributes (contact, E_CONTACT_EMAIL, email_attrs);
 
-	g_list_foreach (email, (GFunc) g_free, NULL);
-	g_list_free (email);
-	g_list_foreach (email_attrs, (GFunc) e_vcard_attribute_free, NULL);
-	g_list_free (email_attrs);
+	g_list_free_full (email, g_free);
+	g_list_free_full (email_attrs, (GDestroyNotify)e_vcard_attribute_free);
 }
 
 static void
@@ -606,10 +602,8 @@ ldif_import_done(LDIFImporter *gci)
 
 	fclose (gci->file);
 	g_object_unref(gci->book);
-	g_slist_foreach(gci->contacts, (GFunc) g_object_unref, NULL);
-	g_slist_foreach(gci->list_contacts, (GFunc) g_object_unref, NULL);
-	g_slist_free(gci->contacts);
-	g_slist_free(gci->list_contacts);
+	g_slist_free_full(gci->contacts, g_object_unref);
+	g_slist_free_full(gci->list_contacts, g_object_unref);
 	g_hash_table_destroy(gci->dn_contact_hash);
 
 	e_import_complete(gci->import, gci->target);
@@ -719,8 +713,7 @@ ldif_get_preview (EImport *ei, EImportTarget *target, EImportImporter *im)
 	contacts = g_list_reverse (contacts);
 	preview = evolution_contact_importer_get_preview_widget (contacts);
 
-	g_list_foreach (contacts, (GFunc) g_object_unref, NULL);
-	g_list_free (contacts);
+	g_list_free_full (contacts, g_object_unref);
 	fclose (file);
 
 	return preview;

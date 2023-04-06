@@ -29,7 +29,7 @@
 #include <glib/gi18n.h>
 
 /* EaDayViewMainItem */
-static void	ea_day_view_main_item_class_init(EaDayViewMainItemClass *klass);
+static void	ea_day_view_main_item_class_init(EaDayViewMainItemClass *klass, gpointer class_data);
 
 static void	ea_day_view_main_item_finalize	(GObject *object);
 static G_CONST_RETURN gchar *
@@ -49,13 +49,13 @@ static void ea_day_view_main_item_dates_change_cb (GnomeCalendar *gcal, gpointer
 static void ea_day_view_main_item_time_change_cb (EDayView *day_view, gpointer data);
 
 /* component interface */
-static void atk_component_interface_init (AtkComponentIface *iface);
+static void atk_component_interface_init (AtkComponentIface *iface, gpointer class_data);
 static void component_interface_get_extents (AtkComponent *component,
 					     gint *x, gint *y,
 					     gint *width, gint *height,
 					     AtkCoordType coord_type);
 /* atk table interface */
-static void atk_table_interface_init (AtkTableIface *iface);
+static void atk_table_interface_init (AtkTableIface *iface, gpointer class_data);
 static gint table_interface_get_index_at (AtkTable *table,
 					  gint     row,
 					  gint     column);
@@ -107,7 +107,7 @@ table_interface_get_row_description (AtkTable *table, gint row);
 static AtkObject* table_interface_get_summary (AtkTable *table);
 
 /* atk selection interface */
-static void atk_selection_interface_init (AtkSelectionIface *iface);
+static void atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data);
 static gboolean selection_interface_add_selection (AtkSelection *selection,
 						   gint i);
 static gboolean selection_interface_clear_selection (AtkSelection *selection);
@@ -212,7 +212,7 @@ ea_day_view_main_item_get_type (void)
 }
 
 static void
-ea_day_view_main_item_class_init (EaDayViewMainItemClass *klass)
+ea_day_view_main_item_class_init (EaDayViewMainItemClass *klass, gpointer class_data)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
@@ -627,7 +627,7 @@ ea_day_view_main_item_destory_cell_data (EaDayViewMainItem *ea_main_item)
 /* Atk Component Interface */
 
 static void
-atk_component_interface_init (AtkComponentIface *iface)
+atk_component_interface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 
@@ -663,7 +663,7 @@ component_interface_get_extents (AtkComponent *component,
 /* atk table interface */
 
 static void
-atk_table_interface_init (AtkTableIface *iface)
+atk_table_interface_init (AtkTableIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 
@@ -1133,7 +1133,7 @@ table_interface_get_summary (AtkTable	*table)
 /* atkselection interface */
 
 static void
-atk_selection_interface_init (AtkSelectionIface *iface)
+atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

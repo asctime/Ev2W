@@ -37,14 +37,14 @@ static const gchar * action_name[] = {
 static G_CONST_RETURN gchar * ea_minicard_view_get_name (AtkObject *accessible);
 static G_CONST_RETURN gchar * ea_minicard_view_get_description (AtkObject *accessible);
 
-static void ea_minicard_view_class_init (EaMinicardViewClass *klass);
+static void ea_minicard_view_class_init (EaMinicardViewClass *klass, gpointer class_data);
 
 static gint ea_minicard_view_get_n_children (AtkObject *obj);
 static AtkObject *ea_minicard_view_ref_child (AtkObject *obj, gint i);
 
 static AtkStateSet *ea_minicard_view_ref_state_set(AtkObject *obj);
 
-static void atk_selection_interface_init (AtkSelectionIface *iface);
+static void atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data);
 static gboolean selection_interface_add_selection (AtkSelection *selection,
 						   gint i);
 static gboolean selection_interface_clear_selection (AtkSelection *selection);
@@ -54,7 +54,7 @@ static gint selection_interface_get_selection_count (AtkSelection *selection);
 static gboolean selection_interface_is_child_selected (AtkSelection *selection,
 						       gint i);
 
-static void atk_action_interface_init (AtkActionIface *iface);
+static void atk_action_interface_init (AtkActionIface *iface, gpointer class_data);
 static gboolean atk_action_interface_do_action (AtkAction *iface, gint i);
 static gint atk_action_interface_get_n_action (AtkAction *iface);
 static G_CONST_RETURN gchar *
@@ -126,7 +126,7 @@ ea_minicard_view_get_type (void)
 }
 
 static void
-ea_minicard_view_class_init (EaMinicardViewClass *klass)
+ea_minicard_view_class_init (EaMinicardViewClass *klass, gpointer class_data)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 
@@ -273,7 +273,7 @@ ea_minicard_view_ref_child (AtkObject *accessible, gint index)
 /* atkselection interface */
 
 static void
-atk_selection_interface_init (AtkSelectionIface *iface)
+atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 
@@ -355,7 +355,7 @@ selection_interface_is_child_selected (AtkSelection *selection, gint i)
 	return e_selection_model_is_row_selected (reflow->selection, i);
 }
 
-static void atk_action_interface_init (AtkActionIface *iface)
+static void atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

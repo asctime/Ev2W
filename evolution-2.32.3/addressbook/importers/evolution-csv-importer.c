@@ -814,8 +814,7 @@ csv_import_done(CSVImporter *gci)
 
 	fclose (gci->file);
 	g_object_unref(gci->book);
-	g_slist_foreach(gci->contacts, (GFunc) g_object_unref, NULL);
-	g_slist_free(gci->contacts);
+	g_slist_free_full(gci->contacts, g_object_unref);
 
 	if (gci->fields_map)
 		g_hash_table_destroy (gci->fields_map);
@@ -943,8 +942,7 @@ csv_get_preview (EImport *ei, EImportTarget *target, EImportImporter *im)
 	contacts = g_list_reverse (contacts);
 	preview = evolution_contact_importer_get_preview_widget (contacts);
 
-	g_list_foreach (contacts, (GFunc) g_object_unref, NULL);
-	g_list_free (contacts);
+	g_list_free_full (contacts, g_object_unref);
 	fclose (file);
 	g_free (gci);
 

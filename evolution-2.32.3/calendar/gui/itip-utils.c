@@ -1329,8 +1329,7 @@ itip_send_comp (ECalComponentItipMethod method, ECalComponent *send_comp,
 	/* check whether backend could handle sending requests/updates */
 	if (method != E_CAL_COMPONENT_METHOD_PUBLISH && e_cal_get_static_capability (client, CAL_STATIC_CAPABILITY_CREATE_MESSAGES)) {
 		if (users) {
-			g_list_foreach (users, (GFunc) g_free, NULL);
-			g_list_free (users);
+			g_list_free_full (users, g_free);
 		}
 		return TRUE;
 	}
@@ -1419,8 +1418,7 @@ itip_send_comp (ECalComponentItipMethod method, ECalComponent *send_comp,
 		icalcomponent_free (top_level);
 
 	if (users) {
-		g_list_foreach (users, (GFunc) g_free, NULL);
-		g_list_free (users);
+		g_list_free_full (users, g_free);
 	}
 
 	g_free (content_type);
@@ -1578,8 +1576,7 @@ reply_to_calendar_comp (ECalComponentItipMethod method,
 		icalcomponent_free (top_level);
 
 	if (users) {
-		g_list_foreach (users, (GFunc) g_free, NULL);
-		g_list_free (users);
+		g_list_free_full (users, g_free);
 	}
 
 	g_free (subject);

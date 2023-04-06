@@ -48,7 +48,7 @@ gal_a11y_e_table_factory_create_accessible (GObject *obj)
 }
 
 static void
-gal_a11y_e_table_factory_class_init (GalA11yETableFactoryClass *klass)
+gal_a11y_e_table_factory_class_init (GalA11yETableFactoryClass *klass, gpointer class_data)
 {
 	AtkObjectFactoryClass *factory_class = ATK_OBJECT_FACTORY_CLASS (klass);
 
@@ -59,7 +59,7 @@ gal_a11y_e_table_factory_class_init (GalA11yETableFactoryClass *klass)
 }
 
 static void
-gal_a11y_e_table_factory_init (GalA11yETableFactory *factory)
+gal_a11y_e_table_factory_init (GalA11yETableFactory *factory, gpointer class_data)
 {
 }
 

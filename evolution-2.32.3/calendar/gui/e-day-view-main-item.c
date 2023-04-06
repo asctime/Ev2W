@@ -1252,7 +1252,7 @@ day_view_main_item_point (GnomeCanvasItem *item,
 }
 
 static void
-day_view_main_item_class_init (EDayViewMainItemClass *class)
+day_view_main_item_class_init (EDayViewMainItemClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;

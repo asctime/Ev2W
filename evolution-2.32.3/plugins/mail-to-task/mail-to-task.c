@@ -129,11 +129,8 @@ set_attendees (ECalComponent *comp, CamelMimeMessage *message, const gchar *orga
 
 	e_cal_component_set_attendee_list (comp, attendees);
 
-	g_slist_foreach (attendees, (GFunc) g_free, NULL);
-	g_slist_foreach (to_free, (GFunc) g_free, NULL);
-
-	g_slist_free (to_free);
-	g_slist_free (attendees);
+	g_slist_free_full (to_free, g_free);
+	g_slist_free_full (attendees, g_free);
 }
 
 static const gchar *
@@ -357,8 +354,7 @@ set_attachments (ECal *client, ECalComponent *comp, CamelMimeMessage *message)
 	while (!status.done)
 		gtk_main_iteration ();
 
-	g_list_foreach (attachment_list, (GFunc) g_object_unref, NULL);
-	g_list_free (attachment_list);
+	g_list_free_full (attachment_list, g_object_unref);
 
 	status.uris = NULL;
 	status.done = FALSE;
@@ -597,8 +593,7 @@ do_manage_comp_idle (GSList *manage_comp_datas)
 	}
 
 	if (source_type == E_CAL_SOURCE_TYPE_LAST) {
-		g_slist_foreach (manage_comp_datas, (GFunc) free_manage_comp_struct, NULL);
-		g_slist_free (manage_comp_datas);
+		g_slist_free_full (manage_comp_datas, (GDestroyNotify)free_manage_comp_struct);
 
 		g_warning ("mail-to-task: Incorrect call of %s, no data given", G_STRFUNC);
 		return FALSE;
@@ -709,8 +704,7 @@ do_manage_comp_idle (GSList *manage_comp_datas)
 		g_error_free (error);
 	}
 
-	g_slist_foreach (manage_comp_datas, (GFunc) free_manage_comp_struct, NULL);
-	g_slist_free (manage_comp_datas);
+	g_slist_free_full (manage_comp_datas, (GDestroyNotify)free_manage_comp_struct);
 
 	return FALSE;
 }

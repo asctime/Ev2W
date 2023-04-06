@@ -28,7 +28,7 @@
 #include <glib/gi18n.h>
 
 static void	ea_cal_view_event_class_init	(EaCalViewEventClass *klass);
-static void	ea_cal_view_event_init		(EaCalViewEvent *a11y);
+static void	ea_cal_view_event_init		(EaCalViewEvent *a11y, gpointer class_data);
 static void	ea_cal_view_event_dispose	(GObject *object);
 static G_CONST_RETURN gchar *
 		ea_cal_view_event_get_name	(AtkObject *accessible);
@@ -43,7 +43,7 @@ static AtkStateSet *
 		ea_cal_view_event_ref_state_set	(AtkObject *accessible);
 
 /* component interface */
-static void	atk_component_interface_init	(AtkComponentIface *iface);
+static void	atk_component_interface_init	(AtkComponentIface *iface, gpointer class_data);
 static void	ea_cal_view_get_extents		(AtkComponent *component,
 						 gint *x,
 						 gint *y,
@@ -51,7 +51,7 @@ static void	ea_cal_view_get_extents		(AtkComponent *component,
 						 gint *height,
 						 AtkCoordType coord_type);
 /* action interface */
-static void	atk_action_interface_init	(AtkActionIface *iface);
+static void	atk_action_interface_init	(AtkActionIface *iface, gpointer class_data);
 static gboolean	ea_cal_view_event_do_action	(AtkAction *action,
 						 gint i);
 static gint	ea_cal_view_event_get_n_actions	(AtkAction *action);
@@ -150,7 +150,7 @@ ea_cal_view_event_class_init (EaCalViewEventClass *klass)
 }
 
 static void
-ea_cal_view_event_init (EaCalViewEvent *a11y)
+ea_cal_view_event_init (EaCalViewEvent *a11y, gpointer class_data)
 {
         a11y->state_set = atk_state_set_new ();
         atk_state_set_add_state (a11y->state_set, ATK_STATE_TRANSIENT);
@@ -433,7 +433,7 @@ ea_cal_view_event_ref_state_set (AtkObject *accessible)
 /* Atk Component Interface */
 
 static void
-atk_component_interface_init (AtkComponentIface *iface)
+atk_component_interface_init (AtkComponentIface *iface, gpointer class_data)
 {
   g_return_if_fail (iface != NULL);
 
@@ -552,7 +552,7 @@ static const gchar * action_name[CAL_VIEW_EVENT_ACTION_NUM] = {
 };
 
 static void
-atk_action_interface_init (AtkActionIface *iface)
+atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
         g_return_if_fail (iface != NULL);
 

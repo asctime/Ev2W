@@ -1135,8 +1135,7 @@ update_item (struct _itip_puri *pitip, ItipViewResponse response)
 			}
 		}
 
-		g_slist_foreach (attachments, (GFunc) g_free, NULL);
-		g_slist_free (attachments);
+		g_slist_free_full (attachments, g_free);
 
 		e_cal_component_set_attachment_list (clone_comp, new_attachments);
 	}

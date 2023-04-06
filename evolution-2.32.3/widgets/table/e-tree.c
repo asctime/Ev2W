@@ -396,10 +396,7 @@ et_dispose (GObject *object)
 
 		scroll_off (et);
 		hover_off (et);
-		g_list_foreach (
-			et->priv->expanded_list,
-			(GFunc) g_free, NULL);
-		g_list_free (et->priv->expanded_list);
+		g_list_free_full (et->priv->expanded_list, g_free);
 
 		et_disconnect_from_etta (et);
 

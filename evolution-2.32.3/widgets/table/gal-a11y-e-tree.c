@@ -97,7 +97,7 @@ et_get_layer (AtkComponent *component)
 }
 
 static void
-et_class_init (GalA11yETreeClass *klass)
+et_class_init (GalA11yETreeClass *klass, gpointer class_data)
 {
 	AtkObjectClass *atk_object_class = ATK_OBJECT_CLASS (klass);
 
@@ -108,14 +108,14 @@ et_class_init (GalA11yETreeClass *klass)
 }
 
 static void
-et_atk_component_iface_init (AtkComponentIface *iface)
+et_atk_component_iface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	iface->ref_accessible_at_point = et_ref_accessible_at_point;
 	iface->get_layer = et_get_layer;
 }
 
 static void
-et_init (GalA11yETree *a11y)
+et_init (GalA11yETree *a11y, gpointer class_data)
 {
 	GalA11yETreePrivate *priv;
 

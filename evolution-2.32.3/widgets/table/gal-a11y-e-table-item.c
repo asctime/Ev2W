@@ -649,7 +649,7 @@ table_remove_row_selection (AtkTable *table, gint row)
 }
 
 static void
-eti_atk_table_iface_init (AtkTableIface *iface)
+eti_atk_table_iface_init (AtkTableIface *iface, gpointer class_data)
 {
 	iface->ref_at = eti_ref_at;
 	iface->get_index_at = eti_get_index_at;
@@ -674,7 +674,7 @@ eti_atk_table_iface_init (AtkTableIface *iface)
 }
 
 static void
-eti_atk_component_iface_init (AtkComponentIface *iface)
+eti_atk_component_iface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	component_parent_iface         = g_type_interface_peek_parent (iface);
 
@@ -917,7 +917,7 @@ eti_real_initialize (AtkObject *obj,
 }
 
 static void
-eti_class_init (GalA11yETableItemClass *klass)
+eti_class_init (GalA11yETableItemClass *klass, gpointer class_data)
 {
 	AtkObjectClass *atk_object_class = ATK_OBJECT_CLASS (klass);
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -936,7 +936,7 @@ eti_class_init (GalA11yETableItemClass *klass)
 }
 
 static void
-eti_init (GalA11yETableItem *a11y)
+eti_init (GalA11yETableItem *a11y, gpointer class_data)
 {
 	GalA11yETableItemPrivate *priv;
 
@@ -949,7 +949,7 @@ eti_init (GalA11yETableItem *a11y)
 
 /* atk selection */
 
-static void	atk_selection_interface_init	(AtkSelectionIface *iface);
+static void	atk_selection_interface_init	(AtkSelectionIface *iface, gpointer class_data);
 static gboolean	selection_add_selection		(AtkSelection *selection,
 						 gint i);
 static gboolean	selection_clear_selection	(AtkSelection *selection);
@@ -1230,7 +1230,7 @@ eti_a11y_cursor_changed_cb (ESelectionModel *selection,
 
 /* atk selection */
 
-static void atk_selection_interface_init (AtkSelectionIface *iface)
+static void atk_selection_interface_init (AtkSelectionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 	iface->add_selection = selection_add_selection;

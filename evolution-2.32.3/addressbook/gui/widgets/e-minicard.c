@@ -41,7 +41,7 @@
 #include "ea-addressbook.h"
 
 static void e_minicard_init		(EMinicard		 *card);
-static void e_minicard_class_init	(EMinicardClass	 *class);
+static void e_minicard_class_init	(EMinicardClass	 *class, gpointer class_data);
 static void e_minicard_set_property  (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
 static void e_minicard_get_property  (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
 static void e_minicard_dispose (GObject *object);
@@ -128,7 +128,7 @@ e_minicard_get_type (void)
 }
 
 static void
-e_minicard_class_init (EMinicardClass *class)
+e_minicard_class_init (EMinicardClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -426,8 +426,7 @@ e_minicard_dispose (GObject *object)
 	e_minicard = E_MINICARD (object);
 
 	if (e_minicard->fields) {
-		g_list_foreach(e_minicard->fields, (GFunc) e_minicard_field_destroy, NULL);
-		g_list_free(e_minicard->fields);
+		g_list_free_full(e_minicard->fields, (GDestroyNotify)e_minicard_field_destroy);
 		e_minicard->fields = NULL;
 	}
 
@@ -876,8 +875,7 @@ add_email_field (EMinicard *e_minicard, GList *email_list, gdouble left_width, g
 		g_free (parsed_name);
 		g_free (email);
 	}
-	g_list_foreach (emails, (GFunc) g_free, NULL);
-	g_list_free (emails);
+	g_list_free_full (emails, g_free);
 }
 
 static gint
@@ -1008,8 +1006,7 @@ remodel( EMinicard *e_minicard )
 			}
 		}
 
-		g_list_foreach(list, (GFunc) e_minicard_field_destroy, NULL);
-		g_list_free(list);
+		g_list_free_full(list, (GDestroyNotify)e_minicard_field_destroy);
 	}
 }
 

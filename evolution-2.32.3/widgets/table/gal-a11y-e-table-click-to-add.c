@@ -111,7 +111,7 @@ etcta_do_action (AtkAction * action, gint i)
 }
 
 static void
-atk_action_interface_init (AtkActionIface *iface)
+atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 
@@ -181,7 +181,7 @@ etcta_ref_state_set (AtkObject *accessible)
 }
 
 static void
-etcta_class_init (GalA11yETableClickToAddClass *klass)
+etcta_class_init (GalA11yETableClickToAddClass *klass, gpointer class_data)
 {
 	AtkObjectClass *atk_object_class = ATK_OBJECT_CLASS (klass);
 
@@ -194,7 +194,7 @@ etcta_class_init (GalA11yETableClickToAddClass *klass)
 }
 
 static void
-etcta_init (GalA11yETableClickToAdd *a11y)
+etcta_init (GalA11yETableClickToAdd *a11y, gpointer class_data)
 {
 }
 

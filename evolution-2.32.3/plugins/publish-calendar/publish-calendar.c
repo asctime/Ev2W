@@ -519,8 +519,7 @@ update_timestamp (EPublishUri *uri)
 
 	gconf_client_set_list (client, "/apps/evolution/calendar/publish/uris", GCONF_VALUE_STRING, uris, NULL);
 
-	g_slist_foreach (uris, (GFunc) g_free, NULL);
-	g_slist_free (uris);
+	g_slist_free_full (uris, g_free);
 	g_object_unref (client);
 }
 
@@ -582,8 +581,7 @@ url_list_changed (PublishUIData *ui)
 	}
 	client = gconf_client_get_default ();
 	gconf_client_set_list (client, "/apps/evolution/calendar/publish/uris", GCONF_VALUE_STRING, url_list, NULL);
-	g_slist_foreach (url_list, (GFunc) g_free, NULL);
-	g_slist_free (url_list);
+	g_slist_free_full (url_list, g_free);
 }
 
 static void
@@ -914,8 +912,7 @@ publish_uris_set_timeout (GSList *uris)
 
 		l = g_slist_next (l);
 	}
-	g_slist_foreach (uris, (GFunc) g_free, NULL);
-	g_slist_free (uris);
+	g_slist_free_full (uris, g_free);
 
 	return NULL;
 }

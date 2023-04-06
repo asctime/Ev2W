@@ -1129,8 +1129,7 @@ try_again:
 		g_mutex_unlock (priv->dn_query_lock);
 	}
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 
 	/* free memory */
 	g_free (real_sexp);

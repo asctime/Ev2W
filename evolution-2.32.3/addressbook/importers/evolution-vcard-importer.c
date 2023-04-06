@@ -460,8 +460,7 @@ vcard_import_done(VCardImporter *gci)
 		g_source_remove(gci->idle_id);
 
 	g_object_unref (gci->book);
-	g_list_foreach (gci->contactlist, (GFunc) g_object_unref, NULL);
-	g_list_free (gci->contactlist);
+	g_list_free_full (gci->contactlist, g_object_unref);
 
 	e_import_complete(gci->import, gci->target);
 	g_object_unref(gci->import);
@@ -601,8 +600,7 @@ vcard_get_preview (EImport *ei, EImportTarget *target, EImportImporter *im)
 
 	preview = evolution_contact_importer_get_preview_widget (contacts);
 
-	g_list_foreach (contacts, (GFunc) g_object_unref, NULL);
-	g_list_free (contacts);
+	g_list_free_full (contacts, g_object_unref);
 
 	return preview;
 }

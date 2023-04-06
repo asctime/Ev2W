@@ -44,7 +44,7 @@ struct _GalA11yETableColumnHeaderPrivate {
 };
 
 static void
-etch_init (GalA11yETableColumnHeader *a11y)
+etch_init (GalA11yETableColumnHeader *a11y, gpointer class_data)
 {
 	GET_PRIVATE (a11y)->item = NULL;
 	GET_PRIVATE (a11y)->parent = NULL;
@@ -86,7 +86,7 @@ gal_a11y_e_table_column_header_dispose (GObject *object)
 }
 
 static void
-etch_class_init (GalA11yETableColumnHeaderClass *klass)
+etch_class_init (GalA11yETableColumnHeaderClass *klass, gpointer class_data)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -161,7 +161,7 @@ gal_a11y_e_table_column_header_action_get_name (AtkAction *action,
 }
 
 static void
-atk_action_interface_init (AtkActionIface *iface)
+atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

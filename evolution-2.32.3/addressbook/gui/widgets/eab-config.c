@@ -35,7 +35,7 @@ struct _EABConfigPrivate {
 #define _PRIVATE(o) (g_type_instance_get_private((GTypeInstance *)o, eab_config_get_type()))
 
 static void
-ecp_init (GObject *o)
+ecp_init (GObject *o, gpointer class_data)
 {
 }
 
@@ -94,7 +94,7 @@ ecp_set_target (EConfig *ec, EConfigTarget *t)
 }
 
 static void
-ecp_class_init (GObjectClass *klass)
+ecp_class_init (GObjectClass *klass, gpointer class_data)
 {
 	((EConfigClass *)klass)->set_target = ecp_set_target;
 	((EConfigClass *)klass)->target_free = ecp_target_free;

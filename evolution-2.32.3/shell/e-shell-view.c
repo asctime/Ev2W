@@ -766,7 +766,7 @@ shell_view_update_actions (EShellView *shell_view)
 }
 
 static void
-shell_view_class_init (EShellViewClass *class)
+shell_view_class_init (EShellViewClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 

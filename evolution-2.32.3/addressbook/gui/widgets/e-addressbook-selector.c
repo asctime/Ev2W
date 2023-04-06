@@ -357,7 +357,7 @@ addressbook_selector_class_init (EAddressbookSelectorClass *class)
 }
 
 static void
-addressbook_selector_init (EAddressbookSelector *selector)
+addressbook_selector_init (EAddressbookSelector *selector, gpointer class_data)
 {
 	selector->priv = E_ADDRESSBOOK_SELECTOR_GET_PRIVATE (selector);
 
