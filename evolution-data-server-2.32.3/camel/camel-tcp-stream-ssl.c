@@ -656,8 +656,6 @@ rehandshake_ssl_thread (gpointer data)
       return FALSE;
     }
   }
-
-  return TRUE;
 }
 
 /* We only use this one for STARTTLS */
