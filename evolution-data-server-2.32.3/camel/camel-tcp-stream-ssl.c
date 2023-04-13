@@ -616,10 +616,11 @@ rehandshake_ssl_thread (gpointer data)
   RehandshakeData *rehandshake_data = (RehandshakeData *) data;
   PRFileDesc *fd = rehandshake_data->fd;
   GError **error = rehandshake_data->error;
-  gint64 start_time = g_get_monotonic_time ();
-  gint64 timeout = 5000;   /* 5 seconds, adjust as needed */
+  gint64 start_time = g_get_real_time();
+  gint64 timeout = 10000000;   /* 10 seconds, adjust as needed */
   gint64 elapsed_time;
   PRInt32 poll_result;
+  PRPollDesc poll_desc;
 
   if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
     g_warning ("SSL_ResetHandshake failed.");
@@ -630,7 +631,7 @@ rehandshake_ssl_thread (gpointer data)
   g_warning ("SSL_ResetHandshake success.");
 
   while (TRUE) {
-    elapsed_time = g_get_monotonic_time() - start_time;
+    elapsed_time = g_get_real_time() - start_time;
     if (elapsed_time > timeout) {
       g_warning ("SSL_ForceHandshake timeout.");
       _set_errno_from_pr_error (PR_GetError ());
@@ -638,7 +639,12 @@ rehandshake_ssl_thread (gpointer data)
       return FALSE;
     }
 
-    poll_result = PR_Poll(NULL, 0, PR_INTERVAL_NO_TIMEOUT);
+    poll_desc.fd = fd;
+    poll_desc.in_flags = PR_POLL_READ | PR_POLL_WRITE;
+    poll_desc.out_flags = 0;
+
+    poll_result = PR_Poll(&poll_desc, 1, 100);  /* Use a small non-zero timeout value */
+
     if (poll_result < 0) {
       g_warning ("PR_Poll failed.");
       _set_errno_from_pr_error (PR_GetError ());
@@ -646,15 +652,19 @@ rehandshake_ssl_thread (gpointer data)
       return FALSE;
     }
 
-    if (SSL_ForceHandshake (fd) == SECSuccess) {
-      g_warning ("SSL_ForceHandshake success.");
-      return TRUE;
-    } else {
-      g_warning ("SSL_ForceHandshake failed.");
-      _set_errno_from_pr_error (PR_GetError ());
-      _set_g_error_from_errno (error, FALSE);
-      return FALSE;
+    if (poll_desc.out_flags & (PR_POLL_READ | PR_POLL_WRITE)) {
+      if (SSL_ForceHandshake (fd) == SECSuccess) {
+        g_warning ("SSL_ForceHandshake success.");
+        return TRUE;
+      } else {
+        g_warning ("SSL_ForceHandshake failed.");
+        _set_errno_from_pr_error (PR_GetError ());
+        _set_g_error_from_errno (error, FALSE);
+        return FALSE;
+      }
     }
+
+    g_usleep(10000);      /* Sleep for 10 milliseconds before checking again */
   }
 }
 
