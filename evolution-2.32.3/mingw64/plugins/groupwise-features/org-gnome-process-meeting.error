@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error-list domain="org.gnome.evolution.process_meeting">
+
+<error type="question" id="recurrence-accept" default="GTK_RESPONSE_YES">
+<primary>This is a recurring meeting</primary>
+
+<secondary>Would you like to accept it?</secondary>
+ <button stock="gtk-cancel" response="GTK_RESPONSE_CANCEL"/>
+ <button response="GTK_RESPONSE_NO" label="This instance"/>
+ <button response="GTK_RESPONSE_YES" label="All instances"/>
+</error>
+
+<error type="question" id="recurrence-decline" default="GTK_RESPONSE_YES">
+<primary>This is a recurring meeting</primary>
+
+<secondary>Would you like to decline it?</secondary>
+ <button stock="gtk-cancel" response="GTK_RESPONSE_CANCEL"/>
+ <button response="GTK_RESPONSE_NO" label="This instance"/>
+ <button response="GTK_RESPONSE_YES" label="All instances"/>
+</error>
+
+<error type="question" id="resend" default="GTK_RESPONSE_YES">
+<primary>Do you want to resend the meeting?</primary>
+<secondary>This will create a new meeting using the existing meeting details.</secondary>
+ <button stock="gtk-cancel" response="GTK_RESPONSE_CANCEL"/>
+ <button stock="gtk-ok" response="GTK_RESPONSE_OK"/>
+</error>
+
+<error type="question" id="resend-recurrence" default="GTK_RESPONSE_YES">
+<primary>Do you want to resend the recurring meeting?</primary>
+<secondary>This will create a new meeting with the existing meeting details. The recurrence rule needs to be re-entered.</secondary>
+ <button stock="gtk-cancel" response="GTK_RESPONSE_CANCEL"/>
+ <button response="GTK_RESPONSE_NO" label="This instance"/>
+ <button response="GTK_RESPONSE_YES" label="All instances"/>
+</error>
+
+<error type="question" id="resend-retract" default="GTK_RESPONSE_YES">
+<primary>Do you want to retract the original item?</primary>
+<secondary>The original will be removed from the recipient's mailbox.</secondary>
+ <button stock="gtk-no" response="GTK_RESPONSE_NO"/>
+ <button stock="gtk-yes" response="GTK_RESPONSE_YES"/>
+</error>
+
+</error-list>

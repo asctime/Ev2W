@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error-list domain="filter">
+
+ <error type="error" id="no-date">
+  <primary>Missing date.</primary>
+  <secondary>You must choose a date.</secondary>
+ </error>
+
+ <error type="error" id="no-file">
+  <primary>Missing file name.</primary>
+  <secondary>You must specify a file name.</secondary>
+ </error>
+
+ <error type="error" id="bad-file">
+  <primary>File &quot;{0}&quot; does not exist or is not a regular file.</primary>
+  <secondary>You must specify a file name.</secondary>
+ </error>
+
+ <error type="error" id="bad-regexp">
+  <primary>Bad regular expression &quot;{0}&quot;.</primary>
+  <secondary>Could not compile regular expression &quot;{1}&quot;.</secondary>
+ </error>
+
+ <error type="error" id="no-name">
+  <primary>Missing name.</primary>
+  <secondary>You must name this filter.</secondary>
+ </error>
+
+ <error type="error" id="bad-name-notunique">
+  <primary>Name &quot;{0}&quot; already used.</primary>
+  <secondary>Please choose another name.</secondary>
+ </error>
+
+</error-list>

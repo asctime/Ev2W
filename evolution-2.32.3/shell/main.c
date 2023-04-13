@@ -443,8 +443,13 @@ create_default_shell (void)
 	return shell;
 }
 
+#ifdef UNICODE
+gint
+wmain (gint argc, gchar **argv)
+#else
 gint
 main (gint argc, gchar **argv)
+#endif
 {
 	EShell *shell;
 	GConfClient *client;

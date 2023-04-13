@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<omf>
+  <resource>
+    <creator>(Novell, Inc)</creator>
+    <creator>(Novell, Inc)</creator>
+    <maintainer>(Novell, Inc)</maintainer>
+    <title>Οδηγός χρήστη για το Evolution 2.30</title>
+    <date>5 Οκτωβρίου 2006</date>
+    <version identifier="2.8" date="5 Οκτωβρίου 2006"/>
+    <subject category="GNOME|Internet"/>
+    <description>
+     Ένας οδηγός χρήστη για το Evolution που εξηγεί πώς να χρησιμοποιείτε την αλληλογραφία, το ημερολόγιο, το βιβλίο διευθύνσεων, και την λίστα εργασιών του.
+   </description>
+    <type>manual</type>
+    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
+    <identifier url="file://D:/MSYS2/mingw64/share/gnome/help/evolution/el/evolution.xml"/>
+    <language code="el"/>
+    <relation seriesid="83434cc6-71d1-11d7-9b12-ef76b8cf7c8f"/>
+    <rights type="GNU FDL" license.version="1.1" license="http://www.gnu.org/licenses/fdl.html" holder="Novell, Inc."/>
+  </resource>
+</omf>

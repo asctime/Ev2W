@@ -173,11 +173,15 @@ CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-depre
 =======
 CERT_UI_LIBS = -LD:/MSYS2/mingw64/bin/../lib   -LD:/MSYS2/mingw64/bin/../lib -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4   -LD:/MSYS2/mingw64/bin/../lib -ledataserverui-1.2 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl  
 <<<<<<< HEAD
+<<<<<<< HEAD
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
 >>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 =======
 CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -DUNICODE -D_UNICODE -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -std=iso9899:1990 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
 >>>>>>> f32db13... (GFunc) cleanup forth pass; -DUNICODE -D_GNU_SOURCE -std=iso9899:1990
+=======
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -std=iso9899:1990 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions -fno-strict-aliasing
+>>>>>>> 25e7426... STARTTLS fix ssl_rehandshake_unblock (SSL_ForceHandshake); revert -DUNICODE (shell only)
 CHAMPLAIN_CFLAGS = 
 CHAMPLAIN_LIBS = 
 CLUTTER_CFLAGS = 
@@ -185,6 +189,7 @@ CLUTTER_GTK_CFLAGS =
 CLUTTER_GTK_LIBS = 
 CLUTTER_LIBS = 
 CPP = gcc -E
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -198,6 +203,9 @@ CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_POSIX_C_SOURCE -Wno-deprecated -Wno-dep
 =======
 CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -DUNICODE -D_UNICODE -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 >>>>>>> f32db13... (GFunc) cleanup forth pass; -DUNICODE -D_GNU_SOURCE -std=iso9899:1990
+=======
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+>>>>>>> 25e7426... STARTTLS fix ssl_rehandshake_unblock (SSL_ForceHandshake); revert -DUNICODE (shell only)
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DATASERVER_EXEC_VERSION = 2.32

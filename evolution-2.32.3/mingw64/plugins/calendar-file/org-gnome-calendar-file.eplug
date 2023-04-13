@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+    <e-plugin type="shlib" system_plugin="true" location="/MSYS2/mingw64/lib/evolution/2.32/plugins/liborg-gnome-calendar-file.dll" id="org.gnome.evolution.calendar.file" name="Local Calendars">
+     <author name="JP Rosevear" email="jpr@novell.com"/>
+     <description>Add local calendars to Evolution.</description>
+        <hook class="org.gnome.evolution.calendar.config:1.0">
+            <group target="source" id="org.gnome.evolution.calendar.calendarProperties">
+                <item type="item_table" path="00.general/00.source/99.file_customs" factory="e_calendar_file_customs"/>
+            </group>
+        </hook>
+    </e-plugin>
+</e-plugin-list>

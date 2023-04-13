@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+    <e-plugin type="shlib" location="/MSYS2/mingw64/lib/evolution/2.32/plugins/liborg-gnome-publish-calendar.dll" id="org.gnome.evolution.calendar.publish" name="Calendar Publishing">
+        <description>Publish calendars to the web.</description>
+	<author name="David Trowbridge" email="trowbrds@cs.colorado.edu"/>
+	
+        <hook class="org.gnome.evolution.ui:1.0">
+          <ui-manager id="org.gnome.evolution.calendars">
+            <menubar name='main-menu'>
+              <placeholder name='custom-menus'>
+                <menu action="calendar-actions-menu">
+                  <menuitem action="calendar-publish"/>
+                </menu>
+              </placeholder>
+            </menubar>
+          </ui-manager>
+        </hook>
+
+	
+	<hook class="org.gnome.evolution.calendar.config:1.0">
+	    <group target="prefs" id="org.gnome.evolution.calendar.prefs">
+	        <item type="page" path="30.publishing" label="Calendar Publishing"></item>
+		<item type="section" path="30.publishing/00.urls" label="Locations"></item>
+		<item type="item" path="30.publishing/00.urls/00.locations" factory="publish_calendar_locations"/>
+	    </group>
+	</hook>
+    </e-plugin>
+</e-plugin-list>

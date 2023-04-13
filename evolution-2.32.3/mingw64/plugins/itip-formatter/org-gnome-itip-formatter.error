@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error-list domain="org.gnome.itip-formatter">
+
+ <error type="question" id="add-unknown-attendee">
+  <primary>This response is not from a current attendee. Add the sender as an attendee?</primary>
+  <button stock="gtk-yes" response="GTK_RESPONSE_YES"/>
+  <button stock="gtk-no" response="GTK_RESPONSE_NO"/>
+ </error>
+ 
+ <error type="question" id="add-delegate">
+  <primary>This meeting has been delegated</primary>
+  <secondary>'{0}' has delegated the meeting. Do you want to add the delegate '{1}'?</secondary>
+  <button stock="gtk-yes" response="GTK_RESPONSE_YES"/>
+  <button stock="gtk-no" response="GTK_RESPONSE_NO"/>
+ </error>
+
+</error-list>

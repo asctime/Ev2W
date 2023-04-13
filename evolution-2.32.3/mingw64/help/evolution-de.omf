@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<omf>
+  <resource>
+    <creator>(Novell, Inc)</creator>
+    <creator>(Novell, Inc)</creator>
+    <maintainer>(Novell, Inc)</maintainer>
+    <title>Benutzerhandbuch von Evolution 2.30 </title>
+    <date>5. Oktober 2006</date>
+    <version identifier="2.8" date="5. Oktober 2006"/>
+    <subject category="GNOME|Internet"/>
+    <description>
+     Ein Benutzerhandbuch für »Evolution«, welches die Nutzung der E-Mail-, Kalender-, Adressbuch- und Aufgabenfunktionen erklärt.
+   </description>
+    <type>manual</type>
+    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
+    <identifier url="file://D:/MSYS2/mingw64/share/gnome/help/evolution/de/evolution.xml"/>
+    <language code="de"/>
+    <relation seriesid="83434cc6-71d1-11d7-9b12-ef76b8cf7c8f"/>
+    <rights type="GNU FDL" license.version="1.1" license="http://www.gnu.org/licenses/fdl.html" holder="Novell, Inc."/>
+  </resource>
+</omf>

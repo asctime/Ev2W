@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+  <e-plugin type="shlib" location="/MSYS2/mingw64/lib/evolution/2.32/plugins/liborg-gnome-mark-all-read.dll" id="org.gnome.evolution.mail.folder.mark_all_read" domain="evolution-2.32" name="Mark All Read">
+    <author name="Chenthill Palanisamy" email="pchenthill@novell.com"/>
+    <description>Mark all messages in a folder as read.</description>
+
+    <hook class="org.gnome.evolution.ui:1.0">
+      <ui-manager id="org.gnome.evolution.mail">
+        <popup name="mail-folder-popup">
+          <placeholder name="mail-folder-popup-actions">
+            <menuitem action="mail-mark-read-recursive"/>
+          </placeholder>
+        </popup>
+      </ui-manager>
+    </hook>
+  </e-plugin>
+</e-plugin-list>

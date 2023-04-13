@@ -33,6 +33,7 @@
 #include <unistd.h>
 #include <sys/param.h>
 #include <sys/types.h>
+#include <prerror.h>
 
 #include <glib/gi18n-lib.h>
 
@@ -323,7 +324,7 @@ connect_to_server (CamelService *service,
 			transport->connected = FALSE;
 			goto exception_cleanup;
 		}
-    printf ("SMTP TLS Initial response: \"%s\" .\r\n", respbuf);
+    g_warning ("SMTP TLS Initial response: \"%s\" .\r\n", respbuf);
 		if (strncmp (respbuf, "220", 3) != 0) {
 			smtp_set_error (transport, respbuf, error);
 			g_prefix_error (error, _("STARTTLS command failed: "));
@@ -337,8 +338,8 @@ connect_to_server (CamelService *service,
 		g_set_error (
 			error, G_IO_ERROR,
 			g_io_error_from_errno (errno),
-			_("Failed to connect to SMTP server %s in secure mode: %s"),
-			service->url->host, g_strerror (errno));
+			_("Failed to connect to SMTP server %s in secure mode: %s. (NSPR error: %i [%s])."),
+			service->url->host, g_strerror (errno), PR_GetError(), PR_ErrorToString(PR_GetError(), PR_LANGUAGE_I_DEFAULT));
 		goto exception_cleanup;
 	}
 #else

@@ -37,6 +37,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#include <glib.h>
 #include <nspr.h>
 #include <prio.h>
 #include <prerror.h>
@@ -525,6 +526,10 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 		SSL_OptionSet (ssl_fd, SSL_V2_COMPATIBLE_HELLO, PR_FALSE);
 	}
 
+	/* Implementation lines for SSL_ENABLE_ALPN and SSL_ENABLE_NPN */
+	SSL_OptionSet (ssl_fd, SSL_ENABLE_ALPN, PR_TRUE);
+	SSL_OptionSet (ssl_fd, SSL_ENABLE_NPN, PR_TRUE);
+
 /* https://bugzilla.redhat.com/show_bug.cgi?id=1153052 */
 #if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14)
 	if (ssl->priv->flags & CAMEL_TCP_STREAM_SSL_ENABLE_SSL3)
@@ -562,16 +567,20 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 
 	SSL_SetURL (ssl_fd, ssl->priv->expected_host);
 
-	/* NSS provides a default implementation for the SSL_GetClientAuthDataHook callback
-	 * but does not enable it by default. It must be explicltly requested by the application.
-	 * See: http://www.mozilla.org/projects/security/pki/nss/ref/ssl/sslfnc.html#1126622 */
-	SSL_GetClientAuthDataHook (ssl_fd, (SSLGetClientAuthData)&NSS_GetClientAuthData, NULL );
-
 	/* NSS provides _and_ installs a default implementation for the
 	 * SSL_AuthCertificateHook callback so we _don't_ need to install one. */
 	SSL_BadCertHook (ssl_fd, ssl_bad_cert, ssl);
 
-	return ssl_fd;
+	/* NSS provides a default implementation for the SSL_GetClientAuthDataHook callback
+	 * but does not enable it by default. It must be explicltly requested by the application.
+	 * See: http://www.mozilla.org/projects/security/pki/nss/ref/ssl/sslfnc.html#1126622 */
+	if (SSL_GetClientAuthDataHook (ssl_fd, (SSLGetClientAuthData)&NSS_GetClientAuthData, NULL ) == SECSuccess) {
+    g_warning ("ClientAuth data handshake with %s established.", ssl->priv->expected_host);
+	  return ssl_fd;
+  } else {
+    g_warning ("ClientAuth data handshake with %s failed.", ssl->priv->expected_host);
+    return NULL;
+  }
 }
 
 static PRFileDesc *
@@ -596,8 +605,85 @@ enable_ssl_or_close_fd (CamelTcpStreamSSL *ssl, PRFileDesc *fd, GError **error)
 	return ssl_fd;
 }
 
+typedef struct {
+  PRFileDesc *fd;
+  GError **error;
+} RehandshakeData;
+
+static gpointer
+rehandshake_ssl_thread (gpointer data)
+{
+  RehandshakeData *rehandshake_data = (RehandshakeData *) data;
+  PRFileDesc *fd = rehandshake_data->fd;
+  GError **error = rehandshake_data->error;
+  gint64 start_time = g_get_monotonic_time ();
+  gint64 timeout = 5000;   /* 5 seconds, adjust as needed */
+  gint64 elapsed_time;
+  PRInt32 poll_result;
+
+  if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
+    g_warning ("SSL_ResetHandshake failed.");
+    _set_errno_from_pr_error (PR_GetError ());
+    _set_g_error_from_errno (error, FALSE);
+    return FALSE;
+  }
+  g_warning ("SSL_ResetHandshake success.");
+
+  while (TRUE) {
+    elapsed_time = g_get_monotonic_time() - start_time;
+    if (elapsed_time > timeout) {
+      g_warning ("SSL_ForceHandshake timeout.");
+      _set_errno_from_pr_error (PR_GetError ());
+      _set_g_error_from_errno (error, FALSE);
+      return FALSE;
+    }
+
+    poll_result = PR_Poll(NULL, 0, PR_INTERVAL_NO_TIMEOUT);
+    if (poll_result < 0) {
+      g_warning ("PR_Poll failed.");
+      _set_errno_from_pr_error (PR_GetError ());
+      _set_g_error_from_errno (error, FALSE);
+      return FALSE;
+    }
+
+    if (SSL_ForceHandshake (fd) == SECSuccess) {
+      g_warning ("SSL_ForceHandshake success.");
+      return TRUE;
+    } else {
+      g_warning ("SSL_ForceHandshake failed.");
+      _set_errno_from_pr_error (PR_GetError ());
+      _set_g_error_from_errno (error, FALSE);
+      return FALSE;
+    }
+  }
+
+  return TRUE;
+}
+
+/* We only use this one for STARTTLS */
+static gboolean
+rehandshake_ssl_unblock (PRFileDesc *fd, GError **error)
+{
+  GThread *thread;
+  RehandshakeData *rehandshake_data = g_new(RehandshakeData, 1);
+  rehandshake_data->fd = fd;
+  rehandshake_data->error = error;
+
+  thread = g_thread_new("rehandshake_ssl_thread", rehandshake_ssl_thread, rehandshake_data);
+  if (thread == NULL) {
+    g_warning ("Failed to create thread for SSL rehandshake.");
+    _set_errno_from_pr_error (PR_GetError ());
+    _set_g_error_from_errno (error, FALSE);
+    return FALSE;
+  }
+  g_thread_unref(thread);
+  return TRUE;
+}
+
+
 /* 3.1.4 API has cancellable argument & returns (status == SECSuccess) */
 /* Otherwise it is step=-by-step functionally the same */
+/* Original Code. We still use this one for implicit "SSL" mode */
 static gboolean
 rehandshake_ssl (PRFileDesc *fd, GError **error)
 {
@@ -749,11 +835,11 @@ gint
 camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl)
 {
 	PRFileDesc *fd, *ssl_fd;
-
 	g_return_val_if_fail (CAMEL_IS_TCP_STREAM_SSL (ssl), -1);
 
 	fd = camel_tcp_stream_get_file_desc (CAMEL_TCP_STREAM (ssl));
 
+  /* '!ssl->priv->ssl_mode' refers to STARTTLS opportunistic tls */
 	if (fd && !ssl->priv->ssl_mode) {
 		if (!(ssl_fd = enable_ssl (ssl, fd))) {
 			_set_errno_from_pr_error (PR_GetError ());
@@ -763,7 +849,7 @@ camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl)
 		_camel_tcp_stream_raw_replace_file_desc (CAMEL_TCP_STREAM_RAW (ssl), ssl_fd);
 		ssl->priv->ssl_mode = TRUE;
 
-		if (!rehandshake_ssl (ssl_fd, NULL)) /* NULL-GError */
+		if (!rehandshake_ssl_unblock (ssl_fd, NULL)) /* NULL-GError */
 			return -1;
 	}
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error-list domain="org.gnome.mailing-list-actions">
+
+ <error type="error" id="no-header">
+  <primary>Action not available</primary>
+  <secondary>This message does not contain the header information required for this action.</secondary>
+ </error>
+
+ <error type="error" id="posting-not-allowed">
+  <primary>Posting not allowed</primary>
+  <secondary>Posting to this mailing list is not allowed. Possibly, this is a read-only mailing list. Contact the list owner for details.</secondary>
+ </error>
+
+ <error type="question" id="ask-send-message" default="GTK_RESPONSE_YES">
+  <primary>Send e-mail message to mailing list?</primary>
+  <secondary xml:space="preserve">An e-mail message will be sent to the URL "{0}". You can either send the message automatically, or see and change it first.
+
+You should receive an answer from the mailing list shortly after the message has been sent.</secondary>
+  <button response="GTK_RESPONSE_YES" label="_Send message"></button>
+  <button response="GTK_RESPONSE_NO" label="_Edit message"></button>
+  <button stock="gtk-cancel" response="GTK_RESPONSE_CANCEL"/>
+ </error>
+
+ <error type="error" id="malformed-header">
+  <primary>Malformed header</primary>
+  <secondary xml:space="preserve">The {0} header of this message is malformed and could not be processed.
+
+Header: {1}</secondary>
+ </error>
+
+ <error type="error" id="no-action">
+  <primary>No e-mail action</primary>
+  <secondary xml:space="preserve">The action could not be performed. The header for this action did not contain any action that could be processed.
+
+Header: {0}</secondary>
+ </error>
+
+</error-list>

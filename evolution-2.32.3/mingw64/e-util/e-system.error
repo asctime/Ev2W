@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error-list domain="system">
+
+ <error type="error" id="ask-save-file-exists-overwrite" default="GTK_RESPONSE_CANCEL">
+  <primary>File exists "{0}".</primary>
+  <secondary>Do you wish to overwrite it?</secondary>
+  <button stock="gtk-cancel" response="GTK_RESPONSE_CANCEL"/>
+  <button response="GTK_RESPONSE_OK" label="_Overwrite"></button>
+ </error>
+
+ <error type="error" id="no-save-file">
+  <primary>Cannot save file "{0}".</primary>
+  <secondary>Because "{1}".</secondary>
+ </error>
+
+ <error type="error" id="no-load-file">
+  <primary>Cannot open file "{0}".</primary>
+  <secondary>Because "{1}".</secondary>
+ </error>
+
+</error-list>

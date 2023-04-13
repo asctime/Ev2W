@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+  <e-plugin type="shlib" system_plugin="true" location="/MSYS2/mingw64/lib/evolution/2.32/plugins/liborg-gnome-plugin-manager.dll" id="org.gnome.evolution.plugin.manager" name="Plugin Manager">
+    <author name="Michael Zucchi" email="notzed@ximian.com"/>
+    <description>Manage your Evolution plugins.</description>
+
+    <hook class="org.gnome.evolution.ui:1.0">
+      <ui-manager id="org.gnome.evolution.shell">
+        <menubar name="main-menu">
+          <menu action="edit-menu">
+            <placeholder name="administrative-actions">
+              <menuitem action="plugin-manager"/>
+            </placeholder>
+          </menu>
+        </menubar>
+      </ui-manager>
+    </hook>
+  </e-plugin>
+</e-plugin-list>
