@@ -33,7 +33,7 @@
 #endif
 
 extern int rss_verbose_debug;
-#define RDF_DEBUG 1 
+/* #define RDF_DEBUG 1 */
 
 
 #include "fetch.h"

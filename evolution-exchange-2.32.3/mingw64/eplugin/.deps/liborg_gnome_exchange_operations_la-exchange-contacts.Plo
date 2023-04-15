@@ -1,12 +1,5 @@
 liborg_gnome_exchange_operations_la-exchange-contacts.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../eplugin/exchange-contacts.c \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -873,14 +866,7 @@ liborg_gnome_exchange_operations_la-exchange-contacts.lo : \
  ../../eplugin/exchange-config-listener.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  ../../eplugin/exchange-folder-size-display.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-contacts.c :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :

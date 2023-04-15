@@ -1,18 +1,7 @@
 liborg_gnome_exchange_operations_la-exchange-folder-permission.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
  ../../eplugin/exchange-folder-permission.c ../config.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
-=======
- ../../eplugin/exchange-folder-permission.c \
- ../config.h D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
- ../../eplugin/exchange-folder-permission.c ../config.h \
- D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/include/glib-2.0/glib.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/galloca.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gtypes.h \
@@ -919,14 +908,7 @@ liborg_gnome_exchange_operations_la-exchange-folder-permission.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-plugin.h \
  ../../eplugin/exchange-permissions-dialog.h \
  ../../server/storage/e-folder.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-folder-permission.c :
 ../config.h :
 D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h :

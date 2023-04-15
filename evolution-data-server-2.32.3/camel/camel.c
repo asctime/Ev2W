@@ -74,43 +74,13 @@ static gint
 nss_has_system_db(void)
 {
 	gint found = FALSE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#if defined(G_OS_WIN32)
-=======
-#if defined(G_OS_WIN32) && !defined(__MINGW32__)
->>>>>>> 3a1416c... Image loading fix, Backported Redhat fix for #1153052, 64-bit LDAP fixes
-=======
-#if defined(G_OS_WIN32)
->>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
-=======
 #ifndef G_OS_WIN32
->>>>>>> 9ebde4c... Finalize system certdb drop with comments; Undo a wrong (GFunc) cleanup.
 	FILE *f;
 	gchar buf[80];
 
 	f = fopen(NSS_SYSTEM_DB "/pkcs11.txt", "r");
 	if (!f)
 		return FALSE;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  }
-#ifdef __MINGW32__
-	return TRUE;
-=======
-#ifdef __MINGW32__ /* MinGW NSS does not require libnsssysinit */
-			found = TRUE;
->>>>>>> 3a1416c... Image loading fix, Backported Redhat fix for #1153052, 64-bit LDAP fixes
-=======
-  }
-#ifdef __MINGW32__
-	return TRUE;
->>>>>>> 7ae696c... Undo wrong change in camel-tcp-stream-ssl.c; (GFunc) cleanup third pass
-#endif
-=======
->>>>>>> 9ebde4c... Finalize system certdb drop with comments; Undo a wrong (GFunc) cleanup.
 
 	/* Check whether the system NSS db is actually enabled */
 	while (fgets(buf, 80, f) && !found) {
@@ -142,17 +112,12 @@ camel_init (const gchar *configdir, gboolean nss_init)
 		gchar *nss_configdir = NULL;
 		gchar *nss_sql_configdir = NULL;
 		SECStatus status = SECFailure;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 
 #if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14)
 		/* NSS pre-3.14 has most of the ciphers disabled, thus enable
 		 * weak ciphers, if it's compiled against such */
 		weak_ciphers = 1;
 #else
-<<<<<<< HEAD
 		SSLVersionRange versionStream;
 #endif
 		/* check camel-tcp-stream-ssl.c for the same "CAMEL_SSL_V2_ENABLE" */
@@ -160,21 +125,6 @@ camel_init (const gchar *configdir, gboolean nss_init)
 			v2_enabled = g_strcmp0 (g_getenv ("CAMEL_SSL_V2_ENABLE"), "1") == 0 ? 1 : 0;
 		if (weak_ciphers == -1)
 			weak_ciphers = g_strcmp0 (g_getenv ("CAMEL_SSL_WEAK_CIPHERS"), "1") == 0 ? 1 : 0;
-=======
-		PRUint16 indx;
- #if NSS_VMAJOR > 3 || (NSS_VMAJOR == 3 && NSS_VMINOR >= 14)
-		SSLVersionRange versionStream;
-#endif
->>>>>>> 3a1416c... Image loading fix, Backported Redhat fix for #1153052, 64-bit LDAP fixes
-=======
-		SSLVersionRange versionStream;
-#endif
-		/* check camel-tcp-stream-ssl.c for the same "CAMEL_SSL_V2_ENABLE" */
-		if (v2_enabled == -1)
-			v2_enabled = g_strcmp0 (g_getenv ("CAMEL_SSL_V2_ENABLE"), "1") == 0 ? 1 : 0;
-		if (weak_ciphers == -1)
-			weak_ciphers = g_strcmp0 (g_getenv ("CAMEL_SSL_WEAK_CIPHERS"), "1") == 0 ? 1 : 0;
->>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 
 		if (nss_initlock == NULL) {
 			PR_Init(PR_SYSTEM_THREAD, PR_PRIORITY_NORMAL, 10);
@@ -272,8 +222,6 @@ skip_nss_init:
 			}
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /* 	SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
 		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE); */
 /* This often causes connections to be rejected outright these days: */
@@ -281,22 +229,6 @@ skip_nss_init:
 		SSL_OptionSetDefault (SSL_ENABLE_SSL2, v2_enabled ? PR_TRUE : PR_FALSE);
 		SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_FALSE);
 #if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14) /* __MINGW64__ */
-=======
-/* 		SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
-		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE); */
-		SSL_OptionSetDefault (SSL_ENABLE_TLS, PR_TRUE);
-		SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_TRUE /* maybe? */);
-#if defined (__MINGW64__) || (NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14))
->>>>>>> 3a1416c... Image loading fix, Backported Redhat fix for #1153052, 64-bit LDAP fixes
-=======
-/* 	SSL_OptionSetDefault (SSL_ENABLE_SSL2, PR_TRUE);
-		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE); */
-/* This often causes connections to be rejected outright these days: */
-/* SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_TRUE);   maybe? */
-		SSL_OptionSetDefault (SSL_ENABLE_SSL2, v2_enabled ? PR_TRUE : PR_FALSE);
-		SSL_OptionSetDefault (SSL_V2_COMPATIBLE_HELLO, PR_FALSE);
-#if NSS_VMAJOR < 3 || (NSS_VMAJOR == 3 && NSS_VMINOR < 14) /* __MINGW64__ */
->>>>>>> a80cc50... TLS 1.2 enabled for IMAP SMTP POP3 and NNTP. SSLv2 disabled. ref #3a1416c
 		SSL_OptionSetDefault (SSL_ENABLE_SSL3, PR_TRUE);
 		SSL_OptionSetDefault (SSL_ENABLE_TLS, PR_TRUE); /* Enable TLSv1.0 */
 #else

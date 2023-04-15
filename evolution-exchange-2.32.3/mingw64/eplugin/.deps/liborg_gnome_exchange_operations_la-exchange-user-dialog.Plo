@@ -1,12 +1,5 @@
 liborg_gnome_exchange_operations_la-exchange-user-dialog.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../eplugin/exchange-user-dialog.c ../config.h \
  ../../eplugin/exchange-user-dialog.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
@@ -704,14 +697,7 @@ liborg_gnome_exchange_operations_la-exchange-user-dialog.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-name-selector-entry.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-name-selector-list.h \
  ../../server/lib/e2k-xml-utils.h ../../server/lib/e2k-types.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-user-dialog.c :
 ../config.h :
 ../../eplugin/exchange-user-dialog.h :

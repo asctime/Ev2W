@@ -719,14 +719,7 @@ liborg_gnome_exchange_operations_la-exchange-permissions-dialog.lo : \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-dialog-utils.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert-dialog.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-alert.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-permissions-dialog.c :
 ../config.h :
 ../../eplugin/exchange-permissions-dialog.h :

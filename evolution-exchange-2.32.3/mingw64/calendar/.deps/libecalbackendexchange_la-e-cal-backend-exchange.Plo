@@ -1,18 +1,7 @@
 libecalbackendexchange_la-e-cal-backend-exchange.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
  ../../calendar/e-cal-backend-exchange.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-=======
- ../../calendar/e-cal-backend-exchange.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
- ../../calendar/e-cal-backend-exchange.c ../config.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -877,14 +866,7 @@ libecalbackendexchange_la-e-cal-backend-exchange.lo : \
  ../../tools/exchange-share-config-listener.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../calendar/e-cal-backend-exchange.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h :

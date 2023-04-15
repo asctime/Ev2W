@@ -1,18 +1,7 @@
 exchange_connector_setup-ximian-connector-setup.o : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
  ../../tools/ximian-connector-setup.c ../config.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
-=======
- ../../tools/ximian-connector-setup.c \
- ../config.h D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
- ../../tools/ximian-connector-setup.c ../config.h \
- D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdk.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  D:/MSYS2/mingw64/include/glib-2.0/gio/gio.h \
@@ -804,14 +793,7 @@ exchange_connector_setup-ximian-connector-setup.o : \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/conio.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../tools/ximian-connector-setup.c :
 ../config.h :
 D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h :

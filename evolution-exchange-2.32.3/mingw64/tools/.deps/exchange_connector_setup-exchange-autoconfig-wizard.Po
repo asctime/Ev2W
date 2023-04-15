@@ -1,18 +1,7 @@
 exchange_connector_setup-exchange-autoconfig-wizard.o : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
  ../../tools/exchange-autoconfig-wizard.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
-=======
- ../../tools/exchange-autoconfig-wizard.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
- ../../tools/exchange-autoconfig-wizard.c ../config.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -667,14 +656,7 @@ exchange_connector_setup-exchange-autoconfig-wizard.o : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-passwords.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../tools/exchange-autoconfig-wizard.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

@@ -845,14 +845,7 @@ libevolution_exchange_shared_la-exchange-share-config-listener.lo : \
  ../../server/storage/e-folder-exchange.h \
  ../../server/storage/exchange-types.h \
  ../../tools/exchange-share-config-listener.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../tools/exchange-share-config-listener.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h :

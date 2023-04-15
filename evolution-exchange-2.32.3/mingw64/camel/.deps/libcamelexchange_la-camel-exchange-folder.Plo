@@ -1,12 +1,5 @@
 libcamelexchange_la-camel-exchange-folder.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../camel/camel-exchange-folder.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -452,14 +445,7 @@ libcamelexchange_la-camel-exchange-folder.lo : \
  ../../camel/camel-exchange-search.h ../../camel/camel-exchange-store.h \
  ../../camel/camel-exchange-summary.h \
  ../../camel/camel-exchange-journal.h ../../camel/camel-exchange-utils.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../camel/camel-exchange-folder.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/errno.h :

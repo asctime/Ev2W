@@ -1,0 +1,295 @@
+evolution-rss (0.2.5-0ubuntu1) natty-proposed; urgency=low
+
+  * New upstream release
+    - Includes fix for LP: #773763
+  * debian/patches/allow_build_with_newer_webkit_43ca18b.diff:
+  * debian/patches/deprecated_gtk_symbols_e4b39fa.diff:
+    - Remove upstreamed patches
+
+ -- Rodrigo Moya <rodrigo.moya@canonical.com>  Fri, 09 Sep 2011 17:21:33 +0200
+
+evolution-rss (0.2.2-0ubuntu1) natty; urgency=low
+
+  * New upstream release. (Fixes LP: #688776)
+  * debian/control
+    - change webkit build dependency to libwebkitgtk-dev
+    - remove evolution (<< 2.31) dependency
+  * debian/patches/webkitglobals_include.patch
+    - add missing include for current libwebkitgtk
+  * debian/patches/deprecated_gtk_symbols_e4b39fa.diff
+    - gtk changes from upstream master branch
+
+ -- Tristan Hill <stan@saticed.me.uk>  Fri, 04 Feb 2011 01:02:13 -0600
+
+evolution-rss (0.2.0-1) unstable; urgency=low
+
+  * New upstream stable release.
+
+ -- Josselin Mouette <joss@debian.org>  Sun, 05 Sep 2010 21:13:36 +0200
+
+evolution-rss (0.1.9~20100519+8c2b2d-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 20 May 2010 08:08:00 +0200
+
+evolution-rss (0.1.9~20100519+8c2b2d-1) experimental; urgency=low
+
+  * New upstream git snapshot.
+    - don't crash on validating feed properties.                closes: #564771
+    - don't crash when importing OPML feeds list.               closes: #564750
+    - fix loading and rendering with webkit.                    closes: #564287
+    - hopefully fix undefined symbol.                          
+  * debian/control:
+    - update standards version to 3.8.4.
+    - update {build-,}depends for evolution 2.30.               closes: #580234
+    - add myself to uploaders.
+    - drop libglade build-dep. 
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 19 May 2010 21:32:23 +0200
+
+evolution-rss (0.1.9~20100320-1) experimental; urgency=low
+
+  * New upstream git snapshot.
+  * 01_folder-rename.patch, 02_folder-properties.patch, 
+    03_recv_feeds.patch: dropped, merged upstream.
+  * Update (build-)dependencies.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 20 Mar 2010 15:17:01 +0100
+
+evolution-rss (0.1.4-6) unstable; urgency=low
+
+  * 03_recv_feeds.patch: new version of the patch, with a correct 
+    version check at version 2.28.1. Uh, API changed in a minor release, 
+    this is so insane!
+  * Actually the version check remains at 2.28.0 because evolution 
+    2.28.1 still returns 22800 as integer version. No wonder.
+  * Require evolution 2.28.1, at both build time and run time, to avoid 
+    running into the issue.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 24 Nov 2009 13:50:01 +0100
+
+evolution-rss (0.1.4-5) unstable; urgency=low
+
+  * 03_recv_feeds.patch: new patch from upstream. Fixes a bug causing 
+    the feeds not to be updated. Closes: #551972.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 20 Nov 2009 12:32:52 +0100
+
+evolution-rss (0.1.4-4) unstable; urgency=low
+
+  * Build-depend on libebook1.2-dev. Thanks Lucian Langa.
+    Closes: #548456.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 26 Sep 2009 17:04:05 +0200
+
+evolution-rss (0.1.4-3) unstable; urgency=low
+
+  * Rebuild against evolution 2.28.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 25 Sep 2009 21:13:38 +0200
+
+evolution-rss (0.1.4-2) unstable; urgency=low
+
+  * Set webkit as primary renderer.
+  * 01_folder-rename.patch: patch from upstream. Allows to rename 
+    folders.
+  * 02_folder-properties.patch: patch from upstream. Fixes a crasher.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 23 Sep 2009 22:00:09 +0200
+
+evolution-rss (0.1.4-1) unstable; urgency=low
+
+  * Remove useless .la file.
+  * New upstream release.
+  * Update build-dependencies.
+  * Enable webkit build.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 26 Aug 2009 16:14:24 +0200
+
+evolution-rss (0.1.3~git20090814-1) unstable; urgency=low
+
+  * New upstream release from git snapshot.
+    + Fixes implicit pointer conversion. Closes: #533215.
+  * Update build-dependencies.
+  * 01_build_warnings.patch: dropped, merged upstream.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 14 Aug 2009 14:46:38 +0200
+
+evolution-rss (0.1.3~git20090505-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/control:
+    - add libgtkhtml3.14-dev to build-depends.                  closes: #527098
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 13 May 2009 18:21:47 +0200
+
+evolution-rss (0.1.3~git20090505-1) unstable; urgency=low
+
+  * New upstream release from git snapshot, fixes countless bugs.
+  * 01_build_warnings.patch: new patch. Fix a load of warnings, as well 
+    as a build failure.
+  * Disable gecko entirely, gtkhtml is enough and less bloat.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 05 May 2009 12:12:49 +0200
+
+evolution-rss (0.1.2-2) unstable; urgency=low
+
+  * Rebuild against evolution 2.26.
+  * Update dependencies accordingly.
+  * Standards version is 3.8.1.
+  * Explicitly pass --disable-webkit.
+
+ -- Josselin Mouette <joss@debian.org>  Mon, 27 Apr 2009 14:33:41 +0200
+
+evolution-rss (0.1.2-1) unstable; urgency=low
+
+  [ Pedro Fragoso ]
+  * New upstream version
+    - Remove all patches, merged upstream
+  * debian/control: Don't rely on Conflicts use Build-dep
+    on evolution-dev (>= 2.24)
+
+  [ Josselin Mouette ]
+  * Add myself to uploaders.
+  * Add dependencies on evolution (>= 2.24), evolution (<< 2.25), they 
+    are necessary since the plugin directory is versioned.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 01 Apr 2009 15:02:26 +0200
+
+evolution-rss (0.1.0-2) unstable; urgency=low
+
+  [ Pedro Fragoso ]
+  * debian/patches/64_glue-shutdown.patch:
+    - Prevent evolution segfaulting on exit and clean glue (Closes: #491703)
+  * debian/patches/65_firefox-import.patch:
+    - Fix importing feeds from firefox
+
+ -- Heikki Henriksen <heikkih@gmail.com>  Wed, 29 Oct 2008 09:43:23 +0100
+
+evolution-rss (0.1.0-1) unstable; urgency=medium
+
+  [ Heikki Henriksen ]
+  * Change in build-depend due to xulrunner transition:
+    - use xulrunner-dev (1.9~b5-4) instead of libxul-dev
+    (closes: #480793)
+
+  [ Pedro Fragoso ]
+  * New upstream release version
+  * debian/patches:
+    - Drop all previous patches, merged upstream
+  * debian/control:
+    - Update my email address
+    - Bump Standards-Version to 3.8.0 (no changes)
+  * debian/rules:
+    - use with libxul and not xulrunner
+
+  [ Loic Minier ]
+  * Also allow xulrunner-1.9-dev as bdep.
+  * Depend on xulrunner (>= 1.9~) | xulrunner-1.9.
+  * Build with libxul-embedding not libxul.
+    - Pass --with-gecko=libxul-embedding to configure.
+    - New patch, 61_allow-libxul-embedding, allow this gecko (was already
+      ready to be enabled in a m4/gecko.m4 comment).
+  * New patch, 60_startup-glue, properly bootstrap xpcom glue.
+  * New patch, 62_undef-gecko-home. don't set GECKO_HOME when using XPCOM
+    glue.
+  * New patch, 63_set-profile-path-after-init, move profile path setup to
+    gecko_init() as it needs to happen after bootstrapping and before startup.
+
+ -- Loic Minier <lool@dooz.org>  Fri, 04 Jul 2008 11:41:34 +0200
+
+evolution-rss (0.0.8-2) unstable; urgency=low
+
+  [ Heikki Henriksen ]
+  * Add debian/lintian/evolution-rss: 
+   - override warning for rpath /usr/lib/xulrunner in plugin - library is in
+     private-dir
+  * Add debian/evolution.install: 
+   - install lintian override
+  * debian/rules: 
+   - Build with gecko and set this as primary render (closes: #475179)
+  * Add patch debian/patches/missing-includes.patch:
+   - Fix implicit-pointer-conversion. Thanks to Dann Frazier. 
+     (closes: #477053)
+
+  [ Pedro Fragoso ]
+  * Fix undef symbols on debian/patches/norss-popup.patch: (closes: #476948)
+
+ -- Heikki Henriksen <heikkih@gmail.com>  Tue, 22 Apr 2008 12:46:10 +0200
+
+evolution-rss (0.0.8-1) unstable; urgency=low
+
+  [ Pedro Fragoso ]
+  * Initial release to Debian stolen from Ubuntu (Closes: #470746)
+  * debian/control:
+    - Set pkg-evolution as Maintainer and myself as Uploaders
+    - Added conflicts on evolution (<< 2.22.0 & >= 2.23.0)
+  * debian/evolution-rss.1: Added
+  * debian/links: link evolution-import-rss manpage for the moment
+  * debian/copyright: Updated
+  * debian/patches/
+    + fix-empty-desc.patch, norss-popup.patch: Patch from upstream
+
+  [ Heikki Henriksen ]
+  * Add Dm-Upload-Allowed: yes and myself to uploaders
+  * Add versioned build-dep on dpkg-dev (>= 1.14.16) to accommodate the above
+  * Build-depend on evolution-dev (>= 2.22.0)
+
+  [ Oystein Gisnas ]
+  * Add myself as uploader
+
+ -- Oystein Gisnas <oystein@gisnas.net>  Tue, 08 Apr 2008 09:19:03 +0200
+
+evolution-rss (0.0.8-0ubuntu1) hardy; urgency=low
+
+  * New upstream release (lp: #164129)
+  * debian/;
+    - Updated url and email change of upstream
+  * debian/control;
+     - b-d on libsoup2.4-dev
+  * debian/patches/02-fix_detect.patch: dropped, merged upstream
+
+ -- Pedro Fragoso <emberez@gmail.com>  Mon, 03 Mar 2008 11:51:00 +0000
+
+evolution-rss (0.0.7-0ubuntu2) hardy; urgency=low
+
+  * debian/patches: (LP: #178321)
+    - Added 02-fix_detect.patch from upstream to fix
+      evolution version and send/receive dialog crash 
+
+ -- Pedro Fragoso <emberez@gmail.com>  Sun, 23 Dec 2007 19:21:18 +0000
+
+evolution-rss (0.0.7-0ubuntu1) hardy; urgency=low
+
+  [ Pedro Fragoso ]
+  * New upstream release (LP: #176825)
+  * debian/control
+    - Change Depends to evolution-dev (>=2.12)
+    - Added Depend to libdbus-glib-1-dev for dbus support
+    - Added Homepage
+    - Bump to Standards-Version 3.7.3
+  * debian/: added watch file
+  * debian/patches: dropped 02-fix-crash-on-disable fixed on upstream
+
+  [ Emmet Hikory ]
+  * Converted watchfile to screen-scrape mode
+
+ -- Emmet Hikory <persia@ubuntu.com>  Sun, 23 Dec 2007 12:40:44 +0900
+
+evolution-rss (0.0.4-0ubuntu2) gutsy; urgency=low
+
+  * debian/patches/02-fix-crash-on-disable.patch:
+    - Patch from upstream, fix a crash when disabling the plugin.
+      LP: #144946
+
+ -- Jonh Wendell <wendell@ubuntu.com>  Thu, 04 Oct 2007 08:37:05 -0300
+
+evolution-rss (0.0.4-0ubuntu1) gutsy; urgency=low
+
+  * Initial release (LP: #123940)
+  * debian/patches/01-configure_ac.patch:
+    - Patch from upstream to fix a broken configure.ac.
+
+ -- Jonh Wendell <wendell@ubuntu.com>  Thu, 27 Jul 2007 15:58:32 -0300
+

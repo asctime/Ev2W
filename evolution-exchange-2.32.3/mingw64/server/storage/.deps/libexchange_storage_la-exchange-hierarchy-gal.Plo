@@ -710,14 +710,7 @@ libexchange_storage_la-exchange-hierarchy-gal.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/storage/exchange-hierarchy-gal.c :
 ../../config.h :
 ../../../server/storage/exchange-hierarchy-gal.h :

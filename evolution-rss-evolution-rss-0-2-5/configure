@@ -3322,45 +3322,6 @@ ac_config_headers="$ac_config_headers config.h"
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD:evolution-rss-evolution-rss-0-2-5/configure
-=======
-
-				
-
-
-@%:@ Check whether --enable-gtk3 was given.
-if test "${enable_gtk3+set}" = set; then :
-  enableval=$enable_gtk3; enable_gtk3=$enableval
-else
-  enable_gtk3=no
-fi
-
-
-if test "x${enable_gtk3}" = "xyes"; then
-	GTK="gtk+-3.0"
-	gtk_minimum_version="2.90.4"
-
-	EVOLUTION_PLUGIN_PK="evolution-plugin"
-	EVOLUTION_MAIL_PK="evolution-mail"
-	EVOLUTION_SHELL_PK="evolution-shell"
-	LIBEDATASERVERUI_PK="libedataserverui-1.2"
-else	
-	GTK="gtk+-2.0"
-	gtk_minimum_version="2.20.0"
-
-	EVOLUTION_PLUGIN_PK="evolution-plugin"
-	EVOLUTION_MAIL_PK="evolution-mail"
-	EVOLUTION_SHELL_PK="evolution-shell"
-	LIBEDATASERVERUI_PK="libedataserverui-1.2"
-fi
-
-BASE_VERSION=2.32
-
-
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.:evolution-exchange-2.32.3/autom4te.cache/output.1
-=======
->>>>>>> 2a8e534... evolution-rss added, with xml mime type detection currently disabled.
 DEPDIR="${am__leading_dot}deps"
 
 ac_config_commands="$ac_config_commands depfiles"

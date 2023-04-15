@@ -735,14 +735,7 @@ liborg_gnome_exchange_operations_la-exchange-folder-subscription.lo : \
  ../../eplugin/exchange-folder-subscription.h \
  ../../eplugin/exchange-operations.h \
  D:/MSYS2/mingw64/include/evolution-2.32/e-util/e-plugin.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../eplugin/exchange-folder-subscription.c :
 ../config.h :
 D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtk.h :

@@ -1,18 +1,7 @@
 libexchange_storage_la-exchange-folder-size.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
  ../../../server/storage/exchange-folder-size.c ../../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
-=======
- ../../../server/storage/exchange-folder-size.c \
- ../../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
- ../../../server/storage/exchange-folder-size.c ../../config.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -717,14 +706,7 @@ libexchange_storage_la-exchange-folder-size.lo : \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h \
  ../../../server/storage/e-folder-exchange.h \
  ../../../server/storage/exchange-folder-size.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/storage/exchange-folder-size.c :
 ../../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h :

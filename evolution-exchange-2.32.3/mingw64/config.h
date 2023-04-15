@@ -5,19 +5,7 @@
 #define BASE_VERSION "2.32"
 
 /* Used to prevent clock-setting attacks against pilot licenses */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define E2K_APPROX_BUILD_TIME 1677283200
-=======
-#define E2K_APPROX_BUILD_TIME 1676937600
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
-#define E2K_APPROX_BUILD_TIME 1677283200
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
-=======
 #define E2K_APPROX_BUILD_TIME 1679702400
->>>>>>> b09a491... More (GFunc) cleanup forth pass; _stat64 and WIN32 type fixes; -DUNICODE
 
 /* Define if you want E2K_DEBUG to be available */
 /* #undef E2K_DEBUG */

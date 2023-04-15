@@ -3007,7 +3007,7 @@ finish_setup_feed(
 	xmlSubstituteEntitiesDefaultValue = 0;
 	doc = xml_parse_sux (content->str, content->len);
 	/* d("\nContent:\n%s\n", content->str); */
-	dp("\nRSS Raw Content (length: %li):\n%s\n", content->len, content->str);
+	/* dp("\nRSS Raw Content (length: %li):\n%s\n", content->len, content->str); */
 	root = xmlDocGetRootElement(doc);
 	/* dp("\nRSS Root: \n%s\n", root->name); */
 	taskbar_op_set_progress(tmsgkey, tmsg, 0.5);

@@ -1,12 +1,5 @@
 libexchange_la-e2k-freebusy.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  ../../../server/lib/e2k-freebusy.c ../../config.h \
  ../../../server/lib/e2k-freebusy.h ../../../server/lib/e2k-context.h \
  D:/MSYS2/mingw64/include/libsoup-2.4/libsoup/soup-message.h \
@@ -355,14 +348,7 @@ libexchange_la-e2k-freebusy.lo : \
  ../../../server/lib/e2k-restriction.h ../../../server/lib/e2k-uri.h \
  ../../../server/lib/e2k-utils.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-time-utils.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../../server/lib/e2k-freebusy.c :
 ../../config.h :
 ../../../server/lib/e2k-freebusy.h :

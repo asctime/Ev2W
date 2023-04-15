@@ -1,0 +1,1 @@
+evolution-rss: binary-or-shlib-defines-rpath ./usr/lib/evolution/2.22/plugins/liborg-gnome-evolution-rss.so /usr/lib/xulrunner

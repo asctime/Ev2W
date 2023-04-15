@@ -1,18 +1,7 @@
 libebookbackendexchange_la-e-book-backend-exchange.lo : \
-<<<<<<< HEAD
-<<<<<<< HEAD
  \
  ../../addressbook/e-book-backend-exchange.c ../config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h \
-=======
- ../../addressbook/e-book-backend-exchange.c \
- ../config.h D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h \
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
- \
- ../../addressbook/e-book-backend-exchange.c ../config.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h \
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -877,14 +866,7 @@ libebookbackendexchange_la-e-book-backend-exchange.lo : \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-group.h \
  ../../addressbook/e-book-backend-exchange.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedata-book/e-book-backend-sync.h
-<<<<<<< HEAD
-<<<<<<< HEAD
 -fstack-protector-strong :
-=======
->>>>>>> 2aa22ab... Further gnome-desktop references removed, refactor to latest Ev2W.
-=======
--fstack-protector-strong :
->>>>>>> d34b05d... Switch to Windows native threads (-MT) and mms-bitfields. More cleanup.
 ../../addressbook/e-book-backend-exchange.c :
 ../config.h :
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/fcntl.h :
