@@ -605,108 +605,37 @@ enable_ssl_or_close_fd (CamelTcpStreamSSL *ssl, PRFileDesc *fd, GError **error)
 	return ssl_fd;
 }
 
-typedef struct {
-  PRFileDesc *fd;
-  GError **error;
-} RehandshakeData;
-
-static gpointer
-rehandshake_ssl_thread (gpointer data)
-{
-  RehandshakeData *rehandshake_data = (RehandshakeData *) data;
-  PRFileDesc *fd = rehandshake_data->fd;
-  GError **error = rehandshake_data->error;
-  gint64 start_time = g_get_real_time();
-  gint64 timeout = 10000000;   /* 10 seconds, adjust as needed */
-  gint64 elapsed_time;
-  PRInt32 poll_result;
-  PRPollDesc poll_desc;
-
-  if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
-    g_warning ("SSL_ResetHandshake failed.");
-    _set_errno_from_pr_error (PR_GetError ());
-    _set_g_error_from_errno (error, FALSE);
-    return FALSE;
-  }
-  g_warning ("SSL_ResetHandshake success.");
-
-  while (TRUE) {
-    elapsed_time = g_get_real_time() - start_time;
-    if (elapsed_time > timeout) {
-      g_warning ("SSL_ForceHandshake timeout.");
-      _set_errno_from_pr_error (PR_GetError ());
-      _set_g_error_from_errno (error, FALSE);
-      return FALSE;
-    }
-
-    poll_desc.fd = fd;
-    poll_desc.in_flags = PR_POLL_READ | PR_POLL_WRITE;
-    poll_desc.out_flags = 0;
-
-    poll_result = PR_Poll(&poll_desc, 1, 100);  /* Use a small non-zero timeout value */
-
-    if (poll_result < 0) {
-      g_warning ("PR_Poll failed.");
-      _set_errno_from_pr_error (PR_GetError ());
-      _set_g_error_from_errno (error, FALSE);
-      return FALSE;
-    }
-
-    if (poll_desc.out_flags & (PR_POLL_READ | PR_POLL_WRITE)) {
-      if (SSL_ForceHandshake (fd) == SECSuccess) {
-        g_warning ("SSL_ForceHandshake success.");
-        return TRUE;
-      } else {
-        g_warning ("SSL_ForceHandshake failed.");
-        _set_errno_from_pr_error (PR_GetError ());
-        _set_g_error_from_errno (error, FALSE);
-        return FALSE;
-      }
-    }
-
-    g_usleep(10000);      /* Sleep for 10 milliseconds before checking again */
-  }
-}
-
-/* We only use this one for STARTTLS */
-static gboolean
-rehandshake_ssl_unblock (PRFileDesc *fd, GError **error)
-{
-  GThread *thread;
-  RehandshakeData *rehandshake_data = g_new(RehandshakeData, 1);
-  rehandshake_data->fd = fd;
-  rehandshake_data->error = error;
-
-  thread = g_thread_new("rehandshake_ssl_thread", rehandshake_ssl_thread, rehandshake_data);
-  if (thread == NULL) {
-    g_warning ("Failed to create thread for SSL rehandshake.");
-    _set_errno_from_pr_error (PR_GetError ());
-    _set_g_error_from_errno (error, FALSE);
-    return FALSE;
-  }
-  g_thread_unref(thread);
-  return TRUE;
-}
-
-
 /* 3.1.4 API has cancellable argument & returns (status == SECSuccess) */
 /* Otherwise it is step=-by-step functionally the same */
-/* Original Code. We still use this one for implicit "SSL" mode */
+
 static gboolean
 rehandshake_ssl (PRFileDesc *fd, GError **error)
 {
-	if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
-		_set_errno_from_pr_error (PR_GetError ());
-		_set_g_error_from_errno (error, FALSE);
-		return FALSE;
-	}
+  /* Fixme? Should this be a visible setting? GConf? Env? OS?        */
+  /* Zero-Value for SSL_FHS breaks implicit TLS, so let's use that.  */
+	int EVAL_IVAL = 100;
+  /* IMO more than 10 second blocking means something really wrong   */ 
+  int BTIMEOUT = EVAL_IVAL * 100;
+  int counter = 0;
 
-	if (SSL_ForceHandshake (fd) == SECFailure) {
-		_set_errno_from_pr_error (PR_GetError ());
-		_set_g_error_from_errno (error, FALSE);
-		return FALSE;
-	}
-
+  if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
+    g_warning ("Handshake reset failed.");
+    _set_errno_from_pr_error (PR_GetError ());
+    _set_g_error_from_errno (error, FALSE);
+    return FALSE;
+  }
+  
+  while (counter < BTIMEOUT && SSL_ForceHandshakeWithTimeout(fd, EVAL_IVAL) == SECFailure) {
+    if (PR_GetError() == PR_WOULD_BLOCK_ERROR) {
+      counter += EVAL_IVAL;
+      continue;
+    } else {
+      g_warning ("ForceHandshake negotiation failed.");
+      _set_errno_from_pr_error (PR_GetError ());
+      _set_g_error_from_errno (error, FALSE);
+      return FALSE;
+    }
+  }
 	return TRUE;
 }
 
@@ -857,7 +786,7 @@ camel_tcp_stream_ssl_enable_ssl (CamelTcpStreamSSL *ssl)
 		_camel_tcp_stream_raw_replace_file_desc (CAMEL_TCP_STREAM_RAW (ssl), ssl_fd);
 		ssl->priv->ssl_mode = TRUE;
 
-		if (!rehandshake_ssl_unblock (ssl_fd, NULL)) /* NULL-GError */
+		if (!rehandshake_ssl (ssl_fd, NULL)) /* NULL-GError */
 			return -1;
 	}
 
