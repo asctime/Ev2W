@@ -1284,6 +1284,9 @@ dnl ******************************
 SQLITE_REQUIRED=sqlite_minimum_version
 AC_SUBST(SQLITE_REQUIRED)
 
+PKG_CHECK_MODULES([GTHREAD], [gthread-2.0])
+AM_CONDITIONAL([GTHREAD], [test x"$GTHREAD_FOUND" = x"yes"])
+
 zlib_found="false"
 dnl deflateInit is a #define, use deflateEnd instead
 AC_CHECK_LIB([z], [deflateEnd], [AC_CHECK_HEADER(zlib.h, [zlib_found=true])])

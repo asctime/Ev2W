@@ -14,6 +14,8 @@ MIMEFILTER_TESTS_LDADD= \
 	$(top_builddir)/camel/tests/lib/libcameltest.a	\
 	$(INTLLIBS)
 
+MIMEFILTER_TESTS_LDADD += $(top_builddir)/camel/libcamel-1.2.la $(GNOME_PLATFORM_LIBS) 
+
 EXTRA_DIST =				\
 	crlf-1.in			\
 	crlf-1.out			\

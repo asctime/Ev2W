@@ -76,6 +76,7 @@ am__DEPENDENCIES_2 = $(top_builddir)/libedataserver/libedataserver-${API_VERSION
 	$(top_builddir)/camel/tests/lib/libcameltest.a \
 	$(top_builddir)/camel/libcamel-provider-${API_VERSION}.la \
 	$(top_builddir)/camel/libcamel-${API_VERSION}.la \
+	$(am__DEPENDENCIES_1) $(top_builddir)/camel/libcamel-1.2.la \
 	$(am__DEPENDENCIES_1)
 pgp_DEPENDENCIES = $(am__DEPENDENCIES_2)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -194,6 +195,8 @@ GNOME_PLATFORM_LIBS = @GNOME_PLATFORM_LIBS@
 GOBJECT_QUERY = @GOBJECT_QUERY@
 GPERF = @GPERF@
 GREP = @GREP@
+GTHREAD_CFLAGS = @GTHREAD_CFLAGS@
+GTHREAD_LIBS = @GTHREAD_LIBS@
 GTKDOC_CHECK = @GTKDOC_CHECK@
 GTKDOC_MKPDF = @GTKDOC_MKPDF@
 GTKDOC_REBASE = @GTKDOC_REBASE@
@@ -393,13 +396,11 @@ SMIME_TESTS_CPPFLAGS = \
 	-DTEST_DATA_DIR=\"$(top_srcdir)/camel/tests/data\"\
 	$(CAMEL_CFLAGS)
 
-SMIME_TESTS_LDADD = \
-	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
-	$(top_builddir)/camel/tests/lib/libcameltest.a	\
-	$(top_builddir)/camel/libcamel-provider-${API_VERSION}.la 		\
-	$(top_builddir)/camel/libcamel-${API_VERSION}.la 		\
-	$(INTLLIBS)
-
+SMIME_TESTS_LDADD = $(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
+	$(top_builddir)/camel/tests/lib/libcameltest.a \
+	$(top_builddir)/camel/libcamel-provider-${API_VERSION}.la \
+	$(top_builddir)/camel/libcamel-${API_VERSION}.la $(INTLLIBS) \
+	$(top_builddir)/camel/libcamel-1.2.la $(GNOME_PLATFORM_LIBS)
 #	pgp-mime	
 #	pkcs7
 pgp_CPPFLAGS = $(SMIME_TESTS_CPPFLAGS)

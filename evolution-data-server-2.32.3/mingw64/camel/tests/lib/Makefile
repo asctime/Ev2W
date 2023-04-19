@@ -50,6 +50,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-w64-mingw32
 host_triplet = x86_64-w64-mingw32
+#am__append_1 = $(GTHREAD_CFLAGS)
+#am__append_2 = $(GTHREAD_LIBS)
+#am__append_3 = $(GTHREAD_LIBS)
 subdir = camel/tests/lib
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -76,10 +79,13 @@ AM_V_at = $(am__v_at_$(V))
 am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
 am__v_at_0 = @
 libcameltest_provider_a_AR = $(AR) $(ARFLAGS)
+am__DEPENDENCIES_1 =
+#am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
 libcameltest_provider_a_DEPENDENCIES =  \
 	$(top_builddir)/camel/libcamel-provider-${API_VERSION}.la \
 	$(top_builddir)/camel/libcamel-${API_VERSION}.la \
-	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la
+	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
+	$(am__DEPENDENCIES_2)
 am_libcameltest_provider_a_OBJECTS =  \
 	libcameltest_provider_a-camel-test-provider.$(OBJEXT)
 libcameltest_provider_a_OBJECTS =  \
@@ -87,7 +93,8 @@ libcameltest_provider_a_OBJECTS =  \
 libcameltest_a_AR = $(AR) $(ARFLAGS)
 libcameltest_a_DEPENDENCIES =  \
 	$(top_builddir)/camel/libcamel-${API_VERSION}.la \
-	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la
+	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
+	$(am__DEPENDENCIES_2)
 am_libcameltest_a_OBJECTS = libcameltest_a-camel-test.$(OBJEXT) \
 	libcameltest_a-messages.$(OBJEXT) \
 	libcameltest_a-addresses.$(OBJEXT) \
@@ -209,6 +216,8 @@ GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
+GTHREAD_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -mms-bitfields 
+GTHREAD_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgthread-2.0 -lglib-2.0 -lintl 
 GTKDOC_CHECK = /MSYS2/mingw64/bin/gtkdoc-check
 GTKDOC_MKPDF = /MSYS2/mingw64/bin/gtkdoc-mkpdf
 GTKDOC_REBASE = /MSYS2/mingw64/bin/gtkdoc-rebase
@@ -419,23 +428,19 @@ libcameltest_provider_a_CPPFLAGS = \
 libcameltest_provider_a_SOURCES = \
 	camel-test-provider.c camel-test-provider.h
 
-libcameltest_a_CPPFLAGS = \
-	$(AM_CPPFLAGS)								\
-	-I$(includedir)								\
-	-I$(top_srcdir)								\
-	-I$(top_srcdir)/camel						\
-	-DCAMEL_BUILD_DIR=\"$(top_builddir)/camel\"	\
-	$(CAMEL_CFLAGS)
-
-libcameltest_a_LIBADD = \
-	$(top_builddir)/camel/libcamel-${API_VERSION}.la		\
-	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la
-
-libcameltest_provider_a_LIBADD = \
+libcameltest_a_CPPFLAGS = $(AM_CPPFLAGS) -I$(includedir) \
+	-I$(top_srcdir) -I$(top_srcdir)/camel \
+	-DCAMEL_BUILD_DIR=\"$(top_builddir)/camel\" $(CAMEL_CFLAGS) \
+	$(am__append_1)
+libcameltest_a_LIBADD =  \
+	$(top_builddir)/camel/libcamel-${API_VERSION}.la \
+	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
+	$(am__append_2)
+libcameltest_provider_a_LIBADD =  \
 	$(top_builddir)/camel/libcamel-provider-${API_VERSION}.la \
-	$(top_builddir)/camel/libcamel-${API_VERSION}.la		\
-	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la
-
+	$(top_builddir)/camel/libcamel-${API_VERSION}.la \
+	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
+	$(am__append_3)
 all: all-am
 
 .SUFFIXES:

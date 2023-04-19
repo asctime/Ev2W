@@ -76,6 +76,7 @@ am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
 	$(top_builddir)/camel/tests/lib/libcameltest.a \
 	$(top_builddir)/camel/libcamel-${API_VERSION}.la \
+	$(am__DEPENDENCIES_1) $(top_builddir)/camel/libcamel-1.2.la \
 	$(am__DEPENDENCIES_1)
 test1_DEPENDENCIES = $(am__DEPENDENCIES_2)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -203,6 +204,8 @@ GNOME_PLATFORM_LIBS = @GNOME_PLATFORM_LIBS@
 GOBJECT_QUERY = @GOBJECT_QUERY@
 GPERF = @GPERF@
 GREP = @GREP@
+GTHREAD_CFLAGS = @GTHREAD_CFLAGS@
+GTHREAD_LIBS = @GTHREAD_LIBS@
 GTKDOC_CHECK = @GTKDOC_CHECK@
 GTKDOC_MKPDF = @GTKDOC_MKPDF@
 GTKDOC_REBASE = @GTKDOC_REBASE@
@@ -401,12 +404,10 @@ MESSAGE_TESTS_CPPFLAGS = \
 	-DG_LOG_DOMAIN=\"evolution-tests\"	\
 	$(CAMEL_CFLAGS)
 
-MESSAGE_TESTS_LDADD = \
-	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
-	$(top_builddir)/camel/tests/lib/libcameltest.a			\
-	$(top_builddir)/camel/libcamel-${API_VERSION}.la 		\
-	$(INTLLIBS)
-
+MESSAGE_TESTS_LDADD = $(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
+	$(top_builddir)/camel/tests/lib/libcameltest.a \
+	$(top_builddir)/camel/libcamel-${API_VERSION}.la $(INTLLIBS) \
+	$(top_builddir)/camel/libcamel-1.2.la $(GNOME_PLATFORM_LIBS)
 test1_CPPFLAGS = $(MESSAGE_TESTS_CPPFLAGS)
 test2_CPPFLAGS = $(MESSAGE_TESTS_CPPFLAGS)
 test3_CPPFLAGS = $(MESSAGE_TESTS_CPPFLAGS)

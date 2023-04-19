@@ -13,6 +13,8 @@ STREAM_TESTS_LDADD= \
 	$(top_builddir)/camel/tests/lib/libcameltest.a	\
 	$(INTLLIBS)
 
+STREAM_TESTS_LDADD += $(top_builddir)/camel/libcamel-1.2.la $(GNOME_PLATFORM_LIBS) 
+
 check_PROGRAMS =  	\
 	test1 test2 test3
 

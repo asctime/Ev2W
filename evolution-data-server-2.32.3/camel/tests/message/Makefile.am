@@ -13,6 +13,8 @@ MESSAGE_TESTS_LDADD= \
 	$(top_builddir)/camel/libcamel-${API_VERSION}.la 		\
 	$(INTLLIBS)
 
+MESSAGE_TESTS_LDADD += $(top_builddir)/camel/libcamel-1.2.la $(GNOME_PLATFORM_LIBS) 
+
 check_PROGRAMS = \
 	test1		\
 	test2		\

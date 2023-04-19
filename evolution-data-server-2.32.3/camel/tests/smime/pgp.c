@@ -27,7 +27,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifndef __MINGW32__
 #include <sys/wait.h>
+#else
+#define setenv(name, var, ignore)  _putenv_s(name, var)
+#define WEXITSTATUS(w)	           ((w) & ~0xC0000000)
+#endif
 
 #include "camel-test.h"
 #include "session.h"

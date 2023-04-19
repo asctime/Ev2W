@@ -75,6 +75,7 @@ am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(top_builddir)/camel/libcamel-${API_VERSION}.la \
 	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
 	$(top_builddir)/camel/tests/lib/libcameltest.a \
+	$(am__DEPENDENCIES_1) $(top_builddir)/camel/libcamel-1.2.la \
 	$(am__DEPENDENCIES_1)
 test1_DEPENDENCIES = $(am__DEPENDENCIES_2)
 AM_V_lt = $(am__v_lt_$(V))
@@ -199,6 +200,8 @@ GNOME_PLATFORM_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgtk-win32-2.0 -lgdk-win32-
 GOBJECT_QUERY = D:/MSYS2/mingw64/bin/../bin/gobject-query
 GPERF = /MSYS2/mingw64/bin/gperf
 GREP = /usr/bin/grep
+GTHREAD_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -mms-bitfields 
+GTHREAD_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgthread-2.0 -lglib-2.0 -lintl 
 GTKDOC_CHECK = /MSYS2/mingw64/bin/gtkdoc-check
 GTKDOC_MKPDF = /MSYS2/mingw64/bin/gtkdoc-mkpdf
 GTKDOC_REBASE = /MSYS2/mingw64/bin/gtkdoc-rebase
@@ -397,12 +400,10 @@ STREAM_TESTS_CPPFLAGS = \
 	-DG_LOG_DOMAIN=\"evolution-tests\"		\
 	$(CAMEL_CFLAGS)
 
-STREAM_TESTS_LDADD = \
-	$(top_builddir)/camel/libcamel-${API_VERSION}.la 		\
+STREAM_TESTS_LDADD = $(top_builddir)/camel/libcamel-${API_VERSION}.la \
 	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la \
-	$(top_builddir)/camel/tests/lib/libcameltest.a	\
-	$(INTLLIBS)
-
+	$(top_builddir)/camel/tests/lib/libcameltest.a $(INTLLIBS) \
+	$(top_builddir)/camel/libcamel-1.2.la $(GNOME_PLATFORM_LIBS)
 test1_CPPFLAGS = $(STREAM_TESTS_CPPFLAGS)
 test1_LDADD = $(STREAM_TESTS_LDADD)
 test2_CPPFLAGS = $(STREAM_TESTS_CPPFLAGS)

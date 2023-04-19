@@ -28,7 +28,11 @@ main(gint argc, gchar **argv)
 		push("trying to open a nonexistant stream, method %d", i);
 		switch (i) {
 		case 0:
-			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR, 0, NULL);
+#ifdef __MINGW32__
+			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR|O_BINARY, 0, NULL);
+#else
+			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR|O_BINARY, 0, NULL);
+#endif
 			break;
 		case 1:
 			fd = open("stream.txt", O_RDWR, 0);
@@ -42,23 +46,31 @@ main(gint argc, gchar **argv)
 		push("Creating stream using method %d", i);
 		switch (i) {
 		case 0:
-			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_CREAT|O_RDWR|O_TRUNC, 0600, NULL);
+			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_CREAT|O_RDWR|O_TRUNC|O_BINARY, 0600, NULL);
 			fd = camel_stream_fs_get_fd ((CamelStreamFs *)ss);
 			break;
 		case 1:
-			fd = open("stream.txt", O_CREAT|O_RDWR|O_TRUNC, 0600);
+			fd = open("stream.txt", O_CREAT|O_RDWR|O_TRUNC|O_BINARY, 0600);
 			ss = (CamelSeekableStream *)camel_stream_fs_new_with_fd(fd);
 			break;
 		}
 		check(ss != NULL);
+#ifdef __MINGW32__
+		check(g_stat("stream.txt", &st) == 0 && S_ISREG(st.st_mode) && st.st_size == 0);
+#else
 		check(g_stat("stream.txt", &st) == 0 && (st.st_mode&0777) == 0600 && S_ISREG(st.st_mode) && st.st_size == 0);
+#endif
 		pull();
 
 		test_stream_seekable_writepart(ss);
 		test_stream_seekable_readpart(ss);
 
 		push("getting filesize");
+#ifdef __MINGW32__
+		check(g_stat("stream.txt", &st) == 0 && S_ISREG(st.st_mode));
+#else
 		check(g_stat("stream.txt", &st) == 0 && (st.st_mode&0777) == 0600 && S_ISREG(st.st_mode));
+#endif
 		size = st.st_size;
 		pull();
 
@@ -70,17 +82,20 @@ main(gint argc, gchar **argv)
 		push("re-opening stream");
 		switch (i) {
 		case 0:
-			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR, 0, NULL);
+			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR|O_BINARY, 0, NULL);
 			fd = camel_stream_fs_get_fd ((CamelStreamFs *)ss);
 			break;
 		case 1:
-			fd = open("stream.txt", O_RDWR, 0);
+			fd = open("stream.txt", O_RDWR|O_BINARY, 0);
 			ss = (CamelSeekableStream *)camel_stream_fs_new_with_fd(fd);
 			break;
 		}
 		check(ss != NULL);
+#ifdef __MINGW32__
+		check(g_stat("stream.txt", &st) == 0 && S_ISREG(st.st_mode) && st.st_size == size);
+#else
 		check(g_stat("stream.txt", &st) == 0 && (st.st_mode&0777) == 0600 && S_ISREG(st.st_mode) && st.st_size == size);
-
+#endif
 		test_stream_seekable_readpart(ss);
 
 		check_unref(ss, 1);
@@ -90,16 +105,20 @@ main(gint argc, gchar **argv)
 		push("re-opening stream with truncate");
 		switch (i) {
 		case 0:
-			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR|O_TRUNC, 0, NULL);
+			ss = (CamelSeekableStream *)camel_stream_fs_new_with_name("stream.txt", O_RDWR|O_TRUNC|O_BINARY, 0, NULL);
 			fd = camel_stream_fs_get_fd ((CamelStreamFs *)ss);
 			break;
 		case 1:
-			fd = open("stream.txt", O_RDWR|O_TRUNC, 0);
+			fd = open("stream.txt", O_RDWR|O_TRUNC|O_BINARY, 0);
 			ss = (CamelSeekableStream *)camel_stream_fs_new_with_fd(fd);
 			break;
 		}
 		check(ss != NULL);
+#ifdef __MINGW32__
+		check(g_stat("stream.txt", &st) == 0 && S_ISREG(st.st_mode) && st.st_size == 0);
+#else
 		check(g_stat("stream.txt", &st) == 0 && (st.st_mode&0777) == 0600 && S_ISREG(st.st_mode) && st.st_size == 0);
+#endif
 
 		/* read has to return 0 before eos is set */
 		check(camel_stream_read(CAMEL_STREAM(ss), buffer, 1, NULL) == 0);

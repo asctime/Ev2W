@@ -37,4 +37,10 @@ libcameltest_provider_a_LIBADD =				\
 	$(top_builddir)/camel/libcamel-${API_VERSION}.la		\
 	$(top_builddir)/libedataserver/libedataserver-${API_VERSION}.la
 
+if GTHREAD
+libcameltest_a_CPPFLAGS += $(GTHREAD_CFLAGS)
+libcameltest_a_LIBADD += $(GTHREAD_LIBS)
+libcameltest_provider_a_LIBADD += $(GTHREAD_LIBS)
+endif
+
 -include $(top_srcdir)/git.mk
