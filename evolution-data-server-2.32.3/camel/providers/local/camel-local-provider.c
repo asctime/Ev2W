@@ -75,8 +75,8 @@ static CamelProvider mbox_provider = {
 	/* ... */
 };
 
-#ifndef G_OS_WIN32
-
+/* MinGW can support maildir on Windows */
+#if defined (__MINGW32__) || !defined (G_OS_WIN32)
 static CamelProviderConfEntry maildir_conf_entries[] = {
 	CAMEL_PROVIDER_CONF_DEFAULT_PATH,
 	{ CAMEL_PROVIDER_CONF_SECTION_START, "general", NULL, N_("Options") },
@@ -97,6 +97,7 @@ static CamelProvider maildir_provider = {
 	/* ... */
 };
 
+#ifndef __MINGW32__
 static CamelProviderConfEntry spool_conf_entries[] = {
 	CAMEL_PROVIDER_CONF_DEFAULT_PATH,
 	{ CAMEL_PROVIDER_CONF_SECTION_START, "general", NULL, N_("Options") },
@@ -128,6 +129,7 @@ static CamelProvider spool_directory_provider = {
 	/* ... */
 };
 
+#endif  /* MinGW32 */
 #endif
 
 /* build a canonical 'path' */
@@ -241,7 +243,9 @@ camel_provider_module_init(void)
 	mbox_provider.translation_domain = GETTEXT_PACKAGE;
 	camel_provider_register(&mbox_provider);
 
-#ifndef G_OS_WIN32
+/* MinGW can support maildir on Windows */
+#if defined (__MINGW32__) || !defined (G_OS_WIN32)
+#ifndef __MINGW32__
 	spool_conf_entries[0].value = path;  /* default path - same as mbox; it's for both file and directory */
 	spool_file_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
 	spool_file_provider.url_hash = local_url_hash;
@@ -254,9 +258,12 @@ camel_provider_module_init(void)
 	spool_directory_provider.url_equal = local_url_equal;
 	spool_directory_provider.translation_domain = GETTEXT_PACKAGE;
 	camel_provider_register(&spool_directory_provider);
-
-	path = getenv("MAILDIR");
+	
+  path = getenv("MAILDIR");
 	maildir_conf_entries[0].value = path ? path : "";  /* default path */
+#else
+	maildir_conf_entries[0].value = "";  /* default path */
+#endif /* MINGW32 */
 	maildir_provider.object_types[CAMEL_PROVIDER_STORE] = camel_maildir_store_get_type ();
 	maildir_provider.url_hash = local_url_hash;
 	maildir_provider.url_equal = local_url_equal;

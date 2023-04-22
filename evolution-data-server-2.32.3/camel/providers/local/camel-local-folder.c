@@ -218,7 +218,7 @@ local_folder_constructed (GObject *object)
 			path + strlen (tmp),
 			url->protocol);
 #ifdef __MINGW32__
-	else if ((tmp = "/var/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
+	else if ((tmp = "/MSYS2/mingw64/var/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
 #else
 	else if ((tmp = "/var/mail") && strncmp (tmp, path, strlen (tmp)) == 0)
 #endif

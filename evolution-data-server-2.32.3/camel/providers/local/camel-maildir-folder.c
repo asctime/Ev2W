@@ -134,9 +134,11 @@ maildir_append_message (CamelFolder *folder,
 
 	d(printf("Appending message\n"));
 
+#ifndef __MINGW32__
 	/* If we can't lock, don't do anything */
 	if (camel_local_folder_lock (lf, CAMEL_LOCK_WRITE, error) == -1)
 		return FALSE;
+#endif
 
 	/* add it to the summary/assign the uid, etc */
 	mi = camel_local_summary_add (
@@ -155,7 +157,7 @@ maildir_append_message (CamelFolder *folder,
 	/* write it out to tmp, use the uid we got from the summary */
 	name = g_strdup_printf ("%s/tmp/%s", lf->folder_path, camel_message_info_uid(mi));
 	output_stream = camel_stream_fs_new_with_name (
-		name, O_WRONLY|O_CREAT, 0600, error);
+		name, O_WRONLY|O_BINARY|O_CREAT, 0600, error);
 	if (output_stream == NULL)
 		goto fail_write;
 
@@ -206,7 +208,9 @@ maildir_append_message (CamelFolder *folder,
 	success = FALSE;
 
  check_changed:
+#ifndef __MINGW32__
 	camel_local_folder_unlock (lf);
+#endif
 
 	if (lf && camel_folder_change_info_changed (lf->changes)) {
 		camel_folder_changed (folder, lf->changes);
@@ -258,8 +262,10 @@ maildir_get_message (CamelFolder *folder,
 
 	d(printf("getting message: %s\n", uid));
 
+#ifndef __MINGW32__
 	if (camel_local_folder_lock (lf, CAMEL_LOCK_WRITE, error) == -1)
 		return NULL;
+#endif
 
 	/* get the message summary info */
 	if ((info = camel_folder_summary_uid(folder->summary, uid)) == NULL) {
@@ -277,7 +283,7 @@ maildir_get_message (CamelFolder *folder,
 	camel_message_info_free(info);
 
 	message_stream = camel_stream_fs_new_with_name (
-		name, O_RDONLY, 0, error);
+		name, O_RDONLY|O_BINARY, 0, error);
 	if (message_stream == NULL) {
 		g_prefix_error (
 			error, _("Cannot get message %s from folder %s: "),
@@ -298,7 +304,9 @@ maildir_get_message (CamelFolder *folder,
  fail:
 	g_free (name);
 
+#ifndef __MINGW32__
 	camel_local_folder_unlock (lf);
+#endif
 
 	if (lf && camel_folder_change_info_changed (lf->changes)) {
 		camel_folder_changed (folder, lf->changes);

@@ -21,7 +21,7 @@ gint main(gint argc, gchar **argv)
 	camel_test_provider_init(1, nntp_drivers);
 
 	/* clear out any camel-test data */
-	system("/bin/rm -rf /tmp/camel-test");
+	system("rm -rf /tmp/camel-test");
 
 	session = camel_test_session_new ("/tmp/camel-test");
 

@@ -16,7 +16,10 @@
 static const gchar *local_drivers[] = { "local" };
 static const gchar *local_providers[] = {
 	"mbox",
+#ifndef __MINGW32__  
+/* MH is UNIX-only https://en.wikipedia.org/wiki/MH_Message_Handling_System */
 	"mh",
+#endif
 	"maildir"
 };
 
@@ -56,7 +59,7 @@ main(gint argc, gchar **argv)
 	camel_test_provider_init(1, local_drivers);
 
 	/* clear out any camel-test data */
-	system("/bin/rm -rf /tmp/camel-test");
+	system("rm -rf /tmp/camel-test");
 
 	session = camel_test_session_new ("/tmp/camel-test");
 

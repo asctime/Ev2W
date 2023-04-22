@@ -95,7 +95,7 @@ gint main(gint argc, gchar **argv)
 	camel_test_provider_init(1, local_drivers);
 
 	/* clear out any camel-test data */
-	system("/bin/rm -rf /tmp/camel-test");
+	system("rm -rf /tmp/camel-test");
 
 	camel_test_start("Simple filtering of mbox");
 
