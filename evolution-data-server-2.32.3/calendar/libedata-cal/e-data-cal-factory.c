@@ -898,7 +898,14 @@ gint main (gint argc, gchar **argv)
 #endif
 #endif
 
-	setlocale (LC_ALL, "");
+LANGID langId = GetSystemDefaultUILanguage();
+if (PRIMARYLANGID(langId) == LANG_ENGLISH) {
+    SetThreadLocale(MAKELCID(langId, SORT_DEFAULT));
+    setlocale(LC_ALL, "");
+} else {
+    SetThreadLocale(MAKELCID(MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US), SORT_DEFAULT));
+    setlocale(LC_ALL, "C");
+}
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 

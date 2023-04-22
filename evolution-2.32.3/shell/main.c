@@ -568,7 +568,8 @@ main (gint argc, gchar **argv)
 		_e_win32_unregister_addressbook ();
 		exit (0);
 	}
-
+  
+#if 0
 	if (strcmp (gettext (""), "") == 0) {
 		/* No message catalog installed for the current locale
 		 * language, so don't bother with the localisations
@@ -578,6 +579,16 @@ main (gint argc, gchar **argv)
 					   SORT_DEFAULT));
 		setlocale (LC_ALL, "C");
 	}
+#else
+LANGID langId = GetSystemDefaultUILanguage();
+if (PRIMARYLANGID(langId) == LANG_ENGLISH) {
+    SetThreadLocale(MAKELCID(langId, SORT_DEFAULT));
+    setlocale(LC_ALL, "");
+} else {
+    SetThreadLocale(MAKELCID(MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US), SORT_DEFAULT));
+    setlocale(LC_ALL, "C");
+}
+#endif
 #endif
 	if (start_online && start_offline) {
 		g_printerr (

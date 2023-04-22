@@ -296,17 +296,17 @@ fill_combo_formats (GtkWidget *combo, const gchar *key, DTFormatKind kind)
     "%d/%m/%Y", /* Slashed European style, full year */
     "%d.%m.%y", /* Point European style */
     "%d.%m.%Y", /* Point European style, full year */
-    "%Y-%m-%d", /* Japanese-style, full year */
-		"%ad",		  /* abbreviated date, like "Today" */
+    "%y-%m-%d", /* Japanese-style, full year */
+		"%ad",		/* abbreviated date, like "Today" */
 		NULL
 	};
 
 	const gchar *time_items[] = {
 		N_ ("Use locale default"),
 		"%I:%M:%S %p",	/* 12hours style */
-		"%I:%M %p",	    /* 12hours style, without seconds */
-		"%H:%M:%S",	    /* 24hours style */
-		"%H:%M",	      /* 24hours style, without seconds */
+		"%I:%M %p",	/* 12hours style, without seconds */
+		"%H:%M:%S",	/* 24hours style */
+		"%H:%M",	/* 24hours style, without seconds */
 		NULL
 	};
 
@@ -314,26 +314,16 @@ fill_combo_formats (GtkWidget *combo, const gchar *key, DTFormatKind kind)
 		N_ ("Use locale default"),
 		"%m/%d/%y %I:%M:%S %p",	/* American style */
 		"%m/%d/%Y %I:%M:%S %p",	/* American style, full year */
-		"%m/%d/%y %I:%M %p",	  /* American style, without seconds */
-		"%m/%d/%Y %I:%M %p",	  /* American style, without seconds, full year */
-    "%d-%m-%y %H:%M:%S",    /* Dashed European style */
-    "%d-%m-%Y %H:%M:%S",    /* Dashed European style, full year */
-    "%d-%m-%y %H:%M",       /* Dashed European style, without seconds */
-    "%d-%m-%Y %H:%M",       /* Dashed European style, without seconds */
-    "%d/%m/%y %H:%M:%S",    /* Slashed European style */
-    "%d/%m/%Y %H:%M:%S",    /* Slashed European style */
-    "%d/%m/%y %H:%M",       /* Slashed European style, without seconds */
-    "%d/%m/%Y %H:%M",       /* Slashed European style, without seconds */
-		"%d.%m.%y %H:%M:%S",	  /* Period European style */
-		"%d.%m.%Y %H:%M:%S",	  /* Period European style, full year */
-		"%d.%m.%y %H:%M",	      /* non-American style, without seconds */
-		"%d.%m.%Y %H:%M",	      /* non-American style, without seconds, full year */
-    "%Y-%m-%d %H:%M:%S",    /* Japanese-style */
-    "%Y-%m-%d %H:%M",       /* Japanese-style, without seconds */
-		"%ad %I:%M:%S %p",	    /* %ad is an abbreviated date, like "Today" */
-		"%ad %I:%M %p",		      /* %ad is an abbreviated date, like "Today", without seconds */
+		"%m/%d/%y %I:%M %p",	/* American style, without seconds */
+		"%m/%d/%Y %I:%M %p",	/* American style, without seconds, full year */
+		"%ad %I:%M:%S %p",	/* %ad is an abbreviated date, like "Today" */
+		"%ad %I:%M %p",		/* %ad is an abbreviated date, like "Today", without seconds */
+		"%d.%m.%y %H:%M:%S",	/* non-American style */
+		"%d.%m.%Y %H:%M:%S",	/* non-American style, full year */
+		"%d.%m.%y %H:%M",	/* non-American style, without seconds */
+		"%d.%m.%Y %H:%M",	/* non-American style, without seconds, full year */
 		"%ad %H:%M:%S",
-		"%ad %H:%M",		        /* without seconds */
+		"%ad %H:%M",		/* without seconds */
 		NULL
 	};
 
