@@ -614,14 +614,18 @@ gint main (gint argc, gchar **argv)
 #endif
 #endif
 
-LANGID langId = GetSystemDefaultUILanguage();
-if (PRIMARYLANGID(langId) == LANG_ENGLISH) {
+#ifdef G_OS_WIN32
+  LANGID langId = GetSystemDefaultUILanguage();
+  if (PRIMARYLANGID(langId) == LANG_ENGLISH) {
     SetThreadLocale(MAKELCID(langId, SORT_DEFAULT));
     setlocale(LC_ALL, "");
-} else {
+  } else {
     SetThreadLocale(MAKELCID(MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US), SORT_DEFAULT));
     setlocale(LC_ALL, "C");
-}
+  }
+#else
+  setlocale(LC_ALL, "C");
+#endif
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
 	g_type_init ();

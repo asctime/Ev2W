@@ -518,9 +518,9 @@ rehandshake_ssl (PRFileDesc *fd, GError **error)
 {
   /* Fixme? Should this be a visible setting? GConf? Env? OS?        */
   /* Zero-Value for SSL_FHS breaks implicit TLS, so let's use that.  */
-	int EVAL_IVAL = 100;
-  /* IMO more than 10 second blocking means something really wrong   */ 
-  int BTIMEOUT = EVAL_IVAL * 100;
+	int EVAL_IVAL = 40;
+  /* More than ten second blocking means something probably wrong    */ 
+  int BTIMEOUT = EVAL_IVAL * 250;
   int counter = 0;
 
   if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
