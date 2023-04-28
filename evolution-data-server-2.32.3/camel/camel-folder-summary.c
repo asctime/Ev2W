@@ -1846,7 +1846,9 @@ camel_folder_summary_load_from_db (CamelFolderSummary *s,
 		s->uids, p->flag_cache, &local_error);
 
 	if (local_error != NULL && local_error->message != NULL &&
-		strstr (local_error->message, "no such table") != NULL) {
+  strstr (local_error->message, "no such table") != NULL) {
+    g_clear_error (&local_error);
+
 		/* create table the first time it is accessed and missing */
 		ret = camel_db_prepare_message_info_table (cdb, full_name, error);
 	} else if (local_error != NULL)

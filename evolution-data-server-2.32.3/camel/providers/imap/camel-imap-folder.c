@@ -1157,8 +1157,11 @@ imap_rescan (CamelFolder *folder, gint exists, GError **error)
 		   Because server always reports NULL, which means none, which
 		   will remove user's flags from local machine, which is bad.
 		*/
-		if ((folder->permanent_flags & CAMEL_MESSAGE_USER) != 0 && merge_custom_flags (info, new[j].custom_flags))
-			changed = TRUE;
+    if ((folder->permanent_flags & CAMEL_MESSAGE_USER) != 0 &&
+      (iinfo->info.flags & CAMEL_MESSAGE_FOLDER_FLAGGED) == 0 &&
+      merge_custom_flags (info, new[j].custom_flags)) {
+      changed = TRUE;
+    }
 
 		if (changed) {
 			if (changes == NULL)

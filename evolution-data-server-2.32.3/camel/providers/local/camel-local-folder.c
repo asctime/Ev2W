@@ -374,7 +374,7 @@ camel_local_folder_construct(CamelLocalFolder *lf, guint32 flags, GError **error
 	/* if we have no/invalid index file, force it */
 	forceindex = camel_text_index_check(lf->index_path) == -1;
 	if (lf->flags & CAMEL_STORE_FOLDER_BODY_INDEX) {
-		gint flag = O_RDWR|O_CREAT;
+		gint flag = O_RDWR|O_BINARY|O_CREAT;
 
 		if (forceindex)
 			flag |= O_TRUNC;

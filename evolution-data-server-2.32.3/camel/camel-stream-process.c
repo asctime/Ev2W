@@ -209,7 +209,11 @@ do_exec_command (gint fd, const gchar *command, gchar **env)
 	for (; env && *env; env++)
 		putenv(*env);
 
+#ifndef G_OS_WIN32   /* Is there a reason this wasn't implemented ? */
+  spawnl(P_WAIT, "command", "/C", command, NULL);
+#else
 	execl ("/bin/sh", "/bin/sh", "-c", command, NULL);
+#endif
 
 	if (camel_verbose_debug)
 		fprintf (stderr, "exec failed %d\n", errno);

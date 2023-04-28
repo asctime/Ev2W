@@ -231,7 +231,7 @@ maildir_get_filename (CamelFolder *folder,
 	gchar *res;
 
 	/* get the message summary info */
-	if ((info = camel_folder_summary_uid(folder->summary, uid)) == NULL) {
+	if ((info = camel_folder_summary_uid (folder->summary, uid)) == NULL) {
 		set_cannot_get_message_ex (
 			error, CAMEL_FOLDER_ERROR_INVALID_UID,
 			uid, lf->folder_path, _("No such message"));
@@ -240,8 +240,17 @@ maildir_get_filename (CamelFolder *folder,
 
 	mdi = (CamelMaildirMessageInfo *)info;
 
-	/* what do we do if the message flags (and :info data) changes?  filename mismatch - need to recheck I guess */
-	res = g_strdup_printf("%s/cur/%s", lf->folder_path, camel_maildir_info_filename (mdi));
+	/* what do we do if the message flags (and :info data) changes?  filename mismatch - need to recheck I guess 
+	   If filename is NULL, it means folder_summary_check is not yet executed. */
+	if (!camel_maildir_info_filename (mdi)) {
+		gchar *temp;
+
+		temp = camel_maildir_summary_info_to_name (mdi);
+		res = g_strdup_printf("%s/cur/%s", lf->folder_path, temp);
+
+		g_free (temp);
+	} else
+		res = g_strdup_printf("%s/cur/%s", lf->folder_path, camel_maildir_info_filename (mdi));
 
 	camel_message_info_free (info);
 
@@ -277,14 +286,27 @@ maildir_get_message (CamelFolder *folder,
 
 	mdi = (CamelMaildirMessageInfo *)info;
 
+#if 0  /* Gitlab #59eb7247 */
 	/* what do we do if the message flags (and :info data) changes?  filename mismatch - need to recheck I guess */
 	name = g_strdup_printf("%s/cur/%s", lf->folder_path, camel_maildir_info_filename(mdi));
+#else
+	/* what do we do if the message flags (and :info data) changes?  filename mismatch - need to recheck I guess 
+	   If filename is NULL, it means folder_summary_check is not yet executed. */
+	if (!camel_maildir_info_filename (mdi)) {
+		gchar *temp;
 
-	camel_message_info_free(info);
+		temp = camel_maildir_summary_info_to_name (mdi);
+		name = g_strdup_printf("%s/cur/%s", lf->folder_path, temp);
 
-	message_stream = camel_stream_fs_new_with_name (
-		name, O_RDONLY|O_BINARY, 0, error);
-	if (message_stream == NULL) {
+		g_free (temp);
+	} else
+		name = g_strdup_printf("%s/cur/%s", lf->folder_path, camel_maildir_info_filename (mdi));
+#endif
+	  camel_message_info_free(info);
+
+	  message_stream = camel_stream_fs_new_with_name (
+		  name, O_RDONLY|O_BINARY, 0, error);
+	  if (message_stream == NULL) {
 		g_prefix_error (
 			error, _("Cannot get message %s from folder %s: "),
 			uid, lf->folder_path);

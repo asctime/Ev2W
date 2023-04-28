@@ -166,8 +166,15 @@ do_perf(gint argc, gchar **argv)
 		return 1;
 	}
 
+#ifndef G_OS_WIN32
+  char index_path[MAX_PATH];
+  snprintf(getenv("TEMP"), MAX_PATH, "%s\\index", temp_dir);
+  idx = (CamelIndex *) camel_text_index_new(
+    index_path, O_TRUNC|O_CREAT|O_RDWR);
+#else
 	idx = (CamelIndex *) camel_text_index_new (
 		"/tmp/index", O_TRUNC|O_CREAT|O_RDWR);
+#endif
 	if (idx == NULL) {
 		perror("open index");
 		closedir(dir);
@@ -187,7 +194,7 @@ do_perf(gint argc, gchar **argv)
 		camel_mime_filter_index_set_name (
 			CAMEL_MIME_FILTER_INDEX (filter_index), idn);
 		name = g_strdup_printf("%s/%s", path, d->d_name);
-		stream = camel_stream_fs_new_with_name(name, O_RDONLY, 0, NULL);
+		stream = camel_stream_fs_new_with_name(name, O_BINARY|O_RDONLY, 0, NULL);
 		camel_stream_write_to_stream(stream, filter, NULL);
 		g_object_unref (stream);
 		g_free(name);

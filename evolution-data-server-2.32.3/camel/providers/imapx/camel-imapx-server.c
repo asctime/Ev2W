@@ -3413,7 +3413,7 @@ imapx_command_append_message_done (CamelIMAPXServer *is, CamelIMAPXCommand *ic)
 	old_uid = g_strdup (job->u.append_message.info->uid);
 
 	if (ic->error == NULL && ic->status->result == IMAPX_OK) {
-		if (ic->status->condition == IMAPX_APPENDUID) {
+	  if (ic->status && ic->status->condition == IMAPX_APPENDUID) {
 			c(printf("Got appenduid %d %d\n", (gint)ic->status->u.appenduid.uidvalidity, (gint)ic->status->u.appenduid.uid));
 			if (ic->status->u.appenduid.uidvalidity == ifolder->uidvalidity_on_server) {
 				CamelFolderChangeInfo *changes;
