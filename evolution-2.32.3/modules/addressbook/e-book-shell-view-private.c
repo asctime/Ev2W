@@ -364,6 +364,7 @@ book_shell_view_selector_popup_menu_cb (EShellView *shell_view)
 	return book_shell_view_show_popup_menu (NULL, shell_view);
 }
 
+#if 0 /* Github #e3414564 "..delete a whole address book" */
 static gboolean
 book_shell_view_selector_key_press_event_cb (EShellView *shell_view,
                                              GdkEventKey *event)
@@ -380,6 +381,7 @@ book_shell_view_selector_key_press_event_cb (EShellView *shell_view,
 
 	return FALSE;
 }
+#endif
 
 static void
 book_shell_view_load_view_collection (EShellViewClass *shell_view_class)
@@ -499,10 +501,12 @@ e_book_shell_view_private_constructed (EBookShellView *book_shell_view)
 		G_CALLBACK (book_shell_view_selector_button_press_event_cb),
 		book_shell_view, G_CONNECT_SWAPPED);
 
+#if 0 /* e3414564 */
 	g_signal_connect_object (
 		selector, "key-press-event",
 		G_CALLBACK (book_shell_view_selector_key_press_event_cb),
 		book_shell_view, G_CONNECT_SWAPPED);
+#endif
 
 	g_signal_connect_object (
 		selector, "popup-menu",

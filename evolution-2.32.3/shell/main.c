@@ -25,6 +25,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
+#include <dbus/dbus-glib.h>
 
 #if HAVE_CLUTTER
 #include <clutter-gtk/clutter-gtk.h>
@@ -527,6 +528,8 @@ main (gint argc, gchar **argv)
 	}
 
 	g_type_init ();
+  /* this is to initialize threading for dbus-glib used by GConf */
+  dbus_g_thread_init ();
 
 	#ifdef HAVE_ICAL_UNKNOWN_TOKEN_HANDLING
 	ical_set_unknown_token_handling_setting (ICAL_DISCARD_TOKEN);

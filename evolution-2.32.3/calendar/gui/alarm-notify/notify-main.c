@@ -30,6 +30,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+#include <dbus/dbus-glib.h>
 #include <camel/camel.h>
 #include <unique/unique.h>
 #include <libedataserver/e-source.h>
@@ -95,6 +96,8 @@ main (gint argc, gchar **argv)
 #endif
 
 	gtk_init (&argc, &argv);
+	/* this is to initialize threading for dbus-glib used by GConf */
+	dbus_g_thread_init ();
 
 	app = unique_app_new ("org.gnome.EvolutionAlarmNotify", NULL);
 

@@ -637,6 +637,10 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-glib.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-shared.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gtype-specialized.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdkddkver.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/excpt.h \
@@ -2136,6 +2140,14 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h:
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-glib.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-shared.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gtype-specialized.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h:
 

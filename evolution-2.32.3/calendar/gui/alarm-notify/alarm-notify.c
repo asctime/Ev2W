@@ -229,7 +229,7 @@ alarm_notify_finalize (GObject *object)
 }
 
 static void
-alarm_notify_class_init (AlarmNotifyClass *class)
+alarm_notify_class_init (AlarmNotifyClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -241,7 +241,7 @@ alarm_notify_class_init (AlarmNotifyClass *class)
 }
 
 static void
-alarm_notify_init (AlarmNotify *an)
+alarm_notify_init (AlarmNotify *an, gpointer class_data)
 {
 	gint ii;
 

@@ -34,11 +34,15 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 
+#if 0    /* this is all outdated / no  longer applies ? */
 #ifdef G_OS_WIN32
 /* Include <windows.h> early and work around DATADIR lossage */
 #define DATADIR crap_DATADIR
 #include <windows.h>
 #undef DATADIR
+#endif
+#elif defined (G_OS_WIN32) 
+#include <windows.h>    /* still needed for PSYSTEMTIME */
 #endif
 
 #include "addressbook.h"

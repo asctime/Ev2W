@@ -30,12 +30,14 @@
 #include <glib/gstdio.h>
 #include <gdk/gdkkeysyms.h>
 
+#if 0    /* this is all outdated / no  longer applies ? */
 #ifdef G_OS_WIN32
 /* Work around 'DATADIR' and 'interface' lossage in <windows.h> */
 #define DATADIR crap_DATADIR
 #include <windows.h>
 #undef DATADIR
 #undef interface
+#endif
 #endif
 
 #include <gtkhtml/gtkhtml.h>

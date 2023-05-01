@@ -116,8 +116,7 @@ config_data_get_calendars (const gchar *key)
 	cal_sources = e_source_list_new_for_gconf (conf_client, key);
 
 	if (cal_sources && g_slist_length (gconf_list)) {
-		g_slist_foreach (gconf_list, (GFunc) g_free, NULL);
-		g_slist_free (gconf_list);
+		g_slist_free_full (gconf_list, g_free);
 		return cal_sources;
 	}
 
@@ -142,14 +141,12 @@ config_data_get_calendars (const gchar *key)
 		cal_sources = e_source_list_new_for_gconf (conf_client, key);
 
 		if (source) {
-			g_slist_foreach (source, (GFunc) g_free, NULL);
-			g_slist_free (source);
+			g_slist_free_full (source, g_free);
 		}
 	}
 
 	if (gconf_list) {
-		g_slist_foreach (gconf_list, (GFunc) g_free, NULL);
-		g_slist_free (gconf_list);
+		g_slist_free_full (gconf_list, g_free);
 	}
 
 	return cal_sources;
@@ -186,8 +183,7 @@ config_data_replace_string_list (const gchar *key,
 	}
 
 	if (source) {
-		g_slist_foreach (source, (GFunc) g_free, NULL);
-		g_slist_free (source);
+		g_slist_free_full (source, g_free);
 	}
 }
 
@@ -357,8 +353,7 @@ config_data_save_blessed_program (const gchar *program)
 	l = gconf_client_get_list (client, KEY_PROGRAMS, GCONF_VALUE_STRING, NULL);
 	l = g_slist_append (l, g_strdup (program));
 	gconf_client_set_list (client, KEY_PROGRAMS, GCONF_VALUE_STRING, l, NULL);
-	g_slist_foreach (l, (GFunc) g_free, NULL);
-	g_slist_free (l);
+	g_slist_free_full (l, g_free);
 }
 
 /**

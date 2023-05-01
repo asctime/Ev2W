@@ -353,6 +353,7 @@ do_save_calendar_csv (FormatHandler *handler,
 		dest_uri, &error);
 
 	if (stream && e_cal_get_object_list_as_comp (source_client, "#t", &objects, NULL)) {
+  GSList *iter;
 
 		if (config->header) {
 
@@ -391,8 +392,8 @@ do_save_calendar_csv (FormatHandler *handler,
 			g_string_free (line, TRUE);
 		}
 
-		while (objects != NULL) {
-			ECalComponent *comp = objects->data;
+    for (iter = objects; iter; iter = iter->next) {
+			ECalComponent *comp = iter->data;
 			gchar *delimiter_temp = NULL;
 			const gchar *temp_constchar;
 			GSList *temp_list;

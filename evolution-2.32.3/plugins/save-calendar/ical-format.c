@@ -111,12 +111,13 @@ do_save_calendar_ical (FormatHandler *handler, ESourceSelector *selector, ECalSo
 	if (e_cal_get_object_list (source_client, "#t", &objects, &error)) {
 		CompTzData tdata;
 		GOutputStream *stream;
+    GSList *iter;
 
 		tdata.zones = g_hash_table_new (g_str_hash, g_str_equal);
 		tdata.ecal = source_client;
 
-		while (objects != NULL) {
-			icalcomponent *icalcomp = objects->data;
+    for (iter = objects; iter; iter = iter->next) {
+			icalcomponent *icalcomp = iter->data;
 
 			icalcomponent_foreach_tzid (icalcomp, insert_tz_comps, &tdata);
 			icalcomponent_add_component (top_level, icalcomp);

@@ -205,6 +205,8 @@ do_save_calendar_rdf (FormatHandler *handler, ESourceSelector *selector, ECalSou
 	stream = open_for_writing (GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (selector))), dest_uri, &error);
 
 	if (stream && e_cal_get_object_list_as_comp (source_client, "#t", &objects, NULL)) {
+    GSList *iter;
+
 		xmlBufferPtr buffer=xmlBufferCreate();
 		xmlDocPtr doc = xmlNewDoc((xmlChar *) "1.0");
 		xmlNodePtr fnode;
@@ -238,8 +240,8 @@ do_save_calendar_rdf (FormatHandler *handler, ESourceSelector *selector, ECalSou
 		/* Version of this RDF-format */
 		xmlNewChild (fnode, NULL, (const guchar *)"version", (const guchar *)"2.0");
 
-		while (objects != NULL) {
-			ECalComponent *comp = objects->data;
+    for (iter = objects; iter; iter = iter->next) {
+			ECalComponent *comp = iter->data;
 			const gchar *temp_constchar;
 			gchar *tmp_str = NULL;
 			GSList *temp_list;

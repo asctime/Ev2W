@@ -1628,7 +1628,7 @@ et_real_construct (ETable *e_table, ETableModel *etm, ETableExtras *ete,
 	e_table->draw_focus = specification->draw_focus;
 	e_table->cursor_mode = specification->cursor_mode;
 	e_table->full_header = e_table_spec_to_full_header (specification, ete);
-	g_object_ref (e_table->full_header);
+	/* g_object_ref (e_table->full_header); */
 
 	col_count = e_table_header_count (e_table->full_header);
 	for (i = 0; i < col_count; i++) {

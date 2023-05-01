@@ -33,12 +33,14 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
+#if 0    /* this is all outdated / no  longer applies ? */
 #ifdef G_OS_WIN32
 /* Work around 'DATADIR' and 'interface' lossage in <windows.h> */
 #define DATADIR crap_DATADIR
 #include <windows.h>
 #undef DATADIR
 #undef interface
+#endif
 #endif
 
 #include <libedataserver/e-data-server-util.h>	/* for e_utf8_strftime, what about e_time_format_time? */
@@ -1679,6 +1681,9 @@ efh_text_plain (EMFormatHTML *efh,
 	flags = efh->text_html_flags;
 
 	dw = camel_medium_get_content ((CamelMedium *)part);
+  if (!dw) {
+    return;  /* Gitlab #46897aae "Avoid crash when formatting broken msg" */
+  }
 
 	/* Check for RFC 2646 flowed text. */
 	if (camel_content_type_is(dw->mime_type, "text", "plain")

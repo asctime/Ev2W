@@ -632,6 +632,10 @@
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-glib.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-shared.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gtype-specialized.h \
+ D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-address.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-object.h \
@@ -2300,6 +2304,14 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h:
 D:/MSYS2/mingw64/include/libintl.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-glib.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-shared.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gtype-specialized.h:
+
+D:/MSYS2/mingw64/include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h:
 
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h:
 
