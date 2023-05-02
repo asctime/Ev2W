@@ -508,9 +508,14 @@ owa_authenticate_user(GtkWidget *button, EConfig *config)
 
 	camel_url_set_host (url, valid ? exchange_params->host : "");
 
-	if (valid)
-		camel_url_set_param (url, "save-passwd", remember_password? "true" : "false");
-
+  /*  Gitlab #a648956b "Exchange password not stored"  */
+  if (valid) {
+    camel_url_set_param (url, "save-passwd", NULL);
+    if (target_account->account && target_account->account->source && target_account->account->transport) {
+      target_account->account->source->save_passwd = remember_password;
+      target_account->account->transport->save_passwd = remember_password;
+    }
+  }
 	camel_url_set_param (url, "ad_server", valid ? exchange_params->ad_server: NULL);
 	camel_url_set_param (url, "mailbox", valid ? exchange_params->mailbox : NULL);
 	camel_url_set_param (url, "owa_path", valid ? exchange_params->owa_path : NULL);

@@ -430,7 +430,10 @@ exchange_hierarchy_foreign_add_folder (ExchangeHierarchy *hier,
 	guint folder_mask = 0;
 
 	result =  create_internal (hier, hier->toplevel, folder_name, NULL, folder);
-	if (result == EXCHANGE_ACCOUNT_FOLDER_OK) {
+	
+  /* Add the esource even if the folder already exists since evolution client process would
+     not know it and it might just exist in exchange process */
+  if (result == EXCHANGE_ACCOUNT_FOLDER_OK || result == EXCHANGE_ACCOUNT_FOLDER_ALREADY_EXISTS) {
 		/* Add the esources */
 		folder_type = e_folder_get_type_string (*folder);
 		physical_uri = e_folder_get_physical_uri (*folder);

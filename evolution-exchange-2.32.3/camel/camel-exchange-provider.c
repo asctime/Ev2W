@@ -119,7 +119,8 @@ static CamelProvider exchange_provider = {
 
 	CAMEL_URL_NEED_USER | CAMEL_URL_HIDDEN_AUTH | CAMEL_URL_HIDDEN_HOST,
 
-	exchange_conf_entries
+	exchange_conf_entries,
+  NULL,
 
 	/* ... */
 };

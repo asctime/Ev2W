@@ -2335,8 +2335,8 @@ finalize (GObject *object)
 	}
 	g_free (cbex->priv);
 
-	if (G_OBJECT_CLASS (parent_class)->finalize)
-		G_OBJECT_CLASS (parent_class)->finalize (object);
+  /* #6d91d917 Chain up to parent's finalize() method. */
+  G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void

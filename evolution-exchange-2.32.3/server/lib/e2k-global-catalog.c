@@ -822,7 +822,7 @@ e2k_global_catalog_lookup (E2kGlobalCatalog *gc,
 	E2kGlobalCatalogEntry *entry;
 	GPtrArray *attrs;
 	E2kGlobalCatalogLookupFlags lookup_flags, need_flags = 0;
-	const gchar *base = NULL;
+	PCHAR base = NULL;
 	gchar *filter = NULL, *dn;
 	gint scope = LDAP_SCOPE_BASE, ldap_error;
 	E2kGlobalCatalogStatus status;

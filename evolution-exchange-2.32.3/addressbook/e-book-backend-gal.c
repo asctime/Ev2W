@@ -545,7 +545,11 @@ get_contact_handler (LDAPOp *op, LDAPMessage *res)
 	}
 	else if (msg_type == LDAP_RES_SEARCH_RESULT) {
 		gchar *ldap_error_msg;
+#ifdef G_OS_WIN32
+		ULONG ldap_error;
+#else
 		gint ldap_error;
+#endif
 
 		g_mutex_lock (bl->priv->ldap_lock);
 		ldap_parse_result (bl->priv->ldap, res, &ldap_error,
@@ -584,15 +588,26 @@ get_contact_dtor (LDAPOp *op)
 	g_free (get_contact_op);
 }
 
+#ifdef G_OS_WIN32
+get_contact (EBookBackend *backend,
+	     EDataBook    *book,
+	     guint32       opid,
+	     PCHAR         id)
+#else
 static void
 get_contact (EBookBackend *backend,
 	     EDataBook    *book,
 	     guint32       opid,
 	     const gchar   *id)
+#endif
 {
 	LDAPGetContactOp *get_contact_op;
 	EBookBackendGAL *bl = E_BOOK_BACKEND_GAL (backend);
+#ifdef G_OS_WIN32
+	ULONG get_contact_msgid;
+#else
 	gint get_contact_msgid;
+#endif
 	EDataBookView *book_view;
 	gint ldap_error;
 
@@ -732,14 +747,18 @@ contact_list_handler (LDAPOp *op, LDAPMessage *res)
 	}
 	else if (msg_type == LDAP_RES_SEARCH_RESULT) {
 		gchar *ldap_error_msg;
+#ifdef G_OS_WIN32
+		ULONG ldap_error;
+#else
 		gint ldap_error;
+#endif
 
 		g_mutex_lock (bl->priv->ldap_lock);
 		ldap_parse_result (bl->priv->ldap, res, &ldap_error,
 				   NULL, &ldap_error_msg, NULL, NULL, 0);
 		g_mutex_unlock (bl->priv->ldap_lock);
 		if (ldap_error != LDAP_SUCCESS) {
-			g_warning ("contact_list_handler: %02X (%s), additional info: %s",
+			g_warning ("contact_list_handler: %02lX (%s), additional info: %s",
 				   ldap_error,
 				   ldap_err2string (ldap_error), ldap_error_msg);
 		}
@@ -1590,7 +1609,11 @@ poll_ldap (EBookBackendGAL *bl)
 {
 	gint            rc;
 	LDAPMessage    *res;
+#ifdef __MINGW64__
+	struct l_timeval timeout;
+#else
 	struct timeval timeout;
+#endif
 
 	g_mutex_lock (bl->priv->ldap_lock);
 	if (!bl->priv->ldap) {
@@ -1696,14 +1719,18 @@ ldap_search_handler (LDAPOp *op, LDAPMessage *res)
 	}
 	else if (msg_type == LDAP_RES_SEARCH_RESULT) {
 		gchar *ldap_error_msg;
+#ifdef G_OS_WIN32
+		ULONG ldap_error;
+#else
 		gint ldap_error;
+#endif
 
 		g_mutex_lock (bl->priv->ldap_lock);
 		ldap_parse_result (bl->priv->ldap, res, &ldap_error,
 				   NULL, &ldap_error_msg, NULL, NULL, 0);
 		g_mutex_unlock (bl->priv->ldap_lock);
 		if (ldap_error != LDAP_SUCCESS) {
-			g_warning ("ldap_search_handler: %02X (%s), additional info: %s",
+			g_warning ("ldap_search_handler: %02lX (%s), additional info: %s",
 				   ldap_error,
 				   ldap_err2string (ldap_error), ldap_error_msg);
 		}
@@ -1787,7 +1814,11 @@ start_book_view (EBookBackend  *backend,
 #endif
 	gchar *ldap_query;
 	gint ldap_err = LDAP_SUCCESS;
+#ifdef G_OS_WIN32
+	ULONG search_msgid;
+#else
 	gint search_msgid;
+#endif
 	gint view_limit;
 	GError *err = NULL;
 
@@ -2087,7 +2118,11 @@ parse_page_control(
 	struct berval *cookie )
 {
 	gint rc;
+#ifdef G_OS_WIN32
+	ULONG err;
+#else
 	gint err;
+#endif
 	LDAPControl **ctrl = NULL;
 	LDAPControl *ctrlp = NULL;
 	BerElement *ber;

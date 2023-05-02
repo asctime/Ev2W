@@ -967,6 +967,7 @@ camel_exchange_folder_update_message_flags (CamelExchangeFolder *exch,
 
 	if (info->flags != flags) {
 		info->flags = flags;
+    info->dirty = 1;
 		camel_folder_summary_touch (folder->summary);
 
 		changes = camel_folder_change_info_new ();

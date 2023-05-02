@@ -5,7 +5,7 @@
 #define BASE_VERSION "2.32"
 
 /* Used to prevent clock-setting attacks against pilot licenses */
-#define E2K_APPROX_BUILD_TIME 1679702400
+#define E2K_APPROX_BUILD_TIME 1682467200
 
 /* Define if you want E2K_DEBUG to be available */
 /* #undef E2K_DEBUG */
@@ -40,7 +40,7 @@
 #define HAVE_DCGETTEXT 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
-/* #undef HAVE_DLFCN_H */
+#define HAVE_DLFCN_H 1
 
 /* Have <et/comm_err.h> */
 /* #undef HAVE_ET_COM_ERR_H */

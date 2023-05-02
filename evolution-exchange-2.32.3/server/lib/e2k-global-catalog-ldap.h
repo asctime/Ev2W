@@ -12,7 +12,7 @@
 #include <windows.h>
 #undef interface
 #include <winldap.h>
-#define LDAP_ROOT_DSE		""
+#define LDAP_ROOT_DSE		(PCHAR)""
 #define LDAP_RANGE(n,x,y)	(((x) <= (n)) && ((n) <= (y)))
 #define LDAP_NAME_ERROR(n)	LDAP_RANGE((n),0x20,0x24) /* 32-34,36 */
 #define ldap_msgtype(lm)	(lm)->lm_msgtype

@@ -818,14 +818,12 @@ exchange_config_listener_authenticate (ExchangeConfigListener *ex_conf_listener,
 #endif
 	gboolean oldremember, remember = FALSE;
 	CamelURL *camel_url;
-	const gchar *remember_password;
 
 	g_return_val_if_fail (EXCHANGE_IS_CONFIG_LISTENER (ex_conf_listener), EXCHANGE_ACCOUNT_CONFIG_ERROR);
 	priv = ex_conf_listener->priv;
 
 	camel_url = camel_url_new (priv->configured_uri, NULL);
 	key = camel_url_to_string (camel_url, CAMEL_URL_HIDE_PASSWORD | CAMEL_URL_HIDE_PARAMS);
-	remember_password = camel_url_get_param (camel_url, "save-passwd");
 	password = e_passwords_get_password ("Exchange", key);
 	if (!password) {
 		oldremember = remember = exchange_account_is_save_password (account);
@@ -835,7 +833,6 @@ exchange_config_listener_authenticate (ExchangeConfigListener *ex_conf_listener,
 						     &remember, NULL);
 		if (remember != oldremember) {
 			exchange_account_set_save_password (account, remember);
-			camel_url_set_param (camel_url, "save-passwd", remember? "true" : "false");
 			url_string = camel_url_to_string (camel_url, 0);
 			e_account_set_string (ex_conf_listener->priv->configured_account, E_ACCOUNT_SOURCE_URL, url_string);
 			e_account_set_string (ex_conf_listener->priv->configured_account, E_ACCOUNT_TRANSPORT_URL, url_string);
@@ -845,8 +842,7 @@ exchange_config_listener_authenticate (ExchangeConfigListener *ex_conf_listener,
 			g_free (url_string);
 		}
 		g_free (title);
-	}
-	else if (remember_password && !g_ascii_strcasecmp (remember_password, "false")) {
+    } else if (!exchange_account_is_save_password (account)) {
 		/* get_password returns the password cached but user has not
 		 * selected remember password option, forget this password
 		 * whis is stored temporarily by e2k_validate_user(), to avoid

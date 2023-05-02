@@ -348,7 +348,12 @@ message_removed (ExchangeFolder *mfld, CamelFolder *folder, const gchar *href)
 		return;
 	}
 	index = find_message_index (mfld, mmsg->seq);
-	g_return_if_fail (index != -1);
+
+  /* Github #88917d87 "Evolution hangs on moving email" */
+  if (index == -1) {
+    g_static_rec_mutex_unlock (&mfld->ed->changed_msgs_mutex);
+    return;
+  }
 
 	message_remove_at_index (mfld, folder, index);
 	g_static_rec_mutex_unlock (&mfld->ed->changed_msgs_mutex);
@@ -872,6 +877,18 @@ mfld_get_folder_online_sync_updates (gpointer key, gpointer value, gpointer user
 
 }
 
+/* Gitlab #6d12dd82  "Look for changed event and sync" */
+static gint
+exchange_message_uid_cmp (gconstpointer a, gconstpointer b)
+{
+  ExchangeMessage **mmsg1, **mmsg2;
+
+  mmsg1 = (ExchangeMessage **)a;
+  mmsg2 = (ExchangeMessage **)b;
+
+  return strcmp ((*mmsg1)->uid, (*mmsg2)->uid);
+}
+
 static gboolean
 get_folder_contents_online (ExchangeFolder *mfld, GError **error)
 {
@@ -898,6 +915,7 @@ get_folder_contents_online (ExchangeFolder *mfld, GError **error)
 	gint i, total = -1;
 	guint m;
 	CamelFolder *folder;
+  CamelFolderChangeInfo *ci;
 
 	GPtrArray *msgs_copy = NULL;
 	GHashTable *rm_idx_uid = NULL;
@@ -909,6 +927,7 @@ get_folder_contents_online (ExchangeFolder *mfld, GError **error)
 	rm_idx_uid = g_hash_table_new (g_direct_hash, g_direct_equal);
 
 	g_static_rec_mutex_lock (&mfld->ed->changed_msgs_mutex);
+  g_ptr_array_sort (mfld->messages, (GCompareFunc) exchange_message_uid_cmp);
 	for (i = 0; i < mfld->messages->len; i++) {
 		mmsg = mfld->messages->pdata[i];
 		mmsg_cpy = new_message (mmsg->uid, mmsg->href, mmsg->seq, mmsg->flags);
@@ -932,10 +951,12 @@ get_folder_contents_online (ExchangeFolder *mfld, GError **error)
 	e2k_restriction_unref (rn);
 
 	folder = get_camel_folder (mfld);
+  ci = camel_folder_change_info_new ();
 
 	m = 0;
 	total = e2k_result_iter_get_total (iter);
 	while (m < msgs_copy->len && (result = e2k_result_iter_next (iter))) {
+    gboolean changed = FALSE;
 		prop = e2k_properties_get_prop (result->props,
 						PR_INTERNET_ARTICLE_NUMBER);
 		if (!prop)
@@ -1007,8 +1028,10 @@ get_folder_contents_online (ExchangeFolder *mfld, GError **error)
 				g_hash_table_insert (mfld->messages_by_href, mmsg->href, mmsg);
 		}
 
-		if (mmsg->flags != camel_flags)
+		if (mmsg->flags != camel_flags) {
+      changed = TRUE;
 			change_flags (mfld, folder, mmsg, camel_flags);
+    }
 
 		g_static_rec_mutex_unlock (&mfld->ed->changed_msgs_mutex);
 
@@ -1024,14 +1047,13 @@ get_folder_contents_online (ExchangeFolder *mfld, GError **error)
 		prop = e2k_properties_get_prop (result->props, E2K_PR_MAILHEADER_COMPLETED);
 		if (prop && folder)
 			camel_exchange_folder_update_message_tag (CAMEL_EXCHANGE_FOLDER (folder), mmsg->uid, "completed-on", prop);
-
+    if (changed)
+      camel_folder_change_info_change_uid (ci, mmsg->uid);
 		m++;
-#if 0
-		if (ex) {
-			camel_operation_progress (NULL, (m * 100) / total);
-		}
-#endif
 	}
+
+  camel_folder_changed (CAMEL_FOLDER (folder), ci);
+  camel_folder_change_info_free (ci);
 
 	/* If there are further messages beyond mfld->messages->len,
 	 * then that means camel doesn't know about them yet, and so
@@ -1132,6 +1154,8 @@ notify_cb (E2kContext *ctx, const gchar *uri, E2kContextChangeType type, gpointe
 
 	if (type == E2K_CONTEXT_OBJECT_ADDED)
 		refresh_folder_internal (mfld, NULL);
+  else if (type == E2K_CONTEXT_OBJECT_CHANGED)
+    get_folder_contents_online (mfld, NULL);	
 	else {
 		now = time (NULL);
 
@@ -1260,6 +1284,9 @@ get_folder_online (ExchangeFolder *mfld, GError **error)
 	e_folder_exchange_subscribe (mfld->folder,
 				     E2K_CONTEXT_OBJECT_MOVED, 30,
 				     notify_cb, mfld);
+  e_folder_exchange_subscribe (mfld->folder,
+             E2K_CONTEXT_OBJECT_CHANGED, 30,
+             notify_cb, mfld);
 	if (nresults)
 		e2k_results_free (results, nresults);
 
