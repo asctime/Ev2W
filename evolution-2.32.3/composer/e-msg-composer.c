@@ -2131,15 +2131,24 @@ msg_composer_image_uri (GtkhtmlEditor *editor,
 	const gchar *cid;
 
 	composer = E_MSG_COMPOSER (editor);
+  g_debug ("Looking up image with URI '%s'\n", uri);
 
 	hash_table = composer->priv->inline_images_by_url;
 	part = g_hash_table_lookup (hash_table, uri);
 
 	if (part == NULL && g_str_has_prefix (uri, "file:"))
+    g_debug ("Image URI: e_msg_composer_add_inline_image_from_file '%s'.", uri);
+#ifdef G_OS_WIN32 /* e_util_guess_mime_type can also except filepath */
+	                /* Windows filepath never starts with unix-slash   */
+    part = e_msg_composer_add_inline_image_from_file (
+			composer, uri + 8);
+#else
 		part = e_msg_composer_add_inline_image_from_file (
 			composer, uri + 5);
+#endif
 
 	if (part == NULL && g_str_has_prefix (uri, "cid:")) {
+    g_debug ("CID URI: '%s' to be forwarded directly.", uri);
 		hash_table = composer->priv->inline_images;
 		part = g_hash_table_lookup (hash_table, uri);
 	}
@@ -2154,6 +2163,7 @@ msg_composer_image_uri (GtkhtmlEditor *editor,
 	if (cid == NULL)
 		return NULL;
 
+  g_debug ("Image CID attached. URI '%s', CID is '%s'\n", uri, cid);
 	return g_strconcat ("cid:", cid, NULL);
 }
 
@@ -2804,8 +2814,7 @@ e_msg_composer_new_with_message (EShell *shell,
 
 	if (postto) {
 		e_composer_header_table_set_post_to_list (table, postto);
-		g_list_foreach (postto, (GFunc)g_free, NULL);
-		g_list_free (postto);
+		g_list_free_full (postto, g_free);
 		postto = NULL;
 	}
 
@@ -3628,21 +3637,27 @@ e_msg_composer_add_inline_image_from_file (EMsgComposer *composer,
 	EMsgComposerPrivate *p = composer->priv;
 
 	dec_file_name = g_strdup (filename);
+#ifndef G_OS_WIN32   /* Windows should always send a real filepath here */
 	camel_url_decode (dec_file_name);
-
-	if (!g_file_test (dec_file_name, G_FILE_TEST_IS_REGULAR))
+#endif
+	if (!g_file_test (dec_file_name, G_FILE_TEST_IS_REGULAR)) {
+    g_debug ("e_msg_composer_add_inline_image_from_file parsing error: %s", dec_file_name);
 		return NULL;
+  }
 
 	stream = camel_stream_fs_new_with_name (
-		dec_file_name, O_RDONLY, 0, NULL);
-	if (!stream)
+		dec_file_name, O_RDONLY|O_BINARY, 0, NULL);
+	if (!stream) {
+    g_debug ("e_msg_composer_add_inline_image_from_file stream failed: %s", dec_file_name);
 		return NULL;
+  }
 
 	wrapper = camel_data_wrapper_new ();
 	camel_data_wrapper_construct_from_stream (wrapper, stream, NULL);
 	g_object_unref (CAMEL_OBJECT (stream));
 
 	mime_type = e_util_guess_mime_type (dec_file_name, TRUE);
+   g_debug ("Attachment Mime type guess for %s: %s", dec_file_name, mime_type);
 	if (mime_type == NULL)
 		mime_type = g_strdup ("application/octet-stream");
 	camel_data_wrapper_set_mime_type (wrapper, mime_type);
