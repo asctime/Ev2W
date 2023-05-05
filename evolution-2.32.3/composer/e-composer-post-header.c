@@ -293,8 +293,7 @@ e_composer_post_header_set_account (EComposerPostHeader *header,
 	/* Make folders relative to the new account. */
 	if (!header->priv->custom) {
 		e_composer_post_header_set_folders (header, folders);
-		g_list_foreach (folders, (GFunc) g_free, NULL);
-		g_list_free (folders);
+		g_list_free_full (folders, g_free);
 	}
 
 	g_object_notify (G_OBJECT (header), "account");
@@ -378,6 +377,5 @@ e_composer_post_header_set_folders_base (EComposerPostHeader *header,
 	}
 
 	e_composer_post_header_set_folders (header, list);
-	g_list_foreach (list, (GFunc) g_free, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_free);
 }

@@ -663,8 +663,7 @@ composer_header_table_set_property (GObject *object,
 			list = g_value_dup_string_list (value);
 			e_composer_header_table_set_post_to_list (
 				E_COMPOSER_HEADER_TABLE (object), list);
-			g_list_foreach (list, (GFunc) g_free, NULL);
-			g_list_free (list);
+			g_list_free_full (list, g_free);
 			return;
 
 		case PROP_REPLY_TO:
@@ -760,8 +759,7 @@ composer_header_table_get_property (GObject *object,
 			list = e_composer_header_table_get_post_to (
 				E_COMPOSER_HEADER_TABLE (object));
 			g_value_set_string_list (value, list);
-			g_list_foreach (list, (GFunc) g_free, NULL);
-			g_list_free (list);
+			g_list_free_full (list, g_free);
 			return;
 
 		case PROP_REPLY_TO:

@@ -67,8 +67,7 @@ search_results_exec (SearchResultsMsg *msg)
 	camel_vee_folder_set_folders (
 		CAMEL_VEE_FOLDER (msg->folder), copied_list);
 
-	g_list_foreach (copied_list, (GFunc) g_object_unref, NULL);
-	g_list_free (copied_list);
+	g_list_free_full (copied_list, g_object_unref);
 }
 
 static void
@@ -81,8 +80,7 @@ search_results_free (SearchResultsMsg *msg)
 {
 	g_object_unref (msg->folder);
 
-	g_list_foreach (msg->folder_list, (GFunc) g_object_unref, NULL);
-	g_list_free (msg->folder_list);
+	g_list_free_full (msg->folder_list, g_object_unref);
 }
 
 static MailMsgInfo search_results_setup_info = {
@@ -758,8 +756,7 @@ execute:
 
 	e_mail_view_set_search_strings (mail_view, search_strings);
 
-	g_slist_foreach (search_strings, (GFunc) g_free, NULL);
-	g_slist_free (search_strings);
+	g_slist_free_full (search_strings, g_free);
 
 	g_object_unref (model);
 	g_free (query);

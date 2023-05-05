@@ -502,8 +502,7 @@ week_view_event_item_draw_icons (EWeekViewEventItem *event_item,
 
 	#undef draw_pixbuf
 
-	g_slist_foreach (categories_pixbufs, (GFunc)g_object_unref, NULL);
-	g_slist_free (categories_pixbufs);
+	g_slist_free_full (categories_pixbufs, g_object_unref);
 
 	cairo_destroy (cr);
 	g_object_unref(comp);
@@ -1167,7 +1166,7 @@ week_view_event_item_event (GnomeCanvasItem *item,
 }
 
 static void
-week_view_event_item_class_init (EWeekViewEventItemClass *class)
+week_view_event_item_class_init (EWeekViewEventItemClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -1211,7 +1210,7 @@ week_view_event_item_class_init (EWeekViewEventItemClass *class)
 }
 
 static void
-week_view_event_item_init (EWeekViewEventItem *event_item)
+week_view_event_item_init (EWeekViewEventItem *event_item, gpointer class_data)
 {
 	event_item->priv = E_WEEK_VIEW_EVENT_ITEM_GET_PRIVATE (event_item);
 

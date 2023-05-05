@@ -440,7 +440,7 @@ mail_attachment_bar_update_actions (EAttachmentView *view)
 }
 
 static void
-mail_attachment_bar_class_init (EMailAttachmentBarClass *class)
+mail_attachment_bar_class_init (EMailAttachmentBarClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -489,7 +489,7 @@ mail_attachment_bar_class_init (EMailAttachmentBarClass *class)
 }
 
 static void
-mail_attachment_bar_interface_init (EAttachmentViewInterface *interface)
+mail_attachment_bar_interface_init (EAttachmentViewInterface *interface, gpointer class_data)
 {
 	interface->get_private = mail_attachment_bar_get_private;
 	interface->get_store = mail_attachment_bar_get_store;
@@ -504,7 +504,7 @@ mail_attachment_bar_interface_init (EAttachmentViewInterface *interface)
 }
 
 static void
-mail_attachment_bar_init (EMailAttachmentBar *bar)
+mail_attachment_bar_init (EMailAttachmentBar *bar, gpointer class_data)
 {
 	EAttachmentView *view;
 	GtkSizeGroup *size_group;

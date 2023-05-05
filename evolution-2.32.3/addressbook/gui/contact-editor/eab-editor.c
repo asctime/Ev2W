@@ -151,7 +151,7 @@ eab_editor_finalize (GObject *object)
 }
 
 static void
-eab_editor_class_init (EABEditorClass *class)
+eab_editor_class_init (EABEditorClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -216,7 +216,7 @@ eab_editor_class_init (EABEditorClass *class)
 }
 
 static void
-eab_editor_init (EABEditor *editor)
+eab_editor_init (EABEditor *editor, gpointer class_data)
 {
 	editor->priv = EAB_EDITOR_GET_PRIVATE (editor);
 

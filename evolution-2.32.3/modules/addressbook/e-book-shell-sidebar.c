@@ -157,7 +157,7 @@ book_shell_sidebar_check_state (EShellSidebar *shell_sidebar)
 }
 
 static void
-book_shell_sidebar_class_init (EBookShellSidebarClass *class)
+book_shell_sidebar_class_init (EBookShellSidebarClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellSidebarClass *shell_sidebar_class;
@@ -185,7 +185,7 @@ book_shell_sidebar_class_init (EBookShellSidebarClass *class)
 }
 
 static void
-book_shell_sidebar_init (EBookShellSidebar *book_shell_sidebar)
+book_shell_sidebar_init (EBookShellSidebar *book_shell_sidebar, gpointer class_data)
 {
 	book_shell_sidebar->priv =
 		E_BOOK_SHELL_SIDEBAR_GET_PRIVATE (book_shell_sidebar);

@@ -1266,8 +1266,7 @@ freebusy_async (gpointer data)
 		priv->num_queries--;
 		g_static_mutex_unlock (&mutex);
 
-		g_list_foreach (fbd->users, (GFunc)g_free, NULL);
-		g_list_free (fbd->users);
+		g_list_free_full (fbd->users, g_free);
 
 		if (fbd->fb_data != NULL) {
 			ECalComponent *comp = fbd->fb_data->data;
@@ -1408,8 +1407,7 @@ refresh_busy_periods (gpointer data)
 	thread = g_thread_create ((GThreadFunc) freebusy_async, fbd, FALSE, &error);
 	if (!thread) {
 		/* do clean up stuff here */
-		g_list_foreach (fbd->users, (GFunc)g_free, NULL);
-		g_list_free (fbd->users);
+		g_list_free_full (fbd->users, g_free);
 		g_free (fbd->email);
 		priv->refresh_idle_id = 0;
 

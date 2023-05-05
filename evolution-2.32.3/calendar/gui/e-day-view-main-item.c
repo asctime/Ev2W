@@ -729,8 +729,7 @@ day_view_main_item_draw_day_event (EDayViewMainItem *main_item,
 		}
 
 		/* free memory */
-		g_slist_foreach (categories_pixbufs, (GFunc)g_object_unref, NULL);
-		g_slist_free (categories_pixbufs);
+		g_slist_free_full (categories_pixbufs, g_object_unref);
 	}
 
 	if (!short_event)
@@ -1285,7 +1284,7 @@ day_view_main_item_class_init (EDayViewMainItemClass *class, gpointer class_data
 }
 
 static void
-day_view_main_item_init (EDayViewMainItem *main_item)
+day_view_main_item_init (EDayViewMainItem *main_item, gpointer class_data)
 {
 	main_item->priv = E_DAY_VIEW_MAIN_ITEM_GET_PRIVATE (main_item);
 }

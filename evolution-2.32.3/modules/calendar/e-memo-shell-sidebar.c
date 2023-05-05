@@ -694,7 +694,7 @@ memo_shell_sidebar_client_removed (EMemoShellSidebar *memo_shell_sidebar,
 }
 
 static void
-memo_shell_sidebar_class_init (EMemoShellSidebarClass *class)
+memo_shell_sidebar_class_init (EMemoShellSidebarClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellSidebarClass *shell_sidebar_class;
@@ -766,7 +766,7 @@ memo_shell_sidebar_class_init (EMemoShellSidebarClass *class)
 }
 
 static void
-memo_shell_sidebar_init (EMemoShellSidebar *memo_shell_sidebar)
+memo_shell_sidebar_init (EMemoShellSidebar *memo_shell_sidebar, gpointer class_data)
 {
 	GHashTable *client_table;
 

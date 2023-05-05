@@ -306,7 +306,11 @@ addressbook_root_dse_query (AddressbookSourceDialog *dialog, LDAP *ldap,
 	GtkAdjustment *adjustment;
 	GtkRange *range;
 	gint ldap_error;
+#ifdef __MINGW64__
+	struct l_timeval timeout;
+#else
 	struct timeval timeout;
+#endif
 
 	range = GTK_RANGE (dialog->timeout_scale);
 	adjustment = gtk_range_get_adjustment (range);
@@ -349,7 +353,11 @@ do_ldap_root_dse_query (AddressbookSourceDialog *sdialog, GtkListStore *model, E
 	if (ldap_error != LDAP_SUCCESS)
 		goto fail;
 
+#ifdef G_OS_WIN32
+	values = ldap_get_values (ldap, resp, (PCHAR)"namingContexts");
+#else
 	values = ldap_get_values (ldap, resp, "namingContexts");
+#endif
 	if (!values || values[0] == NULL || strlen (values[0]) == 0) {
 		e_alert_run_dialog_for_args (GTK_WINDOW (sdialog->window), "addressbook:ldap-search-base", NULL);
 		goto fail;

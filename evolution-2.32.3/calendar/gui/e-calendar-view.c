@@ -206,8 +206,7 @@ calendar_view_delete_event (ECalendarView *cal_view,
 					icalcomponent_free (mod_comp);
 
 				if (users) {
-					g_list_foreach (users, (GFunc) g_free, NULL);
-					g_list_free (users);
+					g_list_free_full (users, g_free);
 				}
 			}
 		}
@@ -1243,8 +1242,7 @@ e_calendar_view_delete_selected_occurrence (ECalendarView *cal_view)
 				if (mod_comp)
 					icalcomponent_free (mod_comp);
 				if (users) {
-					g_list_foreach (users, (GFunc) g_free, NULL);
-					g_list_free (users);
+					g_list_free_full (users, g_free);
 				}
 			}
 		}

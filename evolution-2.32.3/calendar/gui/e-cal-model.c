@@ -2407,9 +2407,7 @@ cleanup_content_cb (gpointer user_data)
 	g_signal_emit (G_OBJECT (model), signals[COMPS_DELETED], 0, slist);
 
 	e_table_model_rows_deleted (E_TABLE_MODEL (model), 0, len);
-
-	g_slist_foreach (slist, (GFunc)g_object_unref, NULL);
-	g_slist_free (slist);
+	g_slist_free_full (slist, g_object_unref);
 
 	e_flag_set (data->eflag);
 
@@ -2779,7 +2777,7 @@ static GObjectClass *component_parent_class;
 
 /* Class initialization function for the calendar component object */
 static void
-e_cal_model_component_class_init (ECalModelComponentClass *class)
+e_cal_model_component_class_init (ECalModelComponentClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -2838,7 +2836,7 @@ e_cal_model_component_finalize (GObject *object)
 
 /* Object initialization function for the calendar component object */
 static void
-e_cal_model_component_init (ECalModelComponent *comp)
+e_cal_model_component_init (ECalModelComponent *comp, gpointer class_data)
 {
 	comp->dtstart = NULL;
 	comp->dtend = NULL;

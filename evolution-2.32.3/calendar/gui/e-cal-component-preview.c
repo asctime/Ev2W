@@ -387,7 +387,7 @@ cal_component_preview_finalize (GObject *object)
 }
 
 static void
-cal_component_preview_class_init (ECalComponentPreviewClass *class)
+cal_component_preview_class_init (ECalComponentPreviewClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -399,7 +399,7 @@ cal_component_preview_class_init (ECalComponentPreviewClass *class)
 }
 
 static void
-cal_component_preview_init (ECalComponentPreview *preview)
+cal_component_preview_init (ECalComponentPreview *preview, gpointer class_data)
 {
 	preview->priv = E_CAL_COMPONENT_PREVIEW_GET_PRIVATE (preview);
 

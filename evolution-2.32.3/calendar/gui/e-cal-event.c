@@ -29,7 +29,7 @@
 static GObjectClass *ece_parent;
 
 static void
-ece_init (GObject *o)
+ece_init (GObject *o, gpointer class_data)
 {
 }
 
@@ -56,7 +56,7 @@ ece_target_free (EEvent *ev, EEventTarget *t)
 }
 
 static void
-ece_class_init (GObjectClass *klass)
+ece_class_init (GObjectClass *klass, gpointer class_data)
 {
 	klass->finalize = ece_finalize;
 	((EEventClass *)klass)->target_free = ece_target_free;

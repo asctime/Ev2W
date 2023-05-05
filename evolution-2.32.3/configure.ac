@@ -1473,7 +1473,7 @@ dist_plugins_base="$plugins_base_always calendar-weather sa-junk-plugin bogo-jun
 plugins_standard_always="bbdb subject-thread save-calendar mail-to-task mailing-list-actions prefer-plain mail-notification attachment-reminder backup-restore email-custom-header templates vcard-inline dbx-import"
 
 plugins_standard="$plugins_standard_always"
-dist_plugins_standard="$plugins_standard audio-inline image-inline pst-import"
+dist_plugins_standard="$plugins_standard pst-import"
 
 plugins_experimental_always="face external-editor"
 
@@ -1587,8 +1587,8 @@ dnl image-inline plugin requires gtkimageview
 dnl *****************************************
 AC_ARG_ENABLE([image-inline],
 	[AS_HELP_STRING([--enable-image-inline],
-	[Enable image-inline plugin @<:@default=yes@:>@])],
-	[enable_image_inline="$enableval"], [enable_image_inline=yes])
+	[Enable image-inline plugin @<:@default=no@:>@])],
+	[enable_image_inline="$enableval"], [enable_image_inline=no])
 
 if test "x$enable_image_inline" = "xyes"; then
 	PKG_CHECK_MODULES(GTKIMAGEVIEW, gtkimageview >= $gtkimageview_minimum_version, have_imageview=yes, have_imageview=no)

@@ -429,8 +429,7 @@ exit:
 	action = e_attachment_view_get_action (view, "import-to-tasks");
 	gtk_action_set_visible (action, is_vtodo);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static void
@@ -469,7 +468,7 @@ cal_attachment_handler_constructed (GObject *object)
 }
 
 static void
-cal_attachment_handler_class_init (ECalAttachmentHandlerClass *class)
+cal_attachment_handler_class_init (ECalAttachmentHandlerClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -481,7 +480,7 @@ cal_attachment_handler_class_init (ECalAttachmentHandlerClass *class)
 }
 
 static void
-cal_attachment_handler_init (ECalAttachmentHandler *handler)
+cal_attachment_handler_init (ECalAttachmentHandler *handler, gpointer class_data)
 {
 	handler->priv = E_CAL_ATTACHMENT_HANDLER_GET_PRIVATE (handler);
 }

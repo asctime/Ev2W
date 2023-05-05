@@ -958,7 +958,7 @@ contact_set_address (EContact *contact, EContactField id, gchar *address, gchar 
 		if (po_box) {
 			eaddress->po = g_strdup (po_box);
 		}
-		//eaddress->ext =
+		/* eaddress->ext = */
 
 		if (street) {
 			eaddress->street = g_strdup (street);
@@ -1190,7 +1190,11 @@ set_cal_attachments (ECal *cal, ECalComponent *ec, PstImporter *m, pst_item_atta
 		CamelMimePart *part;
 		CamelDataWrapper *content;
 		CamelStream *stream;
+#ifdef __MINGW64__
+		struct _stat64 st;
+#else
 		struct stat st;
+#endif
 
 		part = attachment_to_part(m, attach);
 
@@ -1339,7 +1343,7 @@ fill_calcomponent (PstImporter *m, pst_item *item, ECalComponent *ec, const gcha
 			e_cal_component_set_status (ec, ICAL_STATUS_TENTATIVE);
 			break;
 		case PST_FREEBUSY_FREE:
-			// mark as transparent and as confirmed
+			/* mark as transparent and as confirmed  */
 			e_cal_component_set_transparency (ec, E_CAL_COMPONENT_TRANSP_TRANSPARENT);
 		case PST_FREEBUSY_BUSY:
 		case PST_FREEBUSY_OUT_OF_OFFICE:
@@ -1539,7 +1543,7 @@ pst_import_imported (PstImporter *m)
 static void
 pst_import_free (PstImporter *m)
 {
-//	pst_close (&m->pst);
+/*	pst_close (&m->pst);      */
 	camel_operation_unref (m->status);
 
 	g_free (m->status_what);

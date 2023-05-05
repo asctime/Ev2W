@@ -760,7 +760,7 @@ mail_browser_show_search_bar (EMailReader *reader)
 }
 
 static void
-mail_browser_class_init (EMailBrowserClass *class)
+mail_browser_class_init (EMailBrowserClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -816,7 +816,7 @@ mail_browser_class_init (EMailBrowserClass *class)
 }
 
 static void
-mail_browser_interface_init (EMailReaderInterface *interface)
+mail_browser_interface_init (EMailReaderInterface *interface, gpointer class_data)
 {
 	interface->get_action_group = mail_browser_get_action_group;
 	interface->get_formatter = mail_browser_get_formatter;
@@ -830,7 +830,7 @@ mail_browser_interface_init (EMailReaderInterface *interface)
 }
 
 static void
-mail_browser_init (EMailBrowser *browser)
+mail_browser_init (EMailBrowser *browser, gpointer class_data)
 {
 	GConfBridge *bridge;
 	const gchar *prefix;

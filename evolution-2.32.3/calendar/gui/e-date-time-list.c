@@ -35,9 +35,9 @@
 
 static GType column_types[E_DATE_TIME_LIST_NUM_COLUMNS];
 
-static void         e_date_time_list_init            (EDateTimeList      *file_list);
-static void         e_date_time_list_class_init      (EDateTimeListClass *class);
-static void         e_date_time_list_tree_model_init (GtkTreeModelIface  *iface);
+static void         e_date_time_list_init            (EDateTimeList      *file_list, gpointer class_data);
+static void         e_date_time_list_class_init      (EDateTimeListClass *class, gpointer class_data);
+static void         e_date_time_list_tree_model_init (GtkTreeModelIface  *iface, gpointer class_data);
 static void         e_date_time_list_finalize        (GObject            *object);
 static GtkTreeModelFlags e_date_time_list_get_flags       (GtkTreeModel       *tree_model);
 static gint         e_date_time_list_get_n_columns   (GtkTreeModel       *tree_model);
@@ -110,7 +110,7 @@ e_date_time_list_get_type (void)
 }
 
 static void
-e_date_time_list_class_init (EDateTimeListClass *class)
+e_date_time_list_class_init (EDateTimeListClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -121,7 +121,7 @@ e_date_time_list_class_init (EDateTimeListClass *class)
 }
 
 static void
-e_date_time_list_tree_model_init (GtkTreeModelIface *iface)
+e_date_time_list_tree_model_init (GtkTreeModelIface *iface, gpointer class_data)
 {
 	iface->get_flags = e_date_time_list_get_flags;
 	iface->get_n_columns = e_date_time_list_get_n_columns;
@@ -138,7 +138,7 @@ e_date_time_list_tree_model_init (GtkTreeModelIface *iface)
 }
 
 static void
-e_date_time_list_init (EDateTimeList *date_time_list)
+e_date_time_list_init (EDateTimeList *date_time_list, gpointer class_data)
 {
 	date_time_list->stamp         = g_random_int ();
 	date_time_list->columns_dirty = FALSE;

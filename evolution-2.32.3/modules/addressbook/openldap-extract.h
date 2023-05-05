@@ -37,7 +37,11 @@
 #define LDAP_PORT		389		/* ldap:///		default LDAP port */
 #define LDAPS_PORT		636		/* ldaps:///	default LDAP over TLS port */
 
+#ifdef G_OS_WIN32
+#define LDAP_ROOT_DSE				(PCHAR)""
+#else
 #define LDAP_ROOT_DSE				""
+#endif
 
 #define LDAP_SPACE(c)		((c) == ' ' || (c) == '\t' || (c) == '\n')
 #define LDAP_DIGIT(c)		((c) >= '0' && (c) <= '9')

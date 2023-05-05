@@ -446,7 +446,7 @@ mail_backend_constructed (GObject *object)
 }
 
 static void
-mail_backend_class_init (EMailBackendClass *class)
+mail_backend_class_init (EMailBackendClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellBackendClass *shell_backend_class;
@@ -465,7 +465,7 @@ mail_backend_class_init (EMailBackendClass *class)
 }
 
 static void
-mail_backend_init (EMailBackend *backend)
+mail_backend_init (EMailBackend *backend, gpointer class_data)
 {
 	backend->priv = E_MAIL_BACKEND_GET_PRIVATE (backend);
 }

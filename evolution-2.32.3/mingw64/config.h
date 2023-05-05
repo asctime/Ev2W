@@ -58,7 +58,7 @@
 #define HAVE_DCGETTEXT 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
-/* #undef HAVE_DLFCN_H */
+#define HAVE_DLFCN_H 1
 
 /* Have <et/comm_err.h> */
 /* #undef HAVE_ET_COM_ERR_H */
@@ -201,9 +201,6 @@
 /* Command to kill processes by name */
 /* #undef KILL_PROCESS_CMD */
 
-/* Define if running the test suite so that test #27 works on MinGW. */
-/* #undef LT_MINGW_STATIC_TESTSUITE_HACK */
-
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
@@ -255,8 +252,3 @@
 /* Define if you want a comment appended to the version number */
 #define VERSION_COMMENT ""
 
-/* Define to `__inline__' or `__inline' if that's what the C compiler
-   calls it, or to nothing if 'inline' is not supported under any name.  */
-#if !defined (__cplusplus) && !defined(inline)
-#define inline __inline__
-#endif

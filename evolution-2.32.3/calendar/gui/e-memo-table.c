@@ -1017,7 +1017,7 @@ memo_table_select_all (ESelectable *selectable)
 }
 
 static void
-memo_table_class_init (EMemoTableClass *class)
+memo_table_class_init (EMemoTableClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -1106,7 +1106,7 @@ memo_table_class_init (EMemoTableClass *class)
 }
 
 static void
-memo_table_init (EMemoTable *memo_table)
+memo_table_init (EMemoTable *memo_table, gpointer class_data)
 {
 	GtkTargetList *target_list;
 
@@ -1122,7 +1122,7 @@ memo_table_init (EMemoTable *memo_table)
 }
 
 static void
-memo_table_selectable_init (ESelectableInterface *interface)
+memo_table_selectable_init (ESelectableInterface *interface, gpointer class_data)
 {
 	interface->update_actions = memo_table_update_actions;
 	interface->cut_clipboard = memo_table_cut_clipboard;

@@ -137,7 +137,11 @@ get_current_time_cb (ECellDateEdit *ecde, gpointer data)
 void
 e_cal_list_view_load_state (ECalListView *cal_list_view, gchar *filename)
 {
+#ifdef __MINGW64__
+	struct _stat64 st;
+#else
 	struct stat st;
+#endif
 
 	g_return_if_fail (cal_list_view != NULL);
 	g_return_if_fail (E_IS_CAL_LIST_VIEW (cal_list_view));

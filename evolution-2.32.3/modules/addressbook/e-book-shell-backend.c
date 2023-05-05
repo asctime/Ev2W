@@ -513,7 +513,7 @@ book_shell_backend_constructed (GObject *object)
 }
 
 static void
-book_shell_backend_class_init (EBookShellBackendClass *class)
+book_shell_backend_class_init (EBookShellBackendClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellBackendClass *shell_backend_class;
@@ -548,7 +548,7 @@ book_shell_backend_class_init (EBookShellBackendClass *class)
 }
 
 static void
-book_shell_backend_init (EBookShellBackend *book_shell_backend)
+book_shell_backend_init (EBookShellBackend *book_shell_backend, gpointer class_data)
 {
 	book_shell_backend->priv =
 		E_BOOK_SHELL_BACKEND_GET_PRIVATE (book_shell_backend);

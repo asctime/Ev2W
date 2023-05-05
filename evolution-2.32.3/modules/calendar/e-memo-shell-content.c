@@ -162,8 +162,7 @@ memo_shell_content_table_drag_data_get_cb (EMemoShellContent *memo_shell_content
 	if (foreach_data.list != NULL) {
 		cal_comp_selection_set_string_list (
 			selection_data, foreach_data.list);
-		g_slist_foreach (foreach_data.list, (GFunc) g_free, NULL);
-		g_slist_free (foreach_data.list);
+		g_slist_free_full (foreach_data.list, g_free);
 	}
 }
 
@@ -614,7 +613,7 @@ memo_shell_content_focus_search_results (EShellContent *shell_content)
 }
 
 static void
-memo_shell_content_class_init (EMemoShellContentClass *class)
+memo_shell_content_class_init (EMemoShellContentClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellContentClass *shell_content_class;
@@ -659,7 +658,7 @@ memo_shell_content_class_init (EMemoShellContentClass *class)
 }
 
 static void
-memo_shell_content_init (EMemoShellContent *memo_shell_content)
+memo_shell_content_init (EMemoShellContent *memo_shell_content, gpointer class_data)
 {
 	memo_shell_content->priv =
 		E_MEMO_SHELL_CONTENT_GET_PRIVATE (memo_shell_content);

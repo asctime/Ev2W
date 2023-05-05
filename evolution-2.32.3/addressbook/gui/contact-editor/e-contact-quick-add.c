@@ -656,8 +656,7 @@ e_contact_quick_add_vcard (const gchar *vcard, EContactQuickAddCallback cb, gpoi
 		if (emails) {
 			quick_add_set_email (qa, emails->data);
 
-			g_list_foreach (emails, (GFunc)g_free, NULL);
-			g_list_free (emails);
+			g_list_free_full (emails, g_free);
 		}
 	} else {
 		if (cb)

@@ -230,7 +230,7 @@ cell_date_edit_text_set_value (ECellText *cell,
 }
 
 static void
-cell_date_edit_text_class_init (ECellDateEditTextClass *class)
+cell_date_edit_text_class_init (ECellDateEditTextClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	ECellTextClass *cell_text_class;
@@ -268,7 +268,7 @@ cell_date_edit_text_class_init (ECellDateEditTextClass *class)
 }
 
 static void
-cell_date_edit_text_init (ECellDateEditText *ecd)
+cell_date_edit_text_init (ECellDateEditText *ecd, gpointer class_data)
 {
 	ecd->priv = E_CELL_DATE_EDIT_TEXT_GET_PRIVATE (ecd);
 

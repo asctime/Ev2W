@@ -133,8 +133,7 @@ composer_name_header_constructor (GType type,
 	sections = e_name_selector_model_list_sections (model);
 	priv->destination_index = g_list_length (sections);
 	e_name_selector_model_add_section (model, label, label, NULL);
-	g_list_foreach (sections, (GFunc) g_free, NULL);
-	g_list_free (sections);
+	g_list_free_full (sections, g_free);
 
 	e_composer_header_set_title_tooltip (
 		E_COMPOSER_HEADER (object),

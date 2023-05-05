@@ -328,7 +328,11 @@ e_composer_find_orphans (GQueue *registry,
 	while ((basename = g_dir_read_name (dir)) != NULL) {
 		const gchar *errmsg;
 		gchar *filename;
+#ifdef __MINGW64__
+		struct _stat64 st;
+#else
 		struct stat st;
+#endif
 
 		/* Is this a snapshot file? */
 		if (!g_str_has_prefix (basename, SNAPSHOT_FILE_PREFIX))

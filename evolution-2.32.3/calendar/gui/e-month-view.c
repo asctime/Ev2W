@@ -158,7 +158,7 @@ month_view_cursor_key_right (EWeekView *week_view)
 }
 
 static void
-month_view_class_init (EMonthViewClass *class)
+month_view_class_init (EMonthViewClass *class, gpointer class_data)
 {
 	EWeekViewClass *week_view_class;
 
@@ -173,7 +173,7 @@ month_view_class_init (EMonthViewClass *class)
 }
 
 static void
-month_view_init (EMonthView *month_view)
+month_view_init (EMonthView *month_view, gpointer class_data)
 {
 	month_view->priv = E_MONTH_VIEW_GET_PRIVATE (month_view);
 }

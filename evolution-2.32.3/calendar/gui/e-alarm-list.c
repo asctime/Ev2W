@@ -37,9 +37,9 @@
 
 static GType column_types[E_ALARM_LIST_NUM_COLUMNS];
 
-static void         e_alarm_list_init            (EAlarmList         *file_list);
-static void         e_alarm_list_class_init      (EAlarmListClass    *class);
-static void         e_alarm_list_tree_model_init (GtkTreeModelIface  *iface);
+static void         e_alarm_list_init            (EAlarmList         *file_list, gpointer class_data);
+static void         e_alarm_list_class_init      (EAlarmListClass    *class, gpointer class_data);
+static void         e_alarm_list_tree_model_init (GtkTreeModelIface  *iface, gpointer class_data);
 static void         e_alarm_list_finalize        (GObject            *object);
 static GtkTreeModelFlags e_alarm_list_get_flags       (GtkTreeModel       *tree_model);
 static gint         e_alarm_list_get_n_columns   (GtkTreeModel       *tree_model);
@@ -112,7 +112,7 @@ e_alarm_list_get_type (void)
 }
 
 static void
-e_alarm_list_class_init (EAlarmListClass *class)
+e_alarm_list_class_init (EAlarmListClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -123,7 +123,7 @@ e_alarm_list_class_init (EAlarmListClass *class)
 }
 
 static void
-e_alarm_list_tree_model_init (GtkTreeModelIface *iface)
+e_alarm_list_tree_model_init (GtkTreeModelIface *iface, gpointer class_data)
 {
 	iface->get_flags = e_alarm_list_get_flags;
 	iface->get_n_columns = e_alarm_list_get_n_columns;
@@ -140,7 +140,7 @@ e_alarm_list_tree_model_init (GtkTreeModelIface *iface)
 }
 
 static void
-e_alarm_list_init (EAlarmList *alarm_list)
+e_alarm_list_init (EAlarmList *alarm_list, gpointer class_data)
 {
 	alarm_list->stamp         = g_random_int ();
 	alarm_list->columns_dirty = FALSE;

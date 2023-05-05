@@ -77,8 +77,7 @@ mail_attachment_handler_forward (GtkAction *action,
 
 	em_utils_forward_message (shell, CAMEL_MIME_MESSAGE (wrapper), NULL);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static void
@@ -105,8 +104,7 @@ mail_attachment_handler_reply_all (GtkAction *action,
 		shell, NULL, NULL, CAMEL_MIME_MESSAGE (wrapper),
 		REPLY_MODE_ALL, NULL);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static void
@@ -133,8 +131,7 @@ mail_attachment_handler_reply_sender (GtkAction *action,
 		shell, NULL, NULL, CAMEL_MIME_MESSAGE (wrapper),
 		REPLY_MODE_SENDER, NULL);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static GtkActionEntry standard_entries[] = {
@@ -408,8 +405,7 @@ exit:
 	action_group = e_attachment_view_get_action_group (view, "mail");
 	gtk_action_group_set_visible (action_group, visible);
 
-	g_list_foreach (selected, (GFunc) g_object_unref, NULL);
-	g_list_free (selected);
+	g_list_free_full (selected, g_object_unref);
 }
 
 static void
@@ -474,7 +470,7 @@ mail_attachment_handler_get_target_table (EAttachmentHandler *handler,
 }
 
 static void
-mail_attachment_handler_class_init (EMailAttachmentHandlerClass *class)
+mail_attachment_handler_class_init (EMailAttachmentHandlerClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EAttachmentHandlerClass *handler_class;
@@ -491,7 +487,7 @@ mail_attachment_handler_class_init (EMailAttachmentHandlerClass *class)
 }
 
 static void
-mail_attachment_handler_init (EMailAttachmentHandler *handler)
+mail_attachment_handler_init (EMailAttachmentHandler *handler, gpointer class_data)
 {
 	handler->priv = E_MAIL_ATTACHMENT_HANDLER_GET_PRIVATE (handler);
 }

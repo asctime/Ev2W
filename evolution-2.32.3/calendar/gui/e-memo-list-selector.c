@@ -208,8 +208,7 @@ memo_list_selector_data_dropped (ESourceSelector *selector,
 		icalcomponent_free (icalcomp);
 	}
 
-	g_slist_foreach (list, (GFunc) g_free, NULL);
-	g_slist_free (list);
+	g_slist_free_full (list, g_free);
 
 exit:
 	if (client != NULL)
@@ -219,7 +218,7 @@ exit:
 }
 
 static void
-memo_list_selector_class_init (EMemoListSelectorClass *class)
+memo_list_selector_class_init (EMemoListSelectorClass *class, gpointer class_data)
 {
 	ESourceSelectorClass *source_selector_class;
 
@@ -231,7 +230,7 @@ memo_list_selector_class_init (EMemoListSelectorClass *class)
 }
 
 static void
-memo_list_selector_init (EMemoListSelector *selector)
+memo_list_selector_init (EMemoListSelector *selector, gpointer class_data)
 {
 	selector->priv = E_MEMO_LIST_SELECTOR_GET_PRIVATE (selector);
 

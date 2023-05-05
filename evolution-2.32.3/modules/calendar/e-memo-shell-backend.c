@@ -138,8 +138,7 @@ memo_shell_backend_ensure_sources (EShellBackend *shell_backend)
 			calendar_config_set_memos_selected (selected);
 		}
 
-		g_slist_foreach (selected, (GFunc) g_free, NULL);
-		g_slist_free (selected);
+		g_slist_free_full (selected, g_free);
 		g_free (primary);
 	} else {
 		/* Force the source name to the current locale. */
@@ -517,7 +516,7 @@ memo_shell_backend_constructed (GObject *object)
 }
 
 static void
-memo_shell_backend_class_init (EMemoShellBackendClass *class)
+memo_shell_backend_class_init (EMemoShellBackendClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellBackendClass *shell_backend_class;
@@ -552,7 +551,7 @@ memo_shell_backend_class_init (EMemoShellBackendClass *class)
 }
 
 static void
-memo_shell_backend_init (EMemoShellBackend *memo_shell_backend)
+memo_shell_backend_init (EMemoShellBackend *memo_shell_backend, gpointer class_data)
 {
 	memo_shell_backend->priv =
 		E_MEMO_SHELL_BACKEND_GET_PRIVATE (memo_shell_backend);

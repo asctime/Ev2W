@@ -71,8 +71,8 @@ enum {
 	NUM_IM_COLUMNS
 };
 
-static void e_contact_editor_init		(EContactEditor		 *editor);
-static void e_contact_editor_class_init	(EContactEditorClass	 *klass);
+static void e_contact_editor_init		(EContactEditor		 *editor, gpointer class_data);
+static void e_contact_editor_class_init	(EContactEditorClass	 *klass, gpointer class_data);
 static void e_contact_editor_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
 static void e_contact_editor_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
 static void e_contact_editor_dispose (GObject *object);
@@ -267,7 +267,7 @@ e_contact_editor_get_type (void)
 }
 
 static void
-e_contact_editor_class_init (EContactEditorClass *klass)
+e_contact_editor_class_init (EContactEditorClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	EABEditorClass *editor_class = EAB_EDITOR_CLASS (klass);
@@ -562,8 +562,7 @@ file_as_set_style (EContactEditor *editor, gint style)
 		}
 	}
 
-	g_list_foreach (strings, (GFunc) g_free, NULL);
-	g_list_free (strings);
+	g_list_free_full (strings, g_free);
 
 	if (style != -1) {
 		string = name_to_style (editor->name, company, style);
@@ -3510,7 +3509,7 @@ expand_mail_toggle (EContactEditor *ce)
 }
 
 static void
-e_contact_editor_init (EContactEditor *e_contact_editor)
+e_contact_editor_init (EContactEditor *e_contact_editor, gpointer class_data)
 {
 	GtkBuilder *builder;
 	EShell *shell;

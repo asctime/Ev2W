@@ -344,8 +344,7 @@ book_shell_content_check_state (EShellContent *shell_content)
 
 		email_list = e_contact_get (contact, E_CONTACT_EMAIL);
 		has_email &= (email_list != NULL);
-		g_list_foreach (email_list, (GFunc) g_free, NULL);
-		g_list_free (email_list);
+		g_list_free_full (email_list, g_free);
 
 		is_contact_list &=
 			(e_contact_get (contact, E_CONTACT_IS_LIST) != NULL);
@@ -385,7 +384,7 @@ book_shell_content_focus_search_results (EShellContent *shell_content)
 }
 
 static void
-book_shell_content_class_init (EBookShellContentClass *class)
+book_shell_content_class_init (EBookShellContentClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellContentClass *shell_content_class;
@@ -439,7 +438,7 @@ book_shell_content_class_init (EBookShellContentClass *class)
 }
 
 static void
-book_shell_content_init (EBookShellContent *book_shell_content)
+book_shell_content_init (EBookShellContent *book_shell_content, gpointer class_data)
 {
 	book_shell_content->priv =
 		E_BOOK_SHELL_CONTENT_GET_PRIVATE (book_shell_content);
