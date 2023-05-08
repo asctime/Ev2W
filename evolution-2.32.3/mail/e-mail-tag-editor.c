@@ -221,7 +221,7 @@ mail_tag_editor_set_tag_list (EMailTagEditor *editor,
 }
 
 static void
-mail_tag_editor_class_init (EMailTagEditorClass *class)
+mail_tag_editor_class_init (EMailTagEditorClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -273,7 +273,7 @@ mail_tag_editor_class_init (EMailTagEditorClass *class)
 }
 
 static void
-mail_tag_editor_init (EMailTagEditor *editor)
+mail_tag_editor_init (EMailTagEditor *editor, gpointer class_data)
 {
 	GtkBuilder *builder;
 	GtkDialog *dialog;

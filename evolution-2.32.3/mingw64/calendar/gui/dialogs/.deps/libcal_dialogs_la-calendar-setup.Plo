@@ -671,6 +671,20 @@
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-enum-types.h \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-listeners.h \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h \
+ ../../../../shell/e-shell.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/unique.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueapp.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniquemessage.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniquebackend.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueapp.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueenumtypes.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniquemessage.h \
+ D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueversion.h \
+ ../../../../e-util/e-activity.h ../../../../shell/e-shell-common.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h \
+ ../../../../shell/e-shell-backend.h ../../../../e-util/e-extension.h \
+ ../../../../e-util/e-extensible.h ../../../../shell/e-shell-settings.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
@@ -2029,6 +2043,40 @@ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-enum-types.h:
 D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-listeners.h:
 
 D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h:
+
+../../../../shell/e-shell.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/unique.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueapp.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniquemessage.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniquebackend.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueapp.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueenumtypes.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniquemessage.h:
+
+D:/MSYS2/mingw64/include/unique-1.0/unique/uniqueversion.h:
+
+../../../../e-util/e-activity.h:
+
+../../../../shell/e-shell-common.h:
+
+D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms.h:
+
+D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkkeysyms-compat.h:
+
+../../../../shell/e-shell-backend.h:
+
+../../../../e-util/e-extension.h:
+
+../../../../e-util/e-extensible.h:
+
+../../../../shell/e-shell-settings.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h:
 

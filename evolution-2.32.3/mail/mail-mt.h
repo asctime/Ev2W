@@ -55,7 +55,6 @@ struct _MailMsgInfo {
 
 /* setup ports */
 void mail_msg_init(void);
-void mail_msg_cleanup (void);
 
 gboolean mail_in_main_thread (void);
 
@@ -64,10 +63,9 @@ gpointer mail_msg_new (MailMsgInfo *info);
 gpointer mail_msg_ref (gpointer msg);
 void mail_msg_unref (gpointer msg);
 void mail_msg_check_error (gpointer msg);
-void mail_msg_cancel(guint msgid);
-void mail_msg_wait(guint msgid);
-void mail_msg_wait_all(void);
-gint mail_msg_active(guint msgid);
+void mail_msg_cancel (guint msgid);
+void mail_msg_wait (guint msgid);
+gboolean mail_msg_active (void);
 
 /* dispatch a message */
 void mail_msg_main_loop_push (gpointer msg);

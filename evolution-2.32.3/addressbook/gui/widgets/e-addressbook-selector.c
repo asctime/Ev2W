@@ -326,7 +326,7 @@ addressbook_selector_data_dropped (ESourceSelector *selector,
 }
 
 static void
-addressbook_selector_class_init (EAddressbookSelectorClass *class)
+addressbook_selector_class_init (EAddressbookSelectorClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	ESourceSelectorClass *selector_class;

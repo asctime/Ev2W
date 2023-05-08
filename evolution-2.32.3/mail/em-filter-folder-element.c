@@ -50,8 +50,8 @@ static void build_code(EFilterElement *fe, GString *out, EFilterPart *ff);
 static void format_sexp(EFilterElement *, GString *);
 static void emff_copy_value(EFilterElement *de, EFilterElement *se);
 
-static void em_filter_folder_element_class_init(EMFilterFolderElementClass *class);
-static void em_filter_folder_element_init(EMFilterFolderElement *ff);
+static void em_filter_folder_element_class_init(EMFilterFolderElementClass *class, gpointer class_data);
+static void em_filter_folder_element_init(EMFilterFolderElement *ff, gpointer class_data);
 static void em_filter_folder_element_finalise(GObject *obj);
 
 static EFilterElementClass *parent_class = NULL;
@@ -81,7 +81,7 @@ em_filter_folder_element_get_type(void)
 }
 
 static void
-em_filter_folder_element_class_init(EMFilterFolderElementClass *klass)
+em_filter_folder_element_class_init(EMFilterFolderElementClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	EFilterElementClass *fe_class = E_FILTER_ELEMENT_CLASS(klass);
@@ -103,7 +103,7 @@ em_filter_folder_element_class_init(EMFilterFolderElementClass *klass)
 }
 
 static void
-em_filter_folder_element_init(EMFilterFolderElement *ff)
+em_filter_folder_element_init(EMFilterFolderElement *ff, gpointer class_data)
 {
 	;
 }

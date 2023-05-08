@@ -44,6 +44,36 @@ component_has_new_attendees (ECalComponent *comp)
 }
 
 static gboolean
+component_has_recipients (ECalComponent *comp)
+{
+	GSList *attendees = NULL;
+	ECalComponentAttendee *attendee;
+	ECalComponentOrganizer organizer;
+	gboolean res = FALSE;
+
+	g_return_val_if_fail (comp != NULL, FALSE);
+
+	e_cal_component_get_attendee_list (comp, &attendees);
+
+	if (!attendees)
+		return FALSE;
+
+	if (g_slist_length (attendees) > 1 || !e_cal_component_has_organizer (comp)) {
+		e_cal_component_free_attendee_list (attendees);
+		return TRUE;
+	}
+
+	attendee = attendees->data;
+
+	e_cal_component_get_organizer (comp, &organizer);
+	res = organizer.value && attendee && attendee->value && g_ascii_strcasecmp (organizer.value, attendee->value) != 0;
+
+	e_cal_component_free_attendee_list (attendees);
+
+	return res;
+}
+
+static gboolean
 have_nonprocedural_alarm (ECalComponent *comp)
 {
 	GList *uids, *l;
@@ -114,7 +144,7 @@ send_component_dialog (GtkWindow *parent, ECal *client, ECalComponent *comp, gbo
 	if (strip_alarms)
 		*strip_alarms = TRUE;
 
-	if (e_cal_get_save_schedules (client))
+  if (e_cal_get_save_schedules (client) || !component_has_recipients (comp))
 		return FALSE;
 
 	vtype = e_cal_component_get_vtype (comp);

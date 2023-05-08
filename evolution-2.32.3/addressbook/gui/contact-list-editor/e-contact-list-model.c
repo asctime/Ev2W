@@ -65,7 +65,7 @@ contact_list_model_constructor (GType type,
 }
 
 static void
-contact_list_model_class_init (EContactListModelClass *class)
+contact_list_model_class_init (EContactListModelClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 

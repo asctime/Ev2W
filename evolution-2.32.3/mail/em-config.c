@@ -45,7 +45,7 @@ struct _EMConfigPrivate {
 };
 
 static void
-emp_init(GObject *o)
+emp_init(GObject *o, gpointer class_data)
 {
 	EMConfig *emp = (EMConfig *)o;
 
@@ -140,7 +140,7 @@ emp_set_target(EConfig *ep, EConfigTarget *t)
 }
 
 static void
-emp_class_init(GObjectClass *klass)
+emp_class_init(GObjectClass *klass, gpointer class_data)
 {
 	klass->finalize = emp_finalise;
 	((EConfigClass *)klass)->set_target = emp_set_target;

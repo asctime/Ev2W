@@ -186,8 +186,7 @@ task_page_finalize (GObject *object)
 
 	priv = TASK_PAGE_GET_PRIVATE (object);
 
-	g_list_foreach (priv->address_strings, (GFunc) g_free, NULL);
-	g_list_free (priv->address_strings);
+	g_list_free_full (priv->address_strings, g_free);
 
 	g_ptr_array_foreach (
 		priv->deleted_attendees, (GFunc) g_object_unref, NULL);
@@ -1212,8 +1211,7 @@ remove_clicked_cb (GtkButton *btn, TaskPage *page)
 		gtk_tree_selection_select_iter (selection, &iter);
 	}
 
-	g_list_foreach (paths, (GFunc) gtk_tree_path_free, NULL);
-	g_list_free (paths);
+	g_list_free_full (paths, (GDestroyNotify)gtk_tree_path_free);
 }
 
 static void

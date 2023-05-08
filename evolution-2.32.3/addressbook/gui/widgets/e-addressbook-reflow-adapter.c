@@ -413,7 +413,7 @@ addressbook_get_property (GObject *object,
 }
 
 static void
-e_addressbook_reflow_adapter_class_init (GObjectClass *object_class)
+e_addressbook_reflow_adapter_class_init (GObjectClass *object_class, gpointer class_data)
 {
 	EReflowModelClass *model_class = (EReflowModelClass *) object_class;
 
@@ -479,7 +479,7 @@ e_addressbook_reflow_adapter_class_init (GObjectClass *object_class)
 }
 
 static void
-e_addressbook_reflow_adapter_init (GtkObject *object)
+e_addressbook_reflow_adapter_init (GtkObject *object, gpointer class_data)
 {
 	EAddressbookReflowAdapter *adapter = E_ADDRESSBOOK_REFLOW_ADAPTER(object);
 	EAddressbookReflowAdapterPrivate *priv;

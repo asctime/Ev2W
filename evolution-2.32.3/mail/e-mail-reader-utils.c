@@ -299,7 +299,6 @@ e_mail_reader_open_selected (EMailReader *reader)
 
 	g_ptr_array_foreach (views, (GFunc) g_free, NULL);
 	g_ptr_array_free (views, TRUE);
-
 	em_utils_uids_free (uids);
 
 	return ii;
@@ -749,8 +748,7 @@ headers_changed_cb (GConfClient *client,
 	if (!header_config_list)
 		em_format_default_headers (EM_FORMAT (formatter));
 
-	g_slist_foreach (header_config_list, (GFunc) g_free, NULL);
-	g_slist_free (header_config_list);
+	g_slist_free_full (header_config_list, g_free);
 
 	/* force a redraw */
 	if (EM_FORMAT (formatter)->message)

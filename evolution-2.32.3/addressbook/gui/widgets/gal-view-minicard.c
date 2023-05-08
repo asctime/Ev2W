@@ -150,7 +150,7 @@ view_minicard_clone (GalView *view)
 }
 
 static void
-gal_view_minicard_class_init (GalViewMinicardClass *class)
+gal_view_minicard_class_init (GalViewMinicardClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GalViewClass *gal_view_class;
@@ -172,7 +172,7 @@ gal_view_minicard_class_init (GalViewMinicardClass *class)
 }
 
 static void
-gal_view_minicard_init (GalViewMinicard *gvm)
+gal_view_minicard_init (GalViewMinicard *gvm, gpointer class_data)
 {
 	gvm->title = NULL;
 	gvm->column_width = 150.0;

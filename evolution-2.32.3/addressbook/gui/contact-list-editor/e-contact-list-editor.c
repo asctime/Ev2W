@@ -482,8 +482,7 @@ contact_list_editor_drag_data_received_cb (GtkWidget *widget,
 		}
 	}
 
-	g_list_foreach (list, (GFunc) g_object_unref, NULL);
-	g_list_free (list);
+	g_list_free_full (list, g_object_unref);
 
 	contact_list_editor_scroll_to_end (editor);
 
@@ -1195,7 +1194,7 @@ contact_list_editor_closed (EABEditor *editor)
 /****************************** GType Callbacks ******************************/
 
 static void
-contact_list_editor_class_init (EContactListEditorClass *class)
+contact_list_editor_class_init (EContactListEditorClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EABEditorClass *editor_class;
@@ -1264,7 +1263,7 @@ contact_list_editor_class_init (EContactListEditorClass *class)
 }
 
 static void
-contact_list_editor_init (EContactListEditor *editor)
+contact_list_editor_init (EContactListEditor *editor, gpointer class_data)
 {
 	EContactListEditorPrivate *priv;
 	GtkTreeViewColumn *column;

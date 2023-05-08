@@ -378,7 +378,7 @@ mail_sidebar_check_state (EMailSidebar *sidebar)
 }
 
 static void
-mail_sidebar_class_init (EMailSidebarClass *class)
+mail_sidebar_class_init (EMailSidebarClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkTreeViewClass *tree_view_class;
@@ -416,7 +416,7 @@ mail_sidebar_class_init (EMailSidebarClass *class)
 }
 
 static void
-mail_sidebar_init (EMailSidebar *sidebar)
+mail_sidebar_init (EMailSidebar *sidebar, gpointer class_data)
 {
 	GtkTreeModel *model;
 	GtkTreeView *tree_view;

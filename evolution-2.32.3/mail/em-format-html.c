@@ -764,7 +764,7 @@ efh_base_init (EMFormatHTMLClass *class)
 }
 
 static void
-efh_class_init (EMFormatHTMLClass *class)
+efh_class_init (EMFormatHTMLClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EMFormatClass *format_class;

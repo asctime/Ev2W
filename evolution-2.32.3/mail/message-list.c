@@ -826,8 +826,16 @@ static gboolean
 select_node (ETreeModel *model, ETreePath path, gpointer user_data)
 {
 	thread_select_info_t *tsi = (thread_select_info_t *) user_data;
-
+#if 0 /* Keep for future use? asctime. */
+  if (g_ptr_array_find (tsi->paths, path, NULL) == FALSE) {
+    g_ptr_array_add (tsi->paths, path);
+  } else {
+    g_ptr_array_remove (tsi->paths, path);
+  }
+#else
 	g_ptr_array_add (tsi->paths, path);
+#endif
+
 	return FALSE; /*not done yet*/
 }
 

@@ -30,8 +30,8 @@
 #include "e-util/e-util.h"
 #include "e-minicard-view-widget.h"
 
-static void e_minicard_view_widget_init		 (EMinicardViewWidget		 *widget);
-static void e_minicard_view_widget_class_init	 (EMinicardViewWidgetClass	 *class);
+static void e_minicard_view_widget_init		 (EMinicardViewWidget		 *widget, gpointer class_data);
+static void e_minicard_view_widget_class_init	 (EMinicardViewWidgetClass	 *class, gpointer class_data);
 static void e_minicard_view_widget_set_property  (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
 static void e_minicard_view_widget_get_property  (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
 static void e_minicard_view_widget_dispose       (GObject *object);
@@ -88,7 +88,7 @@ e_minicard_view_widget_get_type (void)
 }
 
 static void
-e_minicard_view_widget_class_init (EMinicardViewWidgetClass *class)
+e_minicard_view_widget_class_init (EMinicardViewWidgetClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -189,7 +189,7 @@ e_minicard_view_widget_class_init (EMinicardViewWidgetClass *class)
 }
 
 static void
-e_minicard_view_widget_init (EMinicardViewWidget *view)
+e_minicard_view_widget_init (EMinicardViewWidget *view, gpointer class_data)
 {
 	view->emv = NULL;
 

@@ -752,8 +752,7 @@ void
 calendar_config_free_day_second_zones (GSList *zones)
 {
 	if (zones) {
-		g_slist_foreach (zones, (GFunc)g_free, NULL);
-		g_slist_free (zones);
+		g_slist_free_full (zones, g_free);
 	}
 }
 

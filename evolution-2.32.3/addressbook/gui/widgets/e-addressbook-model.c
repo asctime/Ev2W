@@ -501,7 +501,7 @@ addressbook_model_finalize (GObject *object)
 }
 
 static void
-addressbook_model_class_init (EAddressbookModelClass *class)
+addressbook_model_class_init (EAddressbookModelClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -648,7 +648,7 @@ addressbook_model_class_init (EAddressbookModelClass *class)
 }
 
 static void
-addressbook_model_init (EAddressbookModel *model)
+addressbook_model_init (EAddressbookModel *model, gpointer class_data)
 {
 	model->priv = E_ADDRESSBOOK_MODEL_GET_PRIVATE (model);
 

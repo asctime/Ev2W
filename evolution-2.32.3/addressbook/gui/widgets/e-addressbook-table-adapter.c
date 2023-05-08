@@ -267,7 +267,7 @@ addressbook_value_to_string (ETableModel *etc, gint col, gconstpointer value)
 }
 
 static void
-eab_table_adapter_class_init (GObjectClass *object_class)
+eab_table_adapter_class_init (GObjectClass *object_class, gpointer class_data)
 {
 	ETableModelClass *model_class = (ETableModelClass *) object_class;
 
@@ -289,7 +289,7 @@ eab_table_adapter_class_init (GObjectClass *object_class)
 }
 
 static void
-eab_table_adapter_init (GObject *object)
+eab_table_adapter_init (GObject *object, gpointer class_data)
 {
 	EAddressbookTableAdapter *adapter = EAB_TABLE_ADAPTER(object);
 	EAddressbookTableAdapterPrivate *priv;

@@ -121,7 +121,7 @@ comp_editor_page_dispose (GObject *object)
 }
 
 static void
-comp_editor_page_class_init (CompEditorPageClass *class)
+comp_editor_page_class_init (CompEditorPageClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -174,7 +174,7 @@ comp_editor_page_class_init (CompEditorPageClass *class)
 }
 
 static void
-comp_editor_page_init (CompEditorPage *page)
+comp_editor_page_init (CompEditorPage *page, gpointer class_data)
 {
 	page->priv = COMP_EDITOR_PAGE_GET_PRIVATE (page);
 

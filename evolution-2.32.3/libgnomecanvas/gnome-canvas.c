@@ -163,7 +163,9 @@ gnome_canvas_item_get_type (void)
 			(GInstanceInitFunc) gnome_canvas_item_init,
 			NULL			/* value_table */
 		};
-
+    
+    /* Internal API ALERT 2.91 defines as G_TYPE_OBJECT (likely for GTK3)
+       then G_TYPE_INITIALLY_UNOWNED; for 2.32 use GTK_TYPE_OBJECT     */
 		canvas_item_type = g_type_register_static (GTK_TYPE_OBJECT, "GnomeCanvasItem",
 							   &object_info, 0);
 	}

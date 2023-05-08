@@ -121,8 +121,7 @@ e_minicard_view_drag_data_get(GtkWidget *widget,
 static void
 clear_drag_data (EMinicardView *view)
 {
-	g_list_foreach (view->drag_list, (GFunc)g_object_unref, NULL);
-	g_list_free (view->drag_list);
+	g_list_free_full (view->drag_list, g_object_unref);
 	view->drag_list = NULL;
 }
 
@@ -508,7 +507,7 @@ compare_to_utf_str (EMinicard *card, const gchar *utf_str)
 #endif
 
 static void
-e_minicard_view_class_init (EMinicardViewClass *klass)
+e_minicard_view_class_init (EMinicardViewClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -587,7 +586,7 @@ e_minicard_view_class_init (EMinicardViewClass *klass)
 }
 
 static void
-e_minicard_view_init (EMinicardView *view)
+e_minicard_view_init (EMinicardView *view, gpointer class_data)
 {
 	view->drag_list = NULL;
 	view->adapter = NULL;

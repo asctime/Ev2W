@@ -799,7 +799,7 @@ day_view_top_item_point (GnomeCanvasItem *item,
 }
 
 static void
-day_view_top_item_class_init (EDayViewTopItemClass *class)
+day_view_top_item_class_init (EDayViewTopItemClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -839,7 +839,7 @@ day_view_top_item_class_init (EDayViewTopItemClass *class)
 }
 
 static void
-day_view_top_item_init (EDayViewTopItem *top_item)
+day_view_top_item_init (EDayViewTopItem *top_item, gpointer class_data)
 {
 	top_item->priv = E_DAY_VIEW_TOP_ITEM_GET_PRIVATE (top_item);
 }

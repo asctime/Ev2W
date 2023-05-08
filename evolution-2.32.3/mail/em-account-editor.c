@@ -357,7 +357,7 @@ emae_finalize (GObject *object)
 }
 
 static void
-emae_class_init (GObjectClass *class)
+emae_class_init (GObjectClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -393,7 +393,7 @@ emae_class_init (GObjectClass *class)
 }
 
 static void
-emae_init (EMAccountEditor *emae)
+emae_init (EMAccountEditor *emae, gpointer class_data)
 {
 	emae->priv = EM_ACCOUNT_EDITOR_GET_PRIVATE (emae);
 
@@ -665,8 +665,7 @@ emae_check_license (EMAccountEditor *emae, CamelProvider *prov)
 					      providers_list, NULL);
 		}
 
-		g_slist_foreach (providers_list, (GFunc)g_free, NULL);
-		g_slist_free (providers_list);
+		g_slist_free_full (providers_list, g_free);
 	}
 
 	return accepted;

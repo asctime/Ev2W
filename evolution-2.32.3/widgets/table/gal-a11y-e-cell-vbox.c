@@ -165,7 +165,7 @@ ecv_init (GalA11yECellVbox *a11y, gpointer class_data)
 }
 
 static void
-ecv_atk_component_iface_init (AtkComponentIface *iface)
+ecv_atk_component_iface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	component_parent_iface         = g_type_interface_peek_parent (iface);
 

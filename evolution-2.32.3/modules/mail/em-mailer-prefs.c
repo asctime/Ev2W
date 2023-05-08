@@ -185,8 +185,7 @@ jh_tree_refill (EMMailerPrefs *prefs)
 		g_strfreev (tokens);
 	}
 
-	g_slist_foreach (cjh, (GFunc) g_free, NULL);
-	g_slist_free (cjh);
+	g_slist_free_full (cjh, g_free);
 }
 
 static void
@@ -234,9 +233,7 @@ jh_add_cb (GtkWidget *widget, gpointer user_data)
 		tok = g_strdup_printf ("%s=%s", name, value);
 		list = g_slist_append (list, tok);
 		gconf_client_set_list (prefs->gconf, "/apps/evolution/mail/junk/custom_header", GCONF_VALUE_STRING, list, NULL);
-		g_slist_foreach (list, (GFunc)g_free, NULL);
-
-		g_slist_free (list);
+		g_slist_free_full (list, g_free);
 	}
 	gtk_widget_destroy (dialog);
 	jh_tree_refill (prefs);
@@ -285,8 +282,7 @@ jh_remove_cb (GtkWidget *widget, gpointer user_data)
 
 		gconf_client_set_list (prefs->gconf, "/apps/evolution/mail/junk/custom_header", GCONF_VALUE_STRING, list, NULL);
 
-		g_slist_foreach (list, (GFunc)g_free, NULL);
-		g_slist_free (list);
+		g_slist_free_full (list, g_free);
 		g_free (name);
 		g_free (value);
 
@@ -418,8 +414,7 @@ emmp_save_headers (EMMailerPrefs *prefs)
 	}
 
 	gconf_client_set_list (prefs->gconf, "/apps/evolution/mail/display/headers", GCONF_VALUE_STRING, header_list, NULL);
-	g_slist_foreach (header_list, (GFunc) g_free, NULL);
-	g_slist_free (header_list);
+	g_slist_free_full (header_list, g_free);
 }
 
 static void
@@ -1108,8 +1103,7 @@ em_mailer_prefs_construct (EMMailerPrefs *prefs,
 	}
 
 	g_hash_table_destroy (default_header_hash);
-	g_slist_foreach (header_config_list, (GFunc) g_free, NULL);
-	g_slist_free (header_config_list);
+	g_slist_free_full (header_config_list, g_free);
 
 	p = header_add_list;
 	while (p) {

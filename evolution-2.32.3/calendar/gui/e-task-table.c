@@ -541,8 +541,7 @@ task_table_constructed (GObject *object)
 	e_cell_combo_set_popdown_strings (E_CELL_COMBO (popup_cell),
 					  strings);
 
-	g_list_foreach (strings, (GFunc) g_free, NULL);
-	g_list_free (strings);
+	g_list_free_full (strings, g_free);
 
 	e_table_extras_add_cell (extras, "percent", popup_cell);
 
@@ -1291,8 +1290,7 @@ task_table_delete_selection (ESelectable *selectable)
 					icalcomponent_free (mod_comp);
 
 				if (users) {
-					g_list_foreach (users, (GFunc) g_free, NULL);
-					g_list_free (users);
+					g_list_free_full (users, g_free);
 				}
 			}
 
@@ -1318,7 +1316,7 @@ task_table_select_all (ESelectable *selectable)
 }
 
 static void
-task_table_class_init (ETaskTableClass *class)
+task_table_class_init (ETaskTableClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -1407,7 +1405,7 @@ task_table_class_init (ETaskTableClass *class)
 }
 
 static void
-task_table_init (ETaskTable *task_table)
+task_table_init (ETaskTable *task_table, gpointer class_data)
 {
 	GtkTargetList *target_list;
 
@@ -1423,7 +1421,7 @@ task_table_init (ETaskTable *task_table)
 }
 
 static void
-task_table_selectable_init (ESelectableInterface *interface)
+task_table_selectable_init (ESelectableInterface *interface, gpointer class_data)
 {
 	interface->update_actions = task_table_update_actions;
 	interface->cut_clipboard = task_table_cut_clipboard;
@@ -1612,8 +1610,7 @@ hide_completed_rows (ECalModel *model,
 			g_object_unref (comp);
 		}
 
-		g_list_foreach (objects, (GFunc) icalcomponent_free, NULL);
-		g_list_free (objects);
+		g_list_free_full (objects, (GDestroyNotify)icalcomponent_free);
 	}
 
 	if (changed) {

@@ -40,7 +40,7 @@
 #include <libebook/e-destination.h>
 #include "ea-addressbook.h"
 
-static void e_minicard_init		(EMinicard		 *card);
+static void e_minicard_init		(EMinicard		 *card, gpointer class_data);
 static void e_minicard_class_init	(EMinicardClass	 *class, gpointer class_data);
 static void e_minicard_set_property  (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
 static void e_minicard_get_property  (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
@@ -243,7 +243,7 @@ e_minicard_class_init (EMinicardClass *class, gpointer class_data)
 }
 
 static void
-e_minicard_init (EMinicard *minicard)
+e_minicard_init (EMinicard *minicard, gpointer class_data)
 {
 	minicard->rect             = NULL;
 	minicard->fields           = NULL;

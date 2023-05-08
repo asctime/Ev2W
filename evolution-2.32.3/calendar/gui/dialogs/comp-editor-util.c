@@ -279,8 +279,7 @@ free_slist_strs (gpointer data)
 	GSList *lst = data;
 
 	if (lst) {
-		g_slist_foreach (lst, (GFunc) g_free, NULL);
-		g_slist_free (lst);
+		g_slist_free_full (lst, g_free);
 	}
 }
 

@@ -1365,8 +1365,7 @@ comp_editor_dispose (GObject *object)
 	/* We want to destroy the pages after the widgets get destroyed,
 	   since they have lots of signal handlers connected to the widgets
 	   with the pages as the data. */
-	g_list_foreach (priv->pages, (GFunc) g_object_unref, NULL);
-	g_list_free (priv->pages);
+	g_list_free_full (priv->pages, g_object_unref);
 	priv->pages = NULL;
 
 	if (priv->comp) {
@@ -2633,8 +2632,7 @@ fill_widgets (CompEditor *editor)
 		g_signal_handlers_unblock_by_func (
 			store, G_CALLBACK (attachment_store_changed_cb),
 			editor);
-		g_slist_foreach (attachment_list, (GFunc)g_free, NULL);
-		g_slist_free (attachment_list);
+		g_slist_free_full (attachment_list, g_free);
 	}
 
 	action = comp_editor_get_action (editor, "classify-public");
@@ -2821,8 +2819,7 @@ real_send_comp (CompEditor *editor,
 		if (attach_list) {
 			e_cal_component_set_attachment_list (send_comp, attach_list);
 
-			g_slist_foreach (attach_list, (GFunc) g_free, NULL);
-			g_slist_free (attach_list);
+			g_slist_free_full (attach_list, g_free);
 		}
 
 		if (itip_send_comp (

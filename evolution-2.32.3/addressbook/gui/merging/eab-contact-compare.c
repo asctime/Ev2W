@@ -458,11 +458,8 @@ eab_contact_compare_email (EContact *contact1, EContact *contact2)
 	contact2_email = e_contact_get (contact2, E_CONTACT_EMAIL);
 
 	if (contact1_email == NULL || contact2_email == NULL) {
-		g_list_foreach (contact1_email, (GFunc)g_free, NULL);
-		g_list_free (contact1_email);
-
-		g_list_foreach (contact2_email, (GFunc)g_free, NULL);
-		g_list_free (contact2_email);
+		g_list_free_full (contact1_email, g_free);
+		g_list_free_full (contact2_email, g_free);
 		return EAB_CONTACT_MATCH_NOT_APPLICABLE;
 	}
 
@@ -486,11 +483,8 @@ eab_contact_compare_email (EContact *contact1, EContact *contact2)
 		i1 = i1->next;
 	}
 
-	g_list_foreach (contact1_email, (GFunc)g_free, NULL);
-	g_list_free (contact1_email);
-
-	g_list_foreach (contact2_email, (GFunc)g_free, NULL);
-	g_list_free (contact2_email);
+	g_list_free_full (contact1_email, g_free);
+	g_list_free_full (contact2_email, g_free);
 
 	return match;
 }
@@ -555,8 +549,7 @@ match_search_info_free (MatchSearchInfo *info)
 
 		/* This should already have been deallocated, but just in case... */
 		if (info->avoid) {
-			g_list_foreach (info->avoid, (GFunc) g_object_unref, NULL);
-			g_list_free (info->avoid);
+			g_list_free_full (info->avoid, g_object_unref);
 			info->avoid = NULL;
 		}
 
@@ -684,8 +677,7 @@ use_common_book_cb (EBook *book, const GError *error, gpointer closure)
 				}
 			}
 		}
-		g_list_foreach (contact_email, (GFunc)g_free, NULL);
-		g_list_free (contact_email);
+		g_list_free_full (contact_email, g_free);
 	}
 
 	/* Build up our full query from the parts. */

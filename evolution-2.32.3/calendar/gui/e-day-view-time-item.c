@@ -177,7 +177,7 @@ day_view_time_item_finalize (GObject *object)
 }
 
 static void
-day_view_time_item_class_init (EDayViewTimeItemClass *class)
+day_view_time_item_class_init (EDayViewTimeItemClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -209,7 +209,7 @@ day_view_time_item_class_init (EDayViewTimeItemClass *class)
 }
 
 static void
-day_view_time_item_init (EDayViewTimeItem *time_item)
+day_view_time_item_init (EDayViewTimeItem *time_item, gpointer class_data)
 {
 	gchar *last;
 

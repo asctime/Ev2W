@@ -923,13 +923,13 @@ et_paste_text (AtkEditableText *text,
 }
 
 static void
-et_atk_component_iface_init (AtkComponentIface *iface)
+et_atk_component_iface_init (AtkComponentIface *iface, gpointer class_data)
 {
 	iface->get_extents = et_get_extents;
 }
 
 static void
-et_atk_text_iface_init (AtkTextIface *iface)
+et_atk_text_iface_init (AtkTextIface *iface, gpointer class_data)
 {
 	iface->get_text                = et_get_text;
 	iface->get_text_after_offset   = et_get_text_after_offset;
@@ -951,7 +951,7 @@ et_atk_text_iface_init (AtkTextIface *iface)
 }
 
 static void
-et_atk_editable_text_iface_init (AtkEditableTextIface *iface)
+et_atk_editable_text_iface_init (AtkEditableTextIface *iface, gpointer class_data)
 {
 	iface->set_run_attributes = et_set_run_attributes;
 	iface->set_text_contents  = et_set_text_contents;
@@ -1032,7 +1032,7 @@ et_real_initialize (AtkObject *obj,
 }
 
 static void
-et_class_init (GalA11yETextClass *klass)
+et_class_init (GalA11yETextClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	AtkObjectClass *atk_class = ATK_OBJECT_CLASS (klass);
@@ -1047,7 +1047,7 @@ et_class_init (GalA11yETextClass *klass)
 }
 
 static void
-et_init (GalA11yEText *a11y)
+et_init (GalA11yEText *a11y, gpointer class_data)
 {
 }
 

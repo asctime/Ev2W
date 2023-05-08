@@ -148,7 +148,7 @@ exit:
 }
 
 static void
-calendar_selector_class_init (ECalendarSelectorClass *class)
+calendar_selector_class_init (ECalendarSelectorClass *class, gpointer class_init)
 {
 	ESourceSelectorClass *source_selector_class;
 
@@ -160,7 +160,7 @@ calendar_selector_class_init (ECalendarSelectorClass *class)
 }
 
 static void
-calendar_selector_init (ECalendarSelector *selector)
+calendar_selector_init (ECalendarSelector *selector, gpointer class_data)
 {
 	selector->priv = E_CALENDAR_SELECTOR_GET_PRIVATE (selector);
 
