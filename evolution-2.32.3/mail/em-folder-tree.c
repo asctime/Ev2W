@@ -636,8 +636,9 @@ folder_tree_cell_edited_cb (EMFolderTree *folder_tree,
 		e_alert_run_dialog_for_args (
 			parent, "mail:no-rename-folder",
 			old_full_name, new_full_name,
-			local_error->message, NULL);
-		g_clear_error (&local_error);
+      local_error ? local_error->message : _("Unknown error"), NULL);
+    if (local_error)
+      g_clear_error (&local_error);
 		goto exit;
 	}
 
@@ -2986,7 +2987,8 @@ em_folder_tree_restore_state (EMFolderTree *folder_tree,
 		/* Do not expand local stores in Express mode. */
 		if (e_shell_get_express_mode (shell)) {
 			expand_row &= (strncmp (uri, "vfolder", 7) != 0);
-			expand_row &= (strncmp (uri, "mbox", 4) != 0);
+			expand_row &= (strncmp (uri, "maildir", 7) != 0);
+			expand_row &= (strncmp (uri, "mbox", 7) != 0);
 		}
 
 		if (expand_row) {

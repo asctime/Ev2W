@@ -162,10 +162,7 @@ gal_view_collection_dispose (GObject *object)
 	collection->view_data = NULL;
 	collection->view_count = 0;
 
-	g_list_foreach (
-		collection->factory_list,
-		(GFunc) g_object_unref, NULL);
-	g_list_free (collection->factory_list);
+	g_list_free_full (collection->factory_list, g_object_unref);
 	collection->factory_list = NULL;
 
 	for (i = 0; i < collection->removed_view_count; i++) {

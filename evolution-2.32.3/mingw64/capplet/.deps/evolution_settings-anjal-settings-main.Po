@@ -16,6 +16,7 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unistd.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/process.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
@@ -640,7 +641,6 @@
  D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtktipsquery.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/libintl.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-passwords.h \
  ../../mail/mail-mt.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
@@ -1019,6 +1019,8 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/string.h:
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unistd.h:
 
@@ -2269,8 +2271,6 @@ D:/MSYS2/mingw64/include/gtk-2.0/gtk/gtktipsquery.h:
 D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h:
 
 D:/MSYS2/mingw64/include/libintl.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h:
 
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserverui/e-passwords.h:
 

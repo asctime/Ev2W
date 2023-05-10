@@ -252,12 +252,6 @@ mail_store_load_accounts (const gchar *data_dir)
 		if (uri == NULL || *uri == '\0')
 			continue;
 
-		/* HACK: mbox URI's are handled by the local store setup
-		 *       above.  Any that come through as account sources
-		 *       are really movemail sources! */
-		if (g_str_has_prefix (uri, "mbox:"))
-			continue;
-
 		e_mail_store_add_by_uri (uri, display_name);
 	}
 
