@@ -383,7 +383,11 @@ camel_data_cache_add (CamelDataCache *cdc,
 	} while (stream != NULL);
 
 	stream = camel_stream_fs_new_with_name (
+#ifdef G_OS_WIN32
+		real, O_RDWR|O_CREAT|O_TRUNC|O_BINARY, 0600, error);
+#else
 		real, O_RDWR|O_CREAT|O_TRUNC, 0600, error);
+#endif
 	if (stream)
 		camel_object_bag_add(cdc->priv->busy_bag, real, stream);
 	else
@@ -425,7 +429,11 @@ camel_data_cache_get (CamelDataCache *cdc,
 		/* Return NULL if the file is empty. */
 		if (g_stat (real, &st) == 0 && st.st_size > 0)
 			stream = camel_stream_fs_new_with_name (
+#ifdef G_OS_WIN32
+				real, O_RDWR | O_BINARY, 0600, error);
+#else
 				real, O_RDWR, 0600, error);
+#endif
 
 		if (stream)
 			camel_object_bag_add(cdc->priv->busy_bag, real, stream);

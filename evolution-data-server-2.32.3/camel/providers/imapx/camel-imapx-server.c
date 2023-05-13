@@ -1819,7 +1819,11 @@ imapx_continuation(CamelIMAPXServer *imap, gboolean litplus, GError **error)
 		c(printf("writing file '%s' to literal\n", (gchar *)cp->ob));
 
 		/* FIXME: errors */
+#ifdef G_OS_WIN32
+		if (cp->ob && (file = camel_stream_fs_new_with_name(cp->ob, O_RDONLY | O_BINARY, 0, NULL))) {
+#else
 		if (cp->ob && (file = camel_stream_fs_new_with_name(cp->ob, O_RDONLY, 0, NULL))) {
+#endif
 			camel_stream_write_to_stream(file, (CamelStream *)imap->stream, NULL);
 			g_object_unref (file);
 		} else if (cp->ob_size > 0) {

@@ -3665,7 +3665,11 @@ main(gint argc, gchar **argv)
 
 	if (fname)
 	{
+#ifdef G_OS_WIN32
+		fin = fopen (fname, "rb");
+#else
 		fin = fopen (fname, "r");
+#endif
 
 		if (!fin)
 		{

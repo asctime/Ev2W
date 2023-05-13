@@ -40,7 +40,11 @@ do_compress(gint argc, gchar **argv)
 
 	for (i=2;i<argc;i++) {
 		printf("Opening index file: %s\n", argv[i]);
+#ifdef G_OS_WIN32
+		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDWR | O_BINARY);
+#else
 		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDWR);
+#endif
 		if (idx) {
 			printf(" Compressing ...\n");
 			if (camel_index_compress (idx) == -1) {
@@ -64,7 +68,11 @@ do_dump(gint argc, gchar **argv)
 
 	for (i=2;i<argc;i++) {
 		printf("Opening index file: %s\n", argv[i]);
+#ifdef G_OS_WIN32
+		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDONLY | O_BINARY);
+#else
 		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDONLY);
+#endif
 		if (idx) {
 			printf(" Dumping ...\n");
 			camel_text_index_dump((CamelTextIndex *)idx);
@@ -85,7 +93,11 @@ do_info(gint argc, gchar **argv)
 
 	for (i=2;i<argc;i++) {
 		printf("Opening index file: %s\n", argv[i]);
+#ifdef G_OS_WIN32
+		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDONLY | O_BINARY);
+#else
 		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDONLY);
+#endif
 		if (idx) {
 			camel_text_index_info((CamelTextIndex *)idx);
 			g_object_unref (idx);
@@ -105,7 +117,11 @@ do_check(gint argc, gchar **argv)
 
 	for (i=2;i<argc;i++) {
 		printf("Opening index file: %s\n", argv[i]);
+#ifdef G_OS_WIN32
+		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDONLY | O_BINARY);
+#else
 		idx = (CamelIndex *)camel_text_index_new(argv[i], O_RDONLY);
+#endif
 		if (idx) {
 			camel_text_index_validate((CamelTextIndex *)idx);
 			g_object_unref (idx);
@@ -170,7 +186,7 @@ do_perf(gint argc, gchar **argv)
   char index_path[MAX_PATH];
   snprintf(getenv("TEMP"), MAX_PATH, "%s\\index", temp_dir);
   idx = (CamelIndex *) camel_text_index_new(
-    index_path, O_TRUNC|O_CREAT|O_RDWR);
+    index_path, O_TRUNC|O_CREAT|O_RDWR|O_BINARY);
 #else
 	idx = (CamelIndex *) camel_text_index_new (
 		"/tmp/index", O_TRUNC|O_CREAT|O_RDWR);

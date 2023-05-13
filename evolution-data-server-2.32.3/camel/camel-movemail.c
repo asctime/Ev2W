@@ -111,7 +111,11 @@ camel_movemail (const gchar *source,
 		return 0;
 
 	/* open files */
+#ifdef G_OS_WIN32
+	sfd = open (source, O_RDWR|O_BINARY);
+#else
 	sfd = open (source, O_RDWR);
+#endif
 	if (sfd == -1) {
 		g_set_error (
 			error, G_IO_ERROR,
@@ -121,7 +125,11 @@ camel_movemail (const gchar *source,
 		return -1;
 	}
 
+#ifdef G_OS_WIN32
+	dfd = open (dest, O_WRONLY | O_CREAT | O_APPEND | O_BINARY, S_IRUSR | S_IWUSR);
+#else
 	dfd = open (dest, O_WRONLY | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
+#endif
 	if (dfd == -1) {
 		g_set_error (
 			error, G_IO_ERROR,

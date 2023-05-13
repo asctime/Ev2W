@@ -518,7 +518,11 @@ camel_imap_message_cache_get (CamelImapMessageCache *cache, const gchar *uid,
 		return stream;
 	}
 
+#ifdef G_OS_WIN32
+	stream = camel_stream_fs_new_with_name (path, O_RDONLY | O_BINARY, 0, error);
+#else
 	stream = camel_stream_fs_new_with_name (path, O_RDONLY, 0, error);
+#endif
 	if (stream)
 		cache_put (cache, uid, key, stream);
 	else
