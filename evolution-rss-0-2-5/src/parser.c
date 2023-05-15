@@ -50,9 +50,8 @@ guint rsserror = FALSE;
 extern rssfeed *rf;
 extern gboolean feed_new;
 
-//
-// decodes url_encoded strings that might appear in a html body
-//
+/* decodes url_encoded strings that might appear in a html body */
+
 xmlDoc *
 rss_html_url_decode(const char *html, int len)
 {
@@ -137,8 +136,8 @@ html_set_base(
 			}
 			if (url[0] != '/' && !g_str_has_prefix(url,  "http://")
 					&& !g_str_has_prefix(url, "https://")) {
-				// in case we have a base href= set then rewrite
-				// all relative links
+				/* in case we have a base href= set then rewrite
+				   all relative links   */
 				if (basehref != NULL) {
 #if LIBSOUP_VERSION < 2003000
 					SoupUri *newbase_uri = soup_uri_new (basehref);
@@ -149,7 +148,7 @@ html_set_base(
 					soup_uri_free(newbase_uri);
 				} else
 					newuri = soup_uri_new_with_base (base_uri, url);
-				//xmlSetProp(doc, prop, g_strdup_printf("%s/%s", get_server_from_uri(base), url));
+				/* xmlSetProp(doc, prop, g_strdup_printf("%s/%s", get_server_from_uri(base), url)); */
 				if (newuri) {
 					newuristr = soup_uri_to_string (newuri, FALSE);
 					xmlSetProp(doc, (xmlChar *)prop, (xmlChar *)newuristr);
@@ -193,10 +192,10 @@ xml_parse_sux (const char *buf, int len)
 	 */
 	mime_type = g_content_type_guess(NULL, (guchar *)buf, 100, &uncertain);
 	dp("mime:%s, uncertain:%d\n", mime_type, uncertain);
-	//feeding parsed anything other than xml results in blocking delays
-	//it's possible we can relax parser by using xmlErrorFunc
-	//UPDATE: add text/* - but exclude text/html I've seen huge delays because of this
-	//I doubt there'll be any text/html feeds
+	/* feeding parsed anything other than xml results in blocking delays
+	   it's possible we can relax parser by using xmlErrorFunc
+	   UPDATE: add text/* - but exclude text/html I've seen huge delays because of this
+	   I doubt there'll be any text/html feeds   */
 #ifndef __MINGW32__
 	if (!g_ascii_strncasecmp (mime_type, "application/", 12)
 	   || (!g_ascii_strncasecmp (mime_type, "text/", 5)
@@ -476,14 +475,13 @@ layer_find_all (xmlNodePtr node,
 	}
 }
 
-//
-//namespace-based modularization
-//standard modules
-//
-//	mod_content
-//	* only handles content:encoding
-//	* if it's necessary handle
-//	  content:item stuff
+/* namespace-based modularization
+   standard modules
+
+  	mod_content
+  	* only handles content:encoding
+  	* if it's necessary handle
+ 	  content:item stuff   */
 
 gchar *
 content_rss(xmlNode *node, gchar *fail)
@@ -534,7 +532,7 @@ const gchar *standard_rss_modules[5][3] = {
 	{"well formed web", "wfw", (gchar *)wfw_rss},
 	{"slashdot entities", "slash", (gchar *)dublin_core_rss}};
 
-//<nsmatch:match>content</nsmatch:match>
+/* <nsmatch:match>content</nsmatch:match>   */
 const char*
 layer_find_ns_tag(xmlNodePtr node,
 		const char *nsmatch,
@@ -588,14 +586,14 @@ layer_find_tag (xmlNodePtr node,
 					}
 				}
 			}
-		} else {		//in case was not a standard module process node normally
-					//above case should handle all modules
+		} else {		/* in case was not a standard module process node normally */
+					/* above case should handle all modules */
 			if (strcasecmp ((char *)node->name, match)==0) {
-				if (node->type == 1) {			//XML_NODE_ELEMENT
+				if (node->type == 1) {			/* XML_NODE_ELEMENT  */
 					gchar *nodetype = (gchar *)xmlGetProp(node, (xmlChar *)"type");
-					//we need separate xhtml parsing because of xmlNodegetcontent substitutes html entities
-					if (nodetype && !strcasecmp(nodetype, "xhtml")) {		// test this with "html" or smth else
-						//this looses html entities
+					/* we need separate xhtml parsing because of xmlNodegetcontent substitutes html entities */
+					if (nodetype && !strcasecmp(nodetype, "xhtml")) {		/* test this with "html" or smth else */
+						/* this looses html entities  */
 						len = xmlNodeDump(buf, node->doc, node, 0, 0);
 						content = g_strdup_printf("%s", xmlBufferContent(buf));
 					} else {
@@ -905,9 +903,9 @@ tree_walk (xmlNodePtr root, RDF *r)
 		r->image = (gchar *)layer_find(image->children, "url", NULL);
 
 	t = g_strdup(get_real_channel_name(r->uri, NULL));
-	//feed might be added with no validation
-	//so it could be named Untitled channel
-	//till validation process
+	/* feed might be added with no validation
+	   so it could be named Untitled channel
+	   till validation process  */
 	if (t == NULL || !g_ascii_strncasecmp(t,
 			DEFAULT_NO_CHANNEL,
 			strlen(DEFAULT_NO_CHANNEL))) {
@@ -927,8 +925,8 @@ tree_walk (xmlNodePtr root, RDF *r)
 	else
 		r->ttl = 0;
 
-	//items might not have a date
-	// so try to grab channel/feed date
+	/* items might not have a date
+	   so try to grab channel/feed date */
 	md2 = g_strdup(layer_find(channel->children, "date",
 		layer_find(channel->children, "pubDate",
 		layer_find(channel->children, "updated", NULL))));
@@ -1047,26 +1045,26 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 		main_date = r->maindate;
 	}
 
-	//we have to free this somehow
-	//<link></link>
-	link = g_strdup(layer_find (top, "link", NULL));		//RSS,
-	if (!link) {								// <link href=>
+	/* we have to free this somehow
+	   <link></link>  */
+	link = g_strdup(layer_find (top, "link", NULL));		/* RSS, */
+	if (!link) {								/* <link href=> */
 		if (!(link = layer_query_find_prop (top,
 				"link",
 				(xmlChar *)"rel",
-				"alternate", (xmlChar *)"href")))	//ATOM
+				"alternate", (xmlChar *)"href")))	/* ATOM */
 			link = g_strdup(_("No Information"));
 	}
 
-	id = (gchar *)layer_find (top, (gchar *)"id",				//ATOM
-			layer_find (top, (gchar *)"guid", NULL));		//RSS 2.0
+	id = (gchar *)layer_find (top, (gchar *)"id",				/* ATOM */
+			layer_find (top, (gchar *)"guid", NULL));		/* RSS 2.0 */
 	feed = g_strdup_printf("%s\n", id ? id : link);
 	if (feed) {
 		g_strstrip(feed);
 		if (article_uid != NULL)
 			*article_uid = g_strdup(feed);
 	}
-	//not very nice but allows shortcutting
+	/* not very nice but allows shortcutting */
 	if (feed_is_new(feed_name, feed)) {
 		g_free(link);
 		if (feed) g_free(feed);
@@ -1074,8 +1072,8 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 	}
 
 	p = g_strdup(layer_find (top, "title", "Untitled article"));
-	//firstly try to parse as an ATOM author
-	//process person construct
+	/* firstly try to parse as an ATOM author
+	   process person construct  */
 	q1 = g_strdup(
 			layer_find_innerhtml (top, "author", "name", NULL));
 	q2 = g_strdup(
@@ -1101,16 +1099,16 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 				g_free(q2);
 			}
 			g_free(qsafe);
-		} else {			//then RSS or RDF
+		} else {			/* then RSS or RDF  */
 			xmlNodePtr source;
 			source = layer_find_pos(top, "source", "author");
-			//try the source construct
-			//source = layer_find_pos(el->children, "source", "contributor");
+			/* try the source construct
+			   source = layer_find_pos(el->children, "source", "contributor"); */
 			if (source != NULL)
 				q = g_strdup(layer_find(source, "name", NULL));
 			else {
 				q = g_strdup(layer_find (top, "author",
-					layer_find (top, "creator", NULL)));	//this catches dc:creator too. wrong!
+					layer_find (top, "creator", NULL)));	/* this catches dc:creator too. wrong! */
 			}
 			if (q) {
 				GString *s = rss_strip_html(q);
@@ -1118,7 +1116,7 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 				g_string_free(s, 0);
 			}
 
-			//we might end with a subject containing nothing but spaces
+			/* we might end with a subject containing nothing but spaces */
 			if (q) g_strstrip (q);
 
 			/* empty creator? is this even legal
@@ -1130,8 +1128,8 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 
 
 			if (q) {
-				//evo will go crazy when it'll encounter ":" character
-				//it probably enforces strict rfc2047 compliance
+				/* evo will go crazy when it'll encounter ":" character
+				   it probably enforces strict rfc2047 compliance  */
 				q = g_strdelimit(q, "><:", ' ');
 				qsafe = encode_rfc2047(q);
 				tmp = g_strdup_printf("\"%s\" <\"%s\">", qsafe, q);
@@ -1142,9 +1140,9 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 				if (q3) g_free(q3);
 			}
 		}
-		//FIXME this might need xmlFree when namespacing
-		b = (gchar *)layer_find_tag (top, "content",		//we prefer content first		  <--
-				layer_find_tag (top, "description",	//it seems description is rather shorten version of the content, so |
+		/* FIXME this might need xmlFree when namespacing   */
+		b = (gchar *)layer_find_tag (top, "content",		/* we prefer content first		  <--  */
+				layer_find_tag (top, "description",	/* it seems description is rather shorten version of the content, so | */
 				layer_find_tag (top, "summary",
 				NULL)));
 		if (b && strlen(b))
@@ -1158,32 +1156,32 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 			b = g_strdup(_("No information"));
 
 		d = (gchar *)layer_find (top, "pubDate", NULL);
-		//date in dc module format
+		/* date in dc module format */
 		if (!d) {
-			d2 = (gchar *)layer_find (top, "date", NULL);					//RSS2
+			d2 = (gchar *)layer_find (top, "date", NULL);					/* RSS2 */
 			if (!d2) {
 				d2 = (gchar *)layer_find(top, "published",
-					layer_find(top, "updated", NULL));				//ATOM
-				if (!d2) //take channel date if exists
+					layer_find(top, "updated", NULL));				/* ATOM  */
+				if (!d2) /* take channel date if exists  */
 					d2 = g_strdup(main_date);
 			}
 		}
 
-		//<enclosure url=>
-		//handle multiple enclosures
-		encl = (gchar *)layer_find_innerelement(top, "enclosure", "url",	// RSS 2.0 Enclosure
-			layer_find_innerelement(top, "link", "enclosure", NULL));		// ATOM Enclosure
-		//handle screwed feeds that set url to "" (feed does not validate!)
+		/* <enclosure url=>
+		   handle multiple enclosures */
+		encl = (gchar *)layer_find_innerelement(top, "enclosure", "url",	/* RSS 2.0 Enclosure */
+			layer_find_innerelement(top, "link", "enclosure", NULL));		/* ATOM Enclosure */
+		/* handle screwed feeds that set url to "" (feed does not validate!) */
 		if (encl && !strlen(encl)) {
 			g_free(encl);
 			encl = NULL;
 		}
-		//handle attatchments (can be multiple)
+		/* handle attatchments (can be multiple) */
 		attachments = layer_find_tag_prop(top, "media", "url");
 
 
-//                char *comments = g_strdup(layer_find (top, "comments", NULL));	//RSS,
-		comments = (gchar *)layer_find_ns_tag(top, "wfw", "commentRss", NULL); //add slash:comments
+/*      char *comments = g_strdup(layer_find (top, "comments", NULL));	//RSS,  */
+		comments = (gchar *)layer_find_ns_tag(top, "wfw", "commentRss", NULL); /* add slash:comments */
 		tcat = (gchar *)layer_find_ns_tag(top, "dc", "subject", NULL);
 		if (tcat)
 			category = g_list_append(category, g_strdup(tcat));
@@ -1220,9 +1218,9 @@ parse_channel_line(xmlNode *top, gchar *feed_name, RDF *r, gchar **article_uid)
 		CF->encl	= g_strdup(encl);
 		CF->attachments	= attachments;
 		CF->comments	= g_strdup(comments);
-		CF->feed_fname  = g_strdup(feed_name);	//feed file name
-		CF->feed_uri	= g_strdup(feed);	//feed uri (uid!)
-		CF->category	= category;		//list of category feed is posted under
+		CF->feed_fname  = g_strdup(feed_name);	/* feed file name */
+		CF->feed_uri	= g_strdup(feed);	/* feed uri (uid!) */
+		CF->category	= category;		/* list of category feed is posted under */
 		g_free(comments);
 		g_free(p);
 		g_free(sp);
@@ -1281,8 +1279,8 @@ update_channel(RDF *r)
 	feed_name = g_strdup_printf("%s" G_DIR_SEPARATOR_S "%s", feed_dir, buf);
 	g_free(feed_dir);
 
-	fr = fopen(feed_name, "r");
-	fw = fopen(feed_name, "a+");
+	fr = fopen(feed_name, "rb");
+	fw = fopen(feed_name, "a+b");
 
 	for (i=0; NULL != (el = g_array_index(item, xmlNodePtr, i)); i++) {
 		update_sr_message();
@@ -1433,7 +1431,7 @@ reent:  s = (const unsigned char *)res->str;
 	while (*s != 0 || len) {
 		if (state) {
 			if (*s==';') {
-				state = 2; //entity found
+				state = 2; /* entity found */
 				out = pos;
 				break;
 			} else {

@@ -31,7 +31,7 @@
 #define HAVE_DCGETTEXT 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
-/* #undef HAVE_DLFCN_H */
+#define HAVE_DLFCN_H 1
 
 /* gecko render engine present */
 /* #undef HAVE_GECKO */

@@ -32,7 +32,7 @@
 
 #include <gtk/gtk.h>
 #include <libsoup/soup.h>
-#if EVOLUTION_VERSION < 22900 //kb//
+#if EVOLUTION_VERSION < 22900 /* kb  */
 #include <mail/mail-component.h>
 #else
 #include <shell/e-shell.h>
@@ -73,35 +73,35 @@ typedef struct _RDF {
 	char		*html;
 	xmlDocPtr	cache;
 	gboolean	shown;
-	gchar		*type;		//char type
-	guint		type_id;	//num type
-	gchar		*version;	//feed version
-	gchar		*feedid;	//md5 string id of feed
-	gchar		*title;		//title of the feed
-	gchar		*prefix;	//directory path
-	gchar		*maindate;	//channel date
-	GArray		*item;		//feed content
-	gchar		*image;		//feed image
+	gchar		*type;		/* char type */
+	guint		type_id;	/* num type  */
+	gchar		*version;	/* feed version  */
+	gchar		*feedid;	/* md5 string id of feed */
+	gchar		*title;		/* title of the feed */
+	gchar		*prefix;	/* directory path */
+	gchar		*maindate;	/* channel date */
+	GArray		*item;		/* feed content */
+	gchar		*image;		/* feed image */
 	GtkWidget	*progress;
-	guint		total;		//total articles
-	guint		ttl;		//feed specified refresh interval
+	guint		total;		/* total articles */
+	guint		ttl;		/* feed specified refresh interval */
 	/* Soup stuff */
 	SoupMessage *message;
-	guint		error;		//invalid feed
-	char		*strerror;	//error msg
+	guint		error;		/* invalid feed */
+	char		*strerror;	/* error msg */
 	GArray		*uids;
 } RDF;
 
-//we keep these values of a feed to be deleted in order
-//to easily restore in case delete does not success or
-//it is canceled
+/* we keep these values of a feed to be deleted in order
+   to easily restore in case delete does not success or
+   it is canceled                                         */
 typedef struct _hrfeed {
-	gchar *hrname;		//hr name <name> <key>
-	gchar *hrname_r;	//hr name <key> <name>
-	gchar *hr;		//hr url <key>, <url>
-	guint hre;		//hr enabled <key> <enabled>
-	gchar *hrt;		//hr type <key> <>
-	guint hrh;		//hr html <key> <>
+	gchar *hrname;		/* hr name <name> <key> */
+	gchar *hrname_r;	/* hr name <key> <name> */
+	gchar *hr;		/* hr url <key>, <url> */
+	guint hre;		/* hr enabled <key> <enabled> */
+	gchar *hrt;		/* hr type <key> <> */
+	guint hrh;		/* hr html <key> <> */
 	guint hrdel_feed;
 	guint hrdel_days;
 	guint hrdel_messages;
@@ -113,39 +113,39 @@ typedef struct _hrfeed {
 } hrfeed;
 
 typedef struct _rssfeed {
-	GHashTable      *hrname;		//bind feed name to key
-	GHashTable      *hrname_r;		//and mirrored structure for faster lookups
-	GHashTable      *hrcrc;			//crc32 to key binding
-	GHashTable      *hr;			//feeds hash
-	GHashTable      *hn;			//feeds hash
-	GHashTable      *hre;			//enabled feeds hash
-	GHashTable      *hrt;			//feeds name hash
-	GHashTable      *hrh;			//fetch html flag
-	GHashTable      *hruser;		//auth user hash
-	GHashTable      *hrpass;		//auth pass hash
-	gboolean	soup_auth_retry;	//wether to retry auth after an unsucessful auth
-	GHashTable      *hrdel_feed;		//option to delete messages in current feed
-	GHashTable      *hrdel_days;		//option to delete messages older then days
-	GHashTable      *hrdel_messages;	//option to keep last messages
-	GHashTable      *hrdel_unread;		//option to delete unread messages too
-	GHashTable      *hrdel_notpresent;	//option to delete messages that are not present in the feed
+	GHashTable      *hrname;		/* bind feed name to key */
+	GHashTable      *hrname_r;		/* and mirrored structure for faster lookups */
+	GHashTable      *hrcrc;			/* crc32 to key binding */
+	GHashTable      *hr;			/* feeds hash */
+	GHashTable      *hn;			/* feeds hash */
+	GHashTable      *hre;			/* enabled feeds hash */
+	GHashTable      *hrt;			/* feeds name hash */
+	GHashTable      *hrh;			/* fetch html flag */
+	GHashTable      *hruser;		/* auth user hash */
+	GHashTable      *hrpass;		/* auth pass hash */
+	gboolean	soup_auth_retry;	/* wether to retry auth after an unsucessful auth */
+	GHashTable      *hrdel_feed;		/* option to delete messages in current feed */
+	GHashTable      *hrdel_days;		/* option to delete messages older then days */
+	GHashTable      *hrdel_messages;	/* option to keep last messages */
+	GHashTable      *hrdel_unread;		/* option to delete unread messages too */
+	GHashTable      *hrdel_notpresent;	/* option to delete messages that are not present in the feed */
 	GHashTable      *hrttl;
 	GHashTable      *hrttl_multiply;
-	GHashTable      *hrupdate;		//feeds update method
+	GHashTable      *hrupdate;		/* feeds update method */
 	GtkWidget       *feed_dialog;
 	GtkWidget       *progress_dialog;
 	GtkWidget       *progress_bar;
 	GtkWidget       *label;
-	GtkWidget       *sr_feed;		//s&r upper text (feed)
+	GtkWidget       *sr_feed;		/* s&r upper text (feed) */
 	GtkWidget       *treeview;
 	GtkWidget       *edbutton;
 	GtkWidget	*errdialog;
 	GtkWidget	*preferences;
-	gchar		*err;			//if using soup _unblocking error goes here
-	gchar		*err_feed;		//name of the feed that caused above err
-	gchar           *cfeed;			//current feed name
-	gboolean	online;			//networkmanager dependant
-	gboolean	fe;			//feed enabled (at least one)
+	gchar		*err;			/* if using soup _unblocking error goes here */
+	gchar		*err_feed;		/* name of the feed that caused above err */
+	gchar           *cfeed;			/* current feed name */
+	gboolean	online;			/* networkmanager dependant */
+	gboolean	fe;			/* feed enabled (at least one) */
 #ifdef EVOLUTION_2_12
 	EMEventTargetSendReceive *t;
 #else
@@ -153,39 +153,39 @@ typedef struct _rssfeed {
 #endif
 	gboolean        setup;
 	gboolean        pending;
-	guint		import;			//import going on
-	gboolean	import_cancel;		//cancel all active imports going on
-	gboolean	display_cancel;		//cancel all active feeds displaying generated by imports
-	gboolean	autoupdate;		//feed is currently auto fetched
+	guint		import;			/* import going on */
+	gboolean	import_cancel;		/* cancel all active imports going on */
+	gboolean	display_cancel;		/* cancel all active feeds displaying generated by imports */
+	gboolean	autoupdate;		/* feed is currently auto fetched */
 	guint		feed_queue;
-	gboolean        cancel;			//cancelation signal
-	gboolean        cancel_all;		//cancelation signal
-	GHashTable      *session;		//queue of active unblocking sessions
-	GHashTable      *abort_session;		//this is a hack to be able to iterate when
-						//we remove keys from seesion with weak_ref
-	GHashTable      *key_session;		//queue of active unblocking sessions and keys linked
-	SoupSession     *b_session;		//active blocking session
-	SoupMessage     *b_msg_session;		//message running in the blocking session
+	gboolean        cancel;			/* cancelation signal */
+	gboolean        cancel_all;		/* cancelation signal */
+	GHashTable      *session;		/* queue of active unblocking sessions */
+	GHashTable      *abort_session;		/* this is a hack to be able to iterate when */
+						/* we remove keys from seesion with weak_ref */
+	GHashTable      *key_session;		/* queue of active unblocking sessions and keys linked */
+	SoupSession     *b_session;		/* active blocking session */
+	SoupMessage     *b_msg_session;		/* message running in the blocking session */
 	guint		rc_id;
-	struct _send_info *info;		//s&r data
+	struct _send_info *info;		/* s&r data */
 	struct userpass	*un;
 	guint		cur_format;
 	guint		chg_format;
-	guint		headers_mode;		//full/simple headers lame method used for gtkmoz & webkit widget calculation
-	GtkWidget	*mozembed;		// object holding gtkmozebmed struct
-						// apparently can only be one
+	guint		headers_mode;		/* full/simple headers lame method used for gtkmoz & webkit widget calculation */
+	GtkWidget	*mozembed;		/* object holding gtkmozebmed struct */
+						/* apparently can only be one */
 	GtkWidget	*moz;
-	gchar		*main_folder;		// "News&Blogs" folder name
-	GHashTable	*feed_folders;		// defined feeds folders
-	GHashTable	*reversed_feed_folders;	// easyer when we lookup for the value
+	gchar		*main_folder;		/* "News&Blogs" folder name */
+	GHashTable	*feed_folders;		/* defined feeds folders */
+	GHashTable	*reversed_feed_folders;	/* easyer when we lookup for the value */
 	GHashTable	*activity;
 	GHashTable	*error_hash;
 	guint		test;
-	char		*current_uid;		// currently read article
-	GQueue		*stqueue;		// network downloads tracking
-	GList		*enclist;		// network downloads tracking
+	char		*current_uid;		/* currently read article  */
+	GQueue		*stqueue;		/* network downloads tracking  */  
+	GList		*enclist;		/* network downloads tracking  */
 #if HAVE_DBUS
-	DBusConnection	*bus;			// DBUS
+	DBusConnection	*bus;			/* DBUS */
 #endif
 } rssfeed;
 
@@ -215,25 +215,25 @@ enum {
 typedef struct ADD_FEED {
 	GtkWidget	*dialog;
 	GtkWidget	*progress;
-	GtkWidget	*child;		//the dialog child
+	GtkWidget	*child;		/*  the dialog child  */
 	GtkBuilder	*gui;
 	gchar           *feed_url;
 	gchar		*feed_name;
 	gchar		*prefix;
-	gchar		*tmsg;		//status bar message
-	gboolean        fetch_html;	//show webpage instead of summary
-	gboolean        add;		//ok button
+	gchar		*tmsg;		/* status bar message  */
+	gboolean        fetch_html;	/* show webpage instead of summary  */
+	gboolean        add;		/* ok button  */
 	gboolean	changed;
 	gboolean	enabled;
 	gboolean	validate;
 	guint		del_feed;
-	guint		del_days;	// delete messages over del_days old
-	guint		del_messages;	// delete all messages but the last del_messages
-	gboolean	del_unread;	// delete unread messages too
-	gboolean	del_notpresent;	// delete messages that are not present in the feed
-	guint		ttl;	// recommended update time
-	guint		ttl_multiply;	// how much we multiyply ttl value (minutes)
-	guint		update;	// feed update method global; ttl; disabled
+	guint		del_days;	/*  delete messages over del_days old */
+	guint		del_messages;	/*  delete all messages but the last del_messages */
+	gboolean	del_unread;	/*  delete unread messages too */
+	gboolean	del_notpresent;	/* delete messages that are not present in the feed */
+	guint		ttl;	/* recommended update time */
+	guint		ttl_multiply;	/* how much we multiyply ttl value (minutes) */
+	guint		update;	/* feed update method global; ttl; disabled */
 	gboolean	renamed;
 	gboolean	edit;
 	GFunc		ok;
@@ -297,25 +297,25 @@ struct _send_info {
 
 typedef struct CREATE_FEED {	/* used by create_mail function when called by unblocking fetch */
 	gchar *feed;
-	gchar *full_path;	// news&blogs path
+	gchar *full_path;	/* news&blogs path */
 	gchar 	*q,
-		*sender,	// author
-		*subj,		// subject
-		*body,		// body
-		*date,		// date
-		*dcdate,	// dublin core date
-		*website;	// article's webpage
+		*sender,	/* author */
+		*subj,		/* subject */
+		*body,		/* body    */
+		*date,		/* date    */
+		*dcdate,	/* dublin core date */
+		*website;	/* article's webpage */
 	gchar	*feedid;
-	gchar	*feed_fname;	// feed name file
+	gchar	*feed_fname;	/* feed name file */
 	gchar	*feed_uri;
-	gchar *encl;		//feed enclosure
+	gchar *encl;		/* feed enclosure */
 	gchar *enclurl;
-	GList *attachments;	//feed media files
-	GList *attachedfiles;	//list of downloaded media files
-	guint attachmentsqueue;	//list of downloaded media files
-	FILE *efile;		//enclosure file
+	GList *attachments;	/* feed media files */
+	GList *attachedfiles;	/* list of downloaded media files */
+	guint attachmentsqueue;	/* list of downloaded media files */
+	FILE *efile;		/* enclosure file */
 	gchar *comments;
-	GList *category;	// list of categories article is posted under
+	GList *category;	/* list of categories article is posted under */
 } create_feed;
 
 typedef struct rss_auth {
@@ -506,9 +506,9 @@ finish_update_feed_image (
 	SoupMessage *msg,
 	gpointer user_data);
 #endif
-//#if EVOLUTION_VERSION >= 22900
+/* #if EVOLUTION_VERSION >= 22900 */
 void get_shell(void *ep, ESEventTargetShell *t);
-//#endif
+/* #endif */
 void rss_finalize(void);
 gboolean check_update_feed_image(gchar *key);
 void update_main_folder(gchar *new_name);

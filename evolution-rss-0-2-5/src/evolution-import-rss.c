@@ -36,7 +36,7 @@
 #define DBUS_INTERFACE "org.gnome.evolution.mail.rss.in"
 #define DBUS_REPLY_INTERFACE "org.gnome.evolution.mail.rss.out"
 
-//evolution ping roud-trip time in ms, somebody suggest a real value here
+/* evolution ping roud-trip time in ms, somebody suggest a real value here */
 #define EVOLUTION_PING_TIMEOUT 5000
 
 static gboolean init_dbus (void);
@@ -74,11 +74,11 @@ send_dbus_message (const char *name, const char *data)
 	
 	/* Appends the data as an argument to the message */
 	dbus_message_append_args (message,
-//#if DBUS_VERSION >= 310
+/* #if DBUS_VERSION >= 310 */
 			  DBUS_TYPE_STRING, &data,
-//#else
-//			  DBUS_TYPE_STRING, data,
-//#endif
+/* #else
+			  DBUS_TYPE_STRING, data,
+#endif                               */
 			  DBUS_TYPE_INVALID);
 
 	/* Sends the message */

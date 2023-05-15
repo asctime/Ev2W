@@ -79,7 +79,7 @@ void
 free_hash(gpointer key, gpointer value, gpointer user_data)
 {
 	g_print("FREE - key:%p, value:%p\n", (gchar *)key, (gchar *)value);
-//	xmlFreeDoc(key);
+/*	xmlFreeDoc(key);   */
 }
 
 void
@@ -153,7 +153,7 @@ strextr(gchar *text, const gchar *substr)
 
 	if (substr == NULL)
 		return g_strdup(text);
-	//first check if string contains the substring
+	/* first check if string contains the substring */
 	if (!strstr(text, substr))
 		return g_strdup(text);
 
@@ -167,8 +167,8 @@ strextr(gchar *text, const gchar *substr)
 	return string;
 }
 
-//prefixes uri with http:// if it's misssing
-//resulting text should be freed when no longer needed
+/* prefixes uri with http:// if it's misssing
+   resulting text should be freed when no longer needed  */
 gchar *
 sanitize_url(gchar *text)
 {
@@ -212,9 +212,9 @@ sanitize_url(gchar *text)
 	return out;
 }
 
-//evolution folder must not contain certain chars
-//for instance "..." at the start of the string
-//or "/" anywhere in the string
+/* evolution folder must not contain certain chars
+   for instance "..." at the start of the string
+   or "/" anywhere in the string   */
 gchar *
 sanitize_folder(gchar *text)
 {
@@ -222,10 +222,10 @@ sanitize_folder(gchar *text)
 
 	g_return_val_if_fail( text != NULL, NULL);
 
-	//first convert "/" character
+	/* first convert "/" character  */
 	tmp = g_strdup(text);
 	g_strdelimit(tmp, "/", '|');
-	// Strip leading dots
+	/* Strip leading dots   */
 	tmp2 = tmp;
 	while (*tmp2 == '.') tmp2++;
 	tmp2 = g_strdup (tmp2);
@@ -558,13 +558,13 @@ feed_remove_status_line(gchar *file_name, gchar *needle)
 	gchar *tmpneedle, *port, *tp;
 	gchar *tmp = e_mktemp("evo-rss-XXXXXX");
 	if (tmp) {
-		fw = fopen(tmp, "w+");
+		fw = fopen(tmp, "w+b");
 		if (!fw)
 			return;
 	}
 
 	memset(rfeed, 0, 512);
-	fr = fopen(file_name, "r");
+	fr = fopen(file_name, "rb");
 	tmpneedle = NULL;
 	port =  get_port_from_uri(needle);
 	if (port && atoi(port) == 80) {
@@ -589,8 +589,8 @@ feed_remove_status_line(gchar *file_name, gchar *needle)
 	g_free(tmpneedle);
 }
 
-//check if feed already exists in feed file
-//and if not add it to the feed file
+/* check if feed already exists in feed file
+   and if not add it to the feed file   */
 gboolean
 feed_is_new(gchar *file_name, gchar *needle)
 {
@@ -600,7 +600,7 @@ feed_is_new(gchar *file_name, gchar *needle)
 	gchar *tmpneedle, *port, *tp;
 
 	memset(rfeed, 0, 512);
-	fr = fopen(file_name, "r");
+	fr = fopen(file_name, "rb");
 	tmpneedle = NULL;
 	port =  get_port_from_uri(needle);
 	if (port && atoi(port) == 80) {
@@ -627,7 +627,7 @@ feed_is_new(gchar *file_name, gchar *needle)
 void
 write_feed_status_line(gchar *file, gchar *needle)
 {
-	FILE *fw = fopen(file, "a+");
+	FILE *fw = fopen(file, "a+b");
 	if (fw) {
 		fputs(g_strstrip(needle), fw);
 		fputs("\n", fw);

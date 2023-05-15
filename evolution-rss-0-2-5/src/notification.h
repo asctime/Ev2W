@@ -16,7 +16,7 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 EActivity*
 taskbar_op_message(gchar *msg, gchar *unikey);
 #else

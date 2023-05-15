@@ -73,8 +73,8 @@ typedef struct {
 } STNET;
 
 #define DOWNLOAD_QUEUE_SIZE 15
-guint net_qid = 0;		// net queue dispatcher
-guint net_queue_run_count = 0; //downloads in progress
+guint net_qid = 0;		/* net queue dispatcher */
+guint net_queue_run_count = 0; /* downloads in progress */
 
 static void
 #if LIBSOUP_VERSION < 2003000
@@ -211,7 +211,7 @@ unblock_free (gpointer user_data, GObject *ex_msg)
 	g_hash_table_find(rf->key_session,
 		remove_if_match,
 		user_data);
-	//this has been moved to soup-internal
+	/* this has been moved to soup-internal */
 	/*gboolean prune = soup_session_try_prune_connection (user_data);
 	if (prune)
 		g_object_unref(user_data);*/
@@ -264,7 +264,7 @@ proxify_webkit_session(EProxy *proxy, gchar *uri)
 
 }
 
-//this will insert proxy in the session
+/* this will insert proxy in the session */
 void
 proxify_session(EProxy *proxy, SoupSession *session, gchar *uri)
 {
@@ -329,7 +329,7 @@ read_up(gpointer data)
 	g_free(feed_dir);
 	d("reading auth info:%s\n", feed_name);
 
-	fr = fopen(feed_name, "r");
+	fr = fopen(feed_name, "rb");
 	if (fr) {
 		fgets(rfeed, 511, fr);
 		g_hash_table_insert(
@@ -361,7 +361,7 @@ save_up(gpointer data)
 	feed_name = g_strdup_printf("%s" G_DIR_SEPARATOR_S "%s", feed_dir, buf);
 	g_free(feed_dir);
 
-	fr = fopen(feed_name, "w+");
+	fr = fopen(feed_name, "w+b");
 	if (fr) {
 		user = g_hash_table_lookup(rf->hruser, data);
 			fputs(user, fr);
@@ -420,8 +420,8 @@ authenticate (SoupSession *session,
 	g_object_get (G_OBJECT(session),
 				"proxy-uri", &proxy_uri,
 				NULL);
-	//proxy_auth_dialog("Proxy Authentication", proxy_uri->user, proxy_uri->password);
-	//g_object_set (G_OBJECT (session), SOUP_SESSION_PROXY_URI, proxy_uri, NULL);
+	/* proxy_auth_dialog("Proxy Authentication", proxy_uri->user, proxy_uri->password);
+	g_object_set (G_OBJECT (session), SOUP_SESSION_PROXY_URI, proxy_uri, NULL); */
 	return;
 	}
 
@@ -455,13 +455,13 @@ authenticate (SoupSession *session,
 			return;
 #endif
 		}
-		//we test for autofetching in progresss because it seems
-		//preety annoying to pop the authentication popup in front
-		//of the user every time feeds are automatically fetched
+		/* we test for autofetching in progresss because it seems
+		   preety annoying to pop the authentication popup in front
+		   of the user every time feeds are automatically fetched  */
 		if (!rf->autoupdate) {
-			//we will continue after user has made a decision on
-			//web auth dialog
-			//Bug 522147 – need to be able to pause synchronous I/O
+			/* we will continue after user has made a decision on
+			   web auth dialog
+			   Bug 522147 – need to be able to pause synchronous I/O */
 authpop:		if (G_OBJECT_TYPE(session) == SOUP_TYPE_SESSION_ASYNC) {
 				soup_session_pause_message(session, msg);
 			}
@@ -487,8 +487,8 @@ reauthenticate (SoupSession *session,
 		gpointer data)
 {
 	if (rf->soup_auth_retry) {
-		//means we're already tested once and probably
-		//won't try again
+		/* means we're already tested once and probably
+		   won't try again */
 		rf->soup_auth_retry = FALSE;
 		if (create_user_pass_dialog(data)) {
 			rf->soup_auth_retry = FALSE;
@@ -527,7 +527,7 @@ net_get_status(const char *url, GError **err)
 	req = soup_message_new(SOUP_METHOD_GET, url);
 	if (!req) {
 		g_set_error(err, NET_ERROR, NET_ERROR_GENERIC, "%s",
-				soup_status_get_phrase(2));			//invalid url
+				soup_status_get_phrase(2));			/* invalid url */
 		goto out;
 	}
 	for (; headers; headers = headers->next) {
@@ -563,7 +563,7 @@ net_get_status(const char *url, GError **err)
 	soup_session_send_message(soup_sess, req);
 
 	if (req->status_code != SOUP_STATUS_OK) {
-		//might not be a good ideea
+		/* might not be a good ideea */
 		soup_session_abort(soup_sess);
 		g_object_unref(soup_sess);
 		rf->b_session = NULL;
@@ -655,13 +655,13 @@ net_get_unblocking(gchar *url,
 	msg = soup_message_new ("GET", url);
 	if (!msg) {
 		g_set_error(err, NET_ERROR, NET_ERROR_GENERIC, "%s",
-				soup_status_get_phrase(2));			//invalid url
+				soup_status_get_phrase(2));			/* invalid url */
 		return FALSE;
 	}
 
 	if (track) {
-		//we want to be able to abort this session by calling
-		//abort_all_soup
+		/* we want to be able to abort this session by calling
+		   abort_all_soup  */
 		g_hash_table_insert(rf->session, soup_sess, msg);
 		g_hash_table_insert(rf->abort_session, soup_sess, msg);
 		g_hash_table_insert(rf->key_session, data, soup_sess);
@@ -680,7 +680,7 @@ net_get_unblocking(gchar *url,
 
 	if (info) {
 		g_signal_connect(G_OBJECT(msg), "got_chunk",
-			G_CALLBACK(got_chunk_cb), info);	//FIXME Find a way to free this maybe weak_ref
+			G_CALLBACK(got_chunk_cb), info);	/* FIXME Find a way to free this maybe weak_ref */
 		soup_message_set_flags (msg, SOUP_MESSAGE_NO_REDIRECT);
 		soup_message_add_header_handler (msg, "got_body",
 			"Location", G_CALLBACK (redirect_handler), info);
@@ -690,17 +690,17 @@ net_get_unblocking(gchar *url,
 	soup_session_queue_message (soup_sess, msg,
 		cb2, cbdata2);
 
-////	g_object_add_weak_pointer (G_OBJECT(msg), (gpointer)info);
+/*	g_object_add_weak_pointer (G_OBJECT(msg), (gpointer)info); */
 	g_object_weak_ref (G_OBJECT(msg), unblock_free, soup_sess);
-//	g_object_weak_ref (G_OBJECT(soup_sess), unblock_free, soup_sess);
-//	GMainLoop *mainloop = g_main_loop_new (g_main_context_default (), FALSE);
-//	g_timeout_add (10 * 1000, &conn_mainloop_quit, mainloop);
+/*	g_object_weak_ref (G_OBJECT(soup_sess), unblock_free, soup_sess);
+  	GMainLoop *mainloop = g_main_loop_new (g_main_context_default (), FALSE);
+    g_timeout_add (10 * 1000, &conn_mainloop_quit, mainloop);  */
 	return TRUE;
 }
 
 
-// same stuff as net_get_* but without accumulating headers
-// push all donwloads to a customizable length queue
+/* same stuff as net_get_* but without accumulating headers
+   push all donwloads to a customizable length queue   */
 gboolean
 download_unblocking(
 	gchar *url,
@@ -750,13 +750,13 @@ download_unblocking(
 	msg = soup_message_new ("GET", url);
 	if (!msg) {
 		g_set_error(err, NET_ERROR, NET_ERROR_GENERIC, "%s",
-				soup_status_get_phrase(2));			//invalid url
+				soup_status_get_phrase(2));			/* invalid url */
 		return FALSE;
 	}
 
 	if (track) {
-		//we want to be able to abort this session by calling
-		//abort_all_soup
+		/* we want to be able to abort this session by calling
+		   abort_all_soup    */
 		g_hash_table_insert(rf->session, soup_sess, msg);
 		g_hash_table_insert(rf->abort_session, soup_sess, msg);
 		g_hash_table_insert(rf->key_session, data, soup_sess);
@@ -775,7 +775,7 @@ download_unblocking(
 
 	if (info) {
 		g_signal_connect(G_OBJECT(msg), "got_chunk",
-			G_CALLBACK(got_chunk_cb), info);	//FIXME Find a way to free this maybe weak_ref
+			G_CALLBACK(got_chunk_cb), info);	/* FIXME Find a way to free this maybe weak_ref */
 	}
 
 	soup_message_set_flags (msg, SOUP_MESSAGE_NO_REDIRECT);
@@ -794,11 +794,11 @@ download_unblocking(
 	if (!net_qid)
 		net_qid = g_idle_add((GSourceFunc)net_queue_dispatcher, NULL);
 
-////	g_object_add_weak_pointer (G_OBJECT(msg), (gpointer)info);
+/*	g_object_add_weak_pointer (G_OBJECT(msg), (gpointer)info); */
 	g_object_weak_ref (G_OBJECT(msg), unblock_free, soup_sess);
-//	g_object_weak_ref (G_OBJECT(soup_sess), unblock_free, soup_sess);
-//	GMainLoop *mainloop = g_main_loop_new (g_main_context_default (), FALSE);
-//	g_timeout_add (10 * 1000, &conn_mainloop_quit, mainloop);
+/*	g_object_weak_ref (G_OBJECT(soup_sess), unblock_free, soup_sess);
+    GMainLoop *mainloop = g_main_loop_new (g_main_context_default (), FALSE);
+    g_timeout_add (10 * 1000, &conn_mainloop_quit, mainloop);  */
 	return TRUE;
 }
 
@@ -872,7 +872,7 @@ net_post_blocking(gchar *url,
 	req = soup_message_new(SOUP_METHOD_GET, url);
 	if (!req) {
 		g_set_error(err, NET_ERROR, NET_ERROR_GENERIC, "%s",
-				soup_status_get_phrase(2));			//invalid url
+				soup_status_get_phrase(2));			/* invalid url */
 		goto out;
 	}
 	d("request ok :%d\n", req->status_code);
@@ -918,7 +918,7 @@ net_post_blocking(gchar *url,
 	soup_session_send_message(soup_sess, req);
 
 	if (req->status_code != SOUP_STATUS_OK) {
-		//might not be a good ideea
+		/* might not be a good ideea */
 		soup_session_abort(soup_sess);
 		g_object_unref(soup_sess);
 		rf->b_session = NULL;
@@ -967,14 +967,14 @@ remove_weak(gpointer key, gpointer value, gpointer user_data)
 void
 abort_all_soup(void)
 {
-	//abort all session
+	/* abort all session  */
 	rf->cancel = 1;
 	rf->cancel_all = 1;
 	if (rf->abort_session) {
 		g_hash_table_foreach(rf->abort_session, remove_weak, NULL);
 		g_hash_table_foreach_remove(
 			rf->abort_session, cancel_soup_sess, NULL);
-//              g_hash_table_foreach(rf->abort_session, cancel_soup_sess, NULL);
+/*     g_hash_table_foreach(rf->abort_session, cancel_soup_sess, NULL); */
 		g_hash_table_destroy(rf->session);
 		rf->session = g_hash_table_new(
 				g_direct_hash, g_direct_equal);
@@ -982,7 +982,7 @@ abort_all_soup(void)
 	if (rf->progress_bar) {
 		gtk_progress_bar_set_fraction(
 			(GtkProgressBar *)rf->progress_bar, 1);
-		rf->progress_bar = NULL;        //there's no need to update bar once we canceled feeds
+		rf->progress_bar = NULL;  /* there's no need to update bar once we canceled feeds */
 	}
 	if (rf->b_session) {
 		soup_session_abort(rf->b_session);
@@ -996,11 +996,11 @@ abort_all_soup(void)
 void
 sync_gecko_cookies(void)
 {
-	//this currently sux as firefox 3.5b will open
-	//cookie database file exclusively, that means import will fail
-	//even fetch will fail - we should copy this file separately for
-	//gecko renderer
-	//symlink(cookie_path, moz_cookie_path);
+	/* this currently sux as firefox 3.5b will open
+	   cookie database file exclusively, that means import will fail
+	   even fetch will fail - we should copy this file separately for
+	   gecko renderer
+	   symlink(cookie_path, moz_cookie_path);   */
 	GFile *cookie_file, *moz_cookie_file;
 	gchar *feed_dir = rss_component_peek_base_directory();
 	gchar *cookie_path = g_build_path(

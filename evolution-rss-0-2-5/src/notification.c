@@ -21,7 +21,7 @@
 #include <glib/gi18n.h>
 
 #include <mail/em-utils.h>
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 #include <e-util/e-alert-dialog.h>
 #include <shell/e-shell-taskbar.h>
 #include <shell/e-shell-view.h>
@@ -40,7 +40,7 @@ extern int rss_verbose_debug;
 #include "network-soup.h"
 #include "notification.h"
 
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 extern EShellView *rss_shell_view;
 #endif
 extern rssfeed *rf;
@@ -65,7 +65,7 @@ rss_error(gpointer key, gchar *name, gchar *error, gchar *emsg)
 	GtkWidget *ed;
 	gchar *msg;
 	gpointer newkey;
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 	EShell *shell;
 	GtkWindow *parent;
 	GList *windows;
@@ -82,8 +82,8 @@ rss_error(gpointer key, gchar *name, gchar *error, gchar *emsg)
 #if (EVOLUTION_VERSION >= 22200)
 	if (key) {
 		if (!g_hash_table_lookup(rf->error_hash, key)) {
-//			guint activity_id = g_hash_table_lookup(rf->activity, key);
-#if (EVOLUTION_VERSION >= 22900) //kb//
+/*	guint activity_id = g_hash_table_lookup(rf->activity, key); */
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 			shell = e_shell_get_default ();
 			windows = e_shell_get_watched_windows (shell);
 			parent = (windows != NULL) ? GTK_WINDOW (windows->data) : NULL;
@@ -107,12 +107,12 @@ rss_error(gpointer key, gchar *name, gchar *error, gchar *emsg)
 				"destroy",
 				G_CALLBACK(dialog_key_destroy),
 				newkey);
-			//lame widget destruction, seems e_activity timeout does not destroy it
+			/* lame widget destruction, seems e_activity timeout does not destroy it */
 			g_timeout_add_seconds(60, 
 				(GSourceFunc)gtk_widget_destroy,
 				ed);
 
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		em_utils_show_error_silent(ed);
 		g_hash_table_insert(
 			rf->error_hash,
@@ -145,7 +145,7 @@ rss_error(gpointer key, gchar *name, gchar *error, gchar *emsg)
 #endif
 
 	if (!rf->errdialog) {
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		shell = e_shell_get_default ();
 		windows = e_shell_get_watched_windows (shell);
 		parent = (windows != NULL) ? GTK_WINDOW (windows->data) : NULL;
@@ -174,7 +174,7 @@ out:    g_free(msg);
 void
 taskbar_push_message(gchar *message)
 {
-#if EVOLUTION_VERSION < 22900 //kb//
+#if EVOLUTION_VERSION < 22900 /* kb */
 	EActivityHandler *activity_handler =
 		mail_component_peek_activity_handler (mail_component_peek ());
 	e_activity_handler_set_message(activity_handler, message);
@@ -190,7 +190,7 @@ taskbar_push_message(gchar *message)
 void
 taskbar_pop_message(void)
 {
-#if EVOLUTION_VERSION < 22900 //kb//
+#if EVOLUTION_VERSION < 22900 /* kb */
 	EActivityHandler *activity_handler =
 		mail_component_peek_activity_handler (mail_component_peek ());
 	e_activity_handler_unset_message(activity_handler);
@@ -205,7 +205,7 @@ taskbar_pop_message(void)
 void
 taskbar_op_abort(gpointer key)
 {
-#if EVOLUTION_VERSION < 22900 //kb//
+#if EVOLUTION_VERSION < 22900 /* kb */
 	EActivityHandler *activity_handler =
 		mail_component_peek_activity_handler (mail_component_peek ());
 	guint activity_key =
@@ -219,7 +219,7 @@ taskbar_op_abort(gpointer key)
 	abort_all_soup();
 }
 
-#if EVOLUTION_VERSION >= 22900 //kb//
+#if EVOLUTION_VERSION >= 22900 /* kb */
 EActivity *
 #else
 guint
@@ -230,7 +230,7 @@ taskbar_op_new(gchar *message, gpointer key);
 taskbar_op_new(gchar *message);
 #endif
 
-#if EVOLUTION_VERSION >= 22900 //kb//
+#if EVOLUTION_VERSION >= 22900 /* kb */
 EActivity *
 #else
 guint
@@ -241,7 +241,7 @@ taskbar_op_new(gchar *message, gpointer key)
 taskbar_op_new(gchar *message)
 #endif
 {
-#if EVOLUTION_VERSION >= 22900 //kb//
+#if EVOLUTION_VERSION >= 22900 /* kb */
 	EShell *shell;
 	EShellBackend *shell_backend;
 	EActivity *activity;
@@ -254,7 +254,7 @@ taskbar_op_new(gchar *message)
 	GdkPixbuf *progress_icon;
 #endif
 
-#if EVOLUTION_VERSION >= 22900 //kb//
+#if EVOLUTION_VERSION >= 22900 /* kb */
 
 	shell = e_shell_get_default ();
 	shell_backend = e_shell_get_backend_by_name (shell, "mail");
@@ -307,13 +307,13 @@ taskbar_op_new(gchar *message)
 #endif
 	g_free(mcp);
 	return activity_id;
-#endif //kb//
+#endif /* kb */
 }
 
 void
 taskbar_op_set_progress(gchar *key, gchar *msg, gdouble progress)
 {
-#if (EVOLUTION_VERSION < 22900) //kb//
+#if (EVOLUTION_VERSION < 22900) /* kb */
 	EActivityHandler *activity_handler;
 	guint activity_id;
 #else
@@ -324,7 +324,7 @@ taskbar_op_set_progress(gchar *key, gchar *msg, gdouble progress)
 
 	g_return_if_fail(key != NULL);
 
-#if (EVOLUTION_VERSION < 22900) //kb//
+#if (EVOLUTION_VERSION < 22900) /* kb */
 	activity_handler = mail_component_peek_activity_handler
 				(mail_component_peek ());
 	activity_id = GPOINTER_TO_INT(
@@ -334,7 +334,7 @@ taskbar_op_set_progress(gchar *key, gchar *msg, gdouble progress)
 #endif
 
 	if (activity_id) {
-#if (EVOLUTION_VERSION < 22900) //kb//
+#if (EVOLUTION_VERSION < 22900) /* kb */
 		e_activity_handler_operation_progressing(
 			activity_handler,
 			activity_id,
@@ -349,7 +349,7 @@ taskbar_op_set_progress(gchar *key, gchar *msg, gdouble progress)
 void
 taskbar_op_finish(gchar *key)
 {
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 	EActivity *aid = NULL;
 	EActivity *activity_key;
 #else
@@ -359,21 +359,21 @@ taskbar_op_finish(gchar *key)
 						mail_component_peek ());
 #endif
 	if (key) {
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		aid = (EActivity *)g_hash_table_lookup(rf->activity, key);
 #else
 		aid = (guint)g_hash_table_lookup(rf->activity, key);
 #endif
 	}
 	if (aid == NULL) {
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		activity_key = g_hash_table_lookup(rf->activity, "main");
 #else
 		activity_key = GPOINTER_TO_INT(g_hash_table_lookup(rf->activity, "main"));
 #endif
 		if (activity_key) {
 			d("activity_key:%p\n", (gpointer)activity_key);
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 			e_activity_complete (activity_key);
 #else
 			e_activity_handler_operation_finished(activity_handler, activity_key);
@@ -381,7 +381,7 @@ taskbar_op_finish(gchar *key)
 			g_hash_table_remove(rf->activity, "main");
 		}
 	} else {
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		e_activity_complete (aid);
 #else
 		e_activity_handler_operation_finished(activity_handler, aid);
@@ -390,7 +390,7 @@ taskbar_op_finish(gchar *key)
 	}
 }
 
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 EActivity*
 #else
 guint
@@ -398,7 +398,7 @@ guint
 taskbar_op_message(gchar *msg, gchar *unikey)
 {
 		gchar *tmsg;
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		EActivity *activity_id;
 #else
 #if (EVOLUTION_VERSION >= 22200)
@@ -412,7 +412,7 @@ taskbar_op_message(gchar *msg, gchar *unikey)
 		else
 			tmsg = g_strdup(msg);
 
-#if (EVOLUTION_VERSION >= 22900) //kb//
+#if (EVOLUTION_VERSION >= 22900) /* kb */
 		if (!msg)
 			activity_id =
 				(EActivity *)taskbar_op_new(

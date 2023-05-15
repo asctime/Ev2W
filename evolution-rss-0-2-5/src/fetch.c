@@ -70,9 +70,9 @@ error:
 	return result;
 }
 
-//fetch feed
-//FIXME gio callback hardcoded
-// data - also used as key in key_session when track = 1
+/* fetch feed
+FIXME gio callback hardcoded
+ data - also used as key in key_session when track = 1 */
 
 gboolean
 fetch_unblocking(gchar *url, NetStatusCallback cb, gpointer data,
@@ -90,7 +90,7 @@ fetch_unblocking(gchar *url, NetStatusCallback cb, gpointer data,
 	if (!g_ascii_strcasecmp(scheme, "file")) {
 		g_free(scheme);
 		return file_get_unblocking(url,
-				NULL, // add status here //
+				NULL, /* add status here */
 				NULL,
 				cb2,
 				cbdata2,
