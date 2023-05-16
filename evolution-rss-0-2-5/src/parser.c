@@ -18,6 +18,13 @@
 
 #include <string.h>
 #include <glib/gi18n-lib.h>
+#ifdef G_OS_WIN32
+#if defined(__MINGW32__) && !defined(_WIN32_IE) /* for urlmon api */
+#define _WIN32_IE 0x0700
+#endif
+#include <Windows.h>
+#include <Urlmon.h>
+#endif
 
 #include <libxml/parserInternals.h>
 #include <libxml/xmlmemory.h>
@@ -181,8 +188,10 @@ xml_parse_sux (const char *buf, int len)
 	static xmlSAXHandler *sax;
 	xmlParserCtxtPtr ctxt;
 	xmlDoc *doc = NULL;
-	gchar *mime_type;
+	gchar *mime_type = NULL;
+#ifndef G_OS_WIN32 
 	gboolean uncertain;
+#endif
 
 	rsserror = FALSE;
 
@@ -190,17 +199,26 @@ xml_parse_sux (const char *buf, int len)
 	/* we might be forced to lower detection buffer size as
 	 * application/ is often misdetected as text/html
 	 */
+#ifdef G_OS_WIN32 /* half of this is churning WIN types back to glib */
+  LPWSTR wmime_type = NULL;
+  FindMimeFromData(NULL, NULL, buf, 100, NULL, 
+    FMFD_ENABLEMIMESNIFFING | FMFD_IGNOREMIMETEXTPLAIN, &wmime_type, 0);
+  int mime_len = wcslen(wmime_type) + 1; /* include NULL */
+  mime_type = g_malloc(mime_len);
+  wcstombs(mime_type, wmime_type, mime_len);
+#else
 	mime_type = g_content_type_guess(NULL, (guchar *)buf, 100, &uncertain);
-	dp("mime:%s, uncertain:%d\n", mime_type, uncertain);
+#endif
+	g_debug("RSS Feed doctype: %s", mime_type);
+
+  /* asctime. Using different runtime and OS, let's see, hmm */
 	/* feeding parsed anything other than xml results in blocking delays
 	   it's possible we can relax parser by using xmlErrorFunc
-	   UPDATE: add text/* - but exclude text/html I've seen huge delays because of this
+	   UPDATE: add text/-* - but exclude text/html I've seen huge delays because of this
 	   I doubt there'll be any text/html feeds   */
-#ifndef __MINGW32__
 	if (!g_ascii_strncasecmp (mime_type, "application/", 12)
 	   || (!g_ascii_strncasecmp (mime_type, "text/", 5)
 	   && g_ascii_strncasecmp (mime_type, "text/html", 9))) {
-#endif
 		if (!sax) {
 	    dp("SAX parser created.\n");
 			xmlInitParser();
@@ -239,12 +257,10 @@ xml_parse_sux (const char *buf, int len)
 		doc = ctxt->myDoc;
 		ctxt->sax = NULL;
 		xmlFreeParserCtxt (ctxt);
-#ifndef __MINGW32__
 	} else {
 		rsserror = TRUE;
 	  dp("RSS Error in SAX Context.\n");
 	}
-#endif
 	g_free(mime_type);
 	return doc;
 }
@@ -1243,9 +1259,6 @@ refresh_mail_folder(CamelFolder *mail_folder)
 	camel_folder_sync(mail_folder, FALSE, NULL);
 	camel_folder_thaw(mail_folder);
 }
-
-void
-refresh_mail_folder(CamelFolder *mail_folder);
 
 gchar *
 update_channel(RDF *r)

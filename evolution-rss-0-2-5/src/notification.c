@@ -108,9 +108,7 @@ rss_error(gpointer key, gchar *name, gchar *error, gchar *emsg)
 				G_CALLBACK(dialog_key_destroy),
 				newkey);
 			/* lame widget destruction, seems e_activity timeout does not destroy it */
-			g_timeout_add_seconds(60, 
-				(GSourceFunc)gtk_widget_destroy,
-				ed);
+			g_timeout_add_seconds(60,	(GSourceFunc)gtk_widget_destroy, ed);
 
 #if (EVOLUTION_VERSION >= 22900) /* kb */
 		em_utils_show_error_silent(ed);
@@ -287,7 +285,7 @@ taskbar_op_new(gchar *message)
 		e_icon_factory_get_icon (
 			"mail-unread",
 			E_ICON_SIZE_MENU);
-#if (EVOLUTION_VERSION >= 22200)
+#if (EVOLUTION_VERSION >= 22900)
 	activity_id =
 		e_activity_handler_cancelable_operation_started(
 			activity_handler,

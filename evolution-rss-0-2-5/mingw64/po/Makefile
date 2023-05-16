@@ -35,7 +35,7 @@ datarootdir = ${prefix}/share
 libdir = ${exec_prefix}/lib
 localedir = /MSYS2/mingw64/share/locale
 subdir = po
-install_sh = ${SHELL} /d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/install-sh
+install_sh = ${SHELL} /d/Download/MinGW-64-souorce/evolution-rss-0-2-5/install-sh
 # Automake >= 1.8 provides $(MKDIR_P).
 # Until it can be supposed, use the safe fallback:
 mkdir_p = $(install_sh) -d

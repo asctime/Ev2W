@@ -99,7 +99,7 @@ liborg_gnome_evolution_rss_la_LDFLAGS = -module -avoid-version $(NO_UNDEFINED)
 #$(GECKO_RPATH)
 
 evolution_import_rss_SOURCES = evolution-import-rss.c
-evolution_import_rss_LDFLAGS = $(DBUS_LIBS)
+evolution_import_rss_LDFLAGS = $(DBUS_LIBS) -lurlmon
 
 
 schemadir	= $(GCONF_SCHEMA_FILE_DIR)

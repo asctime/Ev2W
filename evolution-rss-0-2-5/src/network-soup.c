@@ -235,9 +235,12 @@ proxify_webkit_session(EProxy *proxy, gchar *uri)
 	gint ptype = gconf_client_get_int (rss_gconf, KEY_GCONF_EVO_PROXY_TYPE, NULL);
 
 	switch (ptype) {
-#ifndef HAVE_LIBSOUP_GNOME
 	case 0:
+#ifdef HAVE_LIBSOUP_GNOME
+		soup_session_add_feature_by_type (
+			webkit_session, SOUP_TYPE_PROXY_RESOLVER_GNOME);
 #endif
+    break;
 	case 2:
 		if (e_proxy_require_proxy_for_uri (proxy, uri)) {
 #if (DATASERVER_VERSION >=2026000)
@@ -249,17 +252,11 @@ proxify_webkit_session(EProxy *proxy, gchar *uri)
 #endif
 		} else  {
 			d("webkit no PROXY-%s\n", uri);
+		  break;
 		}
-		break;
 		g_object_set (
 			G_OBJECT (webkit_session),
 			SOUP_SESSION_PROXY_URI, proxy_uri, NULL);
-#ifdef HAVE_LIBSOUP_GNOME
-	case 0:
-		soup_session_add_feature_by_type (
-			webkit_session, SOUP_TYPE_PROXY_RESOLVER_GNOME);
-		break;
-#endif
 	}
 
 }

@@ -210,28 +210,28 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/missing' aclocal-1.16
+ACLOCAL = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-0-2-5/missing' aclocal-1.16
 ACLOCAL_AMFLAGS = -I m4
 ALL_LINGUAS = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AUTOCONF = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/missing' autoconf
-AUTOHEADER = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/missing' autoheader
-AUTOMAKE = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/missing' automake-1.16
+AUTOCONF = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-0-2-5/missing' autoconf
+AUTOHEADER = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-0-2-5/missing' autoheader
+AUTOMAKE = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-0-2-5/missing' automake-1.16
 AWK = gawk
 BONBONO_LIBDIR = 
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -g -O2 -std=iso9899:1990 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions   -DG_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DG_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE -Wall -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wno-unused-parameter -Wdeclaration-after-statement -Werror-implicit-function-declaration -Wformat-security -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wmissing-noreturn -Wnested-externs -Wpointer-arith -Wredundant-decls -Wundef -Wwrite-strings
+CFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -g -O2 -std=iso9899:1990 -mms-bitfields -pipe -mtune=sandybridge -fomit-frame-pointer -DWIN32 -DWIN64 -D_WIN32_IE=0x0700 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -MD -MT -fasynchronous-unwind-tables -fexceptions   -DG_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DG_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES -DGSEAL_ENABLE -Wall -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wno-unused-parameter -Wdeclaration-after-statement -Werror-implicit-function-declaration -Wformat-security -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wmissing-noreturn -Wnested-externs -Wpointer-arith -Wredundant-decls -Wundef -Wwrite-strings
 CPP = gcc -E
-CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -g -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
+CPPFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -g -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_IE=0x0700 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -D_FORTIFY_SOURCE=2 -MD -MT -fstack-protector-strong -fasynchronous-unwind-tables -fexceptions
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -D_FORTIFY_SOURCE=2 -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -g -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -MD -MT -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fasynchronous-unwind-tables -fexceptions
+CXXFLAGS = -D__USE_MINGW_ANSI_STDIO=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE -D_FORTIFY_SOURCE=2 -Wno-deprecated -Wno-deprecated-declarations -DGLIB_DISABLE_DEPRECATION_WARNINGS -g -O2 -mms-bitfields -pipe -fomit-frame-pointer -mtune=sandybridge -DWIN32 -DWIN64 -D_WIN32_IE=0x0700 -D_WIN32_WINNT=0x0501 -DWINVER=0x0501 -MD -MT -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fasynchronous-unwind-tables -fexceptions
 CYGPATH_W = cygpath -w
 DATADIRNAME = share
 DATASERVER_VERSION = 2032003
@@ -250,7 +250,7 @@ ERROR_DIR = D:/MSYS2/mingw64/bin/../share/evolution/2.32/errors
 EVOLUTION_2_12 = 
 EVOLUTION_DATASERVER_CFLAGS = -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr 
 EVOLUTION_DATASERVER_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 
-EVOLUTION_EXEC_VERSION = 23230
+EVOLUTION_EXEC_VERSION = 2.32
 EVOLUTION_RSS_EPLUGIN_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -ID:/MSYS2/mingw64/bin/../include/libsoup-2.4 -ID:/MSYS2/mingw64/bin/../include/libxml2 -ID:/MSYS2/mingw64/bin/../include/evolution-2.32 -ID:/MSYS2/mingw64/bin/../include/evolution-data-server-2.32 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/gconf/2 -ID:/MSYS2/mingw64/bin/../include/dbus-1.0 -ID:/MSYS2/mingw64/bin/../lib/dbus-1.0/include -ID:/MSYS2/mingw64/bin/../include/nss3 -ID:/MSYS2/mingw64/bin/../include/nspr -ID:/MSYS2/mingw64/bin/../include/unique-1.0 -ID:/MSYS2/mingw64/bin/../include/libgtkhtml-3.14 -ID:/MSYS2/mingw64/bin/../include/enchant -ID:/MSYS2/mingw64/bin/../include/libgtkhtml-3.14/editor -mms-bitfields -DCAMEL_HAVE_NSS -DCAMEL_HAVE_SSL -mms-bitfields -mms-bitfields 
 EVOLUTION_RSS_EPLUGIN_LIBS = -LD:/MSYS2/mingw64/bin/../lib -leutil -lcamel-provider-1.2 -lgtkhtml-editor-3.14 -leshell -Wl,-RD:/MSYS2/mingw64/bin/../lib -lgconf-2 -ledataserverui-1.2 -lunique-1.0 -lebook-1.2 -lcamel-1.2 -lsqlite3 -lssl3 -lsmime3 -lnss3 -lnssutil3 -lplds4 -lplc4 -lnspr4 -ledataserver-1.2 -lxml2 -lgconf-2 -lsoup-2.4 -lgtkhtml-3.14 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lenchant -lgmodule-2.0 -lglib-2.0 -lintl 
 EVOLUTION_VERSION = 23230
@@ -326,7 +326,7 @@ LOCALEDIR = /MSYS2/mingw64/share/locale
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = 
-MAKEINFO = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/missing' makeinfo
+MAKEINFO = ${SHELL} '/d/Download/MinGW-64-souorce/evolution-rss-0-2-5/missing' makeinfo
 MANIFEST_TOOL = :
 MINOR_VERSION = 32000
 MKDIR_P = /usr/bin/mkdir -p
@@ -380,10 +380,10 @@ WEBKIT_VERSION =
 WebKitGtk_CFLAGS = 
 WebKitGtk_LIBS = 
 XGETTEXT = /MSYS2/mingw64/bin/xgettext
-abs_builddir = /d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/mingw64
-abs_srcdir = /d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/mingw64/..
-abs_top_builddir = /d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/mingw64
-abs_top_srcdir = /d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/mingw64/..
+abs_builddir = /d/Download/MinGW-64-souorce/evolution-rss-0-2-5/mingw64
+abs_srcdir = /d/Download/MinGW-64-souorce/evolution-rss-0-2-5/mingw64/..
+abs_top_builddir = /d/Download/MinGW-64-souorce/evolution-rss-0-2-5/mingw64
+abs_top_srcdir = /d/Download/MinGW-64-souorce/evolution-rss-0-2-5/mingw64/..
 ac_ct_AR = ar
 ac_ct_CC = 
 ac_ct_CXX = 
@@ -414,7 +414,7 @@ host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /d/Download/MinGW-64-souorce/evolution-rss-evolution-rss-0-2-5/install-sh
+install_sh = ${SHELL} /d/Download/MinGW-64-souorce/evolution-rss-0-2-5/install-sh
 intltool__v_merge_options_ = $(intltool__v_merge_options_$(AM_DEFAULT_VERBOSITY))
 intltool__v_merge_options_0 = -q
 libdir = ${exec_prefix}/lib
