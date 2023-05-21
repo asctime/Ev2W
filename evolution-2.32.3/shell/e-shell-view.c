@@ -451,7 +451,8 @@ shell_view_get_property (GObject *object,
 			g_value_set_object (
 				value, e_shell_view_get_shell_backend (
 				E_SHELL_VIEW (object)));
-      return;
+        return;
+        /* Fall-through kept in 3.7 but suspicious 2 x E_SHELL_VIEW */
 
 		case PROP_SHELL_CONTENT:
 			g_value_set_object (

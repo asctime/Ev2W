@@ -1224,7 +1224,11 @@ em_format_html_file_part(EMFormatHTML *efh, const gchar *mime_type, const gchar 
 	CamelDataWrapper *dw;
 	gchar *basename;
 
+#ifdef G_OS_WIN32
+	stream = camel_stream_fs_new_with_name(filename, O_RDONLY|O_BINARY, 0, NULL);
+#else
 	stream = camel_stream_fs_new_with_name(filename, O_RDONLY, 0, NULL);
+#endif
 	if (stream == NULL)
 		return NULL;
 

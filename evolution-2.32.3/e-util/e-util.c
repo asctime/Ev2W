@@ -1319,7 +1319,7 @@ e_file_lock_create (void)
 	gboolean status = FALSE;
 	FILE *file;
 
-	file = g_fopen (filename, "w");
+	file = g_fopen (filename, "wb");
 	if (file != NULL) {
 		/* The lock file also serves as a PID file. */
 		g_fprintf (

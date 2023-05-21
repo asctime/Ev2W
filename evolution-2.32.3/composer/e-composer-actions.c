@@ -116,7 +116,11 @@ action_save_cb (GtkAction *action,
 	}
 
 	/* Check if the file already exists and we can create it. */
+#ifdef G_OS_WIN32
+	fd = g_open (filename, O_RDONLY | O_CREAT | O_EXCL | O_BINARY, 0777);
+#else
 	fd = g_open (filename, O_RDONLY | O_CREAT | O_EXCL, 0777);
+#endif
 	if (fd < 0) {
 		gint errno_saved = errno;
 

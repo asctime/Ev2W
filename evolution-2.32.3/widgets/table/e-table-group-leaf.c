@@ -571,7 +571,8 @@ etgl_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *ps
 		break;
 	case PROP_UNIFORM_ROW_HEIGHT:
 		g_value_set_boolean (value, etgl->uniform_row_height);
-    break;
+		break;
+/* Still falls through in 3.7 but why? row height is invalid?? */
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;

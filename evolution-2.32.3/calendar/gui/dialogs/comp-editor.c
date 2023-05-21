@@ -2548,12 +2548,19 @@ attachment_loaded_cb (EAttachment *attachment,
 	 *
 	 * So this is a lazy migration from the old form to the new.
 	 */
-
-	file_info = e_attachment_get_file_info (attachment);
-	if (!file_info) {
-		/* failed to load an attachment file */
-		e_attachment_load_handle_error (attachment, result, parent);
-		return;
+	
+  int wt;
+  for (wt = 1; wt < 52; wt++) {
+    g_debug ("Attempting to attach a file to this event.");
+    file_info = e_attachment_get_file_info (attachment);
+    if (file_info) 
+     break;
+	  if (wt == 51) {
+		  /* failed to load an attachment file */
+		  e_attachment_load_handle_error (attachment, result, parent);
+		  return;
+    }
+    g_usleep (20000);
 	}
 
 	display_name = g_file_info_get_display_name (file_info);
@@ -2594,7 +2601,11 @@ set_attachment_list (CompEditor *editor, GSList *uri_list)
 	for (iter = uri_list; iter != NULL; iter = iter->next) {
 		EAttachment *attachment;
 
-		attachment = e_attachment_new_for_uri (iter->data);
+    g_debug ("Proceding attachment %s with %s", (char*)iter->data, uid);
+    if (g_ascii_strncasecmp (iter->data, "file:", 5) == 0)
+      attachment = e_attachment_new_for_uri (iter->data);
+    else
+      attachment = e_attachment_new_for_path (iter->data);
 		e_attachment_store_add_attachment (store, attachment);
 		g_object_set_data_full (
 			G_OBJECT (attachment),

@@ -2027,14 +2027,18 @@ eti_draw (GnomeCanvasItem *item, GdkDrawable *drawable, gint x, gint y, gint wid
 		}
 	}
 
+#ifndef G_OS_WIN32  /* 'Focus' makes no visible difference on Windows
+but can kill message deselection with HDC conflicts. Enable with care */
 	/*
 	 * Draw focus
 	 */
+
 	if (eti->draw_focus && f_found) {
 		gdk_gc_set_ts_origin (eti->focus_gc, f_x1, f_y1);
 		gdk_draw_rectangle (drawable, eti->focus_gc, FALSE,
 				    f_x1, f_y1, f_x2 - f_x1 - 1, f_y2 - f_y1);
 	}
+#endif
 
 exit:
 	cairo_destroy (cr);

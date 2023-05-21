@@ -157,7 +157,11 @@ org_credativ_evolution_readpst_supported (EPlugin *epl, EImportTarget *target)
 	}
 
 	filename = g_filename_from_uri (s->uri_src, NULL, NULL);
+#ifdef G_OS_WIN32
+	fd = g_open (filename, O_RDONLY|O_BINARY, 0);
+#else
 	fd = g_open (filename, O_RDONLY, 0);
+#endif
 	g_free (filename);
 
 	if (fd != -1) {
@@ -1236,7 +1240,11 @@ set_cal_attachments (ECal *cal, ECalComponent *ec, PstImporter *m, pst_item_atta
 			continue;
 		}
 
+#ifdef G_OS_WIN32
+		if (!(stream = camel_stream_fs_new_with_name (path, O_WRONLY | O_CREAT | O_TRUNC | O_BINARY, 0666, NULL))) {
+#else
 		if (!(stream = camel_stream_fs_new_with_name (path, O_WRONLY | O_CREAT | O_TRUNC, 0666, NULL))) {
+#endif
 			g_warning ("Could not create stream for file %s - %s", path, g_strerror (errno));
 			attach = attach->next;
 			continue;

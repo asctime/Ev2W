@@ -159,7 +159,11 @@ e_read_signature_file (ESignature *signature,
 	filename = e_signature_get_filename (signature);
 	is_html = e_signature_get_is_html (signature);
 
+#ifdef G_OS_WIN32
+	fd = g_open (filename, O_RDONLY|O_BINARY, 0);
+#else
 	fd = g_open (filename, O_RDONLY, 0);
+#endif
 	if (fd < 0) {
 		g_set_error (
 			error, G_FILE_ERROR,

@@ -227,9 +227,15 @@ enum {
 };
 
 static gint open_flags[3] = {
+#ifdef G_OS_WIN32
+	O_WRONLY | O_CREAT | O_TRUNC | O_BINARY,
+	O_WRONLY | O_CREAT | O_TRUNC | O_BINARY,
+	O_WRONLY | O_CREAT | O_APPEND | O_BINARY,
+#else
 	O_WRONLY | O_CREAT | O_TRUNC,
 	O_WRONLY | O_CREAT | O_TRUNC,
 	O_WRONLY | O_CREAT | O_APPEND,
+#endif
 };
 
 static gboolean

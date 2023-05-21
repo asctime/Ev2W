@@ -338,7 +338,7 @@ guess_vcard_encoding (const gchar *filename)
 	gchar *line_utf8;
 	VCardEncoding encoding = VCARD_ENCODING_NONE;
 
-	handle = g_fopen (filename, "r");
+	handle = g_fopen (filename, "rb");
 	if (handle == NULL) {
 		g_print ("\n");
 		return VCARD_ENCODING_NONE;

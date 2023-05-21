@@ -44,7 +44,7 @@ action_list_folders_init (ActionContext * p_actctx)
 	}
 
 	if (p_actctx->action_list_folders.output_file != NULL) {
-		if (!(outputfile = g_fopen (p_actctx->action_list_folders.output_file, "w"))) {
+		if (!(outputfile = g_fopen (p_actctx->action_list_folders.output_file, "wb"))) {
 			g_warning (_("Can not open file"));
 			exit (-1);
 		}

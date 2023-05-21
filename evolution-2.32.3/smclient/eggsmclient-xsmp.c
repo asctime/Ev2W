@@ -883,7 +883,11 @@ save_state (EggSMClientXSMP *xsmp)
 					 (long)time (NULL) + offset,
 					 desktop_file ? "desktop" : "state");
 
+#ifdef G_OS_WIN32
+      fd = open (state_file_path, O_WRONLY | O_CREAT | O_EXCL | O_BINARY, 0644);
+#else
       fd = open (state_file_path, O_WRONLY | O_CREAT | O_EXCL, 0644);
+#endif
       if (fd == -1)
 	{
 	  if (errno == EEXIST)

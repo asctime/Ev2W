@@ -73,7 +73,7 @@ parse_elm_rc(const gchar *elmrc)
 	if (!g_file_test(elmrc, G_FILE_TEST_IS_REGULAR))
 		return prefs;
 
-	handle = fopen (elmrc, "r");
+	handle = fopen (elmrc, "rb");
 	if (handle == NULL)
 		return prefs;
 

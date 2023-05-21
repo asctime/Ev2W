@@ -158,7 +158,11 @@ org_gnome_evolution_readdbx_supported (EPlugin *epl, EImportTarget *target)
 	}
 
 	filename = g_filename_from_uri (s->uri_src, NULL, NULL);
+#ifdef G_OS_WIN32
+	fd = g_open (filename, O_RDONLY|O_BINARY, 0);
+#else
 	fd = g_open (filename, O_RDONLY, 0);
+#endif
 	g_free (filename);
 
 	if (fd != -1) {
@@ -560,7 +564,11 @@ dbx_import_file (DbxImporter *m)
 	camel_folder_freeze(folder);
 
 	filename = g_filename_from_uri (((EImportTargetURI *)m->target)->uri_src, NULL, NULL);
+#ifdef G_OS_WIN32
+	m->dbx_fd = g_open (filename, O_RDONLY|O_BINARY, 0);
+#else
 	m->dbx_fd = g_open (filename, O_RDONLY, 0);
+#endif
 	g_free (filename);
 
 	if (m->dbx_fd == -1) {

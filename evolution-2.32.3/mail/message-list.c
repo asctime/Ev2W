@@ -3907,6 +3907,14 @@ on_selection_changed_cmd(ETree *tree, MessageList *ml)
 	    (ml->last_sel_single && uids->len == 1 && newuid != NULL && ml->cursor_uid != NULL && !strcmp (ml->cursor_uid, newuid))) {
 		/* noop */
 	} else {
+
+    g_debug("\nMessage ID selected: %s, cursor: %s, total selected: %i", 
+             newuid, ml->cursor_uid, uids->len);
+    /* gint i;
+    for (i = 0; i < uids->len; i++) {
+      g_debug("uids->pdata[%d]: %s", i, (const gchar *)uids->pdata[i]);
+    } */
+
 		g_free(ml->cursor_uid);
 		ml->cursor_uid = g_strdup(newuid);
 		if (!ml->idle_id)

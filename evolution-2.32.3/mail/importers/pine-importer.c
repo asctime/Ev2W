@@ -172,7 +172,7 @@ import_contacts(void)
 		return;
 
 	name = g_build_filename(g_get_home_dir(), ".addressbook", NULL);
-	fp = fopen(name, "r");
+	fp = fopen(name, "rb");
 	g_free(name);
 	if (fp == NULL)
 		return;

@@ -217,6 +217,13 @@ exit:
 }
 
 static void
+action_mail_closetab_cb (GtkAction *action,
+                     EMailReader *reader)
+{
+	g_signal_emit (reader, signals[CLOSE_TAB], 0);
+}
+
+static void
 action_mail_charset_cb (GtkRadioAction *action,
                         GtkRadioAction *current,
                         EMailReader *reader)
@@ -314,9 +321,18 @@ action_mail_delete_cb (GtkAction *action,
 
 	/* FIXME Verify all selected messages are deletable.
 	 *       But handle it by disabling this action. */
-
+/* Auto-opening: issues outweight the benefits. Do something useful. */
+#if 0
+  if (e_mail_reader_mark_selected (reader, mask, set) == 1) {
+    gtk_widget_destroy(GTK_WIDGET(reader));
+  }
+  else {
+    g_debug ("Failed to delete message(s)");
+  }
+#else
 	if (e_mail_reader_mark_selected (reader, mask, set) == 1)
 		e_mail_reader_select_next_message (reader, FALSE);
+#endif
 }
 
 static void
@@ -555,9 +571,16 @@ action_mail_mark_junk_cb (GtkAction *action,
 		CAMEL_MESSAGE_NOTJUNK | CAMEL_MESSAGE_JUNK_LEARN;
 	guint32 set  = CAMEL_MESSAGE_SEEN | CAMEL_MESSAGE_JUNK |
 		CAMEL_MESSAGE_JUNK_LEARN;
-
+/* Auto-opening: issues outweight the benefits. Do something useful. */
+#if 0
+  if (e_mail_reader_mark_selected (reader, mask, set) == 1) 
+    g_signal_emit_by_name (reader, "mail-close-tab");
+  else
+    g_debug ("Failed to mark message(s)");
+#else
 	if (e_mail_reader_mark_selected (reader, mask, set) == 1)
 		e_mail_reader_select_next_message (reader, TRUE);
+#endif
 }
 
 static void
@@ -568,8 +591,16 @@ action_mail_mark_notjunk_cb (GtkAction *action,
 		CAMEL_MESSAGE_JUNK_LEARN;
 	guint32 set  = CAMEL_MESSAGE_NOTJUNK | CAMEL_MESSAGE_JUNK_LEARN;
 
+/* Auto-opening: issues outweight the benefits. Do something useful. */
+#if 0
+  if (e_mail_reader_mark_selected (reader, mask, set) == 1) 
+    g_signal_emit_by_name (reader, "mail-close-tab");
+  else
+    g_debug ("Failed to unmark message(s)");
+#else
 	if (e_mail_reader_mark_selected (reader, mask, set) == 1)
 		e_mail_reader_select_next_message (reader, TRUE);
+#endif
 }
 
 static void
@@ -734,13 +765,6 @@ action_mail_prevtab_cb (GtkAction *action,
                      EMailReader *reader)
 {
 	g_signal_emit (reader, signals[SHOW_PREVTAB], 0);
-}
-
-static void
-action_mail_closetab_cb (GtkAction *action,
-                     EMailReader *reader)
-{
-	g_signal_emit (reader, signals[CLOSE_TAB], 0);
 }
 
 static void
@@ -2371,6 +2395,8 @@ static void
 mail_reader_message_selected_cb (EMailReader *reader,
                                  const gchar *uid)
 {
+  /* ASCTIME This code is never reached when we have HDC conflict */
+
 	EMailReaderPrivate *priv;
 	MessageList *message_list;
 	gboolean store_async;

@@ -4114,7 +4114,11 @@ e_msg_composer_load_from_file (EShell *shell,
 	g_return_val_if_fail (filename != NULL, NULL);
 
 	stream = camel_stream_fs_new_with_name (
+#ifdef G_OS_WIN32
+		filename, O_RDONLY|O_BINARY, 0, NULL);
+#else
 		filename, O_RDONLY, 0, NULL);
+#endif
 	if (stream == NULL)
 		return NULL;
 

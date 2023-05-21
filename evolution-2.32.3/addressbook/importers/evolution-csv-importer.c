@@ -848,7 +848,7 @@ csv_import (EImport *ei, EImportTarget *target, EImportImporter *im)
 		return;
 	}
 
-	file = g_fopen (filename, "r");
+	file = g_fopen (filename, "rb");
 	g_free (filename);
 	if (file == NULL) {
 		g_message("Can't open .csv file");
@@ -920,7 +920,7 @@ csv_get_preview (EImport *ei, EImportTarget *target, EImportImporter *im)
 		return NULL;
 	}
 
-	file = g_fopen (filename, "r");
+	file = g_fopen (filename, "rb");
 	g_free (filename);
 	if (file == NULL) {
 		g_message (G_STRLOC ": Can't open .csv file");

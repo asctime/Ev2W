@@ -83,7 +83,11 @@ static gboolean em_junk_bf_unicode = TRUE;
 static void
 init_db (void)
 {
+#ifdef G_OS_WIN32
 	CamelStream *stream = camel_stream_fs_new_with_name (WELCOME_MESSAGE, O_RDONLY, 0, NULL);
+#else
+	CamelStream *stream = camel_stream_fs_new_with_name (WELCOME_MESSAGE, O_RDONLY|O_BINARY, 0, NULL);
+#endif
 	CamelMimeParser *parser = camel_mime_parser_new ();
 	CamelMimeMessage *msg = camel_mime_message_new ();
 	const gchar *argv[] = {

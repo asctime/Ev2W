@@ -630,6 +630,8 @@ ldif_import(EImport *ei, EImportTarget *target, EImportImporter *im)
 
 	filename = g_filename_from_uri(s->uri_src, NULL, NULL);
 	if (filename != NULL) {
+/* Windows note: LDIF is essentially a line-by-textfile often with CR/LF
+So we will keep ascii for now, but it's been flagged for a binary sanitizer instead ooohh.. */
 		file = g_fopen(filename, "r");
 		g_free (filename);
 	}

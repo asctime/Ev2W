@@ -639,7 +639,7 @@ action_list_cards (GList *contacts, ActionContext * p_actctx)
 			outputfile = stdout;
 		} else {
 			/* fopen output file */
-			if (!(outputfile = g_fopen (p_actctx->action_list_cards.output_file, "w"))) {
+			if (!(outputfile = g_fopen (p_actctx->action_list_cards.output_file, "wb"))) {
 				g_warning (_("Can not open file"));
 				exit (-1);
 			}
@@ -674,7 +674,7 @@ action_list_cards (GList *contacts, ActionContext * p_actctx)
 					g_strdup_printf ("%s.%04d", p_actctx->action_list_cards.output_file, series_no);
 			}
 
-			if (!(outputfile = g_fopen (file_series_name, "w"))) {
+			if (!(outputfile = g_fopen (file_series_name, "wb"))) {
 				g_warning (_("Can not open file"));
 				exit (-1);
 			}
