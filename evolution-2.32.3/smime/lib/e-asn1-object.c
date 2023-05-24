@@ -76,16 +76,14 @@ e_asn1_object_dispose (GObject *object)
 		if (obj->priv->value)
 			g_free (obj->priv->value);
 
-		g_list_foreach (obj->priv->children, (GFunc)g_object_unref, NULL);
-		g_list_free (obj->priv->children);
-
+		g_list_free_full (obj->priv->children, g_object_unref);
 		g_free (obj->priv);
 		obj->priv = NULL;
 	}
 }
 
 static void
-e_asn1_object_class_init (EASN1ObjectClass *klass)
+e_asn1_object_class_init (EASN1ObjectClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -97,7 +95,7 @@ e_asn1_object_class_init (EASN1ObjectClass *klass)
 }
 
 static void
-e_asn1_object_init (EASN1Object *asn1)
+e_asn1_object_init (EASN1Object *asn1, gpointer class_data)
 {
 	asn1->priv = g_new0 (EASN1ObjectPrivate, 1);
 

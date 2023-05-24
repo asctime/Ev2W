@@ -1070,8 +1070,10 @@ ecm_append_row (ETableModel *etm, ETableModel *source, gint row)
 	g_return_if_fail (E_IS_TABLE_MODEL (source));
 
 	comp_data = g_object_new (E_TYPE_CAL_MODEL_COMPONENT, NULL);
-
 	comp_data->client = e_cal_model_get_default_client (model);
+
+	if (comp_data->client)
+		g_object_ref (comp_data->client);
 
 	/* guard against saving before the calendar is open */
 	if (!(comp_data->client && e_cal_get_load_state (comp_data->client) == E_CAL_LOAD_LOADED)) {

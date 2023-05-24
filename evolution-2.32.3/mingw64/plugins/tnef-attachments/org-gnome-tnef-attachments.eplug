@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+  <e-plugin type="shlib" location="/MSYS2/mingw64/lib/evolution/2.32/plugins/liborg-gnome-tnef-attachments.dll" id="org.gnome.evolution.mail.tnefattachments" name="TNEF Decoder">
+    <description>Decode TNEF (winmail.dat) attachments from Microsoft Outlook.</description>
+    <author name="Lucky Wankhede" email="wlakke@novell.com"/>
+
+    <hook class="org.gnome.evolution.mail.format:1.0">
+      <group id="EMFormatHTML">
+	<item mime_type="application/vnd.ms-tnef" format="org_gnome_format_tnef" flags="inline_disposition"/>
+	<item mime_type="application/ms-tnef" format="org_gnome_format_tnef" flags="inline_disposition"/>
+      </group>
+      <group id="EMFormatHTMLDisplay">
+	<item mime_type="application/vnd.ms-tnef" format="org_gnome_format_tnef" flags="inline_disposition"/>
+	<item mime_type="application/ms-tnef" format="org_gnome_format_tnef" flags="inline_disposition"/>
+      </group>
+    </hook>
+  </e-plugin>
+</e-plugin-list>
