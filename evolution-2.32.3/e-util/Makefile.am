@@ -4,6 +4,7 @@ ruledir = $(privdatadir)
 
 if OS_WIN32
 PLATFORM_SOURCES = e-win32-reloc.c e-win32-defaults.c e-win32-defaults.h
+URLMON = -lurlmon
 endif
 
 privsolib_LTLIBRARIES = libeutil.la
@@ -147,7 +148,8 @@ libeutil_la_LIBADD = 		\
 	$(ICONV_LIBS)		\
 	$(E_UTIL_LIBS)		\
 	$(GNOME_PLATFORM_LIBS)	\
-	$(INTLLIBS)
+	$(INTLLIBS)		\
+	$(URLMON)
 
 error_DATA = e-system.error
 errordir = $(privdatadir)/errors

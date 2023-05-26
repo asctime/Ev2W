@@ -649,7 +649,7 @@
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gstdio.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/Windows.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdkddkver.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/excpt.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windef.h \
@@ -792,37 +792,19 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winnetwk.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wnnc.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/virtdisk.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/cderr.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/dde.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ddeml.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/dlgs.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/lzexpand.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mmsystem.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/nb30.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stralign.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsvc.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mcx.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/imm.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/Urlmon.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpc.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcdce.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcdcep.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcnsi.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcnterr.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcasync.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/shellapi.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winperf.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsock.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_bsd_types.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/inaddr.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_socket_types.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_fd_types.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_mreq1.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_xmitfile.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsa_errnos.h \
- D:/MSYS2/mingw64/include/wincrypt.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/bcrypt.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ncrypt.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winefs.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winscard.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wtypes.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcndr.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcnsip.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcsal.h \
@@ -835,6 +817,7 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/cguid.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/objidl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unknwn.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wtypes.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/urlmon.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/oleidl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/servprov.h \
@@ -842,16 +825,6 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/oaidl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/propidl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/oleauto.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winioctl.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsmcrd.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winspool.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/prsht.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/commdlg.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stralign.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsvc.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mcx.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/imm.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-address.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-object.h \
@@ -2318,7 +2291,7 @@ D:/MSYS2/mingw64/include/glib-2.0/glib/gstdio.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/Windows.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdkddkver.h:
 
@@ -2604,21 +2577,21 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wnnc.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/virtdisk.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/cderr.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stralign.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/dde.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ddeml.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsvc.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/dlgs.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mcx.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/lzexpand.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/imm.h:
 
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mmsystem.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/nb30.h:
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/Urlmon.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpc.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/windows.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcdce.h:
 
@@ -2629,42 +2602,6 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcnsi.h:
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcnterr.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcasync.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/shellapi.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winperf.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsock.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_bsd_types.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/inaddr.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_socket_types.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_fd_types.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_mreq1.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_xmitfile.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsa_errnos.h:
-
-D:/MSYS2/mingw64/include/wincrypt.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/bcrypt.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ncrypt.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winefs.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winscard.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wtypes.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/rpcndr.h:
 
@@ -2690,6 +2627,8 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/objidl.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/unknwn.h:
 
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wtypes.h:
+
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/urlmon.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/oleidl.h:
@@ -2703,26 +2642,6 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/oaidl.h:
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/propidl.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/oleauto.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winioctl.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsmcrd.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winspool.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/prsht.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/commdlg.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stralign.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/winsvc.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/mcx.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/imm.h:
 
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel.h:
 

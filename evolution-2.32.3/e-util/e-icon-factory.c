@@ -165,7 +165,7 @@ e_icon_factory_pixbuf_scale (GdkPixbuf *pixbuf, gint width, gint height)
 gchar *
 e_icon_factory_create_thumbnail (const gchar *filename)
 {
-#ifdef HAVE_GNOME_DESKTOP
+#if defined (HAVE_GNOME_DESKTOP) && !defined(G_OS_WIN32)
 	static GnomeDesktopThumbnailFactory *thumbnail_factory = NULL;
         struct stat file_stat;
         gchar *thumbnail = NULL;

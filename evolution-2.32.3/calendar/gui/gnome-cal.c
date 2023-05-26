@@ -2371,8 +2371,7 @@ gnome_calendar_purge (GnomeCalendar *gcal, time_t older_than)
 			}
 		}
 
-		g_list_foreach (objects, (GFunc) icalcomponent_free, NULL);
-		g_list_free (objects);
+		g_list_free_full (objects, (GDestroyNotify) icalcomponent_free);
 	}
 
 	g_list_free (clients);

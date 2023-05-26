@@ -1,0 +1,606 @@
+addressbook/gui/contact-editor/e-contact-editor.c:	g_list_free_full (strings, g_free);
+addressbook/gui/contact-editor/e-contact-editor.c-
+addressbook/gui/contact-editor/e-contact-editor.c-	if (style != -1) {
+addressbook/gui/contact-editor/e-contact-quick-add.c:			g_list_free_full (emails, g_free);
+addressbook/gui/contact-editor/e-contact-quick-add.c-		}
+addressbook/gui/contact-editor/e-contact-quick-add.c-	} else {
+addressbook/gui/contact-list-editor/e-contact-list-editor.c:	g_list_free_full (list, g_object_unref);
+addressbook/gui/contact-list-editor/e-contact-list-editor.c-
+addressbook/gui/contact-list-editor/e-contact-list-editor.c-	contact_list_editor_scroll_to_end (editor);
+addressbook/gui/merging/eab-contact-compare.c:		g_list_free_full (contact1_email, g_free);
+addressbook/gui/merging/eab-contact-compare.c:		g_list_free_full (contact2_email, g_free);
+addressbook/gui/merging/eab-contact-compare.c-		return EAB_CONTACT_MATCH_NOT_APPLICABLE;
+addressbook/gui/merging/eab-contact-compare.c-	}
+addressbook/gui/merging/eab-contact-compare.c:	g_list_free_full (contact1_email, g_free);
+addressbook/gui/merging/eab-contact-compare.c:	g_list_free_full (contact2_email, g_free);
+addressbook/gui/merging/eab-contact-compare.c-
+addressbook/gui/merging/eab-contact-compare.c-	return match;
+addressbook/gui/merging/eab-contact-compare.c:			g_list_free_full (info->avoid, g_object_unref);
+addressbook/gui/merging/eab-contact-compare.c-			info->avoid = NULL;
+addressbook/gui/merging/eab-contact-compare.c-		}
+addressbook/gui/merging/eab-contact-compare.c:		g_list_free_full (contact_email, g_free);
+addressbook/gui/merging/eab-contact-compare.c-	}
+addressbook/gui/merging/eab-contact-compare.c-
+addressbook/gui/widgets/e-addressbook-view.c:	g_list_free_full (contact_list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-}
+addressbook/gui/widgets/e-addressbook-view.c-
+addressbook/gui/widgets/e-addressbook-view.c:	g_list_free_full (contact_list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-}
+addressbook/gui/widgets/e-addressbook-view.c-
+addressbook/gui/widgets/e-addressbook-view.c:	g_list_free_full (contact_list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-}
+addressbook/gui/widgets/e-addressbook-view.c-
+addressbook/gui/widgets/e-addressbook-view.c:		g_list_free_full (contact_list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-
+addressbook/gui/widgets/e-addressbook-view.c-	/* Print the latest query results. */
+addressbook/gui/widgets/e-addressbook-view.c:		g_list_free_full (list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-		return;
+addressbook/gui/widgets/e-addressbook-view.c-	}
+addressbook/gui/widgets/e-addressbook-view.c:	g_list_free_full (list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-}
+addressbook/gui/widgets/e-addressbook-view.c-
+addressbook/gui/widgets/e-addressbook-view.c:	g_list_free_full (list, g_object_unref);
+addressbook/gui/widgets/e-addressbook-view.c-}
+addressbook/gui/widgets/e-addressbook-view.c-
+addressbook/gui/widgets/e-minicard-view.c:	g_list_free_full (view->drag_list, g_object_unref);
+addressbook/gui/widgets/e-minicard-view.c-	view->drag_list = NULL;
+addressbook/gui/widgets/e-minicard-view.c-}
+addressbook/gui/widgets/e-minicard.c:		g_list_free_full(e_minicard->fields, (GDestroyNotify)e_minicard_field_destroy);
+addressbook/gui/widgets/e-minicard.c-		e_minicard->fields = NULL;
+addressbook/gui/widgets/e-minicard.c-	}
+addressbook/gui/widgets/e-minicard.c:	g_list_free_full (emails, g_free);
+addressbook/gui/widgets/e-minicard.c-}
+addressbook/gui/widgets/e-minicard.c-
+addressbook/gui/widgets/e-minicard.c:		g_list_free_full(list, (GDestroyNotify)e_minicard_field_destroy);
+addressbook/gui/widgets/e-minicard.c-	}
+addressbook/gui/widgets/e-minicard.c-}
+addressbook/gui/widgets/eab-contact-display.c:	g_list_free_full (list, g_free);
+addressbook/gui/widgets/eab-contact-display.c-}
+addressbook/gui/widgets/eab-contact-display.c-
+addressbook/gui/widgets/eab-contact-display.c:	g_list_free_full (val_list, g_free);
+addressbook/gui/widgets/eab-contact-display.c-}
+addressbook/gui/widgets/eab-contact-display.c-
+addressbook/gui/widgets/eab-contact-display.c:	g_list_free_full (email_list, g_free);
+addressbook/gui/widgets/eab-contact-display.c-
+addressbook/gui/widgets/eab-contact-display.c-	if (accum->len) {
+addressbook/gui/widgets/eab-gui-util.c:		g_list_free_full (process->contacts, g_object_unref);
+addressbook/gui/widgets/eab-gui-util.c-		g_object_unref (process->source);
+addressbook/gui/widgets/eab-gui-util.c-		g_object_unref (process->destination);
+addressbook/importers/evolution-csv-importer.c:	g_slist_free_full(gci->contacts, g_object_unref);
+addressbook/importers/evolution-csv-importer.c-
+addressbook/importers/evolution-csv-importer.c-	if (gci->fields_map)
+addressbook/importers/evolution-csv-importer.c:	g_list_free_full (contacts, g_object_unref);
+addressbook/importers/evolution-csv-importer.c-	fclose (file);
+addressbook/importers/evolution-csv-importer.c-	g_free (gci);
+addressbook/importers/evolution-ldif-importer.c:					g_list_free_full (list, g_free);
+addressbook/importers/evolution-ldif-importer.c-				}
+addressbook/importers/evolution-ldif-importer.c-				else if (ldif_fields[i].flags & FLAG_BOOLEAN) {
+addressbook/importers/evolution-ldif-importer.c:				g_list_free_full (email, g_free);
+addressbook/importers/evolution-ldif-importer.c-			}
+addressbook/importers/evolution-ldif-importer.c-		}
+addressbook/importers/evolution-ldif-importer.c:	g_list_free_full (email, g_free);
+addressbook/importers/evolution-ldif-importer.c:	g_list_free_full (email_attrs, (GDestroyNotify)e_vcard_attribute_free);
+addressbook/importers/evolution-ldif-importer.c-}
+addressbook/importers/evolution-ldif-importer.c-
+addressbook/importers/evolution-ldif-importer.c:	g_slist_free_full(gci->contacts, g_object_unref);
+addressbook/importers/evolution-ldif-importer.c:	g_slist_free_full(gci->list_contacts, g_object_unref);
+addressbook/importers/evolution-ldif-importer.c-	g_hash_table_destroy(gci->dn_contact_hash);
+addressbook/importers/evolution-ldif-importer.c-
+addressbook/importers/evolution-ldif-importer.c:	g_list_free_full (contacts, g_object_unref);
+addressbook/importers/evolution-ldif-importer.c-	fclose (file);
+addressbook/importers/evolution-ldif-importer.c-
+addressbook/importers/evolution-vcard-importer.c:	g_list_free_full (gci->contactlist, g_object_unref);
+addressbook/importers/evolution-vcard-importer.c-
+addressbook/importers/evolution-vcard-importer.c-	e_import_complete(gci->import, gci->target);
+addressbook/importers/evolution-vcard-importer.c:	g_list_free_full (contacts, g_object_unref);
+addressbook/importers/evolution-vcard-importer.c-
+addressbook/importers/evolution-vcard-importer.c-	return preview;
+calendar/gui/alarm-notify/config-data.c:		g_slist_free_full (gconf_list, g_free);
+calendar/gui/alarm-notify/config-data.c-		return cal_sources;
+calendar/gui/alarm-notify/config-data.c-	}
+calendar/gui/alarm-notify/config-data.c:			g_slist_free_full (source, g_free);
+calendar/gui/alarm-notify/config-data.c-		}
+calendar/gui/alarm-notify/config-data.c-	}
+calendar/gui/alarm-notify/config-data.c:		g_slist_free_full (gconf_list, g_free);
+calendar/gui/alarm-notify/config-data.c-	}
+calendar/gui/alarm-notify/config-data.c-
+calendar/gui/alarm-notify/config-data.c:		g_slist_free_full (source, g_free);
+calendar/gui/alarm-notify/config-data.c-	}
+calendar/gui/alarm-notify/config-data.c-}
+calendar/gui/alarm-notify/config-data.c:	g_slist_free_full (l, g_free);
+calendar/gui/alarm-notify/config-data.c-}
+calendar/gui/alarm-notify/config-data.c-
+calendar/gui/calendar-config.c:		g_slist_free_full (zones, g_free);
+calendar/gui/calendar-config.c-	}
+calendar/gui/calendar-config.c-}
+calendar/gui/dialogs/comp-editor-util.c:		g_slist_free_full (lst, g_free);
+calendar/gui/dialogs/comp-editor-util.c-	}
+calendar/gui/dialogs/comp-editor-util.c-}
+calendar/gui/dialogs/comp-editor.c:	g_list_free_full (priv->pages, g_object_unref);
+calendar/gui/dialogs/comp-editor.c-	priv->pages = NULL;
+calendar/gui/dialogs/comp-editor.c-
+calendar/gui/dialogs/comp-editor.c:		g_slist_free_full (attachment_list, g_free);
+calendar/gui/dialogs/comp-editor.c-	}
+calendar/gui/dialogs/comp-editor.c-
+calendar/gui/dialogs/comp-editor.c:			g_slist_free_full (attach_list, g_free);
+calendar/gui/dialogs/comp-editor.c-		}
+calendar/gui/dialogs/comp-editor.c-
+calendar/gui/dialogs/task-page.c:	g_list_free_full (priv->address_strings, g_free);
+calendar/gui/dialogs/task-page.c-
+calendar/gui/dialogs/task-page.c-	g_ptr_array_foreach (
+calendar/gui/dialogs/task-page.c:	g_list_free_full (paths, (GDestroyNotify)gtk_tree_path_free);
+calendar/gui/dialogs/task-page.c-}
+calendar/gui/dialogs/task-page.c-
+calendar/gui/e-cal-model.c:	g_slist_free_full (slist, g_object_unref);
+calendar/gui/e-cal-model.c-
+calendar/gui/e-cal-model.c-	e_flag_set (data->eflag);
+calendar/gui/e-calendar-view.c:					g_list_free_full (users, g_free);
+calendar/gui/e-calendar-view.c-				}
+calendar/gui/e-calendar-view.c-			}
+calendar/gui/e-calendar-view.c:					g_list_free_full (users, g_free);
+calendar/gui/e-calendar-view.c-				}
+calendar/gui/e-calendar-view.c-			}
+calendar/gui/e-day-view-main-item.c:		g_slist_free_full (categories_pixbufs, g_object_unref);
+calendar/gui/e-day-view-main-item.c-	}
+calendar/gui/e-day-view-main-item.c-
+calendar/gui/e-meeting-list-view.c:						g_list_free_full (contacts, g_object_unref);
+calendar/gui/e-meeting-list-view.c-					}
+calendar/gui/e-meeting-list-view.c-
+calendar/gui/e-meeting-store.c:		g_list_free_full (fbd->users, g_free);
+calendar/gui/e-meeting-store.c-
+calendar/gui/e-meeting-store.c-		if (fbd->fb_data != NULL) {
+calendar/gui/e-meeting-store.c:		g_list_free_full (fbd->users, g_free);
+calendar/gui/e-meeting-store.c-		g_free (fbd->email);
+calendar/gui/e-meeting-store.c-		priv->refresh_idle_id = 0;
+calendar/gui/e-memo-list-selector.c:	g_slist_free_full (list, g_free);
+calendar/gui/e-memo-list-selector.c-
+calendar/gui/e-memo-list-selector.c-exit:
+calendar/gui/e-task-table.c:	g_list_free_full (strings, g_free);
+calendar/gui/e-task-table.c-
+calendar/gui/e-task-table.c-	e_table_extras_add_cell (extras, "percent", popup_cell);
+calendar/gui/e-task-table.c:					g_list_free_full (users, g_free);
+calendar/gui/e-task-table.c-				}
+calendar/gui/e-task-table.c-			}
+calendar/gui/e-task-table.c:		g_list_free_full (objects, (GDestroyNotify)icalcomponent_free);
+calendar/gui/e-task-table.c-	}
+calendar/gui/e-task-table.c-
+calendar/gui/e-week-view-event-item.c:	g_slist_free_full (categories_pixbufs, g_object_unref);
+calendar/gui/e-week-view-event-item.c-
+calendar/gui/e-week-view-event-item.c-	cairo_destroy (cr);
+calendar/gui/gnome-cal.c:	g_list_free_full (list, g_object_unref);
+calendar/gui/gnome-cal.c-
+calendar/gui/gnome-cal.c-	/* free memory */
+calendar/gui/gnome-cal.c:		g_list_free_full (objects, (GDestroyNotify) icalcomponent_free);
+calendar/gui/gnome-cal.c-	}
+calendar/gui/gnome-cal.c-
+calendar/gui/itip-utils.c:			g_list_free_full (users, g_free);
+calendar/gui/itip-utils.c-		}
+calendar/gui/itip-utils.c-		return TRUE;
+calendar/gui/itip-utils.c:		g_list_free_full (users, g_free);
+calendar/gui/itip-utils.c-	}
+calendar/gui/itip-utils.c-
+calendar/gui/itip-utils.c:		g_list_free_full (users, g_free);
+calendar/gui/itip-utils.c-	}
+calendar/gui/itip-utils.c-
+composer/e-composer-header-table.c:			g_list_free_full (list, g_free);
+composer/e-composer-header-table.c-			return;
+composer/e-composer-header-table.c-
+composer/e-composer-header-table.c:			g_list_free_full (list, g_free);
+composer/e-composer-header-table.c-			return;
+composer/e-composer-header-table.c-
+composer/e-composer-name-header.c:	g_list_free_full (sections, g_free);
+composer/e-composer-name-header.c-
+composer/e-composer-name-header.c-	e_composer_header_set_title_tooltip (
+composer/e-composer-post-header.c:		g_list_free_full (folders, g_free);
+composer/e-composer-post-header.c-	}
+composer/e-composer-post-header.c-
+composer/e-composer-post-header.c:	g_list_free_full (list, g_free);
+composer/e-composer-post-header.c-}
+composer/e-msg-composer.c:		g_list_free_full (postto, g_free);
+composer/e-msg-composer.c-		postto = NULL;
+composer/e-msg-composer.c-	}
+e-util/e-config.c:	g_slist_free_full (group->items, (GDestroyNotify)emph_free_item);
+e-util/e-config.c-
+e-util/e-config.c-	g_free (group->id);
+e-util/e-config.c:	g_slist_free_full (emph->groups, (GDestroyNotify)emph_free_group);
+e-util/e-config.c-
+e-util/e-config.c-	((GObjectClass *)e_config_hook_parent_class)->finalize (o);
+e-util/e-event.c:	g_slist_free_full (p->sorted, g_free);
+e-util/e-event.c-
+e-util/e-event.c-	/* Chain up to parent's finalize() method. */
+e-util/e-event.c:		g_slist_free_full (event->priv->sorted, g_free);
+e-util/e-event.c-		event->priv->sorted = NULL;
+e-util/e-event.c-	}
+e-util/e-event.c:		g_slist_free_full (event->priv->sorted, g_free);
+e-util/e-event.c-		event->priv->sorted = NULL;
+e-util/e-event.c-	}
+e-util/e-event.c:	g_slist_free_full (items, (GDestroyNotify)emph_free_item);
+e-util/e-event.c-}
+e-util/e-event.c-
+e-util/e-plugin.c:	g_slist_free_full (ep->hooks, g_object_unref);
+e-util/e-plugin.c-
+e-util/e-plugin.c-	/* Chain up to parent's finalize() method. */
+e-util/e-util.c:		g_list_free_full (list, g_free);
+e-util/e-util.c-		return value;
+e-util/e-util.c-	} else {
+filter/e-filter-input.c:	g_list_free_full (input->values, g_free);
+filter/e-filter-input.c-
+filter/e-filter-input.c-	text = gtk_entry_get_text (entry);
+filter/e-filter-input.c:	g_list_free_full (input->values, g_free);
+filter/e-filter-input.c-
+filter/e-filter-input.c-	/* Chain up to parent's finalize() method. */
+filter/e-filter-input.c:	g_list_free_full (input->values, g_free);
+filter/e-filter-input.c-	input->values = NULL;
+filter/e-filter-input.c-
+filter/e-filter-input.c:	g_list_free_full (input->values, g_free);
+filter/e-filter-input.c-
+filter/e-filter-input.c-	input->values = g_list_append (NULL, g_strdup (value));
+filter/e-filter-option.c:	g_list_free_full (option->options, (GDestroyNotify)free_option);
+filter/e-filter-option.c-
+filter/e-filter-option.c-	g_free (option->dynamic_func);
+filter/e-filter-option.c:		g_list_free_full (old_ops, (GDestroyNotify)free_option);
+filter/e-filter-option.c-	}
+filter/e-filter-option.c-
+filter/e-filter-option.c:	g_list_free_full (option->options, (GDestroyNotify)free_option);
+filter/e-filter-option.c-
+filter/e-filter-option.c-	option->options = NULL;
+filter/e-filter-part.c:	g_list_free_full (part->elements, g_object_unref);
+filter/e-filter-part.c-
+filter/e-filter-part.c-	g_free (part->name);
+filter/e-filter-rule.c:	g_list_free_full (rule->parts, g_object_unref);
+filter/e-filter-rule.c-
+filter/e-filter-rule.c-	/* Chain up to parent's finalize() method. */
+filter/e-filter-rule.c:		g_list_free_full (dest->parts, g_object_unref);
+filter/e-filter-rule.c-		dest->parts = NULL;
+filter/e-filter-rule.c-	}
+filter/e-rule-context.c:	g_list_free_full (context->rule_set_list, (GDestroyNotify)free_rule_set);
+filter/e-rule-context.c-	g_hash_table_destroy (context->rule_set_map);
+filter/e-rule-context.c-
+filter/e-rule-context.c:	g_list_free_full (context->part_set_list, (GDestroyNotify)free_part_set);
+filter/e-rule-context.c-	g_hash_table_destroy (context->part_set_map);
+filter/e-rule-context.c-
+filter/e-rule-context.c:	g_list_free_full (context->parts, g_object_unref);
+filter/e-rule-context.c:	g_list_free_full (context->rules, g_object_unref);
+filter/e-rule-context.c-
+filter/e-rule-context.c-	G_OBJECT_CLASS (e_rule_context_parent_class)->finalize (obj);
+filter/e-rule-context.c:	g_list_free_full (uris, g_free);
+filter/e-rule-context.c-}
+filter/e-rule-context.c-
+mail/e-mail-migrate.c:		g_slist_free_full (plugins, g_object_unref);
+mail/e-mail-migrate.c-	}
+mail/e-mail-migrate.c-
+mail/e-mail-migrate.c:	g_slist_free_full (list, g_free);
+mail/e-mail-migrate.c-
+mail/e-mail-migrate.c-	val = gconf_client_get_int (client, "/apps/evolution/mail/notify/type", NULL);
+mail/e-mail-migrate.c:		g_slist_free_full (lst, g_free);
+mail/e-mail-migrate.c-		g_free (value);
+mail/e-mail-migrate.c-
+mail/e-mail-reader-utils.c:	g_slist_free_full (header_config_list, g_free);
+mail/e-mail-reader-utils.c-
+mail/e-mail-reader-utils.c-	/* force a redraw */
+mail/em-account-editor.c:		g_slist_free_full (providers_list, g_free);
+mail/em-account-editor.c-	}
+mail/em-account-editor.c-
+mail/em-composer-utils.c:		g_list_free_full (postlist, g_free);
+mail/em-composer-utils.c-	}
+mail/em-composer-utils.c-
+mail/em-composer-utils.c:		g_slist_free_full (clue_list, g_free);
+mail/em-composer-utils.c-	}
+mail/em-composer-utils.c-
+mail/em-composer-utils.c:	g_list_free_full (list, g_free);
+mail/em-composer-utils.c-
+mail/em-composer-utils.c-	if (gtk_dialog_run (GTK_DIALOG (dialog)) != GTK_RESPONSE_OK) {
+mail/em-composer-utils.c:	g_list_free_full (list, g_free);
+mail/em-composer-utils.c-
+mail/em-composer-utils.c-exit:
+mail/em-filter-context.c:	g_list_free_full(fc->actions, g_object_unref);
+mail/em-filter-context.c-
+mail/em-filter-context.c-        G_OBJECT_CLASS(parent_class)->finalize(obj);
+mail/em-filter-editor.c:	g_slist_free_full (sources, g_free);
+mail/em-filter-editor.c-}
+mail/em-filter-editor.c-
+mail/em-filter-rule.c:		g_list_free_full(fdest->actions, g_object_unref);
+mail/em-filter-rule.c-		fdest->actions = NULL;
+mail/em-filter-rule.c-	}
+mail/em-folder-selection-button.c:	g_list_free_full (priv->uris, g_free);
+mail/em-folder-selection-button.c-
+mail/em-folder-selection-button.c-	g_free (priv->title);
+mail/em-folder-selection-button.c:	g_list_free_full (button->priv->uris, g_free);
+mail/em-folder-selection-button.c-
+mail/em-folder-selection-button.c-	button->priv->uris = uris;
+mail/em-folder-tree.c:	g_slist_free_full(priv->select_uris, (GDestroyNotify)folder_tree_free_select_uri);
+mail/em-folder-tree.c-	g_hash_table_destroy(priv->select_uris_table);
+mail/em-folder-tree.c-	priv->select_uris = NULL;
+mail/em-folder-tree.c:	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
+mail/em-folder-tree.c-}
+mail/em-folder-tree.c-
+mail/em-format-hook.c:	g_slist_free_full(group->items, (GDestroyNotify)emfh_free_item);
+mail/em-format-hook.c-
+mail/em-format-hook.c-	g_free(group->id);
+mail/em-format-hook.c:	g_slist_free_full(emfh->groups, (GDestroyNotify)emfh_free_group);
+mail/em-format-hook.c-
+mail/em-format-hook.c-	((GObjectClass *)emfh_parent_class)->finalize(o);
+mail/em-subscribe-editor.c:		g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
+mail/em-subscribe-editor.c-		l = sub->info_list;
+mail/em-subscribe-editor.c-		while (l) {
+mail/em-subscribe-editor.c:	g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
+mail/em-subscribe-editor.c-	sub->tree_expanded_paths = NULL;
+mail/em-subscribe-editor.c-
+mail/em-subscribe-editor.c:				g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
+mail/em-subscribe-editor.c-				sub->tree_expanded_paths = NULL;
+mail/em-subscribe-editor.c-
+mail/em-subscribe-editor.c:				g_slist_free_full (sub->tree_expanded_paths, (GDestroyNotify)gtk_tree_path_free);
+mail/em-subscribe-editor.c-				sub->tree_expanded_paths = NULL;
+mail/em-subscribe-editor.c-			}
+mail/em-utils.c:				g_list_free_full (contacts, g_object_unref);
+mail/em-utils.c-			}
+mail/em-utils.c-		} else if (book) {
+mail/em-utils.c:	g_slist_free_full (addr_sources, g_object_unref);
+mail/em-utils.c-
+mail/em-utils.c-	e_book_query_unref (query);
+mail/em-utils.c:	g_slist_free_full (photos_cache, (GDestroyNotify)emu_free_photo_info);
+mail/em-utils.c-	photos_cache = NULL;
+mail/em-utils.c-
+mail/em-vfolder-rule.c:	g_list_free_full(vr->sources, g_free);
+mail/em-vfolder-rule.c-
+mail/em-vfolder-rule.c-        G_OBJECT_CLASS(parent_class)->finalize(obj);
+mail/em-vfolder-rule.c:		g_list_free_full(vdest->sources, g_free);
+mail/em-vfolder-rule.c-		vdest->sources = NULL;
+mail/em-vfolder-rule.c-	}
+mail/mail-config.c:	g_slist_free_full (config->jh_header, g_free);
+mail/mail-config.c-
+mail/mail-config.c-	config->jh_header = gconf_client_get_list (config->gconf, "/apps/evolution/mail/junk/custom_header", GCONF_VALUE_STRING, NULL);
+mail/mail-vfolder.c:	g_list_free_full(m->folders, g_object_unref);
+mail/mail-vfolder.c-	g_free(m->uri);
+mail/mail-vfolder.c-}
+modules/addressbook/e-book-shell-content.c:		g_list_free_full (email_list, g_free);
+modules/addressbook/e-book-shell-content.c-
+modules/addressbook/e-book-shell-content.c-		is_contact_list &=
+modules/addressbook/e-book-shell-view-actions.c:	g_list_free_full (list, g_object_unref);
+modules/addressbook/e-book-shell-view-actions.c-}
+modules/addressbook/e-book-shell-view-actions.c-
+modules/addressbook/e-book-shell-view-actions.c:	g_list_free_full (list, g_object_unref);
+modules/addressbook/e-book-shell-view-actions.c-}
+modules/addressbook/e-book-shell-view-actions.c-
+modules/addressbook/e-book-shell-view-actions.c:	g_list_free_full (list, g_object_unref);
+modules/addressbook/e-book-shell-view-actions.c-}
+modules/addressbook/e-book-shell-view-actions.c-
+modules/addressbook/e-book-shell-view-actions.c:	g_list_free_full (list, g_object_unref);
+modules/addressbook/e-book-shell-view-actions.c-}
+modules/addressbook/e-book-shell-view-actions.c-
+modules/calendar/e-cal-attachment-handler.c:	g_list_free_full (selected, g_object_unref);
+modules/calendar/e-cal-attachment-handler.c-}
+modules/calendar/e-cal-attachment-handler.c-
+modules/calendar/e-memo-shell-backend.c:		g_slist_free_full (selected, g_free);
+modules/calendar/e-memo-shell-backend.c-		g_free (primary);
+modules/calendar/e-memo-shell-backend.c-	} else {
+modules/calendar/e-memo-shell-content.c:		g_slist_free_full (foreach_data.list, g_free);
+modules/calendar/e-memo-shell-content.c-	}
+modules/calendar/e-memo-shell-content.c-}
+modules/mail/e-mail-attachment-handler.c:	g_list_free_full (selected, g_object_unref);
+modules/mail/e-mail-attachment-handler.c-}
+modules/mail/e-mail-attachment-handler.c-
+modules/mail/e-mail-attachment-handler.c:	g_list_free_full (selected, g_object_unref);
+modules/mail/e-mail-attachment-handler.c-}
+modules/mail/e-mail-attachment-handler.c-
+modules/mail/e-mail-attachment-handler.c:	g_list_free_full (selected, g_object_unref);
+modules/mail/e-mail-attachment-handler.c-}
+modules/mail/e-mail-attachment-handler.c-
+modules/mail/e-mail-attachment-handler.c:	g_list_free_full (selected, g_object_unref);
+modules/mail/e-mail-attachment-handler.c-}
+modules/mail/e-mail-attachment-handler.c-
+modules/mail/e-mail-shell-view.c:	g_list_free_full (copied_list, g_object_unref);
+modules/mail/e-mail-shell-view.c-}
+modules/mail/e-mail-shell-view.c-
+modules/mail/e-mail-shell-view.c:	g_list_free_full (msg->folder_list, g_object_unref);
+modules/mail/e-mail-shell-view.c-}
+modules/mail/e-mail-shell-view.c-
+modules/mail/e-mail-shell-view.c:	g_slist_free_full (search_strings, g_free);
+modules/mail/e-mail-shell-view.c-
+modules/mail/e-mail-shell-view.c-	g_object_unref (model);
+modules/mail/em-mailer-prefs.c:	g_slist_free_full (cjh, g_free);
+modules/mail/em-mailer-prefs.c-}
+modules/mail/em-mailer-prefs.c-
+modules/mail/em-mailer-prefs.c:		g_slist_free_full (list, g_free);
+modules/mail/em-mailer-prefs.c-	}
+modules/mail/em-mailer-prefs.c-	gtk_widget_destroy (dialog);
+modules/mail/em-mailer-prefs.c:		g_slist_free_full (list, g_free);
+modules/mail/em-mailer-prefs.c-		g_free (name);
+modules/mail/em-mailer-prefs.c-		g_free (value);
+modules/mail/em-mailer-prefs.c:	g_slist_free_full (header_list, g_free);
+modules/mail/em-mailer-prefs.c-}
+modules/mail/em-mailer-prefs.c-
+modules/mail/em-mailer-prefs.c:	g_slist_free_full (header_config_list, g_free);
+modules/mail/em-mailer-prefs.c-
+modules/mail/em-mailer-prefs.c-	p = header_add_list;
+plugins/attachment-reminder/attachment-reminder.c:		g_slist_free_full (clue_list, g_free);
+plugins/attachment-reminder/attachment-reminder.c-	}
+plugins/attachment-reminder/attachment-reminder.c-
+plugins/attachment-reminder/attachment-reminder.c:	g_slist_free_full (clue_list, g_free);
+plugins/attachment-reminder/attachment-reminder.c-}
+plugins/attachment-reminder/attachment-reminder.c-
+plugins/attachment-reminder/attachment-reminder.c:		g_slist_free_full (clue_list, g_free);
+plugins/attachment-reminder/attachment-reminder.c-	}
+plugins/attachment-reminder/attachment-reminder.c-
+plugins/bbdb/bbdb.c:		g_slist_free_full (todo, (GDestroyNotify)free_todo_struct);
+plugins/bbdb/bbdb.c-		todo = NULL;
+plugins/bbdb/bbdb.c-
+plugins/bbdb/gaimbuddies.c:	g_list_free_full (ims, g_free);
+plugins/bbdb/gaimbuddies.c-	ims = NULL;
+plugins/bbdb/gaimbuddies.c-
+plugins/bbdb/gaimbuddies.c:	g_slist_free_full (blocked, g_free);
+plugins/bbdb/gaimbuddies.c-
+plugins/bbdb/gaimbuddies.c-	return buddies;
+plugins/bbdb/gaimbuddies.c:	g_list_free_full (blist, (GDestroyNotify)free_gaim_body);
+plugins/bbdb/gaimbuddies.c-}
+plugins/bbdb/gaimbuddies.c-
+plugins/email-custom-header/email-custom-header.c:	g_slist_free_full (header_config_list, g_free);
+plugins/email-custom-header/email-custom-header.c-}
+plugins/email-custom-header/email-custom-header.c-
+plugins/email-custom-header/email-custom-header.c:		g_slist_free_full (header_list, g_free);
+plugins/email-custom-header/email-custom-header.c-	}
+plugins/email-custom-header/email-custom-header.c-
+plugins/image-inline/image-inline.c:	g_list_free_full (list, g_object_unref);
+plugins/image-inline/image-inline.c-
+plugins/image-inline/image-inline.c-	/* Make sure we found an EAttachment to select. */
+plugins/itip-formatter/itip-formatter.c:		g_slist_free_full (attachments, g_free);
+plugins/itip-formatter/itip-formatter.c-
+plugins/itip-formatter/itip-formatter.c-		e_cal_component_set_attachment_list (clone_comp, new_attachments);
+plugins/mail-notification/mail-notification.c:		g_list_free_full (caps, g_free);
+plugins/mail-notification/mail-notification.c-	}
+plugins/mail-notification/mail-notification.c-
+plugins/mail-to-task/mail-to-task.c:	g_slist_free_full (to_free, g_free);
+plugins/mail-to-task/mail-to-task.c:	g_slist_free_full (attendees, g_free);
+plugins/mail-to-task/mail-to-task.c-}
+plugins/mail-to-task/mail-to-task.c-
+plugins/mail-to-task/mail-to-task.c:	g_list_free_full (attachment_list, g_object_unref);
+plugins/mail-to-task/mail-to-task.c-
+plugins/mail-to-task/mail-to-task.c-	status.uris = NULL;
+plugins/mail-to-task/mail-to-task.c:		g_slist_free_full (manage_comp_datas, (GDestroyNotify)free_manage_comp_struct);
+plugins/mail-to-task/mail-to-task.c-
+plugins/mail-to-task/mail-to-task.c-		g_warning ("mail-to-task: Incorrect call of %s, no data given", G_STRFUNC);
+plugins/mail-to-task/mail-to-task.c:	g_slist_free_full (manage_comp_datas, (GDestroyNotify)free_manage_comp_struct);
+plugins/mail-to-task/mail-to-task.c-
+plugins/mail-to-task/mail-to-task.c-	return FALSE;
+plugins/publish-calendar/publish-calendar.c:	g_slist_free_full (uris, g_free);
+plugins/publish-calendar/publish-calendar.c-	g_object_unref (client);
+plugins/publish-calendar/publish-calendar.c-}
+plugins/publish-calendar/publish-calendar.c:	g_slist_free_full (url_list, g_free);
+plugins/publish-calendar/publish-calendar.c-}
+plugins/publish-calendar/publish-calendar.c-
+plugins/publish-calendar/publish-calendar.c:	g_slist_free_full (uris, g_free);
+plugins/publish-calendar/publish-calendar.c-
+plugins/publish-calendar/publish-calendar.c-	return NULL;
+plugins/publish-calendar/publish-location.c:	g_slist_free_full (uris, g_free);
+plugins/publish-calendar/publish-location.c-	g_object_unref (client);
+plugins/publish-calendar/publish-location.c-
+plugins/templates/templates.c:	g_slist_free_full (clue_list, g_free);
+plugins/templates/templates.c-}
+plugins/templates/templates.c-
+plugins/templates/templates.c:		g_slist_free_full (clue_list, g_free);
+plugins/templates/templates.c-	}
+plugins/templates/templates.c-
+plugins/vcard-inline/vcard-inline.c:	g_list_free_full (contact_list, g_object_unref);
+plugins/vcard-inline/vcard-inline.c-}
+plugins/vcard-inline/vcard-inline.c-
+shell/e-shell.c:	g_list_free_full (list, (GDestroyNotify)gtk_widget_destroy);
+shell/e-shell.c-}
+shell/e-shell.c-
+shell/e-shell.c:	g_list_free_full (priv->loaded_backends, g_object_unref);
+shell/e-shell.c-
+shell/e-shell.c-	g_free (priv->geometry);
+shell/e-shell.c:	g_list_free_full (list, (GDestroyNotify)g_type_module_unuse);
+shell/e-shell.c-
+shell/e-shell.c-	/* Process shell backends. */
+smime/gui/certificate-manager.c:		g_slist_free_full (imported_certs, g_object_unref);
+smime/gui/certificate-manager.c-	} else
+smime/gui/certificate-manager.c-		gtk_widget_destroy (filesel);
+smime/gui/certificate-manager.c:		g_slist_free_full (imported_certs, g_object_unref);
+smime/gui/certificate-manager.c-		g_free (filename);
+smime/gui/certificate-manager.c-	} else
+smime/gui/certificate-viewer.c:	g_list_free_full (cvm->cert_chain, g_object_unref);
+smime/gui/certificate-viewer.c-
+smime/gui/certificate-viewer.c-	g_object_unref (cvm->builder);
+smime/gui/certificate-viewer.c:		g_list_free_full (children, g_object_unref);
+smime/gui/certificate-viewer.c-	}
+smime/gui/certificate-viewer.c-}
+smime/lib/e-asn1-object.c:		g_list_free_full (obj->priv->children, g_object_unref);
+smime/lib/e-asn1-object.c-		g_free (obj->priv);
+smime/lib/e-asn1-object.c-		obj->priv = NULL;
+smime/lib/e-cert-db.c:			g_list_free_full (certs, g_object_unref);
+smime/lib/e-cert-db.c-			PORT_FreeArena(arena, PR_FALSE);
+smime/lib/e-cert-db.c-			return FALSE;
+smime/lib/e-cert-db.c:	g_list_free_full (certs, g_object_unref);
+smime/lib/e-cert-db.c-	PORT_FreeArena(arena, PR_FALSE);
+smime/lib/e-cert-db.c-	return rv;
+widgets/menus/gal-view-collection.c:	g_list_free_full (collection->factory_list, g_object_unref);
+widgets/menus/gal-view-collection.c-	collection->factory_list = NULL;
+widgets/menus/gal-view-collection.c-
+widgets/misc/e-attachment-handler-image.c:	g_list_free_full (selected, g_object_unref);
+widgets/misc/e-attachment-handler-image.c-}
+widgets/misc/e-attachment-handler-image.c-
+widgets/misc/e-attachment-handler-image.c:	g_list_free_full (selected, g_object_unref);
+widgets/misc/e-attachment-handler-image.c-}
+widgets/misc/e-attachment-handler-image.c-
+widgets/misc/e-attachment-handler-sendto.c:	g_list_free_full (selected, g_object_unref);
+widgets/misc/e-attachment-handler-sendto.c-}
+widgets/misc/e-attachment-handler-sendto.c-
+widgets/misc/e-attachment-handler-sendto.c:	g_list_free_full (selected, g_object_unref);
+widgets/misc/e-attachment-handler-sendto.c-
+widgets/misc/e-attachment-handler-sendto.c-	g_free (program);
+widgets/misc/e-attachment-store.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-store.c-}
+widgets/misc/e-attachment-store.c-
+widgets/misc/e-attachment-store.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-store.c-
+widgets/misc/e-attachment-store.c-	return num_loading;
+widgets/misc/e-attachment-store.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-store.c-
+widgets/misc/e-attachment-store.c-	return total_size;
+widgets/misc/e-attachment-store.c:	g_slist_free_full (files, g_object_unref);
+widgets/misc/e-attachment-store.c-
+widgets/misc/e-attachment-store.c-exit:
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c-	list = e_attachment_view_get_selected_attachments (view);
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c-	action = e_attachment_view_get_action (view, "cancel");
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (priv->event_list, (GDestroyNotify)gdk_event_free);
+widgets/misc/e-attachment-view.c:	g_list_free_full (priv->selected, g_object_unref);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:		g_list_free_full (list, g_object_unref);
+widgets/misc/e-attachment-view.c-	}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (priv->event_list, (GDestroyNotify)gdk_event_free);
+widgets/misc/e-attachment-view.c-	priv->event_list = NULL;
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-attachment-view.c-
+widgets/misc/e-attachment-view.c:	g_list_free_full (priv->selected, g_object_unref);
+widgets/misc/e-attachment-view.c-	priv->selected = NULL;
+widgets/misc/e-attachment-view.c-}
+widgets/misc/e-preferences-window.c:	g_list_free_full (list, (GDestroyNotify)gtk_tree_path_free);
+widgets/misc/e-preferences-window.c-
+widgets/misc/e-preferences-window.c-	gtk_widget_grab_focus (GTK_WIDGET (icon_view));
+widgets/table/e-table-header.c:		g_slist_free_full (eth->change_queue, g_free);
+widgets/table/e-table-header.c-		eth->change_queue = NULL;
+widgets/table/e-table-header.c-	}
+widgets/table/e-tree.c:		g_list_free_full (et->priv->expanded_list, g_free);
+widgets/table/e-tree.c-
+widgets/table/e-tree.c-		et_disconnect_from_etta (et);

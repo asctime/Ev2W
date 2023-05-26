@@ -162,7 +162,7 @@ attachment_handler_image_update_actions_cb (EAttachmentView *view,
 	GFileInfo *file_info;
 	GtkActionGroup *action_group;
 	const gchar *content_type;
-	gchar *mime_type;
+	gchar *mime_type = NULL;
 	GList *selected;
 	gboolean visible = FALSE;
 
@@ -183,9 +183,42 @@ attachment_handler_image_update_actions_cb (EAttachmentView *view,
 	if (e_attachment_get_saving (attachment))
 		goto exit;
 
+#ifdef G_OS_WIN32_DONTUSE__
+  const gchar *m_ptr = NULL;
+  GFile *file = NULL;
+  GError *m_err;
+  file = e_attachment_get_file (attachment);
+  GFileInputStream* m_s = g_file_read(file, NULL, &m_err);
+  gsize m_len = g_file_info_get_size(file_info);
+  m_ptr = g_malloc(m_len + 1);
+  if (!file || m_len == 0 || !g_input_stream_read(G_INPUT_STREAM(m_s),
+    m_ptr, m_len, NULL, &m_err)) {
+    g_debug ("Win32 action update failed. Falling back to glib.");
+#elif defined(G_OS_WIN32)
+  GFile *file = e_attachment_get_file (attachment); 
+  mime_type = g_strdup(e_win32_get_mime_type (file, NULL));
+  if (mime_type == NULL) {
+    g_debug ("Win32 action update failed. Falling back to glib.");
+#endif
 	content_type = g_file_info_get_content_type (file_info);
+  if (content_type) {
+    mime_type = g_content_type_get_mime_type (content_type);
+  }
+#ifdef G_OS_WIN32_DONTUSE__
+  } else {
+    m_ptr[m_len] = '\0';
+    mime_type = e_win32_get_mime_type (NULL, m_ptr);
+    g_input_stream_close(G_INPUT_STREAM(m_s), NULL, NULL);
+  }
+  g_object_unref(m_s);
+  g_object_unref (file); 
+  /* g_free (m_ptr); */  /* Safer to free in e_win32_get_mime_type */
+  g_clear_error(&m_err);
+#elif defined (G_OS_WIN32)
+    g_object_unref (file);
+  }
+#endif
 
-	mime_type = g_content_type_get_mime_type (content_type);
 	visible = (g_ascii_strncasecmp (mime_type, "image/", 6) == 0);
 	g_free (mime_type);
 

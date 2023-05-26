@@ -20,6 +20,9 @@
  */
 
 #include "e-attachment-dialog.h"
+#ifdef G_OS_WIN32
+#include "e-util/e-util.h"
+#endif
 
 #include <glib/gi18n.h>
 
@@ -84,7 +87,39 @@ attachment_dialog_update (EAttachmentDialog *dialog)
 		gchar *mime_type;
 
 		comment = g_content_type_get_description (content_type);
-		mime_type = g_content_type_get_mime_type (content_type);
+
+#ifdef G_OS_WIN32_DONTUSE__
+    const gchar *m_ptr = NULL;
+    GFile *file = NULL;
+    GError *m_err;
+    file = e_attachment_get_file (attachment);
+    GFileInputStream* m_s = g_file_read(file, NULL, &m_err);
+    gsize m_len = g_file_info_get_size(file_info);
+    m_ptr = g_malloc(m_len + 1);
+    if (!file || m_len == 0 || !g_input_stream_read(G_INPUT_STREAM(m_s),
+      m_ptr, m_len, NULL, &m_err)) {
+      g_debug ("Win32 attachment scan cannot start. Falling back to glib.");
+#elif defined(G_OS_WIN32)
+    GFile *file = e_attachment_get_file (attachment); 
+    mime_type = g_strdup(e_win32_get_mime_type (file, NULL));
+    if (mime_type == NULL) {
+      g_debug ("Win32 attachment scan cannot start. Falling back to glib.");
+#endif
+		  mime_type = g_content_type_get_mime_type (content_type);
+#ifdef G_OS_WIN32_DONTUSE__
+    } else {
+      m_ptr[m_len] = '\0';
+      mime_type = e_win32_get_mime_type (NULL, m_ptr);
+      g_input_stream_close(G_INPUT_STREAM(m_s), NULL, NULL);
+    }
+    g_object_unref(m_s);
+    g_object_unref (file);
+    /* g_free (m_ptr); */  /* Safer to free in e_win32_get_mime_type */
+    g_clear_error(&m_err);
+#elif defined (G_OS_WIN32)
+    g_object_unref (file);
+  }
+#endif
 
 		type_description =
 			g_strdup_printf ("%s (%s)", comment, mime_type);

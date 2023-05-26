@@ -122,7 +122,6 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/dirent.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/io.h \
@@ -1077,8 +1076,6 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
-
-D:/MSYS2/mingw64/include/glib-2.0/glib/gprintf.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h:
 

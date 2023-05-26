@@ -33,8 +33,8 @@
 #include <misc/e-canvas-utils.h>
 #include <gdk/gdkkeysyms.h>
 
-static void e_minicard_label_init		(EMinicardLabel		 *card);
-static void e_minicard_label_class_init	(EMinicardLabelClass	 *klass);
+static void e_minicard_label_init		(EMinicardLabel		 *card, gpointer class_data);
+static void e_minicard_label_class_init	(EMinicardLabelClass	 *klassi, gpointer class_data);
 static void e_minicard_label_set_property  (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
 static void e_minicard_label_get_property  (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
 static gboolean e_minicard_label_event (GnomeCanvasItem *item, GdkEvent *event);
@@ -94,7 +94,7 @@ e_minicard_label_get_type (void)
 }
 
 static void
-e_minicard_label_class_init (EMinicardLabelClass *klass)
+e_minicard_label_class_init (EMinicardLabelClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -183,7 +183,7 @@ e_minicard_label_class_init (EMinicardLabelClass *klass)
 }
 
 static void
-e_minicard_label_init (EMinicardLabel *minicard_label)
+e_minicard_label_init (EMinicardLabel *minicard_label, gpointer class_data)
 {
   minicard_label->width = 10;
   minicard_label->height = 10;

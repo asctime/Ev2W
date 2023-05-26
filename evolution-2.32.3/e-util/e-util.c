@@ -45,7 +45,13 @@
 #include <glib/gstdio.h>
 
 #ifdef G_OS_WIN32
-#include <windows.h>
+#define WIN32_LEAN_AND_MEAN
+#if defined(__MINGW32__) && !defined(_WIN32_IE) /* for urlmon api */
+#define _WIN32_IE 0x0800
+#endif
+#include <glib.h>
+#include <Windows.h>
+#include <Urlmon.h>
 #endif
 
 #include <camel/camel.h>
@@ -671,6 +677,7 @@ e_format_number (gint number)
 		default:
 			last_count = *grouping;
 			grouping++;
+      /* coverity[fallthrough] */
 		case 0:
 			divider = epow10 (last_count);
 			if (number >= divider) {
@@ -1374,13 +1381,16 @@ e_util_guess_mime_type (const gchar *filename, gboolean localfile)
 
 	if (localfile) {
 		GFile *file;
-		GFileInfo *fi;
 
 		if (strstr (filename, "://"))
 			file = g_file_new_for_uri (filename);
 		else
 			file = g_file_new_for_path (filename);
 
+#ifdef G_OS_WIN32
+    mime_type = g_strdup(e_win32_get_mime_type(file, NULL));
+#else
+		GFileInfo *fi;
 		fi = g_file_query_info (
 			file, G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE,
 			G_FILE_QUERY_INFO_NONE, NULL, NULL);
@@ -1389,8 +1399,8 @@ e_util_guess_mime_type (const gchar *filename, gboolean localfile)
 				g_file_info_get_content_type (fi));
 			g_object_unref (fi);
 		}
-
-		g_object_unref (file);
+#endif
+  g_object_unref (file);
 	}
 
 	if (!mime_type) {
@@ -1487,3 +1497,92 @@ e_util_set_source_combo_box_list (GtkWidget *source_combo_box,
 	g_object_unref (gconf_client);
 }
 
+#if defined (G_OS_WIN32_API_METHOD) || defined(G_OS_WIN32)
+gchar * e_win32_get_mime_type (GFile *file, const gchar *buf)
+{ 
+  LPWSTR wmime_type, win_path = NULL;
+  gchar *mime_type = NULL;
+
+  /* if both file and buff are specified just use file */
+  if (file != NULL) {
+    win_path = g_utf8_to_utf16 (g_file_get_path (file),
+      -1, NULL, NULL, NULL);
+  } else if (buf == NULL) {
+      mime_type = NULL;
+    goto exit;
+  }
+
+  const HRESULT result = FindMimeFromData(NULL, win_path,
+    g_strdup(buf), 120, NULL, 
+    FMFD_ENABLEMIMESNIFFING | FMFD_IGNOREMIMETEXTPLAIN, &wmime_type, 0);
+
+  if (result == S_OK) {
+    mime_type = g_utf16_to_utf8 (wmime_type, -1, NULL, NULL, NULL);
+  } else {
+    g_debug ("WIN32 FindMimeFromData failed. Returning NULL");
+    mime_type = NULL;
+  }
+
+exit:
+  /* g_object_unref (file); */ /* Some calling fuunctions still need */
+                               /* So we free buf here but not file   */
+  return mime_type; 
+}
+
+#elif defined (G_OS_WIN32_EXTERNAL_METHOD) || defined(G_OS_WIN32)
+typedef HRESULT (WINAPI *FindMimeFromData_t) (LPBC pBC,
+					      LPCWSTR pwzUrl,
+					      LPVOID pBuffer,
+					      DWORD cbSize,
+					      LPCWSTR pwzMimeProposed,
+					      DWORD dwMimeFlags,
+					      LPWSTR *ppwzMimeOut,
+					      DWORD dwReserved);
+
+static FindMimeFromData_t
+find_mime_from_data (void)
+{
+	HMODULE urlmon;
+	static FindMimeFromData_t result = NULL;
+	static gboolean beenhere = FALSE;
+
+	if (!beenhere) {
+		urlmon = LoadLibrary ("urlmon.dll");
+		if (urlmon != NULL)
+			result = (FindMimeFromData_t) GetProcAddress (urlmon, "FindMimeFromData");
+		beenhere = TRUE;
+	}
+
+	return result;
+}
+
+gchar * e_win32_get_mime_type (GFile *file, gchar *buf)
+{
+  LPWSTR win_path, wmime_type;
+  gchar *mime_type = NULL;
+
+  /* if both file and buff are specified just use file */
+  if (file != NULL) {
+    win_path = g_utf8_to_utf16 (g_file_get_path (file),
+      -1, NULL, NULL, NULL);
+  } else if (buf == NULL) {
+      mime_type = NULL;
+    goto exit;
+  }
+
+  if ((find_mime_from_data ()) (NULL, win_path, buf, 0,
+	  NULL, FMFD_ENABLEMIMESNIFFING, &wmime_type, 0) == NOERROR)	{
+    mime_type = g_utf16_to_utf8 (wmime_type, -1, NULL, NULL, NULL);
+  } else {
+    g_debug ("WIN32 FindMimeFromData failed. Returning NULL");
+    mime_type = NULL;
+  }
+
+exit:
+  if (buf) 
+    g_free(buf);
+  /* g_object_unref (file); */ /* Some calling fuunctions still need */
+                               /* So we free buf here but not file   */
+  return mime_type; 
+}
+#endif

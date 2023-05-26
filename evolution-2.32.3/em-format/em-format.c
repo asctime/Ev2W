@@ -2248,8 +2248,8 @@ em_format_snoop_type (CamelMimePart *part)
 
 	filename = camel_mime_part_get_filename (part);
 	if (filename != NULL)
-		name_type = e_util_guess_mime_type (filename, FALSE);
-
+	  name_type = e_util_guess_mime_type (filename, FALSE);
+ 
 	dw = camel_medium_get_content ((CamelMedium *)part);
 	if (!camel_data_wrapper_is_offline (dw)) {
 		GByteArray *byte_array;
@@ -2259,22 +2259,44 @@ em_format_snoop_type (CamelMimePart *part)
 		stream = camel_stream_mem_new_with_byte_array (byte_array);
 
 		if (camel_data_wrapper_decode_to_stream (dw, stream, NULL) > 0) {
-			gchar *content_type;
 
-			content_type = g_content_type_guess (
-				filename, byte_array->data,
-				byte_array->len, NULL);
+#ifdef G_OS_WIN32
+      /* Commented code just for demo. Use existing byte_array!    */    
+      /* GByteArray *m_ba = 
+        camel_stream_mem_get_byte_array((CamelStreamMem *)stream);
+        ... 
+		    g_byte_array_free (m_ba, TRUE);                            */
 
-			if (content_type != NULL)
-				magic_type = g_content_type_get_mime_type (content_type);
+      /* 2-way mem airgap from EI8 API  */
+      const gchar *m_ptr = g_strndup((gchar*)byte_array->data, 4096);
+      magic_type = g_strdup(e_win32_get_mime_type (NULL, m_ptr));
+      /* g_free (m_ptr); */ /* Safer to free in e_win32_get_mime_type */
+      if (magic_type == NULL) {
+        g_debug ("Win32 message part \"%s\" scan failed. \
+          Falling back to glib.", name_type);
+#endif
+			const gchar *content_type = g_content_type_guess (
+				  filename, byte_array->data, byte_array->len, NULL);
 
-			g_free (content_type);
+			  if (content_type != NULL)
+				  magic_type = g_content_type_get_mime_type (content_type);
+
+#ifdef G_OS_WIN32
+      } 
+#endif
 		}
 
-		g_object_unref (stream);
+    /* CamelStream is a CamelObject with GObject parent class.
+       GObjects normally are automatically removed when they are no 
+       longer in use (external references are zero). New tnef plugin
+       takes ownership of stream and unrefs it but nobody told us     */ 
+
+    /* camel_stream_mem_set_byte_array ((CamelStreamMem *) stream, NULL); */
+    /* g_object_ref_sink (stream); */ /* FIXME tnef ownership hack    */
+		g_object_unref (stream);          /* Avoid reference # mismatch   */
 	}
 
-	d(printf("snooped part, magic_type '%s' name_type '%s'\n", magic_type, name_type));
+	g_debug("snooped part, magic_type '%s' name_type '%s'\n", magic_type, name_type);
 
 	/* If gvfs doesn't recognize the data by magic, but it
 	 * contains English words, it will call it text/plain. If the

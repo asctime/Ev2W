@@ -772,6 +772,19 @@
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vee-summary.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vee-store.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vtrash-folder.h \
+ ../../../e-util/e-util.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-client.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-schema.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-value.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-error.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-engine.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-error.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-enum-types.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-listeners.h \
+ D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h \
+ ../../e-util/e-marshal.h \
+ D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h
@@ -2317,6 +2330,32 @@ D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vee-summary.h:
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vee-store.h:
 
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/camel/camel-vtrash-folder.h:
+
+../../../e-util/e-util.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-client.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-schema.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-value.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-error.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-engine.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-error.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-enum-types.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-listeners.h:
+
+D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-changeset.h:
+
+../../e-util/e-marshal.h:
+
+D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-data-server-util.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h:
 

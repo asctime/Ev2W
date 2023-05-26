@@ -145,6 +145,11 @@ GList *		e_util_get_searchable_categories(void);
 void		e_util_set_source_combo_box_list
 						(GtkWidget *source_combo_box,
 						 const gchar *source_gconf_path);
+#ifdef G_OS_WIN32
+gchar *   e_win32_get_mime_type     (GFile *file, const gchar *buf);
+#endif
+
+
 
 G_END_DECLS
 

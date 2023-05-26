@@ -1746,7 +1746,7 @@ em_utils_send_receipt (CamelFolder *folder, CamelMimeMessage *message)
 	receipt_data = camel_data_wrapper_new ();
 	part = camel_mime_part_new ();
 
-	ua = g_strdup_printf ("%s; %s", hostname, "Evolution " VERSION SUB_VERSION " " VERSION_COMMENT);
+	ua = g_strdup_printf ("%s; %s", hostname, "Evolution " VERSION SUB_VERSION);
 	recipient = g_strdup_printf ("rfc822; %s", self_address);
 
 	type = camel_content_type_new ("message", "disposition-notification");

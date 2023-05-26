@@ -9,11 +9,12 @@ gladeevolutiondir = `$(PKG_CONFIG) --variable=moduledir gladeui-1.0`
 libgladeevolution_la_SOURCES =
 
 libgladeevolution_la_LDFLAGS = \
-	-module -avoid-version
+	-module -avoid-version \
+	 $(NO_UNDEFINED)
 
 libgladeevolution_la_LIBADD = \
-	$(top_srcdir)/mail/libevolution-mail.la \
-	$(top_srcdir)/calendar/gui/libevolution-calendar.la \
+	$(top_builddir)/mail/libevolution-mail.la \
+	$(top_builddir)/calendar/gui/libevolution-calendar.la \
 	$(top_builddir)/widgets/misc/libemiscwidgets.la \
 	$(EVOLUTION_CALENDAR_LIBS) \
 	$(EVOLUTION_MAIL_LIBS) \

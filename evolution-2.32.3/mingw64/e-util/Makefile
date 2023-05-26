@@ -106,7 +106,8 @@ am__installdirs = "$(DESTDIR)$(privsolibdir)" "$(DESTDIR)$(errordir)" \
 LTLIBRARIES = $(privsolib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 libeutil_la_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 am__libeutil_la_SOURCES_DIST = e-account-utils.h e-activity.h \
 	e-alert.h e-alert-activity.h e-alert-dialog.h e-binding.h \
 	e-bit-array.h e-categories-config.h e-charset.h e-config.h \
@@ -288,8 +289,8 @@ GEOCLUE_LIBS =
 GETTEXT_PACKAGE = evolution-2.32
 GIT_CFLAGS = 
 GIT_LIBS = 
-GLADEUI_CFLAGS = 
-GLADEUI_LIBS = 
+GLADEUI_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/libgladeui-1.0 -ID:/MSYS2/mingw64/bin/../include/gtk-2.0 -ID:/MSYS2/mingw64/bin/../lib/gtk-2.0/include -ID:/MSYS2/mingw64/bin/../include/pango-1.0 -ID:/MSYS2/mingw64/bin/../include -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -ID:/MSYS2/mingw64/bin/../lib/libffi-3.2.1/include -ID:/MSYS2/mingw64/bin/../include/harfbuzz -ID:/MSYS2/mingw64/bin/../include/fribidi -ID:/MSYS2/mingw64/bin/../include/freetype2 -ID:/MSYS2/mingw64/bin/../include/libpng16 -ID:/MSYS2/mingw64/bin/../include/cairo -ID:/MSYS2/mingw64/bin/../include/lzo -ID:/MSYS2/mingw64/bin/../include/pixman-1 -ID:/MSYS2/mingw64/bin/../include/gdk-pixbuf-2.0 -ID:/MSYS2/mingw64/bin/../include/atk-1.0 -mms-bitfields -ID:/MSYS2/mingw64/bin/../include/libxml2 
+GLADEUI_LIBS = -LD:/MSYS2/mingw64/bin/../lib -lgladeui-1 -lgtk-win32-2.0 -lgdk-win32-2.0 -limm32 -lshell32 -lole32 -Wl,-luuid -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdi32 -lmsimg32 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl -lxml2 
 GLIB_CFLAGS = -ID:/MSYS2/mingw64/bin/../include/glib-2.0 -ID:/MSYS2/mingw64/bin/../lib/glib-2.0/include -mms-bitfields -ID:/MSYS2/mingw64/bin/../include 
 GLIB_COMPILE_RESOURCES = D:/MSYS2/mingw64/bin/../bin/glib-compile-resources
 GLIB_GENMARSHAL = D:/MSYS2/mingw64/bin/../bin/glib-genmarshal
@@ -511,6 +512,7 @@ eutilincludedir = $(privincludedir)/e-util
 ecpsdir = $(privdatadir)/ecps
 ruledir = $(privdatadir)
 PLATFORM_SOURCES = e-win32-reloc.c e-win32-defaults.c e-win32-defaults.h
+URLMON = -lurlmon
 privsolib_LTLIBRARIES = libeutil.la
 eutilinclude_HEADERS = \
 	e-account-utils.h			\
@@ -648,7 +650,8 @@ libeutil_la_LIBADD = \
 	$(ICONV_LIBS)		\
 	$(E_UTIL_LIBS)		\
 	$(GNOME_PLATFORM_LIBS)	\
-	$(INTLLIBS)
+	$(INTLLIBS)		\
+	$(URLMON)
 
 error_DATA = e-system.error
 errordir = $(privdatadir)/errors

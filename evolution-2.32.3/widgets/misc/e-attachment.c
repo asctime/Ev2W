@@ -1358,31 +1358,6 @@ e_attachment_get_thumbnail_path (EAttachment *attachment)
 	return g_file_info_get_attribute_byte_string (file_info, attribute);
 }
 
-gboolean
-e_attachment_is_rfc822 (EAttachment *attachment)
-{
-	GFileInfo *file_info;
-	const gchar *content_type;
-	gchar *mime_type;
-	gboolean is_rfc822;
-
-	g_return_val_if_fail (E_IS_ATTACHMENT (attachment), FALSE);
-
-	file_info = e_attachment_get_file_info (attachment);
-	if (file_info == NULL)
-		return FALSE;
-
-	content_type = g_file_info_get_content_type (file_info);
-	if (content_type == NULL)
-		return FALSE;
-
-	mime_type = g_content_type_get_mime_type (content_type);
-	is_rfc822 = (g_ascii_strcasecmp (mime_type, "message/rfc822") == 0);
-	g_free (mime_type);
-
-	return is_rfc822;
-}
-
 GList *
 e_attachment_list_apps (EAttachment *attachment)
 {
@@ -1513,7 +1488,6 @@ attachment_load_finish (LoadContext *load_context)
 	CamelMimePart *mime_part;
 	CamelStream *stream;
 	const gchar *attribute;
-	const gchar *content_type;
 	const gchar *display_name;
 	const gchar *description;
 	const gchar *disposition;
@@ -1527,19 +1501,34 @@ attachment_load_finish (LoadContext *load_context)
 	attachment = load_context->attachment;
 	output_stream = G_MEMORY_OUTPUT_STREAM (load_context->output_stream);
 
-	if (e_attachment_is_rfc822 (attachment))
-		wrapper = (CamelDataWrapper *) camel_mime_message_new ();
-	else
-		wrapper = camel_data_wrapper_new ();
-
-	content_type = g_file_info_get_content_type (file_info);
-	mime_type = g_content_type_get_mime_type (content_type);
-
 	data = g_memory_output_stream_get_data (output_stream);
 	size = g_memory_output_stream_get_data_size (output_stream);
 
 	stream = camel_stream_mem_new_with_buffer (data, size);
+
+#ifdef G_OS_WIN32      /* 2-way mem airgap from EI8 API  */ 
+  const gchar* m_ptr = g_strndup((gchar*)data, 4096);
+  mime_type = g_strdup(e_win32_get_mime_type (NULL, m_ptr));
+  /* g_free (m_ptr); */  /* Safer to free in e_win32_get_mime_type */
+  if (mime_type == NULL) {
+    g_debug ("Attachment load mime check failed. Falling back to glib.");
+#endif
+
+    /* if (e_attachment_is_rfc822 (attachment)) */ /* check mime twice?? */
+	  const gchar *content_type;
+	  content_type = g_file_info_get_content_type (file_info);
+    mime_type = g_content_type_get_mime_type (content_type);
+#ifdef G_OS_WIN32
+  }
+#endif
+
+	if (g_ascii_strcasecmp (mime_type, "message/rfc822") == 0)
+		wrapper = (CamelDataWrapper *) camel_mime_message_new ();
+	else
+		wrapper = camel_data_wrapper_new ();
+
 	camel_data_wrapper_construct_from_stream (wrapper, stream, NULL);
+
 	camel_data_wrapper_set_mime_type (wrapper, mime_type);
 	camel_stream_close (stream, NULL);
 	g_object_unref (stream);

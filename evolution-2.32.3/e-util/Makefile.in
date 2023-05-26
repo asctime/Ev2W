@@ -106,7 +106,8 @@ am__installdirs = "$(DESTDIR)$(privsolibdir)" "$(DESTDIR)$(errordir)" \
 LTLIBRARIES = $(privsolib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 libeutil_la_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 am__libeutil_la_SOURCES_DIST = e-account-utils.h e-activity.h \
 	e-alert.h e-alert-activity.h e-alert-dialog.h e-binding.h \
 	e-bit-array.h e-categories-config.h e-charset.h e-config.h \
@@ -511,6 +512,7 @@ eutilincludedir = $(privincludedir)/e-util
 ecpsdir = $(privdatadir)/ecps
 ruledir = $(privdatadir)
 @OS_WIN32_TRUE@PLATFORM_SOURCES = e-win32-reloc.c e-win32-defaults.c e-win32-defaults.h
+@OS_WIN32_TRUE@URLMON = -lurlmon
 privsolib_LTLIBRARIES = libeutil.la
 eutilinclude_HEADERS = \
 	e-account-utils.h			\
@@ -648,7 +650,8 @@ libeutil_la_LIBADD = \
 	$(ICONV_LIBS)		\
 	$(E_UTIL_LIBS)		\
 	$(GNOME_PLATFORM_LIBS)	\
-	$(INTLLIBS)
+	$(INTLLIBS)		\
+	$(URLMON)
 
 error_DATA = e-system.error
 errordir = $(privdatadir)/errors
