@@ -68,6 +68,20 @@ static gboolean gal_a11y_e_table_item_unref_selection (GalA11yETableItem *a11y);
 
 static AtkObject* eti_ref_at (AtkTable *table, gint row, gint column);
 
+
+static void
+free_columns (ETableCol **columns)    /* gitlab #60f3e852 etable leaks */
+{
+  gint ii;
+  if (!columns)
+    return;
+  for (ii = 0; columns[ii]; ii++) {
+    g_object_unref (columns[ii]);
+  }
+
+  g_free (columns);
+}
+
 static void
 item_destroyed (GtkObject *item, gpointer user_data)
 {
@@ -203,7 +217,7 @@ eti_dispose (GObject *object)
 	GalA11yETableItemPrivate *priv = GET_PRIVATE (a11y);
 
 	if (priv->columns) {
-		g_free (priv->columns);
+    free_columns (priv->columns);
 		priv->columns = NULL;
 	}
 
@@ -889,7 +903,7 @@ eti_header_structure_changed (ETableHeader *eth, AtkObject *a11y)
 	g_free (reorder);
 	g_free (prev_state);
 
-	g_free (priv->columns);
+  free_columns (priv->columns);
 	priv->columns = cols;
 }
 

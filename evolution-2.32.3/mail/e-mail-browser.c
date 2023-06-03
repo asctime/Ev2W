@@ -545,8 +545,6 @@ mail_browser_constructed (GObject *object)
 		web_view, "status-message",
 		G_CALLBACK (mail_browser_status_message_cb), object);
 
-	e_mail_reader_init (reader, TRUE, TRUE);
-
 	action_group = priv->action_group;
 	gtk_action_group_set_translation_domain (action_group, domain);
 	gtk_action_group_add_actions (
@@ -556,6 +554,9 @@ mail_browser_constructed (GObject *object)
 		action_group, mail_browser_popup_entries,
 		G_N_ELEMENTS (mail_browser_popup_entries));
 	gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
+
+  /* Moved per gitlab #43e043c2 */
+	e_mail_reader_init (reader, TRUE, TRUE);
 
 	e_ui_manager_add_ui_from_file (
 		E_UI_MANAGER (ui_manager), E_MAIL_READER_UI_DEFINITION);

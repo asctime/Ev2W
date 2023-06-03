@@ -336,6 +336,11 @@ shell_window_constructed (GObject *object)
 	if (e_shell_get_meego_mode (shell_window->priv->shell) &&
 	    e_shell_get_small_screen_mode (shell_window->priv->shell))
 		gtk_window_set_decorated (GTK_WINDOW (object), FALSE);
+
+/* First attempt to fix WIN32 focus bug. This is not a full fix. */
+#ifdef G_OS_WIN32
+  gtk_window_present(GTK_WINDOW(object));
+#endif
 }
 
 static GtkWidget *

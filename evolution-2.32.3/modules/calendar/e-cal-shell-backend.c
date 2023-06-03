@@ -153,8 +153,7 @@ cal_shell_backend_ensure_sources (EShellBackend *shell_backend)
 			calendar_config_set_calendars_selected (selected);
 		}
 
-		g_slist_foreach (selected, (GFunc) g_free, NULL);
-		g_slist_free (selected);
+		g_slist_free_full (selected, g_free);
 		g_free (primary);
 	} else {
 		/* Force the source name to the current locale. */
@@ -451,23 +450,31 @@ cal_shell_backend_init_importers (void)
 	e_import_class_add_importer (import_class, importer, NULL, NULL);
 }
 
-static time_t
-utc_to_user_zone (time_t utc_time)
+/* Gitlab #3e8e8cb9 fix Bug #690930 TZ Applied twice */
+static void
+populate_g_date (GDate *date, time_t utc_time, icaltimezone *zone)
 {
-	icaltimezone *zone = calendar_config_get_icaltimezone ();
+  struct icaltimetype icaltm;
 
-	if (!zone || (int) utc_time == -1)
-		return utc_time;
+  g_return_if_fail (date != NULL);
+  if ((gint) utc_time == -1)
+    return;
 
-	return icaltime_as_timet (
-		icaltime_from_timet_with_zone (utc_time, FALSE, zone));
+  if (zone)
+    icaltm = icaltime_from_timet_with_zone (utc_time, FALSE, zone);
+  else
+    icaltm = icaltime_from_timet (utc_time, FALSE);
+
+  if (icaltime_is_null_time (icaltm) || !icaltime_is_valid_time (icaltm))
+    return;
+
+  g_date_set_dmy (date, icaltm.day, icaltm.month, icaltm.year);
 }
 
 static gboolean
 cal_shell_backend_handle_uri_cb (EShellBackend *shell_backend,
                                  const gchar *uri)
 {
-	EShell *shell;
 	CompEditor *editor;
 	CompEditorFlags flags = 0;
 	ECal *client;
@@ -486,10 +493,11 @@ cal_shell_backend_handle_uri_cb (EShellBackend *shell_backend,
 	GDate end_date;
 	gboolean handled = FALSE;
 	GError *error = NULL;
+  EShell *shell = e_shell_backend_get_shell (shell_backend);
+  EShellSettings *shell_settings = e_shell_get_shell_settings (shell);  
+  icaltimezone *zone = e_shell_settings_get_pointer (shell_settings, "cal-timezone");
 
 	source_type = E_CAL_SOURCE_TYPE_EVENT;
-	shell = e_shell_backend_get_shell (shell_backend);
-
 	if (strncmp (uri, "calendar:", 9) != 0)
 		return FALSE;
 
@@ -521,11 +529,9 @@ cal_shell_backend_handle_uri_cb (EShellBackend *shell_backend,
 
 		content = g_strndup (cp, content_len);
 		if (g_ascii_strcasecmp (header, "startdate") == 0)
-			g_date_set_time_t (
-				&start_date, utc_to_user_zone (time_from_isodate (content)));
+      populate_g_date (&start_date, time_from_isodate (content), zone);
 		else if (g_ascii_strcasecmp (header, "enddate") == 0)
-			g_date_set_time_t (
-				&end_date, utc_to_user_zone (time_from_isodate (content)));
+      populate_g_date (&end_date, time_from_isodate (content), zone);
 		else if (g_ascii_strcasecmp (header, "source-uid") == 0)
 			source_uid = g_strdup (content);
 		else if (g_ascii_strcasecmp (header, "comp-uid") == 0)
@@ -732,7 +738,7 @@ cal_shell_backend_constructed (GObject *object)
 }
 
 static void
-cal_shell_backend_class_init (ECalShellBackendClass *class)
+cal_shell_backend_class_init (ECalShellBackendClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EShellBackendClass *shell_backend_class;
@@ -767,7 +773,7 @@ cal_shell_backend_class_init (ECalShellBackendClass *class)
 }
 
 static void
-cal_shell_backend_init (ECalShellBackend *cal_shell_backend)
+cal_shell_backend_init (ECalShellBackend *cal_shell_backend, gpointer class_data)
 {
 	icalarray *builtin_timezones;
 	gint ii;
