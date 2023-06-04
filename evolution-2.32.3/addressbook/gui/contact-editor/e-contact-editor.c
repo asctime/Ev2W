@@ -93,6 +93,10 @@ static void sensitize_ok (EContactEditor *ce);
 
 static EABEditorClass *parent_class = NULL;
 
+/* Work around buggy callbacks */
+static GtkWidget *fullname_dialog = NULL;
+static GtkWidget *categories_dialog = NULL;
+
 /* The arguments we take */
 enum {
 	PROP_0,
@@ -392,13 +396,13 @@ style_makes_sense (const EContactName *name, const gchar *company, gint style)
 	case 0: /* Fall Through */
 	case 1:
 		return TRUE;
-        case 2:
-                if (name) {
-                        if (name->additional && *name->additional)
-                                return TRUE;
-                        else
-                                return FALSE;
-                }
+  case 2:
+    if (name && name != NULL) {
+      if (name->additional && *name->additional)
+        return TRUE;
+      else
+        return FALSE;
+    }
 	case 3:
 		if (company && *company)
 			return TRUE;
@@ -2798,46 +2802,54 @@ full_name_response (GtkDialog *dialog, gint response, EContactEditor *editor)
 		file_as_set_style(editor, style);
 	}
 	gtk_widget_destroy (GTK_WIDGET (dialog));
-	editor->fullname_dialog = NULL;
+	fullname_dialog = NULL;
 }
 
+#if 0
 static gint
 full_name_editor_delete_event_cb (GtkWidget *widget, GdkEvent *event, gpointer data)
 {
 	if (widget) {
-		if (GTK_IS_WIDGET (widget))
+		if (gtk_widget_get_realized(widget))
 			gtk_widget_destroy (widget);
+    else
+      g_object_unref(widget);
 	}
 	return TRUE;
 }
+#endif
 
 static void
 full_name_clicked (GtkWidget *button, EContactEditor *editor)
 {
-	GtkDialog *dialog;
 	gboolean fullname_supported;
 
-	if (editor->fullname_dialog) {
-		gtk_window_present (GTK_WINDOW (editor->fullname_dialog));
+	if (fullname_dialog) {
+		gtk_window_present (GTK_WINDOW (fullname_dialog));
 		return;
 	}
 
+#if 1  /* These guys really overcomplicated things, sheesh.. so.. */
+  fullname_dialog = e_contact_editor_fullname_new(editor->name);
+#else  /* Old daggy buggy callback.. */
 	dialog = GTK_DIALOG (e_contact_editor_fullname_new (editor->name));
+#endif
 	fullname_supported = is_field_supported (editor, E_CONTACT_FULL_NAME);
 
-	g_object_set (dialog,
+	g_object_set (fullname_dialog,
 		      "editable", fullname_supported & editor->target_editable,
 		      NULL);
 
-	g_signal_connect(dialog, "response",
+	g_signal_connect(fullname_dialog, "response",
 			G_CALLBACK (full_name_response), editor);
 
+#if 0
 	/* Close the fullname dialog if the editor is closed */
 	g_signal_connect_swapped (EAB_EDITOR (editor), "editor_closed",
 			    G_CALLBACK (full_name_editor_delete_event_cb), GTK_WIDGET (dialog));
+#endif
 
-	gtk_widget_show (GTK_WIDGET (dialog));
-	editor->fullname_dialog = GTK_WIDGET (dialog);
+	gtk_widget_show (GTK_WIDGET (fullname_dialog));
 }
 
 static void
@@ -2854,24 +2866,27 @@ categories_response (GtkDialog *dialog, gint response, EContactEditor *editor)
 			e_contact_set (editor->contact, E_CONTACT_CATEGORIES, (gchar *)categories);
 	}
 	gtk_widget_destroy(GTK_WIDGET(dialog));
-	editor->categories_dialog = NULL;
+	categories_dialog = NULL;
 }
 
+#if 0
 static gint
 categories_editor_delete_event_cb (GtkWidget *widget, GdkEvent *event, gpointer data)
 {
 	if (widget) {
-		if (GTK_IS_WIDGET (widget))
-			gtk_widget_destroy(widget);
-		}
+		if (gtk_widget_get_realized(widget))
+			gtk_widget_destroy (widget);
+    else
+      g_object_unref(widget);
+	}
 	return TRUE;
 }
+#endif
 
 static void
 categories_clicked (GtkWidget *button, EContactEditor *editor)
 {
 	gchar *categories = NULL;
-	GtkDialog *dialog;
 	GtkWidget *entry = e_builder_get_widget(editor->builder, "entry-categories");
 
 	if (entry && GTK_IS_ENTRY(entry))
@@ -2879,11 +2894,11 @@ categories_clicked (GtkWidget *button, EContactEditor *editor)
 	else if (editor->contact)
 		categories = e_contact_get (editor->contact, E_CONTACT_CATEGORIES);
 
-	if (editor->categories_dialog != NULL) {
-		gtk_window_present (GTK_WINDOW(editor->categories_dialog));
+	if (categories_dialog != NULL) {
+		gtk_window_present (GTK_WINDOW (categories_dialog));
 		g_free (categories);
 		return;
-	}else if (!(dialog = GTK_DIALOG (e_categories_dialog_new (categories)))) {
+	}else if (!(categories_dialog = e_categories_dialog_new (categories))) {
 		e_alert_run_dialog_for_args (GTK_WINDOW (editor->app),
 					     "addressbook:edit-categories",
 					     NULL);
@@ -2891,17 +2906,17 @@ categories_clicked (GtkWidget *button, EContactEditor *editor)
 		return;
 	}
 
-	g_signal_connect(dialog, "response",
+	g_signal_connect(categories_dialog, "response",
 			G_CALLBACK (categories_response), editor);
 
+#if 0  /* Old callback method.. */
 	/* Close the category dialog if the editor is closed*/
 	g_signal_connect_swapped (EAB_EDITOR (editor), "editor_closed",
 			    G_CALLBACK (categories_editor_delete_event_cb), GTK_WIDGET (dialog));
+#endif
 
-	gtk_widget_show(GTK_WIDGET(dialog));
+	gtk_widget_show(GTK_WIDGET(categories_dialog));
 	g_free (categories);
-
-	editor->categories_dialog = GTK_WIDGET (dialog);
 }
 
 static void
@@ -3219,6 +3234,17 @@ static void
 e_contact_editor_close (EABEditor *editor)
 {
 	EContactEditor *ce = E_CONTACT_EDITOR (editor);
+  
+  /* Make sure our dialogs are closed */
+  if (fullname_dialog) {
+    gtk_widget_destroy (fullname_dialog);
+    fullname_dialog = NULL;
+  }
+
+  if (categories_dialog) {
+    gtk_widget_destroy (categories_dialog);
+    categories_dialog = NULL;
+  }
 
 	if (ce->app != NULL) {
 		gtk_widget_destroy (ce->app);
@@ -3529,8 +3555,6 @@ e_contact_editor_init (EContactEditor *e_contact_editor, gpointer class_data)
 	e_contact_editor->image_changed = FALSE;
 	e_contact_editor->in_async_call = FALSE;
 	e_contact_editor->target_editable = TRUE;
-	e_contact_editor->fullname_dialog = NULL;
-	e_contact_editor->categories_dialog = NULL;
 	e_contact_editor->compress_ui = e_shell_get_express_mode (shell);
 
 	builder = gtk_builder_new ();
