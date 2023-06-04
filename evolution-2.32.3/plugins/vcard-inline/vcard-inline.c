@@ -65,10 +65,7 @@ org_gnome_vcard_inline_pobject_free (EMFormatHTMLPObject *object)
 
 	vcard_object = (VCardInlinePObject *) object;
 
-	g_list_foreach (
-		vcard_object->contact_list,
-		(GFunc) g_object_unref, NULL);
-	g_list_free (vcard_object->contact_list);
+	g_list_free_full (vcard_object->contact_list, g_object_unref);
 	vcard_object->contact_list = NULL;
 
 	if (vcard_object->source_list != NULL) {

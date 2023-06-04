@@ -84,9 +84,7 @@ action_list_folders_init (ActionContext * p_actctx)
 				printf ("\"%s\",\"%s\",%d\n", uri, name, g_list_length (contacts));
 
 			g_free (uri);
-			g_list_foreach (contacts, (GFunc)g_object_unref, NULL);
-			g_list_free (contacts);
-
+			g_list_free_full (contacts, g_object_unref);
 			g_object_unref (book);
 		}
 	}

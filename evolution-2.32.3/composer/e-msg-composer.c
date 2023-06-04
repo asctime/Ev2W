@@ -1672,9 +1672,8 @@ msg_composer_prepare_for_quit_cb (EShell *shell,
 	if (e_msg_composer_is_exiting (composer)) {
 		/* needs save draft first */
 		g_object_ref (activity);
-		g_object_weak_ref (
-			G_OBJECT (composer), (GWeakNotify)
-			g_object_unref, activity);
+		g_object_weak_ref (	G_OBJECT (composer), 
+    (GWeakNotify) (void (*)(void))g_object_unref, activity);
 		gtk_action_activate (ACTION (SAVE_DRAFT));
 	}
 }

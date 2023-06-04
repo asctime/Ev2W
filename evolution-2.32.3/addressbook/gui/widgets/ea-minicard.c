@@ -36,7 +36,7 @@ static G_CONST_RETURN gchar *
 static G_CONST_RETURN gchar *
 		ea_minicard_get_description	(AtkObject *accessible);
 
-static void	ea_minicard_class_init		(EaMinicardClass *klass);
+static void	ea_minicard_class_init		(EaMinicardClass *klass, gpointer class_data);
 
 static gint	ea_minicard_get_n_children	(AtkObject *obj);
 static AtkObject *
@@ -46,7 +46,7 @@ static AtkObject *
 static AtkStateSet *
 		ea_minicard_ref_state_set	(AtkObject *obj);
 
-static void	atk_action_interface_init	(AtkActionIface *iface);
+static void	atk_action_interface_init	(AtkActionIface *iface, gpointer class_data);
 static gboolean	atk_action_interface_do_action	(AtkAction *iface,
 						 gint i);
 static gint	atk_action_interface_get_n_action
@@ -112,7 +112,7 @@ ea_minicard_get_type (void)
 }
 
 static void
-ea_minicard_class_init (EaMinicardClass *klass)
+ea_minicard_class_init (EaMinicardClass *klass, gpointer class_data)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 
@@ -232,7 +232,7 @@ ea_minicard_ref_child (AtkObject *accessible, gint index)
 }
 
 static void
-atk_action_interface_init (AtkActionIface *iface)
+atk_action_interface_init (AtkActionIface *iface, gpointer class_data)
 {
 	g_return_if_fail (iface != NULL);
 

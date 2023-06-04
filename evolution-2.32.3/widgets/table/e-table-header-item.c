@@ -542,11 +542,6 @@ ethi_add_drop_marker (ETableHeaderItem *ethi, gint col, gboolean recreate)
 	gtk_widget_show_all (arrow_up);
 }
 
-#define gray50_width    2
-#define gray50_height   2
-static gchar gray50_bits[] = {
-  0x02, 0x01, };
-
 static void
 ethi_add_destroy_marker (ETableHeaderItem *ethi)
 {
@@ -554,10 +549,6 @@ ethi_add_destroy_marker (ETableHeaderItem *ethi)
 
 	if (ethi->remove_item)
 		gtk_object_destroy (GTK_OBJECT (ethi->remove_item));
-
-	if (!ethi->stipple)
-		ethi->stipple = gdk_bitmap_create_from_data  (
-			NULL, gray50_bits, gray50_width, gray50_height);
 
 	x1 = (gdouble) e_table_header_col_diff (ethi->eth, 0, ethi->drag_col);
 	if (ethi->drag_col > 0)
@@ -572,8 +563,7 @@ ethi_add_destroy_marker (ETableHeaderItem *ethi)
 			ethi->eth, ethi->drag_col, ethi->drag_col+1) - 2,
 
 		"y2", (gdouble) ethi->height - 2,
-		"fill_color", "red",
-		"fill_stipple", ethi->stipple,
+    "fill_color_rgba", 0xFF000080,
 		NULL);
 }
 
@@ -995,11 +985,6 @@ ethi_unrealize (GnomeCanvasItem *item)
 	g_signal_handler_disconnect (item->canvas, ethi->drag_data_get_id);
 
 	gtk_drag_dest_unset (GTK_WIDGET (item->canvas));
-
-	if (ethi->stipple) {
-		g_object_unref (ethi->stipple);
-		ethi->stipple = NULL;
-	}
 
 	if (GNOME_CANVAS_ITEM_CLASS (ethi_parent_class)->unrealize)
 		(*GNOME_CANVAS_ITEM_CLASS (ethi_parent_class)->unrealize)(item);

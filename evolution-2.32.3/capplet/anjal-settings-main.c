@@ -192,7 +192,7 @@ main (gint argc, gchar *argv[])
 		if (p_SetDllDirectoryA)
 			(*p_SetDllDirectoryA) ("");
 	}
-#ifndef _WIN64
+#if !defined(_WIN64) && !defined(__MINGW64__)
 	{
 		typedef BOOL (WINAPI *t_SetProcessDEPPolicy) (DWORD dwFlags);
 		t_SetProcessDEPPolicy p_SetProcessDEPPolicy;

@@ -293,7 +293,7 @@ e_shell_settings_get_type (void)
 			sizeof (EShellSettingsClass),
 			(GBaseInitFunc) NULL,
 			(GBaseFinalizeFunc) NULL,
-			(GClassInitFunc) shell_settings_class_init,
+			(GClassInitFunc) (void (*)(void))shell_settings_class_init,
 			(GClassFinalizeFunc) NULL,
 			NULL,  /* class_data */
 			sizeof (EShellSettings),

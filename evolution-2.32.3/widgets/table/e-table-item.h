@@ -81,8 +81,10 @@ typedef struct {
 
 	GdkGC           *fill_gc;
 	GdkGC           *grid_gc;
+#if 0   
 	GdkGC           *focus_gc;
 	GdkBitmap       *stipple;
+#endif
 
 	guint		 alternating_row_colors:1;
 	guint		 horizontal_draw_grid:1;

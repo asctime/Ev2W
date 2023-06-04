@@ -334,7 +334,7 @@ e_asn1_object_get_children (EASN1Object *obj)
 {
 	GList *children = g_list_copy (obj->priv->children);
 
-	g_list_foreach (children, (GFunc)g_object_ref, NULL);
+	g_list_foreach (children, (GFunc)(void (*)(void))g_object_ref, NULL);
 
 	return children;
 }

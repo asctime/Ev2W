@@ -209,8 +209,7 @@ task_list_selector_data_dropped (ESourceSelector *selector,
 		icalcomponent_free (icalcomp);
 	}
 
-	g_slist_foreach (list, (GFunc) g_free, NULL);
-	g_slist_free (list);
+	g_slist_free_full (list, g_free);
 
 exit:
 	if (client != NULL)
@@ -220,7 +219,7 @@ exit:
 }
 
 static void
-task_list_selector_class_init (ETaskListSelectorClass *class)
+task_list_selector_class_init (ETaskListSelectorClass *class, gpointer class_data)
 {
 	ESourceSelectorClass *source_selector_class;
 
@@ -232,7 +231,7 @@ task_list_selector_class_init (ETaskListSelectorClass *class)
 }
 
 static void
-task_list_selector_init (ETaskListSelector *selector)
+task_list_selector_init (ETaskListSelector *selector, gpointer class_data)
 {
 	selector->priv = E_TASK_LIST_SELECTOR_GET_PRIVATE (selector);
 

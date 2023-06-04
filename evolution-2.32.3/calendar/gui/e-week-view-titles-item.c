@@ -261,7 +261,7 @@ week_view_titles_item_point (GnomeCanvasItem *item,
 }
 
 static void
-week_view_titles_item_class_init (EWeekViewTitlesItemClass *class)
+week_view_titles_item_class_init (EWeekViewTitlesItemClass *class, gpointer class_data)
 {
 	GObjectClass  *object_class;
 	GnomeCanvasItemClass *item_class;
@@ -291,7 +291,7 @@ week_view_titles_item_class_init (EWeekViewTitlesItemClass *class)
 }
 
 static void
-week_view_titles_item_init (EWeekViewTitlesItem *titles_item)
+week_view_titles_item_init (EWeekViewTitlesItem *titles_item, gpointer class_data)
 {
 	titles_item->priv = E_WEEK_VIEW_TITLES_ITEM_GET_PRIVATE (titles_item);
 }

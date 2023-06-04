@@ -72,7 +72,7 @@ calendar_prefs_dialog_finalize (GObject *obj)
 }
 
 static void
-calendar_prefs_dialog_class_init (CalendarPrefsDialogClass *klass)
+calendar_prefs_dialog_class_init (CalendarPrefsDialogClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -83,7 +83,7 @@ calendar_prefs_dialog_class_init (CalendarPrefsDialogClass *klass)
 }
 
 static void
-calendar_prefs_dialog_init (CalendarPrefsDialog *dialog)
+calendar_prefs_dialog_init (CalendarPrefsDialog *dialog, gpointer class_data)
 {
 }
 

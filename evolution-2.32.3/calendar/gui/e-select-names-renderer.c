@@ -87,10 +87,8 @@ e_select_names_renderer_editing_done (GtkCellEditable *editable, ESelectNamesRen
 
 	g_signal_emit (cell, signals[CELL_EDITED], 0, cell->priv->path, addresses, names);
 
-	g_list_foreach (addresses, (GFunc)g_free, NULL);
-	g_list_foreach (names, (GFunc)g_free, NULL);
-	g_list_free (addresses);
-	g_list_free (names);
+	g_list_free_full (addresses, g_free);
+	g_list_free_full (names, g_free);
 
  cleanup:
 	g_free (cell->priv->path);

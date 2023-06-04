@@ -141,7 +141,7 @@ mail_label_dialog_constructed (GObject *object)
 }
 
 static void
-mail_label_dialog_class_init (EMailLabelDialogClass *class)
+mail_label_dialog_class_init (EMailLabelDialogClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -176,7 +176,7 @@ mail_label_dialog_class_init (EMailLabelDialogClass *class)
 }
 
 static void
-mail_label_dialog_init (EMailLabelDialog *dialog)
+mail_label_dialog_init (EMailLabelDialog *dialog, gpointer class_data)
 {
 	GtkWidget *content_area;
 	GtkWidget *container;

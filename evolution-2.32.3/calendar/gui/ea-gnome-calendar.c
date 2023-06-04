@@ -31,7 +31,7 @@
 
 #include <e-util/gtk-compat.h>
 
-static void ea_gnome_calendar_class_init (EaGnomeCalendarClass *klass);
+static void ea_gnome_calendar_class_init (EaGnomeCalendarClass *klass, gpointer class_data);
 
 static gint ea_gnome_calendar_get_n_children (AtkObject* obj);
 static AtkObject * ea_gnome_calendar_ref_child (AtkObject *obj, gint i);
@@ -99,7 +99,7 @@ ea_gnome_calendar_get_type (void)
 }
 
 static void
-ea_gnome_calendar_class_init (EaGnomeCalendarClass *klass)
+ea_gnome_calendar_class_init (EaGnomeCalendarClass *klass, gpointer class_data)
 {
 	AtkObjectClass *class = ATK_OBJECT_CLASS (klass);
 

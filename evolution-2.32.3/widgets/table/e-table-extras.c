@@ -258,19 +258,19 @@ ete_init (ETableExtras *extras)
 
 	e_table_extras_add_compare (
 		extras, "string",
-		(GCompareDataFunc) e_str_compare);
+		(GCompareDataFunc) (void (*)(void))e_str_compare);
 	e_table_extras_add_compare (
 		extras, "stringcase",
-		(GCompareDataFunc) e_table_str_case_compare);
+		(GCompareDataFunc) (void (*)(void))e_table_str_case_compare);
 	e_table_extras_add_compare (
 		extras, "collate",
-		(GCompareDataFunc) e_table_collate_compare);
+		(GCompareDataFunc) (void (*)(void))e_table_collate_compare);
 	e_table_extras_add_compare (
 		extras, "integer",
-		(GCompareDataFunc) e_int_compare);
+		(GCompareDataFunc) (void (*)(void))e_int_compare);
 	e_table_extras_add_compare (
 		extras, "string-integer",
-		(GCompareDataFunc) e_strint_compare);
+		(GCompareDataFunc) (void (*)(void))e_strint_compare);
 
 	e_table_extras_add_search (extras, "string", e_string_search);
 

@@ -400,7 +400,7 @@ shell_switcher_style_changed (EShellSwitcher *switcher,
 
 	g_list_foreach (
 		switcher->priv->proxies,
-		(GFunc) gtk_tool_item_toolbar_reconfigured, NULL);
+		(GFunc) (void (*)(void))gtk_tool_item_toolbar_reconfigured, NULL);
 
 	gtk_widget_queue_resize (GTK_WIDGET (switcher));
 	g_object_notify (G_OBJECT (switcher), "toolbar-style");

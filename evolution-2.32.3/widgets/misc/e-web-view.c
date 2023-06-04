@@ -948,7 +948,7 @@ web_view_stop_loading (EWebView *web_view)
 {
 	g_list_foreach (
 		web_view->priv->requests, (GFunc)
-		web_view_request_cancel, NULL);
+		(void (*)(void))web_view_request_cancel, NULL);
 
 	gtk_html_stop (GTK_HTML (web_view));
 }

@@ -225,7 +225,11 @@ mail_capplet_shell_construct (MailCappletShell *shell, gint socket_id, gboolean 
 	if (!socket_id) {
 		gtk_container_add ((GtkContainer *)shell, priv->box);
 	} else {
+#ifdef G_OS_WIN32
+    GtkWidget *plug = gtk_window_new(GTK_WINDOW_POPUP);
+#else
 		GtkWidget *plug = gtk_plug_new (socket_id);
+#endif
 
 		gtk_container_add ((GtkContainer *)plug, priv->box);
 		g_signal_connect (plug, "destroy", G_CALLBACK (gtk_main_quit), NULL);

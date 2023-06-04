@@ -67,14 +67,14 @@ mail_label_tree_view_render_text (GtkTreeViewColumn *column,
 }
 
 static void
-mail_label_tree_view_class_init (EMailLabelTreeViewClass *class)
+mail_label_tree_view_class_init (EMailLabelTreeViewClass *class, gpointer class_data)
 {
 	parent_class = g_type_class_peek_parent (class);
 	g_type_class_add_private (class, sizeof (EMailLabelTreeViewPrivate));
 }
 
 static void
-mail_label_tree_view_init (EMailLabelTreeView *tree_view)
+mail_label_tree_view_init (EMailLabelTreeView *tree_view, gpointer class_data)
 {
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;

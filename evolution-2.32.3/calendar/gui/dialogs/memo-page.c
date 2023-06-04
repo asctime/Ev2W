@@ -142,8 +142,7 @@ memo_page_dispose (GObject *object)
 
 	priv = MEMO_PAGE_GET_PRIVATE (object);
 
-	g_list_foreach (priv->address_strings, (GFunc) g_free, NULL);
-	g_list_free (priv->address_strings);
+	g_list_free_full (priv->address_strings, g_free);
 
 	/* Chain up to parent's dispose() method. */
 	G_OBJECT_CLASS (memo_page_parent_class)->dispose (object);
@@ -501,8 +500,7 @@ fill_comp_with_recipients (ENameSelector *name_selector, ECalComponent *comp)
 						e_destination_set_contact (des, n_con, 0);
 						list_dests = e_destination_list_get_dests (des);
 
-						g_list_foreach (contacts, (GFunc) g_object_unref, NULL);
-						g_list_free (contacts);
+						g_list_free_full (contacts, g_object_unref);
 					}
 
 					e_book_query_unref (query);

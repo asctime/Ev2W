@@ -209,7 +209,7 @@ mail_label_list_store_row_inserted (GtkTreeModel *model,
 }
 
 static void
-mail_label_list_store_class_init (EMailLabelListStoreClass *class)
+mail_label_list_store_class_init (EMailLabelListStoreClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -225,7 +225,7 @@ mail_label_list_store_class_init (EMailLabelListStoreClass *class)
 }
 
 static void
-mail_label_list_store_init (EMailLabelListStore *store)
+mail_label_list_store_init (EMailLabelListStore *store, gpointer class_data)
 {
 	GHashTable *tag_index;
 	GType type = G_TYPE_STRING;
@@ -249,7 +249,7 @@ mail_label_list_store_init (EMailLabelListStore *store)
 }
 
 static void
-mail_label_list_store_iface_init (GtkTreeModelIface *iface)
+mail_label_list_store_iface_init (GtkTreeModelIface *iface, gpointer class_data)
 {
 	iface->row_inserted = mail_label_list_store_row_inserted;
 }

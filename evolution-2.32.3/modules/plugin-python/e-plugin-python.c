@@ -170,7 +170,7 @@ plugin_python_invoke (EPlugin *plugin,
 }
 
 static void
-plugin_python_class_init (EPluginPythonClass *class)
+plugin_python_class_init (EPluginPythonClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 	EPluginClass *plugin_class;
@@ -188,7 +188,7 @@ plugin_python_class_init (EPluginPythonClass *class)
 }
 
 static void
-plugin_python_init (EPluginPython *plugin_python)
+plugin_python_init (EPluginPython *plugin_python, gpointer class_data)
 {
 	GHashTable *methods;
 

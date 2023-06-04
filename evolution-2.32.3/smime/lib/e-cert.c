@@ -153,7 +153,7 @@ e_cert_dispose (GObject *object)
 }
 
 static void
-e_cert_class_init (ECertClass *klass)
+e_cert_class_init (ECertClass *klass, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -165,7 +165,7 @@ e_cert_class_init (ECertClass *klass)
 }
 
 static void
-e_cert_init (ECert *ec)
+e_cert_init (ECert *ec, gpointer class_data)
 {
 	ec->priv = g_new0 (ECertPrivate, 1);
 }

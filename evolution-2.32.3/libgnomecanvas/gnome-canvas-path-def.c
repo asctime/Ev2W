@@ -610,7 +610,7 @@ gnome_canvas_path_def_close_all (const GnomeCanvasPathDef * path)
 		switch (p->code) {
 		case ART_MOVETO_OPEN:
 			start = p;
-			closed = FALSE;
+			closed = FALSE;                /* Remains 2010. Intentional? */
 		case ART_MOVETO:
 			if ((!closed) && ((start->x3 != p->x3) || (start->y3 != p->y3))) {
 				d->code = ART_LINETO;

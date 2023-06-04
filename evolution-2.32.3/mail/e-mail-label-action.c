@@ -95,7 +95,7 @@ mail_label_action_create_menu_item (GtkAction *action)
 }
 
 static void
-mail_label_action_class_init (EMailLabelActionClass *class)
+mail_label_action_class_init (EMailLabelActionClass *class, gpointer class_data)
 {
 	GtkActionClass *action_class;
 
@@ -107,7 +107,7 @@ mail_label_action_class_init (EMailLabelActionClass *class)
 }
 
 static void
-mail_label_action_init (EMailLabelAction *action)
+mail_label_action_init (EMailLabelAction *action, gpointer class_data)
 {
 	action->priv = E_MAIL_LABEL_ACTION_GET_PRIVATE (action);
 }

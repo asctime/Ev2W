@@ -34,7 +34,7 @@ static const EConfigHookTargetMap targets[] = {
 };
 
 static void
-book_config_hook_class_init (EConfigHookClass *class)
+book_config_hook_class_init (EConfigHookClass *class, gpointer class_data)
 {
 	EPluginHookClass *plugin_hook_class;
 	gint ii;

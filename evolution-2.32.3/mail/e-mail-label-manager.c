@@ -248,7 +248,7 @@ mail_label_manager_remove_label (EMailLabelManager *manager)
 }
 
 static void
-mail_label_manager_class_init (EMailLabelManagerClass *class)
+mail_label_manager_class_init (EMailLabelManagerClass *class, gpointer class_data)
 {
 	GObjectClass *object_class;
 
@@ -303,7 +303,7 @@ mail_label_manager_class_init (EMailLabelManagerClass *class)
 }
 
 static void
-mail_label_manager_init (EMailLabelManager *manager)
+mail_label_manager_init (EMailLabelManager *manager, gpointer class_data)
 {
 	GtkTreeSelection *selection;
 	GtkWidget *container;

@@ -87,7 +87,7 @@ ecv_ref_child (AtkObject *a11y, gint i)
 			gaev->a11y_subcells[i] = ret;
 			g_object_ref (ret);
 			g_object_weak_ref (G_OBJECT (ret),
-					(GWeakNotify) subcell_destroyed,
+					(GWeakNotify) (void (*)(void))subcell_destroyed,
 					ret);
 		} else {
 			ret = (AtkObject *) gaev->a11y_subcells[i];

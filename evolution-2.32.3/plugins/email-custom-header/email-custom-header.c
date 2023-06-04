@@ -68,9 +68,9 @@ struct _EmailCustomHeaderOptionsDialogPrivate {
 };
 
 /* epech - e-plugin email custom header*/
-static void epech_dialog_class_init (GObjectClass *object_class);
+static void epech_dialog_class_init (GObjectClass *object_class, gpointer class_data);
 static void epech_dialog_finalize (GObject *object);
-static void epech_dialog_init (GObject *object);
+static void epech_dialog_init (GObject *object, gpointer class_data);
 static void epech_dialog_dispose (GObject *object);
 static void epech_setup_widgets (CustomHeaderOptionsDialog *mch);
 static gint epech_check_existing_composer_window(gconstpointer a, gconstpointer b);
@@ -382,7 +382,7 @@ epech_setup_widgets (CustomHeaderOptionsDialog *mch)
 }
 
 static void
-epech_dialog_class_init (GObjectClass *object)
+epech_dialog_class_init (GObjectClass *object, gpointer class_data)
 {
 	CustomHeaderOptionsDialogClass *klass;
 	GObjectClass *object_class;
@@ -405,7 +405,7 @@ epech_dialog_class_init (GObjectClass *object)
 }
 
 static void
-epech_dialog_init (GObject *object)
+epech_dialog_init (GObject *object, gpointer class_data)
 {
 	CustomHeaderOptionsDialog *mch;
 	EmailCustomHeaderOptionsDialogPrivate *priv;

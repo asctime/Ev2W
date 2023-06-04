@@ -381,7 +381,7 @@ eti_ref_at (AtkTable *table, gint row, gint column)
 							    row);
 		if (ATK_IS_OBJECT (ret)) {
 			g_object_weak_ref (G_OBJECT (ret),
-					   (GWeakNotify) cell_destroyed,
+					   (GWeakNotify) (void (*)(void))cell_destroyed,
 					   ret);
 			/* if current cell is focused, add FOCUSED state */
 			if (e_selection_model_cursor_row (item->selection) ==
