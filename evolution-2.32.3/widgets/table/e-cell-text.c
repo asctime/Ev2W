@@ -2395,7 +2395,11 @@ e_cell_text_view_command (ETextEventProcessor *tep, ETextEventProcessorCommand *
 		sel_start = MIN (edit->selection_start, edit->selection_end);
 		sel_end = MAX (edit->selection_start, edit->selection_end);
 		if (sel_start != sel_end) {
+#ifdef G_OS_WIN32
+			e_cell_text_view_supply_selection (edit, command->time, GDK_SELECTION_CLIPBOARD,
+#else
 			e_cell_text_view_supply_selection (edit, command->time, GDK_SELECTION_PRIMARY,
+#endif
 							   edit->text + sel_start,
 							   sel_end - sel_start);
 		} else if (edit->timer) {
@@ -2447,7 +2451,11 @@ e_cell_text_view_command (ETextEventProcessor *tep, ETextEventProcessorCommand *
 		change = TRUE;
 		break;
 	case E_TEP_GET_SELECTION:
+#ifdef G_OS_WIN32
+		e_cell_text_view_get_selection (edit, GDK_SELECTION_CLIPBOARD, command->time);
+#else
 		e_cell_text_view_get_selection (edit, GDK_SELECTION_PRIMARY, command->time);
+#endif
 		break;
 	case E_TEP_ACTIVATE:
 		e_table_item_leave_edit_ (text_view->cell_view.e_table_item_view);
@@ -2513,7 +2521,11 @@ e_cell_text_view_supply_selection (CellEdit *edit, guint time, GdkAtom selection
 
 	clipboard = gtk_widget_get_clipboard (GTK_WIDGET (edit->text_view->canvas), selection);
 
+#ifdef G_OS_WIN32
+	if (selection == GDK_SELECTION_CLIPBOARD) {
+#else
 	if (selection == GDK_SELECTION_PRIMARY) {
+#endif
 		edit->has_selection = TRUE;
 	}
 

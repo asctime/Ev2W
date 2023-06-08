@@ -2397,7 +2397,11 @@ e_text_update_primary_selection (EText *text)
 
 	clipboard = gtk_widget_get_clipboard (
 		GTK_WIDGET (GNOME_CANVAS_ITEM (text)->canvas),
+#ifdef G_OS_WIN32
+		GDK_SELECTION_CLIPBOARD);
+#else
 		GDK_SELECTION_PRIMARY);
+#endif
 
 	if (text->selection_start != text->selection_end) {
 		if (!gtk_clipboard_set_with_owner (clipboard, targets, G_N_ELEMENTS (targets),
@@ -3150,7 +3154,11 @@ e_text_command (ETextEventProcessor *tep,
 		text->need_im_reset = TRUE;
 		break;
 	case E_TEP_GET_SELECTION:
+#ifdef G_OS_WIN32
+		e_text_paste (text, GDK_SELECTION_CLIPBOARD);
+#else
 		e_text_paste (text, GDK_SELECTION_PRIMARY);
+#endif
 		break;
 	case E_TEP_ACTIVATE:
 		g_signal_emit (text, e_text_signals[E_TEXT_ACTIVATE], 0);

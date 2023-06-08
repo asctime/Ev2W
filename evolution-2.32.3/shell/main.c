@@ -37,7 +37,7 @@
 #ifdef DATADIR
 #undef DATADIR
 #endif
-#ifndef _WIN32_WINNT
+#if !defined (_WIN32_WINNT) && !defined(__MINGW64__)
 #define _WIN32_WINNT 0x0601
 #endif
 #include <windows.h>
@@ -467,18 +467,36 @@ main (gint argc, gchar **argv)
 		typedef BOOL (WINAPI *t_SetDllDirectoryA) (LPCSTR lpPathName);
 		t_SetDllDirectoryA p_SetDllDirectoryA;
 
-		p_SetDllDirectoryA = GetProcAddress (GetModuleHandle ("kernel32.dll"), "SetDllDirectoryA");
+		p_SetDllDirectoryA = GetProcAddress (GetModuleHandleA ("kernel32.dll"), "SetDllDirectoryA");
 		if (p_SetDllDirectoryA)
 			(*p_SetDllDirectoryA) ("");
 	}
-#ifndef _WIN64
+#if defined(__MINGW32__) || !defined(_WIN64)
 	{
-		typedef BOOL (WINAPI *t_SetProcessDEPPolicy) (DWORD dwFlags);
-		t_SetProcessDEPPolicy p_SetProcessDEPPolicy;
+    HMODULE hMod = GetModuleHandleA("Kernel32.dll");
+    intptr_t hCrtHeap = _get_heap_handle();
+    ULONG ulEnableLFH = 2;
 
-		p_SetProcessDEPPolicy = GetProcAddress (GetModuleHandle ("kernel32.dll"), "SetProcessDEPPolicy");
-		if (p_SetProcessDEPPolicy)
-			(*p_SetProcessDEPPolicy) (PROCESS_DEP_ENABLE|PROCESS_DEP_DISABLE_ATL_THUNK_EMULATION);
+    if (hMod) {
+      typedef BOOL (WINAPI *PSETDEP)(DWORD);
+      PSETDEP setdeppolicy = (PSETDEP)GetProcAddress(hMod,
+        "SetProcessDEPPolicy");
+
+    if (HeapSetInformation((PVOID)hCrtHeap,
+      HeapEnableTerminationOnCorruption | HeapCompatibilityInformation,
+      &ulEnableLFH, sizeof(ulEnableLFH)))
+        g_debug("## Ev2W ## Low Fragmentation Heap ENABLED.");
+    else
+        g_debug("## Ev2W ## Low Fragmentation Heap FAILED. Using fallback.");
+
+  #ifdef __MINGW64__
+      if (setdeppolicy)
+        setdeppolicy(3);
+  #else
+		  if (setdeppolicy)
+			  (*setdeppolicy) (PROCESS_DEP_ENABLE|PROCESS_DEP_DISABLE_ATL_THUNK_EMULATION);
+  #endif
+    }
 	}
 #endif
 

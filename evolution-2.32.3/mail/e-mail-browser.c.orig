@@ -29,7 +29,6 @@
 #include "e-util/gconf-bridge.h"
 #include "shell/e-shell.h"
 #include "shell/e-shell-utils.h"
-#include "widgets/misc/e-selectable.h"
 #include "widgets/misc/e-popup-action.h"
 #include "widgets/misc/e-preview-pane.h"
 
@@ -270,24 +269,6 @@ mail_browser_message_selected_cb (EMailBrowser *browser,
 	gtk_window_set_title (GTK_WINDOW (browser), title);
 	gtk_widget_grab_focus (GTK_WIDGET (web_view));
 
-  /* Ev2W Focus tracker proof-of-operation debugging */
-	EFocusTracker *focus_tracker = browser->priv->focus_tracker;
-  GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
-  GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
-  g_debug ("Opening message \"%s\": \
-    \nFocus Tracker is %s, addr: %p  Selectable: %s \
-    \nSelectable status should be: %s \
-    \nfocus widget addr: %p  focus window addr: %p \
-    \nweb_view addr: %p  message window addr: %p \
-    \nAction check. Focus copyclip addr: %p   Menu copyclip addr: %p\n", 
-    title, E_IS_FOCUS_TRACKER (focus_tracker) ? "true" : "false",
-    focus_tracker, E_IS_SELECTABLE (web_view) ? "true" : "false",
-    E_IS_SELECTABLE (focus) ? "true" : "false",
-    focus, focus_window, web_view, reader,
-    e_focus_tracker_get_copy_clipboard_action (focus_tracker),
-    gtk_action_group_get_action(browser->priv->action_group,
-      "copy-clipboard") );
-
 	camel_folder_free_message_info (folder, info);
 }
 
@@ -323,27 +304,6 @@ mail_browser_popup_event_cb (EMailBrowser *browser,
 
 	reader = E_MAIL_READER (browser);
 	menu = e_mail_reader_get_popup_menu (reader);
-
-#if 0    /* Ev2W Use this variety for portable checking */
-	EFocusTracker *focus_tracker = browser->priv->focus_tracker;
-  GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
-  GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
-  EWebView *web_view = em_format_html_get_web_view (
-    e_mail_reader_get_formatter (E_MAIL_READER (browser)));
-  g_debug ("\
-    \nFocus Tracker is %s, addr: %p  Selectable: %s \
-    \nSelectable status should be: %s \
-    \nfocus widget addr: %p  focus window addr: %p \
-    \nweb_view addr: %p  message window addr: %p \
-    \nAction check. Focus copyclip addr: %p   Menu copyclip addr: %p\n", 
-    E_IS_FOCUS_TRACKER (focus_tracker) ? "true" : "false",
-    focus_tracker, E_IS_SELECTABLE (web_view) ? "true" : "false",
-    E_IS_SELECTABLE (focus) ? "true" : "false",
-    focus, focus_window, web_view, reader,
-    e_focus_tracker_get_copy_clipboard_action (focus_tracker),
-    gtk_action_group_get_action(browser->priv->action_group,
-      "copy-clipboard") );
-#endif
 
 	state = e_mail_reader_check_state (reader);
 	e_mail_reader_update_actions (reader, state);
@@ -462,14 +422,6 @@ mail_browser_dispose (GObject *object)
 	EMailBrowserPrivate *priv;
 
 	priv = E_MAIL_BROWSER_GET_PRIVATE (object);
-  g_debug ("Disposing GObject: %p\n", object);
-
-  EWebView *web_view = em_format_html_get_web_view (
-    e_mail_reader_get_formatter (E_MAIL_READER (object)));
-	if (web_view != NULL) {
-    g_debug ("Freeing web_view memory addr: %p\n", web_view);
-		gtk_widget_destroy (GTK_WIDGET (web_view));
-	}
 
 	if (priv->ui_manager != NULL) {
 		g_object_unref (priv->ui_manager);
@@ -529,7 +481,7 @@ mail_browser_dispose (GObject *object)
 static void
 mail_browser_constructed (GObject *object)
 {
-	EMailBrowser *browser;             /* gitlab #f9ffebc2  */
+	EMailBrowserPrivate *priv;
 	EMFormatHTML *formatter;
 	EMailReader *reader;
 	EShellBackend *shell_backend;
@@ -553,7 +505,8 @@ mail_browser_constructed (GObject *object)
 	if (G_OBJECT_CLASS (parent_class)->constructed)
 		G_OBJECT_CLASS (parent_class)->constructed (object);
 
-  browser = E_MAIL_BROWSER (object);
+	priv = E_MAIL_BROWSER_GET_PRIVATE (object);
+
 	reader = E_MAIL_READER (object);
 
 	shell_backend = e_mail_reader_get_shell_backend (reader);
@@ -562,7 +515,7 @@ mail_browser_constructed (GObject *object)
 	ui_manager = e_ui_manager_new ();
 	e_shell_configure_ui_manager (shell, E_UI_MANAGER (ui_manager));
 
-	browser->priv->ui_manager = ui_manager;
+	priv->ui_manager = ui_manager;
 	domain = GETTEXT_PACKAGE;
 
 	formatter = e_mail_reader_get_formatter (reader);
@@ -573,15 +526,15 @@ mail_browser_constructed (GObject *object)
 	/* The message list is a widget, but it is not shown in the browser.
 	 * Unfortunately, the widget is inseparable from its model, and the
 	 * model is all we need. */
-	browser->priv->message_list = message_list_new (shell_backend);
-	g_object_ref_sink (browser->priv->message_list);
+	priv->message_list = message_list_new (shell_backend);
+	g_object_ref_sink (priv->message_list);
 
 	g_signal_connect_swapped (
-		browser->priv->message_list, "message-selected",
+		priv->message_list, "message-selected",
 		G_CALLBACK (mail_browser_message_selected_cb), object);
 
 	g_signal_connect_swapped (
-		browser->priv->message_list, "message-list-built",
+		priv->message_list, "message-list-built",
 		G_CALLBACK (mail_browser_message_list_built_cb), object);
 
 	g_signal_connect_swapped (
@@ -592,7 +545,9 @@ mail_browser_constructed (GObject *object)
 		web_view, "status-message",
 		G_CALLBACK (mail_browser_status_message_cb), object);
 
-	action_group = browser->priv->action_group;
+	e_mail_reader_init (reader, TRUE, TRUE);
+
+	action_group = priv->action_group;
 	gtk_action_group_set_translation_domain (action_group, domain);
 	gtk_action_group_add_actions (
 		action_group, mail_browser_entries,
@@ -601,9 +556,6 @@ mail_browser_constructed (GObject *object)
 		action_group, mail_browser_popup_entries,
 		G_N_ELEMENTS (mail_browser_popup_entries));
 	gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
-
-  /* Moved per gitlab #43e043c2 */
-	e_mail_reader_init (reader, TRUE, TRUE);
 
 	e_ui_manager_add_ui_from_file (
 		E_UI_MANAGER (ui_manager), E_MAIL_READER_UI_DEFINITION);
@@ -631,7 +583,7 @@ mail_browser_constructed (GObject *object)
 	e_focus_tracker_set_paste_clipboard_action (focus_tracker, action);
 	action = gtk_action_group_get_action (action_group, "select-all");
 	e_focus_tracker_set_select_all_action (focus_tracker, action);
-	browser->priv->focus_tracker = focus_tracker;
+	priv->focus_tracker = focus_tracker;
 
 	/* Construct window widgets. */
 
@@ -644,32 +596,31 @@ mail_browser_constructed (GObject *object)
 	/* Create the status bar before connecting proxy widgets. */
 	widget = gtk_statusbar_new ();
 	gtk_box_pack_end (GTK_BOX (container), widget, FALSE, FALSE, 0);
-	browser->priv->statusbar = g_object_ref (widget);
+	priv->statusbar = g_object_ref (widget);
 	gtk_widget_show (widget);
 
 	widget = gtk_ui_manager_get_widget (ui_manager, "/main-menu");
 	gtk_box_pack_start (GTK_BOX (container), widget, FALSE, FALSE, 0);
-	browser->priv->main_menu = g_object_ref (widget);
+	priv->main_menu = g_object_ref (widget);
 	gtk_widget_show (widget);
 
 	widget = gtk_ui_manager_get_widget (ui_manager, "/main-toolbar");
 	gtk_box_pack_start (GTK_BOX (container), widget, FALSE, FALSE, 0);
-	browser->priv->main_toolbar = g_object_ref (widget);
+	priv->main_toolbar = g_object_ref (widget);
 	gtk_widget_show (widget);
 
 	gtk_widget_show (GTK_WIDGET (web_view));
 
 	widget = e_preview_pane_new (web_view);
 	gtk_box_pack_start (GTK_BOX (container), widget, TRUE, TRUE, 0);
-  browser->priv->main_toolbar = g_object_ref (widget);
 	gtk_widget_show (widget);
 
 	search_bar = e_preview_pane_get_search_bar (E_PREVIEW_PANE (widget));
-	browser->priv->search_bar = g_object_ref ((GtkWidget*)search_bar);
+	priv->search_bar = g_object_ref (search_bar);
 
 	g_signal_connect_swapped (
 		search_bar, "changed",
-		G_CALLBACK (em_format_queue_redraw), browser->priv->formatter);
+		G_CALLBACK (em_format_queue_redraw), priv->formatter);
 
 	/* Bind GObject properties to GConf keys. */
 
@@ -723,21 +674,21 @@ mail_browser_get_hide_deleted (EMailReader *reader)
 static EMFormatHTML *
 mail_browser_get_formatter (EMailReader *reader)
 {
-  EMailBrowser *browser;
+	EMailBrowserPrivate *priv;
 
-  browser = E_MAIL_BROWSER (reader);
+	priv = E_MAIL_BROWSER_GET_PRIVATE (reader);
 
-  return EM_FORMAT_HTML (browser->priv->formatter);
+	return EM_FORMAT_HTML (priv->formatter);
 }
 
 static GtkWidget *
 mail_browser_get_message_list (EMailReader *reader)
 {
-  EMailBrowser *browser;
+	EMailBrowserPrivate *priv;
 
-  browser = E_MAIL_BROWSER (reader);
+	priv = E_MAIL_BROWSER_GET_PRIVATE (reader);
 
-  return browser->priv->message_list;
+	return priv->message_list;
 }
 
 static GtkMenu *
@@ -801,15 +752,15 @@ mail_browser_set_message (EMailReader *reader,
 static void
 mail_browser_show_search_bar (EMailReader *reader)
 {
-  EMailBrowser *browser;
+	EMailBrowserPrivate *priv;
 
-  browser = E_MAIL_BROWSER (reader);
+	priv = E_MAIL_BROWSER_GET_PRIVATE (reader);
 
-  gtk_widget_show (browser->priv->search_bar);
+	gtk_widget_show (priv->search_bar);
 }
 
 static void
-mail_browser_class_init (EMailBrowserClass *class, gpointer class_data)
+mail_browser_class_init (EMailBrowserClass *class)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;
@@ -865,7 +816,7 @@ mail_browser_class_init (EMailBrowserClass *class, gpointer class_data)
 }
 
 static void
-mail_browser_interface_init (EMailReaderInterface *interface, gpointer class_data)
+mail_browser_interface_init (EMailReaderInterface *interface)
 {
 	interface->get_action_group = mail_browser_get_action_group;
 	interface->get_formatter = mail_browser_get_formatter;
@@ -879,7 +830,7 @@ mail_browser_interface_init (EMailReaderInterface *interface, gpointer class_dat
 }
 
 static void
-mail_browser_init (EMailBrowser *browser, gpointer class_data)
+mail_browser_init (EMailBrowser *browser)
 {
 	GConfBridge *bridge;
 	const gchar *prefix;
@@ -946,7 +897,6 @@ e_mail_browser_close (EMailBrowser *browser)
 {
 	g_return_if_fail (E_IS_MAIL_BROWSER (browser));
 
-  g_debug ("Browser widget closing: %p\n", browser);
 	gtk_widget_destroy (GTK_WIDGET (browser));
 }
 

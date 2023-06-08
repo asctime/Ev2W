@@ -1358,7 +1358,11 @@ gnome_canvas_rich_text_button_press_event (GnomeCanvasItem *item,
 	else if (event->button == 2 && event_type == GDK_BUTTON_PRESS) {
 		gtk_text_buffer_paste_clipboard (
 			get_buffer (text),
+#ifdef G_OS_WIN32
+			gtk_clipboard_get (GDK_SELECTION_CLIPBOARD),
+#else
 			gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+#endif
 			&iter, text->_priv->editable);
 	}
 
@@ -1561,7 +1565,11 @@ gnome_canvas_rich_text_cut_clipboard (GnomeCanvasRichText *text)
 	g_return_if_fail (get_buffer (text));
 
 	gtk_text_buffer_cut_clipboard (get_buffer (text),
+#ifdef G_OS_WIN32
+				      gtk_clipboard_get (GDK_SELECTION_CLIPBOARD),
+#else
 				      gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+#endif
 				      text->_priv->editable);
 } /* gnome_canvas_rich_text_cut_clipboard */
 
@@ -1578,7 +1586,11 @@ gnome_canvas_rich_text_copy_clipboard (GnomeCanvasRichText *text)
 	g_return_if_fail (get_buffer (text));
 
 	gtk_text_buffer_copy_clipboard (get_buffer (text),
+#ifdef G_OS_WIN32
+				       gtk_clipboard_get (GDK_SELECTION_CLIPBOARD));
+#else
 				       gtk_clipboard_get (GDK_SELECTION_PRIMARY));
+#endif
 } /* gnome_canvas_rich_text_cut_clipboard */
 
 /**
@@ -1594,7 +1606,11 @@ gnome_canvas_rich_text_paste_clipboard (GnomeCanvasRichText *text)
 	g_return_if_fail (get_buffer (text));
 
 	gtk_text_buffer_paste_clipboard (get_buffer (text),
+#ifdef G_OS_WIN32
+					gtk_clipboard_get (GDK_SELECTION_CLIPBOARD),
+#else
 					gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+#endif
 					NULL,
 					text->_priv->editable);
 } /* gnome_canvas_rich_text_cut_clipboard */

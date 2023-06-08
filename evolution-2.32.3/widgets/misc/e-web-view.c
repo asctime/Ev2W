@@ -318,7 +318,11 @@ action_mailto_copy_cb (GtkAction *action,
 	g_object_unref (inet_addr);
 	camel_url_free (curl);
 
+#ifdef G_OS_WIN32
+	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+#else
 	clipboard = gtk_clipboard_get (GDK_SELECTION_PRIMARY);
+#endif
 	gtk_clipboard_set_text (clipboard, text, -1);
 	gtk_clipboard_store (clipboard);
 

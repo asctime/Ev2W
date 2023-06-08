@@ -360,7 +360,11 @@ focus_tracker_dispose (GObject *object)
 	priv = E_FOCUS_TRACKER_GET_PRIVATE (object);
 
 	g_signal_handlers_disconnect_matched (
+#ifdef G_OS_WIN32
+		gtk_clipboard_get (GDK_SELECTION_CLIPBOARD),
+#else
 		gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+#endif
 		G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, object);
 
 	g_signal_handlers_disconnect_matched (
@@ -429,7 +433,11 @@ focus_tracker_constructed (GObject *object)
 	 * widgets.  It's a bit of an overkill, but I don't know of any
 	 * other notification mechanism. */
 
+#ifdef G_OS_WIN32
+	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+#else
 	clipboard = gtk_clipboard_get (GDK_SELECTION_PRIMARY);
+#endif
 
 	g_signal_connect_swapped (
 		clipboard, "owner-change",
@@ -790,8 +798,26 @@ e_focus_tracker_update_actions (EFocusTracker *focus_tracker)
 	g_return_if_fail (E_IS_FOCUS_TRACKER (focus_tracker));
 
 	/* Request clipboard targets asynchronously. */
-
+#if 0
+  clipboard = gtk_clipboard_get_for_display (gdk_display_get_default (),
+                                             GDK_SELECTION_CLIPBOARD);
+#else
 	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+#endif
+
+#if defined G_OS_WIN32_FOCUS_DEBUG && 0
+  GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
+  GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
+
+  g_debug ("Focus Tracker %p UPDATE: %s\nTracker Selectable: %s\n \
+    focus widget addr: %p  focus window addr: %p \n \
+     Actions available: cut:%s copy:%s paste:%s", 
+    focus_tracker, E_IS_FOCUS_TRACKER (focus_tracker) ? "selectable" : "not selectable",
+    E_IS_SELECTABLE (focus) ? "true" : "false", focus, focus_window,
+    GTK_IS_ACTION (focus_tracker->priv->cut_clipboard) ? "true" : "false",
+    GTK_IS_ACTION (focus_tracker->priv->copy_clipboard) ? "true" : "false",
+    GTK_IS_ACTION (focus_tracker->priv->paste_clipboard) ? "true" : "false");
+#endif
 
 	gtk_clipboard_request_targets (
 		clipboard, (GtkClipboardTargetsReceivedFunc)
