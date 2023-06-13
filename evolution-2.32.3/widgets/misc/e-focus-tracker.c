@@ -805,18 +805,21 @@ e_focus_tracker_update_actions (EFocusTracker *focus_tracker)
 	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
 #endif
 
-#if defined G_OS_WIN32_FOCUS_DEBUG && 0
+#if defined G_OS_WIN32 && 1
   GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
   GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
-
-  g_debug ("Focus Tracker %p UPDATE: %s\nTracker Selectable: %s\n \
-    focus widget addr: %p  focus window addr: %p \n \
-     Actions available: cut:%s copy:%s paste:%s", 
-    focus_tracker, E_IS_FOCUS_TRACKER (focus_tracker) ? "selectable" : "not selectable",
-    E_IS_SELECTABLE (focus) ? "true" : "false", focus, focus_window,
-    GTK_IS_ACTION (focus_tracker->priv->cut_clipboard) ? "true" : "false",
-    GTK_IS_ACTION (focus_tracker->priv->copy_clipboard) ? "true" : "false",
-    GTK_IS_ACTION (focus_tracker->priv->paste_clipboard) ? "true" : "false");
+  if(focus && focus != NULL) {
+    g_debug ("\nFocus Tracker %p Status: %s  Widget: %s \
+      \nFocus widget: %s(%p)  Focus window: %s(%p) \
+      \nActions defined: cut:%s copy:%s paste:%s\n",
+      focus_tracker, E_IS_FOCUS_TRACKER (focus_tracker) ? "active" : "MISSING!",
+      E_IS_SELECTABLE (focus) ? "selectable" : "UNSELECTABLE", 
+      g_type_name(G_OBJECT_TYPE(focus)), focus, 
+      g_type_name(G_OBJECT_TYPE(focus_window)), focus_window,
+      GTK_IS_ACTION (focus_tracker->priv->cut_clipboard) ? "yes" : " NO!",
+      GTK_IS_ACTION (focus_tracker->priv->copy_clipboard) ? "yes" : " NO!",
+      GTK_IS_ACTION (focus_tracker->priv->paste_clipboard) ? "yes" : " NO!");
+  }
 #endif
 
 	gtk_clipboard_request_targets (

@@ -651,8 +651,11 @@ message_list_select(MessageList *ml, MessageListSelectDirection direction, guint
 
 		/* This function is usually called in response to a key
 		 * press, so grab focus if the message list is visible. */
+    /* Interferes with message window focus_tracker in WIndows */
+#ifndef G_OS_WIN32
 		if (gtk_widget_get_visible (GTK_WIDGET (ml)))
 			gtk_widget_grab_focus (GTK_WIDGET (ml));
+#endif
 
 		return TRUE;
 	} else

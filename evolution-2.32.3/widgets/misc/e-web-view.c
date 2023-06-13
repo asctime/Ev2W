@@ -1035,6 +1035,7 @@ web_view_selectable_update_actions (ESelectable *selectable,
 	GtkAction *action;
 	/*GtkTargetList *target_list;*/
 	gboolean can_paste = FALSE;
+	gboolean can_copy = TRUE;
 	gboolean editable;
 	gboolean have_selection;
 	gboolean sensitive;
@@ -1057,16 +1058,30 @@ web_view_selectable_update_actions (ESelectable *selectable,
 		can_paste = gtk_target_list_find (
 			target_list, clipboard_targets[ii], NULL);
 #endif
+#ifdef G_OS_WIN32
+  gtk_widget_grab_focus (GTK_WIDGET (selectable));
+  can_paste = gtk_clipboard_wait_is_text_available
+    (gtk_clipboard_get(GDK_SELECTION_CLIPBOARD));
+#else
 	can_paste = TRUE;
+#endif
 
 	action = e_focus_tracker_get_cut_clipboard_action (focus_tracker);
+#ifdef G_OS_WIN32 /* Ev2W reverse the previou hack, for Windows */
+	sensitive = editable || have_selection;
+#else
 	sensitive = editable && have_selection;
+#endif
 	tooltip = _("Cut the selection");
 	gtk_action_set_sensitive (action, sensitive);
 	gtk_action_set_tooltip (action, tooltip);
 
 	action = e_focus_tracker_get_copy_clipboard_action (focus_tracker);
+#ifdef G_OS_WIN32
+	sensitive = have_selection || can_copy;
+#else
 	sensitive = have_selection;
+#endif
 	tooltip = _("Copy the selection");
 	gtk_action_set_sensitive (action, sensitive);
 	gtk_action_set_tooltip (action, tooltip);
@@ -1883,7 +1898,12 @@ e_web_view_is_selection_active (EWebView *web_view)
 {
 	g_return_val_if_fail (E_IS_WEB_VIEW (web_view), FALSE);
 
-	return gtk_html_command (GTK_HTML (web_view), "is-selection-active");
+	guint status = gtk_html_command 
+    (GTK_HTML (web_view), "is-selection-active");
+#if 0
+  g_debug ("EWebView GTKHtml selection is %s", status ? "true" : "false");
+#endif
+  return status;
 }
 
 void

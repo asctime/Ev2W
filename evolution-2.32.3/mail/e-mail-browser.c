@@ -270,7 +270,29 @@ mail_browser_message_selected_cb (EMailBrowser *browser,
 	gtk_window_set_title (GTK_WINDOW (browser), title);
 	gtk_widget_grab_focus (GTK_WIDGET (web_view));
 
-  /* Ev2W Focus tracker proof-of-operation debugging */
+       /* * *  DEBUGGING  * * */
+#if 0  /* Variety for use in other functions, NOT HERE  */
+	EFocusTracker *focus_tracker = browser->priv->focus_tracker;
+  GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
+  GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
+  EWebView *web_view = em_format_html_get_web_view (
+    e_mail_reader_get_formatter (E_MAIL_READER (browser)));
+  g_debug ("\
+    \nFocus Tracker is %s, addr: %p  Selectable: %s \
+    \nSelectable status should be: %s \
+    \nfocus widget addr: %p  focus window addr: %p \
+    \nweb_view addr: %p  message window addr: %p \
+    \nAction check. Focus copyclip addr: %p   Menu copyclip addr: %p\n", 
+    E_IS_FOCUS_TRACKER (focus_tracker) ? "true" : "false",
+    focus_tracker, E_IS_SELECTABLE (web_view) ? "true" : "false",
+    E_IS_SELECTABLE (focus) ? "true" : "false",
+    focus, focus_window, web_view, reader,
+    e_focus_tracker_get_copy_clipboard_action (focus_tracker),
+    gtk_action_group_get_action(browser->priv->action_group,
+      "copy-clipboard") );
+#endif
+
+  /* Ev2W Use this for a variety of portable checking */
 	EFocusTracker *focus_tracker = browser->priv->focus_tracker;
   GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
   GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
@@ -287,6 +309,39 @@ mail_browser_message_selected_cb (EMailBrowser *browser,
     e_focus_tracker_get_copy_clipboard_action (focus_tracker),
     gtk_action_group_get_action(browser->priv->action_group,
       "copy-clipboard") );
+
+#if 0
+   /* Type g_signal_listing example */
+    GType object_type = E_TYPE_WEB_VIEW;
+    guint i, ij, n_ids, n_types;
+    GType *type_list = g_type_interfaces(object_type, &n_types);
+    type_list[n_types] = object_type;
+    for (i = 0; i <= n_types; i++) {
+      guint *signal_list = g_signal_list_ids(type_list[i], &n_ids);
+      g_debug ("%s Signals Available: %i\n", 
+        g_type_name (type_list[i]), n_ids);
+      for (ij = 0; ij < n_ids; ij++) {
+        GSignalQuery query = { 0, };
+        g_signal_query (signal_list[ij], &query);
+        g_debug("Signal #%i Name: %s", ij, query.signal_name);
+      }
+    }
+#if 1  /* Packing class */
+    GParamSpec **properties = gtk_container_class_list_child_properties
+#else
+    GParamSpec **properties = g_object_class_list_properties
+#endif
+      (g_type_class_ref(object_type), &n_ids);
+    if (n_ids > 0) {
+      for (i = 0; i < n_ids; i++) {
+        GParamSpec *property = properties[i];
+        if (property->flags & G_PARAM_EXPLICIT_NOTIFY)
+          g_print("Notify Signal %i: %s\n", i, property->name);
+      }
+    }
+    g_free (properties);
+    g_free (type_list);
+#endif
 
 	camel_folder_free_message_info (folder, info);
 }
@@ -323,28 +378,7 @@ mail_browser_popup_event_cb (EMailBrowser *browser,
 
 	reader = E_MAIL_READER (browser);
 	menu = e_mail_reader_get_popup_menu (reader);
-
-#if 0    /* Ev2W Use this variety for portable checking */
-	EFocusTracker *focus_tracker = browser->priv->focus_tracker;
-  GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
-  GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
-  EWebView *web_view = em_format_html_get_web_view (
-    e_mail_reader_get_formatter (E_MAIL_READER (browser)));
-  g_debug ("\
-    \nFocus Tracker is %s, addr: %p  Selectable: %s \
-    \nSelectable status should be: %s \
-    \nfocus widget addr: %p  focus window addr: %p \
-    \nweb_view addr: %p  message window addr: %p \
-    \nAction check. Focus copyclip addr: %p   Menu copyclip addr: %p\n", 
-    E_IS_FOCUS_TRACKER (focus_tracker) ? "true" : "false",
-    focus_tracker, E_IS_SELECTABLE (web_view) ? "true" : "false",
-    E_IS_SELECTABLE (focus) ? "true" : "false",
-    focus, focus_window, web_view, reader,
-    e_focus_tracker_get_copy_clipboard_action (focus_tracker),
-    gtk_action_group_get_action(browser->priv->action_group,
-      "copy-clipboard") );
-#endif
-
+  
 	state = e_mail_reader_check_state (reader);
 	e_mail_reader_update_actions (reader, state);
 
@@ -632,6 +666,9 @@ mail_browser_constructed (GObject *object)
 	action = gtk_action_group_get_action (action_group, "select-all");
 	e_focus_tracker_set_select_all_action (focus_tracker, action);
 	browser->priv->focus_tracker = focus_tracker;
+
+  g_signal_connect (web_view, "update-actions", 
+    G_CALLBACK(e_focus_tracker_update_actions), focus_tracker);
 
 	/* Construct window widgets. */
 
