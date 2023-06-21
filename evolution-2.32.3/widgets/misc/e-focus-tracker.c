@@ -805,7 +805,7 @@ e_focus_tracker_update_actions (EFocusTracker *focus_tracker)
 	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
 #endif
 
-#if defined G_OS_WIN32 && 1
+#if defined G_OS_WIN32 && 0
   GtkWidget *focus = e_focus_tracker_get_focus (focus_tracker);
   GtkWindow *focus_window = e_focus_tracker_get_window (focus_tracker);
   if(focus && focus != NULL) {

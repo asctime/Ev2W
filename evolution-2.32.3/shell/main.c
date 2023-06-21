@@ -472,6 +472,8 @@ main (gint argc, gchar **argv)
 			(*p_SetDllDirectoryA) ("");
 	}
 #if defined(__MINGW32__) || !defined(_WIN64)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wincompatible-pointer-types"
 	{
     HMODULE hMod = GetModuleHandleA("Kernel32.dll");
     intptr_t hCrtHeap = _get_heap_handle();

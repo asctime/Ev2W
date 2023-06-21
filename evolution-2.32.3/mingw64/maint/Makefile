@@ -462,7 +462,8 @@ libgladeevolution_la_LIBADD = \
 	$(top_builddir)/widgets/misc/libemiscwidgets.la \
 	$(EVOLUTION_CALENDAR_LIBS) \
 	$(EVOLUTION_MAIL_LIBS) \
-	$(GNOME_PLATFORM_LIBS)
+	$(GNOME_PLATFORM_LIBS) \
+	$(srcdir)/maint/libgladeevolution.def 
 
 EXTRA_DIST = \
 	$(gladecatalog_DATA)

@@ -219,12 +219,33 @@ e_print_operation_new (void)
 	load_key_file (key_file);
 
 	settings = load_settings (key_file);
+
 	gtk_print_operation_set_print_settings (operation, settings);
 	g_object_unref (settings);
 
 	page_setup = load_page_setup (key_file);
 	gtk_print_operation_set_default_page_setup (operation, page_setup);
 	g_object_unref (page_setup);
+ 
+#ifdef G_OS_WIN32 /* Apply gitlab gtk #4c399695 fix WIN32 printing */ 
+  GtkUnit units = GTK_UNIT_POINTS;
+  gtk_print_operation_set_use_full_page (operation, FALSE);
+  gtk_print_operation_set_unit (operation, units);
+#if 0
+  g_debug ("Ev2W Printing Configured for size %s \
+    \nPaper Width: %f \t\tPaper Height: %f \
+    \nPage Width: %f \t\tPage Height: %f \
+    \nRight Margin: %f \t\tBottom Margin: %f",
+    gtk_paper_size_get_display_name(gtk_page_setup_get_paper_size(page_setup)),
+    gtk_page_setup_get_paper_width (page_setup, units),
+    gtk_page_setup_get_paper_height (page_setup, units),
+    gtk_page_setup_get_page_width (page_setup, units),
+    gtk_page_setup_get_page_height (page_setup, units),
+    gtk_page_setup_get_right_margin (page_setup, units),
+    gtk_page_setup_get_bottom_margin (page_setup, units)
+  );
+#endif
+#endif
 
 	g_signal_connect (
 		operation, "done",

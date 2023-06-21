@@ -176,21 +176,29 @@ e_display_help (GtkWindow *parent,
 {
 	GString *uri;
 	GtkWidget *dialog;
-	GdkScreen *screen = NULL;
 	GError *error = NULL;
+#ifndef G_OS_WIN32
+	GdkScreen *screen = NULL;
 	guint32 timestamp;
 
-	uri = g_string_new ("ghelp:" PACKAGE);
 	timestamp = gtk_get_current_event_time ();
-
 	if (parent != NULL)
 		screen = gtk_widget_get_screen (GTK_WIDGET (parent));
+#endif
+	uri = g_string_new ("ghelp:" PACKAGE);
 
 	if (link_id != NULL)
 		g_string_append_printf (uri, "?%s", link_id);
 
+#ifdef G_OS_WIN32
+  /* Isn't like there's a lot of choices here anyway .. */
+  gchar *command = g_strdup_printf("yelp %s", uri->str);
+  if (g_spawn_command_line_async(command, NULL))
+    goto exit;
+#else
 	if (gtk_show_uri (screen, uri->str, timestamp, &error))
 		goto exit;
+#endif
 
 	dialog = gtk_message_dialog_new_with_markup (
 		parent, GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -207,6 +215,9 @@ e_display_help (GtkWindow *parent,
 	g_error_free (error);
 
 exit:
+#ifdef G_OS_WIN32
+  g_free(command);
+#endif
 	g_string_free (uri, TRUE);
 }
 
