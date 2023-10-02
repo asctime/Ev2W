@@ -518,10 +518,12 @@ rehandshake_ssl (PRFileDesc *fd, GError **error)
 {
   /* Fixme? Should this be a visible setting? GConf? Env? OS?        */
   /* Zero-Value for SSL_FHS breaks implicit TLS, so let's use that.  */
-	int EVAL_IVAL = 40;
+	int EVAL_IVAL = 1000;
   /* More than ten second blocking means something probably wrong    */ 
-  int BTIMEOUT = EVAL_IVAL * 250;
+  int BTIMEOUT = EVAL_IVAL * 10;
   int counter = 0;
+  /* Since we are only supporting one platform do we need this? */
+  PRUint32 timeout = PR_MillisecondsToInterval((PRUint32) EVAL_IVAL);
 
   if (SSL_ResetHandshake (fd, FALSE) == SECFailure) {
     g_warning ("Handshake reset failed.");
@@ -530,7 +532,8 @@ rehandshake_ssl (PRFileDesc *fd, GError **error)
     return FALSE;
   }
   
-  while (counter < BTIMEOUT && SSL_ForceHandshakeWithTimeout(fd, EVAL_IVAL) == SECFailure) {
+  while (counter < BTIMEOUT && SSL_ForceHandshakeWithTimeout(fd, timeout) == SECFailure) { 
+  /* while (counter < BTIMEOUT && SSL_ForceHandshakeWithTimeout(fd, EVAL_IVAL) == SECFailure) { */
     if (PR_GetError() == PR_WOULD_BLOCK_ERROR) {
       counter += EVAL_IVAL;
       continue;
