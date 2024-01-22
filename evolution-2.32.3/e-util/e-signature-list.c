@@ -203,6 +203,7 @@ gconf_signatures_changed (GConfClient *client,
 
 		g_free (uid);
 	}
+  g_slist_free_full (list, g_free);
 
 	if (!have_autogen) {
 		new_sigs = add_autogen (signature_list, new_sigs);

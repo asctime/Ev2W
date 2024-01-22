@@ -75,9 +75,9 @@ eab_send_as_to (EShell *shell,
 	 *     arrays are really the best argument type for passing a list of
 	 *     destinations to the header table. */
 
-	/* Set "To" destinations. */
+	/* Add "To" destinations. */
 	convert.pdata = to_array->pdata;
-	e_composer_header_table_set_destinations_to (
+	e_composer_header_table_add_destinations_to (
 		table, convert.destinations);
 	g_ptr_array_free (to_array, FALSE);
 

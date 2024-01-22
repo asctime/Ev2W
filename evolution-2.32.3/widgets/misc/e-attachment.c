@@ -101,6 +101,7 @@ G_DEFINE_TYPE (
 	e_attachment,
 	G_TYPE_OBJECT)
 
+#ifndef G_OS_WIN32 /* Thumbnailer is Gnome specific */
 static gboolean
 create_system_thumbnail (EAttachment *attachment, GIcon **icon)
 {
@@ -149,6 +150,7 @@ create_system_thumbnail (EAttachment *attachment, GIcon **icon)
 
 	return TRUE;
 }
+#endif /* G_OS_WIN32 */
 
 static gchar *
 attachment_get_default_charset (void)
@@ -252,7 +254,9 @@ attachment_update_icon_column (EAttachment *attachment)
 	GCancellable *cancellable;
 	GIcon *icon = NULL;
 	const gchar *emblem_name = NULL;
+#ifndef G_OS_WIN32
 	const gchar *thumbnail_path = NULL;
+#endif
 
 	reference = e_attachment_get_reference (attachment);
 	if (!gtk_tree_row_reference_valid (reference))
@@ -268,10 +272,13 @@ attachment_update_icon_column (EAttachment *attachment)
 
 	if (file_info != NULL) {
 		icon = g_file_info_get_icon (file_info);
+#ifndef G_OS_WIN32
 		thumbnail_path = g_file_info_get_attribute_byte_string (
 			file_info, G_FILE_ATTRIBUTE_THUMBNAIL_PATH);
+#endif
 	}
 
+#ifndef G_OS_WIN32  /* Thumbnailer code is gnome-specific. Don't need */
 	/* Prefer the thumbnail if we have one. */
 	if (thumbnail_path != NULL && *thumbnail_path != '\0') {
 		GFile *file;
@@ -286,12 +293,15 @@ attachment_update_icon_column (EAttachment *attachment)
 
 	/* Else use the standard icon for the content type. */
 	} else if (icon != NULL)
+#else  /* __MINGW32__ */
+  if (icon != NULL) {
+#endif
 		g_object_ref (icon);
-
+  }
 	/* Last ditch fallback.  (GFileInfo not yet loaded?) */
-	else
+	else {
 		icon = g_themed_icon_new (DEFAULT_ICON_NAME);
-
+  }
 	/* Pick an emblem, limit one.  Choices listed by priority. */
 
 	if (g_cancellable_is_cancelled (cancellable))
@@ -1522,11 +1532,11 @@ attachment_load_finish (LoadContext *load_context)
   }
 #endif
 
-	if (g_ascii_strcasecmp (mime_type, "message/rfc822") == 0)
+	if (g_ascii_strcasecmp (mime_type, "message/rfc822") == 0) {
 		wrapper = (CamelDataWrapper *) camel_mime_message_new ();
-	else
+  } else {
 		wrapper = camel_data_wrapper_new ();
-
+  }
 	camel_data_wrapper_construct_from_stream (wrapper, stream, NULL);
 
 	camel_data_wrapper_set_mime_type (wrapper, mime_type);
@@ -1540,18 +1550,19 @@ attachment_load_finish (LoadContext *load_context)
 	g_free (mime_type);
 
 	display_name = g_file_info_get_display_name (file_info);
-	if (display_name != NULL)
+	if (display_name != NULL) {
 		camel_mime_part_set_filename (mime_part, display_name);
-
+  }
+  g_print ("Attaching file name: %s\n", display_name);
 	attribute = G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION;
 	description = g_file_info_get_attribute_string (file_info, attribute);
-	if (description != NULL)
+	if (description != NULL) {
 		camel_mime_part_set_description (mime_part, description);
-
+  }
 	disposition = e_attachment_get_disposition (attachment);
-	if (disposition != NULL)
+	if (disposition != NULL) {
 		camel_mime_part_set_disposition (mime_part, disposition);
-
+  }
 	/* Correctly report the size of zero length special files. */
 	if (g_file_info_get_size (file_info) == 0) {
 		g_file_info_set_size (file_info, size);

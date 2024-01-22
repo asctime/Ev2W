@@ -2130,6 +2130,10 @@ msg_composer_image_uri (GtkhtmlEditor *editor,
 	const gchar *cid;
 
 	composer = E_MSG_COMPOSER (editor);
+/* URI escaping creates illegal filenames in WIN32; isn't needed anyway */
+#ifdef G_OS_WIN32
+  uri = g_uri_unescape_string(uri, NULL);
+#endif
   g_debug ("Looking up image with URI '%s'\n", uri);
 
 	hash_table = composer->priv->inline_images_by_url;

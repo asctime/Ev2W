@@ -320,7 +320,11 @@ addressbook_root_dse_query (AddressbookSourceDialog *dialog, LDAP *ldap,
 
 	ldap_error = ldap_search_ext_s (ldap,
 					LDAP_ROOT_DSE, LDAP_SCOPE_BASE,
+#ifdef _WIN32
+					(PCHAR)"(objectclass=*)",
+#else
 					"(objectclass=*)",
+#endif
 					(gchar **) attrs, 0, NULL, NULL, &timeout, LDAP_NO_LIMIT, resp);
 	if (LDAP_SUCCESS != ldap_error)
 		e_alert_run_dialog_for_args (GTK_WINDOW (dialog->window), "addressbook:ldap-search-base", NULL);

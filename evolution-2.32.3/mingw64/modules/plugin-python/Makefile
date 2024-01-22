@@ -113,7 +113,7 @@ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 libevolution_module_plugin_python_la_LINK = $(LIBTOOL) $(AM_V_lt) \
 	--tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
-	$(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(CCLD) $(AM_CFLAGS) $(CFLAGS) -Wl,--no-undefined \
 	$(libevolution_module_plugin_python_la_LDFLAGS) $(LDFLAGS) -o \
 	$@
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
@@ -461,7 +461,7 @@ libevolution_module_plugin_python_la_SOURCES = \
 	e-plugin-python.h
 
 libevolution_module_plugin_python_la_LIBADD = \
-	-ldl -lutil -lm						\
+	-ldl -lm						\
 	$(top_builddir)/e-util/libeutil.la			\
 	$(E_UTIL_LIBS)						\
 	$(PY_LIBS)

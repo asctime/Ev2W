@@ -114,6 +114,8 @@ signature_tree_view_refresh_cb (ESignatureList *signature_list,
 		g_hash_table_insert (index, signature, reference);
 		gtk_tree_path_free (path);
 	}
+  /* Gitlab Commit #31babe79 */
+  g_list_free (list); 
 
 skip:
 	/* Restore the previously selected signature. */

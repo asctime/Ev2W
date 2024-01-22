@@ -308,5 +308,5 @@ e_cell_vbox_append (ECellVbox *vbox, ECell *subcell, gint model_col)
 	vbox->model_cols[vbox->subcell_count - 1] = model_col;
 
 	if (subcell)
-		g_object_ref (subcell);
+		g_object_ref_sink (subcell);
 }

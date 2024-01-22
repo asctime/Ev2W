@@ -318,5 +318,5 @@ e_cell_hbox_append (ECellHbox *hbox, ECell *subcell, gint model_col, gint size)
 	hbox->def_size_cols[hbox->subcell_count - 1] = size;
 
 	if (subcell)
-		g_object_ref (subcell);
+		g_object_ref_sink (subcell);
 }

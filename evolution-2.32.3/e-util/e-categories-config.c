@@ -124,8 +124,13 @@ e_categories_config_open_dialog_for_entry (GtkEntry *entry)
 	result = gtk_dialog_run (dialog);
 
 	if (result == GTK_RESPONSE_OK) {
+#if 0 /* Gitab Commit 10ee75df */
 		text = e_categories_dialog_get_categories (E_CATEGORIES_DIALOG (dialog));
 		gtk_entry_set_text (GTK_ENTRY (entry), text);
+#else
+		const gchar *categories = e_categories_dialog_get_categories (E_CATEGORIES_DIALOG (dialog));
+		gtk_entry_set_text (GTK_ENTRY (entry), categories);
+#endif
 	}
 
 	gtk_object_destroy (GTK_OBJECT (dialog));

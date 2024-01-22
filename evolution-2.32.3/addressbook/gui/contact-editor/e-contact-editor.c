@@ -2855,15 +2855,14 @@ full_name_clicked (GtkWidget *button, EContactEditor *editor)
 static void
 categories_response (GtkDialog *dialog, gint response, EContactEditor *editor)
 {
-	const gchar *categories;
 	GtkWidget *entry = e_builder_get_widget(editor->builder, "entry-categories");
 
 	if (response == GTK_RESPONSE_OK) {
-		categories = e_categories_dialog_get_categories (E_CATEGORIES_DIALOG (dialog));
+		const gchar *categories = e_categories_dialog_get_categories (E_CATEGORIES_DIALOG (dialog));
 		if (entry && GTK_IS_ENTRY(entry))
 			gtk_entry_set_text (GTK_ENTRY (entry), categories);
 		else
-			e_contact_set (editor->contact, E_CONTACT_CATEGORIES, (gchar *)categories);
+			e_contact_set (editor->contact, E_CONTACT_CATEGORIES, categories);
 	}
 	gtk_widget_destroy(GTK_WIDGET(dialog));
 	categories_dialog = NULL;
