@@ -831,8 +831,10 @@ do_mail_to_event (AsyncData *data)
 				g_free (organizer);
 			}
 
-			/* set attachment files */
+#ifndef G_OS_WIN32
+			/* set attachment files. Not currently supported in Windows */
 			set_attachments (client, comp, message);
+#endif
 
 			/* priority */
 			set_priority (comp, CAMEL_MIME_PART (message));
