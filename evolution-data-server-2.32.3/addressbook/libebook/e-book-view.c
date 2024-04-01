@@ -280,6 +280,7 @@ e_book_view_dispose (GObject *object)
 
 	if (book_view->priv->gdbus_bookview) {
 		GError *error = NULL;
+    g_signal_handlers_disconnect_matched (book_view->priv->gdbus_bookview, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, book_view);
 
 		e_gdbus_book_view_call_dispose_sync (book_view->priv->gdbus_bookview, NULL, &error);
 		g_object_unref (book_view->priv->gdbus_bookview);
@@ -295,6 +296,9 @@ e_book_view_dispose (GObject *object)
 		g_object_unref (book_view->priv->book);
 		book_view->priv->book = NULL;
 	}
+
+	/* #f57b6f3b Chain up to parent's dispose() method. */
+	G_OBJECT_CLASS (e_book_view_parent_class)->dispose (object);
 }
 
 static void

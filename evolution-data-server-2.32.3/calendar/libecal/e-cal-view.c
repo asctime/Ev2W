@@ -113,9 +113,7 @@ objects_added_cb (EGdbusCalView *gdbus_calview, const gchar * const *objects, EC
 
 	g_signal_emit (G_OBJECT (view), signals[OBJECTS_ADDED], 0, list);
 
-	g_list_foreach (list, (GFunc) icalcomponent_free, NULL);
-	g_list_free (list);
-
+  g_list_free_full (list, (GDestroyNotify)icalcomponent_free);
 	g_object_unref (view);
 }
 
@@ -131,9 +129,7 @@ objects_modified_cb (EGdbusCalView *gdbus_calview, const gchar * const *objects,
 
 	g_signal_emit (G_OBJECT (view), signals[OBJECTS_MODIFIED], 0, list);
 
-	g_list_foreach (list, (GFunc) icalcomponent_free, NULL);
-	g_list_free (list);
-
+  g_list_free_full (list, (GDestroyNotify)icalcomponent_free);
 	g_object_unref (view);
 }
 
@@ -149,9 +145,7 @@ objects_removed_cb (EGdbusCalView *gdbus_calview, const gchar * const *uids, ECa
 
 	g_signal_emit (G_OBJECT (view), signals[OBJECTS_REMOVED], 0, list);
 
-	g_list_foreach (list, (GFunc) e_cal_component_free_id, NULL);
-	g_list_free (list);
-
+  g_list_free_full (list, (GDestroyNotify)e_cal_component_free_id);
 	g_object_unref (view);
 }
 
@@ -194,7 +188,10 @@ e_cal_view_set_property (GObject *object, guint property_id, const GValue *value
 	switch (property_id) {
 	case PROP_VIEW:
 		if (priv->gdbus_calview != NULL)
+    if (priv->gdbus_calview != NULL) {
+			g_signal_handlers_disconnect_matched (priv->gdbus_calview, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, view);
 			g_object_unref (priv->gdbus_calview);
+    }
 
 		priv->gdbus_calview = g_object_ref (g_value_get_pointer (value));
 		g_signal_connect (priv->gdbus_calview, "objects-added", G_CALLBACK (objects_added_cb), view);
@@ -247,8 +244,10 @@ e_cal_view_finalize (GObject *object)
 	view = E_CAL_VIEW (object);
 	priv = view->priv;
 
-	if (priv->gdbus_calview != NULL)
+	if (priv->gdbus_calview != NULL) {
+		g_signal_handlers_disconnect_matched (priv->gdbus_calview, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, view);
 		g_object_unref (priv->gdbus_calview);
+  }
 
 	g_object_unref (priv->client);
 

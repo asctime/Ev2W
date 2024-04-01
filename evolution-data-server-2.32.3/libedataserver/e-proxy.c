@@ -183,9 +183,8 @@ e_proxy_dispose (GObject *object)
 		soup_uri_free (priv->uri_https);
 
 	g_slist_free_full (priv->ign_hosts, g_free);
-	
-  g_slist_foreach (priv->ign_addrs, (GFunc) ep_free_proxy_host_addr, NULL);
-	g_slist_free (priv->ign_addrs);
+  g_slist_free_full (priv->ign_addrs,
+    (GDestroyNotify) ep_free_proxy_host_addr);
 
 	/* Chain up to parent's dispose() method. */
 	G_OBJECT_CLASS (e_proxy_parent_class)->dispose (object);
@@ -638,8 +637,8 @@ ep_set_proxy (GConfClient *client,
 		}
 
 		if (priv->ign_addrs) {
-			g_slist_foreach (priv->ign_addrs, (GFunc) ep_free_proxy_host_addr, NULL);
-			g_slist_free (priv->ign_addrs);
+			g_slist_free_full (priv->ign_addrs,
+        (GDestroyNotify) ep_free_proxy_host_addr);
 			priv->ign_addrs = NULL;
 		}
 

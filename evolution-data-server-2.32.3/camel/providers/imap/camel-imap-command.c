@@ -713,7 +713,7 @@ camel_imap_response_extract (CamelImapStore *store,
 			     const gchar *type,
 			     GError **error)
 {
-	gint len = strlen (type), i;
+  gint len, i;
 	gchar *resp;
 
 	len = strlen (type);

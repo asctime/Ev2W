@@ -160,6 +160,7 @@ save_file_when_idle (gpointer user_data)
 	GError *e = NULL;
 	GFile *file, *backup_file;
 	GFileOutputStream *stream;
+  gboolean succeeded;
 	gchar *tmp, *backup_uristr;
 	gchar *buf;
 	ECalBackendFile *cbfile = user_data;
@@ -211,20 +212,20 @@ save_file_when_idle (gpointer user_data)
 	}
 
 	buf = icalcomponent_as_ical_string_r (priv->icalcomp);
-	g_output_stream_write_all (G_OUTPUT_STREAM (stream), buf, strlen (buf) * sizeof (gchar), NULL, NULL, &e);
+	succeeded = g_output_stream_write_all (G_OUTPUT_STREAM (stream), buf, strlen (buf) * sizeof (gchar), NULL, NULL, &e);
 	g_free (buf);
 
-	if (e) {
+	if (!succeeded || e) {
 		g_object_unref (stream);
 		g_object_unref (file);
 		g_object_unref (backup_file);
 		goto error;
 	}
 
-	g_output_stream_close (G_OUTPUT_STREAM (stream), NULL, &e);
+	succeeded = g_output_stream_close (G_OUTPUT_STREAM (stream), NULL, &e);
 	g_object_unref (stream);
 
-	if (e) {
+	if (!succeeded || e) {
 		g_object_unref (file);
 		g_object_unref (backup_file);
 		goto error;
@@ -3630,7 +3631,6 @@ main(gint argc, gchar **argv)
 {
 	gchar * line = NULL;
 	gsize len = 0;
-	gssize read;
 	ECalBackendFile* cbfile;
 	gint num = 0;
 	GError *error = NULL;
@@ -3656,10 +3656,9 @@ main(gint argc, gchar **argv)
 	}
 
 	cbfile = g_object_new (E_TYPE_CAL_BACKEND_FILE, NULL);
-	open_cal (cbfile, calendar_fname, NULL);
-	if (cbfile == NULL)
-	{
-		g_message (G_STRLOC " Could not open calendar %s", calendar_fname);
+	open_cal (cbfile, calendar_fname, &error);
+	if (error != NULL) {
+		g_message (G_STRLOC " Could not open calendar %s: %s", calendar_fname, error->message);
 		exit (-1);
 	}
 
@@ -3683,7 +3682,7 @@ main(gint argc, gchar **argv)
 		fin = stdin;
 	}
 
-	while ((read = private_getline(&line, &len, fin)) != -1) {
+	while (private_getline(&line, &len, fin) != -1) {
 		g_print ("Query %d: %s", num++, line);
 
 		if (only_execute)

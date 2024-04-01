@@ -3312,7 +3312,7 @@ camel_header_param_list_format_append (GString *out, struct _camel_header_param 
 		if (!encoded) {
 			gchar *ch;
 
-			for (ch = value; *ch; ch++) {
+			for (ch = value; ch && *ch; ch++) {
 				if (camel_mime_is_tspecial (*ch) || camel_mime_is_lwsp (*ch))
 					break;
 			}

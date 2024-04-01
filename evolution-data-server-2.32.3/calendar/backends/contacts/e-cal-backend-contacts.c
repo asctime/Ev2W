@@ -984,6 +984,9 @@ init_sources_cb (ECalBackendContacts *cbc)
 
 	priv = cbc->priv;
 
+	if (!priv->addressbook_sources)
+		return NULL;
+
 	/* Create address books for existing sources */
         for (i = e_source_list_peek_groups (priv->addressbook_sources); i; i = i->next) {
                 ESourceGroup *source_group = E_SOURCE_GROUP (i->data);
@@ -1218,10 +1221,11 @@ e_cal_backend_contacts_finalize (GObject *object)
 	}
 
 	priv->default_zone = NULL;
-	g_object_unref (priv->addressbook_sources);
+	if (priv->addressbook_sources)
+		g_object_unref (priv->addressbook_sources);
 	g_hash_table_destroy (priv->addressbooks);
-        g_hash_table_destroy (priv->tracked_contacts);
-        g_hash_table_destroy (priv->zones);
+  g_hash_table_destroy (priv->tracked_contacts);
+  g_hash_table_destroy (priv->zones);
 	if (priv->notifyid1)
 		gconf_client_notify_remove (priv->conf_client, priv->notifyid1);
 	if (priv->notifyid2)
@@ -1246,12 +1250,13 @@ e_cal_backend_contacts_init (ECalBackendContacts *cbc)
 
 	priv = g_new0 (ECalBackendContactsPrivate, 1);
 
-	e_book_get_addressbooks (&priv->addressbook_sources, NULL);
+	if (!e_book_get_addressbooks (&priv->addressbook_sources, NULL))
+		priv->addressbook_sources = NULL;
 
-        priv->addressbooks = g_hash_table_new_full (g_str_hash, g_str_equal,
-                                                    g_free, (GDestroyNotify) book_record_free);
-        priv->tracked_contacts = g_hash_table_new_full (g_str_hash, g_str_equal,
-                                                        g_free, (GDestroyNotify)contact_record_free);
+  priv->addressbooks = g_hash_table_new_full (g_str_hash, g_str_equal,
+      g_free, (GDestroyNotify) book_record_free);
+  priv->tracked_contacts = g_hash_table_new_full (g_str_hash, g_str_equal,
+      g_free, (GDestroyNotify)contact_record_free);
 
 	priv->zones = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, free_zone);
 	priv->default_zone = icaltimezone_get_utc_timezone ();

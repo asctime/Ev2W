@@ -131,10 +131,14 @@ conjoinv (EBookQueryType type, EBookQuery *q, va_list ap)
 EBookQuery *
 e_book_query_andv (EBookQuery *q, ...)
 {
+  EBookQuery *res;
 	va_list ap;
 
 	va_start (ap, q);
-	return conjoinv (E_BOOK_QUERY_TYPE_AND, q, ap);
+	res = conjoinv (E_BOOK_QUERY_TYPE_AND, q, ap);
+	va_end (ap);
+
+	return res;
 }
 
 /**
@@ -149,10 +153,14 @@ e_book_query_andv (EBookQuery *q, ...)
 EBookQuery *
 e_book_query_orv (EBookQuery *q, ...)
 {
+  EBookQuery *res;
 	va_list ap;
 
 	va_start (ap, q);
-	return conjoinv (E_BOOK_QUERY_TYPE_OR, q, ap);
+	res = conjoinv (E_BOOK_QUERY_TYPE_OR, q, ap);
+	va_end (ap);
+
+	return res;
 }
 
 /**

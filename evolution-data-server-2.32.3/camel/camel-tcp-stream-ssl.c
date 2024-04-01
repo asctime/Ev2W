@@ -480,12 +480,12 @@ enable_ssl (CamelTcpStreamSSL *ssl, PRFileDesc *fd)
 	 * but does not enable it by default. It must be explicltly requested by the application.
 	 * See: http://www.mozilla.org/projects/security/pki/nss/ref/ssl/sslfnc.html#1126622 */
 	if (SSL_GetClientAuthDataHook (ssl_fd, (SSLGetClientAuthData)&NSS_GetClientAuthData, NULL ) == SECSuccess) {
-    g_warning ("ClientAuth data handshake with %s established.", ssl->priv->expected_host);
 	  return ssl_fd;
   } else {
-    g_warning ("ClientAuth data handshake with %s failed.", ssl->priv->expected_host);
+    g_debug ("NSS handshake to %s failed.", ssl->priv->expected_host);
     return NULL;
   }
+
 }
 
 static PRFileDesc *
@@ -577,6 +577,22 @@ tcp_stream_ssl_connect (CamelTcpStream *stream, const gchar *host, const gchar *
 				return -1;
 			}
 		}
+
+#ifdef __MINGW32__ /* Ev2W TLS debug report AFTER rehandshake */
+    SSLChannelInfo channel;
+    SSLCipherSuiteInfo suite;
+
+    if (SSL_GetChannelInfo(ssl_fd, &channel, sizeof(channel)) == SECSuccess) {    
+      SSL_GetCipherSuiteInfo(channel.cipherSuite, &suite, sizeof suite);
+      g_debug ("Host %s protocol %d.%d using %d-bit %s with %d-bit %s MAC: %s\n",
+        ssl->priv->expected_host, channel.protocolVersion >> 8, 
+        channel.protocolVersion & 0xff, suite.effectiveKeyBits,
+        suite.symCipherName, suite.macBits, suite.macAlgorithmName,
+        cert_fingerprint (SSL_PeerCertificate (ssl_fd)));
+    } else {
+      g_debug("NSS FAILED INFO CHECK\n");
+    }   
+#endif
 	}
 
 	return 0;

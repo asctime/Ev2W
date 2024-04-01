@@ -544,7 +544,6 @@ local_summary_encode_x_evolution(CamelLocalSummary *cls, const CamelLocalMessage
 {
 	GString *out = g_string_new("");
 	struct _camel_header_param *params = NULL;
-	GString *val = g_string_new("");
 	CamelFlag *flag = mi->info.user_flags;
 	CamelTag *tag = mi->info.user_tags;
 	gchar *ret;
@@ -563,7 +562,7 @@ local_summary_encode_x_evolution(CamelLocalSummary *cls, const CamelLocalMessage
 	}
 
 	if (flag || tag) {
-		val = g_string_new ("");
+    GString *val = g_string_new ("");
 
 		if (flag) {
 			while (flag) {

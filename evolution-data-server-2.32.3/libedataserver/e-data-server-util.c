@@ -251,6 +251,7 @@ stripped_char (gunichar ch)
 
 	utype = g_unichar_type (ch);
 
+  /* Intentional fall-through */
 	switch (utype) {
 	case G_UNICODE_CONTROL:
 	case G_UNICODE_FORMAT:

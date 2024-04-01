@@ -450,7 +450,7 @@ camel_db_open (const gchar *path,
 	sqlite3 *db;
 	gint ret;
 
-	g_once (&vfs_once, (GThreadFunc) init_sqlite_vfs, NULL);
+	g_once (&vfs_once, (GThreadFunc) (void (*)(void))init_sqlite_vfs, NULL);
 
 	CAMEL_DB_USE_SHARED_CACHE;
 

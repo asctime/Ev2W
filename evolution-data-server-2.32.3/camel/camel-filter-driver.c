@@ -421,6 +421,7 @@ report_status (CamelFilterDriver *driver, enum camel_filter_status_t status, gin
 		str = g_strdup_vprintf (desc, ap);
 		p->statusfunc (driver, status, pc, str, p->statusdata);
 		g_free (str);
+    va_end (ap);
 	}
 }
 
@@ -1075,6 +1076,7 @@ camel_filter_driver_log (CamelFilterDriver *driver, enum filter_log_t status, co
 
 			va_start (ap, desc);
 			str = g_strdup_vprintf (desc, ap);
+      va_end (ap);
 		}
 
 		switch (status) {
@@ -1241,7 +1243,8 @@ camel_filter_driver_filter_mbox (CamelFilterDriver *driver,
 		goto fail;
 	}
 	/* to get the filesize */
-	fstat (fd, &st);
+	if (fstat (fd, &st) != 0)
+		st.st_size = 0;
 
 	mp = camel_mime_parser_new ();
 	camel_mime_parser_scan_from (mp, TRUE);

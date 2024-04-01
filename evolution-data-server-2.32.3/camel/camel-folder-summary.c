@@ -2059,6 +2059,9 @@ camel_folder_summary_migrate_infos(CamelFolderSummary *s)
 	ret = save_message_infos_to_db (s, TRUE, NULL);
 
 	if (ret != 0) {
+		g_free (record->folder_name);
+		g_free (record->bdata);
+		g_free (record);
 		return -1;
 	}
 
@@ -2066,6 +2069,7 @@ camel_folder_summary_migrate_infos(CamelFolderSummary *s)
 	ret = camel_db_write_folder_info_record (cdb, record, NULL);
 	camel_db_end_transaction (cdb, NULL);
 
+  g_free (record->folder_name);
 	g_free (record->bdata);
 	g_free (record);
 
@@ -2144,20 +2148,21 @@ save_to_db_cb (gpointer key, gpointer value, gpointer data)
 			return;
 		}
 	}
+  g_return_if_fail (mir != NULL);
 
 	if (!args->migration) {
 			if (camel_db_write_message_info_record (cdb, full_name, mir, error) != 0) {
-					camel_db_camel_mir_free (mir);
-					return;
+			  camel_db_camel_mir_free (mir);
+				return;
 			}
 	} else {
 			if (camel_db_write_fresh_message_info_record (cdb, CAMEL_DB_IN_MEMORY_TABLE, mir, error) != 0) {
-					camel_db_camel_mir_free (mir);
-					return;
+				camel_db_camel_mir_free (mir);
+				return;
 			}
 
 			if (args->progress > CAMEL_DB_IN_MEMORY_TABLE_LIMIT) {
-			    g_print ("BULK INsert limit reached \n");
+			  g_print ("BULK INsert limit reached \n");
 				camel_db_flush_in_memory_transactions (cdb, full_name, error);
 				camel_db_start_in_memory_transactions (cdb, error);
 				args->progress = 0;
@@ -2231,6 +2236,7 @@ camel_folder_summary_save_to_db (CamelFolderSummary *s,
 	CamelDB *cdb;
 	CamelFIRecord *record;
 	gint ret, count;
+  g_return_val_if_fail (s != NULL, FALSE);
 
 	parent_store = camel_folder_get_parent_store (s->folder);
 	cdb = parent_store->cdb_w;
@@ -2373,13 +2379,7 @@ camel_folder_summary_header_load_from_db (CamelFolderSummary *s,
 
 	record = g_new0 (CamelFIRecord, 1);
 	camel_db_read_folder_info_record (cdb, folder_name, &record, error);
-
-	if (record) {
-		if (CAMEL_FOLDER_SUMMARY_GET_CLASS (s)->summary_header_from_db (s, record) == -1)
-			ret = -1;
-	} else {
-		ret = -1;
-	}
+  ret = CAMEL_FOLDER_SUMMARY_GET_CLASS (s)->summary_header_from_db (s, record);
 
 	g_free (record->folder_name);
 	g_free (record->bdata);

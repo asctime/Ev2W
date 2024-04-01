@@ -302,7 +302,7 @@ iconv_init(gint keep)
 #ifdef G_OS_WIN32
 		g_get_charset (&locale_charset);
 		locale_charset = g_strdup (locale_charset);
-		e_strdown (locale_charset);
+		e_strdown ((gchar*)locale_charset);
 #else
 #ifdef HAVE_CODESET
 		locale_charset = g_strdup (nl_langinfo (CODESET));

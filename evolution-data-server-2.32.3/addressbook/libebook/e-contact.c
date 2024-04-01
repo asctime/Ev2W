@@ -861,8 +861,7 @@ e_contact_set_property (GObject *object,
 								   with *only* the TYPE='s we need.  This may seem like
 								   an odd restriction but it's the only way at present to
 								   implement the Other Fax and Other Phone attributes. */
-								found_needed1 =
-									found_needed2 = FALSE;
+								found_needed1 = FALSE;
 								break;
 							}
 						}
@@ -1132,8 +1131,7 @@ e_contact_find_attribute_with_types (EContact *contact, const gchar *attr_name, 
 						   with *only* the TYPE='s we need.  This may seem like
 						   an odd restriction but it's the only way at present to
 						   implement the Other Fax and Other Phone attributes. */
-						found_needed1 =
-							found_needed2 = FALSE;
+						found_needed1 = FALSE;
 						break;
 					}
 				}
@@ -1295,7 +1293,7 @@ e_contact_duplicate (EContact *contact)
 const gchar *
 e_contact_field_name (EContactField field_id)
 {
-	g_return_val_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST, "");
+	g_return_val_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST, "");
 
 	return field_info[field_id].field_name;
 }
@@ -1312,7 +1310,7 @@ e_contact_field_name (EContactField field_id)
 const gchar *
 e_contact_pretty_name (EContactField field_id)
 {
-	g_return_val_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST, "");
+	g_return_val_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST, "");
 
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
@@ -1333,7 +1331,7 @@ e_contact_pretty_name (EContactField field_id)
 const gchar *
 e_contact_vcard_attribute  (EContactField field_id)
 {
-	g_return_val_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST, "");
+	g_return_val_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST, "");
 
 	return field_info[field_id].vcard_field_name;
 }
@@ -1402,7 +1400,7 @@ e_contact_get (EContact *contact, EContactField field_id)
 	const EContactFieldInfo *info = NULL;
 
 	g_return_val_if_fail (contact && E_IS_CONTACT (contact), NULL);
-	g_return_val_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST, NULL);
+	g_return_val_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST, NULL);
 
 	info = &field_info[field_id];
 
@@ -1589,6 +1587,7 @@ e_contact_get_const (EContact *contact, EContactField field_id)
 	gpointer value = NULL;
 
 	g_return_val_if_fail (E_IS_CONTACT (contact), NULL);
+  g_return_val_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST, NULL);
 	g_return_val_if_fail (field_info[field_id].t & E_CONTACT_FIELD_TYPE_STRING, NULL);
 
 	value = contact->priv->cached_strings[field_id];
@@ -1616,7 +1615,7 @@ e_contact_set (EContact *contact, EContactField field_id, gconstpointer value)
 	d(printf ("e_contact_set (%p, %d, %p)\n", contact, field_id, value));
 
 	g_return_if_fail (contact && E_IS_CONTACT (contact));
-	g_return_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST);
+	g_return_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST);
 
 	/* set the cached slot to NULL so we'll re-get the new string
 	   if e_contact_get_const is called again */
@@ -1644,7 +1643,7 @@ e_contact_get_attributes (EContact *contact, EContactField field_id)
 	const EContactFieldInfo *info = NULL;
 
 	g_return_val_if_fail (contact && E_IS_CONTACT (contact), NULL);
-	g_return_val_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST, NULL);
+	g_return_val_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST, NULL);
 
 	info = &field_info[field_id];
 
@@ -1680,7 +1679,7 @@ e_contact_set_attributes (EContact *contact, EContactField field_id, GList *attr
 	GList *l;
 
 	g_return_if_fail (contact && E_IS_CONTACT (contact));
-	g_return_if_fail (field_id >= 1 && field_id <= E_CONTACT_FIELD_LAST);
+	g_return_if_fail (field_id >= 1 && field_id < E_CONTACT_FIELD_LAST);
 
 	info = &field_info[field_id];
 
@@ -1749,7 +1748,7 @@ e_contact_name_from_string (const gchar *name_str)
 
 	g_return_val_if_fail (name_str != NULL, NULL);
 
-	western = e_name_western_parse (name_str ? name_str : "");
+	western = e_name_western_parse (name_str);
 
 	name->prefixes   = g_strdup (western->prefix);
 	name->given      = g_strdup (western->first );

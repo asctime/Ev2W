@@ -886,6 +886,10 @@ e_book_backend_ldap_connect (EBookBackendLDAP *bl)
 #if defined (LDAP_OPT_X_TLS_HARD) && defined (LDAP_OPT_X_TLS)
 				gint tls_level = LDAP_OPT_X_TLS_HARD;
 				ldap_set_option (blpriv->ldap, LDAP_OPT_X_TLS, &tls_level);
+
+				/* setup this on the global option set */
+				tls_level = LDAP_OPT_X_TLS_ALLOW;
+				ldap_set_option (NULL, LDAP_OPT_X_TLS_REQUIRE_CERT, &tls_level);
 #elif defined (G_OS_WIN32)
 				ldap_set_option (blpriv->ldap, LDAP_OPT_SSL, LDAP_OPT_ON);
 #else
@@ -1987,7 +1991,7 @@ modify_contact_search_handler (LDAPOp *op, LDAPMessage *res)
 		modify_op->current_contact = build_contact_from_entry (bl, e,
 								       &modify_op->existing_objectclasses,
 								       &modify_op->ldap_uid);
-	}
+  }
 	else if (msg_type == LDAP_RES_SEARCH_RESULT) {
 		gchar *ldap_error_msg;
 #ifdef __MINGW64__
@@ -2924,6 +2928,7 @@ member_ber (EContact *contact)
 		}
 	}
 	result[i] = NULL;
+  g_list_free_full (members, (GDestroyNotify) e_vcard_attribute_free);
 	return result;
 }
 
@@ -2946,6 +2951,8 @@ member_compare (EContact *contact_new, EContact *contact_current)
 		equal = !strcmp (list_name1, list_name2);
 	else
 		equal = (!!list_name1 == !!list_name2);
+  g_free (list_name1);
+	g_free (list_name2);
 
 	if (!equal)
 		return equal;
@@ -2954,8 +2961,13 @@ member_compare (EContact *contact_new, EContact *contact_current)
 	len1 = g_list_length (members_new);
 	members_cur = e_contact_get_attributes (contact_current, E_CONTACT_EMAIL);
 	len2 = g_list_length (members_cur);
-	if (len1 != len2)
+
+	if (len1 != len2) {
+		g_list_free_full (members_new, (GDestroyNotify) e_vcard_attribute_free);
+		g_list_free_full (members_cur, (GDestroyNotify) e_vcard_attribute_free);
+
 		return FALSE;
+	}
 
 	for (l1 = members_new; l1 != NULL; l1 = g_list_next (l1)) {
 		EVCardAttribute *attr_new = l1->data;
@@ -2993,6 +3005,8 @@ member_compare (EContact *contact_new, EContact *contact_current)
 						}
 					}
 					if (!found) {
+						g_list_free_full (members_new, (GDestroyNotify) e_vcard_attribute_free);
+						g_list_free_full (members_cur, (GDestroyNotify) e_vcard_attribute_free);
 						return FALSE;
 					}
 				}
@@ -3001,6 +3015,9 @@ member_compare (EContact *contact_new, EContact *contact_current)
 		next_member:
 		continue;
 	}
+
+	g_list_free_full (members_new, (GDestroyNotify) e_vcard_attribute_free);
+	g_list_free_full (members_cur, (GDestroyNotify) e_vcard_attribute_free);
 	return TRUE;
 }
 
@@ -4079,7 +4096,7 @@ e_book_backend_ldap_build_query (EBookBackendLDAP *bl, const gchar *query)
 		}
 		else {
 			if (bl->priv->ldap_search_filter && *bl->priv->ldap_search_filter
-				&& g_ascii_strncasecmp(bl->priv->ldap_search_filter,"(objectClass=*)",sizeof(bl->priv->ldap_search_filter))) {
+				&& g_ascii_strcasecmp (bl->priv->ldap_search_filter, "(objectClass=*)") != 0) {
 				strings = g_new0(gchar *, 5);
 				strings[0] = g_strdup ("(&");
 				strings[1] = g_strdup_printf ("%s", bl->priv->ldap_search_filter);
@@ -4366,9 +4383,12 @@ poll_ldap (EBookBackendLDAP *bl)
 	if (rc != 0) {/* rc == 0 means timeout exceeded */
 		if (rc == -1) {
 			EDataBookView *book_view = find_book_view (bl);
-			g_warning ("ldap_result returned -1, restarting ops");
+      g_warning ("%s: ldap_result returned -1, restarting ops", G_STRFUNC);
 
-			e_book_backend_ldap_reconnect (bl, book_view, LDAP_SERVER_DOWN);
+			if (!e_book_backend_ldap_reconnect (bl, book_view, LDAP_SERVER_DOWN)) {
+				g_warning ("%s: Failed to reconnect to LDAP server", G_STRFUNC);
+				return FALSE;
+			}
 #if 0
 			if (bl->priv->connected)
 				restart_ops (bl);
@@ -4448,7 +4468,7 @@ ldap_search_handler (LDAPOp *op, LDAPMessage *res)
 			e = ldap_next_entry(bl->priv->ldap, e);
 			g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
 		}
-	}
+	} 
 	else if (msg_type == LDAP_RES_SEARCH_RESULT) {
 		GError *edb_err = NULL;
 		gchar *ldap_error_msg;
@@ -4580,10 +4600,9 @@ e_book_backend_ldap_search (EBookBackendLDAP *bl,
 #endif
 
 			g_static_rec_mutex_unlock (&eds_ldap_handler_lock);
-
-			view_limit = e_data_book_view_get_max_results (view);
-			if (view_limit == -1 || view_limit > bl->priv->ldap_limit)
-				view_limit = bl->priv->ldap_limit;
+		  view_limit = bl->priv->ldap_limit;
+		  /* if (view_limit == -1 || view_limit > bl->priv->ldap_limit)
+			   view_limit = bl->priv->ldap_limit; */
 
 			if (enable_debug)
 				printf ("searching server using filter: %s (expecting max %d results)\n", ldap_query, view_limit);

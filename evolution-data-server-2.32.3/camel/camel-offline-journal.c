@@ -147,7 +147,7 @@ camel_offline_journal_write (CamelOfflineJournal *journal,
 		return -1;
 	}
 
-	fp = fdopen (fd, "w");
+	fp = fdopen (fd, "wb");
 	if (!fp)
 		goto exception;
 

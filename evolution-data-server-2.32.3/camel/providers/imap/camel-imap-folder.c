@@ -1338,7 +1338,7 @@ get_matching (CamelFolder *folder, guint32 flags, guint32 mask, CamelMessageInfo
 
 			if (!list1) {
 				for (flag = camel_message_info_user_flags (master_info); flag; flag = flag->next) {
-					if (flag->name && *flag->name) {
+					if (*flag->name) {
 						count1++;
 						list1 = g_slist_prepend (list1, (gchar *)flag->name);
 					}
@@ -1348,7 +1348,7 @@ get_matching (CamelFolder *folder, guint32 flags, guint32 mask, CamelMessageInfo
 			}
 
 			for (flag = camel_message_info_user_flags (info); flag; flag = flag->next) {
-				if (flag->name && *flag->name) {
+				if (*flag->name) {
 					count2++;
 					list2 = g_slist_prepend (list2, (gchar *)flag->name);
 				}

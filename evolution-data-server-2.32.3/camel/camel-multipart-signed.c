@@ -82,7 +82,7 @@ multipart_signed_skip_content (CamelMimeParser *cmp)
 		break;
 	case CAMEL_MIME_PARSER_STATE_MULTIPART:
 		/* embedded multipart */
-		while ((state = camel_mime_parser_step(cmp, &buf, &len)) != CAMEL_MIME_PARSER_STATE_MULTIPART_END)
+		while (camel_mime_parser_step(cmp, &buf, &len) != CAMEL_MIME_PARSER_STATE_MULTIPART_END)
 			multipart_signed_skip_content (cmp);
 		break;
 	default:
@@ -417,7 +417,7 @@ multipart_signed_get_part (CamelMultipart *multipart,
 			stream = g_object_ref (mps->contentraw);
 		} else if (mps->start1 == -1
 			   && multipart_signed_parse_content(mps) == -1
-			   && (stream = ((CamelDataWrapper *)mps)->stream) == NULL) {
+			   && ((CamelDataWrapper *)mps)->stream == NULL) {
 			g_warning("Trying to get content on an invalid multipart/signed");
 			return NULL;
 		} else if (dw->stream == NULL) {

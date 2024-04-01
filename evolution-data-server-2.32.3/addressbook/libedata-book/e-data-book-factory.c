@@ -37,6 +37,7 @@
 #include "e-gdbus-egdbusbookfactory.h"
 
 #ifdef G_OS_WIN32
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <conio.h>
 #ifndef PROCESS_DEP_ENABLE
@@ -588,33 +589,41 @@ gint main (gint argc, gchar **argv)
 		typedef BOOL (WINAPI *t_SetDllDirectoryA) (LPCSTR lpPathName);
 		t_SetDllDirectoryA p_SetDllDirectoryA;
 
-    /* GCC 8 adds -Wcast-function-type, enabled by default with -Wextra,
-       which causes this line to emit a warning on MinGW. We know what
-       we're doing, so suppress that. */
-#if defined(__MINGW32__) && __GNUC__ >= 8
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wincompatible-pointer-types"
-#endif
-		p_SetDllDirectoryA = GetProcAddress (GetModuleHandle ("kernel32.dll"), "SetDllDirectoryA");
-#if defined(CORRADE_TARGET_GCC) && __GNUC__ >= 8
-#pragma GCC diagnostic pop
-#endif
+		p_SetDllDirectoryA = GetProcAddress (GetModuleHandleA ("kernel32.dll"), "SetDllDirectoryA");
 		if (p_SetDllDirectoryA)
 			(*p_SetDllDirectoryA) ("");
 	}
-#ifndef _WIN64
+#if defined(__MINGW32__) || !defined(_WIN64)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wincompatible-pointer-types"
 	{
-		typedef BOOL (WINAPI *t_SetProcessDEPPolicy) (DWORD dwFlags);
-		t_SetProcessDEPPolicy p_SetProcessDEPPolicy;
+    HMODULE hMod = GetModuleHandleA("Kernel32.dll");
+    intptr_t hCrtHeap = _get_heap_handle();
+    ULONG ulEnableLFH = 2;
 
-		p_SetProcessDEPPolicy = GetProcAddress (GetModuleHandle ("kernel32.dll"), "SetProcessDEPPolicy");
-		if (p_SetProcessDEPPolicy)
-			(*p_SetProcessDEPPolicy) (PROCESS_DEP_ENABLE|PROCESS_DEP_DISABLE_ATL_THUNK_EMULATION);
+    if (hMod) {
+      typedef BOOL (WINAPI *PSETDEP)(DWORD);
+      PSETDEP setdeppolicy = (PSETDEP)GetProcAddress(hMod,
+        "SetProcessDEPPolicy");
+
+    if (HeapSetInformation((PVOID)hCrtHeap,
+      HeapEnableTerminationOnCorruption | HeapCompatibilityInformation,
+      &ulEnableLFH, sizeof(ulEnableLFH)))
+        g_debug("## Ev2W ## Low Fragmentation Heap ENABLED.");
+    else
+        g_debug("## Ev2W ## Low Fragmentation Heap FAILED. Using fallback.");
+
+  #ifdef __MINGW64__
+      if (setdeppolicy)
+        setdeppolicy(3);
+  #else
+		  if (setdeppolicy)
+			  (*setdeppolicy) (PROCESS_DEP_ENABLE|PROCESS_DEP_DISABLE_ATL_THUNK_EMULATION);
+  #endif
+    }
 	}
 #endif
-#endif
 
-#ifdef G_OS_WIN32
   LANGID langId = GetSystemDefaultUILanguage();
   if (PRIMARYLANGID(langId) == LANG_ENGLISH) {
     SetThreadLocale(MAKELCID(langId, SORT_DEFAULT));

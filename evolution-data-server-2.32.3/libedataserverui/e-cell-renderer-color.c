@@ -47,7 +47,7 @@ G_DEFINE_TYPE (ECellRendererColor, e_cell_renderer_color, GTK_TYPE_CELL_RENDERER
 static void
 cell_renderer_color_get_size (GtkCellRenderer *cell,
                               GtkWidget *widget,
-                              GdkRectangle *cell_area,
+                              const GdkRectangle *cell_area,
                               gint *x_offset,
                               gint *y_offset,
                               gint *width,
@@ -99,8 +99,8 @@ cell_renderer_color_render (GtkCellRenderer *cell,
                             GdkWindow *window,
                             GtkWidget *widget,
                             GdkRectangle *background_area,
-                            GdkRectangle *cell_area,
-                            GdkRectangle *expose_area,
+                            const GdkRectangle *cell_area,
+                            const GdkRectangle *expose_area,
                             GtkCellRendererState flags)
 {
 	ECellRendererColorPrivate *priv;
