@@ -231,7 +231,61 @@ e_run_signature_script (const gchar *filename)
 	 *       POSIX, and report errors via GError instead of dumping
 	 *       messages to the terminal where users won't see them. */
 
-#ifndef G_OS_WIN32
+#ifdef G_OS_WIN32
+  FILE       *pipe;
+  GByteArray *buffer;
+  gchar      *content;
+  gchar      *utf8;
+  gsize       length;
+  size_t      nread;
+  gchar       tmpbuf[4096];
+
+  g_return_val_if_fail (filename != NULL, NULL);
+
+  /* On Windows, popen() runs the command via cmd.exe /c,
+   * which is analogous to /bin/sh -c on POSIX. */
+  pipe = popen (filename, "r");
+  if (pipe == NULL) {
+    g_warning ("Failed to execute '%s': %s",
+      filename, g_strerror (errno));
+    return NULL;
+  }
+
+  buffer = g_byte_array_new ();
+
+  /* Read everything the script writes to stdout. */
+  while (!feof (pipe)) {
+    nread = fread (tmpbuf, 1, sizeof (tmpbuf), pipe);
+    if (nread > 0)
+      g_byte_array_append (buffer,
+        (const guint8 *) tmpbuf, (guint)nread);
+    if (ferror (pipe)) {
+      g_warning ("Error reading from '%s': %s",
+        filename, g_strerror (errno));
+      g_byte_array_free (buffer, TRUE);
+      pclose (pipe);
+      return NULL;
+    }
+  }
+
+  /* Close and reap the child process. */
+  pclose (pipe);
+
+  /* Make sure the buffer is nul-terminated. */
+  length = (gsize) buffer->len;
+  g_byte_array_append (buffer, (const guchar *) "", 1);
+  content = (gchar *) g_byte_array_free (buffer, FALSE);
+
+  /* Same UTF-8 / locale fallback as the POSIX path. */
+  if (content != NULL && !g_utf8_validate (content, length, NULL)) {
+      utf8 = g_locale_to_utf8 (content, length, NULL, NULL, NULL);
+      g_free (content);
+      content = utf8;
+   }
+
+  return content;
+
+#else
 	gint in_fds[2];
 	pid_t pid;
 

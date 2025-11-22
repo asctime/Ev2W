@@ -143,6 +143,30 @@ gpg_id_to_hash (CamelCipherContext *context, const gchar *id)
 	return CAMEL_CIPHER_HASH_DEFAULT;
 }
 
+/* Digest algorithm -> --digest-algo=... mapping, used on all platforms. */
+static const gchar *
+gpg_hash_str (CamelCipherHash hash)
+{
+	switch (hash) {
+	case CAMEL_CIPHER_HASH_MD2:
+		return "--digest-algo=MD2";
+	case CAMEL_CIPHER_HASH_MD5:
+		return "--digest-algo=MD5";
+	case CAMEL_CIPHER_HASH_SHA1:
+		return "--digest-algo=SHA1";
+	case CAMEL_CIPHER_HASH_SHA256:
+		return "--digest-algo=SHA256";
+	case CAMEL_CIPHER_HASH_SHA384:
+		return "--digest-algo=SHA384";
+	case CAMEL_CIPHER_HASH_SHA512:
+		return "--digest-algo=SHA512";
+	case CAMEL_CIPHER_HASH_RIPEMD160:
+		return "--digest-algo=RIPEMD160";
+	default:
+		return NULL;
+	}
+}
+
 enum _GpgCtxMode {
 	GPG_CTX_MODE_SIGN,
 	GPG_CTX_MODE_VERIFY,
@@ -461,33 +485,387 @@ gpg_ctx_free (struct _GpgCtx *gpg)
 	g_free (gpg);
 }
 
-#ifndef G_OS_WIN32
 
-static const gchar *
-gpg_hash_str (CamelCipherHash hash)
+#ifdef G_OS_WIN32
+/* Write @stream into a temporary file and return the filename.
+ * Caller must g_unlink() and g_free() the returned path.
+ */
+static gchar *
+gpg_win32_stream_to_tempfile (CamelStream *stream,
+                              GError     **error)
 {
-	switch (hash) {
-	case CAMEL_CIPHER_HASH_MD2:
-		return "--digest-algo=MD2";
-	case CAMEL_CIPHER_HASH_MD5:
-		return "--digest-algo=MD5";
-	case CAMEL_CIPHER_HASH_SHA1:
-		return "--digest-algo=SHA1";
-	case CAMEL_CIPHER_HASH_SHA256:
-		return "--digest-algo=SHA256";
-	case CAMEL_CIPHER_HASH_SHA384:
-		return "--digest-algo=SHA384";
-	case CAMEL_CIPHER_HASH_SHA512:
-		return "--digest-algo=SHA512";
-	case CAMEL_CIPHER_HASH_RIPEMD160:
-		return "--digest-algo=RIPEMD160";
-	default:
+	gchar *tmpl;
+	gint fd;
+	CamelStream *fs;
+	gint ret = 0;
+
+	g_return_val_if_fail (stream != NULL, NULL);
+
+	tmpl = g_build_filename (g_get_tmp_dir (), "evolution-gpg-XXXXXX", NULL);
+
+	fd = g_mkstemp (tmpl);
+	if (fd == -1) {
+		g_set_error (
+			error, G_IO_ERROR,
+			g_io_error_from_errno (errno),
+			_("Failed to create temporary file: %s"),
+			g_strerror (errno));
+		g_free (tmpl);
 		return NULL;
 	}
+
+	fs = camel_stream_fs_new_with_fd (fd);
+
+	/* Rewind and copy the input stream into the temporary file. */
+	camel_stream_reset (stream, NULL);
+	if (camel_stream_write_to_stream (stream, fs, error) == -1)
+		ret = -1;
+	else if (camel_stream_flush (fs, error) == -1)
+		ret = -1;
+	else if (camel_stream_close (fs, error) == -1)
+		ret = -1;
+
+	g_object_unref (fs);
+
+	if (ret == -1) {
+		g_unlink (tmpl);
+		g_free (tmpl);
+		return NULL;
+	}
+
+	return tmpl;
 }
 
+
+/* Create an empty temporary file for gpg diagnostics on stderr. */
+static gchar *
+gpg_win32_create_diag_file (GError **error)
+{
+	gchar *tmpl;
+	gint fd;
+
+	tmpl = g_build_filename (g_get_tmp_dir (), "evolution-gpg-diag-XXXXXX", NULL);
+
+	fd = g_mkstemp (tmpl);
+	if (fd == -1) {
+		g_set_error (
+			error, G_IO_ERROR,
+			g_io_error_from_errno (errno),
+			_("Failed to create temporary file: %s"),
+			g_strerror (errno));
+		g_free (tmpl);
+		return NULL;
+	}	
+
+  close (fd);
+	return tmpl;
+}
+
+
+/* Build a single command line for cmd.exe /c via popen(). */
+static gchar *
+gpg_win32_build_command (struct _GpgCtx *gpg,
+                         const gchar   *data_file,
+                         const gchar   *diag_file)
+{
+	GString *cmd;
+	const gchar *hash_opt;
+	gint i;
+
+	cmd = g_string_new ("gpg --verbose --no-secmem-warning --no-greeting --no-tty");
+
+	switch (gpg->mode) {
+	case GPG_CTX_MODE_SIGN:
+		g_string_append (cmd, " --sign --detach");
+		if (gpg->armor)
+			g_string_append (cmd, " --armor");
+
+		hash_opt = gpg_hash_str (gpg->hash);
+		if (hash_opt != NULL) {
+			g_string_append_c (cmd, ' ');
+			g_string_append (cmd, hash_opt);
+		}
+
+		if (gpg->userid != NULL) {
+			g_string_append (cmd, " -u \"");
+			g_string_append (cmd, gpg->userid);
+			g_string_append_c (cmd, '"');
+		}
+
+		g_string_append (cmd, " --output -");
+
+		if (data_file != NULL) {
+			g_string_append (cmd, " \"");
+			g_string_append (cmd, data_file);
+			g_string_append_c (cmd, '"');
+		}
+		break;
+
+	case GPG_CTX_MODE_VERIFY:
+		if (!camel_session_get_online (gpg->session)) {
+			g_string_append (cmd,
+			                 " --keyserver-options no-auto-key-retrieve");
+		}
+
+		g_string_append (cmd, " --verify");
+
+		if (gpg->sigfile != NULL) {
+			g_string_append (cmd, " \"");
+			g_string_append (cmd, gpg->sigfile);
+			g_string_append_c (cmd, '"');
+		}
+
+		if (data_file != NULL) {
+			g_string_append (cmd, " \"");
+			g_string_append (cmd, data_file);
+			g_string_append_c (cmd, '"');
+		}
+		break;
+
+	case GPG_CTX_MODE_ENCRYPT:
+		g_string_append (cmd, " --encrypt");
+		if (gpg->armor)
+			g_string_append (cmd, " --armor");
+		if (gpg->always_trust)
+			g_string_append (cmd, " --always-trust");
+
+		if (gpg->userid != NULL) {
+			g_string_append (cmd, " -u \"");
+			g_string_append (cmd, gpg->userid);
+			g_string_append_c (cmd, '"');
+		}
+
+		if (gpg->recipients != NULL) {
+			for (i = 0; i < (gint) gpg->recipients->len; i++) {
+				const gchar *r = gpg->recipients->pdata[i];
+
+				g_string_append (cmd, " -r \"");
+				g_string_append (cmd, r);
+				g_string_append_c (cmd, '"');
+			}
+		}
+
+		g_string_append (cmd, " --output -");
+
+		if (data_file != NULL) {
+			g_string_append (cmd, " \"");
+			g_string_append (cmd, data_file);
+			g_string_append_c (cmd, '"');
+		}
+		break;
+
+	case GPG_CTX_MODE_DECRYPT:
+		g_string_append (cmd, " --decrypt --output -");
+
+		if (data_file != NULL) {
+			g_string_append (cmd, " \"");
+			g_string_append (cmd, data_file);
+			g_string_append_c (cmd, '"');
+		}
+		break;
+
+	case GPG_CTX_MODE_IMPORT:
+		g_string_append (cmd, " --import");
+
+		if (data_file != NULL) {
+			g_string_append (cmd, " \"");
+			g_string_append (cmd, data_file);
+			g_string_append_c (cmd, '"');
+		}
+		break;
+
+	case GPG_CTX_MODE_EXPORT:
+		if (gpg->armor)
+			g_string_append (cmd, " --armor");
+
+		g_string_append (cmd, " --export");
+
+		if (gpg->recipients != NULL) {
+			for (i = 0; i < (gint) gpg->recipients->len; i++) {
+				const gchar *r = gpg->recipients->pdata[i];
+
+				g_string_append (cmd, " \"");
+				g_string_append (cmd, r);
+				g_string_append_c (cmd, '"');
+			}
+		}
+		break;
+	}
+
+	if (diag_file != NULL) {
+		g_string_append (cmd, " 2>\"");
+		g_string_append (cmd, diag_file);
+		g_string_append_c (cmd, '"');
+	}
+
+	return g_string_free (cmd, FALSE);
+}
+
+/* Run gpg synchronously via popen(), wiring stdout into gpg->ostream and
+ * stderr into gpg->diagnostics.  This mirrors e_run_signature_script().
+ */
+static gboolean
+gpg_win32_run_popen (struct _GpgCtx *gpg,
+                     GError        **error)
+{
+	gchar *data_file = NULL;
+	gchar *diag_file = NULL;
+	gchar *cmd = NULL;
+	FILE *pipe = NULL;
+	gchar buf[4096];
+	size_t nread;
+	gint status;
+
+	/* For modes that consume input, materialise the istream into a file. */
+	if (gpg->istream != NULL &&
+	    (gpg->mode == GPG_CTX_MODE_SIGN   ||
+	     gpg->mode == GPG_CTX_MODE_VERIFY ||
+	     gpg->mode == GPG_CTX_MODE_ENCRYPT||
+	     gpg->mode == GPG_CTX_MODE_DECRYPT||
+	     gpg->mode == GPG_CTX_MODE_IMPORT)) {
+
+		data_file = gpg_win32_stream_to_tempfile (gpg->istream, error);
+		if (data_file == NULL)
+			goto fail;
+	}
+
+	diag_file = gpg_win32_create_diag_file (error);
+	if (diag_file == NULL)
+		goto fail;
+
+	cmd = gpg_win32_build_command (gpg, data_file, diag_file);
+	if (cmd == NULL) {
+		g_set_error (
+			error, CAMEL_ERROR, CAMEL_ERROR_GENERIC,
+			_("Failed to build gpg command line."));
+		goto fail;
+	}
+
+	/* On Windows, popen() runs via cmd.exe /c. Use binary mode to avoid
+	 * CRLF mangling on ASCII-armored data.
+	 */
+	pipe = popen (cmd, "rb");
+	if (pipe == NULL) {
+		gint errnosave = errno;
+
+		g_set_error (
+			error, G_IO_ERROR,
+			g_io_error_from_errno (errnosave),
+			_("Failed to execute gpg: %s"),
+			g_strerror (errnosave));
+		goto fail;
+	}
+
+	if (gpg->ostream != NULL) {
+		while ((nread = fread (buf, 1, sizeof (buf), pipe)) > 0) {
+			if (camel_stream_write (
+				    gpg->ostream, buf, (gssize) nread, error) == -1)
+				goto fail;
+		}
+	} else {
+		while (fread (buf, 1, sizeof (buf), pipe) > 0)
+			; /* discard stdout */
+	}
+
+	if (ferror (pipe)) {
+		gint errnosave = errno;
+
+		g_set_error (
+			error, G_IO_ERROR,
+			g_io_error_from_errno (errnosave),
+			_("Error reading from gpg: %s"),
+			g_strerror (errnosave));
+		goto fail;
+	}
+
+	status = pclose (pipe);
+	pipe = NULL;
+
+	gpg->exit_status = status;
+	gpg->exited = TRUE;
+
+	/* Copy diagnostics from the temporary stderr file into the existing
+	 * diagnostics stream, which already does charset conversion.
+	 */
+	if (diag_file != NULL && gpg->diagnostics != NULL) {
+		CamelStream *ds;
+		GError *local_error = NULL;
+
+		ds = camel_stream_fs_new_with_name (diag_file, O_RDONLY, 0, NULL);
+		if (ds != NULL) {
+			camel_stream_write_to_stream (ds, gpg->diagnostics,
+			                              &local_error);
+			g_object_unref (ds);
+		}
+
+		if (local_error != NULL)
+			g_clear_error (&local_error);
+	}
+
+	/* Mark operation as complete so gpg_ctx_op_complete() returns TRUE
+	 * and gpg_ctx_op_step() is never driven on Windows.
+	 */
+	gpg->complete = TRUE;
+	gpg->seen_eof1 = TRUE;
+	gpg->seen_eof2 = TRUE;
+
+	if (gpg->mode == GPG_CTX_MODE_VERIFY) {
+		/* We do not parse [GNUPG:] status lines on Windows, but we
+		 * can at least distinguish "signature ok" from generic failure.
+		 */
+		gpg->hadsig = TRUE;
+		if (status == 0) {
+			gpg->validsig = TRUE;
+			if (gpg->trust == GPG_TRUST_NONE)
+				gpg->trust = GPG_TRUST_UNDEFINED;
+		} else {
+			gpg->badsig = TRUE;
+		}
+	}
+
+	if (data_file != NULL) {
+		g_unlink (data_file);
+		g_free (data_file);
+	}
+
+	if (diag_file != NULL) {
+		g_unlink (diag_file);
+		g_free (diag_file);
+	}
+
+	g_free (cmd);
+
+	return TRUE;
+
+fail:
+	if (pipe != NULL)
+		pclose (pipe);
+
+	if (data_file != NULL) {
+		g_unlink (data_file);
+		g_free (data_file);
+	}
+
+	if (diag_file != NULL) {
+		g_unlink (diag_file);
+		g_free (diag_file);
+	}
+
+	g_free (cmd);
+
+	return FALSE;
+}
+#endif
+
+
+#ifndef G_OS_WIN32
+
 static GPtrArray *
-gpg_ctx_get_argv (struct _GpgCtx *gpg, gint status_fd, gchar **sfd, gint passwd_fd, gchar **pfd)
+gpg_ctx_get_argv (struct _GpgCtx *gpg,
+                  gint            status_fd,
+                  gchar         **sfd,
+                  gint            passwd_fd,
+                  gchar         **pfd)
 {
 	const gchar *hash_str;
 	GPtrArray *argv;
@@ -504,7 +882,7 @@ gpg_ctx_get_argv (struct _GpgCtx *gpg, gint status_fd, gchar **sfd, gint passwd_
 
 	if (passwd_fd == -1) {
 		/* only use batch mode if we don't intend on using the
-                   interactive --command-fd option */
+		   interactive --command-fd option */
 		g_ptr_array_add (argv, (guint8 *) "--batch");
 		g_ptr_array_add (argv, (guint8 *) "--yes");
 	}
@@ -587,7 +965,8 @@ gpg_ctx_get_argv (struct _GpgCtx *gpg, gint status_fd, gchar **sfd, gint passwd_
 	return argv;
 }
 
-#endif
+#endif /* !G_OS_WIN32 */
+
 
 static gboolean
 gpg_ctx_op_start (struct _GpgCtx *gpg,
@@ -688,10 +1067,21 @@ exception:
 
 	errno = errnosave;
 #else
-	/* FIXME: Port me */
+	/* FIXME: Port me 
 	g_warning ("%s: Not implemented", G_STRFUNC);
 
 	errno = EINVAL;
+  */
+
+	/* Windows: run gpg synchronously via popen() and mark the operation
+	 * complete.  Higher layers will see gpg_ctx_op_complete() == TRUE and
+	 * will not drive gpg_ctx_op_step() at all on this platform.
+	 */
+	if (gpg_win32_run_popen (gpg, error))
+		return TRUE;
+
+	/* gpg_win32_run_popen() always sets @error on failure. */
+	return FALSE;
 #endif
 
 	if (errno != 0)
@@ -1398,7 +1788,14 @@ gpg_ctx_op_wait (struct _GpgCtx *gpg)
 	else
 		return -1;
 #else
-	return -1;
+	/* return -1; */
+
+	/* On Windows, gpg is run synchronously via popen() in gpg_ctx_op_start(),
+	 * and gpg->exit_status is set there from pclose().  The CRT's pclose()
+	 * returns 0 on successful termination and -1 on error, which is all
+	 * gpg_sign()/verify()/encrypt()/decrypt() care about.
+	 */
+	return gpg->exit_status;
 #endif
 }
 
