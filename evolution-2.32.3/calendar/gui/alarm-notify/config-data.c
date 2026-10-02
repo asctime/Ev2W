@@ -27,8 +27,54 @@
 #endif
 
 #include <string.h>
+#include <time.h>
 #include <libedataserver/e-source-list.h>
 #include "config-data.h"
+
+/* GTimeVal.tv_sec is 32-bit long on LLP64, so the ISO conversion truncated
+ * notification timestamps. Keep the value in time_t the whole way. */
+static gchar *
+last_notified_to_iso (time_t t)
+{
+	struct tm tm;
+	gchar buf[40];
+
+#ifdef G_OS_WIN32
+	if (gmtime_s (&tm, &t) != 0)
+		return NULL;
+#else
+	if (gmtime_r (&t, &tm) == NULL)
+		return NULL;
+#endif
+	if (strftime (buf, sizeof (buf), "%Y-%m-%dT%H:%M:%SZ", &tm) == 0)
+		return NULL;
+	return g_strdup (buf);
+}
+
+static time_t
+last_notified_from_iso (const gchar *text)
+{
+	int y, mo, d, h, mi, se;
+	struct tm tm;
+	time_t val;
+
+	if (!text || sscanf (text, "%d-%d-%dT%d:%d:%d", &y, &mo, &d, &h, &mi, &se) != 6)
+		return (time_t) -1;
+
+	memset (&tm, 0, sizeof (tm));
+	tm.tm_year = y - 1900;
+	tm.tm_mon = mo - 1;
+	tm.tm_mday = d;
+	tm.tm_hour = h;
+	tm.tm_min = mi;
+	tm.tm_sec = se;
+#ifdef G_OS_WIN32
+	val = _mkgmtime (&tm);
+#else
+	val = timegm (&tm);
+#endif
+	return val;
+}
 
 #define KEY_LAST_NOTIFICATION_TIME \
 	"/apps/evolution/calendar/notify/last_notification_time"
@@ -265,11 +311,7 @@ config_data_set_last_notification_time (ECal *cal, time_t t)
 	if (cal) {
 		ESource *source = e_cal_get_source (cal);
 		if (source) {
-			GTimeVal tmval = {0};
-			gchar *as_text;
-
-			tmval.tv_sec = (glong) t;
-			as_text = g_time_val_to_iso8601 (&tmval);
+			gchar *as_text = last_notified_to_iso (t);
 
 			if (as_text) {
 				e_source_set_property (source, "last-notified", as_text);
@@ -308,10 +350,13 @@ config_data_get_last_notification_time (ECal *cal)
 			const gchar *last_notified = e_source_get_property (source, "last-notified");
 			GTimeVal tmval = {0};
 
-			if (last_notified && *last_notified &&
-				g_time_val_from_iso8601 (last_notified, &tmval)) {
-				time_t now = time (NULL), val = (time_t) tmval.tv_sec;
+			if (last_notified && *last_notified) {
+				time_t now = time (NULL), val = last_notified_from_iso (last_notified);
 
+				if (val == (time_t) -1 && g_time_val_from_iso8601 (last_notified, &tmval))
+					val = (time_t) tmval.tv_sec;
+				if (val == (time_t) -1)
+					return -1;
 				if (val > now)
 					val = now;
 				return val;

@@ -503,7 +503,7 @@ evolution_alarm_notify_LDADD = \
 	$(EVOLUTION_CALENDAR_LIBS)					\
 	$(CANBERRA_LIBS)						\
 	$(GNOME_PLATFORM_LIBS)						\
-	$(EVOLUTIONALARMNOTIFYICON)
+	$(EVOLUTIONALARMNOTIFYICON) -Wl,--nxcompat -static-libstdc++ -flto
 
 evolution_alarm_notify_LDFLAGS = -mwindows
 EXTRA_DIST = $(ui_DATA) \

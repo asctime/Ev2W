@@ -56,7 +56,8 @@ gint inend_id = -1,
   inbuffer_id = -1;
 #endif
 
-#define SCAN_BUF 4096		/* size of read buffer */
+/* 64 KiB reads cut syscall traffic on large messages under MinGW64. */
+#define SCAN_BUF (64 * 1024)		/* size of read buffer */
 #define SCAN_HEAD 128		/* headroom guaranteed to be before each read buffer */
 
 /* a little hacky, but i couldn't be bothered renaming everything */

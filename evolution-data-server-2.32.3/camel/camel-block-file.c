@@ -37,6 +37,16 @@
 #include "camel-file-utils.h"
 #include "camel-list-utils.h"
 
+/* fseek/ftell take a 32-bit long on LLP64 MinGW64 and fail past 2 GiB.
+ * Key-file offsets are goffset. */
+#ifdef G_OS_WIN32
+#define camel_fseek(fp, off, wh) _fseeki64 ((fp), (gint64) (off), (wh))
+#define camel_ftell(fp) ((goffset) _ftelli64 (fp))
+#else
+#define camel_fseek(fp, off, wh) fseeko ((fp), (off_t) (off), (wh))
+#define camel_ftell(fp) ((goffset) ftello (fp))
+#endif
+
 #define d(x) /*(printf("%s(%d):%s: ",  __FILE__, __LINE__, __PRETTY_FUNCTION__),(x))*/
 
 /* Locks must be obtained in the order defined */
@@ -1021,8 +1031,8 @@ camel_key_file_new(const gchar *path, gint flags, const gchar version[8])
 		g_object_unref (kf);
 		kf = NULL;
 	} else {
-		fseek(kf->fp, 0, SEEK_END);
-		last = ftell(kf->fp);
+		camel_fseek (kf->fp, 0, SEEK_END);
+		last = camel_ftell (kf->fp);
 		if (last == 0) {
 			fwrite(version, 8, 1, kf->fp);
 			last += 8;
@@ -1140,7 +1150,7 @@ camel_key_file_write(CamelKeyFile *kf, camel_block_t *parent, gsize len, camel_k
 
 	/* FIXME: Use io util functions? */
 	next = kf->last;
-	fseek(kf->fp, kf->last, SEEK_SET);
+	camel_fseek (kf->fp, kf->last, SEEK_SET);
 	fwrite(parent, sizeof(*parent), 1, kf->fp);
 	fwrite(&size, sizeof(size), 1, kf->fp);
 	fwrite(records, sizeof(records[0]), len, kf->fp);
@@ -1148,7 +1158,7 @@ camel_key_file_write(CamelKeyFile *kf, camel_block_t *parent, gsize len, camel_k
 	if (ferror(kf->fp)) {
 		clearerr(kf->fp);
 	} else {
-		kf->last = ftell(kf->fp);
+		kf->last = camel_ftell (kf->fp);
 		*parent = next;
 		ret = len;
 	}
@@ -1177,7 +1187,7 @@ gint
 camel_key_file_read(CamelKeyFile *kf, camel_block_t *start, gsize *len, camel_key_t **records)
 {
 	guint32 size;
-	glong pos;
+	goffset pos;
 	camel_block_t next;
 	gint ret = -1;
 
@@ -1192,7 +1202,7 @@ camel_key_file_read(CamelKeyFile *kf, camel_block_t *start, gsize *len, camel_ke
 	if (key_file_use(kf) == -1)
 		return -1;
 
-	if (fseek(kf->fp, pos, SEEK_SET) == -1
+	if (camel_fseek (kf->fp, pos, SEEK_SET) != 0
 	    || fread(&next, sizeof(next), 1, kf->fp) != 1
 	    || fread(&size, sizeof(size), 1, kf->fp) != 1
 	    || size > 1024) {

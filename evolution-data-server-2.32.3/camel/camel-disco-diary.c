@@ -38,6 +38,15 @@
 #include "camel-file-utils.h"
 #include "camel-folder.h"
 #include "camel-operation.h"
+
+/* fseek/ftell take a 32-bit long on LLP64 MinGW64. */
+#ifdef G_OS_WIN32
+#define camel_fseek(fp, off, wh) _fseeki64 ((fp), (gint64) (off), (wh))
+#define camel_ftell(fp) ((goffset) _ftelli64 (fp))
+#else
+#define camel_fseek(fp, off, wh) fseeko ((fp), (off_t) (off), (wh))
+#define camel_ftell(fp) ((goffset) ftello (fp))
+#endif
 #include "camel-session.h"
 #include "camel-store.h"
 
@@ -291,14 +300,14 @@ camel_disco_diary_replay (CamelDiscoDiary *diary,
 
 	d(printf("disco diary replay\n"));
 
-	fseek (diary->file, 0, SEEK_END);
-	size = ftell (diary->file);
-	g_return_if_fail (size != 0);
+	camel_fseek (diary->file, 0, SEEK_END);
+	size = camel_ftell (diary->file);
+	g_return_if_fail (size > 0);
 	rewind (diary->file);
 
 	camel_operation_start (NULL, _("Resynchronizing with server"));
 	while (local_error == NULL) {
-		pc = ftell (diary->file) / size;
+		pc = (gdouble) camel_ftell (diary->file) / (gdouble) size;
 		camel_operation_progress (NULL, pc * 100);
 
 		if (camel_file_util_decode_uint32 (diary->file, &action) == -1)
@@ -454,9 +463,9 @@ camel_disco_diary_new (CamelDiscoStore *store,
 		return NULL;
 	}
 
-	fseek(diary->file, 0, SEEK_END);
+	camel_fseek (diary->file, 0, SEEK_END);
 
-	d(printf(" is at %ld\n", ftell(diary->file)));
+	d(printf(" is at %" G_GINT64_FORMAT "\n", (gint64) camel_ftell (diary->file)));
 
 	return diary;
 }
@@ -464,7 +473,7 @@ camel_disco_diary_new (CamelDiscoStore *store,
 gboolean
 camel_disco_diary_empty  (CamelDiscoDiary *diary)
 {
-	return ftell (diary->file) == 0;
+	return camel_ftell (diary->file) == 0;
 }
 
 void

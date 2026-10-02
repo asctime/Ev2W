@@ -334,10 +334,13 @@
  D:/MSYS2/mingw64/include/harfbuzz/hb-font.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-face.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-set.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb-draw.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-deprecated.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-map.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-shape.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-shape-plan.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb-style.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-version.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-types.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-gravity.h \
@@ -359,7 +362,7 @@
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-tabs.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-renderer.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-utils.h \
- D:/MSYS2/mingw64/lib/gtk-2.0/include/gdkconfig.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdkconfig.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkdisplay.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkevents.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkcolor.h \
@@ -1339,6 +1342,10 @@ D:/MSYS2/mingw64/include/harfbuzz/hb-face.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-set.h:
 
+D:/MSYS2/mingw64/include/harfbuzz/hb-draw.h:
+
+D:/MSYS2/mingw64/include/harfbuzz/hb.h:
+
 D:/MSYS2/mingw64/include/harfbuzz/hb-deprecated.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-map.h:
@@ -1346,6 +1353,8 @@ D:/MSYS2/mingw64/include/harfbuzz/hb-map.h:
 D:/MSYS2/mingw64/include/harfbuzz/hb-shape.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-shape-plan.h:
+
+D:/MSYS2/mingw64/include/harfbuzz/hb-style.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-version.h:
 
@@ -1389,7 +1398,7 @@ D:/MSYS2/mingw64/include/pango-1.0/pango/pango-renderer.h:
 
 D:/MSYS2/mingw64/include/pango-1.0/pango/pango-utils.h:
 
-D:/MSYS2/mingw64/lib/gtk-2.0/include/gdkconfig.h:
+D:/MSYS2/mingw64/include/gtk-2.0/gdkconfig.h:
 
 D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkdisplay.h:
 

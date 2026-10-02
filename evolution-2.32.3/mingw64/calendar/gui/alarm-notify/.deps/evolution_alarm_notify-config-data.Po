@@ -11,6 +11,11 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+ D:/MSYS2/mingw64/include/pthread_time.h \
  D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h \
  D:/MSYS2/mingw64/include/libxml2/libxml/tree.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/stdio.h \
@@ -64,11 +69,6 @@
  D:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0/include/float.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/float.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gversionmacros.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_timeval.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
- D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
- D:/MSYS2/mingw64/include/pthread_time.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/garray.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gasyncqueue.h \
  D:/MSYS2/mingw64/include/glib-2.0/glib/gthread.h \
@@ -214,6 +214,16 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_timeval.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
+
+D:/MSYS2/mingw64/include/pthread_time.h:
+
 D:/MSYS2/mingw64/include/evolution-data-server-2.32/libedataserver/e-source-list.h:
 
 D:/MSYS2/mingw64/include/libxml2/libxml/tree.h:
@@ -319,16 +329,6 @@ D:/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0/include/float.h:
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/float.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/gversionmacros.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/time.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_timeval.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
-
-D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
-
-D:/MSYS2/mingw64/include/pthread_time.h:
 
 D:/MSYS2/mingw64/include/glib-2.0/glib/garray.h:
 

@@ -57,7 +57,8 @@ enum {
 	BUF_USER = 1<<0	/* user-supplied buffer, do not free */
 };
 
-#define BUF_SIZE 1024
+/* 16 KiB matches typical x64 page and MIME chunk sizes better than 1 KiB. */
+#define BUF_SIZE (16 * 1024)
 
 /* only returns the number passed in, or -1 on an error */
 static gssize
@@ -381,7 +382,7 @@ camel_stream_buffer_init (CamelStreamBuffer *stream)
  * @mode: Operational mode of buffered stream.
  *
  * Create a new buffered stream of another stream.  A default
- * buffer size (1024 bytes), automatically managed will be used
+ * buffer size (16 KiB), automatically managed will be used
  * for buffering.
  *
  * See #camel_stream_buffer_new_with_vbuf for details on the

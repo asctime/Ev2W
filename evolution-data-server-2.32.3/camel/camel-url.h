@@ -77,6 +77,12 @@ void camel_url_set_fragment (CamelURL *url, const gchar *fragment);
 
 const gchar *camel_url_get_param (CamelURL *url, const gchar *name);
 
+/* Canonical use_ssl token: "always", "when-possible", or "never".
+ * NULL if @token is NULL or not a known alias. An empty token is the
+ * ancient implicit-SSL form and returns "always". The result is a
+ * string literal; do not free it. */
+const gchar *camel_url_canon_use_ssl (const gchar *token);
+
 /* for putting url's into hash tables */
 guint camel_url_hash (gconstpointer v);
 gint camel_url_equal(gconstpointer v, gconstpointer v2);

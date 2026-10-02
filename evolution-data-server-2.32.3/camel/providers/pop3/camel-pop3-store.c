@@ -255,13 +255,24 @@ connect_to_server_wrapper (CamelService *service,
                            GError **error)
 {
 	const gchar *ssl_mode;
+	const gchar *canon;
 	gint mode, i;
 	gchar *serv;
 	gint fallback_port;
 
 	if ((ssl_mode = camel_url_get_param (service->url, "use_ssl"))) {
+		canon = camel_url_canon_use_ssl (ssl_mode);
+		if (canon == NULL) {
+			g_set_error (
+				error, CAMEL_SERVICE_ERROR,
+				CAMEL_SERVICE_ERROR_URL_INVALID,
+				_("Unrecognized encryption setting \"%s\". "
+				  "Use never, when-possible, or always."),
+				ssl_mode);
+			return FALSE;
+		}
 		for (i = 0; ssl_options[i].value; i++)
-			if (!strcmp (ssl_options[i].value, ssl_mode))
+			if (!strcmp (ssl_options[i].value, canon))
 				break;
 		mode = ssl_options[i].mode;
 		serv = (gchar *) ssl_options[i].serv;
@@ -327,11 +338,12 @@ try_sasl (CamelPOP3Store *store,
 
 			goto done;
 		}
-		/* If we dont get continuation, or the sasl object's run out of work, or we dont get a challenge,
-		   its a protocol error, so fail, and try reset the server */
+		/* If we dont get continuation, or the sasl object's run out of work,
+		   its a protocol error, so fail, and try reset the server.
+		   A challenge that fails with its own GError (XOAUTH2) must keep
+		   that error instead of being overwritten. */
 		if (strncmp((gchar *) line, "+ ", 2) != 0
-		    || camel_sasl_get_authenticated(sasl)
-		    || (resp = (guchar *) camel_sasl_challenge_base64(sasl, (const gchar *) line+2, error)) == NULL) {
+		    || camel_sasl_get_authenticated(sasl)) {
 			camel_stream_printf((CamelStream *)stream, "*\r\n");
 			camel_pop3_stream_line(stream, &line, &len);
 			g_set_error (
@@ -340,6 +352,20 @@ try_sasl (CamelPOP3Store *store,
 				_("Cannot login to POP server %s: "
 				  "SASL Protocol error"),
 				CAMEL_SERVICE (store)->url->host);
+			goto done;
+		}
+
+		resp = (guchar *) camel_sasl_challenge_base64(sasl, (const gchar *) line+2, error);
+		if (resp == NULL) {
+			camel_stream_printf((CamelStream *)stream, "*\r\n");
+			camel_pop3_stream_line(stream, &line, &len);
+			if (error == NULL || *error == NULL)
+				g_set_error (
+					error, CAMEL_SERVICE_ERROR,
+					CAMEL_SERVICE_ERROR_CANT_AUTHENTICATE,
+					_("Cannot login to POP server %s: "
+					  "SASL Protocol error"),
+					CAMEL_SERVICE (store)->url->host);
 			goto done;
 		}
 

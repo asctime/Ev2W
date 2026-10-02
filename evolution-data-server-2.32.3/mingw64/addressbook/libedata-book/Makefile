@@ -536,7 +536,7 @@ e_addressbook_factory_SOURCES = \
 	e-data-book-factory.h \
 	e-data-book-migrate.c
 
-e_addressbook_factory_LDFLAGS = -mwindows -municode
+e_addressbook_factory_LDFLAGS = -mwindows -municode  -Wl,--nxcompat -static-libstdc++ -flto
 e_addressbook_factory_LDADD = \
 	libedata-book-1.2.la	           		\
 	$(EVOLUTION_ADDRESSBOOK_LIBS)				\

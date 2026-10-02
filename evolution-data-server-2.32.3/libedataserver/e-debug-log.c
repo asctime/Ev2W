@@ -164,8 +164,14 @@ e_debug_logv (gboolean is_milestone, const gchar *domain, const gchar *format, v
 	gettimeofday (&tv, NULL);
 
 #ifdef __MINGW64__ /* MINGW64 sourceforge.net/p/mingw-w64/bugs/720/ */
-  time_t t = tv.tv_sec;
-	tm = *localtime (&t);
+	{
+		/* timeval.tv_sec is a 32-bit long; time_t is 64-bit.
+		 * Passing &tv.tv_sec to localtime() reads past the field. */
+		time_t t = (time_t) tv.tv_sec;
+
+		if (localtime_s (&tm, &t) != 0)
+			memset (&tm, 0, sizeof (tm));
+	}
 #else
 	tm = *localtime (&tv.tv_sec);
 #endif

@@ -13,3 +13,4 @@ config.status
 *.d
 *.libs
 *.deps
+CODING-EVOLUTION.md

@@ -2752,6 +2752,7 @@ imapx_connect_to_server (CamelIMAPXServer *is, GError **error)
 
 #ifdef CAMEL_HAVE_SSL
 	const gchar *mode;
+	const gchar *canon;
 #endif
 	guint len;
 	guchar *token;
@@ -2782,16 +2783,28 @@ imapx_connect_to_server (CamelIMAPXServer *is, GError **error)
 	}
 #ifdef CAMEL_HAVE_SSL
 	mode = camel_url_get_param(is->url, "use_ssl");
-	if (mode && strcmp(mode, "never") != 0) {
-		if (!strcmp(mode, "when-possible")) {
+	if (mode != NULL) {
+		canon = camel_url_canon_use_ssl (mode);
+		if (canon == NULL) {
+			g_set_error (
+				error, CAMEL_SERVICE_ERROR,
+				CAMEL_SERVICE_ERROR_URL_INVALID,
+				_("Unrecognized encryption setting \"%s\". "
+				  "Use never, when-possible, or always."),
+				mode);
+			return FALSE;
+		}
+		if (strcmp (canon, "when-possible") == 0) {
 			tcp_stream = camel_tcp_stream_ssl_new_raw(is->session, is->url->host, STARTTLS_FLAGS);
 			ssl_mode = 2;
-		} else {
+		} else if (strcmp (canon, "always") == 0) {
 			if (is->url->port == 0) {
 				serv = "imaps";
 				fallback_port = 993;
 			}
 			tcp_stream = camel_tcp_stream_ssl_new(is->session, is->url->host, SSL_PORT_FLAGS);
+		} else {
+			tcp_stream = camel_tcp_stream_raw_new ();
 		}
 	} else {
 		tcp_stream = camel_tcp_stream_raw_new ();

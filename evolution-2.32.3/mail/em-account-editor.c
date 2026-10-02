@@ -83,9 +83,14 @@ static ServerData mail_servers[] = {
 	{"googlemail", "imap.gmail.com", "smtp.gmail.com", "imap", "always"},
 	{"yahoo", "pop3.yahoo.com", "smtp.yahoo.com", "pop", "never"},
 	{"aol", "imap.aol.com", "smtp.aol.com", "pop", "never"},
-	{"msn", "pop3.email.msn.com", "smtp.email.msn.com", "pop", "never"},
-	{"hotmail", "pop3.live.com", "smtp.live.com", "pop", "always"},
-	{"live.com", "pop3.live.com", "smtp.live.com", "pop", "always"},
+	/* Microsoft no longer accepts a password on these hosts.
+	 * IMAP 993 is implicit TLS. SMTP 587 is STARTTLS. XOAUTH2
+	 * is the SASL mechanism registered by camel. */
+	{"office365", "outlook.office365.com", "smtp.office365.com", "imap", "always", NULL, NULL, "587", "993", "when-possible", "always", "XOAUTH2", "XOAUTH2"},
+	{"outlook.", "outlook.office365.com", "smtp.office365.com", "imap", "always", NULL, NULL, "587", "993", "when-possible", "always", "XOAUTH2", "XOAUTH2"},
+	{"hotmail", "outlook.office365.com", "smtp.office365.com", "imap", "always", NULL, NULL, "587", "993", "when-possible", "always", "XOAUTH2", "XOAUTH2"},
+	{"live.com", "outlook.office365.com", "smtp.office365.com", "imap", "always", NULL, NULL, "587", "993", "when-possible", "always", "XOAUTH2", "XOAUTH2"},
+	{"msn", "outlook.office365.com", "smtp.office365.com", "imap", "always", NULL, NULL, "587", "993", "when-possible", "always", "XOAUTH2", "XOAUTH2"},
 
 };
 
@@ -520,6 +525,83 @@ static struct {
 	   abbreviation. */
 	{ N_("SSL encryption"), "always" }
 };
+
+/* Same alias table as camel_url_canon_use_ssl() in EDS. This copy
+ * stays here so the editor builds against the camel headers that
+ * are already installed. */
+static gboolean
+emae_ssl_alias (const gchar *fold, const gchar * const *table)
+{
+	gint i;
+
+	for (i = 0; table[i] != NULL; i++) {
+		if (strcmp (fold, table[i]) == 0)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+static const gchar *
+emae_canon_ssl (const gchar *token)
+{
+	static const gchar * const never_alias[] = {
+		"never", "none", "0", "false", "plain", "clear", "off", "no",
+		"no encryption", NULL
+	};
+	static const gchar * const tls_alias[] = {
+		"when-possible", "tls", "starttls", "start-tls", "start_tls",
+		"tls encryption", NULL
+	};
+	static const gchar * const ssl_alias[] = {
+		"always", "ssl", "ssl/tls", "imaps", "smtps", "pop3s",
+		"1", "true", "secure", "on", "yes", "ssl encryption", NULL
+	};
+	gchar *copy;
+	gchar *fold;
+	gchar *d;
+	const gchar *s;
+	const gchar *ret;
+
+	if (token == NULL)
+		return NULL;
+
+	copy = g_strdup (token);
+	d = copy;
+	s = copy;
+	while (*s != '\0') {
+		if (*s == '%' && g_ascii_isxdigit (s[1]) && g_ascii_isxdigit (s[2])) {
+			*d++ = (gchar) ((g_ascii_xdigit_value (s[1]) << 4) | g_ascii_xdigit_value (s[2]));
+			s += 3;
+		} else
+			*d++ = *s++;
+	}
+	*d = '\0';
+	g_strstrip (copy);
+	if (copy[0] == '\0') {
+		g_free (copy);
+		return "always";
+	}
+
+	fold = g_ascii_strdown (copy, -1);
+	g_free (copy);
+
+	if (emae_ssl_alias (fold, never_alias))
+		ret = "never";
+	else if (emae_ssl_alias (fold, tls_alias))
+		ret = "when-possible";
+	else if (emae_ssl_alias (fold, ssl_alias))
+		ret = "always";
+	else if (g_str_has_prefix (fold, "start") || g_str_has_prefix (fold, "tls"))
+		ret = "when-possible";
+	else if (g_str_has_prefix (fold, "ssl"))
+		ret = "always";
+	else
+		ret = NULL;
+
+	g_free (fold);
+	return ret;
+}
 
 static gboolean
 is_email (const gchar *address)
@@ -1301,25 +1383,38 @@ static void
 emae_url_set_hostport (CamelURL *url, const gchar *txt)
 {
 	const gchar *port;
+	const gchar *stop;
+	gchar *copy;
 	gchar *host;
 
 	/* FIXME: what if this was a raw IPv6 address? */
-	if (txt && (port = strchr (txt, ':'))) {
-		camel_url_set_port (url, atoi (port+1));
-		host = g_strdup (txt);
-		host[port-txt] = 0;
+	copy = g_strdup (txt != NULL ? txt : "");
+	g_strstrip (copy);
+
+	/* Parameter text and a Windows '\\' do not belong in the host.
+	 * "office365.com\\;check_all;use_ssl=always" was saved as the
+	 * server name, so the connection died before sign-in. */
+	stop = copy;
+	while (*stop != '\0' && *stop != '/' && *stop != '\\' &&
+	       *stop != ';' && *stop != ' ')
+		stop++;
+
+	port = strchr (copy, ':');
+	if (port != NULL && port < stop && port[1] != '\0' && g_ascii_isdigit ((gchar) port[1])) {
+		camel_url_set_port (url, atoi (port + 1));
+		host = g_strndup (copy, (gsize) (port - copy));
 	} else {
-		/* "" is converted to NULL, but if we set NULL on the url,
-		   camel_url_to_string strips lots of details */
-		host = g_strdup ((txt?txt:""));
-		camel_url_set_port (url, 0);
+		/* The entry often shows only the host. Do not wipe a port
+		 * that is already stored on the URL. */
+		host = g_strndup (copy, (gsize) (stop - copy));
 	}
 
 	g_strstrip (host);
-	if (txt && *txt)
+	if (host[0] != '\0')
 		camel_url_set_host (url, host);
 
 	g_free (host);
+	g_free (copy);
 }
 
 /* This is used to map a funciton which will set on the url a string value.
@@ -1469,6 +1564,13 @@ emae_service_url_path_changed (EMAccountEditorService *service, void (*setval)(C
 	CamelURL *url = emae_account_url (service->emae, emae_service_info[service->type].account_uri_key);
 	const gchar *text = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (widget));
 
+	/* IMAP has no mailbox path. The Windows chooser reports a
+	 * directory such as "D:\\..." and that must not replace the URL. */
+	if (text != NULL && strchr (text, '\\') != NULL &&
+	    (service->provider == NULL ||
+	     !CAMEL_PROVIDER_ALLOWS (service->provider, CAMEL_URL_PART_PATH)))
+		text = NULL;
+
 	setval (url, (text && text[0])?text:NULL);
 
 	if (text && text[0] && setval == camel_url_set_user) {
@@ -1521,10 +1623,14 @@ emae_ssl_update (EMAccountEditorService *service, CamelURL *url)
 
 	model = gtk_combo_box_get_model (service->use_ssl);
 	if (gtk_tree_model_iter_nth_child (model, &iter, NULL, id)) {
+		const gchar *canon;
+
 		gtk_tree_model_get (model, &iter, 1, &ssl, -1);
-		if (!strcmp (ssl, "none"))
-			ssl = NULL;
-		camel_url_set_param (url, "use_ssl", ssl);
+		canon = emae_canon_ssl (ssl);
+		g_free (ssl);
+		if (canon == NULL)
+			return 0;
+		camel_url_set_param (url, "use_ssl", canon);
 		return 1;
 	}
 
@@ -1778,6 +1884,12 @@ emae_refresh_providers (EMAccountEditor *emae, EMAccountEditorService *service)
 	tmp = camel_url_get_param (url, "use_ssl");
 	if (tmp == NULL)
 		tmp = "never";
+	else {
+		const gchar *canon = emae_canon_ssl (tmp);
+
+		if (canon != NULL)
+			tmp = canon;
+	}
 	for (i=0;i<G_N_ELEMENTS (ssl_options);i++) {
 		if (!strcmp (ssl_options[i].value, tmp)) {
 			gtk_combo_box_set_active (service->use_ssl, i);
@@ -2041,6 +2153,12 @@ emae_setup_service (EMAccountEditor *emae, EMAccountEditorService *service, GtkB
 	tmp = camel_url_get_param (url, "use_ssl");
 	if (tmp == NULL)
 		tmp = "never";
+	else {
+		const gchar *canon = emae_canon_ssl (tmp);
+
+		if (canon != NULL)
+			tmp = canon;
+	}
 
 	for (i=0;i<G_N_ELEMENTS (ssl_options);i++) {
 		if (!strcmp (ssl_options[i].value, tmp)) {
@@ -3357,7 +3475,9 @@ emae_check_set_authtype (GtkComboBox *dropdown, const gchar *auth)
 
 		gtk_tree_model_iter_nth_child (model, &iter, NULL, id);
 		gtk_tree_model_get (model, &iter, 1, &authtype, -1);
-		if (g_ascii_strcasecmp (authtype->authproto, auth) == 0)
+		if (g_ascii_strcasecmp (authtype->authproto, auth) == 0 ||
+		    (g_ascii_strcasecmp (auth, "OAuth2") == 0 &&
+		     g_ascii_strcasecmp (authtype->authproto, "XOAUTH2") == 0))
 			break;
 	}
 
@@ -3416,20 +3536,38 @@ emae_check_complete (EConfig *ec, const gchar *pageid, gpointer data)
 				at++;
 
 				sdata = emae->priv->selected_server = emae->emae_check_servers (tmp);
-				gtk_entry_set_text (emae->priv->source.username, sdata && sdata->recv_user && *sdata->recv_user ? sdata->recv_user : user);
-				gtk_entry_set_text (emae->priv->transport.username, sdata && sdata->send_user && *sdata->send_user ? sdata->send_user: user);
+				if (sdata && sdata->recv_auth &&
+				    (g_ascii_strcasecmp (sdata->recv_auth, "XOAUTH2") == 0 ||
+				     g_ascii_strcasecmp (sdata->recv_auth, "OAuth2") == 0)) {
+					/* Microsoft XOAUTH2 wants the full mailbox address. */
+					gtk_entry_set_text (emae->priv->source.username, tmp);
+					gtk_entry_set_text (emae->priv->transport.username, tmp);
+				} else {
+					gtk_entry_set_text (emae->priv->source.username, sdata && sdata->recv_user && *sdata->recv_user ? sdata->recv_user : user);
+					gtk_entry_set_text (emae->priv->transport.username, sdata && sdata->send_user && *sdata->send_user ? sdata->send_user: user);
+				}
 				if (new_account && uri && (url = camel_url_new (uri, NULL)) != NULL) {
 					refresh = TRUE;
-					if (sdata && sdata->recv_user && *sdata->recv_user)
+					if (sdata && sdata->recv_auth &&
+					    (g_ascii_strcasecmp (sdata->recv_auth, "XOAUTH2") == 0 ||
+					     g_ascii_strcasecmp (sdata->recv_auth, "OAuth2") == 0))
+						camel_url_set_user (url, tmp);
+					else if (sdata && sdata->recv_user && *sdata->recv_user)
 						camel_url_set_user (url, sdata->recv_user);
 					else
 						camel_url_set_user (url, user);
 					if (sdata != NULL) {
 						camel_url_set_protocol (url, sdata->proto);
 						if (sdata->recv_sock && *sdata->recv_sock)
-							camel_url_set_param (url, "use_ssl", sdata->recv_sock);
-						else
-							camel_url_set_param (url, "use_ssl", sdata->ssl);
+							camel_url_set_param (url, "use_ssl", emae_canon_ssl (sdata->recv_sock));
+						else if (sdata->ssl != NULL)
+							camel_url_set_param (url, "use_ssl", emae_canon_ssl (sdata->ssl));
+						if (sdata->recv_auth && *sdata->recv_auth) {
+							if (g_ascii_strcasecmp (sdata->recv_auth, "OAuth2") == 0)
+								camel_url_set_authmech (url, "XOAUTH2");
+							else
+								camel_url_set_authmech (url, sdata->recv_auth);
+						}
 						camel_url_set_host (url, sdata->recv);
 						if (sdata->recv_port && *sdata->recv_port)
 							camel_url_set_port (url, atoi(sdata->recv_port));
@@ -3469,17 +3607,27 @@ emae_check_complete (EConfig *ec, const gchar *pageid, gpointer data)
 					refresh = TRUE;
 					camel_url_set_protocol (url, "smtp");
 					if (sdata->send_sock && *sdata->send_sock)
-						camel_url_set_param (url, "use_ssl", sdata->send_sock);
-					else
-						camel_url_set_param (url, "use_ssl", sdata->ssl);
+						camel_url_set_param (url, "use_ssl", emae_canon_ssl (sdata->send_sock));
+					else if (sdata->ssl != NULL)
+						camel_url_set_param (url, "use_ssl", emae_canon_ssl (sdata->ssl));
 					camel_url_set_host (url, sdata->send);
 					if (sdata->send_port && *sdata->send_port)
 						camel_url_set_port (url, atoi(sdata->send_port));
 
-					if (sdata->send_user && *sdata->send_user)
+					if (sdata->send_auth &&
+					    (g_ascii_strcasecmp (sdata->send_auth, "XOAUTH2") == 0 ||
+					     g_ascii_strcasecmp (sdata->send_auth, "OAuth2") == 0))
+						camel_url_set_user (url, tmp);
+					else if (sdata->send_user && *sdata->send_user)
 						camel_url_set_user (url, sdata->send_user);
 					else
 						camel_url_set_user (url, user);
+					if (sdata->send_auth && *sdata->send_auth) {
+						if (g_ascii_strcasecmp (sdata->send_auth, "OAuth2") == 0)
+							camel_url_set_authmech (url, "XOAUTH2");
+						else
+							camel_url_set_authmech (url, sdata->send_auth);
+					}
 					uri = camel_url_to_string (url, 0);
 					e_account_set_string (account, E_ACCOUNT_TRANSPORT_URL, uri);
 					g_free (uri);

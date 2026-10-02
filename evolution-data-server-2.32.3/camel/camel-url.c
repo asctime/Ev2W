@@ -45,6 +45,77 @@ static void output_param (GQuark key_id, gpointer data, gpointer user_data);
 
 static void append_url_encoded (GString *str, const gchar *in, const gchar *extra_enc_chars);
 
+/* @start points at a parameter list, optionally led by '/', '\\', or ';'.
+ * When @protect_ssl is set, an existing use_ssl value is left alone.
+ * The tail after a corrupted host is the real encryption setting; a later
+ * use_ssl was written while those parameters were invisible. */
+static void
+url_parse_params (CamelURL *url, const gchar *start, const gchar *end, gboolean protect_ssl)
+{
+	const gchar *cur;
+	const gchar *p;
+	const gchar *eq;
+	gchar *name;
+	gchar *value;
+
+	if (start == NULL || end == NULL || start >= end)
+		return;
+
+	if (*start == '/' || *start == '\\' || *start == ';')
+		start++;
+
+	for (cur = start; cur < end; cur = p + 1) {
+		p = cur;
+		while (p < end && *p != ';')
+			p++;
+		if (p == cur) {
+			if (p == end)
+				break;
+			continue;
+		}
+		eq = cur;
+		while (eq < p && *eq != '=')
+			eq++;
+		if (eq < p) {
+			name = g_strndup (cur, (gsize) (eq - cur));
+			value = g_strndup (eq + 1, (gsize) (p - (eq + 1)));
+		} else {
+			name = g_strndup (cur, (gsize) (p - cur));
+			value = g_strdup ("");
+		}
+		camel_url_decode (name);
+		if (protect_ssl &&
+		    strcmp (name, "use_ssl") == 0 &&
+		    camel_url_get_param (url, "use_ssl") != NULL) {
+			g_free (name);
+			g_free (value);
+		} else {
+			camel_url_decode (value);
+			g_datalist_set_data_full (&url->params, name, value, g_free);
+			g_free (name);
+		}
+		if (p == end)
+			break;
+	}
+}
+
+/* A host that contains '\\' or ';' absorbed the parameter section.
+ * "office365.com\\;use_ssl=always;use_idle" never resolves, so the
+ * account fails before any sign-in prompt. Split it back apart. */
+static gchar *
+url_split_glued_host (gchar *decoded)
+{
+	gchar *cut;
+
+	cut = decoded;
+	while (*cut != '\0' && *cut != '\\' && *cut != ';')
+		cut++;
+	if (*cut == '\0')
+		return NULL;
+
+	return cut;
+}
+
 /**
  * camel_url_new_with_base:
  * @base: a base URL
@@ -61,10 +132,12 @@ camel_url_new_with_base (CamelURL *base, const gchar *url_string)
 	const gchar *start;
 	const gchar *end, *hash, *colon, *semi, *at, *slash, *question;
 	const gchar *p;
+	gboolean glued_ssl;
 
 	g_return_val_if_fail (url_string != NULL, NULL);
 
 	url = g_new0 (CamelURL, 1);
+	glued_ssl = FALSE;
 	start = url_string;
 
 	/* See RFC1808 for details. IF YOU CHANGE ANYTHING IN THIS
@@ -137,15 +210,57 @@ camel_url_new_with_base (CamelURL *base, const gchar *url_string)
 		} else
 			url->user = url->passwd = url->authmech = NULL;
 
-		/* Find host and port. */
+		/* Find host and port. Stop the host at a glued parameter
+		 * tail. A '\\' here is a '/' that Windows turned around
+		 * before the ';use_ssl=...' section. */
 		colon = strchr (url_string, ':');
 		if (colon && colon < slash) {
+			gchar *raw;
+			gchar *tail;
+
 			url->host = g_strndup (url_string, colon - url_string);
-			url->port = strtoul (colon + 1, NULL, 10);
-		} else {
-			url->host = g_strndup (url_string, slash - url_string);
 			camel_url_decode (url->host);
+			url->port = strtoul (colon + 1, NULL, 10);
+			raw = g_strndup (colon + 1, (gsize) (slash - (colon + 1)));
+			camel_url_decode (raw);
+			tail = raw;
+			while (*tail != '\0' && g_ascii_isdigit (*tail))
+				tail++;
+			if (*tail == '\\' || *tail == ';') {
+				url_parse_params (url, tail, tail + strlen (tail), FALSE);
+				if (camel_url_get_param (url, "use_ssl") != NULL)
+					glued_ssl = TRUE;
+			}
+			g_free (raw);
+		} else {
+			gchar *raw;
+			gchar *tail;
+
+			raw = g_strndup (url_string, (gsize) (slash - url_string));
+			camel_url_decode (raw);
+			tail = url_split_glued_host (raw);
+			if (tail != NULL) {
+				url->host = g_strndup (raw, (gsize) (tail - raw));
+				url_parse_params (url, tail, tail + strlen (tail), FALSE);
+				if (camel_url_get_param (url, "use_ssl") != NULL)
+					glued_ssl = TRUE;
+			} else
+				url->host = g_strdup (raw);
+			g_free (raw);
 			url->port = 0;
+		}
+
+		if (glued_ssl && url->port == 0 && url->protocol != NULL) {
+			const gchar *sslmode;
+
+			sslmode = camel_url_get_param (url, "use_ssl");
+			if (sslmode != NULL && strcmp (sslmode, "always") == 0) {
+				if (strcmp (url->protocol, "imap") == 0 ||
+				    strcmp (url->protocol, "imapx") == 0)
+					url->port = 993;
+				else if (strcmp (url->protocol, "pop") == 0)
+					url->port = 995;
+			}
 		}
 
 		url_string = slash;
@@ -177,15 +292,22 @@ camel_url_new_with_base (CamelURL *base, const gchar *url_string)
 				if (eq) {
 					name = g_strndup (cur, eq - cur);
 					value = g_strndup (eq + 1, p - (eq + 1));
-					camel_url_decode (value);
 				} else {
 					name = g_strndup (cur, p - cur);
 					value = g_strdup ("");
 				}
 				camel_url_decode (name);
-				g_datalist_set_data_full (&url->params, name,
-							  value, g_free);
-				g_free (name);
+				if (glued_ssl &&
+				    strcmp (name, "use_ssl") == 0 &&
+				    camel_url_get_param (url, "use_ssl") != NULL) {
+					g_free (name);
+					g_free (value);
+				} else {
+					camel_url_decode (value);
+					g_datalist_set_data_full (&url->params, name,
+								  value, g_free);
+					g_free (name);
+				}
 			}
 		}
 		end = semi;
@@ -761,4 +883,79 @@ camel_url_decode_path (const gchar *path)
         g_string_free (str, TRUE);
 
         return new_path;
+}
+
+static gboolean
+ssl_alias_is (const gchar *fold, const gchar * const *table)
+{
+	gint i;
+
+	for (i = 0; table[i] != NULL; i++) {
+		if (strcmp (fold, table[i]) == 0)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+/**
+ * camel_url_canon_use_ssl:
+ * @token: a use_ssl parameter value, or %NULL
+ *
+ * Maps the spellings Evolution and account editors have stored
+ * ("SSL", "STARTTLS", "TLS encryption", "1", empty, and so on) onto
+ * the three tokens the providers understand. Unknown text returns
+ * %NULL so the caller can fail instead of opening a clear connection.
+ *
+ * Returns: "always", "when-possible", "never", or %NULL. The pointer
+ * is a literal and must not be freed.
+ **/
+const gchar *
+camel_url_canon_use_ssl (const gchar *token)
+{
+	static const gchar * const never_alias[] = {
+		"never", "none", "0", "false", "plain", "clear", "off", "no",
+		"no encryption", NULL
+	};
+	static const gchar * const tls_alias[] = {
+		"when-possible", "tls", "starttls", "start-tls", "start_tls",
+		"tls encryption", NULL
+	};
+	static const gchar * const ssl_alias[] = {
+		"always", "ssl", "ssl/tls", "imaps", "smtps", "pop3s",
+		"1", "true", "secure", "on", "yes", "ssl encryption", NULL
+	};
+	gchar *copy;
+	gchar *fold;
+	const gchar *ret;
+
+	if (token == NULL)
+		return NULL;
+
+	copy = g_strdup (token);
+	camel_url_decode (copy);
+	g_strstrip (copy);
+	if (copy[0] == '\0') {
+		g_free (copy);
+		return "always";
+	}
+
+	fold = g_ascii_strdown (copy, -1);
+	g_free (copy);
+
+	if (ssl_alias_is (fold, never_alias))
+		ret = "never";
+	else if (ssl_alias_is (fold, tls_alias))
+		ret = "when-possible";
+	else if (ssl_alias_is (fold, ssl_alias))
+		ret = "always";
+	else if (g_str_has_prefix (fold, "start") || g_str_has_prefix (fold, "tls"))
+		ret = "when-possible";
+	else if (g_str_has_prefix (fold, "ssl"))
+		ret = "always";
+	else
+		ret = NULL;
+
+	g_free (fold);
+	return ret;
 }

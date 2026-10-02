@@ -2139,8 +2139,8 @@ msg_composer_image_uri (GtkhtmlEditor *editor,
 	hash_table = composer->priv->inline_images_by_url;
 	part = g_hash_table_lookup (hash_table, uri);
 
-	if (part == NULL && g_str_has_prefix (uri, "file:"))
-    g_debug ("Image URI: e_msg_composer_add_inline_image_from_file '%s'.", uri);
+  g_debug ("Image URI: e_msg_composer_add_inline_image_from_file '%s'.", uri);
+	if (part == NULL && g_str_has_prefix (uri, "file:")) {
 #ifdef G_OS_WIN32 /* e_util_guess_mime_type can also except filepath */
 	                /* Windows filepath never starts with unix-slash   */
     part = e_msg_composer_add_inline_image_from_file (
@@ -2148,6 +2148,18 @@ msg_composer_image_uri (GtkhtmlEditor *editor,
 #else
 		part = e_msg_composer_add_inline_image_from_file (
 			composer, uri + 5);
+#endif
+  /* Enable camel support for pasting from web 
+     Unsupported by e_msg_composer_add_inline_image_from_file
+     Desired behaviour is currently leave empty placeholder
+     And download from web on remote client */
+#if 0
+  } else if (part == NULL && (g_str_has_prefix(uri, "http:") || 
+               g_str_has_prefix(uri, "https:"))) {
+    part = e_msg_composer_add_inline_image_from_file (composer, uri);
+  }
+#else
+  }
 #endif
 
 	if (part == NULL && g_str_has_prefix (uri, "cid:")) {

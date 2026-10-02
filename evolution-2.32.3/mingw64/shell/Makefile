@@ -677,7 +677,7 @@ evolution_LDADD = \
 	$(SHELL_LIBS)							\
 	$(GNOME_PLATFORM_LIBS)						\
 	$(CLUTTER_LIBS)							\
-	$(EVOLUTIONICON)
+	$(EVOLUTIONICON) -Wl,--nxcompat -static-libstdc++ -flto
 
 evolution_LDFLAGS = -mwindows
 killev_CPPFLAGS = \

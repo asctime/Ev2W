@@ -496,12 +496,10 @@ mail_browser_dispose (GObject *object)
 	EMailBrowserPrivate *priv;
 
 	priv = E_MAIL_BROWSER_GET_PRIVATE (object);
-  g_debug ("Disposing GObject: %p\n", object);
 
   EWebView *web_view = em_format_html_get_web_view (
     e_mail_reader_get_formatter (E_MAIL_READER (object)));
 	if (web_view != NULL) {
-    g_debug ("Freeing web_view memory addr: %p\n", web_view);
 		gtk_widget_destroy (GTK_WIDGET (web_view));
 	}
 

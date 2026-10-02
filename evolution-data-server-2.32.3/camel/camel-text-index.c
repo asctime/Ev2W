@@ -1950,7 +1950,7 @@ gint main (gint argc, gchar **argv)
 	}
 
 	printf ("Scanning again\n");
-	fseek (fp, SEEK_SET, 0);
+	fseek (fp, 0, SEEK_SET);
 	index = 0;
 	while (fgets (line, sizeof (line), fp) != NULL) {
 		line[strlen (line)-1] = 0;

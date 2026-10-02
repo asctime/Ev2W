@@ -592,7 +592,7 @@ e_calendar_factory_CPPFLAGS = \
 	$(LIBICAL_CFLAGS)				\
 	$(EVOLUTION_CALENDAR_CFLAGS)
 
-e_calendar_factory_LDFLAGS = -mwindows -municode
+e_calendar_factory_LDFLAGS = -mwindows -municode  -Wl,--nxcompat -static-libstdc++ -flto
 e_calendar_factory_LDADD = \
 	$(top_builddir)/calendar/libecal/libecal-1.2.la	 \
 	$(top_builddir)/calendar/libegdbus/libegdbus-cal.la		\

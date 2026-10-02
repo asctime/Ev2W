@@ -40,6 +40,15 @@
 
 #include "evolution-addressbook-importers.h"
 
+/* fseek/ftell are 32-bit long on MinGW64. CSV files can pass 2 GiB. */
+#ifdef G_OS_WIN32
+#define E_FSEEK(fp, off, wh) _fseeki64 ((fp), (__int64) (off), (wh))
+#define E_FTELL(fp) ((gint64) _ftelli64 (fp))
+#else
+#define E_FSEEK(fp, off, wh) fseeko ((fp), (off_t) (off), (wh))
+#define E_FTELL(fp) ((gint64) ftello (fp))
+#endif
+
 #define NOMAP -1
 #define EVOLUTION_IMPORTER 3
 #define MOZILLA_IMPORTER 2
@@ -55,7 +64,7 @@ typedef struct {
 
 	gint state;
 	FILE *file;
-	gulong size;
+	gint64 size;
 	gint count;
 
 	/* gint -> gint -- Column index in the CSV
@@ -718,7 +727,7 @@ csv_import_contacts(gpointer d) {
 	else {
 		e_import_status (
 			gci->import, gci->target, _("Importing..."),
-			ftell (gci->file) * 100 / gci->size);
+			gci->size > 0 ? (gint) (E_FTELL (gci->file) * 100 / gci->size) : 0);
 		return TRUE;
 	}
 }
@@ -865,9 +874,13 @@ csv_import (EImport *ei, EImportTarget *target, EImportImporter *im)
 	gci->file = file;
 	gci->fields_map = NULL;
 	gci->count = 0;
-	fseek(file, 0, SEEK_END);
-	gci->size = ftell(file);
-	fseek(file, 0, SEEK_SET);
+	gci->size = 0;
+	if (E_FSEEK (file, 0, SEEK_END) == 0) {
+		gint64 sz = E_FTELL (file);
+		if (sz > 0)
+			gci->size = sz;
+		E_FSEEK (file, 0, SEEK_SET);
+	}
 
 	e_book_open(gci->book, FALSE, NULL);
 
@@ -931,9 +944,13 @@ csv_get_preview (EImport *ei, EImportTarget *target, EImportImporter *im)
 	gci->file = file;
 	gci->fields_map = NULL;
 	gci->count = 0;
-	fseek(file, 0, SEEK_END);
-	gci->size = ftell (file);
-	fseek (file, 0, SEEK_SET);
+	gci->size = 0;
+	if (E_FSEEK (file, 0, SEEK_END) == 0) {
+		gint64 sz = E_FTELL (file);
+		if (sz > 0)
+			gci->size = sz;
+		E_FSEEK (file, 0, SEEK_SET);
+	}
 
 	while (contact = getNextCSVEntry (gci, gci->file), contact != NULL) {
 		contacts = g_list_prepend (contacts, contact);

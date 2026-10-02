@@ -117,6 +117,36 @@ finalize (GObject *object)
 	G_OBJECT_CLASS (e_account_list_parent_class)->finalize (object);
 }
 
+/* GConf string values have historically chopped account XML on '<',
+ * '&', and '%'. The saved form is "evo64:" plus base64 of the XML.
+ * Raw XML is still accepted so existing accounts load. */
+static gchar *
+account_list_unwrap (const gchar *stored)
+{
+	gsize len;
+	guchar *raw;
+	gchar *out;
+
+	if (stored == NULL)
+		return NULL;
+
+	if (strncmp (stored, "evo64:", 6) != 0)
+		return g_strdup (stored);
+
+	len = 0;
+	raw = g_base64_decode (stored + 6, &len);
+	if (raw == NULL)
+		return NULL;
+
+	out = g_malloc (len + 1);
+	if (len > 0)
+		memcpy (out, raw, len);
+	out[len] = '\0';
+	g_free (raw);
+
+	return out;
+}
+
 static void
 gconf_accounts_changed (GConfClient *client, guint cnxn_id,
 			GConfEntry *entry, gpointer user_data)
@@ -127,45 +157,67 @@ gconf_accounts_changed (GConfClient *client, guint cnxn_id,
 	EList *old_accounts;
 	EIterator *iter;
 	gchar *uid;
-
-	old_accounts = e_list_duplicate (E_LIST (account_list));
+	gchar *payload;
+	gboolean parse_failed = FALSE;
 
 	list = gconf_client_get_list (client, "/apps/evolution/mail/accounts",
 				      GCONF_VALUE_STRING, NULL);
+	/* A missing key, a failed read, and a genuinely empty list are
+	 * all NULL. Wiping every account on a failed read is the bug
+	 * this path used to hit. Deleting the last account already
+	 * removed it from this in-memory list before the save. */
+	if (list == NULL)
+		return;
+
+	old_accounts = e_list_duplicate (E_LIST (account_list));
+
 	for (l = list; l; l = l->next) {
-		uid = e_account_uid_from_xml (l->data);
-		if (!uid)
+		payload = account_list_unwrap (l->data);
+		if (payload == NULL) {
+			parse_failed = TRUE;
 			continue;
+		}
+
+		uid = e_account_uid_from_xml (payload);
+		if (!uid) {
+			parse_failed = TRUE;
+			g_free (payload);
+			continue;
+		}
 
 		/* See if this is an existing account */
 		for (iter = e_list_get_iterator (old_accounts);
 		     e_iterator_is_valid (iter);
 		     e_iterator_next (iter)) {
 			account = (EAccount *)e_iterator_get (iter);
-			if (!strcmp (account->uid, uid)) {
+			if (account->uid != NULL && !strcmp (account->uid, uid)) {
 				/* The account still exists, so remove
 				 * it from "old_accounts" and update it.
 				 */
 				e_iterator_delete (iter);
-				if (e_account_set_from_xml (account, l->data))
+				if (e_account_set_from_xml (account, payload))
 					g_signal_emit (account_list, signals[ACCOUNT_CHANGED], 0, account);
+				g_object_unref (iter);
 				goto next;
 			}
 		}
+		g_object_unref (iter);
 
 		/* Must be a new account */
-		account = e_account_new_from_xml (l->data);
+		account = e_account_new_from_xml (payload);
+		if (account == NULL) {
+			parse_failed = TRUE;
+			goto next;
+		}
 		e_list_append (E_LIST (account_list), account);
 		new_accounts = g_slist_prepend (new_accounts, account);
 
 	next:
 		g_free (uid);
-		g_object_unref (iter);
+		g_free (payload);
 	}
 
-	if (list) {
-		g_slist_free_full (list, g_free);
-	}
+	g_slist_free_full (list, g_free);
 
 	/* Now emit signals for each added account. (We do this after
 	 * adding all of them because otherwise if the signal handler
@@ -180,15 +232,20 @@ gconf_accounts_changed (GConfClient *client, guint cnxn_id,
 	}
 	g_slist_free (new_accounts);
 
-	/* Anything left in old_accounts must have been deleted */
-	for (iter = e_list_get_iterator (old_accounts);
-	     e_iterator_is_valid (iter);
-	     e_iterator_next (iter)) {
-		account = (EAccount *)e_iterator_get (iter);
-		e_list_remove (E_LIST (account_list), account);
-		g_signal_emit (account_list, signals[ACCOUNT_REMOVED], 0, account);
+	/* Anything left in old_accounts must have been deleted.
+	 * A truncated or corrupt entry used to look like a deletion
+	 * and the next save then stored that wipe. Skip deletions
+	 * unless every entry parsed. */
+	if (!parse_failed) {
+		for (iter = e_list_get_iterator (old_accounts);
+		     e_iterator_is_valid (iter);
+		     e_iterator_next (iter)) {
+			account = (EAccount *)e_iterator_get (iter);
+			e_list_remove (E_LIST (account_list), account);
+			g_signal_emit (account_list, signals[ACCOUNT_REMOVED], 0, account);
+		}
+		g_object_unref (iter);
 	}
-	g_object_unref (iter);
 	g_object_unref (old_accounts);
 }
 
@@ -271,6 +328,8 @@ e_account_list_save (EAccountList *account_list)
 	EAccount *account;
 	EIterator *iter;
 	gchar *xmlbuf;
+	gchar *encoded;
+	gchar *wrapped;
 
 	for (iter = e_list_get_iterator (E_LIST (account_list));
 	     e_iterator_is_valid (iter);
@@ -278,8 +337,14 @@ e_account_list_save (EAccountList *account_list)
 		account = (EAccount *)e_iterator_get (iter);
 
 		xmlbuf = e_account_to_xml (account);
-		if (xmlbuf)
-			list = g_slist_append (list, xmlbuf);
+		if (xmlbuf == NULL)
+			continue;
+
+		encoded = g_base64_encode ((const guchar *) xmlbuf, strlen (xmlbuf));
+		wrapped = g_strconcat ("evo64:", encoded, NULL);
+		g_free (encoded);
+		g_free (xmlbuf);
+		list = g_slist_append (list, wrapped);
 	}
 	g_object_unref (iter);
 

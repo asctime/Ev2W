@@ -927,6 +927,80 @@ mav_construct_page(MailAccountView *view, MAVPageType type)
 	return (GtkWidget *)page;
 }
 
+static gboolean
+mav_ssl_alias (const gchar *fold, const gchar * const *table)
+{
+	gint i;
+
+	for (i = 0; table[i] != NULL; i++) {
+		if (strcmp (fold, table[i]) == 0)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+static const gchar *
+mav_canon_ssl (const gchar *token)
+{
+	static const gchar * const never_alias[] = {
+		"never", "none", "0", "false", "plain", "clear", "off", "no",
+		"no encryption", NULL
+	};
+	static const gchar * const tls_alias[] = {
+		"when-possible", "tls", "starttls", "start-tls", "start_tls",
+		"tls encryption", NULL
+	};
+	static const gchar * const ssl_alias[] = {
+		"always", "ssl", "ssl/tls", "imaps", "smtps", "pop3s",
+		"1", "true", "secure", "on", "yes", "ssl encryption", NULL
+	};
+	gchar *copy;
+	gchar *fold;
+	gchar *d;
+	const gchar *s;
+	const gchar *ret;
+
+	if (token == NULL)
+		return NULL;
+
+	copy = g_strdup (token);
+	d = copy;
+	s = copy;
+	while (*s != '\0') {
+		if (*s == '%' && g_ascii_isxdigit (s[1]) && g_ascii_isxdigit (s[2])) {
+			*d++ = (gchar) ((g_ascii_xdigit_value (s[1]) << 4) | g_ascii_xdigit_value (s[2]));
+			s += 3;
+		} else
+			*d++ = *s++;
+	}
+	*d = '\0';
+	g_strstrip (copy);
+	if (copy[0] == '\0') {
+		g_free (copy);
+		return "always";
+	}
+
+	fold = g_ascii_strdown (copy, -1);
+	g_free (copy);
+
+	if (mav_ssl_alias (fold, never_alias))
+		ret = "never";
+	else if (mav_ssl_alias (fold, tls_alias))
+		ret = "when-possible";
+	else if (mav_ssl_alias (fold, ssl_alias))
+		ret = "always";
+	else if (g_str_has_prefix (fold, "start") || g_str_has_prefix (fold, "tls"))
+		ret = "when-possible";
+	else if (g_str_has_prefix (fold, "ssl"))
+		ret = "always";
+	else
+		ret = NULL;
+
+	g_free (fold);
+	return ret;
+}
+
 static ServerData *
 emae_check_servers (const gchar *email)
 {
@@ -965,42 +1039,11 @@ emae_check_servers (const gchar *email)
 		sdata->proto = g_strdup("imapx");
 	else
 		sdata->proto = provider->recv_type;
-	if (provider->recv_socket_type) {
-		if (g_ascii_strcasecmp(provider->recv_socket_type, "SSL") == 0) {
-			sdata->ssl = g_strdup("always");
-			sdata->recv_sock = g_strdup("always");
-		}
-		else if (g_ascii_strcasecmp(provider->recv_socket_type, "secure") == 0) {
-			sdata->ssl = g_strdup("always");
-			sdata->recv_sock = g_strdup("always");
-		}
-		else if (g_ascii_strcasecmp(provider->recv_socket_type, "STARTTLS") == 0) {
-			sdata->ssl = g_strdup("when-possible");
-			sdata->recv_sock = g_strdup("when-possible");
-		}
-		else if (g_ascii_strcasecmp(provider->recv_socket_type, "TLS") == 0) {
-			sdata->ssl = g_strdup("when-possible");
-			sdata->recv_sock = g_strdup("when-possible");
-		}
-		else {
-			sdata->ssl = g_strdup("never");
-			sdata->recv_sock = g_strdup("never");
-		}
-
-	}
-
-	if (provider->send_socket_type) {
-		if (g_ascii_strcasecmp(provider->send_socket_type, "SSL") == 0)
-			sdata->send_sock = g_strdup("always");
-		else if (g_ascii_strcasecmp(provider->send_socket_type, "secure") == 0)
-			sdata->send_sock = g_strdup("always");
-		else if (g_ascii_strcasecmp(provider->send_socket_type, "STARTTLS") == 0)
-			sdata->send_sock = g_strdup("when-possible");
-		else if (g_ascii_strcasecmp(provider->send_socket_type, "TLS") == 0)
-			sdata->send_sock = g_strdup("when-possible");
-		else
-			sdata->send_sock = g_strdup("never");
-	}
+	/* Unknown labels used to be stored as "never", which then
+	 * connected in the clear. Leave them unset instead. */
+	sdata->recv_sock = g_strdup (mav_canon_ssl (provider->recv_socket_type));
+	sdata->ssl = g_strdup (sdata->recv_sock);
+	sdata->send_sock = g_strdup (mav_canon_ssl (provider->send_socket_type));
 
 	sdata->send_auth = provider->send_auth;
 	sdata->recv_auth = provider->recv_auth;

@@ -28,6 +28,7 @@
 
 #include <errno.h>
 #include <fcntl.h>
+#include <limits.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -48,6 +49,86 @@
 #endif
 
 #define IO_TIMEOUT (60*4)
+
+#ifdef G_OS_WIN32
+/* Winsock recv/send take a 32-bit length. Clamp so a gsize cannot wrap. */
+static int
+camel_io_chunk (gsize n)
+{
+	if (n > (gsize) INT_MAX)
+		return INT_MAX;
+	return (int) n;
+}
+
+static int
+camel_winsock_errno (int wsa_err)
+{
+	switch (wsa_err) {
+	case 0:			return 0;
+	case WSAEINTR:		return EINTR;
+	case WSAEBADF:		return EBADF;
+	case WSAEACCES:		return EACCES;
+	case WSAEFAULT:		return EFAULT;
+	case WSAEINVAL:		return EINVAL;
+	case WSAEMFILE:		return EMFILE;
+	case WSAEWOULDBLOCK:	return EWOULDBLOCK;
+	case WSAEINPROGRESS:	return EINPROGRESS;
+	case WSAEALREADY:	return EALREADY;
+	case WSAENOTSOCK:	return ENOTSOCK;
+	case WSAEMSGSIZE:	return EMSGSIZE;
+	case WSAEPROTONOSUPPORT:return EPROTONOSUPPORT;
+	case WSAEOPNOTSUPP:	return EOPNOTSUPP;
+	case WSAEAFNOSUPPORT:	return EAFNOSUPPORT;
+	case WSAEADDRINUSE:	return EADDRINUSE;
+	case WSAEADDRNOTAVAIL:	return EADDRNOTAVAIL;
+	case WSAENETDOWN:	return ENETDOWN;
+	case WSAENETUNREACH:	return ENETUNREACH;
+	case WSAENETRESET:	return ENETRESET;
+	case WSAECONNABORTED:	return ECONNABORTED;
+	case WSAECONNRESET:	return ECONNRESET;
+	case WSAENOBUFS:	return ENOBUFS;
+	case WSAEISCONN:	return EISCONN;
+	case WSAENOTCONN:	return ENOTCONN;
+	case WSAESHUTDOWN:	return EPIPE;
+	case WSAETIMEDOUT:	return ETIMEDOUT;
+	case WSAECONNREFUSED:	return ECONNREFUSED;
+	case WSAEHOSTUNREACH:	return EHOSTUNREACH;
+	default:		return EIO;
+	}
+}
+
+static void
+camel_set_errno_from_winsock (void)
+{
+	errno = camel_winsock_errno (WSAGetLastError ());
+}
+
+/* Wait until a non-blocking socket can transfer. select() sleeps;
+ * spinning on WSAEWOULDBLOCK pegs a core on MinGW64. */
+static int
+camel_sock_wait (SOCKET sock,
+                 gboolean for_write)
+{
+	fd_set set;
+	int res;
+
+	FD_ZERO (&set);
+	FD_SET (sock, &set);
+	if (for_write)
+		res = select (0, NULL, &set, NULL, NULL);
+	else
+		res = select (0, &set, NULL, NULL, NULL);
+	if (res == SOCKET_ERROR) {
+		camel_set_errno_from_winsock ();
+		return -1;
+	}
+	if (res == 0) {
+		errno = ETIMEDOUT;
+		return -1;
+	}
+	return 0;
+}
+#endif
 
 /**
  * camel_file_util_encode_uint32:
@@ -146,35 +227,38 @@ camel_file_util_decode_fixed_int32 (FILE *in, gint32 *dest)
 	}
 }
 
+/* Shift through guint64. time_t and off_t are signed 64-bit on MinGW64,
+ * and a signed left shift into the sign bit is undefined. */
 #define CFU_ENCODE_T(type)						\
 gint									\
 camel_file_util_encode_##type(FILE *out, type value)			\
 {									\
+	guint64 u = (guint64) value;					\
 	gint i;								\
 									\
-	for (i = sizeof (type) - 1; i >= 0; i--) {			\
-		if (fputc((value >> (i * 8)) & 0xff, out) == -1)	\
+	for (i = (gint) sizeof (type) - 1; i >= 0; i--) {		\
+		if (fputc ((int) ((u >> (i * 8)) & 0xff), out) == -1)	\
 			return -1;					\
 	}								\
 	return 0;							\
 }
 
-#define CFU_DECODE_T(type)				\
-gint							\
-camel_file_util_decode_##type(FILE *in, type *dest)	\
-{							\
-	type save = 0;					\
-	gint i = sizeof(type) - 1;			\
-	gint v = EOF;					\
-							\
-        while (i >= 0 && (v = fgetc (in)) != EOF) {	\
-		save |= ((type)v) << (i * 8);		\
-		i--;					\
-	}						\
-	*dest = save;					\
-	if (v == EOF)					\
-		return -1;				\
-	return 0;					\
+#define CFU_DECODE_T(type)						\
+gint									\
+camel_file_util_decode_##type(FILE *in, type *dest)			\
+{									\
+	guint64 save = 0;						\
+	gint i = (gint) sizeof (type) - 1;				\
+	gint v = EOF;							\
+									\
+        while (i >= 0 && (v = fgetc (in)) != EOF) {			\
+		save |= ((guint64) (v & 0xff)) << (i * 8);		\
+		i--;							\
+	}								\
+	*dest = (type) save;						\
+	if (v == EOF)							\
+		return -1;						\
+	return 0;							\
 }
 
 /**
@@ -440,7 +524,12 @@ camel_read (gint fd,
 #endif
 	if (cancel_fd == -1) {
 		do {
+#ifdef G_OS_WIN32
+			/* CRT read() takes an unsigned int, not a gsize. */
+			nread = read (fd, buf, (unsigned int) camel_io_chunk (n));
+#else
 			nread = read (fd, buf, n);
+#endif
 		} while (nread == -1 && (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK));
 	} else {
 #ifndef G_OS_WIN32
@@ -540,11 +629,16 @@ camel_write (gint fd,
 	if (cancel_fd == -1) {
 		do {
 			do {
+#ifdef G_OS_WIN32
+				w = write (fd, buf + written,
+					(unsigned int) camel_io_chunk (n - written));
+#else
 				w = write (fd, buf + written, n - written);
+#endif
 			} while (w == -1 && (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK));
 			if (w > 0)
 				written += w;
-		} while (w != -1 && written < n);
+		} while (w > 0 && written < n);
 	} else {
 #ifndef G_OS_WIN32
 		gint errnosav, flags, fdmax;
@@ -648,41 +742,59 @@ camel_read_socket (gint fd,
 	cancel_fd = camel_operation_cancel_fd (NULL);
 
 	if (cancel_fd == -1) {
-		do {
-			nread = recv (fd, buf, n, 0);
-		} while (nread == SOCKET_ERROR && WSAGetLastError () == WSAEWOULDBLOCK);
+		for (;;) {
+			nread = recv ((SOCKET) fd, buf, camel_io_chunk (n), 0);
+			if (nread != SOCKET_ERROR)
+				break;
+			if (WSAGetLastError () != WSAEWOULDBLOCK) {
+				camel_set_errno_from_winsock ();
+				nread = -1;
+				break;
+			}
+			if (camel_sock_wait ((SOCKET) fd, FALSE) != 0) {
+				nread = -1;
+				break;
+			}
+		}
 	} else {
 		gint fdmax;
 		fd_set rdset;
 		u_long yes = 1;
+		int chunk = camel_io_chunk (n);
 
-		ioctlsocket (fd, FIONBIO, &yes);
+		ioctlsocket ((SOCKET) fd, FIONBIO, &yes);
 		fdmax = MAX (fd, cancel_fd) + 1;
-		do {
+		for (;;) {
 			struct timeval tv;
 			gint res;
 
 			FD_ZERO (&rdset);
-			FD_SET (fd, &rdset);
-			FD_SET (cancel_fd, &rdset);
+			FD_SET ((SOCKET) fd, &rdset);
+			FD_SET ((SOCKET) cancel_fd, &rdset);
 			tv.tv_sec = IO_TIMEOUT;
 			tv.tv_usec = 0;
 			nread = -1;
 
-			res = select(fdmax, &rdset, 0, 0, &tv);
-			if (res == -1)
-				;
-			else if (res == 0)
-				errno = EAGAIN;
-			else if (FD_ISSET (cancel_fd, &rdset)) {
+			res = select (fdmax, &rdset, 0, 0, &tv);
+			if (res == SOCKET_ERROR) {
+				camel_set_errno_from_winsock ();
+				break;
+			} else if (res == 0) {
+				continue;
+			} else if (FD_ISSET ((SOCKET) cancel_fd, &rdset)) {
 				errno = EINTR;
-				goto failed;
+				break;
 			} else {
-				nread = recv (fd, buf, n, 0);
+				nread = recv ((SOCKET) fd, buf, chunk, 0);
+				if (nread == SOCKET_ERROR) {
+					if (WSAGetLastError () == WSAEWOULDBLOCK)
+						continue;
+					camel_set_errno_from_winsock ();
+					nread = -1;
+				}
+				break;
 			}
-		} while (nread == -1 && WSAGetLastError () == WSAEWOULDBLOCK);
-	failed:
-		;
+		}
 	}
 
 	if (nread == -1) {
@@ -740,18 +852,31 @@ camel_write_socket (gint fd,
 	cancel_fd = camel_operation_cancel_fd (NULL);
 	if (cancel_fd == -1) {
 		do {
-			do {
-				w = send (fd, buf + written, n - written, 0);
-			} while (w == SOCKET_ERROR && WSAGetLastError () == WSAEWOULDBLOCK);
+			for (;;) {
+				w = send ((SOCKET) fd, buf + written,
+					camel_io_chunk (n - written), 0);
+				if (w == SOCKET_ERROR && WSAGetLastError () == WSAEWOULDBLOCK) {
+					if (camel_sock_wait ((SOCKET) fd, TRUE) != 0) {
+						w = -1;
+						break;
+					}
+					continue;
+				}
+				if (w == SOCKET_ERROR) {
+					camel_set_errno_from_winsock ();
+					w = -1;
+				}
+				break;
+			}
 			if (w > 0)
 				written += w;
-		} while (w != -1 && written < n);
+		} while (w > 0 && written < n);
 	} else {
 		gint fdmax;
 		fd_set rdset, wrset;
 		u_long arg = 1;
 
-		ioctlsocket (fd, FIONBIO, &arg);
+		ioctlsocket ((SOCKET) fd, FIONBIO, &arg);
 		fdmax = MAX (fd, cancel_fd) + 1;
 		do {
 			struct timeval tv;
@@ -759,30 +884,41 @@ camel_write_socket (gint fd,
 
 			FD_ZERO (&rdset);
 			FD_ZERO (&wrset);
-			FD_SET (fd, &wrset);
-			FD_SET (cancel_fd, &rdset);
+			FD_SET ((SOCKET) fd, &wrset);
+			FD_SET ((SOCKET) cancel_fd, &rdset);
 			tv.tv_sec = IO_TIMEOUT;
 			tv.tv_usec = 0;
 			w = -1;
 
 			res = select (fdmax, &rdset, &wrset, 0, &tv);
 			if (res == SOCKET_ERROR) {
-				/* w still being -1 will catch this */
-			} else if (res == 0)
-				errno = EAGAIN;
-			else if (FD_ISSET (cancel_fd, &rdset))
+				camel_set_errno_from_winsock ();
+			} else if (res == 0) {
+				/* Poll interval elapsed. w must stay non-error or the
+				 * loop treats the timeout as a failed write. */
+				w = 0;
+				continue;
+			} else if (FD_ISSET ((SOCKET) cancel_fd, &rdset)) {
 				errno = EINTR;
-			else {
-				w = send (fd, buf + written, n - written, 0);
+			} else {
+				w = send ((SOCKET) fd, buf + written,
+					camel_io_chunk (n - written), 0);
 				if (w == SOCKET_ERROR) {
-					if (WSAGetLastError () == WSAEWOULDBLOCK)
+					if (WSAGetLastError () == WSAEWOULDBLOCK) {
 						w = 0;
-				} else
+					} else {
+						camel_set_errno_from_winsock ();
+						w = -1;
+					}
+				} else if (w > 0) {
 					written += w;
+				} else {
+					break;
+				}
 			}
 		} while (w != -1 && written < n);
 		arg = 0;
-		ioctlsocket (fd, FIONBIO, &arg);
+		ioctlsocket ((SOCKET) fd, FIONBIO, &arg);
 	}
 
 	if (w == -1) {

@@ -331,13 +331,24 @@ static gboolean
 nntp_connect_online (CamelService *service, GError **error)
 {
 	const gchar *ssl_mode;
+	const gchar *canon;
 	gint mode, i;
 	gchar *serv;
 	gint fallback_port;
 
 	if ((ssl_mode = camel_url_get_param (service->url, "use_ssl"))) {
+		canon = camel_url_canon_use_ssl (ssl_mode);
+		if (canon == NULL) {
+			g_set_error (
+				error, CAMEL_SERVICE_ERROR,
+				CAMEL_SERVICE_ERROR_URL_INVALID,
+				_("Unrecognized encryption setting \"%s\". "
+				  "Use never, when-possible, or always."),
+				ssl_mode);
+			return FALSE;
+		}
 		for (i = 0; ssl_options[i].value; i++)
-			if (!strcmp (ssl_options[i].value, ssl_mode))
+			if (!strcmp (ssl_options[i].value, canon))
 				break;
 		mode = ssl_options[i].mode;
 		serv = (gchar *) ssl_options[i].serv;

@@ -149,10 +149,12 @@ gchar *
 camel_mempool_strdup (CamelMemPool *pool,
                       const gchar *str)
 {
+	gsize len;
 	gchar *out;
 
-	out = camel_mempool_alloc (pool, strlen (str) + 1);
-	strcpy (out, str);
+	len = strlen (str) + 1;
+	out = camel_mempool_alloc (pool, (gint) len);
+	memcpy (out, str, len);
 
 	return out;
 }

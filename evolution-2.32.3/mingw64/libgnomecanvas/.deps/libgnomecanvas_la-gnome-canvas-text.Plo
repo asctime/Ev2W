@@ -320,10 +320,13 @@
  D:/MSYS2/mingw64/include/harfbuzz/hb-font.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-face.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-set.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb-draw.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-deprecated.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-map.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-shape.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-shape-plan.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb-style.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-version.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-types.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-gravity.h \
@@ -653,6 +656,9 @@
  D:/MSYS2/mingw64/include/freetype2/freetype/config/ftoption.h \
  D:/MSYS2/mingw64/include/freetype2/freetype/config/ftstdlib.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/setjmp.h \
+ D:/MSYS2/mingw64/include/freetype2/freetype/config/integer-types.h \
+ D:/MSYS2/mingw64/include/freetype2/freetype/config/public-macros.h \
+ D:/MSYS2/mingw64/include/freetype2/freetype/config/mac-support.h \
  D:/MSYS2/mingw64/include/freetype2/freetype/fttypes.h \
  D:/MSYS2/mingw64/include/freetype2/freetype/ftsystem.h \
  D:/MSYS2/mingw64/include/freetype2/freetype/ftimage.h \
@@ -1309,6 +1315,10 @@ D:/MSYS2/mingw64/include/harfbuzz/hb-face.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-set.h:
 
+D:/MSYS2/mingw64/include/harfbuzz/hb-draw.h:
+
+D:/MSYS2/mingw64/include/harfbuzz/hb.h:
+
 D:/MSYS2/mingw64/include/harfbuzz/hb-deprecated.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-map.h:
@@ -1316,6 +1326,8 @@ D:/MSYS2/mingw64/include/harfbuzz/hb-map.h:
 D:/MSYS2/mingw64/include/harfbuzz/hb-shape.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-shape-plan.h:
+
+D:/MSYS2/mingw64/include/harfbuzz/hb-style.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-version.h:
 
@@ -1978,6 +1990,12 @@ D:/MSYS2/mingw64/include/freetype2/freetype/config/ftoption.h:
 D:/MSYS2/mingw64/include/freetype2/freetype/config/ftstdlib.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/setjmp.h:
+
+D:/MSYS2/mingw64/include/freetype2/freetype/config/integer-types.h:
+
+D:/MSYS2/mingw64/include/freetype2/freetype/config/public-macros.h:
+
+D:/MSYS2/mingw64/include/freetype2/freetype/config/mac-support.h:
 
 D:/MSYS2/mingw64/include/freetype2/freetype/fttypes.h:
 

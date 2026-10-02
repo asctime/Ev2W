@@ -148,7 +148,14 @@ groupwise_store_construct (CamelService *service, CamelSession *session,
 	priv->parent_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
 
 	/*ssl*/
-	priv->use_ssl = g_strdup (camel_url_get_param (url, "use_ssl"));
+	{
+		const gchar *raw_ssl;
+		const gchar *canon_ssl;
+
+		raw_ssl = camel_url_get_param (url, "use_ssl");
+		canon_ssl = camel_url_canon_use_ssl (raw_ssl);
+		priv->use_ssl = g_strdup (canon_ssl != NULL ? canon_ssl : raw_ssl);
+	}
 
 	store->flags &= ~CAMEL_STORE_VJUNK;
 	store->flags &= ~CAMEL_STORE_VTRASH;

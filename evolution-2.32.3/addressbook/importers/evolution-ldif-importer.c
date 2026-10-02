@@ -50,6 +50,15 @@
 
 #include "evolution-addressbook-importers.h"
 
+/* fseek/ftell are 32-bit long on MinGW64. LDIF files can pass 2 GiB. */
+#ifdef G_OS_WIN32
+#define E_FSEEK(fp, off, wh) _fseeki64 ((fp), (__int64) (off), (wh))
+#define E_FTELL(fp) ((gint64) _ftelli64 (fp))
+#else
+#define E_FSEEK(fp, off, wh) fseeko ((fp), (off_t) (off), (wh))
+#define E_FTELL(fp) ((gint64) ftello (fp))
+#endif
+
 typedef struct {
 	EImport *import;
 	EImportTarget *target;
@@ -60,7 +69,7 @@ typedef struct {
 
 	gint state;		/* 0 - initial scan, 1 - list cards, 2 - cancelled/complete */
 	FILE *file;
-	gulong size;
+	gint64 size;
 
 	EBook *book;
 
@@ -510,7 +519,7 @@ ldif_import_contacts(gpointer d)
 	} else {
 		e_import_status (
 			gci->import, gci->target, _("Importing..."),
-			ftell (gci->file) * 100 / gci->size);
+			gci->size > 0 ? (gint) (E_FTELL (gci->file) * 100 / gci->size) : 0);
 		return TRUE;
 	}
 }
@@ -648,9 +657,13 @@ So we will keep ascii for now, but it's been flagged for a binary sanitizer inst
 	gci->target = target;
 	gci->book = book;
 	gci->file = file;
-	fseek(file, 0, SEEK_END);
-	gci->size = ftell(file);
-	fseek(file, 0, SEEK_SET);
+	gci->size = 0;
+	if (E_FSEEK (file, 0, SEEK_END) == 0) {
+		gint64 sz = E_FTELL (file);
+		if (sz > 0)
+			gci->size = sz;
+		E_FSEEK (file, 0, SEEK_SET);
+	}
 	gci->dn_contact_hash = g_hash_table_new_full (
 		g_str_hash, g_str_equal,
 		(GDestroyNotify) g_free,

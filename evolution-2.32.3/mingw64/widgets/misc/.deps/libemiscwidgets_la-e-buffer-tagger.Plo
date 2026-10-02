@@ -317,10 +317,13 @@
  D:/MSYS2/mingw64/include/harfbuzz/hb-font.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-face.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-set.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb-draw.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-deprecated.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-map.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-shape.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-shape-plan.h \
+ D:/MSYS2/mingw64/include/harfbuzz/hb-style.h \
  D:/MSYS2/mingw64/include/harfbuzz/hb-version.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-types.h \
  D:/MSYS2/mingw64/include/pango-1.0/pango/pango-gravity.h \
@@ -346,7 +349,7 @@
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- D:/MSYS2/mingw64/lib/gtk-2.0/include/gdkconfig.h \
+ D:/MSYS2/mingw64/include/gtk-2.0/gdkconfig.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkdisplay.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkevents.h \
  D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkcolor.h \
@@ -634,8 +637,13 @@
  D:/MSYS2/mingw64/include/glib-2.0/glib/gi18n.h \
  D:/MSYS2/mingw64/include/libintl.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h \
- D:/MSYS2/mingw64/include/regex.h \
+ D:/MSYS2/mingw64/include/regex.h D:/MSYS2/mingw64/include/tre/tre.h \
+ D:/MSYS2/mingw64/include/tre/tre-config.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wchar.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
  D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h \
  ../../../e-util/e-util.h \
  D:/MSYS2/mingw64/include/gconf/2/gconf/gconf-client.h \
@@ -1284,6 +1292,10 @@ D:/MSYS2/mingw64/include/harfbuzz/hb-face.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-set.h:
 
+D:/MSYS2/mingw64/include/harfbuzz/hb-draw.h:
+
+D:/MSYS2/mingw64/include/harfbuzz/hb.h:
+
 D:/MSYS2/mingw64/include/harfbuzz/hb-deprecated.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-map.h:
@@ -1291,6 +1303,8 @@ D:/MSYS2/mingw64/include/harfbuzz/hb-map.h:
 D:/MSYS2/mingw64/include/harfbuzz/hb-shape.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-shape-plan.h:
+
+D:/MSYS2/mingw64/include/harfbuzz/hb-style.h:
 
 D:/MSYS2/mingw64/include/harfbuzz/hb-version.h:
 
@@ -1342,7 +1356,7 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
 
-D:/MSYS2/mingw64/lib/gtk-2.0/include/gdkconfig.h:
+D:/MSYS2/mingw64/include/gtk-2.0/gdkconfig.h:
 
 D:/MSYS2/mingw64/include/gtk-2.0/gdk/gdkdisplay.h:
 
@@ -1920,7 +1934,19 @@ D:/MSYS2/mingw64/x86_64-w64-mingw32/include/locale.h:
 
 D:/MSYS2/mingw64/include/regex.h:
 
+D:/MSYS2/mingw64/include/tre/tre.h:
+
+D:/MSYS2/mingw64/include/tre/tre-config.h:
+
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sys/types.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/wchar.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
+
+D:/MSYS2/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
 
 D:/MSYS2/mingw64/x86_64-w64-mingw32/include/ctype.h:
 

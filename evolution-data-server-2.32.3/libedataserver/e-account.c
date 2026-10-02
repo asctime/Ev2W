@@ -499,6 +499,194 @@ exit:
 	g_free (uri);
 }
 
+/* Keep this alias table matched with camel_url_canon_use_ssl().
+ * libedataserver does not link camel, so the save path has its own copy. */
+static gboolean
+account_ssl_alias_is (const gchar *fold, const gchar * const *table)
+{
+	gint i;
+
+	for (i = 0; table[i] != NULL; i++) {
+		if (strcmp (fold, table[i]) == 0)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+static void
+account_percent_decode (gchar *s)
+{
+	gchar *d;
+
+	d = s;
+	while (*s != '\0') {
+		if (*s == '%' && g_ascii_isxdigit (s[1]) && g_ascii_isxdigit (s[2])) {
+			*d++ = (gchar) ((g_ascii_xdigit_value (s[1]) << 4) | g_ascii_xdigit_value (s[2]));
+			s += 3;
+		} else
+			*d++ = *s++;
+	}
+	*d = '\0';
+}
+
+static const gchar *
+account_canon_use_ssl (const gchar *token)
+{
+	static const gchar * const never_alias[] = {
+		"never", "none", "0", "false", "plain", "clear", "off", "no",
+		"no encryption", NULL
+	};
+	static const gchar * const tls_alias[] = {
+		"when-possible", "tls", "starttls", "start-tls", "start_tls",
+		"tls encryption", NULL
+	};
+	static const gchar * const ssl_alias[] = {
+		"always", "ssl", "ssl/tls", "imaps", "smtps", "pop3s",
+		"1", "true", "secure", "on", "yes", "ssl encryption", NULL
+	};
+	gchar *copy;
+	gchar *fold;
+	const gchar *ret;
+
+	if (token == NULL)
+		return NULL;
+
+	copy = g_strdup (token);
+	account_percent_decode (copy);
+	g_strstrip (copy);
+	if (copy[0] == '\0') {
+		g_free (copy);
+		return "always";
+	}
+
+	fold = g_ascii_strdown (copy, -1);
+	g_free (copy);
+
+	if (account_ssl_alias_is (fold, never_alias))
+		ret = "never";
+	else if (account_ssl_alias_is (fold, tls_alias))
+		ret = "when-possible";
+	else if (account_ssl_alias_is (fold, ssl_alias))
+		ret = "always";
+	else if (g_str_has_prefix (fold, "start") || g_str_has_prefix (fold, "tls"))
+		ret = "when-possible";
+	else if (g_str_has_prefix (fold, "ssl"))
+		ret = "always";
+	else
+		ret = NULL;
+
+	g_free (fold);
+	return ret;
+}
+
+/* Rewrite a camel URL's use_ssl param to a canonical token.
+ * An unrecognized value is left as-is so connect fails closed. */
+static gchar *
+account_canon_url (const gchar *url)
+{
+	const gchar *q;
+	const gchar *p;
+	GString *out;
+
+	if (url == NULL)
+		return NULL;
+
+	q = strchr (url, '?');
+	if (q == NULL)
+		return g_strdup (url);
+
+	out = g_string_sized_new (strlen (url) + 16);
+	g_string_append_len (out, url, (gssize) (q - url + 1));
+	p = q + 1;
+
+	while (*p != '\0') {
+		const gchar *name;
+		const gchar *eq;
+		const gchar *end;
+		gchar *raw;
+		const gchar *canon;
+
+		name = p;
+		while (*p != '\0' && *p != '=' && *p != ';' && *p != '&')
+			p++;
+
+		if (*p != '=') {
+			end = p;
+			while (*end != '\0' && *end != ';' && *end != '&')
+				end++;
+			g_string_append_len (out, name, (gssize) (end - name));
+			if (*end != '\0') {
+				g_string_append_c (out, *end);
+				p = end + 1;
+			} else
+				p = end;
+			continue;
+		}
+
+		eq = p;
+		p++;
+		end = p;
+		while (*end != '\0' && *end != ';' && *end != '&')
+			end++;
+
+		if ((eq - name) == 7 && strncmp (name, "use_ssl", 7) == 0) {
+			raw = g_strndup (p, (gsize) (end - p));
+			canon = account_canon_use_ssl (raw);
+			g_free (raw);
+			g_string_append_len (out, name, (gssize) (eq - name));
+			g_string_append_c (out, '=');
+			if (canon != NULL)
+				g_string_append (out, canon);
+			else
+				g_string_append_len (out, p, (gssize) (end - p));
+		} else
+			g_string_append_len (out, name, (gssize) (end - name));
+
+		if (*end != '\0') {
+			g_string_append_c (out, *end);
+			p = end + 1;
+		} else
+			p = end;
+	}
+
+	return g_string_free (out, FALSE);
+}
+
+static void
+account_add_url_child (xmlNodePtr parent, const gchar *url)
+{
+	gchar *canon;
+
+	if (url == NULL)
+		return;
+
+	canon = account_canon_url (url);
+	xmlNewTextChild (parent, NULL, (xmlChar *) "url", (xmlChar *) canon);
+	g_free (canon);
+}
+
+/* libxml puts a text node in front of <account> when the document has a
+ * BOM, a leading newline, or a similar prefix. The first child is then
+ * not the account element and the whole account used to be dropped. */
+static xmlNodePtr
+account_xml_root (xmlDocPtr doc)
+{
+	xmlNodePtr node;
+
+	if (doc == NULL)
+		return NULL;
+
+	for (node = doc->children; node != NULL; node = node->next) {
+		if (node->type != XML_ELEMENT_NODE)
+			continue;
+		if (node->name != NULL && strcmp ((const gchar *) node->name, "account") == 0)
+			return node;
+	}
+
+	return NULL;
+}
+
 /**
  * e_account_set_from_xml:
  * @account: an #EAccount
@@ -519,8 +707,8 @@ e_account_set_from_xml (EAccount *account, const gchar *xml)
 	if (!(doc = xmlParseDoc ((xmlChar*)xml)))
 		return FALSE;
 
-	node = doc->children;
-	if (strcmp ((gchar *)node->name, "account") != 0) {
+	node = account_xml_root (doc);
+	if (node == NULL) {
 		xmlFreeDoc (doc);
 		return FALSE;
 	}
@@ -722,13 +910,11 @@ e_account_to_xml (EAccount *account)
 	xmlSetProp (src, (xmlChar*)"auto-check", (xmlChar*)(account->source->auto_check ? "true" : "false"));
 	sprintf (buf, "%d", account->source->auto_check_time);
 	xmlSetProp (src, (xmlChar*)"auto-check-timeout", (xmlChar*)buf);
-	if (account->source->url)
-		xmlNewTextChild (src, NULL, (xmlChar*)"url", (xmlChar*)account->source->url);
+	account_add_url_child (src, account->source->url);
 
 	xport = xmlNewChild (root, NULL, (xmlChar*)"transport", NULL);
 	xmlSetProp (xport, (xmlChar*)"save-passwd", (xmlChar*)(account->transport->save_passwd ? "true" : "false"));
-	if (account->transport->url)
-		xmlNewTextChild (xport, NULL, (xmlChar*)"url", (xmlChar*)account->transport->url);
+	account_add_url_child (xport, account->transport->url);
 
 	xmlNewTextChild (root, NULL, (xmlChar*)"drafts-folder", (xmlChar*)account->drafts_folder_uri);
 	xmlNewTextChild (root, NULL, (xmlChar*)"sent-folder", (xmlChar*)account->sent_folder_uri);
@@ -802,8 +988,8 @@ e_account_uid_from_xml (const gchar *xml)
 	if (!(doc = xmlParseDoc ((xmlChar *)xml)))
 		return NULL;
 
-	node = doc->children;
-	if (strcmp ((gchar *)node->name, "account") != 0) {
+	node = account_xml_root (doc);
+	if (node == NULL) {
 		xmlFreeDoc (doc);
 		return NULL;
 	}
